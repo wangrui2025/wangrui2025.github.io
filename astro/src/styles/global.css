@@ -408,6 +408,23 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+/* ===== Info Card (About section subsections) ===== */
+.info-card {
+  background: var(--paper-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.info-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
 /* ===== News List ===== */
 .news-list {
   list-style: none;

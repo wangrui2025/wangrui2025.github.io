@@ -29,30 +29,36 @@ const citedBy = scholarStats.data.citedby;
   <!-- About Me Section -->
   <section id="about-me" class="mb-8">
     <h1 class="text-3xl font-bold mb-2">About Me</h1>
-    <p class="status-badge mb-4">{h.status_badge}</p>
-    <p class="mb-4" set:html={h.background.intro} />
-    <p class="mb-4" set:html={h.background.research} />
+    <p class="mb-4 text-lg" set:html={h.background.intro} />
 
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold mb-2">{h.background.heading}</h2>
-      <ul class="list-disc list-inside">
+    <!-- Research Interests -->
+    <div class="info-card mb-4">
+      <h2 class="info-card-title">Research Interests</h2>
+      <p class="text-gray-600 dark:text-gray-300" set:html={h.background.research} />
+    </div>
+
+    <!-- Background -->
+    <div class="info-card mb-4">
+      <h2 class="info-card-title">{h.background.heading}</h2>
+      <ul class="about-list">
         {h.background.items.map((item) => (
           <li>{item}</li>
         ))}
       </ul>
     </div>
 
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold mb-2">
-        {h.target_areas.heading} {h.target_areas.subheading}
+    <!-- Target Areas -->
+    <div class="info-card">
+      <h2 class="info-card-title">
+        {h.target_areas.heading}
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">{h.target_areas.subheading}</span>
       </h2>
-      <ul class="list-disc list-inside">
+      <ul class="about-list">
         {h.target_areas.items.map((item) => (
           <li>{item}</li>
         ))}
       </ul>
     </div>
-
   </section>
 
   <!-- News Section -->
