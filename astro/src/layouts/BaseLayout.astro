@@ -131,7 +131,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2
     <Scripts />
 
     <footer class="footer-builtwith">
+      {/* CN: 本网页由 */ /* EN: Built with */}
       {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> {lang === 'zh' ? '构建' : ''}
+      {/* CN: 构建 */ /* EN: (none) */}
     </footer>
   </body>
 </html>
