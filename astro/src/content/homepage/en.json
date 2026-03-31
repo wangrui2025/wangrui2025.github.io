@@ -13,12 +13,12 @@
     ]
   },
   "target_areas": {
-    "heading": "Target Areas",
-    "subheading": "(Pivoting towards)",
+    "heading": "Research Directions",
+    "subheading": "(Transitioning to)",
     "items": [
       "Large-scale Multimodal Pretraining",
       "Inference-time Efficiency for VLMs",
-      "Open to: General Computer Vision, ML Systems"
+      "Also interested in: General Computer Vision, ML Systems"
     ]
   },
   "news_heading": "Status",

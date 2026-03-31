@@ -25,10 +25,10 @@ export const honors: Honors = {
       { period: '2024.12', text: '2024-2025学年 深圳大学研究生学业奖学金（2024级硕士特等奖）' },
     ],
     en: [
-      { period: '2026.01', text: '2025 Shenzhen University Academic Launch Scholarship' },
-      { period: '2025.12', text: '2025-2026 Academic Year Shenzhen University Graduate Academic Scholarship (First Prize for 2024 Master\'s)' },
+      { period: '2026.01', text: '2025 Shenzhen University Research Initiation Scholarship' },
+      { period: '2025.12', text: '2025-2026 Academic Year Shenzhen University Graduate Scholarship (First Class, 2024 Master\'s)' },
       { period: '2025.09', text: '2024-2025 Academic Year National Graduate Scholarship' },
-      { period: '2024.12', text: '2024-2025 Academic Year Shenzhen University Graduate Academic Scholarship (Special Prize for 2024 Master\'s)' },
+      { period: '2024.12', text: '2024-2025 Academic Year Shenzhen University Graduate Scholarship (Highest Honors, 2024 Master\'s)' },
     ],
   },
   undergraduate: {

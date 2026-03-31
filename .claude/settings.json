@@ -17,13 +17,12 @@
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Bash",
+        "matcher": "Edit|Write",
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.command' | grep -q 'commit' && bash scripts/autopush.sh --push-only 2>&1 | head -5 || true",
-            "if": "Bash(git commit*)",
-            "timeout": 30
+            "command": "cd /Users/myk/Repo/wangrui2025.github.io && bash scripts/autopush.sh 2>&1 | head -10 || true",
+            "timeout": 60
           }
         ]
       }

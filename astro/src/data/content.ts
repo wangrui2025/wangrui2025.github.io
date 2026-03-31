@@ -63,11 +63,11 @@ export const content: Content = {
   target_areas: {
     heading: {
       zh: '目标方向',
-      en: 'Target Areas',
+      en: 'Research Directions',
     },
     subheading: {
       zh: '（正在转向）',
-      en: '(Pivoting towards)',
+      en: '(Transitioning to)',
     },
     items: {
       zh: [
@@ -78,7 +78,7 @@ export const content: Content = {
       en: [
         'Large-scale Multimodal Pretraining',
         'Inference-time Efficiency for VLMs',
-        'Open to: General Computer Vision, ML Systems',
+        'Also interested in: General Computer Vision, ML Systems',
       ],
     },
   },
@@ -128,11 +128,11 @@ export const content: Content = {
   honors_headers: {
     graduate: {
       zh: 'Graduate Period（深圳大学 计算机科学与技术专业）',
-      en: 'Graduate Period (Shenzhen University, Computer Science and Technology)',
+      en: 'Graduate Studies (Shenzhen University, Computer Science and Technology)',
     },
     undergraduate: {
       zh: 'Undergraduate Period（河南大学）',
-      en: 'Undergraduate Period (Henan University)',
+      en: 'Undergraduate Studies (Henan University)',
     },
   },
 };
