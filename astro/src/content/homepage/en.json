@@ -5,7 +5,7 @@
   "background": {
     "heading": "Background",
     "intro": "I am a M.S. Candidate in Computer Science at <strong>Shenzhen University</strong>, supervised by Prof. Huisi Wu.",
-    "research": "My research focuses on medical imaging analysis, echocardiography video segmentation, computer vision, and deep learning.",
+    "research": "My research focuses on echocardiography video segmentation, medical image analysis, computer vision, and deep learning.",
     "items": [
       "Efficient NN Architectures",
       "Non-convex Optimization / Geometric DL",
