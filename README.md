@@ -4,6 +4,8 @@ An Astro-based academic personal homepage with bilingual support (English/Chines
 
 **Live Demo**: https://wangrui2025.github.io
 
+> 中文说明见 [README-zh.md](README-zh.md).
+
 ## Features
 
 - **Astro Framework** — Fast static site generation, optimized for GitHub Pages
