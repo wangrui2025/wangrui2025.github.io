@@ -62,3 +62,13 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 - Add papers as JSON files in `astro/src/content/papers/`
 - Education data in `astro/src/data/education.ts`
 - Honors data in `astro/src/data/honors.ts`
+
+## Auto-Commit and Push
+
+After making any changes to files, automatically commit and push to the remote repository:
+
+1. Stage all changes: `git add <modified_files>`
+2. Create a commit with a descriptive message describing what was changed
+3. Push to the remote: `git push`
+
+This ensures all modifications are immediately saved to the repository without requiring manual git commands.
