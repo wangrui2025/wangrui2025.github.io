@@ -14,7 +14,7 @@ export interface Content {
     subheading: { zh: string; en: string };
     items: { zh: string[]; en: string[] };
   };
-  news: {
+  status: {
     heading: { zh: string; en: string };
     items: { zh: string[]; en: string[] };
   };
@@ -82,10 +82,10 @@ export const content: Content = {
       ],
     },
   },
-  news: {
+  status: {
     heading: {
-      zh: '🔥 新闻',
-      en: '🔥 News',
+      zh: '🔥 状态',
+      en: '🔥 Status',
     },
     items: {
       zh: ['🔥 正在准备 CVPR Poster 中'],

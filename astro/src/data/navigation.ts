@@ -25,7 +25,7 @@ export const navigation: Navigation = {
     ],
     zh: [
       { title: '关于我', url: '/zh/#about-me' },
-      { title: '新闻', url: '/zh/#news' },
+      { title: '状态', url: '/zh/#status' },
       { title: '发表论文', url: '/zh/#publications' },
       { title: '荣誉奖项', url: '/zh/#honors' },
       { title: '教育经历', url: '/zh/#educations' },

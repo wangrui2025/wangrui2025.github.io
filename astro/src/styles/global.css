@@ -539,3 +539,18 @@ code {
   background: var(--paper-bg);
   font-size: 0.9em;
 }
+
+/* ===== Footer ===== */
+.footer-builtwith {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 0.6;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.footer-builtwith a {
+  color: var(--link-color);
+}
