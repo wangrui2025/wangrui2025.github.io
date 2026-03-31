@@ -57,12 +57,12 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
     </div>
     <div class="paper-links">
       {paper.data.project && (
-        <a href={paper.data.project} class="paper-link" title="Project Page">
-          🏠 Project
+        <a href={paper.data.project} class="paper-link" title={lang === 'zh' ? '项目主页' : 'Project Page'}>
+          🏠 {lang === 'zh' ? '项目' : 'Project'}
         </a>
       )}
       {paper.data.arxiv && (
-        <a href={paper.data.arxiv} class="paper-link !bg-[#b31b1b]" title="arXiv">
+        <a href={paper.data.arxiv} class="paper-link !bg-[#b31b1b]" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
           📜 arXiv
         </a>
       )}

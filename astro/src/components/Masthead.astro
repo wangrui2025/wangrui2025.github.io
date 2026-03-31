@@ -17,7 +17,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button aria-label="Toggle navigation" aria-expanded="false">
+        <button aria-label={lang === 'zh' ? '切换导航' : 'Toggle navigation'} aria-expanded="false">
           <div class="navicon"></div>
         </button>
         <ul class="visible-links">
@@ -39,7 +39,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         <ul class="hidden-links hidden"></ul>
       </nav>
 
-      <button id="theme-toggle" class="theme-toggle p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+      <button id="theme-toggle" class="theme-toggle p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
         <!-- Sun icon: visible in light mode, hidden in dark mode -->
         <svg id="theme-toggle-sun" class="w-5 h-5 icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
