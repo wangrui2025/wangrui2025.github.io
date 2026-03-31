@@ -9,6 +9,7 @@ const { lang = 'en' } = Astro.props;
 const langKey = lang === 'zh' ? 'zh' : 'en';
 const navItems = navigation.main[langKey];
 const switchUrl = lang === 'zh' ? '/' : '/zh/';
+/* FIXED: switchLabel - CN: English / EN: 中文 */
 const switchLabel = lang === 'zh' ? 'English' : '中文';
 ---
 
@@ -22,6 +23,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
             <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'}>
+              {/* FIXED: 首页 / Homepage */}
               {lang === 'zh' ? '首页' : 'Homepage'}
             </a>
           </li>
