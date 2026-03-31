@@ -13,12 +13,14 @@ const papers = defineCollection({
     zh: z.object({
       title: z.string(),
       authors: z.string(),
-      tags: z.array(z.string()),
+      fields: z.array(z.string()),
+      technologies: z.array(z.string()),
     }),
     en: z.object({
       title: z.string(),
       authors: z.string(),
-      tags: z.array(z.string()),
+      fields: z.array(z.string()),
+      technologies: z.array(z.string()),
     }),
   }),
 });
