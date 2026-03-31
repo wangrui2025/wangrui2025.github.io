@@ -1,6 +1,13 @@
 #!/bin/bash
 # autopush.sh - 自动 add → commit → push
 
+# 仅推送模式（用于 hooks）
+if [ "$1" = "--push-only" ]; then
+    git push
+    echo "Pushed."
+    exit 0
+fi
+
 # 获取 commit message（如果没有提供参数，使用默认消息）
 if [ -z "$1" ]; then
     commit_msg="update"

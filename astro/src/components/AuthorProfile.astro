@@ -31,6 +31,13 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
   <p class="author-title">{title}</p>
   <p class="author-affiliation">{affiliation}</p>
 
+  <!-- PhD Application Status -->
+  <div class="mb-4 text-center">
+    <span class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-rose-100 to-pink-100 dark:from-rose-900/40 dark:to-pink-900/40 text-rose-800 dark:text-rose-200 border border-rose-200 dark:border-rose-700/50 shadow-sm">
+      {lang === 'en' ? '🎓 Applying for PhD Programs · Fall 2027 Entry' : '🎓 申博中 · 2027 Fall 入学'}
+    </span>
+  </div>
+
   <!-- Primary Links: Email & GitHub -->
   <div class="author-links-primary">
     <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="author-link">

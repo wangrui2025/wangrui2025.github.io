@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.command' | grep -q 'commit' && git push 2>&1 | head -5 || true",
+            "command": "jq -r '.tool_input.command' | grep -q 'commit' && bash scripts/autopush.sh --push-only 2>&1 | head -5 || true",
             "if": "Bash(git commit*)",
             "timeout": 30
           }
