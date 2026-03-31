@@ -1,0 +1,30 @@
+\section{Ejection Fraction Estimation}
+The Left Ventricular Ejection Fraction ($LV_{EF}$) is a critical measure of cardiac pump function. Its calculation requires determining the End-Diastolic Volume ($V_{ED}$), the volume of the left ventricle when it is maximally filled, and the End-Systolic Volume ($V_{ES}$), the volume when it is maximally contracted.
+
+The general formula to compute the $LV_{EF}$ is:
+\begin{equation}
+   LV_{EF} = \frac{V_{ED} - V_{ES}}{V_{ED}} \times 100\%.
+   \label{eq:lvef}
+\end{equation}
+%
+\paragraph{Biplane Simpson's method}
+This method is the gold standard recommended by the American Society of Echocardiography~\cite{LANG20151} because it involves fewer geometric assumptions and is more accurate, especially for abnormally shaped ventricles.
+The method uses two orthogonal views: the apical four-chamber (a4c) and the apical two-chamber (a2c) view. The left ventricle is divided into a series of $n$ disks of equal height along its long axis, $L$.
+Each disk is assumed to be an elliptical cylinder. The total volume $V$ is the sum of the volumes of all disks. The volume is calculated using the diameters of the $i$-th disk measured from the four-chamber ($D_i^{4c}$) and two-chamber ($D_i^{2c}$) views.
+The volume formula is given by:
+\begin{equation}
+  V = \frac{\pi}{4} \sum_{i=1}^{n} \left( D_i^{4c} \cdot D_i^{2c} \cdot \frac{L}{n} \right).
+  \label{eq:biplane}
+\end{equation}
+%
+\paragraph{Single-plane Simpson's method}
+This is a simplified version of the method, applied when only one view (typically the apical four-chamber view) is of sufficient quality for analysis.
+This method uses only a single view and assumes the left ventricle is a solid of revolution. Therefore, each disk is treated as a perfect circular cylinder.
+The volume calculation relies on the diameter of each disk ($D_i^{4c}$) as measured from the single available plane.
+The volume formula is:
+\begin{equation}
+  V = \frac{\pi}{4} \sum_{i=1}^{n} \left( (D_i^{4c})^2 \cdot \frac{L}{n} \right).
+  \label{eq:singleplane}
+\end{equation}
+
+For both methods, $V_{ED}$ and $V_{ES}$ are calculated separately using the appropriate formula. These values are then used in the general $LV_{EF}$ \cref{eq:lvef} to determine the ejection fraction.

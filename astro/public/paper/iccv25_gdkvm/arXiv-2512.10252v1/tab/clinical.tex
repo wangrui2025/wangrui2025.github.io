@@ -1,0 +1,25 @@
+\begin{table}[t]
+    \centering
+    \renewcommand{\arraystretch}{0.9} 
+    \begin{tabular}{lll}
+    \toprule
+    \multirow{2}{*}{Method} & \multicolumn{2}{c}{CAMUS} \\ 
+    \cmidrule(l){2-3} 
+     & corr $\uparrow$ & bias $\pm$ std (\%) \\ 
+    \midrule
+    XMem++~\cite{bekuzarov2023xmemproductionlevelvideosegmentation} & 0.746 & 1.70 $\pm$ 21.9 \\
+    Cutie~\cite{cheng2024puttingobjectvideoobject}                 & 0.787 & 1.67 $\pm$ 21.7 \\
+    VideoMamba~\cite{li2024videomambastatespacemodel}               & 0.780 & -4.49 $\pm$ 19.4 \\
+    Vision LSTM~\cite{beck:24xlstm}                                 & 0.806 & -0.31 $\pm$ 18.8 \\ 
+    \midrule
+    PKEchoNet~\cite{wu2023super}                                    & 0.862 & -1.53 $\pm$ 16.4 \\
+    DSA~\cite{lin2024dynamic}                                       & 0.891 & 0.86 $\pm$ 13.4 \\
+    MemSAM~\cite{deng2024memsam}                                    & 0.878 & -0.89 $\pm$ 12.3 \\
+    SimLVSeg~\cite{maani2024simlvseg}                               & 0.895 & 1.83 $\pm$ 13.8 \\ 
+    \midrule
+    \textbf{\mymodel}                                                  & \textbf{0.904} & \textbf{-0.19 $\pm$ 11.3} \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{Clinical metrics comparison against different state-of-the-art methods on CAMUS.}
+    \label{tab:tab2}
+\end{table}

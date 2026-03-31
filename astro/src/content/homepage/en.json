@@ -1,0 +1,43 @@
+{
+  "title": "Rui Wang - Homepage",
+  "description": "Personal academic homepage of Rui Wang, M.S. Candidate at Shenzhen University",
+  "status_badge": "🎓 Applying for PhD Programs · Fall 2027 Entry",
+  "background": {
+    "heading": "Background",
+    "intro": "I am a M.S. Candidate in Computer Science at <strong>Shenzhen University</strong>, supervised by Prof. Huisi Wu.",
+    "research": "My research focuses on medical imaging analysis, echocardiography video segmentation, computer vision, and deep learning.",
+    "items": [
+      "Efficient NN Architectures",
+      "Non-convex Optimization / Geometric DL",
+      "Long-range Dependencies in CV"
+    ]
+  },
+  "target_areas": {
+    "heading": "Target Areas",
+    "subheading": "(Pivoting towards)",
+    "items": [
+      "Large-scale Multimodal Pretraining",
+      "Inference-time Efficiency for VLMs",
+      "Open to: General Computer Vision, ML Systems"
+    ]
+  },
+  "news_heading": "Status",
+  "news_items": [
+    "Applying for PhD (Fall 2027)",
+    "Preparing CVPR Poster"
+  ],
+  "section_publications": "📝 Publications",
+  "section_education": "📖 Education",
+  "section_honors": "🎖 Honors and Awards",
+  "section_skills": "💻 Skills & Interests",
+  "skills_items": [
+    "Programming: Claude Code, Harness Coding",
+    "Hobbies: Volleyball, Baseball/Softball, Calligraphy"
+  ],
+  "section_project": "🚀 Project",
+  "project_title": "how2research",
+  "project_description": "An open-source research guide for graduate students, covering CVPR/ICCV submission processes, efficient LaTeX writing tips, research prompt engineering, and development environment setup (e.g., uv, VSCode).",
+  "project_url": "https://how2research-apple.notion.site/297e9f718aff81338d15e6347d75c807",
+  "honors_graduate_header": "Graduate Period (Shenzhen University, Computer Science and Technology)",
+  "honors_undergraduate_header": "Undergraduate Period (Henan University)"
+}

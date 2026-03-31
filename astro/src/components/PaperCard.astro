@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import osaImage from '../assets/paper/fig_osu_page-0001.jpg';
+import gdkvmImage from '../assets/paper/fig_gdkvm_page-0001.jpg';
+
+// Image path → imported image mapping (required for astro:assets <Image />)
+const imageMap = {
+  '../assets/paper/fig_osu_page-0001.jpg': osaImage,
+  '../assets/paper/fig_gdkvm_page-0001.jpg': gdkvmImage,
+} as const;
+
+export interface Props {
+  paperKey: 'osa' | 'gdkvm';
+  lang?: 'en' | 'zh';
+}
+
+const { paperKey, lang = 'en' } = Astro.props;
+const paper = await getEntry('papers', paperKey);
+
+if (!paper) {
+  throw new Error(`Paper not found: ${paperKey}`);
+}
+
+const localized = paper.data[lang];
+const image = imageMap[paper.data.image as keyof typeof imageMap];
+---
+
+<div class="paper-box">
+  <div class="paper-box-image">
+    {image && (
+      <Image
+        src={image}
+        alt={lang === 'zh' ? paper.data.alt_zh : paper.data.alt_en}
+        width={600}
+        height={300}
+        format="webp"
+        loading="lazy"
+        class="w-full h-auto rounded"
+      />
+    )}
+  </div>
+  <div class="paper-box-text">
+    <h3>
+      <a href={paper.data.project || '#'}>{localized.title}</a>
+    </h3>
+    <p class="paper-authors">{localized.authors}</p>
+    <p class="paper-meta">
+      <strong>{paper.data.venue_full}</strong>
+    </p>
+    <div class="mb-3">
+      {localized.tags.map((tag) => (
+        <span class="inline-block px-[0.6em] py-[0.2em] m-[0.2em] text-[0.85em] bg-border-color rounded">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <div class="paper-links">
+      {paper.data.project && (
+        <a href={paper.data.project} class="paper-link" title="Project Page">
+          🏠 Project
+        </a>
+      )}
+      {paper.data.arxiv && (
+        <a href={paper.data.arxiv} class="paper-link !bg-[#b31b1b]" title="arXiv">
+          📜 arXiv
+        </a>
+      )}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+---
+import { education } from '../data/education';
+
+export interface Props {
+  type: 'master' | 'bachelor';
+  lang?: 'en' | 'zh';
+}
+
+const { type, lang = 'en' } = Astro.props;
+const edu = education[type];
+---
+
+<div class="education-entry mb-6 pl-4 border-l-[3px] border-paper-accent">
+  <h3 class="text-[1.1em] mb-1">{edu.institution[lang]}</h3>
+  <p class="text-primary opacity-90 my-1">
+    {edu.major[lang]} · {edu.degree[lang]}
+  </p>
+  <p class="text-primary opacity-70 text-sm my-1">
+    {edu.period[lang]}
+  </p>
+</div>

@@ -1,0 +1,48 @@
+---
+---
+
+<script>
+  function updateThemeUI(theme: string) {
+    const isDark = theme === 'dark';
+    const html = document.documentElement;
+
+    // 统一使用 .dark 类触发 Tailwind dark: 变体和 CSS 变量
+    html.classList.toggle('dark', isDark);
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  function handleToggleClick() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const nextTheme = isDark ? 'light' : 'dark';
+
+    localStorage.setItem('theme', nextTheme);
+    updateThemeUI(nextTheme);
+  }
+
+  function init() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const initialTheme = savedTheme || systemTheme;
+
+    updateThemeUI(initialTheme);
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.removeEventListener('click', handleToggleClick);
+      toggleBtn.addEventListener('click', handleToggleClick);
+    }
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      updateThemeUI(e.matches ? 'dark' : 'light');
+    }
+  });
+</script>

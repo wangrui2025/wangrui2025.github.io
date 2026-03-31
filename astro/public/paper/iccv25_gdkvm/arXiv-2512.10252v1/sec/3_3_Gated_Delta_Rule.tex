@@ -1,0 +1,32 @@
+\subsection{Gated Delta Rule}
+    \label{subsec:gated_delta_rule}
+\paragraph{Delta rule.}
+Pure linear attention superimposes all historical information with equal weight. When a sufficient number of tokens are superimposed, the proportion of information from each individual token becomes extremely small. Relying solely on a fixed-size state matrix $\mathbf{S}_{t}$ makes it impossible to accurately reconstruct even an arbitrary output $\boldsymbol{O}_{t}$, causing the state representations to become indistinct and blurred \cite{yang2024parallelizing,schlag_linear_2021,sun_retentive_2023}. 
+To mitigate this problem, the model should discard less important associations based on how newly arriving keys interact with existing contents.
+
+In video tasks, from the perspective of key-value retrieval, we first remove the old association for the current frame's key $\boldsymbol{K}_t$ from the previous time-step’s state $\mathbf{S}_{t-1}$, which is represented as $\boldsymbol{V}_{t}^{\text{old}}= \mathbf{S}_{t-1} \boldsymbol{K}_t$. A new value $\boldsymbol{V}_{t}^{\text{new}}$ is obtained by interpolating between the old value and the current frame’s target $\boldsymbol{V}_{t}$, replacing the old value in the state: 
+\begin{equation}
+	\begin{aligned}
+		\mathbf{S}_{t}  &= \mathbf{S}_{t-1} \\
+							&\quad  - \underbrace{ \left( \mathbf{S}_{t-1} \boldsymbol{K}_t \right) }_{\boldsymbol{V}_t^{\text{old}}} \boldsymbol{K}_t^{\intercal} 
+									+ \underbrace{ \left( \boldsymbol{\beta}_t \boldsymbol{V}_t + \left( \mathbf{I} - \boldsymbol{\beta}_t \right) \mathbf{S}_{t-1} \boldsymbol{K}_t \right)}_{\boldsymbol{V}_t^{\text{new}}} \boldsymbol{K}_t^{\intercal} \\
+						&= \mathbf{S}_{t-1} \left( \mathbf{I} - \boldsymbol{\beta}_t \boldsymbol{K}_t \boldsymbol{K}_t^{\intercal} \right)  + \boldsymbol{\beta}_t  \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal},
+	\end{aligned}
+	\label{eq:delta_rule}
+\end{equation}
+where $\boldsymbol{\beta}_t \in \mathbb{R}^{C_v \times C_k}$ is a data-dependent matrix, projected from the previous state $\mathbf{S}_{t-1}$, and it represents the soft writing strength. 
+When rapid cardiac structure motion or clear boundaries appear in the video, the model is assigned a larger $\boldsymbol{\beta}_t$ value to strengthen the learning of key information in the current frame. Conversely, when the image quality is poor or when images are filled with speckle noise, the model can use it to erase interfering information from the previous frame caused by probe movement or artifacts.
+%
+\paragraph{Data-dependent decay.}
+In echocardiography video segmentation, the cardiac structures undergo rapid and dramatic dynamic changes. As a result, the model's memory state can easily become saturated with a large volume of complex features, which in turn leads to difficulties in key-value retrieval \cite{yang2025gated,dao2024transformersssmsgeneralizedmodels}.
+We project a data-dependent decay matrix $\boldsymbol{\alpha}_t \in \mathbb{R}^{C_v \times C_k}$ from the previous state to control the attenuation of past memory: 
+\begin{equation}
+    \begin{aligned}
+		\mathbf{S}_{t} 	&= 	  \mathbf{S}_{t-1} \left( \boldsymbol{\alpha}_t \left( \mathbf{I} - \boldsymbol{\beta}_t \boldsymbol{K}_t \boldsymbol{K}_t^{\intercal} \right) \right) + \boldsymbol{\beta}_t  \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}. 
+    \end{aligned}
+    \label{eq:Gated_Delta_Rule}
+\end{equation}
+\Cref{fig:Gated_Delta_Rule,eq:Gated_Delta_Rule} show that the introduction of $\boldsymbol{\alpha}_t$ weakens the strong regularization constraint between $\mathbf{S}_t$ and $\mathbf{S}_{t-1}$. This allows the model to selectively forget certain past information and thus dynamically allocate memory resources to the most critical cardiac cycle features.
+The $\boldsymbol{\alpha}_t$ enables the model to free up sufficient memory space for new key frames or structures, including frames corresponding to abnormal cardiac rhythms, while preventing irrelevant or redundant historical features from occupying memory.
+
+For echocardiography video segmentation tasks with strong temporal correlations, GDR offers a better balance between memory retention and new information integration compared to simple additive updates. It preserves long-term important information while more rapidly adapting to drastic changes in heart shape, thereby improving the accuracy of spatiotemporal feature extraction. 

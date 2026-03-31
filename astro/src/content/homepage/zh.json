@@ -1,0 +1,43 @@
+{
+  "title": "王锐个人主页",
+  "description": "王锐的学术主页 | Rui Wang's Academic Homepage",
+  "status_badge": "🎓 申博中 · 2027 Fall 入学",
+  "background": {
+    "heading": "研究背景",
+    "intro": "我是深圳大学计算机与软件学院的在读硕士研究生，导师为吴惠思教授。",
+    "research": "我的研究方向包括医学影像分析、超声心动图视频分割、计算机视觉和深度学习。",
+    "items": [
+      "高效神经网络架构设计",
+      "非凸优化 / 几何深度学习",
+      "计算机视觉中的长程依赖建模"
+    ]
+  },
+  "target_areas": {
+    "heading": "目标方向",
+    "subheading": "（正在转向）",
+    "items": [
+      "大规模多模态预训练",
+      "视觉-语言模型推理效率优化",
+      "开放方向：通用计算机视觉、机器学习系统"
+    ]
+  },
+  "news_heading": "状态",
+  "news_items": [
+    "申请博士（2027fall）",
+    "准备 CVPR Poster"
+  ],
+  "section_publications": "📝 发表论文",
+  "section_education": "📖 教育经历",
+  "section_honors": "🎖 荣誉奖项",
+  "section_skills": "💻 编程技能与兴趣",
+  "skills_items": [
+    "编程技能：claude code、harness coding",
+    "兴趣：排球、棒垒球、书法"
+  ],
+  "section_project": "🚀 项目",
+  "project_title": "how2research",
+  "project_description": "一个面向研究生的开源科研指南，涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程以及实验环境配置（如 uv, VSCode）等实用经验。",
+  "project_url": "https://how2research-apple.notion.site/297e9f718aff81338d15e6347d75c807",
+  "honors_graduate_header": "硕士阶段",
+  "honors_undergraduate_header": "本科阶段"
+}

@@ -1,0 +1,111 @@
+name: Update Google Scholar Stats
+
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Fetch Google Scholar Data
+        env:
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        run: |
+          pip install requests beautifulsoup4
+          python << 'EOF'
+          import requests, json, os, re
+          from bs4 import BeautifulSoup
+
+          scholar_id = os.environ['GOOGLE_SCHOLAR_ID']
+          url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
+
+          headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Referer': 'https://scholar.google.com/'
+          }
+
+          try:
+            resp = requests.get(url, headers=headers, timeout=10)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, 'html.parser')
+
+            # 提取总引用数（第一个 gsc_rsb_std 通常是 All time citations）
+            cite_elem = soup.select_one('td.gsc_rsb_std')
+            citations = cite_elem.text.strip() if cite_elem else "0"
+
+            # 同时提取 h-index 等数据备用
+            all_metrics = [td.text.strip() for td in soup.select('td.gsc_rsb_std')]
+            h_index = all_metrics[2] if len(all_metrics) > 2 else "0"
+
+            # shields.io endpoint 格式
+            shields_data = {
+              "schemaVersion": 1,
+              "label": "citations",
+              "message": citations,
+              "color": "4285F4",  # Google Blue
+              "namedLogo": "Google Scholar"
+            }
+
+            with open('gs_data_shieldsio.json', 'w') as f:
+              json.dump(shields_data, f, indent=2)
+
+            print(f"Successfully fetched: citations={citations}")
+
+          except Exception as e:
+            print(f"Error fetching data: {e}")
+            # 创建默认文件避免后续步骤失败
+            with open('gs_data_shieldsio.json', 'w') as f:
+              json.dump({"schemaVersion": 1, "label": "citations", "message": "0", "color": "lightgrey"}, f)
+            exit(0)  # 不标记为失败，避免阻塞构建
+          EOF
+
+      - name: Build Tailwind CSS
+        run: |
+          # 1. 确保目录存在
+          mkdir -p assets/css
+          # 2. 下载最新的 Linux x64 独立执行文件
+          curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+          chmod +x tailwindcss-linux-x64
+          # 3. 生成补丁 CSS
+          echo "@tailwind utilities;" > tailwind-input.css
+          ./tailwindcss-linux-x64 -i tailwind-input.css -o assets/css/tailwind-custom.css --minify --content "./**/*.html,./**/*.md"
+          # 4. 清理临时文件
+          rm tailwind-input.css tailwindcss-linux-x64
+
+      - name: Commit and push
+        run: |
+          git add -A
+          git diff-index --quiet HEAD || (git config --local user.email "github-actions[bot]@users.noreply.github.com" && git config --local user.name "github-actions[bot]" && git commit -m "Auto-update: Scholar stats & CSS" && git push)
+
+      - name: Update Public Gist
+        run: |
+          # 1. 使用 jq 将生成的 JSON 内容安全地包装成 GitHub API 需要的格式
+          jq -n --arg content "$(cat gs_data_shieldsio.json)" '{files: {"gs_data_shieldsio.json": {content: $content}}}' > gist_payload.json
+
+          # 2. 调用 GitHub API 更新 Gist
+          curl -L \
+            -X PATCH \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GIST_PAT }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/gists/9a0ede1f5908df56fae05bd34def8c76 \
+            -d @gist_payload.json

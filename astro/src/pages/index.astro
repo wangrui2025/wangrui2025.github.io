@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import AuthorProfile from '../components/AuthorProfile.astro';
+import PaperCard from '../components/PaperCard.astro';
+import Education from '../components/Education.astro';
+import ScholarBadge from '../components/ScholarBadge.astro';
+import { getEntry } from 'astro:content';
+import { honors } from '../data';
+
+// Get homepage content from Content Collection (unified with /zh/)
+const homepage = await getEntry('homepage', 'en');
+const h = homepage.data;
+
+// Get scholar stats for citation badge
+const scholarStats = await getEntry('scholar', 'stats');
+const citedBy = scholarStats.data.citedby;
+---
+
+<BaseLayout
+  title={h.title}
+  description={h.description}
+  lang="en"
+>
+  <Sidebar slot="sidebar">
+    <AuthorProfile lang="en" />
+  </Sidebar>
+
+  <!-- About Me Section -->
+  <section id="about-me" class="mb-8">
+    <h1 class="text-3xl font-bold mb-2">About Me</h1>
+    <p class="status-badge mb-4">{h.status_badge}</p>
+    <p class="mb-4" set:html={h.background.intro} />
+    <p class="mb-4" set:html={h.background.research} />
+
+    <div class="mb-4">
+      <h2 class="text-xl font-semibold mb-2">{h.background.heading}</h2>
+      <ul class="list-disc list-inside">
+        {h.background.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <h2 class="text-xl font-semibold mb-2">
+        {h.target_areas.heading} {h.target_areas.subheading}
+      </h2>
+      <ul class="list-disc list-inside">
+        {h.target_areas.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- News Section -->
+  <section id="news" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.news_heading}
+    </h2>
+    <ul class="news-list">
+      {h.news_items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.section_publications}
+    </h2>
+    <PaperCard paperKey="osa" lang="en" />
+    <PaperCard paperKey="gdkvm" lang="en" />
+  </section>
+
+  <!-- Education Section -->
+  <section id="educations" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.section_education}
+    </h2>
+    <Education type="master" lang="en" />
+    <Education type="bachelor" lang="en" />
+  </section>
+
+  <!-- Honors Section -->
+  <section id="honors" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.section_honors}
+    </h2>
+
+    <h3 class="text-lg font-semibold mb-2">{h.honors_graduate_header}</h3>
+    <ul class="honors-list mb-4">
+      {honors.graduate.en.map((item) => (
+        <li><span class="period">{item.period}</span> {item.text}</li>
+      ))}
+    </ul>
+
+    <h3 class="text-lg font-semibold mb-2">{h.honors_undergraduate_header}</h3>
+    <ul class="honors-list">
+      {honors.undergraduate.en.map((item) => (
+        <li><span class="period">{item.period}</span> {item.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Project Section -->
+  <section id="project" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.section_project}
+    </h2>
+    <ul class="project-list">
+      <li>
+        <a href={h.project_url} class="font-semibold hover:underline" target="_blank">
+          {h.project_title}
+        </a>
+        <p class="text-gray-600 dark:text-gray-300 mt-1">{h.project_description}</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills & Interests Section -->
+  <section id="skills" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.section_skills}
+    </h2>
+    <ul class="skills-list">
+      {h.skills_items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Google Scholar Badge -->
+  <ScholarBadge citations={citedBy} />
+</BaseLayout>

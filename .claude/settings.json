@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sI https://mykcs.github.io/zh/)",
+      "Bash(curl -s https://mykcs.github.io/zh/)",
+      "Bash(curl -sI https://mykcs.github.io/assets/css/main.css)",
+      "Bash(mkdir -p /Users/myk/Repo/mykcs/assets/files)",
+      "Bash(printf '%PDF-1.4\\\\n1:*)",
+      "Edit(.claude)",
+      "Write(.claude)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(sudo gem:*)"
+    ]
+  }
+}

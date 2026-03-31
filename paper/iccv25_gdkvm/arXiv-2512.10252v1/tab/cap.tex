@@ -1,0 +1,24 @@
+\begin{table*}[!t]
+    \centering
+    \begin{tabular}{llllllllll}
+    \toprule
+    \multirow{2}{*}{Method} & \multirow{2}{*}{Venue} & \multicolumn{4}{c}{CAMUS} & \multicolumn{4}{c}{EchoNet-Dynamic} \\ 
+    \cmidrule(lr){3-6} \cmidrule(l){7-10} 
+     &  & mDice $\uparrow$ & mIoU $\uparrow$ & HD $\downarrow$ & ASD $\downarrow$ & mDice $\uparrow$ & mIoU $\uparrow$ & HD $\downarrow$ & ASD $\downarrow$ \\ 
+    \midrule
+    XMem++~\cite{bekuzarov2023xmemproductionlevelvideosegmentation} & ICCV'23 & 89.38 & 85.81 & 4.03 & 4.87 & 87.51 & 83.57 & 3.14 & 2.69 \\
+    Cutie~\cite{cheng2024puttingobjectvideoobject} & CVPR'24 & 91.09 & 87.97 & 3.89 & 3.74 & 88.96 & 85.63 & 2.89 & 2.24 \\
+    VideoMamba~\cite{li2024videomambastatespacemodel} & ECCV'24 & 91.96 & 89.04 & 3.48 & 3.31 & 90.22 & 87.03 & 2.79 & 2.05 \\
+    Vision LSTM~\cite{beck:24xlstm} & ICLR'25 & 92.14 & 89.11 & 3.79 & 3.39 & 90.24 & 89.14 & 2.65 & 1.69 \\ 
+    \midrule
+    PKEchoNet~\cite{wu2023super} & AAAI'23 & 93.49 & 90.95 & 3.42 & 2.93 & 92.60 & 89.89 & 2.53 & 1.48 \\
+    DSA~\cite{lin2024dynamic} & TMI'24 & 94.25 & 91.80 & 3.27 & 2.37 & 92.91 & 90.26 & 2.46 & 1.44 \\
+    MemSAM~\cite{deng2024memsam} & CVPR'24 & 93.63 & 90.97 & 3.47 & 2.60 & 92.71 & 89.90 & 2.56 & 1.51 \\
+    SimLVSeg~\cite{maani2024simlvseg} & UMB'24 & 92.54 & 89.71 & 3.65 & 3.12 & 91.91 & 89.08 & 2.65 & 1.65 \\ 
+    \midrule
+    \textbf{\mymodel} & - & \textbf{95.11} & \textbf{92.97} & \textbf{3.05} & \textbf{1.98} & \textbf{93.46} & \textbf{90.86} & \textbf{2.38} & \textbf{1.36} \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{Segmentation performance of \mymodel with state-of-the-art methods on CAMUS and EchoNet-Dynamic.}
+    \label{tab:cap}
+\end{table*}

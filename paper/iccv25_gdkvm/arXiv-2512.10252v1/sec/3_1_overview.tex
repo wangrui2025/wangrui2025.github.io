@@ -1,0 +1,11 @@
+\subsection{Overview}
+    \label{subsec:overview}
+We propose \textbf{\mymodel}, a linear key-value memory network designed to address the challenges of high computational cost and poor noise robustness in echocardiography video segmentation. 
+The architecture is illustrated in \cref{fig:met:gdkvm}.
+
+The key encoder uses the ResNet-50~\cite{he2015deepresiduallearningimage} backbone to extract raw features. 
+The KPFF module integrates the fused features obtained by combining key features, global key features, and pixel features to get the $\mathbf{Keys}$. 
+The value encoder encodes the original frame and the previous prediction mask into the $\mathbf{Values}$. We combine $\mathbf{Keys}$ and $\mathbf{Values}$ into a recurrent hidden $\mathbf{State}$.
+During the linear update of the state, we use 2 data-dependent matrices, $\boldsymbol{\alpha}_t$ and $\boldsymbol{\beta}_t$, to control the state decay, both of which are projected from the previous state $\mathbf{S}_{t-1}$. $\boldsymbol{\beta}_t$ balances how much new information is incorporated into the state, while $\boldsymbol{\alpha}_t$ adaptively forgets old memories.
+Using the $\mathbf{Query}$ frame, the readout is derived from the state $\mathbf{S}_t$, and the predicted segmentation result is obtained through the Decoder.
+To simulate a clinical scenario, the model does not have access to the ground truth when making a prediction. During each training step, the model first predicts the morphology of the first and last frames; only then is the loss calculated by comparing the prediction against the ground truth~\cite{deng2024memsam}.

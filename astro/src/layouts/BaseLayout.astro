@@ -1,0 +1,133 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Masthead from '../components/Masthead.astro';
+import Scripts from '../components/Scripts.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  title = 'Rui Wang - Homepage',
+  description = 'Personal academic homepage of Rui Wang',
+  lang = 'en',
+  ogTitle,
+  ogDescription,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2025.github.io');
+---
+
+<!doctype html>
+<html lang={lang} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:site_name" content={title} />
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh-CN' : 'en'} />
+
+    <meta name="description" content={description} />
+
+    <!-- Theme initialization - single source of truth via classList -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme')
+          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
+
+    <!-- Google Fonts: Source Serif 4 (body) + Inter (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Noto+Serif+SC:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- KaTeX for Math Rendering (load on-demand only) -->
+    <!-- To enable: add class="math" to elements containing $...$ or $$...$$ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <!-- Apple Touch Icon for iOS -->
+    <link rel="apple-touch-icon" href="/images/apple-icon-180x180.png" />
+
+    <!-- KaTeX JS - only render in elements with class="math" -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.querySelector('.math'), { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}] });"></script>
+
+    <!-- View Transitions for seamless language switching -->
+    <ViewTransitions fallback="none" />
+
+    <!-- Schema.org Person Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rui Wang",
+        "alternateName": "王锐",
+        "url": "https://wangrui2025.github.io",
+        "jobTitle": "M.S. Candidate",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Shenzhen University",
+          "url": "https://www.szu.edu.cn"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user=01amzbYAAAAJ",
+          "https://github.com/mykcs",
+          "https://orcid.org/0009-0001-0278-1985"
+        ],
+        "knowsAbout": [
+          "Medical Imaging Analysis",
+          "Echocardiography Video Segmentation",
+          "Computer Vision",
+          "Deep Learning"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <Masthead lang={lang} />
+
+    <div id="main" role="main">
+      <slot name="sidebar" />
+
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta
+          itemprop="headline"
+          content={title}
+        />
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text" id="main-content">
+            <slot />
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <Scripts />
+  </body>
+</html>

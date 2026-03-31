@@ -1,0 +1,93 @@
+{
+  "$ref": "#/definitions/papers",
+  "definitions": {
+    "papers": {
+      "type": "object",
+      "properties": {
+        "venue": {
+          "type": "string"
+        },
+        "venue_full": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "alt_zh": {
+          "type": "string"
+        },
+        "alt_en": {
+          "type": "string"
+        },
+        "arxiv": {
+          "type": "string",
+          "format": "uri"
+        },
+        "project": {
+          "type": "string",
+          "format": "uri"
+        },
+        "zh": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "authors": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "title",
+            "authors",
+            "tags"
+          ],
+          "additionalProperties": false
+        },
+        "en": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "authors": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "title",
+            "authors",
+            "tags"
+          ],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "venue",
+        "venue_full",
+        "image",
+        "alt_zh",
+        "alt_en",
+        "zh",
+        "en"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

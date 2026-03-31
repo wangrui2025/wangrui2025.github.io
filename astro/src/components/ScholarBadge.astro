@@ -1,0 +1,25 @@
+---
+export interface Props {
+  citations: number;
+}
+const { citations } = Astro.props;
+---
+
+<a
+  href="https://scholar.google.com/citations?user=01amzbYAAAAJ"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="scholar-badge inline-flex items-center overflow-hidden rounded-md border border-[var(--border-color)] font-sans text-[11px] leading-none transition-transform hover:scale-[1.02] active:scale-95"
+>
+  <!-- Left: Icon and text -->
+  <span class="flex items-center px-2 py-1.5 border-r border-[var(--border-color)]" style={`background-color: var(--scholar-badge-bg); color: var(--scholar-badge-text);`}>
+    <svg class="mr-1.5 h-3 w-3" viewBox="0 0 24 24" style={`fill: var(--scholar-icon);`}>
+      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+    </svg>
+    Google Scholar
+  </span>
+  <!-- Right: Citation count -->
+  <span class="px-2 py-1.5 font-bold" style={`background-color: var(--scholar-badge-count-bg); color: var(--scholar-badge-count);`}>
+    citations {citations}
+  </span>
+</a>

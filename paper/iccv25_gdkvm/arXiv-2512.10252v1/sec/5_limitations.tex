@@ -1,0 +1,6 @@
+\subsection{Discussions and Limitations}
+    \label{subsec:discussion}
+Our work has some limitations. 
+While the model performs well in ultrasound cardiac video segmentation, its full potential in other medical video object segmentation scenarios remains to be explored. This includes testing on fully-supervised and semi-supervised benchmarks, which would allow us to evaluate the model's performance in accurately modeling long-term temporal sequences. Future work could also focus on developing metrics that better assess the temporal consistency of sequences.
+\Cref{fig:fail} shows that the model sometimes over-relies on its own predictions during the final optimization stage. For some difficult samples, this hinders the precise delineation of contours. A potential direction is to develop more flexible boundary definitions or adaptive corrections to address these artifacts.
+Our current intermediate state matrix is not a standard square matrix, which restricts chunkwise parallelization and hardware acceleration. Future work could explore a square matrix design to enable more efficient parallel operators, reduce training time, and improve inference speed.

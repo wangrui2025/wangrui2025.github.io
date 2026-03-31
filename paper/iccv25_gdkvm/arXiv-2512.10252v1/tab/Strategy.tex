@@ -1,0 +1,16 @@
+\begin{table}[t]
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llll@{}}
+\hline
+\textbf{Strategy} & \textbf{Recurrence Equation} & \textbf{mDice} & \textbf{Inf. Time} \\ \hline
+Baseline & $\mathbf{S}_{t} = \mathbf{S}_{t-1} + \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}$ & 93.30 & 151.61 \\
+Sanity Check & $\mathbf{S}_{t} = \mathbf{S}_{t-1} - (\mathbf{S}_{t-1} \boldsymbol{K}_t)\boldsymbol{K}_t^{\intercal} + \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}$ & 74.68 & 155.09 \\ \hline
+w/o $\alpha_t$ & $\mathbf{S}_{t} = \mathbf{S}_{t-1} \left( \mathbf{I} - \beta_t \boldsymbol{K}_t \boldsymbol{K}_t^{\intercal} \right) + \beta_t \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}$ & 94.57 & 158.77 \\
+w/o $\beta_t$ & $\mathbf{S}_{t} = \alpha_t \mathbf{S}_{t-1} + \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}$ & 94.26 & 156.90 \\
+GDR & $\mathbf{S}_{t} = \mathbf{S}_{t-1} \left( \alpha_t \left( \mathbf{I} - \beta_t \boldsymbol{K}_t \boldsymbol{K}_t^{\intercal} \right) \right) + \beta_t \boldsymbol{V}_t \boldsymbol{K}_t^{\intercal}$ & 95.11 & 160.62 \\ \hline
+\end{tabular}%
+}
+    \caption{Effectiveness of different state update strategies. We report the segmentation performance (mDice) and inference time in milliseconds (ms).}
+    \label{tab:strategy}
+\end{table}
