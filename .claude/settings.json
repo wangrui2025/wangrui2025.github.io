@@ -6,11 +6,27 @@
       "Bash(curl -sI https://mykcs.github.io/assets/css/main.css)",
       "Bash(mkdir -p /Users/myk/Repo/mykcs/assets/files)",
       "Bash(printf '%PDF-1.4\\\\n1:*)",
+      "Bash(git:*)",
       "Edit(.claude)",
       "Write(.claude)",
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(sudo gem:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' | grep -q 'commit' && git push 2>&1 | head -5 || true",
+            "if": "Bash(git commit*)",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   }
 }
