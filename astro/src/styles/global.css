@@ -388,16 +388,9 @@ a:hover {
 /* ===== Paper Keyword Tags ===== */
 .paper-keywords {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  margin-bottom: 0.75em;
-}
-
-.paper-fields,
-.paper-techs {
-  display: flex;
   flex-wrap: wrap;
   gap: 0.4em;
+  margin-bottom: 0.75em;
 }
 
 .tag {

@@ -49,20 +49,12 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
       <strong>{paper.data.venue_full}</strong>
     </p>
     <div class="paper-keywords">
-      {localized.fields && (
-        <div class="paper-fields">
-          {localized.fields.map((field) => (
-            <span class="tag tag-field">{field}</span>
-          ))}
-        </div>
-      )}
-      {localized.technologies && (
-        <div class="paper-techs">
-          {localized.technologies.map((tech) => (
-            <span class="tag tag-tech">{tech}</span>
-          ))}
-        </div>
-      )}
+      {localized.fields?.map((field) => (
+        <span class="tag tag-field">{field}</span>
+      ))}
+      {localized.technologies?.map((tech) => (
+        <span class="tag tag-tech">{tech}</span>
+      ))}
     </div>
     <div class="paper-links">
       {paper.data.project && (
