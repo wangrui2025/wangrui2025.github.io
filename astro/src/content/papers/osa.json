@@ -9,11 +9,13 @@
   "zh": {
     "title": "OSA: 基于正交状态更新与解剖先验感知特征增强的超声心动图视频分割",
     "authors": "王锐，吴惠思*，秦璟",
-    "tags": ["医学影像", "正交状态更新", "解剖先验感知"]
+    "fields": ["计算机视觉", "医学影像", "视频分割"],
+    "technologies": ["正交状态更新", "解剖先验感知", "特征增强"]
   },
   "en": {
     "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
     "authors": "Rui Wang, Huisi Wu*, Jing Qin",
-    "tags": ["Medical Imaging", "Orthogonal State Update", "Anatomical Prior"]
+    "fields": ["Computer Vision", "Medical Imaging", "Video Segmentation"],
+    "technologies": ["Orthogonal State Update", "Anatomical Prior", "Feature Enhancement"]
   }
 }

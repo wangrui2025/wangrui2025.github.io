@@ -9,11 +9,13 @@
   "zh": {
     "title": "GDKVM: 基于门控增量规则的时空键值记忆超声心动图视频分割",
     "authors": "王锐，孙一木，郭警醒，吴惠思*，秦璟",
-    "tags": ["医学影像", "键值记忆", "门控增量规则"]
+    "fields": ["计算机视觉", "医学影像", "视频分割"],
+    "technologies": ["键值记忆", "门控增量规则", "线性注意力"]
   },
   "en": {
     "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
     "authors": "Rui Wang, Yimu Sun, Jingxing Guo, Huisi Wu*, Jing Qin",
-    "tags": ["Medical Imaging", "Key-Value Memory", "Gated Delta Rule"]
+    "fields": ["Computer Vision", "Medical Imaging", "Video Segmentation"],
+    "technologies": ["Key-Value Memory", "Gated Delta Rule", "Linear Attention"]
   }
 }

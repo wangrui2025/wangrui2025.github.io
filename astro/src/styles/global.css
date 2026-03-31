@@ -14,6 +14,11 @@
   --paper-border: #e8e8e8;
   --paper-bg: #fafafa;
   --paper-accent: #1e3a5f;
+  /* Keyword tag colors */
+  --tag-field-bg: #dbeafe;
+  --tag-field-text: #1e40af;
+  --tag-tech-bg: #f3f4f6;
+  --tag-tech-text: #374151;
   /* ScholarBadge colors */
   --scholar-badge-bg: #f6f6f6;
   --scholar-badge-count-bg: #ffffff;
@@ -34,6 +39,11 @@
   --paper-border: #3a3a3a;
   --paper-bg: #2a2a2a;
   --paper-accent: #4a7ab8;
+  /* Keyword tag colors */
+  --tag-field-bg: #1e3a5f;
+  --tag-field-text: #93c5fd;
+  --tag-tech-bg: #3a3a3a;
+  --tag-tech-text: #d1d5db;
   /* ScholarBadge colors */
   --scholar-badge-bg: #2d2d2d;
   --scholar-badge-count-bg: #1a1a1a;
@@ -373,6 +383,39 @@ a:hover {
   color: var(--text-color);
   opacity: 0.8;
   margin-bottom: 0.5em;
+}
+
+/* ===== Paper Keyword Tags ===== */
+.paper-keywords {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+.paper-fields,
+.paper-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.85em;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.tag-field {
+  background: var(--tag-field-bg);
+  color: var(--tag-field-text);
+}
+
+.tag-tech {
+  background: var(--tag-tech-bg);
+  color: var(--tag-tech-text);
 }
 
 .paper-links {
