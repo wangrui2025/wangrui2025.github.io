@@ -16,10 +16,10 @@ export const navigation: Navigation = {
   main: {
     en: [
       { title: 'About Me', url: '/#about-me' },
-      { title: 'News', url: '/#news' },
+      { title: 'Status', url: '/#status' },
       { title: 'Publications', url: '/#publications' },
-      { title: 'Honors and Awards', url: '/#honors' },
-      { title: 'Educations', url: '/#educations' },
+      { title: 'Education', url: '/#educations' },
+      { title: 'Honors', url: '/#honors' },
       { title: 'Project', url: '/#project' },
       { title: 'Skills', url: '/#skills' },
     ],
