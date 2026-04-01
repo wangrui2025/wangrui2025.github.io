@@ -69,19 +69,19 @@ css_change_description() {
     fi
 }
 
-# 分析 JSON 内容修改
+# 分析 JSON 内容修改（中文）
 json_change_description() {
     local file="$1"
     local diff=$(git diff --cached -- "$file" 2>/dev/null || echo "")
 
-    if echo "$diff" | grep -qE '"period"|"date"|"year"'; then
-        echo "update temporal data"
-    elif echo "$diff" | grep -qE '"title"|"description"|"text"'; then
-        echo "refine content wording"
-    elif echo "$diff" | grep -qE '"url"|"link"|"href"'; then
-        echo "update references and links"
+    if echo "$diff" | grep -qE '"period"|"date"|"year"|时间|日期'; then
+        echo "更新时间与日期数据"
+    elif echo "$diff" | grep -qE '"title"|"description"|"text"|标题|描述|内容'; then
+        echo "润色文案表述"
+    elif echo "$diff" | grep -qE '"url"|"link"|"href"|链接|引用'; then
+        echo "更新链接与引用"
     else
-        echo "adjust configuration values"
+        echo "调整配置数值"
     fi
 }
 
