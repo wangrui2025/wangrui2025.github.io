@@ -33,7 +33,7 @@ export const honors: Honors = {
   },
   undergraduate: {
     zh: [
-      { period: '2022.12', text: '河南大学 · 校级三好学生、校级奖学金' },
+      { period: '2022.12', text: '校级三好学生、校级奖学金' },
     ],
     en: [
       { period: '2022.12', text: 'Henan University · Merit Student and University-Level Scholarship' },
