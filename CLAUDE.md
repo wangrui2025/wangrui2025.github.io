@@ -69,7 +69,7 @@ After making any changes to files, automatically commit and push to the remote r
 
 1. Sync remote first: `git pull --rebase origin main` (remote has auto-update workflow, must sync first)
 2. Stage all changes: `git add <modified_files>`
-3. Create a commit with a descriptive message describing what was changed
+3. Create a commit with a **semantic message** describing what was changed (e.g., "Fade honor periods with opacity", not "Update .css")
 4. Push to the remote: `git push`
 
 If `git pull --rebase` fails with "fetch first", run `git fetch origin && git reset --hard origin/main` first.
