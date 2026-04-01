@@ -25,29 +25,31 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
-# 分析 README 修改内容生成具体描述
+# 分析 README 修改内容生成具体描述（中文）
 analyze_readme_changes() {
     local diff=$(git diff --cached README.md 2>/dev/null || echo "")
     local added=$(echo "$diff" | grep "^+" | grep -v "^+++" | wc -l)
     local deleted=$(echo "$diff" | grep "^-" | grep -v "^---" | wc -l)
 
-    # 检测具体修改类型
-    if echo "$diff" | grep -qE "(Architecture|Project Structure|Directory)"; then
-        echo "update project architecture documentation"
-    elif echo "$diff" | grep -qE "(Feature|功能|Features)"; then
-        echo "document new features"
-    elif echo "$diff" | grep -qE "(Installation|Install|Setup|Getting Started)"; then
-        echo "update setup instructions"
-    elif echo "$diff" | grep -qE "(Deploy|Build|Development)"; then
-        echo "update development workflow"
-    elif echo "$diff" | grep -qE "(TODO|FIXME|Roadmap)"; then
-        echo "update roadmap and todos"
+    # 检测具体修改类型（关键词匹配中文和英文）
+    if echo "$diff" | grep -qE "(自动化架构|architecture|三层|layer)"; then
+        echo "补充自动化架构说明"
+    elif echo "$diff" | grep -qE "(功能特性|功能|Features|feature)"; then
+        echo "更新功能特性说明"
+    elif echo "$diff" | grep -qE "(安装|install|setup|开始|quick start)"; then
+        echo "完善安装与起步指南"
+    elif echo "$diff" | grep -qE "(部署|deploy|构建|build|开发|dev)"; then
+        echo "更新部署与开发流程"
+    elif echo "$diff" | grep -qE "(TODO|FIXME|待办|roadmap|路线图)"; then
+        echo "更新路线图与待办事项"
+    elif echo "$diff" | grep -qE "(译为中文|translate|中文|i18n|international)"; then
+        echo "将文档译为中文"
     elif [ "$added" -gt 10 ] && [ "$deleted" -lt 5 ]; then
-        echo "add documentation sections"
+        echo "新增文档章节"
     elif [ "$deleted" -gt 10 ] && [ "$added" -lt 5 ]; then
-        echo "remove obsolete documentation"
+        echo "清理过时文档内容"
     else
-        echo "refine documentation details"
+        echo "润色文档细节"
     fi
 }
 
