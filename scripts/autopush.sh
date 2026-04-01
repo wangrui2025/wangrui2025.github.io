@@ -53,19 +53,19 @@ analyze_readme_changes() {
     fi
 }
 
-# 分析 CSS 修改内容
+# 分析 CSS 修改内容（中文）
 css_change_description() {
     local diff=$(git diff --cached -- "*.css" 2>/dev/null || echo "")
-    if echo "$diff" | grep -qE "(tabular-nums|font-variant|@font-face)"; then
-        echo "refine typography and numeric formatting"
-    elif echo "$diff" | grep -qE "(--[a-z-]+:|color|background|#)"; then
-        echo "adjust color palette and theming"
-    elif echo "$diff" | grep -qE "(margin|padding|gap|flex|grid|display)"; then
-        echo "improve layout spacing and structure"
-    elif echo "$diff" | grep -qE "(@media|max-width|min-width|responsive)"; then
-        echo "enhance responsive design"
+    if echo "$diff" | grep -qE "(tabular-nums|font-variant|@font-face|等宽数字)"; then
+        echo "优化排版与数字等宽显示"
+    elif echo "$diff" | grep -qE "(--[a-z-]+:|color|background|#|主题|theme)"; then
+        echo "调整配色方案与主题"
+    elif echo "$diff" | grep -qE "(margin|padding|gap|flex|grid|display|布局)"; then
+        echo "改进布局间距与结构"
+    elif echo "$diff" | grep -qE "(@media|max-width|min-width|responsive|响应式)"; then
+        echo "增强响应式设计"
     else
-        echo "polish visual styling"
+        echo "润色视觉样式"
     fi
 }
 
