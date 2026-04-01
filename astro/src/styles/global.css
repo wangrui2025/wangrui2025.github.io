@@ -3,16 +3,16 @@
 
 /* ===== CSS Variables for Theming ===== */
 :root {
-  /* Light theme (default) */
-  --bg-color: #ffffff;
-  --text-color: #323232;
-  --heading-color: #111111;
-  --link-color: #0a5eb0;
-  --border-color: #e8e8e8;
-  --masthead-bg: #ffffff;
-  --sidebar-bg: #ffffff;
-  --paper-border: #e8e8e8;
-  --paper-bg: #fafafa;
+  /* Light theme (warm off-white) */
+  --bg-color: #FAF8F5;
+  --text-color: #3d3d3d;
+  --heading-color: #1a1a1a;
+  --link-color: #2563eb;
+  --border-color: #E5E5E5;
+  --masthead-bg: #FAF8F5;
+  --sidebar-bg: #FAF8F5;
+  --paper-border: #E5E5E5;
+  --paper-bg: #FFFFFF;
   --paper-accent: #1e3a5f;
   /* Keyword tag colors */
   --tag-field-bg: #dbeafe;
@@ -23,22 +23,22 @@
   --scholar-badge-bg: #f6f6f6;
   --scholar-badge-count-bg: #ffffff;
   --scholar-icon: #4A90E2;
-  --scholar-badge-text: #323232;
+  --scholar-badge-text: #3d3d3d;
   --scholar-badge-count: #4A90E2;
 }
 
 .dark {
-  /* Dark theme */
-  --bg-color: #1a1a1a;
+  /* Dark theme (deep black) */
+  --bg-color: #121212;
   --text-color: #c9c9c9;
   --heading-color: #e8e8e8;
-  --link-color: #58a6ff;
-  --border-color: #3a3a3a;
-  --masthead-bg: #252525;
-  --sidebar-bg: #252525;
-  --paper-border: #3a3a3a;
-  --paper-bg: #2a2a2a;
-  --paper-accent: #4a7ab8;
+  --link-color: #60a5fa;
+  --border-color: #2A2A2A;
+  --masthead-bg: #121212;
+  --sidebar-bg: #121212;
+  --paper-border: #2A2A2A;
+  --paper-bg: #1E1E1E;
+  --paper-accent: #60a5fa;
   /* Keyword tag colors */
   --tag-field-bg: #1e3a5f;
   --tag-field-text: #93c5fd;
@@ -46,7 +46,7 @@
   --tag-tech-text: #d1d5db;
   /* ScholarBadge colors */
   --scholar-badge-bg: #2d2d2d;
-  --scholar-badge-count-bg: #1a1a1a;
+  --scholar-badge-count-bg: #121212;
   --scholar-icon: #4A90E2;
   --scholar-badge-text: #c9c9c9;
   --scholar-badge-count: #4A90E2;
@@ -58,21 +58,22 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Source Serif 4', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 li {
@@ -190,11 +191,19 @@ a:hover {
 .masthead__menu-item a {
   color: var(--text-color);
   font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .masthead__menu-item a:hover {
   color: var(--link-color);
+  background-color: rgba(0, 0, 0, 0.05);
   text-decoration: none;
+}
+
+.dark .masthead__menu-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .masthead__menu-home-item a {
@@ -273,8 +282,9 @@ a:hover {
   gap: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  background: var(--bg-secondary);
-  border-radius: 0.5rem;
+  background: var(--paper-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
 }
 
 .author-links-primary .author-link {
@@ -322,18 +332,18 @@ a:hover {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--paper-border);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 1.5em;
   margin-bottom: 2em;
   background: var(--paper-bg);
   border-left: 3px solid var(--paper-accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .paper-box:hover {
-  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.12);
-  transform: translateY(-2px) translateX(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .paper-box-image {
@@ -434,22 +444,26 @@ a:hover {
 
 /* ===== Section Styles ===== */
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 section h2 {
   font-size: 1.5rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--heading-color);
 }
 
 /* ===== Info Card (About section subsections) ===== */
 .info-card {
   background: var(--paper-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .info-card-title {

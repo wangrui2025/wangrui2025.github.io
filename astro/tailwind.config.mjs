@@ -35,7 +35,29 @@ export default {
         'masthead-bg': 'var(--masthead-bg)',
         'sidebar-bg': 'var(--sidebar-bg)',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '800px',
+            lineHeight: '1.7',
+            h1: {
+              fontFamily: '"Source Serif 4", Georgia, serif',
+              fontWeight: '600',
+            },
+            h2: {
+              fontFamily: '"Source Serif 4", Georgia, serif',
+              fontWeight: '600',
+            },
+            h3: {
+              fontFamily: '"Source Serif 4", Georgia, serif',
+              fontWeight: '600',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
