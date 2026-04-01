@@ -29,10 +29,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22  # 升级到最新的稳定版，消除警告
+          node-version: 22
           cache: 'npm'
-          # 注意看这里：加了那个关键的点
-          cache-dependency-path: astro/package-lock.json 
+          cache-dependency-path: astro/package-lock.json
+
+      - name: Restore Astro build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            astro/.astro
+            astro/dist
+          key: ${{ runner.os }}-astro-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-astro-build-
 
       - name: Install dependencies
         run: |

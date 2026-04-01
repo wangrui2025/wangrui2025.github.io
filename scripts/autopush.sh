@@ -7,6 +7,26 @@
 
 set -e
 
+# 网络操作重试函数
+retry_cmd() {
+    local max_attempts=3
+    local attempt=1
+    local delay=5
+
+    while [ $attempt -le $max_attempts ]; do
+        if "$@"; then
+            return 0
+        fi
+        echo "命令失败，${delay}秒后重试 (${attempt}/${max_attempts})..."
+        sleep $delay
+        attempt=$((attempt + 1))
+        delay=$((delay * 2))
+    done
+
+    echo "命令在 ${max_attempts} 次尝试后仍然失败: $*"
+    return 1
+}
+
 # 仅暂存模式 - 供AI分析改动
 if [ "$1" = "--stage" ]; then
     git add -A
@@ -28,8 +48,11 @@ fi
 
 # 仅推送模式
 if [ "$1" = "--push-only" ]; then
-    git pull --rebase
-    git push
+    retry_cmd git pull --rebase || {
+        echo "错误: git pull --rebase 失败，可能存在冲突。"
+        exit 1
+    }
+    retry_cmd git push
     echo "Pushed."
     exit 0
 fi
@@ -55,7 +78,10 @@ commit_msg="$1"
 
 git commit -m "$commit_msg"
 
-git pull --rebase
-git push
+retry_cmd git pull --rebase || {
+    echo "错误: git pull --rebase 失败，可能存在冲突。"
+    exit 1
+}
+retry_cmd git push
 
 echo "Done: $commit_msg"
