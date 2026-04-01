@@ -54,6 +54,13 @@ cd astro && npm run dev
 
 数据每日 UTC 08:00 自动获取。
 
+**引用数徽章**: 通过 Shields.io Endpoint 直接链接实现：
+```markdown
+![Citations](https://img.shields.io/endpoint?url=https://wangrui2025.github.io/gs_data_shieldsio.json)
+```
+
+部署后徽章可通过 `https://img.shields.io/endpoint?url=https://你的域名/gs_data_shieldsio.json` 访问。
+
 ## 项目结构
 
 ```
