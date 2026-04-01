@@ -67,8 +67,11 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 
 After making any changes to files, automatically commit and push to the remote repository:
 
-1. Stage all changes: `git add <modified_files>`
-2. Create a commit with a descriptive message describing what was changed
-3. Push to the remote: `git push`
+1. Sync remote first: `git pull --rebase origin main` (remote has auto-update workflow, must sync first)
+2. Stage all changes: `git add <modified_files>`
+3. Create a commit with a descriptive message describing what was changed
+4. Push to the remote: `git push`
+
+If `git pull --rebase` fails with "fetch first", run `git fetch origin && git reset --hard origin/main` first.
 
 This ensures all modifications are immediately saved to the repository without requiring manual git commands.
