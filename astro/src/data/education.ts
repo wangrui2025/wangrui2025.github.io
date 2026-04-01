@@ -13,8 +13,8 @@ export interface Education {
 export const education: Education = {
   master: {
     description: {
-      zh: '深圳大学 计算机与软件学院 · 计算机科学与技术专业 · 工学硕士',
-      en: 'College of Computer Science and Software Engineering, Shenzhen University · Computer Science and Technology · Master of Engineering',
+      zh: '深圳大学 计算机与软件学院 · 计算机科学与技术专业 · 24 级硕士 · 工学硕士',
+      en: 'College of Computer Science and Software Engineering, Shenzhen University · Computer Science and Technology · Class of 2024 · Master of Engineering',
     },
     period: {
       zh: '2024.09 - 2027.06 (预计毕业)',
