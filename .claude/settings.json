@@ -3,9 +3,9 @@
     "allow": [
       "Bash(git:*)",
       "Bash(npm run:*)",
-      "Bash(cd {workspace} && *)",
-      "Edit({workspace}/.claude/*)",
-      "Write({workspace}/.claude/*)",
+      "Bash(curl -s*github.io*)",
+      "Edit(.claude/*)",
+      "Write(.claude/*)",
       "Skill(update-config)",
       "Skill(update-config:*)"
     ]
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd {workspace} && bash scripts/autopush.sh 2>&1 | head -10 || true",
+            "command": "bash scripts/autopush.sh 2>&1 | head -10 || true",
             "timeout": 60
           }
         ]
