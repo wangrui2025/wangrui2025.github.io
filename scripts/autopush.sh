@@ -36,7 +36,7 @@ generate_commit_msg() {
         changes+=("Update education")
     fi
     if echo "$files" | grep -q "content.ts"; then
-        if echo "$files" | grep -q "en.json\|zh.json"; then
+        if echo "$files" | grep -q "en.json|zh.json"; then
             changes+=("Update homepage content")
         else
             changes+=("Update content")
@@ -45,10 +45,10 @@ generate_commit_msg() {
     if echo "$files" | grep -q "papers"; then
         changes+=("Update publications")
     fi
-    if echo "$files" | grep -q "global.css\|tailwind"; then
+    if echo "$files" | grep -q "global.css|tailwind"; then
         changes+=("Update styles")
     fi
-    if echo "$files" | grep -q "navigation\|sidebar\|masthead"; then
+    if echo "$files" | grep -q "navigation|sidebar|masthead"; then
         changes+=("Update navigation")
     fi
     if echo "$files" | grep -q "AuthorProfile"; then
@@ -64,12 +64,12 @@ generate_commit_msg() {
         changes+=("Update layout")
     fi
     if echo "$files" | grep -q "en.json"; then
-        if ! echo "$files" | grep -q "content.ts\|papers"; then
+        if ! echo "$files" | grep -q "content.ts|papers"; then
             changes+=("Update English content")
         fi
     fi
     if echo "$files" | grep -q "zh.json"; then
-        if ! echo "$files" | grep -q "content.ts\|papers"; then
+        if ! echo "$files" | grep -q "content.ts|papers"; then
             changes+=("Update Chinese content")
         fi
     fi
@@ -83,7 +83,7 @@ generate_commit_msg() {
     if [ ${#changes[@]} -eq 0 ]; then
         local first_file=$(echo "$files" | head -1)
         local basename=$(basename "$first_file" .json .ts .astro .css .mjs 2>/dev/null || echo "$first_file")
-        changes=("Update \$basename")
+        changes=("Update $basename")
     fi
 
     printf '%s\n' "${changes[@]}" | sort -u | paste -sd ',' -
