@@ -3,6 +3,8 @@
 > **用途**: 将本文件内容直接粘贴给 Claude、ChatGPT、Gemini 等 AI 助手，使其快速理解本项目技术栈和修改规范。
 > **更新日期**: 2026-04-01
 
+> **设计文档**: 视觉设计系统详见 [DESIGN.md](DESIGN.md)（色彩、字体、组件样式、设计决策）
+
 ---
 
 ## 一句话总结
@@ -15,7 +17,6 @@
 
 ```
 项目根目录/
-├── DESIGN.md                      # 视觉设计系统文档（权威）
 ├── astro/                          # 网站源码（全部在此目录下）
 │   ├── src/
 │   │   ├── components/             # Astro 组件
@@ -289,7 +290,7 @@ A: 检查 Tailwind `content` 配置是否包含你的文件路径
 | 荣誉奖项 | `astro/src/data/honors.ts` |
 | 导航栏 | `astro/src/data/navigation.ts` + `Masthead.astro` |
 | 页脚 | `astro/src/components/Scripts.astro` |
-| 主题颜色 | `DESIGN.md` (完整设计系统文档) |
+| 主题颜色 | `astro/src/styles/global.css` (CSS 变量) |
 | 部署配置 | `.github/workflows/deploy.yml` |
 | Scholar 同步 | `.github/workflows/update_google_scholar_stats.yml` |
 
