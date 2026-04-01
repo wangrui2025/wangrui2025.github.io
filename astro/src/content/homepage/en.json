@@ -4,7 +4,7 @@
   "status_badge": "🎓 Applying for PhD Programs · Fall 2027 Entry",
   "background": {
     "heading": "Background",
-    "intro": "I am a second-year master's student (expected graduation: June 2027) in the <a href=\"https://www.szu.edu.cn/\" target=\"_blank\" rel=\"noopener\">College of Computer Science and Software Engineering, Shenzhen University</a>, advised by <a href=\"https://csse.szu.edu.cn/staff/~hswu/\" target=\"_blank\" rel=\"noopener\">Prof. Huisi Wu</a>.",
+    "intro": "I am a second-year master's student (expected graduation: June 2027) in the College of Computer Science and Software Engineering, <a href=\"https://www.szu.edu.cn/\" target=\"_blank\" rel=\"noopener\">Shenzhen University</a>, advised by <a href=\"https://csse.szu.edu.cn/staff/~hswu/\" target=\"_blank\" rel=\"noopener\">Prof. Huisi Wu</a>.",
     "research": "My research focuses on echocardiography video segmentation, medical image, computer vision, and deep learning.",
     "items": [
       "Efficient NN Architectures",
