@@ -63,15 +63,38 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 - Education data in `astro/src/data/education.ts`
 - Honors data in `astro/src/data/honors.ts`
 
-## Auto-Commit and Push
+## Git Workflow
 
-After making any changes to files, automatically commit and push to the remote repository:
+**禁止** 直接调用 `git commit`。所有提交必须通过 AI 分析后执行。
 
-1. Sync remote first: `git pull --rebase origin main` (remote has auto-update workflow, must sync first)
-2. Stage all changes: `git add <modified_files>`
-3. Create a commit with a **semantic message** describing what was changed (e.g., "Fade honor periods with opacity", not "Update .css")
-4. Push to the remote: `git push`
+### 标准提交流程
 
-If `git pull --rebase` fails with "fetch first", run `git fetch origin && git reset --hard origin/main` first.
+1. **暂存并分析**：`./scripts/autopush.sh --stage`
+   - 暂存所有更改（排除 `.astro` 缓存）
+   - 输出改动统计和文件列表
 
-This ensures all modifications are immediately saved to the repository without requiring manual git commands.
+2. **深度分析**：`git diff --cached`
+   - 必须分析代码逻辑，理解"改了什么"和"为什么"
+   - **严禁** 只罗列文件名或扩展名
+
+3. **语义化提交**：`./scripts/autopush.sh "<message>"`
+   - 使用 `/push` 指令或手动调用脚本
+   - 提交信息必须符合 **Conventional Commits** 规范
+   - 必须体现高级工程师的语义总结能力
+
+### 提交信息质量标准
+
+| ❌ 错误示例 | ✅ 正确示例 |
+|------------|------------|
+| `.astro,.css,Update index.astro` | `refactor(style): implement tabular-nums for vertical date alignment` |
+| `同步改动` | `refactor(automation): simplify autopush for AI-driven commits` |
+| `更新文档` | `docs(readme): add automation architecture diagram and config reference` |
+| `fix bug` | `fix(nav): resolve mobile menu collapse on iOS Safari` |
+
+### 冲突处理
+
+如果 `git pull --rebase` 失败：
+```bash
+git fetch origin && git reset --hard origin/main
+# 然后重新应用你的改动
+```

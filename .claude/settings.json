@@ -4,6 +4,9 @@
       "Bash(git:*)",
       "Bash(npm run:*)",
       "Bash(curl -s*github.io*)",
+      "Bash(./scripts/autopush.sh *)",      // 允许直接执行
+      "Bash(bash scripts/autopush.sh *)",   // 允许通过 bash 明确执行
+      "Bash(scripts/autopush.sh *)",        // 允许相对路径执行
       "Edit(.claude/*)",
       "Write(.claude/*)",
       "Skill(update-config)",
