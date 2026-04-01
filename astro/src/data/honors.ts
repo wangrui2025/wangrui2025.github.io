@@ -33,10 +33,10 @@ export const honors: Honors = {
   },
   undergraduate: {
     zh: [
-      { period: '2020.09 - 2024.06', text: '校级三好学生、校级奖学金' },
+      { period: '2022.12', text: '校级三好学生、校级奖学金' },
     ],
     en: [
-      { period: '2020.09 - 2024.06', text: 'Merit Student and University-Level Scholarship, Henan University' },
+      { period: '2022.12', text: 'Merit Student and University-Level Scholarship, Henan University' },
     ],
   },
 };
