@@ -4,7 +4,7 @@
   "status_badge": "🎓 Applying for PhD Programs · Fall 2027 Entry",
   "background": {
     "heading": "Background",
-    "intro": "I am a M.S. Candidate in Computer Science at <strong>Shenzhen University</strong>, supervised by <a href=\"https://csse.szu.edu.cn/staff/~hswu/\" target=\"_blank\" rel=\"noopener\">Prof. Huisi Wu</a>.",
+    "intro": "I am a M.S. Candidate in Computer Science at <a href=\"https://www.szu.edu.cn/\" target=\"_blank\" rel=\"noopener\">Shenzhen University</a>, supervised by <a href=\"https://csse.szu.edu.cn/staff/~hswu/\" target=\"_blank\" rel=\"noopener\">Prof. Huisi Wu</a>.",
     "research": "My research focuses on echocardiography video segmentation, medical image analysis, computer vision, and deep learning.",
     "items": [
       "Efficient NN Architectures",
