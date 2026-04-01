@@ -3,7 +3,17 @@ name: Deploy Astro site to Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'gs_data_shieldsio.json'
+      - 'astro/.astro/**'
+      - 'assets/css/tailwind-custom.css'
+      - '.github/workflows/update_google_scholar_stats.yml'
+      - '.github/workflows/scholar_cron.yml'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
