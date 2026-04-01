@@ -27,44 +27,68 @@ fi
 # 根据修改的文件生成 commit message
 generate_commit_msg() {
     local files=$(git diff --cached --name-only | head -20)
-    local msg_parts=()
+    local changes=()
 
+    # 检查具体修改内容
     if echo "$files" | grep -q "honors"; then
-        msg_parts+=("Update honors")
-    fi
-    if echo "$files" | grep -q "content"; then
-        msg_parts+=("Update content")
+        changes+=("Update honors")
     fi
     if echo "$files" | grep -q "education"; then
-        msg_parts+=("Update education")
+        changes+=("Update education")
+    fi
+    if echo "$files" | grep -q "content.ts"; then
+        if echo "$files" | grep -q "en.json\|zh.json"; then
+            changes+=("Update homepage content")
+        else
+            changes+=("Update content")
+        fi
     fi
     if echo "$files" | grep -q "papers"; then
-        msg_parts+=("Update publications")
+        changes+=("Update publications")
     fi
     if echo "$files" | grep -q "global.css\|tailwind"; then
-        msg_parts+=("Update styles")
+        changes+=("Update styles")
     fi
     if echo "$files" | grep -q "navigation\|sidebar\|masthead"; then
-        msg_parts+=("Update navigation")
+        changes+=("Update navigation")
     fi
-    if echo "$files" | grep -q "AuthorProfile\|PaperCard\|ScholarBadge"; then
-        msg_parts+=("Update components")
+    if echo "$files" | grep -q "AuthorProfile"; then
+        changes+=("Update profile")
     fi
-    if echo "$files" | grep -q "en.json\|zh.json"; then
-        msg_parts+=("Update i18n")
+    if echo "$files" | grep -q "PaperCard"; then
+        changes+=("Update paper card")
     fi
-    if echo "$files" | grep -q "autopush\|settings.json"; then
-        msg_parts+=("Update config")
+    if echo "$files" | grep -q "ScholarBadge"; then
+        changes+=("Update scholar badge")
+    fi
+    if echo "$files" | grep -q "BaseLayout"; then
+        changes+=("Update layout")
+    fi
+    if echo "$files" | grep -q "en.json"; then
+        if ! echo "$files" | grep -q "content.ts\|papers"; then
+            changes+=("Update English content")
+        fi
+    fi
+    if echo "$files" | grep -q "zh.json"; then
+        if ! echo "$files" | grep -q "content.ts\|papers"; then
+            changes+=("Update Chinese content")
+        fi
+    fi
+    if echo "$files" | grep -q "autopush"; then
+        changes+=("Improve autopush script")
+    fi
+    if echo "$files" | grep -q "settings.json"; then
+        changes+=("Update settings")
     fi
 
-    if [ ${#msg_parts[@]} -eq 0 ]; then
+    if [ ${#changes[@]} -eq 0 ]; then
         local first_file=$(echo "$files" | head -1)
         local basename=$(basename "$first_file" .json .ts .astro .css .mjs 2>/dev/null || echo "$first_file")
-        msg_parts=("Update $basename")
+        changes=("Update $basename")
     fi
 
-    local IFS=';'
-    echo "${msg_parts[*]}"
+    # 去重并用逗号连接
+    printf '%s\n' "${changes[@]}" | sort -u | paste -sd ',' -
 }
 
 commit_msg=$(generate_commit_msg)
