@@ -1,9 +1,8 @@
-/* Global CSS - Astro Migration Step 2 */
-/* Essential styles from Jekyll Minimal Mistakes + custom components */
+/* Global CSS - Design System Variables */
+/* See DESIGN.md for complete design documentation */
 
-/* ===== CSS Variables for Theming ===== */
 :root {
-  /* Light theme (warm off-white) */
+  /* Light theme */
   --bg-color: #FAF8F5;
   --text-color: #3d3d3d;
   --heading-color: #1a1a1a;
@@ -28,7 +27,7 @@
 }
 
 .dark {
-  /* Dark theme (deep black) */
+  /* Dark theme */
   --bg-color: #121212;
   --text-color: #c9c9c9;
   --heading-color: #e8e8e8;
