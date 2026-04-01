@@ -44,7 +44,7 @@ cd astro && npm run dev
 
 ### 4. 部署
 
-推送到 GitHub — GitHub Pages 自动从 `astro/dist` 构建。
+推送到 GitHub — GitHub Actions 自动构建并部署到 GitHub Pages。
 
 ## Google Scholar 集成
 
