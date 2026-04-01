@@ -1,5 +1,7 @@
 # 学术主页
 
+> **给其他 AI 助手**: 如需了解本项目技术栈和修改规范，请阅读 [AI_CONTEXT.md](AI_CONTEXT.md)。
+
 基于 Astro 的学术个人主页，支持中英双语。
 
 **在线演示**: https://wangrui2025.github.io
