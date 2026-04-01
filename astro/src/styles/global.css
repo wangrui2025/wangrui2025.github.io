@@ -497,15 +497,21 @@ section h2 {
 .honors-list li {
   padding: 0.4rem 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 0.5rem;
 }
 
+.honors-list .honor-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .honors-list .period {
   font-weight: 600;
-  min-width: 100px;
   flex-shrink: 0;
   color: var(--text-color);
+  text-align: right;
 }
 
 /* ===== Project List ===== */
