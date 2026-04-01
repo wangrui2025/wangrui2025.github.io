@@ -115,7 +115,7 @@ export const content: Content = {
       zh: {
         title: 'how2research (研究生修炼指北)',
         description:
-          '一个面向研究生的开源科研指南，涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程以及实验环境配置（如 uv, VSCode）等实用经验。',
+          '一个面向研究生的开源科研指南，涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程以及实验环境配置（如 uv, VSCode）等实用经验。（本 notion 文档中，以\"miyuki11\"的身份维护创作）',
       },
       en: {
         title: 'how2research (研究生修炼指北)',
