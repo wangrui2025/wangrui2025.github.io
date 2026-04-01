@@ -61,14 +61,14 @@ cd astro && npm run dev
 ```
 astro/
 ├── src/
-│   ├── components/     # UI components
-│   ├── content/         # Papers & scholar data
-│   ├── data/           # Content config
-│   ├── layouts/        # Page templates
-│   ├── pages/          # Route pages
-│   └── styles/         # Global CSS
-├── public/             # Static assets
-└── astro.config.mjs    # Astro config
+│   ├── components/     # 界面组件
+│   ├── content/        # 论文与学者数据
+│   ├── data/           # 内容配置
+│   ├── layouts/        # 页面模板
+│   ├── pages/          # 路由页面
+│   └── styles/         # 全局样式
+├── public/             # 静态资源
+└── astro.config.mjs    # Astro 配置
 ```
 
 ## 项目自动化架构
