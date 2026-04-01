@@ -137,9 +137,9 @@ astro/
 
 **修改提交信息行为**：编辑 `scripts/autopush.sh` → `generate_commit_msg()` 函数。
 
-## Acknowledgments
+## 致谢
 
 - Font Awesome (SIL OFL 1.1 / MIT)
-- Inspired by [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes) (MIT)
-- Inspired by [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io) (MIT)
+- 灵感来源 [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes) (MIT)
+- 灵感来源 [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io) (MIT)
 
