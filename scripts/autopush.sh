@@ -29,7 +29,6 @@ generate_commit_msg() {
     local files=$(git diff --cached --name-only | head -20)
     local changes=()
 
-    # 检查具体修改内容
     if echo "$files" | grep -q "honors"; then
         changes+=("Update honors")
     fi
@@ -84,17 +83,15 @@ generate_commit_msg() {
     if [ ${#changes[@]} -eq 0 ]; then
         local first_file=$(echo "$files" | head -1)
         local basename=$(basename "$first_file" .json .ts .astro .css .mjs 2>/dev/null || echo "$first_file")
-        changes=("Update $basename")
+        changes=("Update \$basename")
     fi
 
-    # 去重并用逗号连接
     printf '%s\n' "${changes[@]}" | sort -u | paste -sd ',' -
 }
 
 commit_msg=$(generate_commit_msg)
 git commit -m "$commit_msg"
 
-# 处理远程分叉
 git pull --rebase 2>/dev/null || {
     echo "Pull rebase failed, continuing..."
 }
