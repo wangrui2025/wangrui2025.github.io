@@ -511,6 +511,7 @@ section h2 {
   font-weight: 600;
   flex-shrink: 0;
   color: var(--text-color);
+  opacity: 0.5;
   text-align: right;
 }
 
