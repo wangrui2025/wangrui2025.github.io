@@ -71,71 +71,71 @@ astro/
 └── astro.config.mjs    # Astro config
 ```
 
-## Project Automation Architecture
+## 项目自动化架构
 
-This project uses a **three-layer automation system**. Understand this before modifying any configuration:
+本项目采用**三层自动化系统**。修改任何配置前，请先理解这个架构：
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 1: Claude Code Hooks (Trigger)                           │
-│  File: .claude/settings.json                                    │
-│  ├─ PostToolUse hook: watches Edit/Write/Bash                   │
-│  └─ Action: calls scripts/autopush.sh                           │
+│  第一层：Claude Code 钩子（触发器）                              │
+│  文件：.claude/settings.json                                    │
+│  ├─ PostToolUse 钩子：监听 Edit/Write/Bash 操作                 │
+│  └─ 动作：调用 scripts/autopush.sh                              │
 │                                                                  │
-│  WHEN TO MODIFY: Change trigger conditions or timeout           │
+│  何时修改：想改变自动提交的触发条件或超时时间                     │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 2: Autopush Script (Logic)                               │
-│  File: scripts/autopush.sh                                      │
-│  ├─ git add -A (excludes .astro cache)                          │
-│  ├─ Generate Conventional Commit message                        │
+│  第二层：Autopush 脚本（逻辑层）                                 │
+│  文件：scripts/autopush.sh                                      │
+│  ├─ git add -A（排除 .astro 缓存）                              │
+│  ├─ 生成 Conventional Commit 提交信息                           │
 │  ├─ git commit                                                  │
 │  ├─ git pull --rebase                                           │
 │  └─ git push                                                    │
 │                                                                  │
-│  WHEN TO MODIFY: Change commit message format or git workflow   │
+│  何时修改：想改变提交信息格式或 git 操作流程                      │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 3: GitHub Actions (CI/CD)                                │
-│  Files: .github/workflows/*.yml                                 │
-│  ├─ deploy.yml: Build & deploy to GitHub Pages                  │
-│  └─ update_google_scholar_stats.yml: Cron job for citations     │
+│  第三层：GitHub Actions（CI/CD）                                 │
+│  文件：.github/workflows/*.yml                                  │
+│  ├─ deploy.yml：构建并部署到 GitHub Pages                       │
+│  └─ update_google_scholar_stats.yml：定时更新引用数             │
 │                                                                  │
-│  WHEN TO MODIFY: Change deployment or scheduled tasks           │
+│  何时修改：想改变部署方式或定时任务                               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Configuration Files Reference
+### 配置文件速查表
 
-| File | Purpose | Modify When |
-|------|---------|-------------|
-| `.claude/settings.json` | Hook triggers + project permissions | You want to change WHEN autopush runs (e.g., exclude certain tools) |
-| `.claude/settings.local.json` | Local permissions (git, npm, etc.) | You need to allow new Bash commands or tools |
-| `scripts/autopush.sh` | Commit message generation + git workflow | You want to change HOW commits are formatted or the git sequence |
-| `.github/workflows/deploy.yml` | Build & deploy pipeline | You need to change build steps or deployment target |
-| `.github/workflows/update_google_scholar_stats.yml` | Scheduled citation update | You need to change cron schedule or scholar data fetching |
-| `CLAUDE.md` | Project context for Claude | You want to update project overview or common commands |
+| 文件 | 作用 | 何时修改 |
+|------|------|----------|
+| `.claude/settings.json` | 钩子触发器 + 项目权限 | 想改变自动提交何时触发（如排除某些工具） |
+| `.claude/settings.local.json` | 本地权限（git、npm 等） | 需要允许新的 Bash 命令或工具 |
+| `scripts/autopush.sh` | 提交信息生成 + git 工作流 | 想改变提交信息格式或 git 操作顺序 |
+| `.github/workflows/deploy.yml` | 构建与部署管道 | 需要改变构建步骤或部署目标 |
+| `.github/workflows/update_google_scholar_stats.yml` | 定时引用数更新 | 需要改变定时计划或学者数据获取方式 |
+| `CLAUDE.md` | Claude 的项目上下文 | 想更新项目概述或常用命令 |
 
-### Commit Message Automation
+### 提交信息自动化
 
-Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/):
+提交信息遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范：
 ```
 <type>(<scope>): <description>
 ```
 
-Types are automatically determined by changed files:
-- `style(global):` - CSS/styling changes
-- `content(honors|education|publications):` - Data updates
-- `feat(navigation|profile|layout):` - Component features
-- `ci(automation|workflows):` - Script/CI changes
-- `docs(readme):` - Documentation
-- `chore(ext):` - Other files
+类型根据修改的文件自动确定：
+- `style(global):` - CSS/样式变更
+- `content(honors|education|publications):` - 数据更新
+- `feat(navigation|profile|layout):` - 组件功能
+- `ci(automation|workflows):` - 脚本/CI 变更
+- `docs(readme):` - 文档
+- `chore(ext):` - 其他文件
 
-**To change commit message behavior**: Edit `scripts/autopush.sh` → `generate_commit_msg()` function.
+**修改提交信息行为**：编辑 `scripts/autopush.sh` → `generate_commit_msg()` 函数。
 
 ## Acknowledgments
 
