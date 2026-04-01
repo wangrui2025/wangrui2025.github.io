@@ -10,7 +10,6 @@ set -e
 # 仅暂存模式 - 供AI分析改动
 if [ "$1" = "--stage" ]; then
     git add -A
-    git reset .astro .astro/** 2>/dev/null || true
 
     if git diff --cached --quiet; then
         echo "【无改动】"
@@ -18,7 +17,7 @@ if [ "$1" = "--stage" ]; then
     fi
 
     echo "【改动文件】"
-    git diff --cached --name-only | head -10
+    git diff --cached --name-only
 
     echo ""
     echo "【改动统计】"
@@ -29,18 +28,14 @@ fi
 
 # 仅推送模式
 if [ "$1" = "--push-only" ]; then
-    git pull --rebase 2>/dev/null || true
-    if ! git push; then
-        echo "Push failed, trying force push..."
-        git push --force-with-lease
-    fi
+    git pull --rebase
+    git push
     echo "Pushed."
     exit 0
 fi
 
-# 暂存所有修改（排除 .astro 缓存）
+# 暂存所有修改
 git add -A
-git reset .astro .astro/** 2>/dev/null || true
 
 # 检查是否有更改
 if git diff --cached --quiet; then
@@ -60,13 +55,7 @@ commit_msg="$1"
 
 git commit -m "$commit_msg"
 
-git pull --rebase 2>/dev/null || {
-    echo "Pull rebase failed, continuing..."
-}
-
-if ! git push; then
-    echo "Push failed (remote diverged), force pushing..."
-    git push --force-with-lease
-fi
+git pull --rebase
+git push
 
 echo "Done: $commit_msg"

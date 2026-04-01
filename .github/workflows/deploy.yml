@@ -8,7 +8,6 @@ on:
       - 'astro/.astro/**'
       - 'assets/css/tailwind-custom.css'
       - '.github/workflows/update_google_scholar_stats.yml'
-      - '.github/workflows/scholar_cron.yml'
   workflow_dispatch:
 
 concurrency:
@@ -38,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd astro
-          npm install
+          npm ci
 
       - name: Build Astro
         run: |
