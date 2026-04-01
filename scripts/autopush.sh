@@ -25,6 +25,64 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
+# 分析 README 修改内容生成具体描述
+analyze_readme_changes() {
+    local diff=$(git diff --cached README.md 2>/dev/null || echo "")
+    local added=$(echo "$diff" | grep "^+" | grep -v "^+++" | wc -l)
+    local deleted=$(echo "$diff" | grep "^-" | grep -v "^---" | wc -l)
+
+    # 检测具体修改类型
+    if echo "$diff" | grep -qE "(Architecture|Project Structure|Directory)"; then
+        echo "update project architecture documentation"
+    elif echo "$diff" | grep -qE "(Feature|功能|Features)"; then
+        echo "document new features"
+    elif echo "$diff" | grep -qE "(Installation|Install|Setup|Getting Started)"; then
+        echo "update setup instructions"
+    elif echo "$diff" | grep -qE "(Deploy|Build|Development)"; then
+        echo "update development workflow"
+    elif echo "$diff" | grep -qE "(TODO|FIXME|Roadmap)"; then
+        echo "update roadmap and todos"
+    elif [ "$added" -gt 10 ] && [ "$deleted" -lt 5 ]; then
+        echo "add documentation sections"
+    elif [ "$deleted" -gt 10 ] && [ "$added" -lt 5 ]; then
+        echo "remove obsolete documentation"
+    else
+        echo "refine documentation details"
+    fi
+}
+
+# 分析 CSS 修改内容
+css_change_description() {
+    local diff=$(git diff --cached -- "*.css" 2>/dev/null || echo "")
+    if echo "$diff" | grep -qE "(tabular-nums|font-variant|@font-face)"; then
+        echo "refine typography and numeric formatting"
+    elif echo "$diff" | grep -qE "(--[a-z-]+:|color|background|#)"; then
+        echo "adjust color palette and theming"
+    elif echo "$diff" | grep -qE "(margin|padding|gap|flex|grid|display)"; then
+        echo "improve layout spacing and structure"
+    elif echo "$diff" | grep -qE "(@media|max-width|min-width|responsive)"; then
+        echo "enhance responsive design"
+    else
+        echo "polish visual styling"
+    fi
+}
+
+# 分析 JSON 内容修改
+json_change_description() {
+    local file="$1"
+    local diff=$(git diff --cached -- "$file" 2>/dev/null || echo "")
+
+    if echo "$diff" | grep -qE '"period"|"date"|"year"'; then
+        echo "update temporal data"
+    elif echo "$diff" | grep -qE '"title"|"description"|"text"'; then
+        echo "refine content wording"
+    elif echo "$diff" | grep -qE '"url"|"link"|"href"'; then
+        echo "update references and links"
+    else
+        echo "adjust configuration values"
+    fi
+}
+
 # 根据修改的文件生成 Conventional Commit message
 generate_commit_msg() {
     local files=$(git diff --cached --name-only | head -20)
@@ -37,55 +95,65 @@ generate_commit_msg() {
     if echo "$files" | grep -qE "\.css$|\.scss$|tailwind"; then
         type="style"
         scope="global"
-        description="update styles"
+        description=$(css_change_description)
     elif echo "$files" | grep -qE "(honors|education|content\.ts|papers|en\.json|zh\.json)"; then
         type="content"
         if echo "$files" | grep -q "honors"; then
             scope="honors"
-            description="update honors data"
+            description="update honors and awards section"
         elif echo "$files" | grep -q "education"; then
             scope="education"
-            description="update education data"
+            description="update academic background"
         elif echo "$files" | grep -q "papers"; then
             scope="publications"
-            description="update publications"
+            local paper_file=$(echo "$files" | grep "papers" | head -1)
+            description=$(json_change_description "$paper_file")
+            description="add publication metadata"
         elif echo "$files" | grep -q "homepage"; then
             scope="homepage"
-            description="update homepage content"
+            description="refresh homepage copy"
         else
             scope="content"
-            description="update content"
+            description="update site content"
         fi
     elif echo "$files" | grep -qE "(navigation|sidebar|masthead|AuthorProfile|PaperCard|ScholarBadge|BaseLayout)"; then
         type="feat"
         if echo "$files" | grep -q "navigation|sidebar|masthead"; then
             scope="navigation"
-            description="update navigation components"
+            description="enhance site navigation"
         elif echo "$files" | grep -q "AuthorProfile"; then
             scope="profile"
-            description="update author profile"
+            description="update author profile card"
         elif echo "$files" | grep -q "PaperCard"; then
             scope="publications"
-            description="update paper card component"
+            description="improve publication display"
         elif echo "$files" | grep -q "ScholarBadge"; then
             scope="scholar"
-            description="update scholar badge"
+            description="update citation metrics badge"
         elif echo "$files" | grep -q "BaseLayout"; then
             scope="layout"
-            description="update base layout"
+            description="refine page layout structure"
         fi
     elif echo "$files" | grep -qE "(autopush\.sh|\.github/workflows|\.claude)"; then
         type="ci"
         if echo "$files" | grep -q "autopush"; then
             scope="automation"
-            description="improve autopush script"
+            description="enhance commit automation logic"
         elif echo "$files" | grep -q "\.github/workflows"; then
             scope="workflows"
-            description="update CI workflows"
+            description="adjust CI/CD pipeline"
         else
             scope="config"
-            description="update configuration"
+            description="update tool configuration"
         fi
+    elif echo "$files" | grep -q "README"; then
+        type="docs"
+        scope="readme"
+        description=$(analyze_readme_changes)
+    elif echo "$files" | grep -qE "\.md$"; then
+        type="docs"
+        scope="docs"
+        description="update documentation"
     else
         # 默认处理
         type="chore"
@@ -101,7 +169,7 @@ generate_commit_msg() {
     if [ "$unique_files" -gt 3 ]; then
         scope="site"
         if [ -z "$description" ]; then
-            description="update multiple components"
+            description="synchronize multiple components"
         fi
     fi
 
