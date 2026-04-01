@@ -11,5 +11,8 @@ const edu = education[type];
 ---
 
 <div class="education-entry mb-6 pl-4 border-l-[3px] border-paper-accent">
-  <p class="text-primary">{edu.description[lang]}</p>
+  <p class="text-primary flex flex-wrap gap-1">
+    <span class="flex-1">{edu.description[lang]}</span>
+    <span class="period whitespace-nowrap">{edu.period[lang]}</span>
+  </p>
 </div>
