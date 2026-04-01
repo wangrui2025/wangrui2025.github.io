@@ -85,7 +85,7 @@ json_change_description() {
     fi
 }
 
-# 根据修改的文件生成 Conventional Commit message
+# 根据修改的文件生成 Conventional Commit message（中文描述）
 generate_commit_msg() {
     local files=$(git diff --cached --name-only | head -20)
     local type="chore"
@@ -102,51 +102,51 @@ generate_commit_msg() {
         type="content"
         if echo "$files" | grep -q "honors"; then
             scope="honors"
-            description="update honors and awards section"
+            description="更新荣誉奖项信息"
         elif echo "$files" | grep -q "education"; then
             scope="education"
-            description="update academic background"
+            description="更新教育背景"
         elif echo "$files" | grep -q "papers"; then
             scope="publications"
             local paper_file=$(echo "$files" | grep "papers" | head -1)
             description=$(json_change_description "$paper_file")
-            description="add publication metadata"
+            description="添加论文元数据"
         elif echo "$files" | grep -q "homepage"; then
             scope="homepage"
-            description="refresh homepage copy"
+            description="刷新首页文案"
         else
             scope="content"
-            description="update site content"
+            description="更新站点内容"
         fi
     elif echo "$files" | grep -qE "(navigation|sidebar|masthead|AuthorProfile|PaperCard|ScholarBadge|BaseLayout)"; then
         type="feat"
         if echo "$files" | grep -q "navigation|sidebar|masthead"; then
             scope="navigation"
-            description="enhance site navigation"
+            description="增强站点导航"
         elif echo "$files" | grep -q "AuthorProfile"; then
             scope="profile"
-            description="update author profile card"
+            description="更新作者资料卡"
         elif echo "$files" | grep -q "PaperCard"; then
             scope="publications"
-            description="improve publication display"
+            description="改进论文展示"
         elif echo "$files" | grep -q "ScholarBadge"; then
             scope="scholar"
-            description="update citation metrics badge"
+            description="更新引用数徽章"
         elif echo "$files" | grep -q "BaseLayout"; then
             scope="layout"
-            description="refine page layout structure"
+            description="优化页面布局结构"
         fi
     elif echo "$files" | grep -qE "(autopush\.sh|\.github/workflows|\.claude)"; then
         type="ci"
         if echo "$files" | grep -q "autopush"; then
             scope="automation"
-            description="enhance commit automation logic"
+            description="增强提交自动化逻辑"
         elif echo "$files" | grep -q "\.github/workflows"; then
             scope="workflows"
-            description="adjust CI/CD pipeline"
+            description="调整 CI/CD 流程"
         else
             scope="config"
-            description="update tool configuration"
+            description="更新工具配置"
         fi
     elif echo "$files" | grep -q "README"; then
         type="docs"
@@ -155,7 +155,7 @@ generate_commit_msg() {
     elif echo "$files" | grep -qE "\.md$"; then
         type="docs"
         scope="docs"
-        description="update documentation"
+        description="更新文档"
     else
         # 默认处理
         type="chore"
@@ -163,7 +163,7 @@ generate_commit_msg() {
         local ext="${first_file##*.}"
         local basename=$(basename "$first_file" ".$ext" 2>/dev/null || echo "$first_file")
         scope="$ext"
-        description="update $basename"
+        description="更新 $basename"
     fi
 
     # 如果有多个不同的 scope，使用通用 scope
@@ -171,7 +171,7 @@ generate_commit_msg() {
     if [ "$unique_files" -gt 3 ]; then
         scope="site"
         if [ -z "$description" ]; then
-            description="synchronize multiple components"
+            description="同步多个组件"
         fi
     fi
 

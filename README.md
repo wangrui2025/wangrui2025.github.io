@@ -4,8 +4,6 @@
 
 **在线演示**: https://wangrui2025.github.io
 
-> 中文说明见 [README-zh.md](README-zh.md)。
-
 ## 功能特性
 
 - **Astro 框架** — 快速静态站点生成，针对 GitHub Pages 优化
@@ -136,10 +134,3 @@ astro/
 - `chore(ext):` - 其他文件
 
 **修改提交信息行为**：编辑 `scripts/autopush.sh` → `generate_commit_msg()` 函数。
-
-## 致谢
-
-- Font Awesome (SIL OFL 1.1 / MIT)
-- 灵感来源 [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes) (MIT)
-- 灵感来源 [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io) (MIT)
-
