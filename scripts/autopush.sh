@@ -14,8 +14,12 @@ if [ "$1" = "--push-only" ]; then
     exit 0
 fi
 
-# 检查是否有更改（排除 .astro 缓存目录）
-if [ -z "$(git status --porcelain | grep -v ".astro/")" ]; then
+# 暂存所有修改（排除 .astro 缓存）
+git add -A
+git reset .astro .astro/** 2>/dev/null || true
+
+# 检查是否有更改
+if git diff --cached --quiet; then
     echo "No changes to commit"
     exit 0
 fi
@@ -63,24 +67,12 @@ generate_commit_msg() {
     echo "${msg_parts[*]}"
 }
 
-# 生成 commit message
 commit_msg=$(generate_commit_msg)
-
-# 执行 git add（排除 .astro 缓存）
-git add -A
-git reset .astro .astro/** 2>/dev/null || true
-
-# 如果有要提交的内容则 commit
-if git diff --cached --quiet; then
-    echo "No changes to commit"
-    exit 0
-fi
-
 git commit -m "$commit_msg"
 
-# 处理远程分叉：pull --rebase 然后 push
+# 处理远程分叉
 git pull --rebase 2>/dev/null || {
-    echo "Pull rebase failed, continuing with push..."
+    echo "Pull rebase failed, continuing..."
 }
 
 if ! git push; then
