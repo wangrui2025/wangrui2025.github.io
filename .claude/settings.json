@@ -1,17 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl -sI https://mykcs.github.io/zh/)",
-      "Bash(curl -s https://mykcs.github.io/zh/)",
-      "Bash(curl -sI https://mykcs.github.io/assets/css/main.css)",
-      "Bash(mkdir -p /Users/myk/Repo/mykcs/assets/files)",
-      "Bash(printf '%PDF-1.4\\\\n1:*)",
       "Bash(git:*)",
-      "Edit(.claude)",
-      "Write(.claude)",
+      "Bash(npm run:*)",
+      "Bash(cd {workspace} && *)",
+      "Edit({workspace}/.claude/*)",
+      "Write({workspace}/.claude/*)",
       "Skill(update-config)",
-      "Skill(update-config:*)",
-      "Bash(sudo gem:*)"
+      "Skill(update-config:*)"
     ]
   },
   "hooks": {
@@ -21,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /Users/myk/Repo/wangrui2025.github.io && bash scripts/autopush.sh 2>&1 | head -10 || true",
+            "command": "cd {workspace} && bash scripts/autopush.sh 2>&1 | head -10 || true",
             "timeout": 60
           }
         ]
