@@ -1,62 +1,62 @@
-# Academic Homepage
+# 学术主页
 
-An Astro-based academic personal homepage with bilingual support (English/Chinese).
+基于 Astro 的学术个人主页，支持中英双语。
 
-**Live Demo**: https://wangrui2025.github.io
+**在线演示**: https://wangrui2025.github.io
 
-> 中文说明见 [README-zh.md](README-zh.md).
+> 中文说明见 [README-zh.md](README-zh.md)。
 
-## Features
+## 功能特性
 
-- **Astro Framework** — Fast static site generation, optimized for GitHub Pages
-- **Bilingual** — English (`/`) and Chinese (`/zh/`) versions via URL routing
-- **Google Scholar Integration** — Citation stats auto-updated daily via GitHub Actions
-- **Responsive Design** — Mobile-first with dark mode support
-- **Academic Tools** — KaTeX math rendering, Prism code highlighting
-- **SEO Ready** — Schema.org Person structured data, Open Graph tags
+- **Astro 框架** — 快速静态站点生成，针对 GitHub Pages 优化
+- **双语支持** — 通过 URL 路由实现英文 (`/`) 和中文 (`/zh/`) 版本
+- **Google Scholar 集成** — 通过 GitHub Actions 每日自动更新引用数据
+- **响应式设计** — 移动优先，支持深色模式
+- **学术工具** — KaTeX 数学渲染、Prism 代码高亮
+- **SEO 就绪** — Schema.org Person 结构化数据、Open Graph 标签
 
-## Quick Start
+## 快速开始
 
-### 1. Clone and Setup
+### 1. 克隆与安装
 
 ```bash
 git clone https://github.com/wangrui2025/mykcs.git
 cd mykcs/astro && npm install
 ```
 
-### 2. Development
+### 2. 开发
 
 ```bash
 cd astro && npm run dev
 ```
 
-Open http://127.0.0.1:4321
+访问 http://127.0.0.1:4321
 
-### 3. Configure
+### 3. 配置
 
-Edit these files to customize your homepage:
+编辑以下文件来自定义你的主页：
 
-| File | Purpose |
-|------|---------|
-| `astro/src/data/content.ts` | Homepage text (EN/ZH) |
-| `astro/src/data/education.ts` | Education background |
-| `astro/src/data/honors.ts` | Honors and awards |
-| `astro/src/content/papers/*.json` | Publications |
-| `astro/astro.config.mjs` | Site URL and config |
+| 文件 | 用途 |
+|------|------|
+| `astro/src/data/content.ts` | 首页文案（中英） |
+| `astro/src/data/education.ts` | 教育背景 |
+| `astro/src/data/honors.ts` | 荣誉奖项 |
+| `astro/src/content/papers/*.json` | 论文发表 |
+| `astro/astro.config.mjs` | 站点 URL 和配置 |
 
-### 4. Deploy
+### 4. 部署
 
-Push to GitHub — GitHub Pages auto-builds from `astro/dist`.
+推送到 GitHub — GitHub Pages 自动从 `astro/dist` 构建。
 
-## Google Scholar Integration
+## Google Scholar 集成
 
-1. Find your Google Scholar ID from your profile URL (e.g., `https://scholar.google.com/citations?user=SCHOLAR_ID`)
-2. Add `GOOGLE_SCHOLAR_ID` secret in GitHub repo Settings → Secrets → Actions
-3. Enable workflows in Actions tab
+1. 从个人资料 URL 获取 Google Scholar ID（例如 `https://scholar.google.com/citations?user=SCHOLAR_ID`）
+2. 在 GitHub 仓库 Settings → Secrets → Actions 中添加 `GOOGLE_SCHOLAR_ID`
+3. 在 Actions 标签页启用工作流
 
-Stats are fetched daily at 08:00 UTC.
+数据每日 UTC 08:00 自动获取。
 
-## Project Structure
+## 项目结构
 
 ```
 astro/
