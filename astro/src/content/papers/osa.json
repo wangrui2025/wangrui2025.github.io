@@ -15,7 +15,7 @@
   "en": {
     "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
     "authors": "Rui Wang, Huisi Wu*, Jing Qin",
-    "fields": ["Computer Vision", "Medical Imaging", "Video Segmentation"],
+    "fields": ["Computer Vision", "Video Segmentation", "Medical Imaging"],
     "technologies": ["Linear Recurrent Models", "Manifold"]
   }
 }
