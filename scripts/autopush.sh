@@ -1,10 +1,33 @@
 #!/bin/bash
 # autopush.sh - 自动 add → commit → push
-# Follows Conventional Commits: <type>(<scope>): <description>
+# 使用方式:
+#   autopush.sh           # 自动暂存、生成提交信息、提交并推送
+#   autopush.sh --stage   # 仅暂存，输出改动摘要（供AI分析）
+#   autopush.sh "msg"     # 使用指定提交信息
 
 set -e
 
-# 仅推送模式（用于 hooks）
+# 仅暂存模式 - 供AI分析改动
+if [ "$1" = "--stage" ]; then
+    git add -A
+    git reset .astro .astro/** 2>/dev/null || true
+
+    if git diff --cached --quiet; then
+        echo "【无改动】"
+        exit 0
+    fi
+
+    echo "【改动文件】"
+    git diff --cached --name-only | head -10
+
+    echo ""
+    echo "【改动统计】"
+    git diff --cached --stat | tail -1
+
+    exit 0
+fi
+
+# 仅推送模式
 if [ "$1" = "--push-only" ]; then
     git pull --rebase 2>/dev/null || true
     if ! git push; then
@@ -25,160 +48,29 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
-# 分析 README 修改内容生成具体描述（中文）
-analyze_readme_changes() {
-    local diff=$(git diff --cached README.md 2>/dev/null || echo "")
-    local added=$(echo "$diff" | grep "^+" | grep -v "^+++" | wc -l)
-    local deleted=$(echo "$diff" | grep "^-" | grep -v "^---" | wc -l)
+# 如果有传入参数，使用作为提交信息
+if [ -n "$1" ]; then
+    commit_msg="$1"
+else
+    # 基础自动检测（备用）
+    files=$(git diff --cached --name-only | head -5)
+    type="chore"
+    scope="site"
+    description="同步改动"
 
-    # 检测具体修改类型（关键词匹配中文和英文）
-    if echo "$diff" | grep -qE "(自动化架构|architecture|三层|layer)"; then
-        echo "补充自动化架构说明"
-    elif echo "$diff" | grep -qE "(功能特性|功能|Features|feature)"; then
-        echo "更新功能特性说明"
-    elif echo "$diff" | grep -qE "(安装|install|setup|开始|quick start)"; then
-        echo "完善安装与起步指南"
-    elif echo "$diff" | grep -qE "(部署|deploy|构建|build|开发|dev)"; then
-        echo "更新部署与开发流程"
-    elif echo "$diff" | grep -qE "(TODO|FIXME|待办|roadmap|路线图)"; then
-        echo "更新路线图与待办事项"
-    elif echo "$diff" | grep -qE "(译为中文|translate|中文|i18n|international)"; then
-        echo "将文档译为中文"
-    elif [ "$added" -gt 10 ] && [ "$deleted" -lt 5 ]; then
-        echo "新增文档章节"
-    elif [ "$deleted" -gt 10 ] && [ "$added" -lt 5 ]; then
-        echo "清理过时文档内容"
-    else
-        echo "润色文档细节"
-    fi
-}
-
-# 分析 CSS 修改内容（中文）
-css_change_description() {
-    local diff=$(git diff --cached -- "*.css" 2>/dev/null || echo "")
-    if echo "$diff" | grep -qE "(tabular-nums|font-variant|@font-face|等宽数字)"; then
-        echo "优化排版与数字等宽显示"
-    elif echo "$diff" | grep -qE "(--[a-z-]+:|color|background|#|主题|theme)"; then
-        echo "调整配色方案与主题"
-    elif echo "$diff" | grep -qE "(margin|padding|gap|flex|grid|display|布局)"; then
-        echo "改进布局间距与结构"
-    elif echo "$diff" | grep -qE "(@media|max-width|min-width|responsive|响应式)"; then
-        echo "增强响应式设计"
-    else
-        echo "润色视觉样式"
-    fi
-}
-
-# 分析 JSON 内容修改（中文）
-json_change_description() {
-    local file="$1"
-    local diff=$(git diff --cached -- "$file" 2>/dev/null || echo "")
-
-    if echo "$diff" | grep -qE '"period"|"date"|"year"|时间|日期'; then
-        echo "更新时间与日期数据"
-    elif echo "$diff" | grep -qE '"title"|"description"|"text"|标题|描述|内容'; then
-        echo "润色文案表述"
-    elif echo "$diff" | grep -qE '"url"|"link"|"href"|链接|引用'; then
-        echo "更新链接与引用"
-    else
-        echo "调整配置数值"
-    fi
-}
-
-# 根据修改的文件生成 Conventional Commit message（中文描述）
-generate_commit_msg() {
-    local files=$(git diff --cached --name-only | head -20)
-    local type="chore"
-    local scope=""
-    local description=""
-    local body=""
-
-    # 确定 type 和 scope
-    if echo "$files" | grep -qE "\.css$|\.scss$|tailwind"; then
-        type="style"
-        scope="global"
-        description=$(css_change_description)
-    elif echo "$files" | grep -qE "(honors|education|content\.ts|papers|en\.json|zh\.json)"; then
-        type="content"
-        if echo "$files" | grep -q "honors"; then
-            scope="honors"
-            description="更新荣誉奖项信息"
-        elif echo "$files" | grep -q "education"; then
-            scope="education"
-            description="更新教育背景"
-        elif echo "$files" | grep -q "papers"; then
-            scope="publications"
-            local paper_file=$(echo "$files" | grep "papers" | head -1)
-            description=$(json_change_description "$paper_file")
-            description="添加论文元数据"
-        elif echo "$files" | grep -q "homepage"; then
-            scope="homepage"
-            description="刷新首页文案"
-        else
-            scope="content"
-            description="更新站点内容"
-        fi
-    elif echo "$files" | grep -qE "(navigation|sidebar|masthead|AuthorProfile|PaperCard|ScholarBadge|BaseLayout)"; then
-        type="feat"
-        if echo "$files" | grep -q "navigation|sidebar|masthead"; then
-            scope="navigation"
-            description="增强站点导航"
-        elif echo "$files" | grep -q "AuthorProfile"; then
-            scope="profile"
-            description="更新作者资料卡"
-        elif echo "$files" | grep -q "PaperCard"; then
-            scope="publications"
-            description="改进论文展示"
-        elif echo "$files" | grep -q "ScholarBadge"; then
-            scope="scholar"
-            description="更新引用数徽章"
-        elif echo "$files" | grep -q "BaseLayout"; then
-            scope="layout"
-            description="优化页面布局结构"
-        fi
-    elif echo "$files" | grep -qE "(autopush\.sh|\.github/workflows|\.claude)"; then
-        type="ci"
-        if echo "$files" | grep -q "autopush"; then
-            scope="automation"
-            description="增强提交自动化逻辑"
-        elif echo "$files" | grep -q "\.github/workflows"; then
-            scope="workflows"
-            description="调整 CI/CD 流程"
-        else
-            scope="config"
-            description="更新工具配置"
-        fi
-    elif echo "$files" | grep -q "README"; then
-        type="docs"
-        scope="readme"
-        description=$(analyze_readme_changes)
-    elif echo "$files" | grep -qE "\.md$"; then
-        type="docs"
-        scope="docs"
-        description="更新文档"
-    else
-        # 默认处理
-        type="chore"
-        local first_file=$(echo "$files" | head -1)
-        local ext="${first_file##*.}"
-        local basename=$(basename "$first_file" ".$ext" 2>/dev/null || echo "$first_file")
-        scope="$ext"
-        description="更新 $basename"
+    if echo "$files" | grep -q "\.css$"; then
+        type="style"; scope="global"
+    elif echo "$files" | grep -q "\.md$"; then
+        type="docs"; scope="readme"
+    elif echo "$files" | grep -qE "(honors|education|papers)"; then
+        type="content"; scope="data"
+    elif echo "$files" | grep -q "autopush"; then
+        type="ci"; scope="automation"
     fi
 
-    # 如果有多个不同的 scope，使用通用 scope
-    local unique_files=$(echo "$files" | wc -l)
-    if [ "$unique_files" -gt 3 ]; then
-        scope="site"
-        if [ -z "$description" ]; then
-            description="同步多个组件"
-        fi
-    fi
+    commit_msg="${type}(${scope}): ${description}"
+fi
 
-    echo "${type}(${scope}): ${description}"
-}
-
-commit_msg=$(generate_commit_msg)
 git commit -m "$commit_msg"
 
 git pull --rebase 2>/dev/null || {
