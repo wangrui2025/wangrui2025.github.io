@@ -1,16 +1,21 @@
 #!/bin/bash
 # autopush.sh - 自动 add → commit → push
 
+set -e
+
 # 仅推送模式（用于 hooks）
 if [ "$1" = "--push-only" ]; then
-    git pull --rebase 2>/dev/null
-    git push
+    git pull --rebase 2>/dev/null || true
+    if ! git push; then
+        echo "Push failed, trying force push..."
+        git push --force-with-lease
+    fi
     echo "Pushed."
     exit 0
 fi
 
-# 检查是否有更改
-if [ -z "$(git status --porcelain)" ]; then
+# 检查是否有更改（排除 .astro 缓存目录）
+if [ -z "$(git status --porcelain | grep -v ".astro/")" ]; then
     echo "No changes to commit"
     exit 0
 fi
@@ -20,9 +25,8 @@ generate_commit_msg() {
     local files=$(git diff --cached --name-only | head -20)
     local msg_parts=()
 
-    # 检查关键文件修改
     if echo "$files" | grep -q "honors"; then
-        msg_parts+=("Update honors data")
+        msg_parts+=("Update honors")
     fi
     if echo "$files" | grep -q "content"; then
         msg_parts+=("Update content")
@@ -45,35 +49,43 @@ generate_commit_msg() {
     if echo "$files" | grep -q "en.json\|zh.json"; then
         msg_parts+=("Update i18n")
     fi
+    if echo "$files" | grep -q "autopush\|settings.json"; then
+        msg_parts+=("Update config")
+    fi
 
-    # 如果没有匹配到具体类型，使用通用消息
     if [ ${#msg_parts[@]} -eq 0 ]; then
-        # 从文件路径提取关键词
         local first_file=$(echo "$files" | head -1)
-        local basename=$(basename "$first_file" .json .ts .astro .css 2>/dev/null || echo "$first_file")
+        local basename=$(basename "$first_file" .json .ts .astro .css .mjs 2>/dev/null || echo "$first_file")
         msg_parts=("Update $basename")
     fi
 
-    # 用分号连接
     local IFS=';'
     echo "${msg_parts[*]}"
 }
 
-# 获取 commit message（如果提供了参数则使用参数，否则自动生成）
-if [ -z "$1" ]; then
-    commit_msg=$(generate_commit_msg)
-else
-    commit_msg="$1"
+# 生成 commit message
+commit_msg=$(generate_commit_msg)
+
+# 执行 git add（排除 .astro 缓存）
+git add -A
+git reset .astro .astro/** 2>/dev/null || true
+
+# 如果有要提交的内容则 commit
+if git diff --cached --quiet; then
+    echo "No changes to commit"
+    exit 0
 fi
 
-# 执行 git add
-git add -A
-
-# 执行 git commit
 git commit -m "$commit_msg"
 
-# 执行 git pull --rebase 并 push
-git pull --rebase 2>/dev/null
-git push
+# 处理远程分叉：pull --rebase 然后 push
+git pull --rebase 2>/dev/null || {
+    echo "Pull rebase failed, continuing with push..."
+}
+
+if ! git push; then
+    echo "Push failed (remote diverged), force pushing..."
+    git push --force-with-lease
+fi
 
 echo "Done: $commit_msg"
