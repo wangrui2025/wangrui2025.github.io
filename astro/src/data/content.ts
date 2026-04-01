@@ -127,12 +127,12 @@ export const content: Content = {
   },
   honors_headers: {
     graduate: {
-      zh: 'Graduate Period（深圳大学 计算机科学与技术专业）',
-      en: 'Graduate Studies (Shenzhen University, Computer Science and Technology)',
+      zh: '硕士阶段',
+      en: 'Graduate Studies',
     },
     undergraduate: {
-      zh: 'Undergraduate Period（河南大学）',
-      en: 'Undergraduate Studies (Henan University)',
+      zh: '本科阶段',
+      en: 'Undergraduate Studies',
     },
   },
 };
