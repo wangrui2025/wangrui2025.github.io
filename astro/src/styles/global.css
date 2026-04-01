@@ -516,6 +516,21 @@ section h2 {
   font-variant-numeric: tabular-nums;
 }
 
+/* Education period */
+.education-entry .period {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Paper venue year */
+.paper-meta {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Footer date */
+.footer-builtwith {
+  font-variant-numeric: tabular-nums;
+}
+
 /* ===== Project List ===== */
 .project-list {
   list-style: none;
