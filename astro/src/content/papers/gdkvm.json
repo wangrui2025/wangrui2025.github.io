@@ -15,7 +15,7 @@
   "en": {
     "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
     "authors": "Rui Wang, Yimu Sun, Jingxing Guo, Huisi Wu*, Jing Qin",
-    "fields": ["Computer Vision", "Video Segmentation", "Medical Imaging"],
+    "fields": ["Computer Vision", "Video Segmentation", "Medical Image"],
     "technologies": ["Linear Attention", "Gated Delta Rule"]
   }
 }
