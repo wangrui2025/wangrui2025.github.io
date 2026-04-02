@@ -91,7 +91,7 @@ const homepage = defineCollection({
     timeline_items: z.array(z.object({
       period: z.string(),
       title: z.string(),
-      description: z.string(),
+      description: z.string().optional(),
       tags: z.array(z.string()).optional(),
     })),
   }),
