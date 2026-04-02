@@ -4,8 +4,7 @@
   "status_badge": "🎓 Applying for PhD Programs · Fall 2027 Entry",
   "background": {
     "heading": "Background",
-    "intro": "I am a second-year master's student (expected graduation: June 2027) at the College of Computer Science and Software Engineering, Shenzhen University, advised by Prof. Huisi Wu. My research focuses on echocardiography video segmentation, medical image analysis, computer vision, and deep learning.",
-    "research": "My research focuses on echocardiography video segmentation, medical image analysis, computer vision, and deep learning.",
+    "intro": "I am a second-year master's student (expected graduation: June 2027) at the College of Computer Science and Software Engineering, Shenzhen University, advised by Prof. Huisi Wu.",
     "items": [
       "Efficient NN Architectures",
       "Non-convex Optimization / Geometric DL",
