@@ -1,5 +1,4 @@
 ---
-import { execSync } from 'child_process';
 import { ViewTransitions } from 'astro:transitions';
 import Masthead from '../components/Masthead.astro';
 import Scripts from '../components/Scripts.astro';
@@ -22,12 +21,6 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2025.github.io');
-
-// Get the last commit date for "Last updated" display
-let lastUpdated = 'recently';
-try {
-  lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
-} catch { /* CI env may lack git */ }
 ---
 
 <!doctype html>
