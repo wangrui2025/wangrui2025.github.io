@@ -23,10 +23,10 @@ const { lang = 'en' } = Astro.props;
     </tr>
     <tr>
       <td class="py-2.5 pr-4 align-top">
-        <a href={education.bachelor.universityUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.university[lang]}</a>
+        <a href={education.bachelor.universityUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.bachelor.university[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top">
-        <a href={education.bachelor.collegeUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.college[lang]}</a>
+        <a href={education.bachelor.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.bachelor.college[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.bachelor.major[lang]}</td>
       <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.bachelor.degree[lang]}</td>
@@ -34,3 +34,14 @@ const { lang = 'en' } = Astro.props;
     </tr>
   </tbody>
 </table>
+
+<style>
+  .education-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+  }
+  .education-link:hover {
+    text-decoration: underline;
+  }
+</style>
