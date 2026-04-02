@@ -68,7 +68,8 @@
     {
       "period": "2025",
       "title": "ICCV 2025 论文接收",
-      "description": "第一作者论文《GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割》被计算机视觉顶会 ICCV 2025 接收。"
+      "description": "第一作者论文《GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割》被计算机视觉顶会 ICCV 2025 接收。",
+      "tags": ["csranking", "CCF-A"]
     },
     {
       "period": "2024.12",
