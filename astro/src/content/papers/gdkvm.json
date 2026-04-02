@@ -7,7 +7,7 @@
   "arxiv": "https://arxiv.org/pdf/2512.10252",
   "project": "https://wangrui2025.github.io/GDKVM/",
   "zh": {
-    "title": "GDKVM: 基于门控增量规则的时空键值记忆超声心动图视频分割",
+    "title": "GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割",
     "authors": "王锐，孙一木，郭警醒，吴惠思*，秦璟",
     "fields": ["计算机视觉", "视频分割", "医学影像"],
     "technologies": ["线性注意力", "门控 Delta 规则"]
