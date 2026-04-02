@@ -83,6 +83,15 @@ const homepage = defineCollection({
     // Honors headers
     honors_graduate_header: z.string(),
     honors_undergraduate_header: z.string(),
+    // Timeline
+    timeline_heading: z.string(),
+    timeline_collapsed_text: z.string(),
+    timeline_expanded_text: z.string(),
+    timeline_items: z.array(z.object({
+      period: z.string(),
+      title: z.string(),
+      description: z.string(),
+    })),
   }),
 });
 

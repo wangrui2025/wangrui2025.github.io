@@ -81,6 +81,32 @@ const citedBy = scholarStats.data.citedby;
     </ul>
   </section>
 
+  <!-- Timeline Section -->
+  <section id="timeline" class="mb-8">
+    <h2 class="section-heading text-2xl font-bold">
+      {h.timeline_heading}
+    </h2>
+    <details class="timeline-details">
+      <summary class="timeline-summary">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text-collapsed">{h.timeline_collapsed_text}</span>
+        <span class="toggle-text-expanded">{h.timeline_expanded_text}</span>
+      </summary>
+      <div class="timeline-container">
+        {h.timeline_items.map((item) => (
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">{item.period}</div>
+              <div class="timeline-title">{item.title}</div>
+              <p class="timeline-description">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </details>
+  </section>
+
   <!-- Publications Section -->
   <section id="publications" class="mb-8">
     <h2 class="section-heading text-2xl font-bold">

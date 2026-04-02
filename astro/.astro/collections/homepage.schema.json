@@ -111,6 +111,38 @@
         "honors_undergraduate_header": {
           "type": "string"
         },
+        "timeline_heading": {
+          "type": "string"
+        },
+        "timeline_collapsed_text": {
+          "type": "string"
+        },
+        "timeline_expanded_text": {
+          "type": "string"
+        },
+        "timeline_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "period",
+              "title",
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        },
         "$schema": {
           "type": "string"
         }
@@ -133,7 +165,11 @@
         "project_description",
         "project_url",
         "honors_graduate_header",
-        "honors_undergraduate_header"
+        "honors_undergraduate_header",
+        "timeline_heading",
+        "timeline_collapsed_text",
+        "timeline_expanded_text",
+        "timeline_items"
       ],
       "additionalProperties": false
     }

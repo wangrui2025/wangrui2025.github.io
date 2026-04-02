@@ -39,5 +39,50 @@
   "project_description": "一个面向研究生的开源科研指南，涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程以及实验环境配置（如 uv, VSCode）等实用经验。（本 notion 文档中，以\"miyuki11\"的身份维护创作）",
   "project_url": "https://how2research-apple.notion.site/297e9f718aff81338d15e6347d75c807",
   "honors_graduate_header": "",
-  "honors_undergraduate_header": ""
+  "honors_undergraduate_header": "",
+  "timeline_heading": "时间线",
+  "timeline_collapsed_text": "查看完整时间线",
+  "timeline_expanded_text": "收起时间线",
+  "timeline_items": [
+    {
+      "period": "2020.09 - 2024.06",
+      "title": "河南大学 本科",
+      "description": "数据科学与大数据技术。2022.12 获河南大学三好学生及奖学金。"
+    },
+    {
+      "period": "2024.09",
+      "title": "深圳大学 硕士",
+      "description": "进入深圳大学计算机与软件学院攻读硕士，师从吴惠思教授，开启超声心动图视频分割等方向的研究。"
+    },
+    {
+      "period": "2024.12",
+      "title": "研究生学业奖学金特等奖",
+      "description": "获深圳大学研究生学业奖学金特等奖。"
+    },
+    {
+      "period": "2025",
+      "title": "ICCV 2025 论文接收",
+      "description": "第一作者论文《GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割》被计算机视觉顶会 ICCV 2025 接收。"
+    },
+    {
+      "period": "2025.12",
+      "title": "获奖",
+      "description": "获研究生国家奖学金、深圳大学研究生学业奖学金一等奖。"
+    },
+    {
+      "period": "2026.01",
+      "title": "学术启航奖学金",
+      "description": "获深圳大学学术启航奖学金。"
+    },
+    {
+      "period": "2026",
+      "title": "CVPR 2026 论文接收",
+      "description": "第一作者论文《OSA: 基于正交状态更新与解剖先验感知特征增强的超声心动图视频分割》被计算机视觉顶会 CVPR 2026 接收。"
+    },
+    {
+      "period": "Present",
+      "title": "目前状态",
+      "description": "正在准备 CVPR Poster，并全力申请 2027 Fall 博士项目。"
+    }
+  ]
 }
