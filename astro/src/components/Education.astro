@@ -12,11 +12,10 @@ const { lang = 'en' } = Astro.props;
   <tbody class="divide-y divide-[var(--paper-border)]">
     <tr>
       <td class="py-2.5 pr-4 align-top">
-        {education.master.schoolUrl ? (
-          <a href={education.master.schoolUrl} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.school[lang]}</a>
-        ) : (
-          education.master.school[lang]
-        )}
+        <a href={education.master.universityUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.university[lang]}</a>
+      </td>
+      <td class="py-2.5 pr-4 align-top">
+        <a href={education.master.collegeUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.college[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.master.major[lang]}</td>
       <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.master.degree[lang]}</td>
@@ -24,11 +23,10 @@ const { lang = 'en' } = Astro.props;
     </tr>
     <tr>
       <td class="py-2.5 pr-4 align-top">
-        {education.bachelor.schoolUrl ? (
-          <a href={education.bachelor.schoolUrl} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.school[lang]}</a>
-        ) : (
-          education.bachelor.school[lang]
-        )}
+        <a href={education.bachelor.universityUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.university[lang]}</a>
+      </td>
+      <td class="py-2.5 pr-4 align-top">
+        <a href={education.bachelor.collegeUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.college[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.bachelor.major[lang]}</td>
       <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.bachelor.degree[lang]}</td>

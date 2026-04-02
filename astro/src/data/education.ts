@@ -1,8 +1,10 @@
 // Education data - migrated from _data/education.yml
 
 export interface EducationEntry {
-  school: { zh: string; en: string };
-  schoolUrl: { zh: string; en: string };
+  university: { zh: string; en: string };
+  universityUrl: { zh: string; en: string };
+  college: { zh: string; en: string };
+  collegeUrl: { zh: string; en: string };
   major: { zh: string; en: string };
   degree: { zh: string; en: string };
   period: { zh: string; en: string };
@@ -15,13 +17,21 @@ export interface Education {
 
 export const education: Education = {
   master: {
-    school: {
-      zh: '深圳大学 计算机与软件学院',
-      en: 'College of Computer Science and Software Engineering, Shenzhen University',
+    university: {
+      zh: '深圳大学',
+      en: 'Shenzhen University',
     },
-    schoolUrl: {
-      zh: 'https://csse.szu.edu.cn/',
+    universityUrl: {
+      zh: 'https://www.szu.edu.cn/',
       en: 'https://www.szu.edu.cn/',
+    },
+    college: {
+      zh: '计算机与软件学院',
+      en: 'College of Computer Science and Software Engineering',
+    },
+    collegeUrl: {
+      zh: 'https://csse.szu.edu.cn/',
+      en: 'https://csse.szu.edu.cn/',
     },
     major: {
       zh: '计算机科学与技术专业',
@@ -37,13 +47,21 @@ export const education: Education = {
     },
   },
   bachelor: {
-    school: {
-      zh: '河南大学 计算机与信息工程学院',
-      en: 'School of Computer and Information Engineering, Henan University',
+    university: {
+      zh: '河南大学',
+      en: 'Henan University',
     },
-    schoolUrl: {
-      zh: 'https://cs.henu.edu.cn/',
+    universityUrl: {
+      zh: 'https://www.henu.edu.cn/',
       en: 'https://www.henu.edu.cn/',
+    },
+    college: {
+      zh: '计算机与信息工程学院',
+      en: 'School of Computer and Information Engineering',
+    },
+    collegeUrl: {
+      zh: 'https://cs.henu.edu.cn/',
+      en: 'https://cs.henu.edu.cn/',
     },
     major: {
       zh: '数据科学与大数据技术专业',
