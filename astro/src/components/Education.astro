@@ -24,7 +24,13 @@ const { lang = 'en' } = Astro.props;
       <td class="py-3 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.master.period[lang]}</td>
     </tr>
     <tr>
-      <td class="py-3 pr-4 align-top">{education.bachelor.school[lang]}</td>
+      <td class="py-3 pr-4 align-top">
+        {education.bachelor.schoolUrl ? (
+          <a href={education.bachelor.schoolUrl} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.bachelor.school[lang]}</a>
+        ) : (
+          education.bachelor.school[lang]
+        )}
+      </td>
       <td class="py-3 pr-4 align-top min-w-[14rem]">{education.bachelor.major[lang]}</td>
       <td class="py-3 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.bachelor.degree[lang]}</td>
       <td class="py-3 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.bachelor.period[lang]}</td>
