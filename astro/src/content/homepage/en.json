@@ -45,34 +45,9 @@
   "timeline_expanded_text": "Collapse Timeline",
   "timeline_items": [
     {
-      "period": "2020.09 - 2024.06",
-      "title": "Bachelor's Degree",
-      "description": "Henan University, Data Science and Big Data Technology. Honored as 'Three Good Student' with scholarship in December 2022."
-    },
-    {
-      "period": "2024.09",
-      "title": "M.S. Admission",
-      "description": "Joined the College of Computer Science and Software Engineering at Shenzhen University, advised by Prof. Huisi Wu. Began research on echocardiography video segmentation."
-    },
-    {
-      "period": "2024.12",
-      "title": "Special Prize Scholarship",
-      "description": "Awarded Shenzhen University Graduate Academic Scholarship (Special Prize)."
-    },
-    {
-      "period": "2025",
-      "title": "ICCV 2025 Acceptation",
-      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025 (top-tier CV conference)."
-    },
-    {
-      "period": "2025.12",
-      "title": "National Scholarship",
-      "description": "Awarded National Graduate Scholarship and Shenzhen University Graduate Academic Scholarship (First Prize)."
-    },
-    {
-      "period": "2026.01",
-      "title": "Academic Launch Scholarship",
-      "description": "Awarded Shenzhen University Academic Launch Scholarship."
+      "period": "Present",
+      "title": "Current Status",
+      "description": "Preparing CVPR Poster and actively applying for PhD programs (Fall 2027)."
     },
     {
       "period": "2026",
@@ -80,9 +55,34 @@
       "description": "First-author paper 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026 (top-tier CV conference)."
     },
     {
-      "period": "Present",
-      "title": "Current Status",
-      "description": "Preparing CVPR Poster and actively applying for PhD programs (Fall 2027)."
+      "period": "2026.01",
+      "title": "Academic Launch Scholarship",
+      "description": "Awarded Shenzhen University Academic Launch Scholarship."
+    },
+    {
+      "period": "2025.12",
+      "title": "National Scholarship",
+      "description": "Awarded National Graduate Scholarship and Shenzhen University Graduate Academic Scholarship (First Prize)."
+    },
+    {
+      "period": "2025",
+      "title": "ICCV 2025 Acceptation",
+      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025 (top-tier CV conference)."
+    },
+    {
+      "period": "2024.12",
+      "title": "Special Prize Scholarship",
+      "description": "Awarded Shenzhen University Graduate Academic Scholarship (Special Prize)."
+    },
+    {
+      "period": "2024.09",
+      "title": "M.S. Admission",
+      "description": "Joined the College of Computer Science and Software Engineering at Shenzhen University, advised by Prof. Huisi Wu. Began research on echocardiography video segmentation."
+    },
+    {
+      "period": "2020.09 - 2024.06",
+      "title": "Bachelor's Degree",
+      "description": "Henan University, Data Science and Big Data Technology. Honored as 'Three Good Student' with scholarship in December 2022."
     }
   ]
 }
