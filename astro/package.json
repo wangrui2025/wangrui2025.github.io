@@ -10,8 +10,12 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.0",
+    "@iconify-json/academicons": "^1.2.4",
+    "@iconify-json/lucide": "^1.2.101",
+    "@iconify-json/simple-icons": "^1.2.76",
     "@tailwindcss/typography": "^0.5.0",
     "astro": "^5.0.0",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^3.4.0"
   }
 }

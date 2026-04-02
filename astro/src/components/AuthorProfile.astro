@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import avatarImage from '../assets/avatar.png';
 
 export interface Props {
@@ -38,53 +39,150 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
     </span>
   </div>
 
-  <!-- Primary Links: Email & GitHub -->
-  <div class="author-links-primary">
-    <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="author-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="M22 6l-10 7L2 6"/>
-      </svg>
-      <span>wr_szu@163.com</span>
+  <!-- Social & Academic Links -->
+  <div class="author-links">
+    <!-- Primary Links: Email & GitHub -->
+    <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="author-link-primary">
+      <Icon name="lucide:mail" class="w-4 h-4" />
+      <span>Email</span>
     </a>
-    <a href="mailto:2400101058@mails.szu.edu.cn" title={lang === 'zh' ? '邮箱（学生）' : 'Email (Student)'} class="author-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="M22 6l-10 7L2 6"/>
-      </svg>
-      <span>2400101058@mails.szu.edu.cn</span>
-    </a>
-    <a href="https://github.com/wangrui2025" title="GitHub" class="author-link" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-      </svg>
+    <a href="https://github.com/wangrui2025" title="GitHub" class="author-link-primary" target="_blank">
+      <Icon name="simple-icons:github" class="w-4 h-4" />
       <span>GitHub</span>
     </a>
-  </div>
 
-  <!-- Secondary Links -->
-  <div class="author-links-secondary">
-    <a href="https://scholar.google.com/citations?user=01amzbYAAAAJ" title="Google Scholar" class="author-link" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-      </svg>
+    <!-- Secondary Links: Icon-only -->
+    <a href="https://scholar.google.com/citations?user=01amzbYAAAAJ" title="Google Scholar" class="author-link-icon" target="_blank">
+      <Icon name="academicons:google-scholar" class="w-5 h-5" />
     </a>
-    <a href="https://orcid.org/0009-0001-0278-1985" title="ORCID" class="author-link" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor">
-        <rect width="256" height="256" rx="32" fill="#A6B73F"/>
-        <path d="M64.1 123.6h29.4v81.7H64.1v-81.7zm29.5-28.4c0-8.4-6.8-15.2-15.2-15.2s-15.2 6.8-15.2 15.2 6.8 15.2 15.2 15.2c8.3.1 15.2-6.8 15.2-15.2z"/>
-        <path d="M162.2 123.6h29.4v21.4c0 15.7-12.8 28.5-28.5 28.5s-28.5-12.8-28.5-28.5v-51.6h29.4v48.8c0 4.2 3.4 7.6 7.6 7.6s7.6-3.4 7.6-7.6v-48.8h-16.6z"/>
-      </svg>
+    <a href="https://orcid.org/0009-0001-0278-1985" title="ORCID" class="author-link-icon" target="_blank">
+      <Icon name="academicons:orcid" class="w-5 h-5" />
     </a>
-    <a href="https://openreview.net/profile?id=%7ERui_Wang92" title="OpenReview" class="author-link" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
-      </svg>
+    <a href="https://openreview.net/profile?id=%7ERui_Wang92" title="OpenReview" class="author-link-icon" target="_blank">
+      <Icon name="lucide:file-text" class="w-5 h-5" />
     </a>
-    <a href="https://www.linkedin.com/in/wangrui2024/" title="LinkedIn" class="author-link" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
+    <a href="https://www.linkedin.com/in/wangrui2024/" title="LinkedIn" class="author-link-icon" target="_blank">
+      <Icon name="simple-icons:linkedin" class="w-5 h-5" />
     </a>
   </div>
 </div>
+
+<style>
+  .author-profile {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .profile-avatar {
+    margin-bottom: 1rem;
+  }
+
+  .profile-avatar img {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+  }
+
+  .author-name {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .author-pronouns {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .author-title {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .author-affiliation {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    margin: 0 0 1rem 0;
+  }
+
+  /* Links Container */
+  .author-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Primary Links: Icon + Text */
+  .author-link-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--paper-bg);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .author-link-primary:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  /* Secondary Links: Icon-only */
+  .author-link-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--paper-bg);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+  }
+
+  .author-link-icon:hover {
+    border-color: currentColor;
+    text-decoration: none;
+  }
+
+  /* Brand hover colors for secondary icons */
+  .author-link-icon[title="GitHub"]:hover {
+    color: #24292f;
+    border-color: #24292f;
+  }
+  :global(.dark) .author-link-icon[title="GitHub"]:hover {
+    color: #f0f6fc;
+    border-color: #f0f6fc;
+  }
+
+  .author-link-icon[title="LinkedIn"]:hover {
+    color: #0A66C2;
+    border-color: #0A66C2;
+  }
+
+  .author-link-icon[title="Google Scholar"]:hover {
+    color: #4A90E2;
+    border-color: #4A90E2;
+  }
+
+  .author-link-icon[title="ORCID"]:hover {
+    color: #A6B73F;
+    border-color: #A6B73F;
+  }
+
+  .author-link-icon[title="OpenReview"]:hover {
+    color: #01D28E;
+    border-color: #01D28E;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import { getEntry } from 'astro:content';
 import osaImage from '../assets/paper/fig_osu_page-0001.jpg';
 import gdkvmImage from '../assets/paper/fig_gdkvm_page-0001.jpg';
@@ -63,13 +64,37 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
         </a>
       )}
       {paper.data.arxiv && (
-        <a href={paper.data.arxiv} class="paper-link !bg-[#b31b1b]" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M14 13.5H2V2.5h12v11zm0-10H2V12h12V3.5zM4 4h8v1H4V4zm0 2h8v1H4V6zm0 2h5v1H4V8z"/>
-          </svg>
+        <a href={paper.data.arxiv} class="paper-link paper-link-arxiv" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
+          <Icon name="simple-icons:arxiv" class="w-4 h-4" />
           arXiv
         </a>
       )}
     </div>
   </div>
 </div>
+
+<style>
+  .paper-link-arxiv {
+    background: transparent;
+    color: #b31b1b;
+    border: 1px solid #b31b1b;
+  }
+
+  .paper-link-arxiv:hover {
+    background: #b31b1b;
+    color: white;
+    opacity: 1;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  :global(.dark) .paper-link-arxiv {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
+
+  :global(.dark) .paper-link-arxiv:hover {
+    background: #ff6b6b;
+    color: #1a1a1a;
+  }
+</style>
