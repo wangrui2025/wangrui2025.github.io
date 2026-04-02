@@ -24,7 +24,10 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2025.github.io');
 
 // Get the last commit date for "Last updated" display
-const lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
+let lastUpdated = 'recently';
+try {
+  lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
+} catch { /* CI env may lack git */ }
 ---
 
 <!doctype html>
