@@ -7,7 +7,7 @@
   "alt_en": "OSA paper framework",
   "arxiv": "https://arxiv.org/pdf/2603.26188",
   "zh": {
-    "title": "OSA: 基于正交状态更新与解剖先验感知特征增强的超声心动图视频分割",
+    "title": "OSA: 使用正交状态更新与解剖先验感知特征增强的超声心动图视频分割",
     "authors": "王锐，吴惠思*，秦璟",
     "fields": ["计算机视觉", "视频分割", "医学影像"],
     "technologies": ["线性循环模型", "流形"]
