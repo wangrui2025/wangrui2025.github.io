@@ -78,9 +78,13 @@
       "description": "Joined the College of Computer Science and Software Engineering at Shenzhen University, advised by Prof. Huisi Wu. Began research on echocardiography video segmentation."
     },
     {
-      "period": "2020.09 - 2024.06",
-      "title": "Bachelor's Degree",
+      "period": "2020.09",
+      "title": "Bachelor's Degree (Admission)",
       "description": "Henan University, Data Science and Big Data Technology."
+    },
+    {
+      "period": "2024.06",
+      "title": "Bachelor's Degree (Graduation)"
     },
     {
       "period": "2022.12",
