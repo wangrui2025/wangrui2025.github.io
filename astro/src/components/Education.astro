@@ -15,7 +15,7 @@ const { lang = 'en' } = Astro.props;
         <a href={education.master.universityUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.master.university[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top">
-        <a href={education.master.collegeUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.college[lang]}</a>
+        <a href={education.master.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.master.college[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.master.major[lang]}</td>
       <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.master.degree[lang]}</td>
