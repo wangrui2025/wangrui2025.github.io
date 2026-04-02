@@ -15,6 +15,12 @@ const h = homepage.data;
 // Get scholar stats for citation badge
 const scholarStats = await getEntry('scholar', 'stats');
 const citedBy = scholarStats.data.citedby;
+
+// Timeline tag URL mapping
+const timelineTagUrls: Record<string, string> = {
+  'csranking': 'https://csrankings.org/#/index?vision&world',
+  'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
+};
 ---
 
 <BaseLayout
@@ -94,7 +100,11 @@ const citedBy = scholarStats.data.citedby;
               {item.tags && item.tags.length > 0 && (
                 <div class="timeline-tags">
                   {item.tags.map((tag) => (
-                    <span class="timeline-tag">{tag}</span>
+                    timelineTagUrls[tag] ? (
+                      <a href={timelineTagUrls[tag]} class="timeline-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+                    ) : (
+                      <span class="timeline-tag">{tag}</span>
+                    )
                   ))}
                 </div>
               )}
