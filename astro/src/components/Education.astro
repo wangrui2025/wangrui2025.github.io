@@ -12,7 +12,7 @@ const { lang = 'en' } = Astro.props;
   <tbody class="divide-y divide-[var(--paper-border)]">
     <tr>
       <td class="py-2.5 pr-4 align-top">
-        <a href={education.master.universityUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.university[lang]}</a>
+        <a href={education.master.universityUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.master.university[lang]}</a>
       </td>
       <td class="py-2.5 pr-4 align-top">
         <a href={education.master.collegeUrl[lang]} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.college[lang]}</a>
