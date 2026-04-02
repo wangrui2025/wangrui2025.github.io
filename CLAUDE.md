@@ -63,6 +63,23 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 - Education data in `astro/src/data/education.ts`
 - Honors data in `astro/src/data/honors.ts`
 
+## Bilingual Content — 中英文同步
+
+**修改中文内容时，必须同步修改英文内容，反之亦然。**
+
+### 触发场景
+
+- 修改 `zh.json` → 立即检查并修改 `en.json` 对应条目
+- 修改 `en.json` → 立即检查并修改 `zh.json` 对应条目
+- 修改论文 JSON 的 `zh.title` → 同步修改 `en.title`
+
+### 示例
+
+| 中文修改 | 英文同步 |
+|---------|---------|
+| GDKVM 标题改"使用" | en.json 中 GDKVM 标题同步检查 |
+| timeline 新增条目 | zh.json + en.json 同时新增 |
+
 ## Git Workflow — 自动推送
 
 **⚠️ 每次修改代码后，必须自动推送，无需等待确认。**
