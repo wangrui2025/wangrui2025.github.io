@@ -38,7 +38,7 @@ export const education: Education = {
       zh: '河南大学 计算机与信息工程学院',
       en: 'School of Computer and Information Engineering, Henan University',
     },
-    schoolUrl: 'https://cs.hhuc.edu.cn/',
+    schoolUrl: 'https://cs.henu.edu.cn/',
     major: {
       zh: '数据科学与大数据技术专业',
       en: 'Data Science and Big Data Technology',
