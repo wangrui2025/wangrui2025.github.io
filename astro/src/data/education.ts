@@ -2,7 +2,7 @@
 
 export interface EducationEntry {
   school: { zh: string; en: string };
-  schoolUrl?: string;
+  schoolUrl: { zh: string; en: string };
   major: { zh: string; en: string };
   degree: { zh: string; en: string };
   period: { zh: string; en: string };
