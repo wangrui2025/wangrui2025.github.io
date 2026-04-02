@@ -12,7 +12,13 @@ const { lang = 'en' } = Astro.props;
 <table class="education-table w-full text-sm text-[var(--text-color)] p-4">
   <tbody class="divide-y divide-[var(--paper-border)]">
     <tr>
-      <td class="py-3 pr-4 align-top">{education.master.school[lang]}</td>
+      <td class="py-3 pr-4 align-top">
+        {education.master.schoolUrl ? (
+          <a href={education.master.schoolUrl} target="_blank" rel="noopener" class="hover:text-[var(--link-color)]">{education.master.school[lang]}</a>
+        ) : (
+          education.master.school[lang]
+        )}
+      </td>
       <td class="py-3 pr-4 align-top min-w-[14rem]">{education.master.major[lang]}</td>
       <td class="py-3 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.master.degree[lang]}</td>
       <td class="py-3 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.master.period[lang]}</td>

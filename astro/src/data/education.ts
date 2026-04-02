@@ -2,6 +2,7 @@
 
 export interface EducationEntry {
   school: { zh: string; en: string };
+  schoolUrl?: string;
   major: { zh: string; en: string };
   degree: { zh: string; en: string };
   period: { zh: string; en: string };
@@ -18,6 +19,7 @@ export const education: Education = {
       zh: '深圳大学 计算机与软件学院',
       en: 'College of Computer Science and Software Engineering, Shenzhen University',
     },
+    schoolUrl: 'https://csse.szu.edu.cn/',
     major: {
       zh: '计算机科学与技术专业',
       en: 'Computer Science and Technology',
@@ -36,6 +38,7 @@ export const education: Education = {
       zh: '河南大学 计算机与信息工程学院',
       en: 'School of Computer and Information Engineering, Henan University',
     },
+    schoolUrl: 'https://cs.hhuc.edu.cn/',
     major: {
       zh: '数据科学与大数据技术专业',
       en: 'Data Science and Big Data Technology',
