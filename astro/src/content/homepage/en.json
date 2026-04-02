@@ -68,7 +68,8 @@
     {
       "period": "2025",
       "title": "ICCV 2025 Acceptation",
-      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025 (top-tier CV conference)."
+      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025 (top-tier CV conference).",
+      "tags": ["csranking", "CCF-A"]
     },
     {
       "period": "2024.12",
