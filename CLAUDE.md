@@ -65,7 +65,7 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 
 ## Git Workflow
 
-**禁止** 直接调用 `git commit`。所有提交必须通过 AI 分析后执行。
+**自动推送**：修改后自动分析并推送，无需确认。
 
 ### 标准提交流程
 
@@ -78,7 +78,7 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
    - **严禁** 只罗列文件名或扩展名
 
 3. **语义化提交**：`./scripts/autopush.sh "<message>"`
-   - 使用 `/push` 指令或手动调用脚本
+   - 脚本自动执行：暂存 → 提交 → pull --rebase → push
    - 提交信息必须符合 **Conventional Commits** 规范
    - 必须体现高级工程师的语义总结能力
 
