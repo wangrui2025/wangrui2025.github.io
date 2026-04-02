@@ -19,7 +19,7 @@ export const education: Education = {
       zh: '深圳大学 计算机与软件学院',
       en: 'College of Computer Science and Software Engineering, Shenzhen University',
     },
-    schoolUrl: 'https://csse.szu.edu.cn/',
+    schoolUrl: 'https://www.szu.edu.cn/',
     major: {
       zh: '计算机科学与技术专业',
       en: 'Computer Science and Technology',
