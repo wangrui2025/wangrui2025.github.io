@@ -80,6 +80,15 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 | GDKVM 标题改"使用" | en.json 中 GDKVM 标题同步检查 |
 | timeline 新增条目 | zh.json + en.json 同时新增 |
 
+### Timeline 顺序维护
+
+**按 period 降序排列（Present 在前，最早的在后）。**
+
+修改 timeline 条目时，必须保持全局顺序：
+- 新增条目 → 插入到正确的时间位置
+- 拆分条目（如本科拆为入学/毕业）→ 确保中间条目在正确位置
+- 每次修改后检查 period 顺序是否正确
+
 ## Git Workflow — 自动推送
 
 **⚠️ 每次修改代码后，必须自动推送，无需等待确认。**
