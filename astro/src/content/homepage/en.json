@@ -52,7 +52,8 @@
     {
       "period": "2026",
       "title": "CVPR 2026 Acceptation",
-      "description": "First-author paper 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026 (top-tier CV conference)."
+      "description": "First-author paper 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026 (top-tier CV conference).",
+      "tags": ["csranking", "CCF-A"]
     },
     {
       "period": "2026.01",

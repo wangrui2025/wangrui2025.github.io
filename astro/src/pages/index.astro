@@ -91,6 +91,13 @@ const citedBy = scholarStats.data.citedby;
             <div class="timeline-content">
               <div class="timeline-period">{item.period}</div>
               <div class="timeline-title">{item.title}</div>
+              {item.tags && item.tags.length > 0 && (
+                <div class="timeline-tags">
+                  {item.tags.map((tag) => (
+                    <span class="timeline-tag">{tag}</span>
+                  ))}
+                </div>
+              )}
               <p class="timeline-description">{item.description}</p>
             </div>
           </div>

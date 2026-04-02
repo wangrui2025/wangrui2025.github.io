@@ -775,6 +775,24 @@ code {
   margin: 0;
 }
 
+.timeline-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--paper-accent);
+  color: var(--paper-bg);
+  opacity: 0.6;
+  font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .timeline-container {
