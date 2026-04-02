@@ -42,8 +42,8 @@ export const education: Education = {
       en: 'Master of Engineering',
     },
     period: {
-      zh: '2024.09 - 2027.06 (预计毕业)',
-      en: '2024.09 - 2027.06 (Expected Graduation)',
+      zh: '2024.09 - 2027.06 (预计)',
+      en: '2024.09 - 2027.06 (Expected)',
     },
   },
   bachelor: {
