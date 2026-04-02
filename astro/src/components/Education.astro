@@ -2,21 +2,25 @@
 import { education } from '../data/education';
 
 export interface Props {
-  type: 'master' | 'bachelor';
   lang?: 'en' | 'zh';
 }
 
-const { type, lang = 'en' } = Astro.props;
-const edu = education[type];
+const { lang = 'en' } = Astro.props;
 ---
 
-<div class="education-entry mb-4 p-4 border border-[var(--paper-border)] rounded-xl bg-[var(--paper-bg)] shadow-sm">
-  <div class="text-primary text-sm leading-relaxed flex justify-between">
-    <div class="flex gap-x-8 items-baseline">
-      <span class="whitespace-nowrap">{edu.school[lang]}</span>
-      <span class="min-w-[14rem] text-left">{edu.major[lang]}</span>
-      <span class="min-w-[5rem] text-left text-[var(--text-secondary)]">{edu.degree[lang]}</span>
-    </div>
-    <span class="whitespace-nowrap text-[var(--text-secondary)] shrink-0">{edu.period[lang]}</span>
-  </div>
-</div>
+<table class="education-table w-full text-sm text-[var(--text-color)]">
+  <tbody class="divide-y divide-[var(--paper-border)]">
+    <tr>
+      <td class="py-3 pr-4 align-top">{education.master.school[lang]}</td>
+      <td class="py-3 pr-4 align-top min-w-[14rem]">{education.master.major[lang]}</td>
+      <td class="py-3 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.master.degree[lang]}</td>
+      <td class="py-3 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.master.period[lang]}</td>
+    </tr>
+    <tr>
+      <td class="py-3 pr-4 align-top">{education.bachelor.school[lang]}</td>
+      <td class="py-3 pr-4 align-top min-w-[14rem]">{education.bachelor.major[lang]}</td>
+      <td class="py-3 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.bachelor.degree[lang]}</td>
+      <td class="py-3 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.bachelor.period[lang]}</td>
+    </tr>
+  </tbody>
+</table>
