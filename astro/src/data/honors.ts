@@ -19,16 +19,16 @@ export interface Honors {
 export const honors: Honors = {
   graduate: {
     zh: [
-      { period: '2026.01', text: '深圳大学学术启航奖学金' },
-      { period: '2025.12', text: '深圳大学研究生学业奖学金一等奖' },
       { period: '2025.12', text: '研究生国家奖学金' },
       { period: '2024.12', text: '深圳大学研究生学业奖学金特等奖' },
+      { period: '2025.12', text: '深圳大学研究生学业奖学金一等奖' },
+      { period: '2026.01', text: '深圳大学学术启航奖学金' },
     ],
     en: [
-      { period: '2026.01', text: 'Shenzhen University Research Initiation Scholarship' },
-      { period: '2025.12', text: 'Shenzhen University Graduate Academic Scholarship — First Prize' },
       { period: '2025.12', text: 'National Graduate Scholarship' },
       { period: '2024.12', text: 'Shenzhen University Graduate Academic Scholarship — Special Prize' },
+      { period: '2025.12', text: 'Shenzhen University Graduate Academic Scholarship — First Prize' },
+      { period: '2026.01', text: 'Shenzhen University Academic Launch Scholarship' },
     ],
   },
   undergraduate: {

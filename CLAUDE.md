@@ -89,6 +89,10 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 - 拆分条目（如本科拆为入学/毕业）→ 确保中间条目在正确位置
 - 每次修改后检查 period 顺序是否正确
 
+### Honor 顺序维护
+
+**按重要程度降序排列（国家奖学金 > 校级特等奖 > 校级一等奖 > ... > 本科）**，不按时间。荣誉奖项来自 `honors.ts`，与 timeline 独立。
+
 ## Git Workflow — 自动推送
 
 **⚠️ 每次修改代码后，必须自动推送，无需等待确认。**
