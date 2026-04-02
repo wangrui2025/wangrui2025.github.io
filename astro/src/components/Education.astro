@@ -10,9 +10,15 @@ const { type, lang = 'en' } = Astro.props;
 const edu = education[type];
 ---
 
-<div class="education-entry mb-6 p-4 border border-[var(--paper-border)] rounded-xl bg-[var(--paper-bg)] shadow-sm">
-  <p class="text-primary flex flex-wrap gap-1">
-    <span class="flex-1">{edu.description[lang]}</span>
-    <span class="period whitespace-nowrap">{edu.period[lang]}</span>
-  </p>
+<div class="education-entry mb-4 p-4 border border-[var(--paper-border)] rounded-xl bg-[var(--paper-bg)] shadow-sm">
+  <div class="text-primary text-sm leading-relaxed">
+    <div class="flex flex-wrap gap-x-8 gap-y-1">
+      <span class="min-w-0">{edu.school[lang]}</span>
+      <span class="whitespace-nowrap text-[var(--text-secondary)]">{edu.period[lang]}</span>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-1">
+      <span class="min-w-0">{edu.major[lang]}</span>
+      <span class="whitespace-nowrap text-[var(--text-secondary)]">{edu.degree[lang]}</span>
+    </div>
+  </div>
 </div>
