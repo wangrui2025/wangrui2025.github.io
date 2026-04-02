@@ -52,8 +52,7 @@
     {
       "period": "2026",
       "title": "CVPR 2026 Acceptation",
-      "description": "First-author paper 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026 (top-tier CV conference).",
-      "tags": ["csranking", "CCF-A"]
+      "description": "First-author paper 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026."
     },
     {
       "period": "2026.01",
@@ -68,8 +67,7 @@
     {
       "period": "2025",
       "title": "ICCV 2025 Acceptation",
-      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025 (top-tier CV conference).",
-      "tags": ["csranking", "CCF-A"]
+      "description": "First-author paper 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025."
     },
     {
       "period": "2024.12",

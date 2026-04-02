@@ -52,8 +52,7 @@
     {
       "period": "2026",
       "title": "CVPR 2026 论文接收",
-      "description": "第一作者论文《OSA: 基于正交状态更新与解剖先验感知特征增强的超声心动图视频分割》被计算机视觉顶会 CVPR 2026 接收。",
-      "tags": ["csranking", "CCF-A"]
+      "description": "第一作者论文《OSA: 基于正交状态更新与解剖先验感知特征增强的超声心动图视频分割》被 CVPR 2026 接收。"
     },
     {
       "period": "2026.01",
@@ -68,8 +67,7 @@
     {
       "period": "2025",
       "title": "ICCV 2025 论文接收",
-      "description": "第一作者论文《GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割》被计算机视觉顶会 ICCV 2025 接收。",
-      "tags": ["csranking", "CCF-A"]
+      "description": "第一作者论文《GDKVM: 基于门控 Delta 规则的时空键值记忆超声心动图视频分割》被 ICCV 2025 接收。"
     },
     {
       "period": "2024.12",
