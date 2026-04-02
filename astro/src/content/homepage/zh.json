@@ -38,6 +38,6 @@
   "project_title": "how2research",
   "project_description": "一个面向研究生的开源科研指南，涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程以及实验环境配置（如 uv, VSCode）等实用经验。（本 notion 文档中，以\"miyuki11\"的身份维护创作）",
   "project_url": "https://how2research-apple.notion.site/297e9f718aff81338d15e6347d75c807",
-  "honors_graduate_header": "硕士阶段",
-  "honors_undergraduate_header": "本科阶段"
+  "honors_graduate_header": "",
+  "honors_undergraduate_header": ""
 }
