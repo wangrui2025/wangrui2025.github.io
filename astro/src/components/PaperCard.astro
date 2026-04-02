@@ -25,6 +25,12 @@ if (!paper) {
 
 const localized = paper.data[lang];
 const image = imageMap[paper.data.image as keyof typeof imageMap];
+
+// Tag URL mapping
+const tagUrls: Record<string, string> = {
+  'csranking': 'https://csrankings.org/',
+  'CCF-A': 'https://www.ccf.org.cn/ccf/cecb/2024n/',
+};
 ---
 
 <div class="paper-box">
@@ -49,7 +55,11 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
     <p class="paper-meta">
       <strong>{paper.data.venue_full}</strong>
       {paper.data.tags && paper.data.tags.map((tag) => (
-        <span class="paper-venue-tag">{tag}</span>
+        tagUrls[tag] ? (
+          <a href={tagUrls[tag]} class="paper-venue-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+        ) : (
+          <span class="paper-venue-tag">{tag}</span>
+        )
       ))}
     </p>
     <div class="paper-keywords">
