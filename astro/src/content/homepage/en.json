@@ -52,7 +52,7 @@
     {
       "period": "2026",
       "title": "CVPR 2026 Acceptance",
-      "description": "Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation, accepted at CVPR 2026."
+      "description": "'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation' accepted at CVPR 2026."
     },
     {
       "period": "2026.01",
@@ -66,7 +66,7 @@
     {
       "period": "2025",
       "title": "ICCV 2025 Acceptance",
-      "description": "Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation, accepted at ICCV 2025."
+      "description": "'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation' accepted at ICCV 2025."
     },
     {
       "period": "2024.12",
@@ -80,7 +80,11 @@
     {
       "period": "2020.09 - 2024.06",
       "title": "Bachelor's Degree",
-      "description": "Henan University, Data Science and Big Data Technology. Honored as 'Three Good Student' with scholarship in December 2022."
+      "description": "Henan University, Data Science and Big Data Technology."
+    },
+    {
+      "period": "2022.12",
+      "title": "Three Good Student with Scholarship"
     }
   ]
 }
