@@ -44,7 +44,11 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
     <!-- Primary Links: Email & GitHub -->
     <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="author-link-primary">
       <Icon name="lucide:mail" class="w-4 h-4" />
-      <span>Email</span>
+      <span class="truncate max-w-[160px]">wr_szu@163.com</span>
+    </a>
+    <a href="mailto:2400101058@mails.szu.edu.cn" title={lang === 'zh' ? '邮箱（学生）' : 'Email (Student)'} class="author-link-primary">
+      <Icon name="lucide:mail" class="w-4 h-4" />
+      <span class="truncate max-w-[200px]">2400101058@mails.szu.edu.cn</span>
     </a>
     <a href="https://github.com/wangrui2025" title="GitHub" class="author-link-primary" target="_blank">
       <Icon name="simple-icons:github" class="w-4 h-4" />
@@ -127,8 +131,9 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
     border: 1px solid var(--border-color);
     background: var(--paper-bg);
     color: var(--text-color);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     transition: all 0.2s ease;
+    white-space: nowrap;
   }
 
   .author-link-primary:hover {
