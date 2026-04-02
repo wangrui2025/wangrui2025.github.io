@@ -8,7 +8,8 @@ export interface Props {
 const { lang = 'en' } = Astro.props;
 ---
 
-<table class="education-table w-full text-sm text-[var(--text-color)]">
+<div class="mb-4 border border-[var(--paper-border)] rounded-xl bg-[var(--paper-bg)] shadow-sm">
+<table class="education-table w-full text-sm text-[var(--text-color)] p-4">
   <tbody class="divide-y divide-[var(--paper-border)]">
     <tr>
       <td class="py-3 pr-4 align-top">{education.master.school[lang]}</td>
@@ -24,3 +25,4 @@ const { lang = 'en' } = Astro.props;
     </tr>
   </tbody>
 </table>
+</div>
