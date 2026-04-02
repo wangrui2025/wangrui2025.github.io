@@ -45,12 +45,6 @@ const timelineTagUrls: Record<string, string> = {
     <h1 class="text-3xl font-bold mb-2">{lang === 'zh' ? '关于我' : 'About Me'}</h1>
     <p class="mb-4 text-lg" set:html={h.background.intro} />
 
-    <!-- Research Interests -->
-    <div class="info-card mb-4">
-      <h2 class="info-card-title">{lang === 'zh' ? '研究方向' : 'Research Interests'}</h2>
-      <p class="text-gray-600 dark:text-gray-300" set:html={h.background.research} />
-    </div>
-
     <!-- Background -->
     <div class="info-card mb-4">
       <h2 class="info-card-title">{h.background.heading}</h2>
