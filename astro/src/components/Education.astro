@@ -11,8 +11,12 @@ const edu = education[type];
 ---
 
 <div class="education-entry mb-4 p-4 border border-[var(--paper-border)] rounded-xl bg-[var(--paper-bg)] shadow-sm">
-  <div class="text-primary text-sm leading-relaxed flex flex-wrap gap-x-8 justify-between items-baseline">
-    <span class="min-w-0">{edu.school[lang]} · {edu.major[lang]} · {edu.degree[lang]}</span>
+  <div class="text-primary text-sm leading-relaxed flex justify-between">
+    <div class="flex gap-x-8 items-baseline">
+      <span class="whitespace-nowrap">{edu.school[lang]}</span>
+      <span class="min-w-[14rem] text-left">{edu.major[lang]}</span>
+      <span class="min-w-[5rem] text-left text-[var(--text-secondary)]">{edu.degree[lang]}</span>
+    </div>
     <span class="whitespace-nowrap text-[var(--text-secondary)] shrink-0">{edu.period[lang]}</span>
   </div>
 </div>
