@@ -5,6 +5,7 @@ const papers = defineCollection({
   schema: z.object({
     venue: z.string(),
     venue_full: z.string(),
+    tags: z.array(z.string()).optional(),
     image: z.string(),
     alt_zh: z.string(),
     alt_en: z.string(),

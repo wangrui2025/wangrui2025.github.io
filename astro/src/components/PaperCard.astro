@@ -48,6 +48,9 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
     <p class="paper-authors">{localized.authors}</p>
     <p class="paper-meta">
       <strong>{paper.data.venue_full}</strong>
+      {paper.data.tags && paper.data.tags.map((tag) => (
+        <span class="paper-venue-tag">{tag}</span>
+      ))}
     </p>
     <div class="paper-keywords">
       {localized.technologies?.map((tech) => (
@@ -96,5 +99,18 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
   :global(.dark) .paper-link-arxiv:hover {
     background: #ff6b6b;
     color: #1a1a1a;
+  }
+
+  .paper-venue-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: var(--paper-accent);
+    color: var(--paper-bg);
+    opacity: 0.5;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    vertical-align: middle;
   }
 </style>

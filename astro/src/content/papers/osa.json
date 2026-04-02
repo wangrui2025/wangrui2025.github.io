@@ -1,6 +1,7 @@
 {
   "venue": "CVPR 2026",
   "venue_full": "Accepted to CVPR 2026",
+  "tags": ["csranking", "CCF-A"],
   "image": "../assets/paper/fig_osu_page-0001.jpg",
   "alt_zh": "OSA论文框架图",
   "alt_en": "OSA paper framework",
