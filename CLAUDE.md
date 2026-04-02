@@ -63,32 +63,26 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 - Education data in `astro/src/data/education.ts`
 - Honors data in `astro/src/data/honors.ts`
 
-## Git Workflow
+## Git Workflow — 自动推送
 
-**自动推送**：修改后自动分析并推送，无需确认。
+**⚠️ 每次修改代码后，必须自动推送，无需等待确认。**
 
-### 标准提交流程
+### 操作流程
 
-1. **暂存并分析**：`./scripts/autopush.sh --stage`
-   - 暂存所有更改（排除 `.astro` 缓存）
-   - 输出改动统计和文件列表
+1. **修改完成后，立即执行**：
+   ```bash
+   ./scripts/autopush.sh "<语义化提交信息>"
+   ```
+2. **脚本自动完成**：暂存 → 提交 → pull --rebase → push
 
-2. **深度分析**：`git diff --cached`
-   - 必须分析代码逻辑，理解"改了什么"和"为什么"
-   - **严禁** 只罗列文件名或扩展名
+### 提交信息规范
 
-3. **语义化提交**：`./scripts/autopush.sh "<message>"`
-   - 脚本自动执行：暂存 → 提交 → pull --rebase → push
-   - 提交信息必须符合 **Conventional Commits** 规范
-   - 必须体现高级工程师的语义总结能力
+使用 **Conventional Commits**：`type(scope): 简短描述`
 
-### 提交信息质量标准
-
-| ❌ 错误示例 | ✅ 正确示例 |
-|------------|------------|
-| `.astro,.css,Update index.astro` | `refactor(style): implement tabular-nums for vertical date alignment` |
-| `同步改动` | `refactor(automation): simplify autopush for AI-driven commits` |
-| `更新文档` | `docs(readme): add automation architecture diagram and config reference` |
+| ❌ 错误 | ✅ 正确 |
+|--------|---------|
+| `同步改动` | `refactor(timeline): unify award entry titles` |
+| `update zh.json` | `style(homepage): remove redundant prefix from timeline descriptions` |
 | `fix bug` | `fix(nav): resolve mobile menu collapse on iOS Safari` |
 
 ### 冲突处理
@@ -96,5 +90,5 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 如果 `git pull --rebase` 失败：
 ```bash
 git fetch origin && git reset --hard origin/main
-# 然后重新应用你的改动
+# 重新应用改动后再次 autopush
 ```
