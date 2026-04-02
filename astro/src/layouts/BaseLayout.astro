@@ -1,4 +1,5 @@
 ---
+import { execSync } from 'child_process';
 import { ViewTransitions } from 'astro:transitions';
 import Masthead from '../components/Masthead.astro';
 import Scripts from '../components/Scripts.astro';
@@ -21,6 +22,9 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2025.github.io');
+
+// Get the last commit date for "Last updated" display
+const lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
 ---
 
 <!doctype html>
@@ -132,7 +136,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2
 
     <footer class="footer-builtwith">
       {/* CN: 本网页由 */ /* EN: Built with */}
-      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: 2026-04-01
+      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
     </footer>
   </body>
 </html>
