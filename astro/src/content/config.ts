@@ -55,11 +55,11 @@ const homepage = defineCollection({
     description: z.string(),
     // About section
     status_badge: z.string(),
-    about_text: z.string().optional(), // HTML content (deprecated, use background.intro + background.research)
+    about_text: z.string().optional(), // HTML content (deprecated, use background.intro)
     background: z.object({
       heading: z.string(),
       intro: z.string(), // HTML content
-      research: z.string(), // HTML content
+      research: z.string().optional(), // HTML content
       items: z.array(z.string()),
     }),
     target_areas: z.object({
