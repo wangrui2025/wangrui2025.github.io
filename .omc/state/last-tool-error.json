@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git -C ~/.claude log --oneline origin/main..HEAD 2>/dev/null | head -5; echo \\\"---\\\"; git -C ~/.claude push 2>&1\",\"description\":\"Check unpushed commits and push\"}",
-  "error": "Exit code 128\n---\nfatal: unable to access 'https://github.com/mykcs/.claude.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443",
-  "timestamp": "2026-04-03T09:15:08.481Z",
-  "retry_count": 1
-}
