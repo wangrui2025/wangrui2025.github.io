@@ -1,9 +1,29 @@
 ---
 import CVLayout from '../layouts/CVLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
 import { cvData } from '../data/cv';
+import CvPaperItem from '../components/CvPaperItem.astro';
+import CvHonorItem from '../components/CvHonorItem.astro';
+import CvEducationItem from '../components/CvEducationItem.astro';
 
 const cv = cvData.en;
-const lang = 'en';
+const lang: 'en' | 'zh' = 'en';
+
+// Fetch from content collections
+const papers = await getCollection('papers', (p) => p.data.show_on_cv);
+const honors = await getEntry('honors', 'honors');
+const education = await getEntry('education', 'education');
+
+// Sort papers by date (newest first)
+const sortedPapers = papers.sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+// Flatten honors with type标签
+const graduateHonors = honors.data.graduate
+  .filter((h) => h.show_on_cv)
+  .map((h) => ({ ...h, type: 'graduate' as const }));
+const undergraduateHonors = honors.data.undergraduate
+  .filter((h) => h.show_on_cv)
+  .map((h) => ({ ...h, type: 'undergraduate' as const }));
 ---
 
 <CVLayout
@@ -34,50 +54,32 @@ const lang = 'en';
     <!-- Education -->
     <section class="cv-section">
       <h2 class="cv-section-title">Education</h2>
-      <div class="cv-entry">
-        <div class="cv-entry-row">
-          <span class="cv-entry-title">{cv.education.master.university}</span>
-          <span class="cv-entry-period">{cv.education.master.period}</span>
-        </div>
-        <div class="cv-entry-sub">{cv.education.master.major}</div>
-        <div class="cv-entry-detail">{cv.education.master.detail}</div>
-      </div>
-      <div class="cv-entry">
-        <div class="cv-entry-row">
-          <span class="cv-entry-title">{cv.education.bachelor.university}</span>
-          <span class="cv-entry-period">{cv.education.bachelor.period}</span>
-        </div>
-        <div class="cv-entry-sub">{cv.education.bachelor.major}</div>
-        <div class="cv-entry-detail">{cv.education.bachelor.detail}</div>
-        <div class="cv-entry-detail">{cv.education.bachelor.examScores}</div>
-      </div>
+      <CvEducationItem
+        university={education.data.master.university}
+        universityUrl={education.data.master.universityUrl}
+        major={education.data.master.major}
+        degree={education.data.master.degree}
+        period={education.data.master.period}
+        detail={education.data.master.detail}
+        lang={lang}
+      />
+      <CvEducationItem
+        university={education.data.bachelor.university}
+        universityUrl={education.data.bachelor.universityUrl}
+        major={education.data.bachelor.major}
+        degree={education.data.bachelor.degree}
+        period={education.data.bachelor.period}
+        detail={education.data.bachelor.detail}
+        examScores={education.data.bachelor.examScores}
+        lang={lang}
+      />
     </section>
 
     <!-- Publications -->
     <section class="cv-section">
       <h2 class="cv-section-title">Publications</h2>
-      {cv.publications.map((pub) => (
-        <div class="cv-pub-entry">
-          <div class="cv-pub-venue">[{pub.conference}]</div>
-          <div class="cv-pub-main">
-            <div class="cv-pub-title">{pub.title}</div>
-            <div class="cv-pub-authors">
-              {pub.authors.map((author, i) => (<><span class={author.isSelf ? 'author-self' : 'author-other'}>{author.name}</span>{i < pub.authors.length - 1 && <span class="author-sep">, </span>}</>))}
-            </div>
-            <div class="cv-pub-links">
-              {pub.arxiv && (
-                <a href={pub.arxiv} target="_blank" rel="noopener" class="pub-link">
-                  [arXiv]
-                </a>
-              )}
-              {pub.projectUrl && (
-                <a href={pub.projectUrl} target="_blank" rel="noopener" class="pub-link">
-                  [Project]
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
+      {sortedPapers.map((paper) => (
+        <CvPaperItem paper={paper} lang={lang} />
       ))}
     </section>
 
@@ -95,11 +97,26 @@ const lang = 'en';
     <section class="cv-section">
       <h2 class="cv-section-title">Honors & Awards</h2>
       <div class="cv-grid">
+        {graduateHonors.map((honor) => (
+          <CvHonorItem
+            text={honor.en.text}
+            period={honor.period}
+            secondary={false}
+          />
+        ))}
+        {undergraduateHonors.map((honor) => (
+          <CvHonorItem
+            text={honor.en.text}
+            period={honor.period}
+            secondary={true}
+          />
+        ))}
         {cv.honors.map((honor) => (
-          <div class={`cv-grid-item${honor.secondary ? ' secondary' : ''}`}>
-            <span>{honor.text}</span>
-            <span class="right">{honor.period}</span>
-          </div>
+          <CvHonorItem
+            text={honor.text}
+            period={honor.period}
+            secondary={honor.secondary ?? true}
+          />
         ))}
       </div>
     </section>

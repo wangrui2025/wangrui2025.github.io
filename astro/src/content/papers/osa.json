@@ -7,15 +7,25 @@
   "alt_zh": "OSA论文框架图",
   "alt_en": "OSA paper framework",
   "arxiv": "https://arxiv.org/pdf/2603.26188",
+  "show_on_cv": true,
+  "show_on_homepage": true,
   "zh": {
     "title": "OSA: 使用正交状态更新与解剖先验感知特征增强的超声心动图视频分割",
-    "authors": "王锐，吴惠思*，秦璟",
+    "authors": [
+      { "name": "王锐", "is_self": true, "is_corresponding": false },
+      { "name": "吴惠思", "is_self": false, "is_corresponding": true },
+      { "name": "秦璟", "is_self": false, "is_corresponding": false }
+    ],
     "fields": ["计算机视觉", "视频分割", "医学影像"],
     "technologies": ["线性循环模型", "流形"]
   },
   "en": {
     "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
-    "authors": "Rui Wang, Huisi Wu*, Jing Qin",
+    "authors": [
+      { "name": "Rui Wang", "is_self": true, "is_corresponding": false },
+      { "name": "Huisi Wu", "is_self": false, "is_corresponding": true },
+      { "name": "Jing Qin", "is_self": false, "is_corresponding": false }
+    ],
     "fields": ["Computer Vision", "Video Segmentation", "Medical Image"],
     "technologies": ["Linear Recurrent Models", "Manifold"]
   }

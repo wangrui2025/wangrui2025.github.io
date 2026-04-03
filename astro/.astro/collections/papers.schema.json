@@ -40,6 +40,17 @@
           "type": "string",
           "format": "uri"
         },
+        "equal_contribution": {
+          "type": "boolean"
+        },
+        "show_on_cv": {
+          "type": "boolean",
+          "default": true
+        },
+        "show_on_homepage": {
+          "type": "boolean",
+          "default": true
+        },
         "zh": {
           "type": "object",
           "properties": {
@@ -47,7 +58,27 @@
               "type": "string"
             },
             "authors": {
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "is_corresponding": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "is_self": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false
+              }
             },
             "fields": {
               "type": "array",
@@ -77,7 +108,27 @@
               "type": "string"
             },
             "authors": {
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "is_corresponding": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "is_self": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false
+              }
             },
             "fields": {
               "type": "array",

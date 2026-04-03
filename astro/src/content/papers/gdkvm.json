@@ -8,15 +8,29 @@
   "alt_en": "GDKVM paper framework",
   "arxiv": "https://arxiv.org/pdf/2512.10252",
   "project": "https://wangrui2025.github.io/GDKVM/",
+  "show_on_cv": true,
+  "show_on_homepage": true,
   "zh": {
     "title": "GDKVM: 使用门控 Delta 规则的时空键值记忆超声心动图视频分割",
-    "authors": "王锐，孙一木，郭警醒，吴惠思*，秦璟",
+    "authors": [
+      { "name": "王锐", "is_self": true, "is_corresponding": false },
+      { "name": "孙一木", "is_self": false, "is_corresponding": false },
+      { "name": "郭警醒", "is_self": false, "is_corresponding": false },
+      { "name": "吴惠思", "is_self": false, "is_corresponding": true },
+      { "name": "秦璟", "is_self": false, "is_corresponding": false }
+    ],
     "fields": ["计算机视觉", "视频分割", "医学影像"],
     "technologies": ["线性注意力", "门控 Delta 规则"]
   },
   "en": {
     "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
-    "authors": "Rui Wang, Yimu Sun, Jingxing Guo, Huisi Wu*, Jing Qin",
+    "authors": [
+      { "name": "Rui Wang", "is_self": true, "is_corresponding": false },
+      { "name": "Yimu Sun", "is_self": false, "is_corresponding": false },
+      { "name": "Jingxing Guo", "is_self": false, "is_corresponding": false },
+      { "name": "Huisi Wu", "is_self": false, "is_corresponding": true },
+      { "name": "Jing Qin", "is_self": false, "is_corresponding": false }
+    ],
     "fields": ["Computer Vision", "Video Segmentation", "Medical Image"],
     "technologies": ["Linear Attention", "Gated Delta Rule"]
   }

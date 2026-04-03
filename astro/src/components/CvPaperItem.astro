@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  paper: CollectionEntry<'papers'>;
+  lang: 'en' | 'zh';
+}
+
+const { paper, lang } = Astro.props;
+const localized = paper.data[lang];
+
+// Separator and asterisk based on language
+const sep = lang === 'zh' ? '，' : ', ';
+const corrSuffix = '*';
+---
+
+<div class="cv-pub-entry">
+  <div class="cv-pub-venue">[{paper.data.venue}]</div>
+  <div class="cv-pub-main">
+    <div class="cv-pub-title">{localized.title}</div>
+    <div class="cv-pub-authors">
+      {localized.authors.map((author, i) => (
+        <>
+          <span class={author.is_self ? 'author-self' : 'author-other'}>
+            {author.name}{author.is_corresponding ? corrSuffix : ''}
+          </span>
+          {i < localized.authors.length - 1 && <span class="author-sep">{sep}</span>}
+        </>
+      ))}
+    </div>
+    <div class="cv-pub-links">
+      {paper.data.arxiv && (
+        <a href={paper.data.arxiv} target="_blank" rel="noopener" class="pub-link">
+          [arXiv]
+        </a>
+      )}
+      {paper.data.project && (
+        <a href={paper.data.project} target="_blank" rel="noopener" class="pub-link">
+          [Project]
+        </a>
+      )}
+    </div>
+  </div>
+</div>

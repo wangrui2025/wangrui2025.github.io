@@ -12,15 +12,26 @@ const papers = defineCollection({
     alt_en: z.string(),
     arxiv: z.string().url().optional(),
     project: z.string().url().optional(),
+    equal_contribution: z.boolean().optional(),
+    show_on_cv: z.boolean().default(true),
+    show_on_homepage: z.boolean().default(true),
     zh: z.object({
       title: z.string(),
-      authors: z.string(),
+      authors: z.array(z.object({
+        name: z.string(),
+        is_corresponding: z.boolean().default(false),
+        is_self: z.boolean().default(false),
+      })),
       fields: z.array(z.string()),
       technologies: z.array(z.string()),
     }),
     en: z.object({
       title: z.string(),
-      authors: z.string(),
+      authors: z.array(z.object({
+        name: z.string(),
+        is_corresponding: z.boolean().default(false),
+        is_self: z.boolean().default(false),
+      })),
       fields: z.array(z.string()),
       technologies: z.array(z.string()),
     }),
@@ -56,12 +67,16 @@ const honors = defineCollection({
       rank: z.number(),
       zh: z.object({ text: z.string() }),
       en: z.object({ text: z.string() }),
+      show_on_cv: z.boolean().default(true),
+      show_on_homepage: z.boolean().default(true),
     })),
     undergraduate: z.array(z.object({
       period: z.string(),
       rank: z.number(),
       zh: z.object({ text: z.string() }),
       en: z.object({ text: z.string() }),
+      show_on_cv: z.boolean().default(true),
+      show_on_homepage: z.boolean().default(true),
     })),
   }),
 });
@@ -77,6 +92,7 @@ const education = defineCollection({
       major: z.object({ zh: z.string(), en: z.string() }),
       degree: z.object({ zh: z.string(), en: z.string() }),
       period: z.object({ zh: z.string(), en: z.string() }),
+      detail: z.object({ zh: z.string(), en: z.string() }),
     }),
     bachelor: z.object({
       university: z.object({ zh: z.string(), en: z.string() }),
@@ -86,6 +102,8 @@ const education = defineCollection({
       major: z.object({ zh: z.string(), en: z.string() }),
       degree: z.object({ zh: z.string(), en: z.string() }),
       period: z.object({ zh: z.string(), en: z.string() }),
+      detail: z.object({ zh: z.string(), en: z.string() }),
+      examScores: z.object({ zh: z.string(), en: z.string() }).optional(),
     }),
   }),
 });

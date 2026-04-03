@@ -1,0 +1,43 @@
+---
+export interface Props {
+  tag: string;
+  href?: string;
+}
+
+const { tag, href } = Astro.props;
+
+// Tag URL mapping
+const tagUrls: Record<string, string> = {
+  'csranking': 'https://csrankings.org/#/index?vision&world',
+  'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
+};
+
+const url = href ?? tagUrls[tag];
+---
+
+{tagUrls[tag] ? (
+  <a href={url} class="paper-venue-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+) : (
+  <span class="paper-venue-tag">{tag}</span>
+)}
+
+<style>
+  .paper-venue-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: var(--paper-accent);
+    color: var(--paper-bg);
+    opacity: 0.5;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+
+  a.paper-venue-tag:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+</style>

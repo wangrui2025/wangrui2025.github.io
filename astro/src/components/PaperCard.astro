@@ -54,7 +54,14 @@ const tagUrls: Record<string, string> = {
     <h3>
       <span>{localized.title}</span>
     </h3>
-    <p class="paper-authors">{localized.authors}</p>
+    <p class="paper-authors">
+      {localized.authors.map((author, i) => (
+        <>
+          <span class={author.is_self ? 'author-self' : ''}>{author.name}{author.is_corresponding ? '*' : ''}</span>
+          {i < localized.authors.length - 1 && <span class="author-sep">{lang === 'zh' ? '，' : ', '}</span>}
+        </>
+      ))}
+    </p>
     <p class="paper-meta">
       <strong>{paper.data.venue_full}</strong>
       {paper.data.tags && paper.data.tags.map((tag) => (
@@ -133,5 +140,13 @@ const tagUrls: Record<string, string> = {
 
   :global(.tag-tech) {
     opacity: 0.75;
+  }
+
+  .author-self {
+    font-weight: 600;
+  }
+
+  .author-sep {
+    color: #999;
   }
 </style>

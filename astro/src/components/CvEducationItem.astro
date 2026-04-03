@@ -1,0 +1,59 @@
+---
+export interface Props {
+  university: { zh: string; en: string };
+  universityUrl?: { zh: string; en: string };
+  major: { zh: string; en: string };
+  degree: { zh: string; en: string };
+  period: { zh: string; en: string };
+  detail?: { zh: string; en: string };
+  examScores?: { zh: string; en: string };
+  lang: 'en' | 'zh';
+}
+
+const {
+  university,
+  universityUrl,
+  major,
+  degree,
+  period,
+  detail,
+  examScores,
+  lang,
+} = Astro.props;
+
+const displayUniversity = university[lang];
+const displayMajor = major[lang];
+const displayPeriod = period[lang];
+const displayDetail = detail?.[lang];
+const displayExamScores = examScores?.[lang];
+---
+
+<div class="cv-entry">
+  <div class="cv-entry-row">
+    <span class="cv-entry-title">
+      {universityUrl?.[lang] ? (
+        <a href={universityUrl[lang]} target="_blank" rel="noopener" class="edu-link">
+          {displayUniversity}
+        </a>
+      ) : (
+        displayUniversity
+      )}
+    </span>
+    <span class="cv-entry-period">{displayPeriod}</span>
+  </div>
+  <div class="cv-entry-sub">{displayMajor} · {degree[lang]}</div>
+  {displayDetail && <div class="cv-entry-detail">{displayDetail}</div>}
+  {displayExamScores && <div class="cv-entry-detail">{displayExamScores}</div>}
+</div>
+
+<style>
+  .edu-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.5pt solid currentColor;
+  }
+
+  .edu-link:hover {
+    opacity: 0.7;
+  }
+</style>
