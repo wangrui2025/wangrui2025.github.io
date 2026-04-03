@@ -14,10 +14,17 @@ const { text, period, secondary = false } = Astro.props;
 </div>
 
 <style>
+  .cv-grid-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
+    width: 100%;
+  }
   .honor-text {
     font-size: 9pt;
     word-break: break-word;
-    color: #e6c200;
+    color: #bbb;
   }
   .cv-grid-item:not(.secondary) .honor-text {
     color: #1a1a1a;
