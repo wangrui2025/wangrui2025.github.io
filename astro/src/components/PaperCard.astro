@@ -89,9 +89,8 @@ const tagUrls: Record<string, string> = {
         </a>
       )}
       {paper.data.arxiv && (
-        <a href={paper.data.arxiv} class="text-sm px-3 py-1 rounded bg-transparent text-[#b31b1b] dark:text-[#ff6b6b] border border-[#b31b1b] dark:border-[#ff6b6b] transition-all duration-200 hover:bg-[#b31b1b] dark:hover:bg-[#ff6b6b] hover:text-white dark:hover:text-gray-900 hover:-translate-y-0.5 no-underline flex items-center gap-1" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
-          <Icon name="simple-icons:arxiv" class="w-4 h-4" />
-          arXiv
+        <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-sm text-[#b31b1b] dark:text-[#ff6b6b] no-underline hover:underline" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
+          [arXiv]
         </a>
       )}
     </div>

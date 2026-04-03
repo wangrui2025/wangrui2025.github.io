@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Works - Rui Wang" description="Academic presentation works of Rui Wang" lang="en">
+  <div slot="sidebar" />
+
+  <style>
+    /* ===== Works PPT Page — Full-screen Reveal.js ===== */
+    .works-page {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reveal {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 28px;
+      color: #1a1a1a;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    .reveal h1 {
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      font-family: 'Source Serif 4', Georgia, serif;
+    }
+
+    .reveal h2 {
+      font-size: 1.4em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      font-family: 'Source Serif 4', Georgia, serif;
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 0.2em;
+    }
+
+    .reveal h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 0.4em;
+      color: #444;
+    }
+
+    .reveal p {
+      line-height: 1.6;
+      margin-bottom: 0.6em;
+    }
+
+    .reveal ul {
+      margin-bottom: 0.6em;
+      padding-left: 1.5em;
+    }
+
+    .reveal li {
+      margin-bottom: 0.4em;
+    }
+
+    .reveal .slide-title {
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .reveal .slide-title h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+    }
+
+    .reveal .slide-title .subtitle {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 0.3em;
+    }
+
+    .reveal .slide-title .venue {
+      font-size: 0.9em;
+      color: #888;
+      font-style: italic;
+    }
+
+    .reveal .slide-title .author {
+      font-size: 0.85em;
+      color: #555;
+      margin-top: 1.5em;
+    }
+
+    .reveal .formula-box {
+      background: #f5f5f5;
+      padding: 0.8em 1.5em;
+      border-radius: 8px;
+      text-align: center;
+      margin: 0.8em 0;
+      border-left: 4px solid #1a1a1a;
+    }
+
+    .reveal .highlight-box {
+      background: #e8f0fe;
+      border-radius: 8px;
+      padding: 0.6em 1em;
+      margin: 0.5em 0;
+    }
+
+    .reveal .key-point {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .reveal .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+      align-items: start;
+    }
+
+    .reveal img {
+      max-height: 55vh;
+      margin: 0 auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .reveal figcaption {
+      font-size: 0.7em;
+      color: #888;
+      text-align: center;
+      margin-top: 0.3em;
+      font-style: italic;
+    }
+
+    .reveal .footer-note {
+      font-size: 0.6em;
+      color: #aaa;
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+    }
+
+    /* Dark mode */
+    html.dark .reveal {
+      color: #f0f0f0;
+    }
+
+    html.dark .reveal h2 {
+      border-bottom-color: #f0f0f0;
+    }
+
+    html.dark .reveal .formula-box {
+      background: #2a2a2a;
+      border-left-color: #f0f0f0;
+    }
+
+    html.dark .reveal .highlight-box {
+      background: #1e3a5f;
+    }
+
+    html.dark .reveal .slide-title .subtitle,
+    html.dark .reveal .slide-title .venue,
+    html.dark .reveal .slide-title .author {
+      color: #cccccc;
+    }
+  </style>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- GDKVM (ICCV 2025) -->
+      <!-- ============================================ -->
+
+      <!-- GDKVM: Slide 1 — Title -->
+      <section class="slide-title">
+        <h1>GDKVM</h1>
+        <p class="subtitle">Gated Delta Rule for Echocardiography Video Segmentation</p>
+        <p class="venue">ICCV 2025</p>
+        <p class="author">Rui Wang &bull; Shenzhen University</p>
+      </section>
+
+      <!-- GDKVM: Slide 2 — Motivation -->
+      <section>
+        <h2>Motivation</h2>
+        <ul>
+          <li><span class="key-point">Speckle Noise</span> — Ultrasound imaging suffers from multiplicative speckle noise that degrades image quality</li>
+          <li><span class="key-point">Complex Deformation</span> — Cardiac beat cycles cause intricate and non-rigid deformations of heart structures</li>
+          <li><span class="key-point">Real-time Clinical Demand</span> — Echocardiography requires accurate, fast segmentation for clinical diagnosis</li>
+        </ul>
+        <div class="highlight-box">
+          Prior methods treat these challenges independently — we propose a unified gated mechanism to address both simultaneously.
+        </div>
+      </section>
+
+      <!-- GDKVM: Slide 3 — Methodology: GDR -->
+      <section>
+        <h2>Methodology: Gated Delta Rule (GDR)</h2>
+        <p>We introduce a gated state evolution framework:</p>
+        <div class="formula-box">
+          $S_t = S_{t-1}\big(\alpha_t(I - \beta_t K_t K_t^\top)\big) + \beta_t V_t K_t^\top$
+        </div>
+        <ul>
+          <li><span class="key-point">$\alpha_t$</span> — adaptive forgetting gate controlling memory retention</li>
+          <li><span class="key-point">$\beta_t$</span> — update gate balancing noise suppression vs. information preservation</li>
+          <li><span class="key-point">$K_t$</span> — learned key projection matrix; $V_t$ — value projection</li>
+          <li><span class="key-point">Key-Pixel Feature Fusion (KPFF)</span> — aggregates global context to guide per-pixel segmentation</li>
+        </ul>
+      </section>
+
+      <!-- GDKVM: Slide 4 — Performance -->
+      <section>
+        <h2>Performance</h2>
+        <div class="two-col">
+          <div>
+            <h3>CAMUS Dataset Results</h3>
+            <ul>
+              <li><span class="key-point">95.11% mDice</span> — state-of-the-art on CAMUS</li>
+              <li>Significantly outperforms prior methods on speckle-robust segmentation</li>
+              <li>Real-time inference suitable for clinical deployment</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/images/works/gdkvm-results.png" alt="GDKVM segmentation results on CAMUS dataset" />
+            <figcaption>Qualitative results: LV (left ventricle) segmentation comparison</figcaption>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- OSA (arXiv 2026) -->
+      <!-- ============================================ -->
+
+      <!-- OSA: Slide 5 — Title -->
+      <section class="slide-title">
+        <h1>OSA</h1>
+        <p class="subtitle">Orthogonalized State Update for Video Object Segmentation</p>
+        <p class="venue">arXiv 2026</p>
+        <p class="author">Rui Wang &bull; Shenzhen University</p>
+      </section>
+
+      <!-- OSA: Slide 6 — Problem -->
+      <section>
+        <h2>Problem: Rank Collapse</h2>
+        <ul>
+          <li><span class="key-point">Linear Recurrent Models</span> — Despite their efficiency, linear RNNs suffer from <em>rank collapse</em>: state representations converge to a low-rank subspace</li>
+          <li><span class="key-point">Representation Degeneration</span> — As training progresses, hidden states become increasingly similar across timesteps, losing discriminative power</li>
+          <li><span class="key-point">Impact on VOS</span> — Object appearance variations across video frames cannot be captured when states collapse</li>
+        </ul>
+        <div class="highlight-box">
+          We identify that rank collapse stems from the unconstrained Euclidean state evolution in standard linear RNNs.
+        </div>
+      </section>
+
+      <!-- OSA: Slide 7 — Methodology -->
+      <section>
+        <h2>Methodology: Orthogonalized State Update (OSU)</h2>
+        <p>We constrain state evolution to the <strong>Stiefel Manifold</strong> $\mathcal{V}_{C_v, C_k}$:</p>
+        <div class="formula-box">
+          $S_t = \mathrm{Proj}_{\mathcal{V}}\big(S_t^{\mathrm{Euc}}\big)$
+        </div>
+        <p>Efficiently realized via <span class="key-point">Newton-Schulz iteration</span> for orthonormalization:</p>
+        <ul>
+          <li>Maintains full rank representation throughout temporal propagation</li>
+          <li><span class="key-point">APFE (Anatomical Prior-aware Feature Enhancement)</span> — module injecting anatomical priors to guide feature alignment</li>
+          <li>No extra parameters at inference — orthogonalization is baked into the state transition matrix</li>
+        </ul>
+      </section>
+
+      <!-- OSA: Slide 8 — Clinical Value -->
+      <section>
+        <h2>Clinical Value &amp; Results</h2>
+        <div class="two-col">
+          <div>
+            <h3>Performance Highlights</h3>
+            <ul>
+              <li><span class="key-point">35 FPS</span> — real-time clinical inference speed</li>
+              <li><span class="key-point">LV<sub>EF</sub> Estimation</span> — excellent performance on left ventricular ejection fraction estimation</li>
+              <li>Robust to long video sequences without representation degradation</li>
+            </ul>
+            <h3>Technical Gains</h3>
+            <ul>
+              <li>Theoretically grounded: explicit manifold constraint prevents rank collapse</li>
+              <li>Plug-and-play: OSU can be integrated into any linear recurrent architecture</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/images/works/osa-arch.png" alt="OSA architecture overview" />
+            <figcaption>OSA architecture: OSU module integrated with APFE</figcaption>
+          </div>
+        </div>
+      </section>
+
+      <!-- OSA: Slide 9 — Thank You -->
+      <section class="slide-title">
+        <h1>Thank You</h1>
+        <p class="subtitle">Questions &amp; Collaboration</p>
+        <p class="author">Contact: wr_szu@163.com</p>
+        <p class="author">GitHub: github.com/wangrui2025</p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- Reveal.js + MathJax -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" />
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    plugins: [RevealMath],
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    center: false,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+  });
+</script>
