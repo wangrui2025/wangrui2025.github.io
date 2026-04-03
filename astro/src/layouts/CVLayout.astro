@@ -6,12 +6,15 @@ export interface Props {
   title: string;
   description?: string;
   lang?: string;
+  /** Fixed viewport width in pixels for CV pages (A4 ≈ 794px). Enables native PDF-like scaling on mobile. */
+  viewport?: string;
 }
 
 const {
   title = 'Rui Wang - CV',
   description = 'Curriculum Vitae of Rui Wang',
   lang = 'zh',
+  viewport = 'width=794',
 } = Astro.props;
 
 let lastUpdated = '2026-04-03';
@@ -24,7 +27,7 @@ try {
 <html lang={lang} class="no-js">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="viewport" content={`${viewport}, initial-scale=1.0, user-scalable=yes`} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -137,19 +140,6 @@ try {
     padding: 20px;
     background: var(--bg-primary);
     overflow-x: auto;
-  }
-
-  /* Mobile: allow pinch-zoom and horizontal pan when zoomed */
-  @media (max-width: 768px) {
-    .cv-container {
-      padding: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .cv-wrapper {
-      touch-action: pan-x;
-    }
   }
 
   .cv-wrapper {
