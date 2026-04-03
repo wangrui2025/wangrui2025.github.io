@@ -122,3 +122,28 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 git fetch origin && git reset --hard origin/main
 # 重新应用改动后再次 autopush
 ```
+
+## Claude Agent 配置 (`.claude/`)
+
+Agent 的规则、记忆、案例和工具脚本都集中在 `.claude/` 目录下：
+
+| 路径 | 用途 |
+|------|------|
+| `.claude/rules/` | 行为准则（Post-Fix 验证、自我进化、案例记录、备份等） |
+| `.claude/memory/` | 用户偏好、反馈、静态上下文 |
+| `.claude/knowledge/` | 知识库：案例记录 (`cases/`) + 约定规范 (`conventions/`) |
+| `.claude/case/` | 已解决的 technical cases（CV 布局、移动端缩放等） |
+| `.claude/commands/` | 自定义 slash 命令（如 `/push`） |
+| `.claude/scripts/` | 自我进化脚本（evolution-trigger.sh, evolution-distill.sh） |
+| `.claude/DESIGN.md` | 设计系统文档（色彩、字体、组件规范） |
+
+**规则引擎**：
+- Post-Fix 验证 → `.claude/rules/behavioral-post-fix-validation.md`
+- 失败 2 次触发自省 → `.claude/rules/meta-cognition-engine.md`
+- 问题解决后自动记录案例 → `.claude/rules/behavioral-cases.md`
+- 内存/知识变更自动 push → `.claude/rules/behavioral-backup.md`
+
+**约定规范**（`.claude/knowledge/conventions/`）：
+- `bilingual-alignment.md` — 中英文必须同步修改
+- `conventional-commits.md` — Commit message 规范
+- `git-rebase-workflow.md` — Push 前必须 fetch/rebase
