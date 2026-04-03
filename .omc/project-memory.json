@@ -111,6 +111,12 @@
       "type": "file"
     },
     {
+      "path": "CLAUDE.md",
+      "accessCount": 4,
+      "lastAccessed": 1775200220684,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/components/CvPaperItem.astro",
       "accessCount": 3,
       "lastAccessed": 1775199899596,
@@ -126,6 +132,12 @@
       "path": "astro/src",
       "accessCount": 2,
       "lastAccessed": 1775199848454,
+      "type": "directory"
+    },
+    {
+      "path": ".claude/knowledge/conventions",
+      "accessCount": 2,
+      "lastAccessed": 1775200104712,
       "type": "directory"
     },
     {
@@ -156,6 +168,18 @@
       "path": ".claude/state/dialogue-count",
       "accessCount": 1,
       "lastAccessed": 1775199769455,
+      "type": "file"
+    },
+    {
+      "path": ".claude/case/astro-scoped-css-hanging-layout-20260403.md",
+      "accessCount": 1,
+      "lastAccessed": 1775200053337,
+      "type": "file"
+    },
+    {
+      "path": ".claude/knowledge/conventions/astro-patterns.md",
+      "accessCount": 1,
+      "lastAccessed": 1775200139709,
       "type": "file"
     }
   ],
