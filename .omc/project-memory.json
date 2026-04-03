@@ -171,6 +171,12 @@
       "type": "file"
     },
     {
+      "path": ".claude/settings.json",
+      "accessCount": 3,
+      "lastAccessed": 1775207388962,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -235,12 +241,6 @@
       "accessCount": 2,
       "lastAccessed": 1775207099718,
       "type": "directory"
-    },
-    {
-      "path": ".claude/settings.json",
-      "accessCount": 2,
-      "lastAccessed": 1775207166173,
-      "type": "file"
     },
     {
       "path": "astro/src/data/cv.ts",
@@ -342,6 +342,12 @@
       "path": "astro/src/content/homepage/zh.json",
       "accessCount": 1,
       "lastAccessed": 1775206619195,
+      "type": "file"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "accessCount": 1,
+      "lastAccessed": 1775207389013,
       "type": "file"
     }
   ],
