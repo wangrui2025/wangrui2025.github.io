@@ -54,20 +54,20 @@ const lang = 'zh';
       <h2 class="cv-section-title">发表论文</h2>
       {cv.publications.map((pub) => (
         <div class="cv-entry">
-          <div class="cv-authors">
-            {pub.authors.map((author, i) => (
-              <>
-                <span class={author.isSelf ? 'author-self' : 'author-other'}>
-                  {author.name}
-                </span>
-                {i < pub.authors.length - 1 && <span class="author-sep">，</span>}
-              </>
-            ))}
-          </div>
-          <div class="cv-entry-row">
-            <span class="cv-entry-conf">[{pub.conference}]</span>
-            <span class="cv-entry-title">{pub.title}</span>
-            <span class="cv-pub-links">
+          <div class="cv-entry-conf">[{pub.conference}]</div>
+          <div class="cv-entry-title">{pub.title}</div>
+          <div class="cv-pub-footer">
+            <div class="cv-authors">
+              {pub.authors.map((author, i) => (
+                <>
+                  <span class={author.isSelf ? 'author-self' : 'author-other'}>
+                    {author.name}
+                  </span>
+                  {i < pub.authors.length - 1 && <span class="author-sep">，</span>}
+                </>
+              ))}
+            </div>
+            <div class="cv-pub-links">
               {pub.arxiv && (
                 <a href={pub.arxiv} target="_blank" rel="noopener" class="pub-link arxiv-link">
                   [arXiv]
@@ -78,7 +78,7 @@ const lang = 'zh';
                   [Project]
                 </a>
               )}
-            </span>
+            </div>
           </div>
         </div>
       ))}
@@ -230,8 +230,8 @@ const lang = 'zh';
   .cv-entry-conf {
     font-size: 9pt;
     color: #666;
-    flex-shrink: 0;
     font-weight: 600;
+    margin-bottom: 1pt;
   }
 
   .cv-entry-sub {
@@ -300,6 +300,12 @@ const lang = 'zh';
 
   .author-sep {
     color: #999;
+  }
+
+  .cv-pub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   .cv-pub-links {
