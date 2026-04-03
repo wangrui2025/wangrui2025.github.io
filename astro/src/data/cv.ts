@@ -80,7 +80,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         university: '河南大学',
         major: '数据科学与大数据技术 本科 · 计算机与信息工程学院',
         college: '',
-        detail: 'GPA: 3.45/4 | 排名: 15/128 (前11%)',
+        detail: '平均学分绩点 3.19/4 | 排名: 15/128 (前11%)',
         period: '2020.09 - 2024.06',
         examScores: 'CET-4: 548 | CET-6: 435',
       },
