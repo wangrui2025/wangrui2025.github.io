@@ -201,6 +201,18 @@
       "type": "directory"
     },
     {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1775209192297,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/works.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775209192351,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -253,12 +265,6 @@
       "accessCount": 2,
       "lastAccessed": 1775206673326,
       "type": "directory"
-    },
-    {
-      "path": "astro/astro.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1775208203945,
-      "type": "file"
     },
     {
       "path": "astro/src/pages/index.astro",
@@ -360,12 +366,6 @@
       "path": "astro/src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1775208237031,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/works.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775208958128,
       "type": "file"
     }
   ],
