@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - OSA: Orthogonalized State Update</title>
+  <meta name="description" content="OSA: Orthogonalized State Update for Echocardiography Video Segmentation">
+
+  <!-- Reveal.js CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+
+  <!-- KaTeX CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .reveal-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .reveal {
+      width: 100%;
+      height: 75vh;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .reveal .slides {
+      text-align: left;
+    }
+    .reveal section {
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .slide-title {
+      background: linear-gradient(to bottom, #1e3a5f, #0c1929);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+    .slide-title h2 {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .slide-title .subtitle {
+      color: #93c5fd;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .slide-title .subtitle-cn {
+      color: #bfdbfe;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    .slide-title .authors {
+      color: #93c5fd;
+      font-size: 0.875rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      color: #1e293b;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    li {
+      color: #334155;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .formula-block {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #1e293b;
+      font-size: 0.875rem;
+    }
+    .card {
+      background: #f1f5f9;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .card code {
+      color: #2563eb;
+      font-size: 0.875rem;
+    }
+    .thanks {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .thanks p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal-container">
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Slide 1: Title -->
+        <section>
+          <div class="slide-title">
+            <h2>OSA</h2>
+            <p class="subtitle">超声心动图视频分割</p>
+            <p class="subtitle-cn">通过正交化状态更新与解剖先验感知特征增强实现</p>
+            <p class="authors">Rui Wang, Huisi Wu, Jing Qin</p>
+          </div>
+        </section>
+
+        <!-- Slide 2: Rank Collapse Challenge -->
+        <section>
+          <h3>核心挑战：Rank Collapse</h3>
+          <ul>
+            <li>
+              <strong>任务目标：</strong> 从超声视频中分割左心室 (LV)，估算射血分数 \(LV_{EF}\)。
+            </li>
+            <li>
+              <strong>技术瓶颈：</strong> 线性循环模型的状态矩阵奇异值衰减，即<strong>秩崩溃</strong>现象。
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 3: OSU Methodology -->
+        <section>
+          <h3>Orthogonalized State Update</h3>
+          <p class="subtitle" style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
+            将状态演化约束在 <strong>Stiefel Manifold</strong> 上：
+          </p>
+          <div class="formula-block">
+            \[\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}\]
+          </div>
+          <div class="formula-block">
+            \[S_{t}=\mathrm{Proj}_{\mathcal{V}}(S_{t}^{\mathrm{Euc}})\]
+          </div>
+        </section>
+
+        <!-- Slide 4: Conclusion -->
+        <section>
+          <h3>结论与代码</h3>
+          <div class="card">
+            <p style="color: #64748b; font-size: 0.75rem; margin-bottom: 0.5rem;">开源代码</p>
+            <code>github.com/wangrui2025/OSA</code>
+          </div>
+          <div class="thanks">
+            <p>谢谢观看！</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Reveal.js + KaTeX -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    Reveal.initialize({
+      plugins: [RevealMath.KaTeX],
+      hash: true,
+      center: false,
+      transition: 'convex',
+      embedded: true,
+      width: 1280,
+      height: 720,
+    });
+  </script>
+</body>
+</html>
