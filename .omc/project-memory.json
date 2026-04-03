@@ -271,6 +271,18 @@
       "accessCount": 1,
       "lastAccessed": 1775204340562,
       "type": "file"
+    },
+    {
+      "path": ".claude/knowledge/cases/astro-tailwind-migration.md",
+      "accessCount": 1,
+      "lastAccessed": 1775204624475,
+      "type": "file"
+    },
+    {
+      "path": ".claude/knowledge/cases/astro-project-appendix.md",
+      "accessCount": 1,
+      "lastAccessed": 1775204631408,
+      "type": "file"
     }
   ],
   "userDirectives": []
