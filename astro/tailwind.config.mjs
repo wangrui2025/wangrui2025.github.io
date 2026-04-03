@@ -47,29 +47,7 @@ export default {
         'scholar-badge-text-dark': '#c9c9c9',
         'scholar-badge-count': '#4A90E2',
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: '800px',
-            lineHeight: '1.7',
-            h1: {
-              fontFamily: '"Source Serif 4", Georgia, serif',
-              fontWeight: '600',
-            },
-            h2: {
-              fontFamily: '"Source Serif 4", Georgia, serif',
-              fontWeight: '600',
-            },
-            h3: {
-              fontFamily: '"Source Serif 4", Georgia, serif',
-              fontWeight: '600',
-            },
-          },
-        },
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 };
