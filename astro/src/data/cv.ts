@@ -88,7 +88,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
     },
     publications: [
       {
-        title: 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation',
+        title: 'OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement',
         conference: 'CVPR 2026',
         authors: [
           { name: '王锐', isSelf: true },
@@ -174,7 +174,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
     },
     publications: [
       {
-        title: 'OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation',
+        title: 'OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement',
         conference: 'CVPR 2026',
         authors: [
           { name: 'Rui Wang', isSelf: true },
