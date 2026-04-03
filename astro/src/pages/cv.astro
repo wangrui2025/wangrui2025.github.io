@@ -252,13 +252,16 @@ const undergraduateHonors = honors.data.undergraduate
   }
 
   .cv-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2pt 8pt;
+    display: flex;
+    flex-direction: column;
+    gap: 2pt;
   }
 
   .cv-grid-item {
-    display: contents;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
   }
 
   .cv-grid-item > span:first-child {
@@ -283,7 +286,6 @@ const undergraduateHonors = honors.data.undergraduate
   .cv-grid-item .right {
     font-size: 9pt;
     color: #666;
-    text-align: right;
     flex-shrink: 0;
   }
 
