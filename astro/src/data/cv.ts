@@ -65,8 +65,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       name: '王锐',
       phone: '15938550910',
       location: '深圳',
-      birth: '2001-10',
-      gender: '男',
+      gender: '男（he/him）',
     },
     education: {
       master: {
@@ -151,8 +150,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       name: 'Rui Wang',
       phone: '15938550910',
       location: 'Shenzhen',
-      birth: '2001-10',
-      gender: 'Male',
+      gender: 'Male（he/him）',
     },
     education: {
       master: {
