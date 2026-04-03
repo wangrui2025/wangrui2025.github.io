@@ -105,15 +105,21 @@
   },
   "hotPaths": [
     {
-      "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775203429652,
-      "type": "file"
+      "path": "astro/src",
+      "accessCount": 7,
+      "lastAccessed": 1775204296637,
+      "type": "directory"
     },
     {
       "path": "astro/src/pages/zh/cv.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775199376347,
+      "accessCount": 7,
+      "lastAccessed": 1775204402285,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775203429652,
       "type": "file"
     },
     {
@@ -129,12 +135,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src",
-      "accessCount": 3,
-      "lastAccessed": 1775203335701,
-      "type": "directory"
-    },
-    {
       "path": "astro/src/components/AuthorProfile.astro",
       "accessCount": 3,
       "lastAccessed": 1775203504157,
@@ -144,6 +144,18 @@
       "path": "astro/src/components/PaperCard.astro",
       "accessCount": 3,
       "lastAccessed": 1775203505252,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 3,
+      "lastAccessed": 1775204270376,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/CvHonorItem.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775204352814,
       "type": "file"
     },
     {
@@ -159,18 +171,6 @@
       "type": "directory"
     },
     {
-      "path": "astro/src/components/CvHonorItem.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775203078666,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 2,
-      "lastAccessed": 1775203367970,
-      "type": "file"
-    },
-    {
       "path": "astro/src/components/ScholarBadge.astro",
       "accessCount": 2,
       "lastAccessed": 1775203495207,
@@ -180,6 +180,12 @@
       "path": "astro/src/components/PaperBadge.astro",
       "accessCount": 2,
       "lastAccessed": 1775203496287,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/cv.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775204403361,
       "type": "file"
     },
     {
@@ -235,6 +241,36 @@
       "accessCount": 1,
       "lastAccessed": 1775203335753,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/content/config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775204270271,
+      "type": "file"
+    },
+    {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775204270324,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Scripts.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775204306122,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/[lang]/index.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775204313624,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/honors/honors.json",
+      "accessCount": 1,
+      "lastAccessed": 1775204340562,
+      "type": "file"
     }
   ],
   "userDirectives": []
