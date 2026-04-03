@@ -85,7 +85,7 @@ try {
           // Load CSS
           const link = document.createElement('link');
           link.rel = 'stylesheet';
-          link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+          link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
           document.head.appendChild(link);
 
           // Load JS sequentially
@@ -96,8 +96,8 @@ try {
             document.head.appendChild(script);
           };
 
-          loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js', function() {
-            loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js', function() {
+          loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js', function() {
+            loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js', function() {
               renderMathInElement(document.querySelector('.math'), {
                 delimiters: [
                   {left: '$$', right: '$$', display: true},
