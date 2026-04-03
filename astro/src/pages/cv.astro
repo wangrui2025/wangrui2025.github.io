@@ -1,136 +1,137 @@
 ---
 import CVLayout from '../layouts/CVLayout.astro';
+import { cvData } from '../data/cv';
+
+const cv = cvData.en;
+const lang = 'en';
 ---
 
 <CVLayout
-  title="简历 - 王锐"
-  description="王锐个人简历"
-  lang="zh"
+  title="CV - Rui Wang"
+  description="Curriculum Vitae of Rui Wang"
+  lang={lang}
 >
   <section id="cv" class="cv-page">
     <!-- Header -->
     <header class="cv-header">
-      <h1 class="cv-name">王锐</h1>
+      <h1 class="cv-name">{cv.personal.name}</h1>
       <div class="cv-contact">
-        <span>15938550910</span>
-        <span class="sep">丨</span>
+        <span>{cv.personal.phone}</span>
+        <span class="sep">|</span>
         <span>wangrui</span>
-        <span class="sep">丨</span>
-        <span>深圳</span>
+        <span class="sep">|</span>
+        <span>{cv.personal.location}</span>
       </div>
       <div class="cv-meta">
-        <span>2001-10</span>
-        <span class="sep">丨</span>
-        <span>男</span>
+        <span>{cv.personal.birth}</span>
+        <span class="sep">|</span>
+        <span>{cv.personal.gender}</span>
       </div>
     </header>
 
     <!-- Education -->
     <section class="cv-section">
-      <h2 class="cv-section-title">教育经历</h2>
+      <h2 class="cv-section-title">Education</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
-          <span class="cv-entry-title">深圳大学</span>
-          <span class="cv-entry-period">2024.09 - 2027.06 (预计)</span>
+          <span class="cv-entry-title">{cv.education.master.university}</span>
+          <span class="cv-entry-period">{cv.education.master.period}</span>
         </div>
-        <div class="cv-entry-sub">计算机科学与技术 硕士 · 计算机与软件学院</div>
-        <div class="cv-entry-detail">导师：吴惠思教授 · 研究方向：超声心动图视频分割</div>
+        <div class="cv-entry-sub">{cv.education.master.major} · {cv.education.master.college}</div>
+        <div class="cv-entry-detail">{cv.education.master.detail}</div>
       </div>
       <div class="cv-entry">
         <div class="cv-entry-row">
-          <span class="cv-entry-title">河南大学</span>
-          <span class="cv-entry-period">2020.09 - 2024.06</span>
+          <span class="cv-entry-title">{cv.education.bachelor.university}</span>
+          <span class="cv-entry-period">{cv.education.bachelor.period}</span>
         </div>
-        <div class="cv-entry-sub">数据科学与大数据技术 本科 · 计算机与信息工程学院</div>
-        <div class="cv-entry-detail">开封 | GPA: 3.45/4.00 | 排名: 15/128 (前11%) | CET-4: 548 | CET-6: 435</div>
+        <div class="cv-entry-sub">{cv.education.bachelor.major} · {cv.education.bachelor.college}</div>
+        <div class="cv-entry-detail">{cv.education.bachelor.detail}</div>
       </div>
     </section>
 
     <!-- Publications -->
     <section class="cv-section">
-      <h2 class="cv-section-title">发表论文</h2>
-      <div class="cv-entry">
-        <div class="cv-entry-row">
-          <span class="cv-entry-title">OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation</span>
-          <span class="cv-entry-period">CVPR 2026</span>
+      <h2 class="cv-section-title">Publications</h2>
+      {cv.publications.map((pub) => (
+        <div class="cv-entry">
+          <div class="cv-entry-row">
+            <span class="cv-entry-title">{pub.title}</span>
+            <span class="cv-entry-period">{pub.conference}</span>
+          </div>
+          <div class="cv-authors">
+            {pub.authors.map((author, i) => (
+              <>
+                <span class={author.isSelf ? 'author-self' : 'author-other'}>
+                  {author.name}
+                </span>
+                {i < pub.authors.length - 1 && <span class="author-sep">, </span>}
+              </>
+            ))}
+          </div>
         </div>
-        <div class="cv-entry-sub">王锐, 吴惠思 等</div>
-      </div>
-      <div class="cv-entry">
-        <div class="cv-entry-row">
-          <span class="cv-entry-title">GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation</span>
-          <span class="cv-entry-period">ICCV 2025</span>
-        </div>
-        <div class="cv-entry-sub">王锐, 吴惠思 等</div>
-      </div>
+      ))}
     </section>
 
     <!-- Research Directions -->
     <section class="cv-section">
-      <h2 class="cv-section-title">研究方向</h2>
+      <h2 class="cv-section-title">Research Directions</h2>
       <div class="cv-grid-2">
-        <div>• 高效神经网络架构设计</div>
-        <div>• 非凸优化 / 几何深度学习</div>
-        <div>• 计算机视觉长程依赖建模</div>
-        <div>• 大规模多模态预训练</div>
-        <div>• 视觉-语言模型推理效率优化</div>
+        {cv.researchDirections.map((dir) => (
+          <div>• {dir}</div>
+        ))}
       </div>
     </section>
 
     <!-- Honors -->
     <section class="cv-section">
-      <h2 class="cv-section-title">荣誉奖项</h2>
+      <h2 class="cv-section-title">Honors & Awards</h2>
       <div class="cv-grid">
-        <div class="cv-grid-item"><span>研究生国家奖学金</span><span class="right">2025.12</span></div>
-        <div class="cv-grid-item"><span>深圳大学研究生学业奖学金一等奖</span><span class="right">2025.12</span></div>
-        <div class="cv-grid-item"><span>深圳大学研究生学业奖学金特等奖</span><span class="right">2024.12</span></div>
-        <div class="cv-grid-item"><span>深圳大学学术启航奖学金</span><span class="right">2026.01</span></div>
-        <div class="cv-grid-item"><span>河南大学三好学生及奖学金</span><span class="right">2022.12</span></div>
-        <div class="cv-grid-item"><span>CCF-CSP认证 — 170分（前28%）</span><span class="right">2022.03</span></div>
-        <div class="cv-grid-item"><span>第十三届蓝桥杯C/C++程序设计组 — 省三等奖</span><span class="right">2022.05</span></div>
-        <div class="cv-grid-item"><span>第十六届中国大学生计算机设计大赛 — 省三等奖</span><span class="right">2023.05</span></div>
-        <div class="cv-grid-item"><span>第十六届"挑战杯"大学生课外学术科技作品竞赛 — 省三等奖</span><span class="right">2023.08</span></div>
-        <div class="cv-grid-item"><span>第九届中国"互联网+"大学生创新创业大赛 — 省三等奖</span><span class="right">2023.08</span></div>
+        {cv.honors.map((honor) => (
+          <div class="cv-grid-item">
+            <span>{honor.text}</span>
+            <span class="right">{honor.period}</span>
+          </div>
+        ))}
       </div>
     </section>
 
-    <!-- Project -->
+    <!-- Projects -->
     <section class="cv-section">
-      <h2 class="cv-section-title">项目经历</h2>
+      <h2 class="cv-section-title">Projects</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
-          <span class="cv-entry-title">how2research</span>
-          <span class="cv-entry-period">开源项目</span>
+          <span class="cv-entry-title">{cv.projects[0].name}</span>
+          <span class="cv-entry-period">{cv.projects[0].type}</span>
         </div>
-        <div class="cv-entry-sub">面向研究生的开源科研指南</div>
-        <div class="cv-entry-detail">涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程及开发环境配置（uv, VSCode）等。由 "miyuki11" 维护。</div>
+        <div class="cv-entry-detail">{cv.projects[0].description}</div>
       </div>
     </section>
 
     <!-- Skills -->
     <section class="cv-section">
-      <h2 class="cv-section-title">个人技能</h2>
+      <h2 class="cv-section-title">Skills</h2>
       <div class="cv-grid-2">
-        <div><span class="skill-label">编程语言：</span>Python, C/C++, SQL, JavaScript</div>
-        <div><span class="skill-label">深度学习：</span>PyTorch, TensorFlow, 医学影像分析</div>
-        <div><span class="skill-label">开发工具：</span>Git, Linux, Docker, VS Code, PyCharm</div>
-        <div><span class="skill-label">科研工具：</span>Claude Code, Harness Engineering, LaTeX</div>
+        {cv.skills.map((skill) => (
+          <div><span class="skill-label">{skill.category}:</span> {skill.items}</div>
+        ))}
       </div>
     </section>
 
     <!-- Hobbies -->
     <section class="cv-section">
-      <h2 class="cv-section-title">兴趣特长</h2>
+      <h2 class="cv-section-title">Hobbies</h2>
       <div class="cv-hobbies">
-        <span>排球</span>
-        <span class="sep-dot">·</span>
-        <span>棒垒球</span>
-        <span class="sep-dot">·</span>
-        <span>书法</span>
+        {cv.hobbies.map((hobby, i) => (
+          <>
+            <span>{hobby}</span>
+            {i < cv.hobbies.length - 1 && <span class="sep-dot">·</span>}
+          </>
+        ))}
       </div>
     </section>
   </section>
-</BaseLayout>
+</CVLayout>
 
 <style>
   /* A4: 210mm x 297mm */
@@ -266,6 +267,24 @@ import CVLayout from '../layouts/CVLayout.astro';
 
   .sep-dot {
     margin: 0 6pt;
+    color: #999;
+  }
+
+  .cv-authors {
+    font-size: 9pt;
+    margin-top: 1pt;
+  }
+
+  .author-self {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .author-other {
+    color: #666;
+  }
+
+  .author-sep {
     color: #999;
   }
 </style>
