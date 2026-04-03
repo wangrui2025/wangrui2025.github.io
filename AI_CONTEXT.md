@@ -29,18 +29,19 @@
 │   │   │   └── Sidebar.astro       # 侧边栏布局
 │   │   ├── content/                # 内容集合（Astro Content Collections）
 │   │   │   ├── config.ts           # 内容集合 Schema 定义
+│   │   │   ├── education/          # 教育经历（education.json）
 │   │   │   ├── homepage/           # 首页文案（en.json / zh.json）
+│   │   │   ├── honors/             # 荣誉奖项（honors.json）
 │   │   │   ├── papers/             # 论文数据（*.json）
 │   │   │   └── scholar/            # Scholar 统计数据
 │   │   │       └── stats.json      # 引用数、H-index 等
-│   │   ├── data/                   # TypeScript 数据文件
-│   │   │   ├── content.ts          # 首页 UI 文案（双语）
-│   │   │   ├── education.ts        # 教育经历
-│   │   │   ├── honors.ts           # 荣誉奖项
+│   │   ├── data/                   # TypeScript 配置文件
 │   │   │   ├── index.ts            # 数据导出
-│   │   │   └── navigation.ts       # 导航配置
+│   │   │   ├── navigation.ts       # 导航配置
+│   │   │   └── cv.ts               # CV 专用数据（含 examScores 等首页无需的字段）
 │   │   ├── layouts/
 │   │   │   ├── BaseLayout.astro    # 基础布局（HTML 模板）
+│   │   │   ├── CVLayout.astro      # CV 页面布局（zh/cv 共用）
 │   │   │   └── HomepageLayout.astro # 首页共享布局（en/zh 共用）
 │   │   ├── pages/                  # 路由页面
 │   │   │   ├── index.astro         # 英文首页（薄封装，调用 HomepageLayout）
@@ -48,8 +49,7 @@
 │   │   │       └── index.astro     # 中文首页（薄封装，调用 HomepageLayout）
 │   │   ├── styles/
 │   │   │   └── global.css          # 全局样式 + CSS 变量
-│   │   ├── env.d.ts                # Astro 类型声明
-│   │   └── middleware.ts           # Astro 中间件
+│   │   └── env.d.ts                # Astro 类型声明
 │   ├── package.json                # npm 依赖
 │   ├── astro.config.mjs            # Astro 主配置
 │   └── tailwind.config.mjs         # Tailwind 配置
@@ -289,6 +289,7 @@ A: 检查 Tailwind `content` 配置是否包含你的文件路径
 | 教育经历 | `astro/src/content/education/education.json` |
 | 荣誉奖项 | `astro/src/content/honors/honors.json` |
 | 导航栏 | `astro/src/data/navigation.ts` + `Masthead.astro` |
+| CV 完整数据 | `astro/src/data/cv.ts`（CV 专用，含首页不需要的 examScores、secondary 等字段） |
 | 页脚 | `astro/src/components/Scripts.astro` |
 | 主题颜色 | `astro/src/styles/global.css` (CSS 变量) |
 | 部署配置 | `.github/workflows/deploy.yml` |
