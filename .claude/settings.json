@@ -47,7 +47,15 @@
       "/Users/myk/Repo/wangrui2025.github.io/.claude/scripts",
       "/Users/myk/Repo/wangrui2025.github.io/.claude/state",
       "/Users/myk/Repo/wangrui2025.github.io/.claude/logs",
-      "/Users/myk/.claude/knowledge/cases"
+      "/Users/myk/.claude/knowledge/cases",
+      "/Users/myk/.claude/agents",
+      "/Users/myk/.claude/commands",
+      "/Users/myk/.claude/skills",
+      "/Users/myk/.claude/rules/common",
+      "/Users/myk/.claude/rules/typescript",
+      "/Users/myk/.claude/rules/python",
+      "/Users/myk/.claude/rules/golang",
+      "/Users/myk/.claude/rules/perl"
     ]
   },
   "hooks": {

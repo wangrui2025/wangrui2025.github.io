@@ -237,6 +237,12 @@
       "type": "directory"
     },
     {
+      "path": ".claude/settings.json",
+      "accessCount": 2,
+      "lastAccessed": 1775207166173,
+      "type": "file"
+    },
+    {
       "path": "astro/src/data/cv.ts",
       "accessCount": 1,
       "lastAccessed": 1775198384336,
@@ -336,12 +342,6 @@
       "path": "astro/src/content/homepage/zh.json",
       "accessCount": 1,
       "lastAccessed": 1775206619195,
-      "type": "file"
-    },
-    {
-      "path": ".claude/settings.json",
-      "accessCount": 1,
-      "lastAccessed": 1775207050066,
       "type": "file"
     }
   ],
