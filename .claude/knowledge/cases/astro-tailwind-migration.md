@@ -64,11 +64,49 @@ colors: {
 
 ### 4. global.css 精简
 
-从 815 行精简到 235 行（-71%），仅保留：
+从 815 行精简到 197 行（-76%），仅保留：
 - 基础 reset
 - 代码块样式
 - 打印样式（CV 需要）
 - View Transition 动画禁用
+- 主题切换图标显示逻辑
+
+## 后续优化（2026-04-03 下午）
+
+### PWA 完整支持
+
+| 文件 | 内容 |
+|------|------|
+| `public/robots.txt` | SEO 爬虫访问 |
+| `public/manifest.json` | PWA 应用清单 |
+| `public/sw.js` | Service Worker（cache-first + stale-while-revalidate） |
+| `BaseLayout.astro` | SW 注册脚本 |
+
+### 链接预取
+
+`Masthead.astro` 所有导航链接添加 `data-astro-prefetch`，鼠标悬停时预取页面。
+
+### 内联 SVG → astro-icon
+
+将硬编码内联 SVG 替换为 `astro-icon` 组件：
+- `Masthead.astro`: Sun/Moon 图标 → `<Icon name="lucide:sun|moon">`
+- `ScholarBadge.astro`: Education 图标 → `<Icon name="scholar">`
+
+### CSS 布局 → Tailwind
+
+`Masthead.astro` 的布局样式从 global.css 迁移到 Tailwind：
+- `.masthead` → `sticky top-0 z-50`
+- `.masthead__inner-wrap` → `max-w-[1200px] mx-auto px-4 py-2 flex items-center justify-between`
+- `.masthead__menu` → `flex items-center w-full justify-between`
+- `.greedy-nav ul` → `flex list-none m-0 p-0 gap-6`
+
+### KaTeX 版本更新
+
+`0.16.9` → `0.16.11`（最新 0.16.x 分支）
+
+### 清理未使用插件
+
+移除 `tailwind.config.mjs` 中的 `@tailwindcss/typography` 插件（项目中无 `prose` 类使用）。
 
 ## 关键教训
 
@@ -131,16 +169,35 @@ cd astro && npm run build
 
 ## 文件变更统计
 
+### 主架构重构（2026-04-03 上午）
 ```
 20 files changed, 118 insertions(+), 579 deletions(-)
-
 global.css:  815 lines → 235 lines (-71%)
 组件: 12 个完全 Tailwind 化
 ```
 
+### 现代化优化（2026-04-03 下午）
+```
+Masthead.astro:       内联 SVG → astro-icon, CSS 布局 → Tailwind
+ScholarBadge.astro:   内联 SVG → astro-icon
+global.css:           235 → 197 lines（移除 masthead 布局 CSS）
+BaseLayout.astro:     PWA SW 注册, KaTeX 版本 0.16.11
+tailwind.config.mjs:  移除未使用的 @tailwindcss/typography 插件
+public/robots.txt:    新增
+public/manifest.json: 新增
+public/sw.js:         新增
+```
+
 ## 相关提交
 
-- `2989e00` refactor(styles): migrate to Tailwind-first architecture with Astro 5 ClientRouter
+| Commit | 内容 |
+|--------|------|
+| `2989e00` | refactor(styles): migrate to Tailwind-first architecture with Astro 5 ClientRouter |
+| `c57fcc2` | perf: add robots.txt, PWA manifest, and prefetch for navigation links |
+| `1e98d06` | perf: add PWA service worker with cache-first strategy |
+| `639bf5a` | perf: bump KaTeX to 0.16.11 |
+| `5f406db` | refactor: migrate inline SVGs to astro-icon and CSS layouts to Tailwind |
+| `a3027a2` | perf: remove unused @tailwindcss/typography plugin |
 
 ## 经验总结
 
@@ -148,3 +205,6 @@ global.css:  815 lines → 235 lines (-71%)
 2. **色彩系统是核心** - 先设计好 tailwind.config 的色彩结构，其他都基于此
 3. **保持视觉一致性** - 重构前后页面看起来应该完全一致
 4. **CV 打印样式例外** - `@media print` 保留在 `<style>` 中是合理的
+5. **SVG 图标统一管理** - 用 `astro-icon` 替代内联 SVG，便于更换和维护
+6. **PWA 三件套** - `manifest.json` + `sw.js` + 注册脚本缺一不可
+7. **构建后检查** - 每次构建确认 `dist/` 输出正确

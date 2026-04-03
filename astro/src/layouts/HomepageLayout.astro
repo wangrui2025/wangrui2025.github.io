@@ -5,6 +5,7 @@ import AuthorProfile from '../components/AuthorProfile.astro';
 import PaperCard from '../components/PaperCard.astro';
 import Education from '../components/Education.astro';
 import ScholarBadge from '../components/ScholarBadge.astro';
+import CvHonorItem from '../components/CvHonorItem.astro';
 import { getEntry, getCollection } from 'astro:content';
 
 export interface Props {
@@ -153,18 +154,14 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
     </h2>
 
     <h3 class="text-lg font-semibold mb-2">{h.honors_graduate_header}</h3>
-    <ul class="honors-list mb-4">
-      {graduateHonors.map((item) => (
-        <li><span class="honor-text">{item[lang].text}</span><span class="period">{item.period}</span></li>
-      ))}
-    </ul>
+    {graduateHonors.map((item) => (
+      <CvHonorItem text={item[lang].text} period={item.period} secondary={false} />
+    ))}
 
-    <h3 class="text-lg font-semibold mb-2">{h.honors_undergraduate_header}</h3>
-    <ul class="honors-list">
-      {undergraduateHonors.map((item) => (
-        <li><span class="honor-text">{item[lang].text}</span><span class="period">{item.period}</span></li>
-      ))}
-    </ul>
+    <h3 class="text-lg font-semibold mb-2 mt-4">{h.honors_undergraduate_header}</h3>
+    {undergraduateHonors.map((item) => (
+      <CvHonorItem text={item[lang].text} period={item.period} secondary={false} />
+    ))}
   </section>
 
   <!-- Project Section -->
