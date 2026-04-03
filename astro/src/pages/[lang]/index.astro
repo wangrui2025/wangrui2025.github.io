@@ -6,7 +6,6 @@ import PaperCard from '../../components/PaperCard.astro';
 import Education from '../../components/Education.astro';
 import ScholarBadge from '../../components/ScholarBadge.astro';
 import { getEntry, getCollection } from 'astro:content';
-import { honors } from '../../data';
 
 export function getStaticPaths() {
   return [
@@ -23,6 +22,11 @@ const h = homepage.data;
 // Get scholar stats for citation badge
 const scholarStats = await getEntry('scholar', 'stats');
 const citedBy = scholarStats.data.citedby;
+
+// Get honors data
+const honorsData = await getEntry('honors', 'honors');
+const graduateHonors = honorsData.data.graduate.sort((a, b) => a.rank - b.rank);
+const undergraduateHonors = honorsData.data.undergraduate.sort((a, b) => a.rank - b.rank);
 
 // Timeline tag URL mapping
 const timelineTagUrls: Record<string, string> = {
@@ -150,15 +154,15 @@ const sortedPapers = allPapers.sort(
 
     <h3 class="text-lg font-semibold mb-2">{h.honors_graduate_header}</h3>
     <ul class="honors-list mb-4">
-      {honors.graduate[lang].map((item) => (
-        <li><span class="honor-text">{item.text}</span><span class="period">{item.period}</span></li>
+      {graduateHonors.map((item) => (
+        <li><span class="honor-text">{item[lang].text}</span><span class="period">{item.period}</span></li>
       ))}
     </ul>
 
     <h3 class="text-lg font-semibold mb-2">{h.honors_undergraduate_header}</h3>
     <ul class="honors-list">
-      {honors.undergraduate[lang].map((item) => (
-        <li><span class="honor-text">{item.text}</span><span class="period">{item.period}</span></li>
+      {undergraduateHonors.map((item) => (
+        <li><span class="honor-text">{item[lang].text}</span><span class="period">{item.period}</span></li>
       ))}
     </ul>
   </section>

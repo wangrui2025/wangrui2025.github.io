@@ -240,9 +240,9 @@ npm run preview
 ### 添加新论文
 
 1. 在 `astro/src/content/papers/` 创建 JSON 文件
-2. 遵循 Schema 结构（见 `config.ts`）
+2. 遵循 Schema 结构（见 `config.ts`），**必须包含 `date` 字段（YYYY-MM 格式）**
 3. 包含字段标签（fields）和技术标签（technologies）
-4. 在 `pages/index.astro` 和 `[lang]/index.astro` 添加 `<PaperCard paperKey="文件名" />`
+4. 重启 dev server，论文将**自动**按日期降序显示在首页，无需修改页面代码
 
 ### 修改首页文案
 
@@ -285,9 +285,9 @@ A: 检查 Tailwind `content` 配置是否包含你的文件路径
 |------------|----------|
 | 站点标题/描述 | `astro/src/content/homepage/*.json` |
 | 作者简介/头像 | `astro/src/components/AuthorProfile.astro` |
-| 论文列表 | `astro/src/content/papers/*.json` + `pages/index.astro` |
-| 教育经历 | `astro/src/data/education.ts` |
-| 荣誉奖项 | `astro/src/data/honors.ts` |
+| 论文列表 | `astro/src/content/papers/*.json` (自动渲染，无需页面修改) |
+| 教育经历 | `astro/src/content/education/education.json` |
+| 荣誉奖项 | `astro/src/content/honors/honors.json` |
 | 导航栏 | `astro/src/data/navigation.ts` + `Masthead.astro` |
 | 页脚 | `astro/src/components/Scripts.astro` |
 | 主题颜色 | `astro/src/styles/global.css` (CSS 变量) |

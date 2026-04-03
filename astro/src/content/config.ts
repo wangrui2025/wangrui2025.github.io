@@ -140,4 +140,4 @@ const homepage = defineCollection({
   }),
 });
 
-export const collections = { papers, scholar, homepage, education };
+export const collections = { papers, scholar, homepage, education, honors };
