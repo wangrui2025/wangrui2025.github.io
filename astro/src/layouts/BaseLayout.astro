@@ -35,9 +35,6 @@ try {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
-    <meta http-equiv="cleartype" content="on" />
 
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
@@ -80,10 +77,6 @@ try {
       rel="stylesheet"
     />
 
-    <!-- KaTeX for Math Rendering (load on-demand only) -->
-    <!-- To enable: add class="math" to elements containing $...$ or $$...$$ -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
@@ -91,9 +84,40 @@ try {
     <!-- Apple Touch Icon for iOS -->
     <link rel="apple-touch-icon" href="/images/apple-icon-180x180.png" />
 
-    <!-- KaTeX JS - only render in elements with class="math" -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.querySelector('.math'), { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}] });"></script>
+    <!-- KaTeX: On-demand async loading only when .math elements exist -->
+    <script is:inline>
+      (function() {
+        // Only load KaTeX if there are math elements on the page
+        if (document.querySelector('.math')) {
+          // Load CSS
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+          document.head.appendChild(link);
+
+          // Load JS sequentially
+          const loadScript = (src, onLoad) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = onLoad;
+            document.head.appendChild(script);
+          };
+
+          loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js', function() {
+            loadScript('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js', function() {
+              renderMathInElement(document.querySelector('.math'), {
+                delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\[', right: '\\]', display: true},
+                  {left: '\\(', right: '\\)', display: false}
+                ]
+              });
+            });
+          });
+        }
+      })();
+    </script>
 
     <!-- View Transitions for seamless language switching -->
     <ViewTransitions fallback="none" />

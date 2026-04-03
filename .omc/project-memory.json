@@ -105,6 +105,12 @@
   },
   "hotPaths": [
     {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775203429652,
+      "type": "file"
+    },
+    {
       "path": "astro/src/pages/zh/cv.astro",
       "accessCount": 5,
       "lastAccessed": 1775199376347,
@@ -118,9 +124,15 @@
     },
     {
       "path": "astro/src/components/CvPaperItem.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775199899596,
+      "accessCount": 4,
+      "lastAccessed": 1775203078721,
       "type": "file"
+    },
+    {
+      "path": "astro/src",
+      "accessCount": 3,
+      "lastAccessed": 1775203335701,
+      "type": "directory"
     },
     {
       "path": ".claude/case/cv-refactor-20260403.md",
@@ -129,27 +141,27 @@
       "type": "file"
     },
     {
-      "path": "astro/src",
-      "accessCount": 2,
-      "lastAccessed": 1775199848454,
-      "type": "directory"
-    },
-    {
       "path": ".claude/knowledge/conventions",
       "accessCount": 2,
       "lastAccessed": 1775200104712,
       "type": "directory"
     },
     {
-      "path": "astro/src/data/cv.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775198384336,
+      "path": "astro/src/components/CvHonorItem.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775203078666,
       "type": "file"
     },
     {
-      "path": "astro/src/components/CvHonorItem.astro",
+      "path": "astro/src/styles/global.css",
+      "accessCount": 2,
+      "lastAccessed": 1775203367970,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/data/cv.ts",
       "accessCount": 1,
-      "lastAccessed": 1775198396408,
+      "lastAccessed": 1775198384336,
       "type": "file"
     },
     {
@@ -180,6 +192,36 @@
       "path": ".claude/knowledge/conventions/astro-patterns.md",
       "accessCount": 1,
       "lastAccessed": 1775200139709,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Sidebar.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775203056231,
+      "type": "file"
+    },
+    {
+      "path": "astro/tailwind.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775203056286,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content",
+      "accessCount": 1,
+      "lastAccessed": 1775203335753,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775203353540,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775203353592,
       "type": "file"
     }
   ],
