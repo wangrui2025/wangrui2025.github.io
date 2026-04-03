@@ -105,6 +105,12 @@
   },
   "hotPaths": [
     {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 10,
+      "lastAccessed": 1775205362140,
+      "type": "file"
+    },
+    {
       "path": "astro/src",
       "accessCount": 7,
       "lastAccessed": 1775204296637,
@@ -114,12 +120,6 @@
       "path": "astro/src/pages/zh/cv.astro",
       "accessCount": 7,
       "lastAccessed": 1775204402285,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775203429652,
       "type": "file"
     },
     {
@@ -189,6 +189,36 @@
       "type": "file"
     },
     {
+      "path": ".claude/knowledge/cases/astro-project-appendix.md",
+      "accessCount": 2,
+      "lastAccessed": 1775205144439,
+      "type": "file"
+    },
+    {
+      "path": ".claude/knowledge/cases/astro-tailwind-migration.md",
+      "accessCount": 2,
+      "lastAccessed": 1775205144491,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Scripts.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775205299114,
+      "type": "file"
+    },
+    {
+      "path": "astro/tailwind.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775205303439,
+      "type": "file"
+    },
+    {
+      "path": "astro/public/sw.js",
+      "accessCount": 2,
+      "lastAccessed": 1775205355555,
+      "type": "file"
+    },
+    {
       "path": "astro/src/data/cv.ts",
       "accessCount": 1,
       "lastAccessed": 1775198384336,
@@ -231,12 +261,6 @@
       "type": "file"
     },
     {
-      "path": "astro/tailwind.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775203056286,
-      "type": "file"
-    },
-    {
       "path": "astro/src/content",
       "accessCount": 1,
       "lastAccessed": 1775203335753,
@@ -255,12 +279,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src/components/Scripts.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775204306122,
-      "type": "file"
-    },
-    {
       "path": "astro/src/pages/[lang]/index.astro",
       "accessCount": 1,
       "lastAccessed": 1775204313624,
@@ -273,16 +291,22 @@
       "type": "file"
     },
     {
-      "path": ".claude/knowledge/cases/astro-tailwind-migration.md",
+      "path": ".claude/knowledge/cases",
       "accessCount": 1,
-      "lastAccessed": 1775204624475,
+      "lastAccessed": 1775205140194,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/pages/index.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775205299012,
       "type": "file"
     },
     {
-      "path": ".claude/knowledge/cases/astro-project-appendix.md",
+      "path": "astro",
       "accessCount": 1,
-      "lastAccessed": 1775204631408,
-      "type": "file"
+      "lastAccessed": 1775205325685,
+      "type": "directory"
     }
   ],
   "userDirectives": []

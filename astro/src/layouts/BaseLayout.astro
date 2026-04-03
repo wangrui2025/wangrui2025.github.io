@@ -115,6 +115,15 @@ try {
     <!-- Client Router for seamless language switching (Astro 5) -->
     <ClientRouter fallback="none" />
 
+    <!-- PWA Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+
     <!-- Schema.org Person Structured Data -->
     <script type="application/ld+json">
       {
