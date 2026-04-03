@@ -73,12 +73,12 @@ const lang = 'en';
           <div class="cv-pub-links">
             {pub.arxiv && (
               <a href={pub.arxiv} target="_blank" rel="noopener" class="pub-link arxiv-link">
-                arXiv
+                [arXiv]
               </a>
             )}
             {pub.projectUrl && (
               <a href={pub.projectUrl} target="_blank" rel="noopener" class="pub-link project-link">
-                Project
+                [Project]
               </a>
             )}
           </div>
@@ -315,18 +315,14 @@ const lang = 'en';
   .pub-link {
     font-size: 8pt;
     text-decoration: none;
-    padding: 1pt 4pt;
-    border-radius: 2pt;
   }
 
   .arxiv-link {
     color: #c45c5c;
-    border: 0.5pt solid #c45c5c;
   }
 
   .project-link {
     color: #5c8cc4;
-    border: 0.5pt solid #5c8cc4;
   }
 
   .project-name-link {

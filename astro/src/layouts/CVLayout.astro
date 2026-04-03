@@ -52,8 +52,10 @@ try {
       <span>{lang === 'zh' ? '导出 PDF' : 'Export PDF'}</span>
     </button>
 
-    <div class="cv-wrapper">
-      <slot />
+    <div class="cv-container">
+      <div class="cv-wrapper">
+        <slot />
+      </div>
     </div>
     <footer class="footer-builtwith">
       {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
@@ -128,12 +130,17 @@ try {
     background: #555;
   }
 
-  .cv-wrapper {
+  .cv-container {
     min-height: calc(100vh - 40px);
     display: flex;
     justify-content: center;
     padding: 20px;
     background: var(--bg-primary);
+    overflow-x: auto;
+  }
+
+  .cv-wrapper {
+    flex-shrink: 0;
   }
 
   .footer-builtwith {
