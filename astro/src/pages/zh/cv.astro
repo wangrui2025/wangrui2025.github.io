@@ -55,8 +55,8 @@ const lang = 'zh';
       {cv.publications.map((pub) => (
         <div class="cv-entry">
           <div class="cv-entry-row">
+            <span class="cv-entry-conf">[{pub.conference}]</span>
             <span class="cv-entry-title">{pub.title}</span>
-            <span class="cv-entry-period">{pub.conference}</span>
           </div>
           <div class="cv-authors">
             {pub.authors.map((author, i) => (
@@ -227,10 +227,11 @@ const lang = 'zh';
     line-height: 1.3;
   }
 
-  .cv-entry-period {
+  .cv-entry-conf {
     font-size: 9pt;
     color: #666;
     flex-shrink: 0;
+    font-weight: 600;
   }
 
   .cv-entry-sub {
