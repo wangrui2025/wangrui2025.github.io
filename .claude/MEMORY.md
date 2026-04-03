@@ -14,3 +14,8 @@
 - [cv-mobile-scaling](case/cv-mobile-scaling.md) — 移动端 CV 页面 A4 缩放方案
 - [cv-refactor-20260403](case/cv-refactor-20260403.md) — CV 页面重构（数据统一、布局、作者高亮）
 - [chezmoi-inconsistent-state-prefix-conflict](knowledge/cases/chezmoi-inconsistent-state-prefix-conflict.md) — chezmoi external_ 前缀冲突与 .git 反模式
+
+## Self-Evolution Infrastructure
+- [evolution-trigger.sh](scripts/evolution-trigger.sh) — 每 5 轮对话检测一次进化时机
+- [evolution-distill.sh](scripts/evolution-distill.sh) — 生成进化建议报告
+- [evolution](/commands/evolution.md) — /evolution 命令：手动触发自我进化分析

@@ -1,38 +1,76 @@
 {
   "permissions": {
     "allow": [
+      "Bash(python3 *)",
+      "Bash(bash *)",
       "Bash(git:*)",
+      "Bash(ls *)",
+      "Bash(grep *)",
+      "Bash(awk *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(cat *)",
+      "Bash(chmod *)",
+      "Bash(printf *)",
+      "Bash(mkdir *)",
+      "Bash(rm *)",
+      "Bash(find *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(sed *)",
+      "Bash(echo *)",
       "Bash(npm:*)",
-      "Bash(node:*)",
-      "Bash(python3:*)",
-      "Bash(curl:*)",
+      "Bash(npm run:*)",
       "Bash(./scripts/autopush.sh *)",
-      "Bash(bash scripts/autopush.sh *)",
       "Bash(scripts/autopush.sh *)",
-      "Bash(python3 scripts/fetch_scholar.py)",
-      "Bash(ls:*)",
-      "Bash(find:*)",
-      "Read",
-      "Edit",
-      "Write",
-      "Glob",
-      "Grep",
-      "Agent",
-      "Edit(.claude/*)",
-      "Write(.claude/*)",
+      "Bash(.claude/scripts/evolution-trigger.sh *)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "Read(/**)",
+      "Edit(/**)",
+      "Write(/**)",
+      "Bash(while read:*)",
+      "Bash(do echo:*)",
+      "Bash(done)",
+      "Bash(find /Users/myk/Repo/wangrui2025.github.io -maxdepth 3 -type f \\\\\\(-name *.sh -o -name *.py -o -name *.js -o -name *.mjs \\\\\\))",
+      "Bash(:)"
+    ],
+    "additionalDirectories": [
+      "/Users/myk/.claude",
+      "/Users/myk/Repo/wangrui2025.github.io",
+      "//Users/myk/Repo/wangrui2025.github.io",
+      "/Users/myk/Repo/wangrui2025.github.io/.git",
+      "/Users/myk/Repo/wangrui2025.github.io/.claude",
+      "/Users/myk/Repo/wangrui2025.github.io/.claude/case",
+      "/Users/myk/Repo/wangrui2025.github.io/.claude/scripts",
+      "/Users/myk/Repo/wangrui2025.github.io/.claude/state",
+      "/Users/myk/Repo/wangrui2025.github.io/.claude/logs",
+      "/Users/myk/.claude/knowledge/cases"
     ]
   },
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Edit|Write|Bash",
+        "matcher": "Edit|Write",
         "hooks": [
           {
             "type": "command",
             "command": "bash scripts/autopush.sh 2>&1 | head -10 || true",
-            "timeout": 60
+            "timeout": 60,
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/evolution-trigger.sh 2>&1 || true",
+            "timeout": 30,
+            "async": true
           }
         ]
       }
