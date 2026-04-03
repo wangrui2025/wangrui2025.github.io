@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add -A && git commit -m \\\"fix(cv): remove author list spacing artifacts in paper entries\\\" && git push\",\"description\":\"Commit and push autho...",
+  "error": "Exit code 1\n[main 716992b] fix(cv): remove author list spacing artifacts in paper entries\n 6 files changed, 9 insertions(+), 11 deletions(-)\n create mode 100644 .omc/state/idle-notif-cooldown.json\nTo https://github.com/wangrui2025/wangrui2025.github.io.git\n ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 716992bc7f08b3931a9bf707bca3f6eae7d8ad39 but expected 25d4b6806cfea476650092dab530b6815af714c9)\nerror: failed to push some refs to 'https://github.com/wangrui2025/wang...",
+  "timestamp": "2026-04-03T06:51:36.823Z",
+  "retry_count": 1
+}
