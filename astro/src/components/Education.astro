@@ -6,42 +6,161 @@ export interface Props {
 }
 
 const { lang = 'en' } = Astro.props;
+
+const entries = [education.master, education.bachelor];
 ---
 
-<table class="education-table w-full text-sm text-[var(--text-color)]">
-  <tbody class="divide-y divide-[var(--paper-border)]">
-    <tr>
-      <td class="py-2.5 pr-4 align-top">
-        <a href={education.master.universityUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.master.university[lang]}</a>
-      </td>
-      <td class="py-2.5 pr-4 align-top">
-        <a href={education.master.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.master.college[lang]}</a>
-      </td>
-      <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.master.major[lang]}</td>
-      <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.master.degree[lang]}</td>
-      <td class="py-2.5 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.master.period[lang]}</td>
-    </tr>
-    <tr>
-      <td class="py-2.5 pr-4 align-top">
-        <a href={education.bachelor.universityUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.bachelor.university[lang]}</a>
-      </td>
-      <td class="py-2.5 pr-4 align-top">
-        <a href={education.bachelor.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link">{education.bachelor.college[lang]}</a>
-      </td>
-      <td class="py-2.5 pr-4 align-top min-w-[14rem]">{education.bachelor.major[lang]}</td>
-      <td class="py-2.5 pr-4 align-top min-w-[5rem] text-[var(--text-secondary)]">{education.bachelor.degree[lang]}</td>
-      <td class="py-2.5 align-top whitespace-nowrap text-[var(--text-secondary)] text-right">{education.bachelor.period[lang]}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="education-list space-y-3">
+  {entries.map((entry) => (
+    <div class="education-card">
+      <div class="education-card-header">
+        <div class="education-card-university">
+          <a href={entry.universityUrl[lang]} target="_blank" rel="noopener" class="education-link education-university">
+            {entry.university[lang]}
+          </a>
+          <span class="education-period">{entry.period[lang]}</span>
+        </div>
+      </div>
+      <div class="education-card-body">
+        <a href={entry.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link education-college">
+          {entry.college[lang]}
+        </a>
+        <div class="education-card-footer">
+          <span class="education-major">{entry.major[lang]}</span>
+          <span class="education-degree">{entry.degree[lang]}</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
 <style>
-  .education-link {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: text-decoration 0.2s ease;
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
+
+  .education-card {
+    background: var(--paper-bg);
+    border: 1px solid var(--paper-border);
+    border-radius: 10px;
+    padding: 0.875rem 1.125rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .education-card:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+    transform: translateY(-1px);
+  }
+
+  .education-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .education-card-university {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .education-university {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--heading-color);
+  }
+
+  .education-period {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .education-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .education-college {
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+
+  .education-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.1rem;
+  }
+
+  .education-major {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  .education-degree {
+    font-size: 0.8rem;
+    color: var(--paper-accent);
+    font-weight: 500;
+    background: var(--tag-field-bg);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .education-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
   .education-link:hover {
-    text-decoration: underline;
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  /* ===== Mobile Responsive ===== */
+  @media (max-width: 640px) {
+    .education-card {
+      padding: 0.75rem 1rem;
+    }
+
+    .education-card-header {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .education-university {
+      font-size: 0.95rem;
+    }
+
+    .education-period {
+      font-size: 0.75rem;
+    }
+
+    .education-card-footer {
+      gap: 0.5rem;
+    }
+
+    .education-major {
+      font-size: 0.8rem;
+    }
+
+    .education-degree {
+      font-size: 0.75rem;
+    }
   }
 </style>
