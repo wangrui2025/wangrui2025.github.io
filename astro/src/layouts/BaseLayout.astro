@@ -1,6 +1,6 @@
 ---
 import { execSync } from 'child_process';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import Masthead from '../components/Masthead.astro';
 import Scripts from '../components/Scripts.astro';
 import '../styles/global.css';
@@ -69,20 +69,13 @@ try {
       })();
     </script>
 
-    <!-- Google Fonts: Source Serif 4 (body) + Inter (headings) -->
+    <!-- Optimized Font Loading with preconnect and display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Noto+Serif+SC:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-    <!-- Apple Touch Icon for iOS -->
-    <link rel="apple-touch-icon" href="/images/apple-icon-180x180.png" />
 
     <!-- KaTeX: On-demand async loading only when .math elements exist -->
     <script is:inline>
@@ -119,8 +112,8 @@ try {
       })();
     </script>
 
-    <!-- View Transitions for seamless language switching -->
-    <ViewTransitions fallback="none" />
+    <!-- Client Router for seamless language switching (Astro 5) -->
+    <ClientRouter fallback="none" />
 
     <!-- Schema.org Person Structured Data -->
     <script type="application/ld+json">
@@ -151,8 +144,8 @@ try {
     </script>
   </head>
 
-  <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
+  <body class="bg-bg-primary text-text-primary dark:bg-bg-dark dark:text-text-dark">
+    <a href="#main-content" class="skip-link bg-bg-primary text-link-primary dark:bg-bg-dark dark:text-link-dark">Skip to content</a>
 
     <Masthead lang={lang} />
 
@@ -174,9 +167,9 @@ try {
 
     <Scripts />
 
-    <footer class="footer-builtwith">
+    <footer class="footer-builtwith text-center py-6 text-xs text-text-primary/60 dark:text-text-dark/60 border-t border-border-primary dark:border-border-dark mt-8">
       {/* CN: 本网页由 */ /* EN: Built with */}
-      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
+      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener" class="text-link-primary dark:text-link-dark hover:underline">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
     </footer>
   </body>
 </html>

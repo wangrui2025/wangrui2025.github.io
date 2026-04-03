@@ -135,6 +135,18 @@
       "type": "directory"
     },
     {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775203504157,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775203505252,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -156,6 +168,18 @@
       "path": "astro/src/styles/global.css",
       "accessCount": 2,
       "lastAccessed": 1775203367970,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/ScholarBadge.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775203495207,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/PaperBadge.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775203496287,
       "type": "file"
     },
     {
@@ -211,18 +235,6 @@
       "accessCount": 1,
       "lastAccessed": 1775203335753,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/components/PaperCard.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775203353540,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775203353592,
-      "type": "file"
     }
   ],
   "userDirectives": []
