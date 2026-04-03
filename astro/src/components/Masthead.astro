@@ -1,5 +1,6 @@
 ---
 import { navigation } from '../data/navigation';
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   lang?: string;
@@ -13,49 +14,37 @@ const switchUrl = lang === 'zh' ? '/' : '/zh/';
 const switchLabel = lang === 'zh' ? 'English' : '中文';
 ---
 
-<div class="masthead bg-bg-primary dark:bg-bg-dark border-b border-border-primary dark:border-border-dark">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button aria-label={lang === 'zh' ? '切换导航' : 'Toggle navigation'} aria-expanded="false">
+<div class="sticky top-0 z-50 bg-bg-primary dark:bg-bg-dark border-b border-border-primary dark:border-border-dark">
+  <div class="max-w-[1200px] mx-auto px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center w-full justify-between max-md:flex-col max-md:items-start max-md:gap-2">
+      <nav id="site-nav" class="flex items-center">
+        <button aria-label={lang === 'zh' ? '切换导航' : 'Toggle navigation'} aria-expanded="false" class="hidden md:hidden">
           <div class="navicon"></div>
         </button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
+        <ul class="flex list-none m-0 p-0 gap-6 max-md:flex-wrap max-md:gap-4">
+          <li class="m-0 masthead__menu-item--lg masthead__menu-home-item">
             <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
               {/* FIXED: 首页 / Homepage */}
               {lang === 'zh' ? '首页' : 'Homepage'}
             </a>
           </li>
           {navItems.map((item) => (
-            <li class="masthead__menu-item">
+            <li class="m-0">
               <a href={item.url} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{item.title}</a>
             </li>
           ))}
-          <li class="masthead__menu-item">
+          <li class="m-0">
             <a href={switchUrl} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{switchLabel}</a>
           </li>
         </ul>
-        <ul class="hidden-links hidden"></ul>
+        <ul class="hidden md:hidden"></ul>
       </nav>
 
-      <button id="theme-toggle" class="theme-toggle p-2 rounded-lg text-text-primary dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
+      <button id="theme-toggle" class="p-2 rounded-lg text-text-primary dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
         <!-- Sun icon: visible in light mode, hidden in dark mode -->
-        <svg id="theme-toggle-sun" class="w-5 h-5 icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
+        <Icon id="theme-toggle-sun" name="lucide:sun" class="w-5 h-5 icon-sun" />
         <!-- Moon icon: hidden in light mode, visible in dark mode -->
-        <svg id="theme-toggle-moon" class="w-5 h-5 icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
+        <Icon id="theme-toggle-moon" name="lucide:moon" class="w-5 h-5 icon-moon" />
       </button>
     </div>
   </div>

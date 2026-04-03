@@ -78,52 +78,15 @@ a:hover {
 }
 
 /* ===== Masthead ===== */
-.masthead {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.masthead__inner-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.masthead__menu {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.greedy-nav {
-  display: flex;
-  align-items: center;
-}
-
-.greedy-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 1.5rem;
-}
-
-.greedy-nav button {
-  display: none;
-}
-
-.visible-links {
-  display: flex;
-}
-
-.hidden-links {
-  display: none;
-}
+/* Layout styles migrated to Tailwind classes in Masthead.astro */
+/* .masthead - sticky top-0 z-50 */
+/* .masthead__inner-wrap - max-w-[1200px] mx-auto px-4 py-2 flex items-center justify-between */
+/* .masthead__menu - flex items-center w-full justify-between */
+/* .greedy-nav - flex items-center */
+/* .greedy-nav ul - flex list-none m-0 p-0 gap-6 */
+/* .visible-links - flex (now default for ul) */
+/* .hidden-links - hidden (now via Tailwind) */
+/* .masthead__menu-item - m-0 */
 
 .masthead__menu-item {
   margin: 0;

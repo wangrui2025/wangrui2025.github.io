@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
   citations: number;
 }
@@ -13,9 +15,7 @@ const { citations } = Astro.props;
 >
   <!-- Left: Icon and text -->
   <span class="flex items-center px-2 py-1.5 border-r border-border-primary dark:border-border-dark bg-scholar-badge-bg dark:bg-scholar-badge-bg-dark text-scholar-badge-text dark:text-scholar-badge-text-dark">
-    <svg class="mr-1.5 h-3 w-3 fill-scholar-icon" viewBox="0 0 24 24">
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-    </svg>
+    <Icon class="mr-1.5 h-3 w-3 fill-scholar-icon" name="scholar" />
     Google Scholar
   </span>
   <!-- Right: citations count -->
