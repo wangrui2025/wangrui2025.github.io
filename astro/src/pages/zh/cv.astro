@@ -52,14 +52,18 @@ import CVLayout from '../../layouts/CVLayout.astro';
           <span class="cv-entry-title">OSA: Orthogonal State Update with Anatomical Prior-aware Feature Enhancement for Echocardiography Video Segmentation</span>
           <span class="cv-entry-period">CVPR 2026</span>
         </div>
-        <div class="cv-entry-sub">王锐, 吴惠思 等</div>
+        <div class="cv-authors">
+          <span class="author-self">王锐</span><span class="author-other">，吴惠思</span><span class="author-other">，秦璟</span>
+        </div>
       </div>
       <div class="cv-entry">
         <div class="cv-entry-row">
           <span class="cv-entry-title">GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation</span>
           <span class="cv-entry-period">ICCV 2025</span>
         </div>
-        <div class="cv-entry-sub">王锐, 吴惠思 等</div>
+        <div class="cv-authors">
+          <span class="author-self">王锐</span><span class="author-other">，孙一木，郭警醒，吴惠思，秦璟</span>
+        </div>
       </div>
     </section>
 
@@ -273,5 +277,19 @@ import CVLayout from '../../layouts/CVLayout.astro';
   .sep-dot {
     margin: 0 6pt;
     color: #999;
+  }
+
+  .cv-authors {
+    font-size: 9pt;
+    margin-top: 1pt;
+  }
+
+  .author-self {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .author-other {
+    color: #bbb;
   }
 </style>
