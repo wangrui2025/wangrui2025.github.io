@@ -305,21 +305,23 @@ const undergraduateHonors = honors.data.undergraduate
     color: #444;
   }
 
-  /* Publications - Grid layout */
+  /* Publications - Hanging layout (悬挂式布局) */
   .cv-pub-entry {
-    display: grid;
-    grid-template-columns: 60pt minmax(0, 1fr);
-    gap: 6pt;
+    position: relative;
+    padding-left: 55pt;
     margin-bottom: 6pt;
-    align-items: start;
   }
 
   .cv-pub-venue {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52pt;
     font-size: 8.5pt;
     color: #555;
     font-weight: 700;
-    padding-top: 1pt;
     word-break: break-word;
+    text-align: right;
   }
 
   .cv-pub-main {
@@ -354,10 +356,6 @@ const undergraduateHonors = honors.data.undergraduate
   .author-other {
     font-weight: 400;
     color: #666;
-  }
-
-  .author-sep {
-    color: #999;
   }
 
   .pub-link {
