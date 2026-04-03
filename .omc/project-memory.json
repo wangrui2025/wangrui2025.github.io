@@ -1,0 +1,157 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775198343154,
+  "projectRoot": "/Users/myk/Repo/wangrui2025.github.io",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Python",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "requirements.txt"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "pip",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets",
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775198343126,
+      "keyFiles": []
+    },
+    "astro": {
+      "path": "astro",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1775198343129,
+      "keyFiles": [
+        "README.md",
+        "astro.config.mjs",
+        "package-lock.json",
+        "package.json",
+        "postcss.config.mjs"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 2,
+      "lastAccessed": 1775198343129,
+      "keyFiles": [
+        "autopush.sh",
+        "fetch_scholar.py"
+      ]
+    },
+    "astro/dist": {
+      "path": "astro/dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 5,
+      "lastAccessed": 1775198343130,
+      "keyFiles": [
+        "favicon.svg",
+        "gs_data.json",
+        "index.html"
+      ]
+    },
+    "astro/node_modules": {
+      "path": "astro/node_modules",
+      "purpose": "Dependencies",
+      "fileCount": 1,
+      "lastAccessed": 1775198343131,
+      "keyFiles": []
+    },
+    "astro/public": {
+      "path": "astro/public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1775198343131,
+      "keyFiles": [
+        "favicon.svg",
+        "gs_data.json"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "astro/src/pages/zh/cv.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775198494988,
+      "type": "file"
+    },
+    {
+      "path": ".claude/case/cv-refactor-20260403.md",
+      "accessCount": 1,
+      "lastAccessed": 1775198379682,
+      "type": "file"
+    },
+    {
+      "path": "astro/src",
+      "accessCount": 1,
+      "lastAccessed": 1775198379696,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/data/cv.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775198384336,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/CvPaperItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775198396358,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/CvHonorItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775198396408,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/papers/gdkvm.json",
+      "accessCount": 1,
+      "lastAccessed": 1775198414582,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/papers/osa.json",
+      "accessCount": 1,
+      "lastAccessed": 1775198414636,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -253,8 +253,9 @@ const undergraduateHonors = honors.data.undergraduate
 
   .cv-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 2pt 8pt;
+    align-items: start;
   }
 
   .cv-grid-item {
@@ -263,6 +264,7 @@ const undergraduateHonors = honors.data.undergraduate
 
   .cv-grid-item > span:first-child {
     font-size: 9pt;
+    word-break: break-word;
     color: #999;
   }
 
@@ -306,17 +308,18 @@ const undergraduateHonors = honors.data.undergraduate
   /* Publications - Grid layout */
   .cv-pub-entry {
     display: grid;
-    grid-template-columns: 52pt 1fr;
+    grid-template-columns: 60pt minmax(0, 1fr);
     gap: 6pt;
     margin-bottom: 6pt;
     align-items: start;
   }
 
   .cv-pub-venue {
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #555;
     font-weight: 700;
     padding-top: 1pt;
+    word-break: break-word;
   }
 
   .cv-pub-main {
