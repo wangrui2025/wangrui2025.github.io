@@ -58,14 +58,7 @@ const lang = 'zh';
           <div class="cv-pub-main">
             <div class="cv-pub-title">{pub.title}</div>
             <div class="cv-pub-authors">
-              {pub.authors.map((author, i) => (
-                <>
-                  <span class={author.isSelf ? 'author-self' : 'author-other'}>
-                    {author.name}
-                  </span>
-                  {i < pub.authors.length - 1 && <span class="author-sep">，</span>}
-                </>
-              ))}
+              {pub.authors.map((author, i) => (<><span class={author.isSelf ? 'author-self' : 'author-other'}>{author.name}</span>{i < pub.authors.length - 1 && <span class="author-sep">，</span>}</>))}
             </div>
             <div class="cv-pub-links">
               {pub.arxiv && (
