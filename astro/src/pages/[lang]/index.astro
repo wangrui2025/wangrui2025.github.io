@@ -5,7 +5,7 @@ import AuthorProfile from '../../components/AuthorProfile.astro';
 import PaperCard from '../../components/PaperCard.astro';
 import Education from '../../components/Education.astro';
 import ScholarBadge from '../../components/ScholarBadge.astro';
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import { honors } from '../../data';
 
 export function getStaticPaths() {
@@ -29,6 +29,12 @@ const timelineTagUrls: Record<string, string> = {
   'csranking': 'https://csrankings.org/#/index?vision&world',
   'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
 };
+
+// Get all papers and sort by date (descending)
+const allPapers = await getCollection('papers');
+const sortedPapers = allPapers.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
 ---
 
 <BaseLayout
@@ -123,8 +129,9 @@ const timelineTagUrls: Record<string, string> = {
     <h2 class="section-heading text-2xl font-bold">
       {h.section_publications}
     </h2>
-    <PaperCard paperKey="osa" lang={lang} />
-    <PaperCard paperKey="gdkvm" lang={lang} />
+    {sortedPapers.map((paper) => (
+      <PaperCard paper={paper} lang={lang} />
+    ))}
   </section>
 
   <!-- Education Section -->

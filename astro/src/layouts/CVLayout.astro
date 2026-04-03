@@ -24,7 +24,7 @@ try {
 <html lang={lang} class="no-js">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -137,6 +137,19 @@ try {
     padding: 20px;
     background: var(--bg-primary);
     overflow-x: auto;
+  }
+
+  /* Mobile: allow pinch-zoom and horizontal pan when zoomed */
+  @media (max-width: 768px) {
+    .cv-container {
+      padding: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .cv-wrapper {
+      touch-action: pan-x;
+    }
   }
 
   .cv-wrapper {

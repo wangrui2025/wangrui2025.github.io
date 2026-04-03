@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const papers = defineCollection({
   type: 'data',
   schema: z.object({
+    date: z.string().regex(/^\d{4}-\d{2}$/, 'Date must be YYYY-MM format'),
     venue: z.string(),
     venue_full: z.string(),
     tags: z.array(z.string()).optional(),
@@ -44,6 +45,48 @@ const scholar = defineCollection({
     cites_per_year: z.record(z.string(), z.number()),
     url_picture: z.string().url().optional(),
     updated: z.string(),
+  }),
+});
+
+const honors = defineCollection({
+  type: 'data',
+  schema: z.object({
+    graduate: z.array(z.object({
+      period: z.string(),
+      rank: z.number(),
+      zh: z.object({ text: z.string() }),
+      en: z.object({ text: z.string() }),
+    })),
+    undergraduate: z.array(z.object({
+      period: z.string(),
+      rank: z.number(),
+      zh: z.object({ text: z.string() }),
+      en: z.object({ text: z.string() }),
+    })),
+  }),
+});
+
+const education = defineCollection({
+  type: 'data',
+  schema: z.object({
+    master: z.object({
+      university: z.object({ zh: z.string(), en: z.string() }),
+      universityUrl: z.object({ zh: z.string(), en: z.string() }),
+      college: z.object({ zh: z.string(), en: z.string() }),
+      collegeUrl: z.object({ zh: z.string(), en: z.string() }),
+      major: z.object({ zh: z.string(), en: z.string() }),
+      degree: z.object({ zh: z.string(), en: z.string() }),
+      period: z.object({ zh: z.string(), en: z.string() }),
+    }),
+    bachelor: z.object({
+      university: z.object({ zh: z.string(), en: z.string() }),
+      universityUrl: z.object({ zh: z.string(), en: z.string() }),
+      college: z.object({ zh: z.string(), en: z.string() }),
+      collegeUrl: z.object({ zh: z.string(), en: z.string() }),
+      major: z.object({ zh: z.string(), en: z.string() }),
+      degree: z.object({ zh: z.string(), en: z.string() }),
+      period: z.object({ zh: z.string(), en: z.string() }),
+    }),
   }),
 });
 
@@ -97,4 +140,4 @@ const homepage = defineCollection({
   }),
 });
 
-export const collections = { papers, scholar, homepage };
+export const collections = { papers, scholar, homepage, education };

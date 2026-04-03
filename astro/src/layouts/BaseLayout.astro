@@ -42,11 +42,24 @@ try {
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
 
+    <!-- Language alternates for SEO -->
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site ?? 'https://wangrui2025.github.io')} />
+    <link rel="alternate" hreflang="zh" href={new URL('/zh/', Astro.site ?? 'https://wangrui2025.github.io')} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site ?? 'https://wangrui2025.github.io')} />
+
+    <!-- Open Graph -->
     <meta property="og:site_name" content={title} />
     <meta property="og:title" content={ogTitle ?? title} />
     <meta property="og:description" content={ogDescription ?? description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content={lang === 'zh' ? 'zh-CN' : 'en'} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle ?? title} />
+    <meta name="twitter:description" content={ogDescription ?? description} />
+    <meta name="twitter:image" content={new URL('/images/avatar.png', Astro.site ?? 'https://wangrui2025.github.io')} />
 
     <meta name="description" content={description} />
 

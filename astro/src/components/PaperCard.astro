@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import { getEntry } from 'astro:content';
+import { getEntry, type CollectionEntry } from 'astro:content';
 import osaImage from '../assets/paper/fig_osu_page-0001.jpg';
 import gdkvmImage from '../assets/paper/fig_gdkvm_page-0001.jpg';
 
@@ -12,15 +12,18 @@ const imageMap = {
 } as const;
 
 export interface Props {
-  paperKey: 'osa' | 'gdkvm';
+  paperKey?: 'osa' | 'gdkvm';
+  paper?: CollectionEntry<'papers'>;
   lang?: 'en' | 'zh';
 }
 
-const { paperKey, lang = 'en' } = Astro.props;
-const paper = await getEntry('papers', paperKey);
+const { paperKey, paper: paperEntry, lang = 'en' } = Astro.props;
+
+// Support both direct paper prop (from getCollection) and paperKey (backwards compat)
+const paper = paperEntry ?? (paperKey ? await getEntry('papers', paperKey) : null);
 
 if (!paper) {
-  throw new Error(`Paper not found: ${paperKey}`);
+  throw new Error('Paper not found: provide either paper or paperKey prop');
 }
 
 const localized = paper.data[lang];

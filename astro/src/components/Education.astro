@@ -1,5 +1,5 @@
 ---
-import { education } from '../data/education';
+import { getEntry } from 'astro:content';
 
 export interface Props {
   lang?: 'en' | 'zh';
@@ -7,7 +7,9 @@ export interface Props {
 
 const { lang = 'en' } = Astro.props;
 
-const entries = [education.master, education.bachelor];
+const edu = await getEntry('education', 'education');
+const educationData = edu.data;
+const entries = [educationData.master, educationData.bachelor];
 ---
 
 <div class="education-list space-y-3">
