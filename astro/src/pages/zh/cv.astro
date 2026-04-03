@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import AuthorProfile from '../components/AuthorProfile.astro';
+---
+
+<BaseLayout
+  title="简历 - 王锐"
+  description="王锐个人简历"
+  lang="zh"
+>
+  <Sidebar slot="sidebar">
+    <AuthorProfile lang="zh" />
+  </Sidebar>
+
+  <section id="cv" class="mb-8">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-3xl font-bold">个人简历</h1>
+      <a
+        href="/pdf/CV_Rui_Wang.pdf"
+        download="CV_Rui_Wang.pdf"
+        class="px-4 py-2 bg-primary text-white rounded-lg hover:opacity-90 transition-opacity"
+      >
+        下载 PDF
+      </a>
+    </div>
+
+    <div class="cv-container">
+      <iframe
+        src="/pdf/CV_Rui_Wang.pdf"
+        class="cv-iframe"
+        title="王锐个人简历"
+      ></iframe>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cv-container {
+    width: 100%;
+    height: calc(100vh - 200px);
+    min-height: 600px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .cv-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
