@@ -14,40 +14,258 @@ import AuthorProfile from '../../components/AuthorProfile.astro';
   </Sidebar>
 
   <section id="cv" class="mb-8">
-    <div class="flex justify-between items-center mb-4">
-      <h1 class="text-3xl font-bold">个人简历</h1>
-      <a
-        href="/pdf/CV_Rui_Wang.pdf"
-        download="CV_Rui_Wang.pdf"
-        class="px-4 py-2 bg-primary text-white rounded-lg hover:opacity-90 transition-opacity"
-      >
-        下载 PDF
-      </a>
-    </div>
+    <h1 class="text-3xl font-bold mb-6">个人简历</h1>
 
-    <div class="cv-container">
-      <iframe
-        src="/pdf/CV_Rui_Wang.pdf"
-        class="cv-iframe"
-        title="王锐个人简历"
-      ></iframe>
+    <div class="cv-page">
+      <!-- Header -->
+      <header class="cv-header">
+        <h1 class="cv-name">王锐</h1>
+        <div class="cv-contact">
+          <span>15938550910</span>
+          <span class="separator">丨</span>
+          <span>wangrui</span>
+        </div>
+        <div class="cv-meta">
+          <span>2001-10</span>
+          <span class="separator">丨</span>
+          <span>男</span>
+        </div>
+      </header>
+
+      <!-- Education -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">教育经历</h2>
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">河南大学</span>
+            <span class="cv-entry-period">2020.09 - 2024.06</span>
+          </div>
+          <div class="cv-entry-sub">数据科学与大数据技术 本科 · 计算机与信息工程学院</div>
+          <div class="cv-entry-detail">
+            <span>开封</span>
+            <span class="separator">|</span>
+            <span>学业成绩：86.45</span>
+            <span class="separator">|</span>
+            <span>GPA：3.45 / 4.00</span>
+            <span class="separator">|</span>
+            <span>专业排名 15/128 前11%</span>
+          </div>
+          <div class="cv-entry-detail">
+            <span>CET-4：548</span>
+            <span class="separator">|</span>
+            <span>CET-6：435</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Honors -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">荣誉奖项</h2>
+        <div class="cv-honors-list">
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">CCF-CSP认证 - 170分（前28%）</span>
+            <span class="cv-honor-period">2022.03</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">第十三届 蓝桥杯C/C++程序设计组 - 省三等奖</span>
+            <span class="cv-honor-period">2022.05</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">第四届 全国大学生算法设计与编程挑战赛(秋季赛) - 铜奖</span>
+            <span class="cv-honor-period">2022.05</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">第十六届 中国大学生计算机设计大赛河南省 - 省三等级</span>
+            <span class="cv-honor-period">2023.05</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">第十六届 "挑战杯"大学生课外学术科技作品竞赛 - 省三等奖</span>
+            <span class="cv-honor-period">2023.08</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">第九届 中国"互联网＋"大学生创新创业大赛 - 省三等奖</span>
+            <span class="cv-honor-period">2023.08</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">河南大学奖学金 ｜ 河南大学三好学生</span>
+            <span class="cv-honor-period">2022.12</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">"高教社杯"全国商务英语实践大赛 - 一等奖</span>
+            <span class="cv-honor-period">2022.11</span>
+          </div>
+          <div class="cv-honor-item">
+            <span class="cv-honor-text">《英语周报》杯全国大学生英语语法挑战赛A组 - 一等奖</span>
+            <span class="cv-honor-period">2022.11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">实践经历</h2>
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">河南大学22号院社区疫情防控工作</span>
+            <span class="cv-entry-period">2022.08 - 2022.09</span>
+          </div>
+          <div class="cv-entry-sub">志愿者</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">河南大学2022年"河大杯"男排比赛</span>
+          </div>
+          <div class="cv-entry-sub">第一名 | 优秀运动员</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">"青春健康教育暨艾滋病预防知识"宣传服务活动</span>
+            <span class="cv-entry-period">2022.05</span>
+          </div>
+          <div class="cv-entry-sub">先进个人</div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">个人技能</h2>
+        <div class="cv-skills">
+          <div class="cv-skill-category">
+            <span class="cv-skill-label">编程语言：</span>
+            <span>Python, C/C++, SQL, JavaScript</span>
+          </div>
+          <div class="cv-skill-category">
+            <span class="cv-skill-label">深度学习：</span>
+            <span>PyTorch, TensorFlow, 医学影像分析, 视频理解</span>
+          </div>
+          <div class="cv-skill-category">
+            <span class="cv-skill-label">开发工具：</span>
+            <span>Git, Linux, Docker, VS Code, PyCharm</span>
+          </div>
+          <div class="cv-skill-category">
+            <span class="cv-skill-label">英语能力：</span>
+            <span>CET-6 (435分)，良好的英文文献阅读与写作能力</span>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .cv-container {
-    width: 100%;
-    height: calc(100vh - 200px);
-    min-height: 600px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
+  .cv-page {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 800px;
   }
 
-  .cv-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  .cv-header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .cv-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .cv-contact,
+  .cv-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .separator {
+    margin: 0 8px;
+    color: var(--border-color);
+  }
+
+  .cv-section {
+    margin-bottom: 20px;
+  }
+
+  .cv-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .cv-entry {
+    margin-bottom: 12px;
+  }
+
+  .cv-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .cv-entry-title {
+    font-weight: 600;
+  }
+
+  .cv-entry-period {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .cv-entry-sub {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+  }
+
+  .cv-entry-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .cv-entry-detail .separator {
+    margin: 0 4px;
+  }
+
+  .cv-honors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cv-honor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .cv-honor-text {
+    font-size: 13px;
+  }
+
+  .cv-honor-period {
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .cv-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cv-skill-category {
+    font-size: 13px;
+  }
+
+  .cv-skill-label {
+    font-weight: 500;
   }
 </style>
