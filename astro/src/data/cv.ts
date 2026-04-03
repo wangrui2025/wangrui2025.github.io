@@ -53,7 +53,7 @@ export interface CVData {
   };
   publications: CVPublication[];
   researchDirections: string[];
-  honors: Array<{ text: string; period: string }>;
+  honors: Array<{ text: string; period: string; secondary?: boolean }>;
   projects: CVProject[];
   skills: CVSkill[];
   hobbies: string[];
@@ -123,11 +123,11 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       { text: '深圳大学研究生学业奖学金特等奖', period: '2024.12' },
       { text: '深圳大学学术启航奖学金', period: '2026.01' },
       { text: '河南大学三好学生及奖学金', period: '2022.12' },
-      { text: 'CCF-CSP认证 — 170分（前28%）', period: '2022.03' },
-      { text: '第十三届蓝桥杯C/C++程序设计组 — 省三等奖', period: '2022.05' },
-      { text: '第十六届中国大学生计算机设计大赛 — 省三等奖', period: '2023.05' },
-      { text: '第十六届"挑战杯"大学生课外学术科技作品竞赛 — 省三等奖', period: '2023.08' },
-      { text: '第九届中国"互联网+"大学生创新创业大赛 — 省三等奖', period: '2023.08' },
+      { text: 'CCF-CSP认证 — 170分（前28%）', period: '2022.03', secondary: true },
+      { text: '第十三届蓝桥杯C/C++程序设计组 — 省三等奖', period: '2022.05', secondary: true },
+      { text: '第十六届中国大学生计算机设计大赛 — 省三等奖', period: '2023.05', secondary: true },
+      { text: '第十六届"挑战杯"大学生课外学术科技作品竞赛 — 省三等奖', period: '2023.08', secondary: true },
+      { text: '第九届中国"互联网+"大学生创新创业大赛 — 省三等奖', period: '2023.08', secondary: true },
     ],
     projects: [
       {
@@ -208,11 +208,11 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       { text: 'Shenzhen University Graduate Academic Scholarship — Special Prize', period: '2024.12' },
       { text: 'Shenzhen University Academic Launch Scholarship', period: '2026.01' },
       { text: 'Henan University Merit Student and Scholarship', period: '2022.12' },
-      { text: 'CCF-CSP Certification — 170 points (Top 28%)', period: '2022.03' },
-      { text: '13th Lanqiao Cup C/C++ Programming (Provincial Third Prize)', period: '2022.05' },
-      { text: '16th China Undergraduate Computer Design Competition (Provincial Third Prize)', period: '2023.05' },
-      { text: '16th "Challenge Cup" Undergraduate Academic Science & Technology Competition (Provincial Third Prize)', period: '2023.08' },
-      { text: '9th China "Internet+" College Student Innovation & Entrepreneurship Competition (Provincial Third Prize)', period: '2023.08' },
+      { text: 'CCF-CSP Certification — 170 points (Top 28%)', period: '2022.03', secondary: true },
+      { text: '13th Lanqiao Cup C/C++ Programming (Provincial Third Prize)', period: '2022.05', secondary: true },
+      { text: '16th China Undergraduate Computer Design Competition (Provincial Third Prize)', period: '2023.05', secondary: true },
+      { text: '16th "Challenge Cup" Undergraduate Academic Science & Technology Competition (Provincial Third Prize)', period: '2023.08', secondary: true },
+      { text: '9th China "Internet+" College Student Innovation & Entrepreneurship Competition (Provincial Third Prize)', period: '2023.08', secondary: true },
     ],
     projects: [
       {
