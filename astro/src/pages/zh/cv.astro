@@ -95,7 +95,7 @@ const lang = 'zh';
       <div class="cv-grid">
         {cv.honors.map((honor) => (
           <div class={`cv-grid-item${honor.secondary ? ' secondary' : ''}`}>
-            <span>{honor.text}{honor.secondary && <span class="secondary-tag">次级</span>}</span>
+            <span>{honor.text}</span>
             <span class="right">{honor.period}</span>
           </div>
         ))}
