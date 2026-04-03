@@ -32,10 +32,9 @@ try {
     <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <script is:inline>
-      (function() {
-        const theme = localStorage.getItem('theme')
-          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.classList.toggle('dark', theme === 'dark');
+      (function(){
+        const t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+        document.documentElement.classList.toggle('dark',t==='dark');
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +45,7 @@ try {
     />
   </head>
   <body>
-    <button id="export-pdf" class="pdf-btn" title={lang === 'zh' ? '导出 PDF' : 'Export PDF'}>
+    <button id="export-pdf" class="fixed top-5 right-5 z-[1000] flex items-center gap-1.5 px-3.5 py-2 bg-gray-800 dark:bg-gray-700 text-white border-none rounded-md text-[13px] cursor-pointer transition-all duration-200 hover:bg-gray-600 shadow-md" title={lang === 'zh' ? '导出 PDF' : 'Export PDF'}>
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
         <polyline points="7 10 12 15 17 10"></polyline>
@@ -55,13 +54,13 @@ try {
       <span>{lang === 'zh' ? '导出 PDF' : 'Export PDF'}</span>
     </button>
 
-    <div class="cv-container">
-      <div class="cv-wrapper">
+    <div class="min-h-[calc(100vh-40px)] flex justify-center p-5 bg-bg-primary dark:bg-bg-dark overflow-x-auto">
+      <div class="shrink-0">
         <slot />
       </div>
     </div>
-    <footer class="footer-builtwith">
-      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
+    <footer class="text-center py-3 text-xs text-text-primary/50 dark:text-text-dark/50 bg-bg-primary dark:bg-bg-dark">
+      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener" class="text-text-primary/50 dark:text-text-dark/50 hover:underline">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
     </footer>
 
     <script>
@@ -85,18 +84,18 @@ try {
           background: white !important;
         }
 
-        .pdf-btn,
-        .footer-builtwith {
+        #export-pdf,
+        footer {
           display: none !important;
         }
 
-        .cv-wrapper {
+        .shrink-0 {
           padding: 0 !important;
           margin: 0 !important;
           background: white !important;
         }
 
-        .cv-page {
+        :global(.cv-page) {
           width: 210mm !important;
           min-height: 297mm !important;
           max-width: 210mm !important;
@@ -108,58 +107,3 @@ try {
     </style>
   </body>
 </html>
-
-<style>
-  .pdf-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: #333;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-
-  .pdf-btn:hover {
-    background: #555;
-  }
-
-  .cv-container {
-    min-height: calc(100vh - 40px);
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background: var(--bg-primary);
-    overflow-x: auto;
-  }
-
-  .cv-wrapper {
-    flex-shrink: 0;
-  }
-
-  .footer-builtwith {
-    text-align: center;
-    padding: 12px;
-    font-size: 12px;
-    color: var(--text-muted);
-    background: var(--bg-primary);
-  }
-
-  .footer-builtwith a {
-    color: var(--text-muted);
-    text-decoration: none;
-  }
-
-  .footer-builtwith a:hover {
-    text-decoration: underline;
-  }
-</style>

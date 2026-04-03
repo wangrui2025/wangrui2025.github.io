@@ -13,7 +13,7 @@ const switchUrl = lang === 'zh' ? '/' : '/zh/';
 const switchLabel = lang === 'zh' ? 'English' : '中文';
 ---
 
-<div class="masthead">
+<div class="masthead bg-bg-primary dark:bg-bg-dark border-b border-border-primary dark:border-border-dark">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
@@ -22,24 +22,24 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         </button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
-            <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'}>
+            <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
               {/* FIXED: 首页 / Homepage */}
               {lang === 'zh' ? '首页' : 'Homepage'}
             </a>
           </li>
           {navItems.map((item) => (
             <li class="masthead__menu-item">
-              <a href={item.url}>{item.title}</a>
+              <a href={item.url} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{item.title}</a>
             </li>
           ))}
           <li class="masthead__menu-item">
-            <a href={switchUrl}>{switchLabel}</a>
+            <a href={switchUrl} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{switchLabel}</a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
 
-      <button id="theme-toggle" class="theme-toggle p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
+      <button id="theme-toggle" class="theme-toggle p-2 rounded-lg text-text-primary dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
         <!-- Sun icon: visible in light mode, hidden in dark mode -->
         <svg id="theme-toggle-sun" class="w-5 h-5 icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>

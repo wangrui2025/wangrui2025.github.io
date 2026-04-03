@@ -36,8 +36,8 @@ const tagUrls: Record<string, string> = {
 };
 ---
 
-<div class="paper-box">
-  <div class="paper-box-image">
+<div class="flex flex-col border border-paper-border dark:border-paper-border-dark rounded-2xl p-6 mb-8 bg-paper-bg dark:bg-paper-bg-dark border-l-[3px] border-l-paper-accent dark:border-l-paper-accent-dark shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
+  <div class="flex justify-center w-full mb-4">
     {image && (
       <Image
         src={image}
@@ -46,50 +46,50 @@ const tagUrls: Record<string, string> = {
         height={300}
         format="webp"
         loading="lazy"
-        class="w-full h-auto rounded"
+        class="w-full max-w-[350px] h-auto rounded-lg border border-paper-border dark:border-paper-border-dark shadow-md"
         densities={[1, 2]}
         sizes="(max-width: 768px) 100vw, 400px"
       />
     )}
   </div>
-  <div class="paper-box-text">
-    <h3>
-      <span>{localized.title}</span>
+  <div class="w-full">
+    <h3 class="text-lg font-semibold leading-tight mb-2">
+      <span class="text-paper-accent dark:text-paper-accent-dark">{localized.title}</span>
     </h3>
-    <p class="paper-authors">
+    <p class="text-sm text-text-primary dark:text-text-dark mb-3">
       {localized.authors.map((author, i) => (
         <>
-          <span class={author.is_self ? 'author-self' : ''}>{author.name}{author.is_corresponding ? '*' : ''}</span>
-          {i < localized.authors.length - 1 && <span class="author-sep">{lang === 'zh' ? '，' : ', '}</span>}
+          <span class={author.is_self ? 'font-semibold' : ''}>{author.name}{author.is_corresponding ? '*' : ''}</span>
+          {i < localized.authors.length - 1 && <span class="text-gray-400 dark:text-gray-500">{lang === 'zh' ? '，' : ', '}</span>}
         </>
       ))}
     </p>
-    <p class="paper-meta">
+    <p class="text-sm text-text-primary/80 dark:text-text-dark/80 mb-2 tabular-nums">
       <strong>{paper.data.venue_full}</strong>
       {paper.data.tags && paper.data.tags.map((tag) => (
         tagUrls[tag] ? (
-          <a href={tagUrls[tag]} class="paper-venue-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+          <a href={tagUrls[tag]} class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle hover:opacity-70 transition-opacity no-underline" target="_blank" rel="noopener noreferrer">{tag}</a>
         ) : (
-          <span class="paper-venue-tag">{tag}</span>
+          <span class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle">{tag}</span>
         )
       ))}
     </p>
-    <div class="paper-keywords">
+    <div class="flex flex-wrap gap-1.5 mb-3">
       {localized.technologies?.map((tech) => (
-        <span class="tag tag-tech">{tech}</span>
+        <span class="inline-block px-2 py-0.5 text-xs rounded font-medium bg-tag-tech-bg dark:bg-tag-tech-bg-dark text-tag-tech-text dark:text-tag-tech-text-dark opacity-75">{tech}</span>
       ))}
       {localized.fields?.map((field) => (
-        <span class="tag tag-field">{field}</span>
+        <span class="inline-block px-2 py-0.5 text-xs rounded font-medium bg-tag-field-bg dark:bg-tag-field-bg-dark text-tag-field-text dark:text-tag-field-text-dark opacity-50">{field}</span>
       ))}
     </div>
-    <div class="paper-links">
+    <div class="flex gap-4 mt-3">
       {paper.data.project && (
-        <a href={paper.data.project} class="paper-link" title={lang === 'zh' ? '项目主页' : 'Project Page'}>
+        <a href={paper.data.project} class="text-sm px-3 py-1 rounded bg-paper-accent dark:bg-paper-accent-dark text-white transition-all duration-200 hover:opacity-85 hover:-translate-y-0.5 no-underline" title={lang === 'zh' ? '项目主页' : 'Project Page'}>
           🏠 {lang === 'zh' ? '项目' : 'Project'}
         </a>
       )}
       {paper.data.arxiv && (
-        <a href={paper.data.arxiv} class="paper-link paper-link-arxiv" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
+        <a href={paper.data.arxiv} class="text-sm px-3 py-1 rounded bg-transparent text-[#b31b1b] dark:text-[#ff6b6b] border border-[#b31b1b] dark:border-[#ff6b6b] transition-all duration-200 hover:bg-[#b31b1b] dark:hover:bg-[#ff6b6b] hover:text-white dark:hover:text-gray-900 hover:-translate-y-0.5 no-underline flex items-center gap-1" title={lang === 'zh' ? '论文预印本' : 'arXiv'}>
           <Icon name="simple-icons:arxiv" class="w-4 h-4" />
           arXiv
         </a>
@@ -97,58 +97,3 @@ const tagUrls: Record<string, string> = {
     </div>
   </div>
 </div>
-
-<style>
-  .paper-link-arxiv {
-    background: transparent;
-    color: #b31b1b;
-    border: 1px solid #b31b1b;
-  }
-
-  .paper-link-arxiv:hover {
-    background: #b31b1b;
-    color: white;
-    opacity: 1;
-    transform: translateY(-2px);
-    text-decoration: none;
-  }
-
-  :global(.dark) .paper-link-arxiv {
-    color: #ff6b6b;
-    border-color: #ff6b6b;
-  }
-
-  :global(.dark) .paper-link-arxiv:hover {
-    background: #ff6b6b;
-    color: #1a1a1a;
-  }
-
-  .paper-venue-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    background: var(--paper-accent);
-    color: var(--paper-bg);
-    opacity: 0.5;
-    font-weight: 500;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-  }
-
-  :global(.tag-field) {
-    opacity: 0.5;
-  }
-
-  :global(.tag-tech) {
-    opacity: 0.75;
-  }
-
-  .author-self {
-    font-weight: 600;
-  }
-
-  .author-sep {
-    color: #999;
-  }
-</style>

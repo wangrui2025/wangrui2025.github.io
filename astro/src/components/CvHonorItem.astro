@@ -8,31 +8,11 @@ export interface Props {
 const { text, period, secondary = false } = Astro.props;
 ---
 
-<div class={`cv-grid-item${secondary ? ' secondary' : ''}`}>
-  <span class="honor-text">{text}</span>
-  <span class="right">{period}</span>
+<div class="flex justify-between items-baseline gap-2 w-full">
+  <span class={`text-[9pt] break-words ${secondary ? 'text-gray-400' : 'text-heading-primary dark:text-heading-dark'}`}>
+    {text}
+  </span>
+  <span class="text-[9pt] text-gray-500 dark:text-gray-400 text-right shrink-0">
+    {period}
+  </span>
 </div>
-
-<style>
-  .cv-grid-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8pt;
-    width: 100%;
-  }
-  .honor-text {
-    font-size: 9pt;
-    word-break: break-word;
-    color: #bbb;
-  }
-  .cv-grid-item:not(.secondary) .honor-text {
-    color: #1a1a1a;
-  }
-  .right {
-    font-size: 9pt;
-    color: #666;
-    text-align: right;
-    flex-shrink: 0;
-  }
-</style>

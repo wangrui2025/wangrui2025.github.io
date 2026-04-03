@@ -16,28 +16,7 @@ const url = href ?? tagUrls[tag];
 ---
 
 {tagUrls[tag] ? (
-  <a href={url} class="paper-venue-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+  <a href={url} class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle hover:opacity-80 hover:underline transition-opacity no-underline" target="_blank" rel="noopener noreferrer">{tag}</a>
 ) : (
-  <span class="paper-venue-tag">{tag}</span>
+  <span class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle">{tag}</span>
 )}
-
-<style>
-  .paper-venue-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    background: var(--paper-accent);
-    color: var(--paper-bg);
-    opacity: 0.5;
-    font-weight: 500;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    text-decoration: none;
-  }
-
-  a.paper-venue-tag:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-  }
-</style>

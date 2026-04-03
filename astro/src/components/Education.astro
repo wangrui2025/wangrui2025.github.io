@@ -12,151 +12,26 @@ const educationData = edu.data;
 const entries = [educationData.master, educationData.bachelor];
 ---
 
-<div class="education-list space-y-3">
+<div class="flex flex-col gap-3">
   {entries.map((entry) => (
-    <div class="education-card">
-      <div class="education-card-header">
-        <div class="education-card-university">
-          <a href={entry.universityUrl[lang]} target="_blank" rel="noopener" class="education-link education-university">
+    <div class="bg-paper-bg dark:bg-paper-bg-dark border border-paper-border dark:border-paper-border-dark rounded-xl p-3.5 shadow-sm flex flex-col gap-1 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
+      <div class="flex items-baseline justify-between gap-2 flex-wrap">
+        <div class="flex items-baseline gap-2 flex-wrap">
+          <a href={entry.universityUrl[lang]} target="_blank" rel="noopener" class="font-semibold text-base text-heading-primary dark:text-heading-dark hover:text-link-primary dark:hover:text-link-dark transition-colors no-underline">
             {entry.university[lang]}
           </a>
-          <span class="education-period">{entry.period[lang]}</span>
+          <span class="text-xs text-text-primary/60 dark:text-text-dark/60 whitespace-nowrap tabular-nums">{entry.period[lang]}</span>
         </div>
       </div>
-      <div class="education-card-body">
-        <a href={entry.collegeUrl[lang]} target="_blank" rel="noopener" class="education-link education-college">
+      <div class="flex flex-col gap-0.5">
+        <a href={entry.collegeUrl[lang]} target="_blank" rel="noopener" class="text-sm text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark transition-colors no-underline">
           {entry.college[lang]}
         </a>
-        <div class="education-card-footer">
-          <span class="education-major">{entry.major[lang]}</span>
-          <span class="education-degree">{entry.degree[lang]}</span>
+        <div class="flex items-center gap-3 flex-wrap mt-0.5">
+          <span class="text-sm text-text-primary/80 dark:text-text-dark/80">{entry.major[lang]}</span>
+          <span class="text-sm text-text-primary/70 dark:text-text-dark/70">{entry.degree[lang]}</span>
         </div>
       </div>
     </div>
   ))}
 </div>
-
-<style>
-  .education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .education-card {
-    background: var(--paper-bg);
-    border: 1px solid var(--paper-border);
-    border-radius: 10px;
-    padding: 0.875rem 1.125rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-
-  .education-card:hover {
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
-    transform: translateY(-1px);
-  }
-
-  .education-card-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .education-card-university {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .education-university {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--heading-color);
-  }
-
-  .education-period {
-    font-size: 0.8rem;
-    color: var(--text-color);
-    opacity: 0.6;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-
-  .education-card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .education-college {
-    font-size: 0.9rem;
-    color: var(--text-color);
-  }
-
-  .education-card-footer {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 0.1rem;
-  }
-
-  .education-major {
-    font-size: 0.85rem;
-    color: var(--text-color);
-    opacity: 0.8;
-  }
-
-  .education-degree {
-    font-size: 0.85rem;
-    color: var(--text-color);
-    opacity: 0.7;
-  }
-
-  .education-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .education-link:hover {
-    color: var(--link-color);
-    text-decoration: none;
-  }
-
-  /* ===== Mobile Responsive ===== */
-  @media (max-width: 640px) {
-    .education-card {
-      padding: 0.75rem 1rem;
-    }
-
-    .education-card-header {
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .education-university {
-      font-size: 0.95rem;
-    }
-
-    .education-period {
-      font-size: 0.75rem;
-    }
-
-    .education-card-footer {
-      gap: 0.5rem;
-    }
-
-    .education-major {
-      font-size: 0.8rem;
-    }
-
-  }
-</style>

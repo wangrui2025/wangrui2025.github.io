@@ -14,8 +14,8 @@ const title = lang === 'en' ? 'M.S. Candidate' : '硕士研究生';
 const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
 ---
 
-<div class="author-profile">
-  <div class="profile-avatar">
+<div class="text-center p-4">
+  <div class="mb-4">
     <Image
       src={avatarImage}
       alt={displayName}
@@ -28,11 +28,11 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
       sizes="128px"
     />
   </div>
-  <h2 class="author-name">{displayName}</h2>
+  <h2 class="text-xl font-semibold text-heading-primary dark:text-heading-dark mb-1">{displayName}</h2>
   {/* FIXED: he/him - 英文固定，中英文版本均显示此文本 */}
-  <p class="author-pronouns">he/him</p>
-  <p class="author-title">{title}</p>
-  <p class="author-affiliation">{affiliation}</p>
+  <p class="text-sm text-text-primary/70 dark:text-text-dark/70 mb-1">he/him</p>
+  <p class="text-sm text-text-primary dark:text-text-dark mb-1">{title}</p>
+  <p class="text-sm text-text-primary dark:text-text-dark mb-4">{affiliation}</p>
 
   <!-- PhD Application Status -->
   <div class="mb-4 text-center">
@@ -42,154 +42,33 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
   </div>
 
   <!-- Social & Academic Links -->
-  <div class="author-links">
+  <div class="flex flex-wrap justify-center gap-2 mb-4">
     <!-- Primary Links: Email & GitHub -->
-    <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="author-link-primary">
+    <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark text-xs transition-all duration-200 hover:border-link-primary dark:hover:border-link-dark hover:text-link-primary dark:hover:text-link-dark whitespace-nowrap no-underline">
       <Icon name="lucide:mail" class="w-4 h-4" />
       <span class="truncate max-w-[160px]">wr_szu@163.com</span>
     </a>
-    <a href="mailto:2400101058@mails.szu.edu.cn" title={lang === 'zh' ? '邮箱（学生）' : 'Email (Student)'} class="author-link-primary">
+    <a href="mailto:2400101058@mails.szu.edu.cn" title={lang === 'zh' ? '邮箱（学生）' : 'Email (Student)'} class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark text-xs transition-all duration-200 hover:border-link-primary dark:hover:border-link-dark hover:text-link-primary dark:hover:text-link-dark whitespace-nowrap no-underline">
       <Icon name="lucide:mail" class="w-4 h-4" />
       <span class="truncate max-w-[200px]">2400101058@mails.szu.edu.cn</span>
     </a>
-    <a href="https://github.com/wangrui2025" title="GitHub" class="author-link-primary" target="_blank">
+    <a href="https://github.com/wangrui2025" title="GitHub" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark text-xs transition-all duration-200 hover:border-link-primary dark:hover:border-link-dark hover:text-link-primary dark:hover:text-link-dark whitespace-nowrap no-underline" target="_blank">
       <Icon name="simple-icons:github" class="w-4 h-4" />
       <span>GitHub</span>
     </a>
 
     <!-- Secondary Links: Icon-only -->
-    <a href="https://scholar.google.com/citations?user=01amzbYAAAAJ" title="Google Scholar" class="author-link-icon" target="_blank">
+    <a href="https://scholar.google.com/citations?user=01amzbYAAAAJ" title="Google Scholar" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark transition-all duration-200 hover:text-[#4A90E2] hover:border-[#4A90E2] no-underline" target="_blank">
       <Icon name="scholar" class="w-5 h-5" />
     </a>
-    <a href="https://orcid.org/0009-0001-0278-1985" title="ORCID" class="author-link-icon" target="_blank">
+    <a href="https://orcid.org/0009-0001-0278-1985" title="ORCID" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark transition-all duration-200 hover:text-[#A6B73F] hover:border-[#A6B73F] no-underline" target="_blank">
       <Icon name="academicons:orcid" class="w-5 h-5" />
     </a>
-    <a href="https://openreview.net/profile?id=%7ERui_Wang92" title="OpenReview" class="author-link-icon" target="_blank">
+    <a href="https://openreview.net/profile?id=%7ERui_Wang92" title="OpenReview" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark transition-all duration-200 hover:text-[#2771B1] hover:border-[#2771B1] no-underline" target="_blank">
       <Icon name="openreview" class="w-5 h-5" />
     </a>
-    <a href="https://www.linkedin.com/in/wangrui2024/" title="LinkedIn" class="author-link-icon" target="_blank">
+    <a href="https://www.linkedin.com/in/wangrui2024/" title="LinkedIn" class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark transition-all duration-200 hover:text-[#0A66C2] hover:border-[#0A66C2] no-underline" target="_blank">
       <Icon name="simple-icons:linkedin" class="w-5 h-5" />
     </a>
   </div>
 </div>
-
-<style>
-  .author-profile {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .profile-avatar {
-    margin-bottom: 1rem;
-  }
-
-  .profile-avatar img {
-    border-radius: 50%;
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
-  }
-
-  .author-name {
-    font-size: 1.25rem;
-    margin: 0 0 0.25rem 0;
-  }
-
-  .author-pronouns {
-    font-size: 0.85rem;
-    color: var(--text-color);
-    opacity: 0.7;
-    margin: 0 0 0.25rem 0;
-  }
-
-  .author-title {
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin: 0 0 0.25rem 0;
-  }
-
-  .author-affiliation {
-    color: var(--text-color);
-    font-size: 0.85rem;
-    margin: 0 0 1rem 0;
-  }
-
-  /* Links Container */
-  .author-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Primary Links: Icon + Text */
-  .author-link-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--border-color);
-    background: var(--paper-bg);
-    color: var(--text-color);
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
-
-  .author-link-primary:hover {
-    border-color: var(--link-color);
-    color: var(--link-color);
-    text-decoration: none;
-  }
-
-  /* Secondary Links: Icon-only */
-  .author-link-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--border-color);
-    background: var(--paper-bg);
-    color: var(--text-color);
-    transition: all 0.2s ease;
-  }
-
-  .author-link-icon:hover {
-    border-color: currentColor;
-    text-decoration: none;
-  }
-
-  /* Brand hover colors for secondary icons */
-  .author-link-icon[title="GitHub"]:hover {
-    color: #24292f;
-    border-color: #24292f;
-  }
-  :global(.dark) .author-link-icon[title="GitHub"]:hover {
-    color: #f0f6fc;
-    border-color: #f0f6fc;
-  }
-
-  .author-link-icon[title="LinkedIn"]:hover {
-    color: #0A66C2;
-    border-color: #0A66C2;
-  }
-
-  .author-link-icon[title="Google Scholar"]:hover {
-    color: #4A90E2;
-    border-color: #4A90E2;
-  }
-
-  .author-link-icon[title="ORCID"]:hover {
-    color: #A6B73F;
-    border-color: #A6B73F;
-  }
-
-  .author-link-icon[title="OpenReview"]:hover {
-    color: #2771B1;
-    border-color: #2771B1;
-  }
-</style>

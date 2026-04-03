@@ -28,32 +28,20 @@ const displayDetail = detail?.[lang];
 const displayExamScores = examScores?.[lang];
 ---
 
-<div class="cv-entry">
-  <div class="cv-entry-row">
-    <span class="cv-entry-title">
+<div>
+  <div class="flex justify-between items-baseline gap-2">
+    <span>
       {universityUrl?.[lang] ? (
-        <a href={universityUrl[lang]} target="_blank" rel="noopener" class="edu-link">
+        <a href={universityUrl[lang]} target="_blank" rel="noopener" class="text-inherit no-underline border-b border-current hover:opacity-70 transition-opacity">
           {displayUniversity}
         </a>
       ) : (
         displayUniversity
       )}
     </span>
-    <span class="cv-entry-period">{displayPeriod}</span>
+    <span class="text-sm text-text-primary/60 dark:text-text-dark/60 tabular-nums">{displayPeriod}</span>
   </div>
-  <div class="cv-entry-sub">{displayMajor} · {degree[lang]}</div>
-  {displayDetail && <div class="cv-entry-detail">{displayDetail}</div>}
-  {displayExamScores && <div class="cv-entry-detail">{displayExamScores}</div>}
+  <div class="text-sm text-text-primary/80 dark:text-text-dark/80">{displayMajor} · {degree[lang]}</div>
+  {displayDetail && <div class="text-sm text-text-primary/70 dark:text-text-dark/70">{displayDetail}</div>}
+  {displayExamScores && <div class="text-sm text-text-primary/70 dark:text-text-dark/70">{displayExamScores}</div>}
 </div>
-
-<style>
-  .edu-link {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 0.5pt solid currentColor;
-  }
-
-  .edu-link:hover {
-    opacity: 0.7;
-  }
-</style>
