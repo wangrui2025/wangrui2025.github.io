@@ -117,6 +117,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 8,
+      "lastAccessed": 1775207109772,
+      "type": "file"
+    },
+    {
       "path": "astro/src",
       "accessCount": 7,
       "lastAccessed": 1775204296637,
@@ -126,12 +132,6 @@
       "path": "astro/src/layouts/HomepageLayout.astro",
       "accessCount": 6,
       "lastAccessed": 1775206467640,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 6,
-      "lastAccessed": 1775206724429,
       "type": "file"
     },
     {
@@ -162,6 +162,12 @@
       "path": "astro/src/components/CvHonorItem.astro",
       "accessCount": 3,
       "lastAccessed": 1775204352814,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Scripts.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775207069839,
       "type": "file"
     },
     {
@@ -207,12 +213,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src/components/Scripts.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775205299114,
-      "type": "file"
-    },
-    {
       "path": "astro/tailwind.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1775205303439,
@@ -228,6 +228,12 @@
       "path": "astro/src/styles",
       "accessCount": 2,
       "lastAccessed": 1775206673326,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/components/Masthead.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775207099718,
       "type": "directory"
     },
     {
@@ -330,6 +336,12 @@
       "path": "astro/src/content/homepage/zh.json",
       "accessCount": 1,
       "lastAccessed": 1775206619195,
+      "type": "file"
+    },
+    {
+      "path": ".claude/settings.json",
+      "accessCount": 1,
+      "lastAccessed": 1775207050066,
       "type": "file"
     }
   ],

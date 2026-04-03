@@ -118,15 +118,21 @@ a:hover {
   justify-content: center;
 }
 
-.theme-toggle .icon-moon {
+/* Light mode: show sun, hide moon */
+.icon-sun {
+  display: block;
+}
+
+.icon-moon {
   display: none;
 }
 
-.dark .theme-toggle .icon-sun {
+/* Dark mode: show moon, hide sun */
+html.dark .icon-sun {
   display: none;
 }
 
-.dark .theme-toggle .icon-moon {
+html.dark .icon-moon {
   display: block;
 }
 
