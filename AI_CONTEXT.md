@@ -40,12 +40,12 @@
 │   │   │   ├── index.ts            # 数据导出
 │   │   │   └── navigation.ts       # 导航配置
 │   │   ├── layouts/
-│   │   │   └── BaseLayout.astro    # 基础布局（HTML 模板）
+│   │   │   ├── BaseLayout.astro    # 基础布局（HTML 模板）
+│   │   │   └── HomepageLayout.astro # 首页共享布局（en/zh 共用）
 │   │   ├── pages/                  # 路由页面
-│   │   │   ├── index.astro         # 英文首页 (/)
-│   │   │   ├── en.astro            # 英文首页别名
+│   │   │   ├── index.astro         # 英文首页（薄封装，调用 HomepageLayout）
 │   │   │   └── [lang]/
-│   │   │       └── index.astro     # 动态语言路由 (/zh/)
+│   │   │       └── index.astro     # 中文首页（薄封装，调用 HomepageLayout）
 │   │   ├── styles/
 │   │   │   └── global.css          # 全局样式 + CSS 变量
 │   │   ├── env.d.ts                # Astro 类型声明

@@ -161,14 +161,17 @@ const lang = 'zh';
     box-sizing: border-box;
   }
 
-  /* Mobile: fit screen width, allow zoom + horizontal pan */
+  /* Mobile: scale A4 to fit screen width, allow zoom to read details */
   @media (max-width: 768px) {
     .cv-page {
-      width: 100vw;
-      min-width: 100vw;
-      max-width: 100vw;
+      zoom: calc(100vw / 210mm);
+      -moz-transform: scale(calc(100vw / 210mm));
+      -moz-transform-origin: top left;
+      width: 210mm !important;
+      min-width: 210mm !important;
+      max-width: 210mm !important;
       min-height: unset;
-      padding: 12mm 15mm;
+      padding: 15mm 20mm;
     }
   }
 
