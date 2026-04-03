@@ -129,6 +129,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 6,
+      "lastAccessed": 1775206724429,
+      "type": "file"
+    },
+    {
       "path": "CLAUDE.md",
       "accessCount": 4,
       "lastAccessed": 1775200220684,
@@ -138,12 +144,6 @@
       "path": "astro/src/components/CvPaperItem.astro",
       "accessCount": 4,
       "lastAccessed": 1775203078721,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 4,
-      "lastAccessed": 1775206426124,
       "type": "file"
     },
     {
@@ -223,6 +223,12 @@
       "accessCount": 2,
       "lastAccessed": 1775205355555,
       "type": "file"
+    },
+    {
+      "path": "astro/src/styles",
+      "accessCount": 2,
+      "lastAccessed": 1775206673326,
+      "type": "directory"
     },
     {
       "path": "astro/src/data/cv.ts",
@@ -315,16 +321,16 @@
       "type": "directory"
     },
     {
-      "path": "astro/src/styles",
-      "accessCount": 1,
-      "lastAccessed": 1775206407897,
-      "type": "directory"
-    },
-    {
       "path": "astro/src/layouts",
       "accessCount": 1,
       "lastAccessed": 1775206412582,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/content/homepage/zh.json",
+      "accessCount": 1,
+      "lastAccessed": 1775206619195,
+      "type": "file"
     }
   ],
   "userDirectives": []
