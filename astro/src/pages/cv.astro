@@ -37,7 +37,7 @@ const lang = 'en';
           <span class="cv-entry-title">{cv.education.master.university}</span>
           <span class="cv-entry-period">{cv.education.master.period}</span>
         </div>
-        <div class="cv-entry-sub">{cv.education.master.major} · {cv.education.master.college}</div>
+        <div class="cv-entry-sub">{cv.education.master.major}</div>
         <div class="cv-entry-detail">{cv.education.master.detail}</div>
       </div>
       <div class="cv-entry">
@@ -45,8 +45,9 @@ const lang = 'en';
           <span class="cv-entry-title">{cv.education.bachelor.university}</span>
           <span class="cv-entry-period">{cv.education.bachelor.period}</span>
         </div>
-        <div class="cv-entry-sub">{cv.education.bachelor.major} · {cv.education.bachelor.college}</div>
+        <div class="cv-entry-sub">{cv.education.bachelor.major}</div>
         <div class="cv-entry-detail">{cv.education.bachelor.detail}</div>
+        <div class="cv-entry-detail">{cv.education.bachelor.examScores}</div>
       </div>
     </section>
 
@@ -68,6 +69,18 @@ const lang = 'en';
                 {i < pub.authors.length - 1 && <span class="author-sep">, </span>}
               </>
             ))}
+          </div>
+          <div class="cv-pub-links">
+            {pub.arxiv && (
+              <a href={pub.arxiv} target="_blank" rel="noopener" class="pub-link arxiv-link">
+                arXiv
+              </a>
+            )}
+            {pub.projectUrl && (
+              <a href={pub.projectUrl} target="_blank" rel="noopener" class="pub-link project-link">
+                Project
+              </a>
+            )}
           </div>
         </div>
       ))}
@@ -101,7 +114,12 @@ const lang = 'en';
       <h2 class="cv-section-title">Projects</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
-          <span class="cv-entry-title">{cv.projects[0].name}</span>
+          <span class="cv-entry-title">
+            {cv.projects[0].url
+              ? <a href={cv.projects[0].url} target="_blank" rel="noopener" class="project-name-link">{cv.projects[0].name}</a>
+              : cv.projects[0].name
+            }
+          </span>
           <span class="cv-entry-period">{cv.projects[0].type}</span>
         </div>
         <div class="cv-entry-detail">{cv.projects[0].description}</div>
@@ -286,5 +304,34 @@ const lang = 'en';
 
   .author-sep {
     color: #999;
+  }
+
+  .cv-pub-links {
+    display: flex;
+    gap: 8pt;
+    margin-top: 2pt;
+  }
+
+  .pub-link {
+    font-size: 8pt;
+    text-decoration: none;
+    padding: 1pt 4pt;
+    border-radius: 2pt;
+  }
+
+  .arxiv-link {
+    color: #c45c5c;
+    border: 0.5pt solid #c45c5c;
+  }
+
+  .project-link {
+    color: #5c8cc4;
+    border: 0.5pt solid #5c8cc4;
+  }
+
+  .project-name-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 0.5pt solid #1a1a1a;
   }
 </style>

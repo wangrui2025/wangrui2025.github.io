@@ -9,6 +9,8 @@ export interface CVPublication {
   title: string;
   conference: string;
   authors: CVAuthor[];
+  arxiv?: string;
+  projectUrl?: string;
 }
 
 export interface CVSkill {
@@ -20,6 +22,7 @@ export interface CVProject {
   name: string;
   type: string;
   description: string;
+  url?: string;
 }
 
 export interface CVData {
@@ -37,6 +40,7 @@ export interface CVData {
       college: string;
       detail: string;
       period: string;
+      examScores: string | null;
     };
     bachelor: {
       university: string;
@@ -44,6 +48,7 @@ export interface CVData {
       college: string;
       detail: string;
       period: string;
+      examScores: string | null;
     };
   };
   publications: CVPublication[];
@@ -66,17 +71,19 @@ export const cvData: Record<'zh' | 'en', CVData> = {
     education: {
       master: {
         university: '深圳大学',
-        major: '计算机科学与技术 硕士',
-        college: '计算机与软件学院',
+        major: '计算机科学与技术 硕士 · 计算机与软件学院',
+        college: '',
         detail: '导师：吴惠思教授 · 研究方向：超声心动图视频分割',
         period: '2024.09 - 2027.06 (预计)',
+        examScores: null,
       },
       bachelor: {
         university: '河南大学',
-        major: '数据科学与大数据技术 本科',
-        college: '计算机与信息工程学院',
-        detail: '开封 | GPA: 3.45/4.00 | 排名: 15/128 (前11%) | CET-4: 548 | CET-6: 435',
+        major: '数据科学与大数据技术 本科 · 计算机与信息工程学院',
+        college: '',
+        detail: '开封 | GPA: 3.45/4.00 | 排名: 15/128 (前11%)',
         period: '2020.09 - 2024.06',
+        examScores: 'CET-4: 548 | CET-6: 435',
       },
     },
     publications: [
@@ -88,6 +95,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
           { name: '吴惠思', isSelf: false },
           { name: '秦璟', isSelf: false },
         ],
+        arxiv: 'https://arxiv.org/pdf/2603.26188',
       },
       {
         title: 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation',
@@ -99,6 +107,8 @@ export const cvData: Record<'zh' | 'en', CVData> = {
           { name: '吴惠思', isSelf: false },
           { name: '秦璟', isSelf: false },
         ],
+        arxiv: 'https://arxiv.org/pdf/2512.10252',
+        projectUrl: 'https://wangrui2025.github.io/GDKVM/',
       },
     ],
     researchDirections: [
@@ -125,6 +135,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         name: 'how2research',
         type: '开源项目',
         description: '面向研究生的开源科研指南。涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程及开发环境配置（uv, VSCode）等。由 "miyuki11" 维护。',
+        url: 'https://github.com/miyuki11/how2research',
       },
     ],
     skills: [
@@ -146,17 +157,19 @@ export const cvData: Record<'zh' | 'en', CVData> = {
     education: {
       master: {
         university: 'Shenzhen University',
-        major: 'Computer Science and Technology (M.S.)',
-        college: 'College of Computer Science and Software Engineering',
+        major: 'Computer Science and Technology (M.S.) · College of Computer Science and Software Engineering',
+        college: '',
         detail: 'Advisor: Prof. Wu Huisi · Research: Echocardiography Video Segmentation',
         period: '2024.09 - 2027.06 (Expected)',
+        examScores: null,
       },
       bachelor: {
         university: 'Henan University',
-        major: 'Data Science and Big Data Technology (B.Eng.)',
-        college: 'School of Computer and Information Engineering',
-        detail: 'Kaifeng | GPA: 3.45/4.00 | Rank: 15/128 (Top 11%) | CET-4: 548 | CET-6: 435',
+        major: 'Data Science and Big Data Technology (B.Eng.) · School of Computer and Information Engineering',
+        college: '',
+        detail: 'Kaifeng | GPA: 3.45/4.00 | Rank: 15/128 (Top 11%)',
         period: '2020.09 - 2024.06',
+        examScores: 'CET-4: 548 | CET-6: 435',
       },
     },
     publications: [
@@ -168,6 +181,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
           { name: 'Huisi Wu', isSelf: false },
           { name: 'Jing Qin', isSelf: false },
         ],
+        arxiv: 'https://arxiv.org/pdf/2603.26188',
       },
       {
         title: 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation',
@@ -179,6 +193,8 @@ export const cvData: Record<'zh' | 'en', CVData> = {
           { name: 'Huisi Wu', isSelf: false },
           { name: 'Jing Qin', isSelf: false },
         ],
+        arxiv: 'https://arxiv.org/pdf/2512.10252',
+        projectUrl: 'https://wangrui2025.github.io/GDKVM/',
       },
     ],
     researchDirections: [
@@ -205,6 +221,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         name: 'how2research',
         type: 'Open Source',
         description: 'An open-source research guide for graduate students, covering CVPR/ICCV submission processes, efficient LaTeX writing tips, research prompt engineering, and development environment setup (uv, VSCode). Maintained by "miyuki11".',
+        url: 'https://github.com/miyuki11/how2research',
       },
     ],
     skills: [
