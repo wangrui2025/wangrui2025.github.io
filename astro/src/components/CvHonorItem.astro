@@ -9,6 +9,23 @@ const { text, period, secondary = false } = Astro.props;
 ---
 
 <div class={`cv-grid-item${secondary ? ' secondary' : ''}`}>
-  <span>{text}</span>
+  <span class="honor-text">{text}</span>
   <span class="right">{period}</span>
 </div>
+
+<style>
+  .honor-text {
+    font-size: 9pt;
+    word-break: break-word;
+    color: #e6c200;
+  }
+  .cv-grid-item:not(.secondary) .honor-text {
+    color: #1a1a1a;
+  }
+  .right {
+    font-size: 9pt;
+    color: #666;
+    text-align: right;
+    flex-shrink: 0;
+  }
+</style>
