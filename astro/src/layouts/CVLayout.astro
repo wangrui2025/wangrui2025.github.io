@@ -14,7 +14,7 @@ const {
   lang = 'zh',
 } = Astro.props;
 
-let lastUpdated = 'recently';
+let lastUpdated = '2026-04-03';
 try {
   lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
 } catch { /* CI env may lack git */ }
