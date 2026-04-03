@@ -98,7 +98,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         arxiv: 'https://arxiv.org/pdf/2603.26188',
       },
       {
-        title: 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation',
+        title: 'GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule',
         conference: 'ICCV 2025',
         authors: [
           { name: '王锐', isSelf: true },
@@ -184,7 +184,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         arxiv: 'https://arxiv.org/pdf/2603.26188',
       },
       {
-        title: 'GDKVM: Gated Delta Rule-based Spatio-Temporal Key-Value Memory for Echocardiography Video Segmentation',
+        title: 'GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule',
         conference: 'ICCV 2025',
         authors: [
           { name: 'Rui Wang', isSelf: true },
