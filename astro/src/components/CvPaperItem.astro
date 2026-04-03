@@ -20,12 +20,7 @@ const corrSuffix = '*';
     <div class="cv-pub-title">{localized.title}</div>
     <div class="cv-pub-authors">
       {localized.authors.map((author, i) => (
-        <>
-          <span class={author.is_self ? 'author-self' : 'author-other'}>
-            {author.name}{author.is_corresponding ? corrSuffix : ''}
-          </span>
-          {i < localized.authors.length - 1 && <span class="author-sep">{sep}</span>}
-        </>
+        <span class={author.is_self ? 'author-self' : 'author-other'}>{author.name}{author.is_corresponding ? corrSuffix : ''}{i < localized.authors.length - 1 ? sep : ''}</span>
       ))}
     </div>
     <div class="cv-pub-links">

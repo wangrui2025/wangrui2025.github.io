@@ -30,7 +30,7 @@ CV 页面存在多个问题：
 ```css
 .cv-pub-entry {
   display: grid;
-  grid-template-columns: 52pt 1fr;
+  grid-template-columns: 60pt minmax(0, 1fr);
   gap: 6pt;
   align-items: start;
 }
