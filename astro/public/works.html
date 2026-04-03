@@ -4,13 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works - OSA: Orthogonalized State Update</title>
-  <meta name="description" content="OSA: Orthogonalized State Update for Echocardiography Video Segmentation">
+  <meta name="description" content="OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement">
 
-  <!-- Reveal.js CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
 
-  <!-- KaTeX CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
 
   <style>
@@ -52,7 +50,7 @@
     }
     .slide-title h2 {
       color: white;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 1rem;
     }
@@ -97,6 +95,11 @@
       color: #1e293b;
       font-size: 0.875rem;
     }
+    .cite-text {
+      font-size: 0.7rem;
+      color: #64748b;
+      font-weight: normal;
+    }
     .card {
       background: #f1f5f9;
       border-radius: 0.5rem;
@@ -116,6 +119,13 @@
       font-weight: bold;
       color: #334155;
     }
+    .two-col {
+      display: flex;
+      gap: 1rem;
+    }
+    .col {
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -123,48 +133,87 @@
     <div class="reveal">
       <div class="slides">
 
-        <!-- Slide 1: Title -->
         <section>
           <div class="slide-title">
             <h2>OSA</h2>
             <p class="subtitle">超声心动图视频分割</p>
-            <p class="subtitle-cn">通过正交化状态更新与解剖先验感知特征增强实现</p>
-            <p class="authors">Rui Wang, Huisi Wu, Jing Qin</p>
+            <p class="subtitle-cn">通过正交化状态更新 (OSU) 与解剖先验感知特征增强 (APFE) 实现 [cite: 11, 12]</p>
+            <p class="authors">Rui Wang, Huisi Wu, Jing Qin [cite: 3]</p>
           </div>
         </section>
 
-        <!-- Slide 2: Rank Collapse Challenge -->
         <section>
-          <h3>核心挑战：Rank Collapse</h3>
+          <h3>背景与挑战</h3>
           <ul>
             <li>
-              <strong>任务目标：</strong> 从超声视频中分割左心室 (LV)，估算射血分数 \(LV_{EF}\)。
+              <strong>任务目标：</strong> 从超声视频中准确、具备时间一致性地分割左心室 (LV)，用于估算射血分数 ($LV_{EF}$) [cite: 7, 17]。
             </li>
             <li>
-              <strong>技术瓶颈：</strong> 线性循环模型的状态矩阵奇异值衰减，即<strong>秩崩溃</strong>现象。
+              <strong>技术难点：</strong> 复杂的成像物理特性（严重的斑点噪声和声学衰减）导致解剖边界模糊，且心脏在收缩与舒张期间会发生快速的非刚性形变 [cite: 37, 38]。
+            </li>
+            <li>
+              <strong>现有模型缺陷：</strong> 线性循环模型 (LRMs) 依赖无约束的状态更新，在复杂变形和噪声干扰下，会导致状态矩阵的奇异值逐渐衰减，引发<strong>秩崩溃 (Rank Collapse)</strong> [cite: 9, 45]。
             </li>
           </ul>
         </section>
 
-        <!-- Slide 3: OSU Methodology -->
         <section>
-          <h3>Orthogonalized State Update</h3>
-          <p class="subtitle" style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
-            将状态演化约束在 <strong>Stiefel Manifold</strong> 上：
+          <h3>方法一：Orthogonalized State Update (OSU)</h3>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
+            为解决秩崩溃问题，将状态演化约束在 <strong>Stiefel Manifold</strong> 上 [cite: 10, 120]：
           </p>
           <div class="formula-block">
-            \[\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}\]
+            $$\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}$$ <span class="cite-text">[cite: 122]</span>
           </div>
           <div class="formula-block">
-            \[S_{t}=\mathrm{Proj}_{\mathcal{V}}(S_{t}^{\mathrm{Euc}})\]
+            $$S_{t}=Proj_{\mathcal{V}}(S_{t}^{Euc})$$ <span class="cite-text">[cite: 122]</span>
           </div>
+          <ul>
+            <li>通过参数化的高阶 Newton-Schulz 迭代代替昂贵的 SVD 分解，实现高效正交化投影 [cite: 127, 128]。</li>
+            <li>确保了数值稳定的时间步转换，在完整心动周期中保留了瓣膜运动等精细结构细节 [cite: 63]。</li>
+          </ul>
         </section>
 
-        <!-- Slide 4: Conclusion -->
+        <section>
+          <h3>方法二：Anatomical Prior-aware Feature Enhancement</h3>
+          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
+            将空间特征提取重构为物理驱动的解耦过程，分离解剖结构与斑点噪声 [cite: 65, 297]：
+          </p>
+          <ul>
+            <li>
+              <strong>局部声学场估计：</strong> 通过大核平均池化估计空间变化的声学偏置场 $M_{t}$ [cite: 171]：
+              <div class="formula-block" style="margin-top:0.25rem;">$$M_{t}=AvgPool_{K\times K}(X_{t})$$ <span class="cite-text">[cite: 172]</span></div>
+            </li>
+            <li>
+              <strong>极性感知解耦 (Polarity-aware decoupling)：</strong>
+              <div class="formula-block" style="margin-top:0.25rem;">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$ <span class="cite-text">[cite: 176]</span></div>
+            </li>
+            <li>$X_{t}^{+}$ 隔离高频结构边缘（如心肌边界），而 $X_{t}^{-}$ 捕捉低响应同质区域（如血池） [cite: 176, 190]。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>实验结果与性能表现</h3>
+          <ul>
+            <li>
+              <strong>SOTA 精度：</strong> 在 CAMUS 和 EchoNet-Dynamic 数据集上刷新了分割准确率。例如在 CAMUS 上，OSA 达到了 94.82 的 mDice，超越了前沿模型 GDKVM (94.18) [cite: 66, 207]。
+            </li>
+            <li>
+              <strong>实时推理：</strong> 模型达到 35 fps 的推理速度，完全满足临床实时部署要求 [cite: 230]。
+            </li>
+            <li>
+              <strong>几何与数值稳定性：</strong> OSU 将奇异值方差 (SVVar) 严格限制为 0.00，并显著降低了正交性误差 (OrthE) 和时间漂移 (Drift)，确保了严谨的时间演化 [cite: 278, 280]。
+            </li>
+          </ul>
+        </section>
+
         <section>
           <h3>结论与代码</h3>
+          <p style="font-size: 0.875rem; color: #334155; margin-bottom: 2rem;">
+            OSA 成功解决了线性循环模型在超声视频处理中的"秩崩溃"和"斑点干扰"两大核心难题，为心功能评估提供了强有力的支持 [cite: 295, 299]。
+          </p>
           <div class="card">
-            <p style="color: #64748b; font-size: 0.75rem; margin-bottom: 0.5rem;">开源代码</p>
+            <p style="color: #64748b; font-size: 0.75rem; margin-bottom: 0.5rem;">开源代码 [cite: 14]</p>
             <code>github.com/wangrui2025/OSA</code>
           </div>
           <div class="thanks">
@@ -176,7 +225,6 @@
     </div>
   </div>
 
-  <!-- Reveal.js + KaTeX -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js"></script>
