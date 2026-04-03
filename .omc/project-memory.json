@@ -111,6 +111,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/CvPaperItem.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775199899596,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -118,20 +124,14 @@
     },
     {
       "path": "astro/src",
-      "accessCount": 1,
-      "lastAccessed": 1775198379696,
+      "accessCount": 2,
+      "lastAccessed": 1775199848454,
       "type": "directory"
     },
     {
       "path": "astro/src/data/cv.ts",
       "accessCount": 1,
       "lastAccessed": 1775198384336,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/CvPaperItem.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775198396358,
       "type": "file"
     },
     {
@@ -150,6 +150,12 @@
       "path": "astro/src/content/papers/osa.json",
       "accessCount": 1,
       "lastAccessed": 1775198414636,
+      "type": "file"
+    },
+    {
+      "path": ".claude/state/dialogue-count",
+      "accessCount": 1,
+      "lastAccessed": 1775199769455,
       "type": "file"
     }
   ],

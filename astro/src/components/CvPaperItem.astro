@@ -37,3 +37,68 @@ const corrSuffix = '*';
     </div>
   </div>
 </div>
+
+<style>
+  /* Hanging layout (悬挂式布局) - venue as left-anchored marginalia */
+  .cv-pub-entry {
+    position: relative;
+    padding-left: 55pt;
+    margin-bottom: 6pt;
+  }
+
+  .cv-pub-venue {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52pt;
+    font-size: 8.5pt;
+    color: #555;
+    font-weight: 700;
+    word-break: break-word;
+    text-align: right;
+  }
+
+  .cv-pub-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1pt;
+  }
+
+  .cv-pub-title {
+    font-weight: 600;
+    font-size: 10pt;
+    line-height: 1.3;
+    color: #1a1a1a;
+  }
+
+  .cv-pub-authors {
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  .cv-pub-links {
+    display: flex;
+    gap: 8pt;
+    margin-top: 1pt;
+  }
+
+  .author-self {
+    color: #1a1a1a;
+  }
+
+  .author-other {
+    font-weight: 400;
+    color: #666;
+  }
+
+  .pub-link {
+    font-size: 8.5pt;
+    color: #444;
+    text-decoration: none;
+  }
+
+  .pub-link:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+  }
+</style>
