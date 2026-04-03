@@ -22,18 +22,18 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         </button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
-            <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
+            <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
               {/* FIXED: 首页 / Homepage */}
               {lang === 'zh' ? '首页' : 'Homepage'}
             </a>
           </li>
           {navItems.map((item) => (
             <li class="masthead__menu-item">
-              <a href={item.url} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{item.title}</a>
+              <a href={item.url} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{item.title}</a>
             </li>
           ))}
           <li class="masthead__menu-item">
-            <a href={switchUrl} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{switchLabel}</a>
+            <a href={switchUrl} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{switchLabel}</a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
