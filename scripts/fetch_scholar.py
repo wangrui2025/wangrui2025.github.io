@@ -1,3 +1,10 @@
+"""
+OpenAlex API 获取学术引用数据
+
+迁移自 Google Scholar 爬虫，使用更可靠的 OpenAlex API。
+OpenAlex 是完全开放的学术数据平台，提供引用数、h-index、i10-index 等指标。
+"""
+
 import requests
 import json
 import os
@@ -5,9 +12,6 @@ import sys
 import tempfile
 import logging
 from datetime import datetime, timezone
-from bs4 import BeautifulSoup
-from urllib3.util.retry import Retry
-from requests.adapters import HTTPAdapter
 
 # 配置日志
 logging.basicConfig(
@@ -20,9 +24,12 @@ logger = logging.getLogger(__name__)
 STATS_PATH = 'astro/src/content/scholar/stats.json'
 SHIELDS_PATH = 'gs_data_shieldsio.json'
 
+# OpenAlex API 基础 URL
+OPENALEX_API = 'https://api.openalex.org'
+
 
 def atomic_write_json(filepath, data):
-    """原子性地写入 JSON 文件，防止数据损坏。"""
+    """原子性写入 JSON 文件，防止数据损坏。"""
     os.makedirs(os.path.dirname(filepath) if os.path.dirname(filepath) else '.', exist_ok=True)
     fd, temp_path = tempfile.mkstemp(dir=os.path.dirname(filepath) or '.', suffix='.tmp')
     try:
@@ -36,7 +43,7 @@ def atomic_write_json(filepath, data):
         raise
 
 
-def update_stats_json(citations, h_index, i10_index):
+def update_stats_json(citations: int, h_index: int, i10_index: int, cites_per_year: dict = None):
     """更新 stats.json 中的引用数据，保留其他字段。"""
     data = {}
     if os.path.exists(STATS_PATH):
@@ -47,30 +54,235 @@ def update_stats_json(citations, h_index, i10_index):
         except (json.JSONDecodeError, IOError) as e:
             logger.warning(f"读取 {STATS_PATH} 失败: {e}，将使用空数据")
 
-    # 数据验证
-    try:
-        citations_int = int(str(citations).replace(',', '')) if str(citations).replace(',', '').isdigit() else citations
-        h_index_int = int(str(h_index).replace(',', '')) if str(h_index).replace(',', '').isdigit() else h_index
-        i10_index_int = int(str(i10_index).replace(',', '')) if str(i10_index).replace(',', '').isdigit() else i10_index
-    except ValueError as e:
-        raise ValueError(f"数据格式错误: {e}") from e
+    # 保留原有字段（scholar_id 改为 openalex_id）
+    preserved_fields = ['name', 'affiliation', 'email_domain', 'homepage', 'interests', 'url_picture']
 
-    # 合理性验证
-    for name, val in [("citations", citations_int), ("h_index", h_index_int), ("i10_index", i10_index_int)]:
-        if isinstance(val, int) and val < 0:
-            raise ValueError(f"{name} 为负数: {val}")
-        if isinstance(val, int) and val > 1000000:
-            logger.warning(f"{name} 数值异常大: {val}，请检查")
+    # 数据验证
+    if citations < 0 or h_index < 0 or i10_index < 0:
+        raise ValueError("引用数据不能为负数")
 
     data.update({
-        "citedby": citations_int,
-        "hindex": h_index_int,
-        "i10index": i10_index_int,
+        "openalex_id": data.get("openalex_id"),  # 保留现有 ID
+        "citedby": citations,
+        "hindex": h_index,
+        "i10index": i10_index,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f"),
     })
 
+    # 更新年度引用数据（如果提供）
+    if cites_per_year:
+        data["cites_per_year"] = cites_per_year
+
     atomic_write_json(STATS_PATH, data)
     logger.info(f"已更新 {STATS_PATH}")
+
+
+def write_shields(citations: int):
+    """写入 shields.io 数据。"""
+    shields_data = {
+        "schemaVersion": 1,
+        "label": "citations",
+        "message": str(citations),
+        "color": "4285F4",
+        "namedLogo": "google scholar",
+        "cacheSeconds": 3600
+    }
+    atomic_write_json(SHIELDS_PATH, shields_data)
+    logger.info(f"已更新 shields 数据: {citations}")
+
+
+class OpenAlexError(Exception):
+    """OpenAlex API 相关错误基类。"""
+    pass
+
+
+class OpenAlexNotFoundError(OpenAlexError):
+    """作者未找到。"""
+    pass
+
+
+class OpenAlexRateLimitError(OpenAlexError):
+    """请求频率超限。"""
+    pass
+
+
+def fetch_author_by_openalex_id(author_id: str) -> dict:
+    """
+    通过 OpenAlex ID 获取作者数据。
+
+    Args:
+        author_id: OpenAlex 作者 ID (如 "A123456789")
+
+    Returns:
+        作者数据字典
+    """
+    # 确保 ID 格式正确
+    if not author_id.startswith('A'):
+        author_id = author_id.strip()
+
+    url = f"{OPENALEX_API}/authors/{author_id}"
+    logger.info(f"请求 OpenAlex API: {url}")
+
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (compatible; AcademicHomepageBot/1.0)',
+        'Accept': 'application/json',
+    })
+
+    try:
+        response = session.get(url, timeout=30)
+        logger.info(f"响应状态: {response.status_code}")
+
+        if response.status_code == 404:
+            raise OpenAlexNotFoundError(f"未找到 OpenAlex 作者 ID: {author_id}")
+        elif response.status_code == 429:
+            raise OpenAlexRateLimitError("OpenAlex API 频率超限，请稍后重试")
+        elif response.status_code != 200:
+            raise OpenAlexError(f"OpenAlex API 错误: {response.status_code}")
+
+        return response.json()
+
+    except requests.exceptions.Timeout:
+        logger.error("请求超时")
+        raise OpenAlexError("OpenAlex API 请求超时")
+    except requests.exceptions.ConnectionError as e:
+        logger.error(f"连接错误: {e}")
+        raise OpenAlexError(f"连接错误: {e}")
+
+
+def search_author_by_name(name: str, affiliation: str = None) -> dict | None:
+    """
+    通过姓名和机构搜索作者。
+
+    Args:
+        name: 作者姓名
+        affiliation: 机构名称（可选）
+
+    Returns:
+        作者数据字典或 None
+    """
+    search_query = f"{name}"
+    if affiliation:
+        search_query += f" {affiliation}"
+
+    url = f"{OPENALEX_API}/authors?search={requests.utils.quote(search_query)}"
+    logger.info(f"搜索作者: {search_query}")
+
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (compatible; AcademicHomepageBot/1.0)',
+        'Accept': 'application/json',
+    })
+
+    try:
+        response = session.get(url, timeout=30)
+        if response.status_code != 200:
+            logger.warning(f"搜索失败: {response.status_code}")
+            return None
+
+        data = response.json()
+        results = data.get('results', [])
+        if not results:
+            logger.warning(f"未找到作者: {name}")
+            return None
+
+        # 返回第一个匹配结果
+        return results[0]
+
+    except Exception as e:
+        logger.warning(f"搜索异常: {e}")
+        return None
+
+
+def get_citations_by_year(author_id: str) -> dict:
+    """
+    获取作者每年的引用数据。
+
+    Args:
+        author_id: OpenAlex 作者 ID
+
+    Returns:
+        每年的引用数字典 {"2024": 10, "2025": 15}
+    """
+    url = f"{OPENALEX_API}/authors/{author_id}/counts-by-year"
+    logger.info(f"获取年度引用: {url}")
+
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (compatible; AcademicHomepageBot/1.0)',
+        'Accept': 'application/json',
+    })
+
+    try:
+        response = session.get(url, timeout=30)
+        if response.status_code != 200:
+            logger.warning(f"获取年度引用失败: {response.status_code}")
+            return {}
+
+        data = response.json()
+        cites_per_year = {}
+        for item in data:
+            year = str(item.get('year', 0))
+            count = item.get('cited_by_count', 0)
+            if year.isdigit() and int(year) >= 2010:  # 只保留 2010 年后的数据
+                cites_per_year[year] = count
+
+        return cites_per_year
+
+    except Exception as e:
+        logger.warning(f"获取年度引用异常: {e}")
+        return {}
+
+
+def fetch_scholar_data(author_identifier: str) -> bool:
+    """
+    从 OpenAlex 获取学术引用数据。
+
+    Args:
+        author_identifier: OpenAlex 作者 ID (如 "A123456789") 或姓名
+
+    Returns:
+        是否成功
+    """
+    logger.info(f"开始获取 OpenAlex 数据: {author_identifier}")
+
+    try:
+        # 尝试直接用 OpenAlex ID 获取
+        if author_identifier.startswith('A') and len(author_identifier) > 5:
+            author_data = fetch_author_by_openalex_id(author_identifier)
+        else:
+            # 回退到姓名搜索
+            logger.info("非 OpenAlex ID 格式，尝试姓名搜索")
+            author_data = search_author_by_name(author_identifier)
+            if not author_data:
+                raise OpenAlexNotFoundError(f"未找到作者: {author_identifier}")
+
+        # 提取数据
+        openalex_id = author_data.get('id', '').split('/')[-1]  # 提取 A123456789 格式
+        citations = author_data.get('cited_by_count', 0)
+        summary_stats = author_data.get('summary_stats', {})
+        h_index = summary_stats.get('h_index', 0)
+        i10_index = summary_stats.get('i10_index', 0)
+
+        logger.info(f"提取数据: 引用数={citations}, h-index={h_index}, i10-index={i10_index}")
+
+        # 获取年度引用数据
+        cites_per_year = get_citations_by_year(openalex_id)
+
+        # 写入 shields 数据
+        write_shields(citations)
+
+        # 更新 stats.json
+        update_stats_json(citations, h_index, i10_index, cites_per_year)
+
+        logger.info(f"获取成功！引用数: {citations}, h-index: {h_index}, i10-index: {i10_index}")
+        return True
+
+    except OpenAlexError:
+        raise
+    except Exception as e:
+        logger.exception("未知错误")
+        raise OpenAlexError(f"未知错误: {type(e).__name__}: {e}") from e
 
 
 def write_fallback_shields():
@@ -87,129 +299,20 @@ def write_fallback_shields():
         logger.warning(f"写入 fallback shields 失败: {e}")
 
 
-class ScholarError(Exception):
-    """Google Scholar 抓取相关错误基类。"""
-    pass
-
-
-class ScholarParseError(ScholarError):
-    """页面解析错误。"""
-    pass
-
-
-class ScholarNetworkError(ScholarError):
-    """网络请求错误。"""
-    pass
-
-
-class ScholarValidationError(ScholarError):
-    """数据验证错误。"""
-    pass
-
-
-def fetch_scholar_data(scholar_id):
-    """
-    抓取 Google Scholar 数据。
-
-    Returns:
-        bool: 是否成功
-    Raises:
-        ScholarError: 各种抓取错误
-    """
-    url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en"
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-    }
-
-    session = requests.Session()
-    retries = Retry(
-        total=5,
-        backoff_factor=2,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["GET"]
-    )
-    session.mount('https://', HTTPAdapter(max_retries=retries))
-
-    logger.info(f"开始抓取 Google Scholar 数据: scholar_id={scholar_id}")
-    logger.info(f"请求 URL: {url}")
-
-    try:
-        response = session.get(url, headers=headers, timeout=15)
-        logger.info(f"收到响应: status={response.status_code}, len={len(response.text)}")
-        response.raise_for_status()
-
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # 检查是否遇到验证码
-        if soup.find('form', {'id': 'captcha-form'}) or 'captcha' in response.text.lower():
-            raise ScholarNetworkError("触发 Google Scholar 验证码，请稍后重试")
-
-        stats = [td.text.strip() for td in soup.select('td.gsc_rsb_std')]
-        if not stats:
-            # 尝试其他选择器
-            stats = [td.text.strip() for td in soup.select('.gsc_rsb_std')]
-            if not stats:
-                # 记录部分 HTML 供调试
-                preview = response.text[:2000].replace('\n', ' ')
-                logger.error(f"解析失败，HTML 预览: {preview}")
-                raise ScholarParseError("未能从页面解析到数据，可能页面结构已变更")
-
-        logger.info(f"解析到原始数据: {stats}")
-
-        # 验证数据格式
-        raw_values = stats[:5:2]
-        if not all(s.replace(',', '').isdigit() for s in raw_values):
-            raise ScholarParseError(f"解析的数据格式异常: {raw_values}")
-
-        citations = stats[0]
-        h_index = stats[2] if len(stats) > 2 else "0"
-        i10_index = stats[4] if len(stats) > 4 else "0"
-
-        shields_data = {
-            "schemaVersion": 1,
-            "label": "citations",
-            "message": str(citations),
-            "color": "4285F4",
-            "namedLogo": "google scholar",
-            "cacheSeconds": 3600
-        }
-
-        atomic_write_json(SHIELDS_PATH, shields_data)
-        update_stats_json(citations, h_index, i10_index)
-
-        logger.info(f"抓取成功！引用数: {citations}, h-index: {h_index}, i10-index: {i10_index}")
-        return True
-
-    except requests.exceptions.Timeout:
-        logger.error("请求超时，Google Scholar 响应过慢")
-        raise ScholarNetworkError("请求超时，Google Scholar 响应过慢")
-    except requests.exceptions.ConnectionError as e:
-        logger.error(f"连接错误: {e}")
-        raise ScholarNetworkError(f"连接错误: {e}")
-    except requests.exceptions.HTTPError as e:
-        logger.error(f"HTTP 错误: {e}")
-        if e.response.status_code == 429:
-            raise ScholarNetworkError("请求过于频繁 (429)，请降低抓取频率")
-        raise ScholarNetworkError(f"HTTP 错误: {e}")
-    except (ScholarError, ValueError):
-        raise
-    except Exception as e:
-        logger.exception("未知错误")
-        raise ScholarError(f"未知错误: {type(e).__name__}: {e}") from e
-
-
 if __name__ == "__main__":
-    SID = os.getenv('GOOGLE_SCHOLAR_ID')
-    if not SID:
-        logger.error("未找到环境变量 GOOGLE_SCHOLAR_ID")
+    # 支持两种环境变量：OPENALEX_AUTHOR_ID（优先）或向后兼容的 GOOGLE_SCHOLAR_ID
+    author_id = os.getenv('OPENALEX_AUTHOR_ID') or os.getenv('GOOGLE_SCHOLAR_ID')
+
+    if not author_id:
+        logger.error("未找到环境变量 OPENALEX_AUTHOR_ID (或 GOOGLE_SCHOLAR_ID)")
+        logger.error("请在 GitHub Secrets 中设置 OPENALEX_AUTHOR_ID")
+        logger.info("获取 OpenAlex ID 方法: 在 https://openalex.org 搜索你的姓名，复制 URL 中的 ID (格式如 A123456789)")
         sys.exit(1)
+
     try:
-        success = fetch_scholar_data(SID)
+        success = fetch_scholar_data(author_id)
         sys.exit(0 if success else 1)
-    except ScholarError as e:
-        logger.error(f"抓取失败: {e}")
+    except OpenAlexError as e:
+        logger.error(f"获取失败: {e}")
         write_fallback_shields()
         sys.exit(1)
