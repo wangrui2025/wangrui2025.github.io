@@ -125,15 +125,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 7,
-      "lastAccessed": 1775208236971,
+      "path": "scripts/fetch_scholar.py",
+      "accessCount": 8,
+      "lastAccessed": 1775472142472,
       "type": "file"
     },
     {
-      "path": "scripts/fetch_scholar.py",
+      "path": "astro/src/layouts/HomepageLayout.astro",
       "accessCount": 7,
-      "lastAccessed": 1775472136717,
+      "lastAccessed": 1775208236971,
       "type": "file"
     },
     {
@@ -221,6 +221,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/scholar/stats.json",
+      "accessCount": 3,
+      "lastAccessed": 1775472215411,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -284,12 +290,6 @@
       "path": "astro/src/pages/[lang]/index.astro",
       "accessCount": 2,
       "lastAccessed": 1775208213532,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/scholar/stats.json",
-      "accessCount": 2,
-      "lastAccessed": 1775470165519,
       "type": "file"
     },
     {
