@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1775198343154,
+  "lastScanned": 1775468882642,
   "projectRoot": "/Users/myk/Repo/wangrui2025.github.io",
   "techStack": {
     "languages": [
@@ -48,14 +48,14 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1775198343126,
+      "lastAccessed": 1775468882615,
       "keyFiles": []
     },
     "astro": {
       "path": "astro",
       "purpose": null,
       "fileCount": 8,
-      "lastAccessed": 1775198343129,
+      "lastAccessed": 1775468882621,
       "keyFiles": [
         "README.md",
         "astro.config.mjs",
@@ -68,7 +68,7 @@
       "path": "scripts",
       "purpose": "Build/utility scripts",
       "fileCount": 2,
-      "lastAccessed": 1775198343129,
+      "lastAccessed": 1775468882623,
       "keyFiles": [
         "autopush.sh",
         "fetch_scholar.py"
@@ -77,8 +77,8 @@
     "astro/dist": {
       "path": "astro/dist",
       "purpose": "Distribution/build output",
-      "fileCount": 5,
-      "lastAccessed": 1775198343130,
+      "fileCount": 9,
+      "lastAccessed": 1775468882625,
       "keyFiles": [
         "favicon.svg",
         "gs_data.json",
@@ -89,18 +89,8 @@
       "path": "astro/node_modules",
       "purpose": "Dependencies",
       "fileCount": 1,
-      "lastAccessed": 1775198343131,
+      "lastAccessed": 1775468882627,
       "keyFiles": []
-    },
-    "astro/public": {
-      "path": "astro/public",
-      "purpose": "Public files",
-      "fileCount": 2,
-      "lastAccessed": 1775198343131,
-      "keyFiles": [
-        "favicon.svg",
-        "gs_data.json"
-      ]
     }
   },
   "hotPaths": [
@@ -111,27 +101,33 @@
       "type": "file"
     },
     {
+      "path": "astro/src/pages/zh/cv.astro",
+      "accessCount": 11,
+      "lastAccessed": 1775469187645,
+      "type": "file"
+    },
+    {
       "path": "astro/src/styles/global.css",
       "accessCount": 10,
       "lastAccessed": 1775208978396,
       "type": "file"
     },
     {
-      "path": "astro/src/pages/zh/cv.astro",
-      "accessCount": 9,
-      "lastAccessed": 1775208203960,
-      "type": "file"
-    },
-    {
       "path": "astro/src",
-      "accessCount": 8,
-      "lastAccessed": 1775208236986,
+      "accessCount": 9,
+      "lastAccessed": 1775469150271,
       "type": "directory"
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
       "accessCount": 7,
       "lastAccessed": 1775208236971,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/cv.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775469188904,
       "type": "file"
     },
     {
@@ -156,12 +152,6 @@
       "path": "astro/src/data/navigation.ts",
       "accessCount": 4,
       "lastAccessed": 1775208875128,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/cv.astro",
-      "accessCount": 4,
-      "lastAccessed": 1775208883279,
       "type": "file"
     },
     {
@@ -210,6 +200,12 @@
       "path": "astro/astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1775209192297,
+      "type": "file"
+    },
+    {
+      "path": "astro/public/works.html",
+      "accessCount": 3,
+      "lastAccessed": 1775210216182,
       "type": "file"
     },
     {
@@ -276,12 +272,6 @@
       "path": "astro/src/pages/[lang]/index.astro",
       "accessCount": 2,
       "lastAccessed": 1775208213532,
-      "type": "file"
-    },
-    {
-      "path": "astro/public/works.html",
-      "accessCount": 2,
-      "lastAccessed": 1775210201562,
       "type": "file"
     },
     {
@@ -373,6 +363,18 @@
       "accessCount": 1,
       "lastAccessed": 1775208237031,
       "type": "file"
+    },
+    {
+      "path": "scripts/fetch_scholar.py",
+      "accessCount": 1,
+      "lastAccessed": 1775468904429,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/data",
+      "accessCount": 1,
+      "lastAccessed": 1775469165908,
+      "type": "directory"
     }
   ],
   "userDirectives": []
