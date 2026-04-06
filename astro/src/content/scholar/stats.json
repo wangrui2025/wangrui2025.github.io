@@ -9,16 +9,17 @@
     "Video Segmentation",
     "Linear Attention"
   ],
-  "citedby": 2,
+  "citedby": 214,
   "citedby5y": 2,
-  "hindex": 1,
+  "hindex": 8,
   "hindex5y": 1,
-  "i10index": 0,
+  "i10index": 8,
   "i10index5y": 0,
   "cites_per_year": {
     "2025": 1,
     "2026": 1
   },
   "url_picture": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=01amzbYAAAAJ&citpid=3",
-  "updated": "2026-03-27 08:38:17.239264"
+  "updated": "2026-04-06 10:14:08.123838",
+  "openalex_id": null
 }

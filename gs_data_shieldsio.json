@@ -1,1 +1,8 @@
-{"schemaVersion": 1, "label": "citations", "message": "0", "color": "lightgrey"}
+{
+  "schemaVersion": 1,
+  "label": "citations",
+  "message": "214",
+  "color": "4285F4",
+  "namedLogo": "google scholar",
+  "cacheSeconds": 3600
+}
