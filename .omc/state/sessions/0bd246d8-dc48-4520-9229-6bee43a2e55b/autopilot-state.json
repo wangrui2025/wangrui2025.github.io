@@ -1,0 +1,10 @@
+{
+  "active": true,
+  "started_at": "2026-04-06T11:20:12.182Z",
+  "original_prompt": "/autopilot 看看网页这部分代码架构有没有什么问题",
+  "session_id": "0bd246d8-dc48-4520-9229-6bee43a2e55b",
+  "project_path": "/Users/myk/Repo/wangrui2025.github.io",
+  "reinforcement_count": 0,
+  "awaiting_confirmation": true,
+  "last_checked_at": "2026-04-06T11:20:12.183Z"
+}

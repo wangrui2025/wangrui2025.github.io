@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git pull origin main --rebase && git push origin main\"}",
-  "error": "Exit code 128\nerror: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.",
-  "timestamp": "2026-04-06T11:09:01.068Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"git add astro/public/works.html && git commit -m \\\"$(cat <<'EOF'\\nfeat(works): complete ICCV-styled pure HTML slide deck for OSA\\n\\n- 7 slides: Title, Contents, Problem Setting, OSU Method...",
+  "error": "Exit code 128\n[main 2707b65] feat(works): complete ICCV-styled pure HTML slide deck for OSA\n 6 files changed, 521 insertions(+), 225 deletions(-)\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
+  "timestamp": "2026-04-06T11:19:09.466Z",
+  "retry_count": 1
 }

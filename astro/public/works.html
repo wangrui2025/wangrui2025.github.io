@@ -84,19 +84,7 @@
                     <div class="w-[65%] relative flex justify-center items-center">
 
                         <!-- Header Logos -->
-                        <div class="absolute top-[30px] right-[40px] flex items-center gap-[15px]">
-                            <div class="w-[75px] h-[75px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[12px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[75px] h-[75px] flex justify-center items-center bg-white">
-                                <svg width="75" height="75" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
+                        <div class="slide-header-logos absolute top-[30px] right-[40px] flex items-center gap-[15px]" data-size="75"></div>
 
                         <!-- TOC List -->
                         <div class="flex flex-col gap-[50px] -mt-[20px]">
@@ -315,7 +303,7 @@
                                 <div class="flex items-start">
                                     <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">3.</div>
                                     <div class="flex-1 text-[#334155] text-[20px] leading-[1.6]">
-                                        <strong>$X_{t}^{+}$</strong> isolates high-frequency edges (myocardium), while <strong>$X_{t}^{+}$</strong> captures low-response regions (blood pools).
+                                        <strong>$X_{t}^{+}$</strong> isolates high-frequency edges (myocardium), while <strong>$X_{t}^{-}$</strong> captures low-response regions (blood pools).
                                     </div>
                                 </div>
                             </div>
@@ -451,67 +439,154 @@
 
     <!-- 交互脚本 -->
     <script>
+        // 配置常量
+        const CONFIG = {
+            SLIDE_WIDTH: 1280,
+            SWIPE_THRESHOLD: 50,
+            TOTAL_SLIDES: document.querySelectorAll('#slideTrack > div').length
+        };
+
+        // Logo SVG 模板
+        const LOGO_TEMPLATES = {
+            szu: (size) => `<div class="w-[${size}px] h-[${size}px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[12px] text-center font-sans bg-white"><div>SZU<br>Logo</div></div>`,
+            polyu: (size) => `<div class="w-[${size}px] h-[${size}px] flex justify-center items-center bg-white"><svg width="${size}" height="${size}" viewBox="0 0 100 100" fill="none"><path d="M20 20 H50 V50 H20 Z" fill="#842043"/><path d="M55 20 H85 V50 H55 Z" fill="#842043"/><path d="M20 55 H50 V85 H20 Z" fill="#842043"/><path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/></svg></div>`
+        };
+
+        // 动态生成 Header Logos
+        function renderHeaderLogos() {
+            document.querySelectorAll('.slide-header-logos').forEach(container => {
+                const size = container.dataset.size || 75;
+                container.innerHTML = LOGO_TEMPLATES.szu(size) + LOGO_TEMPLATES.polyu(size);
+            });
+        }
+
         let currentSlide = 0;
-        const totalSlides = 7;
-        const slideWidth = 1280;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         const track = document.getElementById('slideTrack');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const currentNum = document.getElementById('currentNum');
+        const totalNum = document.getElementById('totalNum');
+
+        // 更新总页数
+        if (totalNum) totalNum.innerText = CONFIG.TOTAL_SLIDES;
 
         function updateSlidePosition() {
-            if (track && currentNum && prevBtn && nextBtn) {
-                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-                currentNum.innerText = (currentSlide + 1).toString();
-                prevBtn.disabled = currentSlide === 0;
-                nextBtn.disabled = currentSlide === totalSlides - 1;
+            if (!track) return;
+
+            track.style.transform = `translateX(-${currentSlide * CONFIG.SLIDE_WIDTH}px)`;
+
+            if (currentNum) currentNum.innerText = (currentSlide + 1).toString();
+            if (prevBtn) prevBtn.disabled = currentSlide === 0;
+            if (nextBtn) nextBtn.disabled = currentSlide === CONFIG.TOTAL_SLIDES - 1;
+
+            // 更新 URL hash 支持深链接
+            history.replaceState(null, null, `#slide=${currentSlide + 1}`);
+        }
+
+        function nextSlide() {
+            if (currentSlide < CONFIG.TOTAL_SLIDES - 1) {
+                currentSlide++;
+                updateSlidePosition();
             }
         }
 
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    updateSlidePosition();
-                }
-            });
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlidePosition();
+            }
         }
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlidePosition();
-                }
-            });
+        function goToSlide(index) {
+            if (index >= 0 && index < CONFIG.TOTAL_SLIDES) {
+                currentSlide = index;
+                updateSlidePosition();
+            }
         }
 
+        // 按钮事件
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // 键盘导航
         document.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowRight' || event.key === ' ') {
+            if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
                 event.preventDefault();
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    updateSlidePosition();
-                }
-            } else if (event.key === 'ArrowLeft') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
                 event.preventDefault();
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlidePosition();
-                }
+                prevSlide();
+            } else if (event.key === 'Home') {
+                event.preventDefault();
+                goToSlide(0);
+            } else if (event.key === 'End') {
+                event.preventDefault();
+                goToSlide(CONFIG.TOTAL_SLIDES - 1);
             }
         });
 
-        // Render KaTeX formulas after page load
+        // 触摸/滑动支持
+        const slideContainer = document.querySelector('.w\\[1280px\\].h\\[720px\\]');
+        if (slideContainer) {
+            slideContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            slideContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > CONFIG.SWIPE_THRESHOLD) {
+                    if (diff > 0) {
+                        nextSlide(); // 向左滑 -> 下一页
+                    } else {
+                        prevSlide(); // 向右滑 -> 上一页
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // 解析 URL hash 初始化
+        function parseHash() {
+            const hash = window.location.hash;
+            const match = hash.match(/slide=(\d+)/);
+            if (match) {
+                const slideIndex = parseInt(match[1], 10) - 1;
+                goToSlide(slideIndex);
+            }
+        }
+
+        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false}
-                ],
-                throwOnError: false
-            });
+            // 渲染 Header Logos
+            renderHeaderLogos();
+
+            // KaTeX 渲染公式
+            if (typeof renderMathInElement !== 'undefined') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+
+            // 解析 URL hash
+            parseHash();
+
+            // 监听 hash 变化
+            window.addEventListener('hashchange', parseHash);
+        });
+
+        // 防止空格键滚动页面
+        window.addEventListener('keydown', (e) => {
+            if (e.key === ' ' && e.target === document.body) {
+                e.preventDefault();
+            }
         });
     </script>
 </body>
