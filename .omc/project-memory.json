@@ -375,6 +375,12 @@
       "accessCount": 1,
       "lastAccessed": 1775469165908,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/content/scholar/stats.json",
+      "accessCount": 1,
+      "lastAccessed": 1775469552354,
+      "type": "file"
     }
   ],
   "userDirectives": []
