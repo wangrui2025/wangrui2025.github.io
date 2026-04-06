@@ -143,6 +143,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/scholar/stats.json",
+      "accessCount": 6,
+      "lastAccessed": 1775473215327,
+      "type": "file"
+    },
+    {
       "path": "astro/src/components/CvPaperItem.astro",
       "accessCount": 5,
       "lastAccessed": 1775208984458,
@@ -152,12 +158,6 @@
       "path": "astro/src/pages/works.astro",
       "accessCount": 5,
       "lastAccessed": 1775209498269,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/scholar/stats.json",
-      "accessCount": 5,
-      "lastAccessed": 1775473204533,
       "type": "file"
     },
     {
