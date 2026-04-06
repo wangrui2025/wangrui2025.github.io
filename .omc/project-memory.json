@@ -96,8 +96,8 @@
   "hotPaths": [
     {
       "path": "astro/public/works.html",
-      "accessCount": 15,
-      "lastAccessed": 1775471952759,
+      "accessCount": 17,
+      "lastAccessed": 1775473884930,
       "type": "file"
     },
     {
@@ -381,6 +381,12 @@
       "accessCount": 1,
       "lastAccessed": 1775469165908,
       "type": "directory"
+    },
+    {
+      "path": ".claude/case/scholar-citation-migration.md",
+      "accessCount": 1,
+      "lastAccessed": 1775473722623,
+      "type": "file"
     }
   ],
   "userDirectives": []

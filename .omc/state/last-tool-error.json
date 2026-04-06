@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"python3.11 scripts/fetch_scholar.py && git add astro/src/content/scholar/stats.json && git commit --no-edit && git push origin main\"}",
-  "error": "Exit code 1\n2026-04-06 18:42:57 [INFO] 开始获取论文引用数据 (Semantic Scholar)\n2026-04-06 18:42:57 [INFO] 请求 Semantic Scholar: arxiv:2512.10252\n2026-04-06 18:42:58 [INFO]   GDKVM: Echocardiography Video Segmentation via Spa... -> 1 citations\n2026-04-06 18:42:58 [INFO] 请求 Semantic Scholar: arxiv:2603.26188\n2026-04-06 18:42:58 [WARNING] 请求过于频繁 (429)，等待 5 秒后重试...\n2026-04-06 18:43:04 [WARNING] 请求过于频繁 (429)，等待 10 秒后重试...\n2026-04-06 18:43:15 [WARNING] 请求过于频繁 (429)，等待 15 秒后重试...\n2026-04-06 18:43:30 [ERROR] 重试 3 ...",
-  "timestamp": "2026-04-06T10:43:30.725Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"git pull origin main --rebase && git push origin main\"}",
+  "error": "Exit code 128\nerror: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-06T11:09:01.068Z",
+  "retry_count": 2
 }
