@@ -96,8 +96,8 @@
   "hotPaths": [
     {
       "path": "astro/public/works.html",
-      "accessCount": 14,
-      "lastAccessed": 1775471937306,
+      "accessCount": 15,
+      "lastAccessed": 1775471952759,
       "type": "file"
     },
     {
@@ -131,15 +131,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/pages/cv.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775469188904,
+      "path": "scripts/fetch_scholar.py",
+      "accessCount": 7,
+      "lastAccessed": 1775472136717,
       "type": "file"
     },
     {
-      "path": "scripts/fetch_scholar.py",
+      "path": "astro/src/pages/cv.astro",
       "accessCount": 6,
-      "lastAccessed": 1775471906266,
+      "lastAccessed": 1775469188904,
       "type": "file"
     },
     {

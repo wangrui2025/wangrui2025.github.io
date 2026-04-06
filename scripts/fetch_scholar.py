@@ -138,11 +138,21 @@ def update_stats_json(total_citations: int, papers_detail: dict):
     h_index = min(num_papers, total_citations) if total_citations > 0 else 0
     i10_index = 1 if total_citations >= 10 else 0
 
+    # 5年数据不可用，设为 0
+    citedby5y = 0
+    hindex5y = 0
+    i10index5y = 0
+    cites_per_year = {}
+
     data = {
         **preserved_data,
         'citedby': total_citations,
+        'citedby5y': citedby5y,
         'hindex': h_index,
+        'hindex5y': hindex5y,
         'i10index': i10_index,
+        'i10index5y': i10index5y,
+        'cites_per_year': cites_per_year,
         'updated': datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f"),
         'papers': papers_detail,
     }
