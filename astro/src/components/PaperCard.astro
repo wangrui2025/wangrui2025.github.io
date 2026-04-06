@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getEntry, type CollectionEntry } from 'astro:content';
+import { TAG_URLS } from '../utils/constants';
 import osaImage from '../assets/paper/fig_osu_page-0001.jpg';
 import gdkvmImage from '../assets/paper/fig_gdkvm_page-0001.jpg';
 
@@ -27,12 +28,6 @@ if (!paper) {
 
 const localized = paper.data[lang];
 const image = imageMap[paper.data.image as keyof typeof imageMap];
-
-// Tag URL mapping
-const tagUrls: Record<string, string> = {
-  'csranking': 'https://csrankings.org/#/index?vision&world',
-  'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
-};
 ---
 
 <div class="flex flex-col border border-paper-border dark:border-paper-border-dark rounded-2xl p-6 mb-8 bg-paper-bg dark:bg-paper-bg-dark border-l-[3px] border-l-paper-accent dark:border-l-paper-accent-dark shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
@@ -66,8 +61,8 @@ const tagUrls: Record<string, string> = {
     <p class="text-sm text-text-primary/80 dark:text-text-dark/80 mb-2 tabular-nums">
       <strong>{paper.data.venue_full}</strong>
       {paper.data.tags && paper.data.tags.map((tag) => (
-        tagUrls[tag] ? (
-          <a href={tagUrls[tag]} class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle hover:opacity-70 transition-opacity no-underline" target="_blank" rel="noopener noreferrer">{tag}</a>
+        TAG_URLS[tag] ? (
+          <a href={TAG_URLS[tag]} class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle hover:opacity-70 transition-opacity no-underline" target="_blank" rel="noopener noreferrer">{tag}</a>
         ) : (
           <span class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle">{tag}</span>
         )

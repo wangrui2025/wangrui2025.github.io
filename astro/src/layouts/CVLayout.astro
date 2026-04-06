@@ -1,5 +1,5 @@
 ---
-import { execSync } from 'child_process';
+import { getLastUpdated } from '../utils/lastUpdated';
 import '../styles/global.css';
 
 export interface Props {
@@ -17,10 +17,7 @@ const {
   viewport = 'width=794',
 } = Astro.props;
 
-let lastUpdated = '2026-04-03';
-try {
-  lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
-} catch { /* CI env may lack git */ }
+const lastUpdated = getLastUpdated();
 ---
 
 <!doctype html>

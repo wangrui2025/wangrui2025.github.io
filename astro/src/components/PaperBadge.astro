@@ -1,18 +1,13 @@
 ---
+import { TAG_URLS } from '../utils/constants';
+
 interface Props {
   tag: string;
   href?: string;
 }
 
 const { tag, href } = Astro.props;
-
-// Tag URL mapping
-const tagUrls: Record<string, string> = {
-  'csranking': 'https://csrankings.org/#/index?vision&world',
-  'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
-};
-
-const url = href ?? tagUrls[tag];
+const url = href ?? TAG_URLS[tag];
 ---
 
 {tagUrls[tag] ? (

@@ -7,6 +7,7 @@ import Education from '../components/Education.astro';
 import ScholarBadge from '../components/ScholarBadge.astro';
 import CvHonorItem from '../components/CvHonorItem.astro';
 import { getEntry, getCollection } from 'astro:content';
+import { TAG_URLS } from '../utils/constants';
 
 export interface Props {
   lang: 'en' | 'zh';
@@ -22,21 +23,15 @@ const h = homepage.data;
 const scholarStats = await getEntry('scholar', 'stats');
 const citedBy = scholarStats.data.citedby;
 
-// Get honors data (sorted by rank)
+// Get honors data (sorted by rank - use spread to avoid mutation)
 const honorsData = await getEntry('honors', 'honors');
-const graduateHonors = honorsData.data.graduate.sort((a, b) => a.rank - b.rank);
-const undergraduateHonors = honorsData.data.undergraduate.sort((a, b) => a.rank - b.rank);
+const graduateHonors = [...honorsData.data.graduate].sort((a, b) => a.rank - b.rank);
+const undergraduateHonors = [...honorsData.data.undergraduate].sort((a, b) => a.rank - b.rank);
 
-// Timeline tag URL mapping
-const timelineTagUrls: Record<string, string> = {
-  'csranking': 'https://csrankings.org/#/index?vision&world',
-  'CCF-A': 'https://www.ccf.org.cn/Academic_Evaluation/By_category/',
-};
-
-// Get all papers and sort by date (descending)
+// Get all papers and sort by date (descending - use spread to avoid mutation)
 const allPapers = await getCollection('papers');
-const sortedPapers = allPapers.sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+const sortedPapers = [...allPapers].sort(
+  (a, b) => b.data.date.localeCompare(a.data.date)
 );
 
 const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
@@ -113,8 +108,8 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
               {item.tags && item.tags.length > 0 && (
                 <div class="timeline-tags">
                   {item.tags.map((tag) => (
-                    timelineTagUrls[tag] ? (
-                      <a href={timelineTagUrls[tag]} class="timeline-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
+                    TAG_URLS[tag] ? (
+                      <a href={TAG_URLS[tag]} class="timeline-tag" target="_blank" rel="noopener noreferrer">{tag}</a>
                     ) : (
                       <span class="timeline-tag">{tag}</span>
                     )

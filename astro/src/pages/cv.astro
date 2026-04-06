@@ -14,8 +14,11 @@ const papers = await getCollection('papers', (p) => p.data.show_on_cv);
 const honors = await getEntry('honors', 'honors');
 const education = await getEntry('education', 'education');
 
-// Sort papers by date (newest first)
-const sortedPapers = papers.sort((a, b) => b.data.date.localeCompare(a.data.date));
+// Sort papers by date (newest first) - use spread to avoid mutation
+const sortedPapers = [...papers].sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+// Get first project safely
+const firstProject = cv.projects.length > 0 ? cv.projects[0] : null;
 
 // Flatten honors with type标签
 const graduateHonors = honors.data.graduate
@@ -121,21 +124,23 @@ const undergraduateHonors = honors.data.undergraduate
     </section>
 
     <!-- Projects -->
+    {firstProject && (
     <section class="cv-section">
       <h2 class="cv-section-title">Projects</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
           <span class="cv-entry-title">
-            {cv.projects[0].url
-              ? <a href={cv.projects[0].url} target="_blank" rel="noopener" class="project-name-link">{cv.projects[0].name}</a>
-              : cv.projects[0].name
+            {firstProject.url
+              ? <a href={firstProject.url} target="_blank" rel="noopener" class="project-name-link">{firstProject.name}</a>
+              : firstProject.name
             }
           </span>
-          <span class="cv-entry-period">{cv.projects[0].type}</span>
+          <span class="cv-entry-period">{firstProject.type}</span>
         </div>
-        <div class="cv-entry-detail">{cv.projects[0].description}</div>
+        <div class="cv-entry-detail">{firstProject.description}</div>
       </div>
     </section>
+    )}
 
     <!-- Skills -->
     <section class="cv-section">

@@ -1,8 +1,9 @@
 ---
-import { execSync } from 'child_process';
 import { ClientRouter } from 'astro:transitions';
 import Masthead from '../components/Masthead.astro';
 import Scripts from '../components/Scripts.astro';
+import { SITE_URL } from '../utils/constants';
+import { getLastUpdated } from '../utils/lastUpdated';
 import '../styles/global.css';
 
 export interface Props {
@@ -21,13 +22,11 @@ const {
   ogDescription,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://wangrui2025.github.io');
+const siteUrl = Astro.site ?? SITE_URL;
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 
 // Get the last commit date for "Last updated" display
-let lastUpdated = '2026-04-03';
-try {
-  lastUpdated = execSync('git log -1 --format="%cs"', { cwd: '/Users/myk/Repo/wangrui2025.github.io' }).toString().trim();
-} catch { /* CI env may lack git */ }
+const lastUpdated = getLastUpdated();
 ---
 
 <!doctype html>
@@ -40,9 +39,9 @@ try {
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Language alternates for SEO -->
-    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site ?? 'https://wangrui2025.github.io')} />
-    <link rel="alternate" hreflang="zh" href={new URL('/zh/', Astro.site ?? 'https://wangrui2025.github.io')} />
-    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site ?? 'https://wangrui2025.github.io')} />
+    <link rel="alternate" hreflang="en" href={new URL('/', siteUrl)} />
+    <link rel="alternate" hreflang="zh" href={new URL('/zh/', siteUrl)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', siteUrl)} />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content={title} />
@@ -56,7 +55,7 @@ try {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle ?? title} />
     <meta name="twitter:description" content={ogDescription ?? description} />
-    <meta name="twitter:image" content={new URL('/images/avatar.png', Astro.site ?? 'https://wangrui2025.github.io')} />
+    <meta name="twitter:image" content={new URL('/images/avatar.png', siteUrl)} />
 
     <meta name="description" content={description} />
 
