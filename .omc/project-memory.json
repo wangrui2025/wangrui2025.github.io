@@ -101,6 +101,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src",
+      "accessCount": 12,
+      "lastAccessed": 1775470161462,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/pages/zh/cv.astro",
       "accessCount": 11,
       "lastAccessed": 1775469187645,
@@ -111,12 +117,6 @@
       "accessCount": 10,
       "lastAccessed": 1775208978396,
       "type": "file"
-    },
-    {
-      "path": "astro/src",
-      "accessCount": 9,
-      "lastAccessed": 1775469150271,
-      "type": "directory"
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
@@ -209,6 +209,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content",
+      "accessCount": 3,
+      "lastAccessed": 1775470343187,
+      "type": "directory"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -275,21 +281,33 @@
       "type": "file"
     },
     {
-      "path": "astro/src/data/cv.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775198384336,
+      "path": "astro/src/content/scholar/stats.json",
+      "accessCount": 2,
+      "lastAccessed": 1775470165519,
+      "type": "file"
+    },
+    {
+      "path": "scripts/fetch_scholar.py",
+      "accessCount": 2,
+      "lastAccessed": 1775470219404,
       "type": "file"
     },
     {
       "path": "astro/src/content/papers/gdkvm.json",
-      "accessCount": 1,
-      "lastAccessed": 1775198414582,
+      "accessCount": 2,
+      "lastAccessed": 1775470346566,
       "type": "file"
     },
     {
       "path": "astro/src/content/papers/osa.json",
+      "accessCount": 2,
+      "lastAccessed": 1775470512748,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/data/cv.ts",
       "accessCount": 1,
-      "lastAccessed": 1775198414636,
+      "lastAccessed": 1775198384336,
       "type": "file"
     },
     {
@@ -315,12 +333,6 @@
       "accessCount": 1,
       "lastAccessed": 1775203056231,
       "type": "file"
-    },
-    {
-      "path": "astro/src/content",
-      "accessCount": 1,
-      "lastAccessed": 1775203335753,
-      "type": "directory"
     },
     {
       "path": "astro/src/content/config.ts",
@@ -365,22 +377,10 @@
       "type": "file"
     },
     {
-      "path": "scripts/fetch_scholar.py",
-      "accessCount": 1,
-      "lastAccessed": 1775468904429,
-      "type": "file"
-    },
-    {
       "path": "astro/src/data",
       "accessCount": 1,
       "lastAccessed": 1775469165908,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/content/scholar/stats.json",
-      "accessCount": 1,
-      "lastAccessed": 1775469552354,
-      "type": "file"
     }
   ],
   "userDirectives": []

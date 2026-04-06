@@ -1,7 +1,7 @@
 {
-  "tool_name": "WebFetch",
-  "tool_input_preview": "{\"url\":\"https://opencitations.net/index.html\",\"prompt\":\"OpenCitations API author citation count example usage\"}",
-  "error": "Request failed with status code 404",
-  "timestamp": "2026-04-06T09:53:02.531Z",
-  "retry_count": 5
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"curl -s \\\"https://api.crossref.org/works/10.48550/arxiv.2512.10252\\\" | jq '{DOI, title: .message.title[0], citations: .message[\\\"is-referenced-by-count\\\"]}'\"}",
+  "error": "Exit code 5\njq: parse error: Invalid numeric literal at line 1, column 9",
+  "timestamp": "2026-04-06T10:24:21.838Z",
+  "retry_count": 2
 }
