@@ -9,17 +9,33 @@
     "Video Segmentation",
     "Linear Attention"
   ],
-  "citedby": 214,
-  "citedby5y": 2,
-  "hindex": 8,
-  "hindex5y": 1,
-  "i10index": 8,
-  "i10index5y": 0,
-  "cites_per_year": {
-    "2025": 1,
-    "2026": 1
-  },
   "url_picture": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=01amzbYAAAAJ&citpid=3",
-  "updated": "2026-04-06 10:14:08.123838",
-  "openalex_id": null
+  "citedby": 1,
+  "hindex": 1,
+  "i10index": 0,
+  "updated": "2026-04-06 10:32:11.807757",
+  "papers": {
+    "2512.10252": {
+      "arxiv_id": "2512.10252",
+      "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
+      "citations": 1,
+      "authors": [
+        "Rui Wang",
+        "Yimu Sun",
+        "Jingxing Guo",
+        "Huisi Wu",
+        "Jing Qin"
+      ]
+    },
+    "2603.26188": {
+      "arxiv_id": "2603.26188",
+      "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
+      "citations": 0,
+      "authors": [
+        "Rui Wang",
+        "Huisi Wu",
+        "Jinghui Qin"
+      ]
+    }
+  }
 }
