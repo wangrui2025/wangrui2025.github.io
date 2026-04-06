@@ -10,6 +10,7 @@ import os
 import sys
 import tempfile
 import logging
+import time
 from datetime import datetime, timezone
 
 # 配置日志
@@ -48,12 +49,13 @@ def atomic_write_json(filepath, data):
         raise
 
 
-def fetch_paper_citations(arxiv_id: str) -> dict:
+def fetch_paper_citations(arxiv_id: str, retries: int = 3) -> dict:
     """
     通过 arxiv ID 获取论文引用数。
 
     Args:
         arxiv_id: arxiv ID (如 "2512.10252")
+        retries: 重试次数
 
     Returns:
         包含 title, citations, authors 的字典
@@ -62,26 +64,35 @@ def fetch_paper_citations(arxiv_id: str) -> dict:
     params = {'fields': 'title,citationCount,authors'}
     logger.info(f"请求 Semantic Scholar: arxiv:{arxiv_id}")
 
-    try:
-        response = requests.get(url, params=params, timeout=30)
-        if response.status_code == 404:
-            logger.warning(f"未找到论文: arxiv:{arxiv_id}")
-            return None
-        response.raise_for_status()
+    for attempt in range(retries):
+        try:
+            response = requests.get(url, params=params, timeout=30)
+            if response.status_code == 404:
+                logger.warning(f"未找到论文: arxiv:{arxiv_id}")
+                return None
+            if response.status_code == 429:
+                wait_time = (attempt + 1) * 5  # 5, 10, 15 秒退避
+                logger.warning(f"请求过于频繁 (429)，等待 {wait_time} 秒后重试...")
+                time.sleep(wait_time)
+                continue
+            response.raise_for_status()
 
-        data = response.json()
-        return {
-            'arxiv_id': arxiv_id,
-            'title': data.get('title', ''),
-            'citations': data.get('citationCount', 0),
-            'authors': [a['name'] for a in data.get('authors', [])],
-        }
-    except requests.exceptions.Timeout:
-        logger.error(f"请求超时: arxiv:{arxiv_id}")
-        return None
-    except requests.exceptions.RequestException as e:
-        logger.error(f"请求失败: {e}")
-        return None
+            data = response.json()
+            return {
+                'arxiv_id': arxiv_id,
+                'title': data.get('title', ''),
+                'citations': data.get('citationCount', 0),
+                'authors': [a['name'] for a in data.get('authors', [])],
+            }
+        except requests.exceptions.Timeout:
+            logger.error(f"请求超时: arxiv:{arxiv_id}")
+            return None
+        except requests.exceptions.RequestException as e:
+            logger.error(f"请求失败: {e}")
+            return None
+
+    logger.error(f"重试 {retries} 次后仍失败: arxiv:{arxiv_id}")
+    return None
 
 
 def fetch_all_citations() -> tuple[int, dict]:

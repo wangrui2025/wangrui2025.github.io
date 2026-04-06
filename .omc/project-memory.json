@@ -143,6 +143,12 @@
       "type": "file"
     },
     {
+      "path": "scripts/fetch_scholar.py",
+      "accessCount": 5,
+      "lastAccessed": 1775471479992,
+      "type": "file"
+    },
+    {
       "path": "CLAUDE.md",
       "accessCount": 4,
       "lastAccessed": 1775200220684,
@@ -284,12 +290,6 @@
       "path": "astro/src/content/scholar/stats.json",
       "accessCount": 2,
       "lastAccessed": 1775470165519,
-      "type": "file"
-    },
-    {
-      "path": "scripts/fetch_scholar.py",
-      "accessCount": 2,
-      "lastAccessed": 1775470219404,
       "type": "file"
     },
     {
