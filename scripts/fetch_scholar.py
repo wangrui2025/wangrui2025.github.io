@@ -127,8 +127,9 @@ def update_stats_json(total_citations: int, papers_detail: dict):
         except (json.JSONDecodeError, IOError) as e:
             logger.warning(f"读取 {STATS_PATH} 失败: {e}")
 
-    # 保留原有字段
-    preserved = ['name', 'affiliation', 'email_domain', 'homepage', 'interests', 'url_picture', 'scholar_id']
+    # 保留原有字段（包括 Astro schema 要求的字段）
+    preserved = ['name', 'affiliation', 'email_domain', 'homepage', 'interests', 'url_picture', 'scholar_id',
+                 'citedby5y', 'hindex5y', 'i10index5y', 'cites_per_year']
     preserved_data = {k: v for k, v in data.items() if k in preserved}
 
     # 计算 h-index (简化版: min(论文数, 引用数))

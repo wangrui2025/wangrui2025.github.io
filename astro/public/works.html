@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Works - OSA: Orthogonalized State Update</title>
-  <meta name="description" content="OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement">
+  <title>OSA: Orthogonalized State Update</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
@@ -12,216 +11,191 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    .reveal-container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      box-sizing: border-box;
-    }
-    .reveal {
-      width: 100%;
-      height: 75vh;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
+    /* 全局排版与颜色设定 */
+    body { background: #f8f9fa; }
+    .reveal { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2c3e50; }
+    .reveal section { text-align: left; height: 100%; }
+
+    /* 自定义幻灯片容器，增加阴影和边框，模拟真实屏幕/纸张 */
+    .reveal-viewport { background: #e2e8f0; }
     .reveal .slides {
-      text-align: left;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
-    .reveal section {
-      padding: 2rem;
-      line-height: 1.6;
+
+    /* 顶部与底部固定装饰栏（仿 GDKVM 格式） */
+    .slide-header {
+      position: absolute; top: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between;
+      padding: 30px 50px; box-sizing: border-box;
+      font-size: 16px; font-weight: bold; color: #4a5568; z-index: 10;
     }
-    .slide-title {
-      background: linear-gradient(to bottom, #1e3a5f, #0c1929);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100%;
+    .slide-header .conf { color: #6b21a8; /* 偏紫色的会议标识色 */ }
+
+    .slide-footer {
+      position: absolute; bottom: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 50px; box-sizing: border-box;
+      font-size: 14px; font-weight: bold; color: #718096; z-index: 10;
+      border-top: 1px solid #edf2f7;
     }
-    .slide-title h2 {
-      color: white;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .slide-title .subtitle {
-      color: #93c5fd;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .slide-title .subtitle-cn {
-      color: #bfdbfe;
-      font-size: 1rem;
-      font-style: italic;
-    }
-    .slide-title .authors {
-      color: #93c5fd;
-      font-size: 0.875rem;
-      margin-top: 2rem;
-    }
-    h3 {
-      color: #1e293b;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-bottom: 2px solid #1e293b;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-    li {
-      color: #334155;
-      font-size: 0.875rem;
-      margin-bottom: 0.75rem;
-    }
+    .slide-footer .uni { color: #2b6cb0; font-family: serif; letter-spacing: 1px; }
+
+    /* 标题页特有样式 */
+    .title-slide { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 80%; margin-top: 50px; }
+    .title-slide h2 { font-size: 2.2rem; font-weight: 800; color: #1a365d; text-transform: none; line-height: 1.3; margin-bottom: 40px; }
+    .title-slide .authors { font-size: 1.1rem; color: #2d3748; margin-bottom: 10px; font-weight: 600; }
+    .title-slide .affil { font-size: 0.85rem; color: #718096; line-height: 1.5; }
+
+    /* 目录页样式 (Contents) */
+    .contents-title { font-size: 2.5rem !important; font-weight: 800 !important; color: #1a365d; margin-top: 40px !important; margin-bottom: 50px !important; border-bottom: none !important;}
+    .toc-container { margin-left: 50px; display: flex; flex-direction: column; gap: 30px; }
+    .toc-item { display: flex; align-items: center; }
+    .toc-num { font-size: 3rem; font-weight: 900; color: #d6bcfa; margin-right: 30px; font-family: monospace; line-height: 1; }
+    .toc-text { font-size: 1.8rem; font-weight: 700; color: #2d3748; }
+
+    /* 正文页样式 */
+    .content-slide { padding-top: 80px !important; padding-left: 50px !important; padding-right: 50px !important; }
+    .section-title { font-size: 1.8rem !important; font-weight: 800 !important; color: #1a365d !important; border-bottom: 3px solid #6b21a8; padding-bottom: 10px; display: inline-block; margin-bottom: 30px !important; text-transform: none !important; }
+    .reveal ul { margin-left: 1.2em; display: block; }
+    .reveal li { font-size: 1.1rem; color: #334155; margin-bottom: 15px; line-height: 1.6; }
+    .reveal li strong { color: #1a365d; }
+
+    /* 公式块样式 */
     .formula-block {
-      background: #f1f5f9;
-      border-left: 4px solid #2563eb;
-      padding: 0.75rem 1rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-      color: #1e293b;
-      font-size: 0.875rem;
-    }
-    .cite-text {
-      font-size: 0.7rem;
-      color: #64748b;
-      font-weight: normal;
-    }
-    .card {
-      background: #f1f5f9;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      text-align: center;
-    }
-    .card code {
-      color: #2563eb;
-      font-size: 0.875rem;
-    }
-    .thanks {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .thanks p {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #334155;
-    }
-    .two-col {
-      display: flex;
-      gap: 1rem;
-    }
-    .col {
-      flex: 1;
+      background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #6b21a8;
+      border-radius: 6px; padding: 15px 20px; margin: 20px 0;
+      text-align: center; color: #0f172a; font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="reveal-container">
-    <div class="reveal">
-      <div class="slides">
+  <div class="reveal">
 
-        <section>
-          <div class="slide-title">
-            <h2>OSA</h2>
-            <p class="subtitle">超声心动图视频分割</p>
-            <p class="subtitle-cn">通过正交化状态更新 (OSU) 与解剖先验感知特征增强 (APFE) 实现 [cite: 11, 12]</p>
-            <p class="authors">Rui Wang, Huisi Wu, Jing Qin [cite: 3]</p>
+    <div class="slide-header">
+      <div class="conf">arXiv 2026<br><span style="font-size: 12px; color: #718096; font-weight: normal;">PREPRINT</span></div>
+      <div>OSA PROJECT</div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="uni">SHENZHEN UNIVERSITY 1983</div>
+      <div class="slide-number"></div>
+    </div>
+
+    <div class="slides">
+
+      <section>
+        <div class="title-slide">
+          <h2>OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement</h2>
+          <div class="authors">Rui Wang¹, Huisi Wu¹*, Jing Qin²</div>
+          <div class="affil">
+            ¹ College of Computer Science and Software Engineering, Shenzhen University<br>
+            ² Centre for Smart Health, School of Nursing, The Hong Kong Polytechnic University
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <h3>背景与挑战</h3>
-          <ul>
-            <li>
-              <strong>任务目标：</strong> 从超声视频中准确、具备时间一致性地分割左心室 (LV)，用于估算射血分数 ($LV_{EF}$) [cite: 7, 17]。
-            </li>
-            <li>
-              <strong>技术难点：</strong> 复杂的成像物理特性（严重的斑点噪声和声学衰减）导致解剖边界模糊，且心脏在收缩与舒张期间会发生快速的非刚性形变 [cite: 37, 38]。
-            </li>
-            <li>
-              <strong>现有模型缺陷：</strong> 线性循环模型 (LRMs) 依赖无约束的状态更新，在复杂变形和噪声干扰下，会导致状态矩阵的奇异值逐渐衰减，引发<strong>秩崩溃 (Rank Collapse)</strong> [cite: 9, 45]。
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>方法一：Orthogonalized State Update (OSU)</h3>
-          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
-            为解决秩崩溃问题，将状态演化约束在 <strong>Stiefel Manifold</strong> 上 [cite: 10, 120]：
-          </p>
-          <div class="formula-block">
-            $$\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}$$ <span class="cite-text">[cite: 122]</span>
+      <section class="content-slide">
+        <h2 class="contents-title">Contents</h2>
+        <div class="toc-container">
+          <div class="toc-item">
+            <div class="toc-num">01</div>
+            <div class="toc-text">Problem Setting</div>
           </div>
-          <div class="formula-block">
-            $$S_{t}=Proj_{\mathcal{V}}(S_{t}^{Euc})$$ <span class="cite-text">[cite: 122]</span>
+          <div class="toc-item">
+            <div class="toc-num">02</div>
+            <div class="toc-text">Method</div>
           </div>
-          <ul>
-            <li>通过参数化的高阶 Newton-Schulz 迭代代替昂贵的 SVD 分解，实现高效正交化投影 [cite: 127, 128]。</li>
-            <li>确保了数值稳定的时间步转换，在完整心动周期中保留了瓣膜运动等精细结构细节 [cite: 63]。</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>方法二：Anatomical Prior-aware Feature Enhancement</h3>
-          <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 0.75rem;">
-            将空间特征提取重构为物理驱动的解耦过程，分离解剖结构与斑点噪声 [cite: 65, 297]：
-          </p>
-          <ul>
-            <li>
-              <strong>局部声学场估计：</strong> 通过大核平均池化估计空间变化的声学偏置场 $M_{t}$ [cite: 171]：
-              <div class="formula-block" style="margin-top:0.25rem;">$$M_{t}=AvgPool_{K\times K}(X_{t})$$ <span class="cite-text">[cite: 172]</span></div>
-            </li>
-            <li>
-              <strong>极性感知解耦 (Polarity-aware decoupling)：</strong>
-              <div class="formula-block" style="margin-top:0.25rem;">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$ <span class="cite-text">[cite: 176]</span></div>
-            </li>
-            <li>$X_{t}^{+}$ 隔离高频结构边缘（如心肌边界），而 $X_{t}^{-}$ 捕捉低响应同质区域（如血池） [cite: 176, 190]。</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>实验结果与性能表现</h3>
-          <ul>
-            <li>
-              <strong>SOTA 精度：</strong> 在 CAMUS 和 EchoNet-Dynamic 数据集上刷新了分割准确率。例如在 CAMUS 上，OSA 达到了 94.82 的 mDice，超越了前沿模型 GDKVM (94.18) [cite: 66, 207]。
-            </li>
-            <li>
-              <strong>实时推理：</strong> 模型达到 35 fps 的推理速度，完全满足临床实时部署要求 [cite: 230]。
-            </li>
-            <li>
-              <strong>几何与数值稳定性：</strong> OSU 将奇异值方差 (SVVar) 严格限制为 0.00，并显著降低了正交性误差 (OrthE) 和时间漂移 (Drift)，确保了严谨的时间演化 [cite: 278, 280]。
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>结论与代码</h3>
-          <p style="font-size: 0.875rem; color: #334155; margin-bottom: 2rem;">
-            OSA 成功解决了线性循环模型在超声视频处理中的"秩崩溃"和"斑点干扰"两大核心难题，为心功能评估提供了强有力的支持 [cite: 295, 299]。
-          </p>
-          <div class="card">
-            <p style="color: #64748b; font-size: 0.75rem; margin-bottom: 0.5rem;">开源代码 [cite: 14]</p>
-            <code>github.com/wangrui2025/OSA</code>
+          <div class="toc-item">
+            <div class="toc-num">03</div>
+            <div class="toc-text">Experiments</div>
           </div>
-          <div class="thanks">
-            <p>谢谢观看！</p>
+          <div class="toc-item">
+            <div class="toc-num">04</div>
+            <div class="toc-text">Discussion</div>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
+      <section class="content-slide">
+        <h2 class="section-title">Problem Setting</h2>
+        <ul>
+          <li>
+            <strong>Clinical Goal:</strong> Accurate and temporally consistent segmentation of the left ventricle (LV) from echocardiography videos to estimate the ejection fraction ($LV_{EF}$).
+          </li>
+          <li>
+            <strong>Imaging Challenges:</strong> Severe speckle noise and rapid non-rigid deformations cause blurred anatomical contours across the cardiac cycle.
+          </li>
+          <li>
+            <strong>Technical Bottleneck (Rank Collapse):</strong> Existing linear recurrent models rely on unconstrained Euclidean state updates. Over long sequences, this causes progressive singular value decay in the state matrix, overwhelming anatomical details with noise.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-slide">
+        <h2 class="section-title">Method: Orthogonalized State Update (OSU)</h2>
+        <p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">
+          To prevent rank collapse, we constrain the memory evolution on the <strong>Stiefel Manifold</strong>:
+        </p>
+        <div class="formula-block">
+          $$\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}$$
+        </div>
+        <div class="formula-block">
+          $$S_{t}=\mathrm{Proj}_{\mathcal{V}}(S_{t}^{\mathrm{Euc}})$$
+        </div>
+        <ul>
+          <li><strong>High-order Newton-Schulz Iteration:</strong> We project the unconstrained state back to the manifold efficiently without expensive SVD computation.</li>
+          <li><strong>Geometric Stability:</strong> Ensures numerical stability and preserves fine-grained valvular motion across temporal transitions.</li>
+        </ul>
+      </section>
+
+      <section class="content-slide">
+        <h2 class="section-title">Method: Anatomical Prior-aware Feature Enhancement</h2>
+        <p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">
+          A physics-driven process explicitly separates anatomical structures from speckle noise:
+        </p>
+        <ul>
+          <li>
+            <strong>Acoustic Bias Estimation:</strong> $M_{t}=AvgPool_{K\times K}(X_{t})$
+          </li>
+          <li>
+            <strong>Polarity-aware Decoupling:</strong>
+            <div class="formula-block" style="margin-top: 10px;">
+              $$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$
+            </div>
+          </li>
+          <li>$X_{t}^{+}$ isolates high-frequency structural edges (myocardium boundaries), while $X_{t^{-}$ captures low-response homogeneous regions (blood pools).</li>
+        </ul>
+      </section>
+
+      <section class="content-slide">
+        <h2 class="section-title">Experiments</h2>
+        <ul>
+          <li>
+            <strong>SOTA Performance:</strong> Evaluated on CAMUS and EchoNet-Dynamic. OSA achieves <strong>94.82 mDice</strong> on CAMUS, surpassing recent vision LRM and state-space models.
+          </li>
+          <li>
+            <strong>Real-time Efficiency:</strong> Achieves an inference speed of <strong>35 FPS</strong>, satisfying the demands of real-time clinical deployment.
+          </li>
+          <li>
+            <strong>Geometric Regularization Validated:</strong> OSU strictly forces the Singular Value Variance (SVVar) to 0.00 and significantly minimizes Temporal Drift.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-slide" style="text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 50px !important;">Discussion & Code</h2>
+        <p style="font-size: 1.3rem; color: #334155; margin-bottom: 40px; line-height: 1.6;">
+          OSA successfully bridges the gap between temporal tracking stability and ultrasound-domain awareness, providing a reliable foundation for automated $LV_{EF}$ assessment.
+        </p>
+        <div style="background: #f1f5f9; border-radius: 8px; padding: 20px; display: inline-block;">
+          <p style="font-size: 1rem; color: #64748b; margin-bottom: 10px;">Open Source Implementation</p>
+          <code style="font-size: 1.2rem; color: #2563eb; font-weight: bold;">github.com/wangrui2025/OSA</code>
+        </div>
+        <h3 style="margin-top: 60px; color: #1a365d; font-weight: 800; font-size: 2.5rem;">Thanks!</h3>
+      </section>
+
     </div>
   </div>
 
@@ -234,10 +208,20 @@
       plugins: [RevealMath.KaTeX],
       hash: true,
       center: false,
-      transition: 'convex',
+      transition: 'fade', // 改为淡入淡出，更符合学术严肃感
       embedded: true,
       width: 1280,
       height: 720,
+      margin: 0.05,
+      disableLayout: false
+    });
+
+    // 自动更新右下角的页码
+    Reveal.on('slidechanged', event => {
+      const pageNumbers = document.querySelectorAll('.slide-number');
+      pageNumbers.forEach(el => {
+        el.innerText = (event.indexh + 1);
+      });
     });
   </script>
 </body>
