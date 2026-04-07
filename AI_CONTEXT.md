@@ -1,7 +1,7 @@
 # AI 助手项目上下文
 
 > **用途**: 将本文件内容直接粘贴给 Claude、ChatGPT、Gemini 等 AI 助手，使其快速理解本项目技术栈和修改规范。
-> **更新日期**: 2026-04-01
+> **更新日期**: 2026-04-07
 
 > **设计文档**: 视觉设计系统详见 [DESIGN.md](DESIGN.md)（色彩、字体、组件样式、设计决策）
 
@@ -24,9 +24,13 @@
 │   │   │   ├── Education.astro     # 教育经历卡片
 │   │   │   ├── Masthead.astro      # 顶部导航栏
 │   │   │   ├── PaperCard.astro     # 论文展示卡片（核心组件）
+│   │   │   ├── PaperBadge.astro    # 论文徽章标签
 │   │   │   ├── ScholarBadge.astro  # Google Scholar 引用徽章
 │   │   │   ├── Scripts.astro       # 客户端脚本（主题切换）
-│   │   │   └── Sidebar.astro       # 侧边栏布局
+│   │   │   ├── Sidebar.astro       # 侧边栏布局
+│   │   │   ├── CvPaperItem.astro   # CV 页论文条目
+│   │   │   ├── CvHonorItem.astro   # CV 页荣誉条目
+│   │   │   └── CvEducationItem.astro # CV 页教育条目
 │   │   ├── content/                # 内容集合（Astro Content Collections）
 │   │   │   ├── config.ts           # 内容集合 Schema 定义
 │   │   │   ├── education/          # 教育经历（education.json）
@@ -38,11 +42,18 @@
 │   │   ├── data/                   # TypeScript 配置文件
 │   │   │   ├── index.ts            # 数据导出
 │   │   │   ├── navigation.ts       # 导航配置
-│   │   │   └── cv.ts               # CV 专用数据（含 examScores 等首页无需的字段）
+│   │   │   ├── cv.ts               # CV 专用数据
+│   │   │   └── lastUpdated.ts     # 最后更新时间
+│   │   ├── pages/                  # 路由页面
+│   │   │   ├── index.astro         # 英文首页（薄封装，调用 HomepageLayout）
+│   │   │   ├── cv.astro           # 英文 CV 页面（调用 CVLayout）
+│   │   │   └── [lang]/
+│   │   │       ├── index.astro     # 中文首页（薄封装，调用 HomepageLayout）
+│   │   │       └── cv.astro        # 中文 CV 页面（调用 CVLayout）
 │   │   ├── layouts/
 │   │   │   ├── BaseLayout.astro    # 基础布局（HTML 模板）
-│   │   │   ├── CVLayout.astro      # CV 页面布局（zh/cv 共用）
-│   │   │   └── HomepageLayout.astro # 首页共享布局（en/zh 共用）
+│   │   │   ├── CVLayout.astro      # CV 页面布局（/cv 和 /zh/cv 共用）
+│   │   │   └── HomepageLayout.astro # 首页共享布局（/ 和 /zh 共用）
 │   │   ├── pages/                  # 路由页面
 │   │   │   ├── index.astro         # 英文首页（薄封装，调用 HomepageLayout）
 │   │   │   └── [lang]/
@@ -112,11 +123,13 @@ export default defineConfig({
 
 ### 3. Content Collections Schema (src/content/config.ts)
 
-定义了三种内容类型：
+定义了五种内容类型：
 
-**papers**: 论文数据，含标题、作者、会议、字段标签等双语字段
+**papers**: 论文数据，含标题、作者、会议、字段标签等双语字段，支持 `show_on_cv` / `show_on_homepage` 控制显示位置
 **scholar**: Google Scholar 统计数据（引用数、h-index 等）
 **homepage**: 首页所有文案内容
+**honors**: 荣誉奖项，分 graduate / undergraduate 两类，含 `show_on_cv` / `show_on_homepage`
+**education**: 教育经历，含 master / bachelor 结构化数据
 
 ---
 
@@ -228,8 +241,8 @@ npm run preview
 
 **数据组织**:
 - 内容集合 JSON 文件包含 `zh` 和 `en` 字段
-- `data/content.ts` 分离 UI 文案
-- `data/honors.ts` 等包含双语数组
+- `data/index.ts` 分离 UI 文案
+- 各 JSON 数据文件包含双语数组
 
 **切换**: Masthead 组件中的语言链接
 
@@ -289,11 +302,12 @@ A: 检查 Tailwind `content` 配置是否包含你的文件路径
 | 教育经历 | `astro/src/content/education/education.json` |
 | 荣誉奖项 | `astro/src/content/honors/honors.json` |
 | 导航栏 | `astro/src/data/navigation.ts` + `Masthead.astro` |
-| CV 完整数据 | `astro/src/data/cv.ts`（CV 专用，含首页不需要的 examScores、secondary 等字段） |
+| CV 完整数据 | `astro/src/data/cv.ts`（CV 专用） |
 | 页脚 | `astro/src/components/Scripts.astro` |
 | 主题颜色 | `astro/src/styles/global.css` (CSS 变量) |
 | 部署配置 | `.github/workflows/deploy.yml` |
 | Scholar 同步 | `.github/workflows/update_google_scholar_stats.yml` |
+| 最后更新时间 | `astro/src/data/lastUpdated.ts` |
 
 ---
 

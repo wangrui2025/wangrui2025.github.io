@@ -132,8 +132,14 @@
     },
     {
       "path": "astro/src/pages/cv.astro",
-      "accessCount": 10,
-      "lastAccessed": 1775475149446,
+      "accessCount": 11,
+      "lastAccessed": 1775549021968,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/data/navigation.ts",
+      "accessCount": 9,
+      "lastAccessed": 1775549021913,
       "type": "file"
     },
     {
@@ -146,12 +152,6 @@
       "path": "astro/src/components/PaperCard.astro",
       "accessCount": 8,
       "lastAccessed": 1775475028122,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/data/navigation.ts",
-      "accessCount": 8,
-      "lastAccessed": 1775526192985,
       "type": "file"
     },
     {
@@ -233,6 +233,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/config.ts",
+      "accessCount": 4,
+      "lastAccessed": 1775549039379,
+      "type": "file"
+    },
+    {
       "path": ".claude/settings.json",
       "accessCount": 3,
       "lastAccessed": 1775207388962,
@@ -242,12 +248,6 @@
       "path": "astro/astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1775209192297,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/config.ts",
-      "accessCount": 3,
-      "lastAccessed": 1775474741226,
       "type": "file"
     },
     {
