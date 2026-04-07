@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git fetch origin && git rebase origin/main\",\"description\":\"Fetch and rebase\"}",
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git fetch origin && git rebase origin/main && git push\",\"description\":\"Fetch, rebase, and push\"}",
   "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
-  "timestamp": "2026-04-07T09:33:44.931Z",
-  "retry_count": 2
+  "timestamp": "2026-04-07T09:51:08.104Z",
+  "retry_count": 4
 }

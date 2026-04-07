@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-07T09:50:16.163Z",
+  "updatedAt": "2026-04-07T09:51:10.156Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -81,15 +81,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-07T09:50:16.163Z",
-      "updatedAt": "2026-04-07T09:50:16.163Z",
-      "status": "running",
+      "updatedAt": "2026-04-07T09:51:10.156Z",
+      "status": "done",
       "workerCount": 1,
       "taskCounts": {
         "total": 1,
         "pending": 0,
         "blocked": 0,
-        "inProgress": 1,
-        "completed": 0,
+        "inProgress": 0,
+        "completed": 1,
         "failed": 0
       },
       "agents": [
@@ -97,11 +97,11 @@
           "name": "security-reviewer:aba7b62",
           "role": "security-reviewer",
           "ownership": "aba7b6252471094d2",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-04-07T09:50:16.163Z"
+          "updatedAt": "2026-04-07T09:51:10.156Z"
         }
       ],
       "timeline": [
@@ -112,6 +112,14 @@
           "agent": "security-reviewer:aba7b62",
           "detail": "started security-reviewer:aba7b62",
           "sourceKey": "session-start:aba7b6252471094d2"
+        },
+        {
+          "id": "session-stop:aba7b6252471094d2:2026-04-07T09:51:10.156Z",
+          "at": "2026-04-07T09:51:10.156Z",
+          "kind": "completion",
+          "agent": "security-reviewer:aba7b62",
+          "detail": "completed",
+          "sourceKey": "session-stop:aba7b6252471094d2"
         }
       ]
     }
