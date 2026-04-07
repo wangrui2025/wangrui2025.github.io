@@ -22,11 +22,8 @@
   },
   "news_heading": "状态",
   "news_items": [
-    "申请博士中，2027秋季入学",
-    "个人简历制作中",
-    "个人网站制作中",
     "正在准备 CVPR Slides",
-    "正在准备 CVPR Poster"
+    "正在准备 CVPR Slides，用 HTML 写 LaTeX Tab"
   ],
   "section_publications": "📝 发表论文",
   "section_education": "📖 教育经历",
