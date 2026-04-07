@@ -35,10 +35,17 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
   <p class="text-sm text-text-primary dark:text-text-dark mb-4">{affiliation}</p>
 
   <!-- PhD Application Status -->
-  <div class="mb-4 text-center">
+  <div class="mb-2 text-center">
     <span class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-red-200 to-rose-200 dark:from-red-800/50 dark:to-rose-800/50 text-red-900 dark:text-red-100 border border-red-300 dark:border-red-600/50 shadow-sm">
       {lang === 'en' ? '🎓 Applying for PhD Programs · Fall 2027 Entry' : '🎓 申博中 · 2027 Fall 入学'}
     </span>
+  </div>
+
+  <!-- Slides Link -->
+  <div class="mb-4 text-center">
+    <a href="/slides.html" class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-purple-200 to-indigo-200 dark:from-purple-800/50 dark:to-indigo-800/50 text-purple-900 dark:text-purple-100 border border-purple-300 dark:border-purple-600/50 shadow-sm hover:shadow-md transition-all duration-200 no-underline">
+      {lang === 'en' ? '📊 OSA Slides · Full Presentation' : '📊 OSA 论文答辩幻灯片'}
+    </a>
   </div>
 
   <!-- Social & Academic Links -->
