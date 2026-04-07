@@ -213,6 +213,7 @@ code {
   margin-bottom: 0.375rem;
   padding-left: 1.25rem;
   position: relative;
+  font-size: 1rem; /* text-base */
 }
 
 .about-list li::before {
@@ -237,6 +238,7 @@ code {
   margin-bottom: 0.375rem;
   padding-left: 1.25rem;
   position: relative;
+  font-size: 1rem; /* text-base */
 }
 
 .news-list li::before {
@@ -259,11 +261,12 @@ code {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 0.375rem;
+  font-size: 1rem; /* text-base */
 }
 
 .honors-list .period {
   color: rgb(107 114 128);
-  font-size: 0.875rem;
+  font-size: 0.75rem; /* text-xs - metadata */
   white-space: nowrap;
   margin-right: 1rem;
 }
@@ -291,6 +294,7 @@ code {
 
 .project-list li {
   margin-bottom: 0.5rem;
+  font-size: 1rem; /* text-base */
 }
 
 /* ===== Skills List ===== */
