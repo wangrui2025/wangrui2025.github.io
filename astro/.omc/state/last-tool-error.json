@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && ./scripts/autopush.sh \\\"refactor(AuthorProfile): move CVPR Poster and CV links from sidebar to main page status section\\\"\",\"description\":\"Commit...",
-  "error": "Exit code 1\n❌ 错误：请遵循 Conventional Commits 格式。\n   正确示例: feat(cv): add export button 或 fix(style): adjust padding\n\n💡 提示：检测到以下改动，请基于此重新生成具体的 commit message：\n-----------------------------------\n.omc/project-memory.json\n.omc/state/hud-state.json\n.omc/state/hud-stdin-cache.json\n.omc/state/idle-notif-cooldown.json\nastro/.omc/state/last-tool-error.json\nastro/src/components/AuthorProfile.astro\n-----------------------------------\n 6 files changed, 15 insertions(+), 11 deletions(-)",
-  "timestamp": "2026-04-07T07:43:10.731Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add astro/src/content/homepage/zh.json astro/src/content/homepage/en.json astro/src/layouts/HomepageLayout.astro && git commit -m \\\"feat(sta...",
+  "error": "Exit code 128\n[main defc7a1] feat(status): keep only CVPR slides items\n 7 files changed, 18 insertions(+), 30 deletions(-)\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
+  "timestamp": "2026-04-07T08:48:27.573Z",
+  "retry_count": 1
 }

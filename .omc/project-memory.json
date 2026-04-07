@@ -114,8 +114,8 @@
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 16,
-      "lastAccessed": 1775551507837,
+      "accessCount": 17,
+      "lastAccessed": 1775551692119,
       "type": "file"
     },
     {
@@ -161,6 +161,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/homepage/zh.json",
+      "accessCount": 7,
+      "lastAccessed": 1775551881930,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content/scholar/stats.json",
       "accessCount": 6,
       "lastAccessed": 1775473215327,
@@ -170,12 +176,6 @@
       "path": "astro/src/components/CvPaperItem.astro",
       "accessCount": 6,
       "lastAccessed": 1775474763092,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/homepage/zh.json",
-      "accessCount": 6,
-      "lastAccessed": 1775551674831,
       "type": "file"
     },
     {
