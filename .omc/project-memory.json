@@ -137,15 +137,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/data/navigation.ts",
-      "accessCount": 9,
-      "lastAccessed": 1775549021913,
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 10,
+      "lastAccessed": 1775550322898,
       "type": "file"
     },
     {
-      "path": "astro/src/components/PaperCard.astro",
+      "path": "astro/src/data/navigation.ts",
       "accessCount": 9,
-      "lastAccessed": 1775550222203,
+      "lastAccessed": 1775549021913,
       "type": "file"
     },
     {
