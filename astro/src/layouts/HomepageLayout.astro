@@ -82,7 +82,13 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
     </h2>
     <ul class="news-list">
       {h.news_items.map((item) => (
-        <li>{item}</li>
+        <li>
+          {item === 'Preparing CVPR Poster' || item === '准备 CVPR Poster' ? (
+            <a href="/works.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a>
+          ) : (
+            item
+          )}
+        </li>
       ))}
     </ul>
   </section>

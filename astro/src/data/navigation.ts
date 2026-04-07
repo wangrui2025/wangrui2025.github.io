@@ -23,7 +23,6 @@ export const navigation: Navigation = {
       { title: 'Project', url: '/#project' },
       { title: 'Skills', url: '/#skills' },
       { title: 'CV', url: '/cv' },
-      { title: 'Works', url: '/works.html' },
     ],
     zh: [
       { title: '关于我', url: '/zh/#about-me' },
@@ -34,7 +33,6 @@ export const navigation: Navigation = {
       { title: '项目', url: '/zh/#project' },
       { title: '技能', url: '/zh/#skills' },
       { title: '简历', url: '/zh/cv' },
-      { title: '作品展示', url: '/works.html' },
     ],
   },
 };
