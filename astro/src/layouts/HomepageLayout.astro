@@ -85,6 +85,8 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
         <li>
           {item === 'Preparing CVPR Poster' || item === '准备 CVPR Poster' ? (
             <a href="/works.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a>
+          ) : item === 'CV' || item === '简历' ? (
+            <a href="https://wangrui2025.github.io/zh/cv/" class="text-link-primary dark:text-link-dark hover:underline">{item}</a>
           ) : (
             item
           )}
