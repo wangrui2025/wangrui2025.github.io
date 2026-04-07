@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add astro/src/content/homepage/zh.json astro/src/content/homepage/en.json astro/src/layouts/HomepageLayout.astro && git commit -m \\\"feat(sta...",
-  "error": "Exit code 128\n[main defc7a1] feat(status): keep only CVPR slides items\n 7 files changed, 18 insertions(+), 30 deletions(-)\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
-  "timestamp": "2026-04-07T08:48:27.573Z",
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add astro/src/tailwind.config.mjs astro/src/styles/global.css astro/src/layouts/Sidebar.astro astro/src/layouts/HomepageLayout.astro astro/s...",
+  "error": "Exit code 128\nfatal: pathspec 'astro/src/tailwind.config.mjs' did not match any files",
+  "timestamp": "2026-04-07T09:24:25.711Z",
   "retry_count": 1
 }

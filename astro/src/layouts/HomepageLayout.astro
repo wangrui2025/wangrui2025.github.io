@@ -48,8 +48,8 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- About Me Section -->
   <section id="about-me" class="mb-8">
-    <h1 class="text-3xl font-bold mb-2">{aboutMeLabel}</h1>
-    <p class="mb-4 text-lg" set:html={h.background.intro} />
+    <h1 class="text-3xl font-serif font-bold mb-4">{aboutMeLabel}</h1>
+    <p class="mb-4 text-base leading-relaxed text-text-primary dark:text-text-dark" set:html={h.background.intro} />
 
     <!-- Background -->
     <div class="info-card mb-4">
@@ -65,7 +65,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
     <div class="info-card">
       <h2 class="info-card-title">
         {h.target_areas.heading}
-        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">{h.target_areas.subheading}</span>
+        <span class="text-xs font-normal text-text-secondary dark:text-text-secondary-dark ml-2">{h.target_areas.subheading}</span>
       </h2>
       <ul class="about-list">
         {h.target_areas.items.map((item) => (
@@ -77,7 +77,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- News Section -->
   <section id="status" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.news_heading}
     </h2>
     <ul class="news-list">
@@ -109,7 +109,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Timeline Section (hidden) -->
   <section id="timeline" class="mb-8" style="display: none;">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.timeline_heading}
     </h2>
     <details class="timeline-details">
@@ -146,7 +146,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Publications Section -->
   <section id="publications" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.section_publications}
     </h2>
     {sortedPapers.map((paper) => (
@@ -156,7 +156,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Education Section -->
   <section id="educations" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.section_education}
     </h2>
     <Education lang={lang} />
@@ -164,7 +164,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Honors Section -->
   <section id="honors" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.section_honors}
     </h2>
 
@@ -181,7 +181,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Project Section -->
   <section id="project" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.section_project}
     </h2>
     <ul class="project-list">
@@ -189,14 +189,14 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
         <a href={h.project_url} class="font-semibold hover:underline" target="_blank">
           {h.project_title}
         </a>
-        <p class="text-gray-600 dark:text-gray-300 mt-1">{h.project_description}</p>
+        <p class="text-text-secondary dark:text-text-secondary-dark mt-1">{h.project_description}</p>
       </li>
     </ul>
   </section>
 
   <!-- Skills & Interests Section -->
   <section id="skills" class="mb-8">
-    <h2 class="section-heading text-2xl font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold">
       {h.section_skills}
     </h2>
     <ul class="skills-list">

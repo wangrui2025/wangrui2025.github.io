@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSA Presentation Deck</title>
+    <!-- Latin Modern Roman - Most authentic LaTeX font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .vertical-text {
@@ -11,9 +15,22 @@
             text-orientation: mixed;
             transform: rotate(180deg);
         }
+        /* Latin Modern Roman as primary font */
+        @font-face {
+            font-family: 'Latin Modern Roman';
+            src: local('Latin Modern Roman'), local('LM Roman 10'), local('Times New Roman');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Latin Modern Roman';
+            src: local('Latin Modern Roman Bold'), local('LM Roman 10 Bold'), local('Times New Roman Bold');
+            font-weight: bold;
+            font-style: normal;
+        }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-[#e0e0e0] font-['Times_New_Roman',Times,serif]">
+<body class="flex flex-col items-center justify-center min-h-screen bg-[#e0e0e0] font-['Literata','Latin Modern Roman','Times New Roman',Times,serif]">
 
     <div class="flex flex-col items-center gap-5">
 
@@ -21,11 +38,11 @@
         <div class="w-[1280px] h-[720px] bg-white relative shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform">
             <!-- 幻灯片轨道 -->
             <div id="slideTrack" class="flex h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                <!-- ================= Slide 1: HTML + Tailwind CSS (IEEE/CVPR Style) ================= -->
+                <!-- ================= Slide 1: HTML + Tailwind CSS (Latin Modern) ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
 
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">HTML + Tailwind CSS</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">HTML + Tailwind CSS (Latin Modern)</h1>
 
                         <!-- Header Logos (Dynamically rendered) -->
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
@@ -37,7 +54,7 @@
                         <table class="ieee-table w-max mx-auto border-collapse text-[14.5px] text-black">
                             <style>
                                 .ieee-table {
-                                    font-family: 'Times New Roman', Times, serif;
+                                    font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif;
                                     border-collapse: collapse;
                                 }
                                 .ieee-table th, .ieee-table td {
@@ -154,7 +171,7 @@
                             <table class="ieee-small-table w-full border-collapse text-[13px]">
                                 <style>
                                     .ieee-small-table {
-                                        font-family: 'Times New Roman', Times, serif;
+                                        font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif;
                                         border-collapse: collapse;
                                     }
                                     .ieee-small-table th, .ieee-small-table td {
@@ -279,7 +296,7 @@ $$
                 <!-- ================= Slide 3: LaTeX.css + Latin Modern ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">LaTeX.css</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">LaTeX.css (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -288,7 +305,7 @@ $$
                     <div class="flex justify-center">
                         <div class="latex-css-table">
                             <style>
-                                .latex-css-table { font-family: 'Times New Roman', Times, serif; }
+                                .latex-css-table { font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif; }
                                 .latex-css-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; }
                                 .latex-css-table th, .latex-css-table td { padding: 6px 10px; text-align: center; }
                                 .latex-css-table th { border-top: 2px solid #000; border-bottom: 1px solid #000; font-weight: bold; }
@@ -334,7 +351,7 @@ $$
                 <!-- ================= Slide 4: Tufte CSS + ETBook ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Tufte CSS</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Tufte CSS (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -343,7 +360,7 @@ $$
                     <div class="flex justify-center">
                         <div class="tufte-table">
                             <style>
-                                .tufte-table { font-family: 'Times New Roman', Times, serif; }
+                                .tufte-table { font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif; }
                                 .tufte-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; border-spacing: 0; }
                                 .tufte-table th, .tufte-table td { padding: 5px 8px; text-align: right; font-feature-settings: 'tnum' 1; }
                                 .tufte-table th { font-weight: 600; border-bottom: 1px solid #333; }
@@ -389,7 +406,7 @@ $$
                 <!-- ================= Slide 5: Custom Booktabs CSS ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Custom Booktabs CSS</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Custom Booktabs CSS (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -398,7 +415,7 @@ $$
                     <div class="flex justify-center">
                         <div class="custom-table">
                             <style>
-                                .custom-table { font-family: 'Times New Roman', Times, serif; }
+                                .custom-table { font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif; }
                                 .custom-table table { border-collapse: collapse; margin: 0 auto; font-size: 11.5px; }
                                 .custom-table th { font-weight: 600; padding: 8px 10px; border-top: 2.5px solid #000; border-bottom: 1px solid #000; text-align: center; }
                                 .custom-table td { padding: 6px 10px; text-align: right; font-variant-numeric: tabular-nums; }
@@ -444,7 +461,7 @@ $$
                 <!-- ================= Slide 6: Quarto + Source Sans ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Quarto</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Quarto (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -453,7 +470,7 @@ $$
                     <div class="flex justify-center">
                         <div class="quarto-table">
                             <style>
-                                .quarto-table { font-family: 'Times New Roman', Times, serif; }
+                                .quarto-table { font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif; }
                                 .quarto-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; color: #333; }
                                 .quarto-table th { font-weight: 600; padding: 10px 8px; background: #f8f9fa; border-bottom: 2px solid #dee2e6; border-top: 2px solid #495057; text-align: center; }
                                 .quarto-table td { padding: 7px 8px; text-align: right; border-bottom: 1px solid #e9ecef; }
@@ -498,7 +515,7 @@ $$
                 <!-- ================= Slide 7: Tailwind CSS + Booktabs ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Tailwind CSS + Booktabs</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Tailwind CSS + Booktabs (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -508,7 +525,7 @@ $$
                         <div class="prose-latex-table">
                             <style>
                                 .prose-latex-table {
-                                    font-family: 'Times New Roman', Times, serif;
+                                    font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif;
                                     text-align: justify;
                                     line-height: 1.6;
                                     font-size: 11pt;
@@ -598,7 +615,7 @@ $$
                 <!-- ================= Slide 8: MDX + Tailwind Typography ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">MDX + Tailwind Typography</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">MDX + Tailwind Typography (Latin Modern)</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -608,7 +625,7 @@ $$
                         <div class="mdx-typography-table">
                             <style>
                                 .mdx-typography-table {
-                                    font-family: 'Times New Roman', Times, serif;
+                                    font-family: 'Literata', 'Latin Modern Roman', 'Times New Roman', Times, serif;
                                     font-size: 10.5pt;
                                     line-height: 1.5;
                                     color: #000;

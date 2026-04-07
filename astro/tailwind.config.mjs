@@ -46,6 +46,9 @@ export default {
         'scholar-badge-text': '#3d3d3d',
         'scholar-badge-text-dark': '#c9c9c9',
         'scholar-badge-count': '#4A90E2',
+        // Secondary text color
+        'text-secondary': '#6b7280',
+        'text-secondary-dark': '#9ca3af',
       },
     },
   },

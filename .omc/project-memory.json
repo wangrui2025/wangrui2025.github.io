@@ -102,20 +102,26 @@
     },
     {
       "path": "astro/src",
-      "accessCount": 27,
-      "lastAccessed": 1775552911958,
+      "accessCount": 28,
+      "lastAccessed": 1775553511851,
       "type": "directory"
     },
     {
-      "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 18,
-      "lastAccessed": 1775475089236,
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 24,
+      "lastAccessed": 1775553816107,
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 18,
-      "lastAccessed": 1775551900994,
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 20,
+      "lastAccessed": 1775553841098,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 19,
+      "lastAccessed": 1775553531314,
       "type": "file"
     },
     {
@@ -126,8 +132,8 @@
     },
     {
       "path": "astro/src/styles/global.css",
-      "accessCount": 11,
-      "lastAccessed": 1775474784648,
+      "accessCount": 13,
+      "lastAccessed": 1775553693534,
       "type": "file"
     },
     {
@@ -137,9 +143,9 @@
       "type": "file"
     },
     {
-      "path": "astro/src/components/PaperCard.astro",
+      "path": "astro/src/components/AuthorProfile.astro",
       "accessCount": 10,
-      "lastAccessed": 1775550322898,
+      "lastAccessed": 1775553749218,
       "type": "file"
     },
     {
@@ -149,15 +155,15 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 9,
+      "lastAccessed": 1775553504787,
+      "type": "directory"
+    },
+    {
       "path": "scripts/fetch_scholar.py",
       "accessCount": 8,
       "lastAccessed": 1775472142472,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 7,
-      "lastAccessed": 1775547955432,
       "type": "file"
     },
     {
@@ -167,10 +173,10 @@
       "type": "file"
     },
     {
-      "path": "",
+      "path": "astro/src/components/CvHonorItem.astro",
       "accessCount": 7,
-      "lastAccessed": 1775552876398,
-      "type": "directory"
+      "lastAccessed": 1775553727299,
+      "type": "file"
     },
     {
       "path": "astro/src/content/scholar/stats.json",
@@ -185,16 +191,22 @@
       "type": "file"
     },
     {
-      "path": "astro/src/pages/works.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775209498269,
+      "path": "astro/src/components/ScholarBadge.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775553727577,
       "type": "file"
     },
     {
       "path": "astro",
-      "accessCount": 5,
-      "lastAccessed": 1775474687738,
+      "accessCount": 6,
+      "lastAccessed": 1775553732576,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/pages/works.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775209498269,
+      "type": "file"
     },
     {
       "path": "astro/src/content",
@@ -209,16 +221,22 @@
       "type": "file"
     },
     {
+      "path": "astro/tailwind.config.mjs",
+      "accessCount": 5,
+      "lastAccessed": 1775553727048,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Sidebar.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775553740814,
+      "type": "file"
+    },
+    {
       "path": "CLAUDE.md",
       "accessCount": 4,
       "lastAccessed": 1775200220684,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/components/CvHonorItem.astro",
-      "accessCount": 4,
-      "lastAccessed": 1775474763070,
-      "type": "file"
     },
     {
       "path": "astro/src/components/Scripts.astro",
@@ -245,6 +263,18 @@
       "type": "file"
     },
     {
+      "path": "astro/src/pages/[lang]/index.astro",
+      "accessCount": 4,
+      "lastAccessed": 1775553523117,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/index.astro",
+      "accessCount": 4,
+      "lastAccessed": 1775553531419,
+      "type": "file"
+    },
+    {
       "path": ".claude/settings.json",
       "accessCount": 3,
       "lastAccessed": 1775207388962,
@@ -254,24 +284,6 @@
       "path": "astro/astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1775209192297,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/index.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775474750144,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/[lang]/index.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775474750191,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/ScholarBadge.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775474763157,
       "type": "file"
     },
     {
@@ -311,12 +323,6 @@
       "type": "file"
     },
     {
-      "path": "astro/tailwind.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1775205303439,
-      "type": "file"
-    },
-    {
       "path": "astro/public/sw.js",
       "accessCount": 2,
       "lastAccessed": 1775205355555,
@@ -332,12 +338,6 @@
       "path": "astro/src/data/cv.ts",
       "accessCount": 2,
       "lastAccessed": 1775474741170,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/Sidebar.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775474763198,
       "type": "file"
     },
     {

@@ -36,13 +36,13 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
 
   <!-- Status -->
   <div class="mb-4 text-center flex flex-col gap-2">
-    <span class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-red-200 to-rose-200 dark:from-red-800/50 dark:to-rose-800/50 text-red-900 dark:text-red-100 border border-red-300 dark:border-red-600/50 shadow-sm">
-      {lang === 'en' ? '🎓 Applying for PhD (Fall 2027)' : '🎓 申博中 (2027 Fall)'}
+    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark">
+      {lang === 'en' ? 'Applying for PhD (Fall 2027)' : '申博中 (2027 Fall)'}
     </span>
   </div>
 
   <!-- Social & Academic Links -->
-  <div class="flex flex-wrap justify-center gap-2 mb-4">
+  <div class="flex flex-wrap justify-center gap-2 p-3 rounded-xl bg-paper-bg dark:bg-paper-bg-dark border border-border-primary dark:border-border-dark mb-4">
     <!-- Primary Links: Email & GitHub -->
     <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark text-xs transition-all duration-200 hover:border-link-primary dark:hover:border-link-dark hover:text-link-primary dark:hover:text-link-dark whitespace-nowrap no-underline">
       <Icon name="lucide:mail" class="w-4 h-4" />
