@@ -595,104 +595,79 @@ $$
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                 </div>
 
-                <!-- ================= Slide 8: MDX Component + Flowbite/Preline ================= -->
+                <!-- ================= Slide 8: MDX + Tailwind Typography ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">MDX Component + Flowbite</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">MDX + Tailwind Typography</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
 
-                    <!-- Flowbite/Preline Style Table -->
+                    <!-- MDX + Tailwind Typography (IEEE/LaTeX Style) -->
                     <div class="flex justify-center">
-                        <div class="flowbite-table">
+                        <div class="mdx-typography-table">
                             <style>
-                                .flowbite-table {
+                                .mdx-typography-table {
                                     font-family: 'Times New Roman', Times, serif;
-                                    font-size: 12px;
-                                    color: #374151;
+                                    font-size: 10.5pt;
+                                    line-height: 1.5;
+                                    color: #000;
+                                    text-align: justify;
                                 }
-                                .flowbite-table table {
+                                .mdx-typography-table table {
                                     border-collapse: collapse;
                                     margin: 0 auto;
-                                    width: 95%;
-                                    overflow: hidden;
-                                    border-radius: 12px;
-                                    border: 1px solid #e5e7eb;
-                                    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                                    width: 96%;
+                                    /* No borders, no shadows - pure LaTeX aesthetic */
                                 }
-                                .flowbite-table thead {
-                                    background: #f9fafb;
-                                    border-bottom: 2px solid #e5e7eb;
+                                .mdx-typography-table thead {
+                                    border-bottom: 0.5pt solid #000;
                                 }
-                                .flowbite-table th {
-                                    padding: 14px 20px;
-                                    font-weight: 700;
+                                .mdx-typography-table th {
+                                    padding: 8pt 12pt;
+                                    font-weight: bold;
+                                    font-size: 10pt;
                                     text-align: center;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.05em;
-                                    color: #111827;
-                                    border-right: 1px solid #e5e7eb;
+                                    vertical-align: bottom;
+                                    border-top: 2pt solid #000;
+                                    border-bottom: 0.5pt solid #000;
                                 }
-                                .flowbite-table th:last-child {
+                                .mdx-typography-table td {
+                                    padding: 5pt 12pt;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    border-left: none;
                                     border-right: none;
                                 }
-                                .flowbite-table tbody tr {
-                                    border-bottom: 1px solid #e5e7eb;
-                                    transition: background-color 0.15s ease-in-out;
-                                }
-                                .flowbite-table tbody tr:last-child {
-                                    border-bottom: none;
-                                }
-                                .flowbite-table tbody tr:hover {
-                                    background: #f3f4f6;
-                                }
-                                .flowbite-table tbody tr:last-child:hover {
-                                    background: #eff6ff;
-                                }
-                                .flowbite-table td {
-                                    padding: 12px 20px;
-                                    text-align: center;
-                                    border-right: 1px solid #e5e7eb;
-                                    white-space: nowrap;
-                                }
-                                .flowbite-table td:last-child {
-                                    border-right: none;
-                                }
-                                .flowbite-table td:first-child {
+                                .mdx-typography-table td:first-child {
                                     text-align: left;
-                                    font-weight: 500;
                                 }
-                                .flowbite-table .cite {
-                                    color: #2563eb;
-                                    font-size: 11px;
+                                .mdx-typography-table tbody tr {
+                                    border-bottom: 0.25pt solid #999;
                                 }
-                                .flowbite-table .venue {
-                                    color: #6b7280;
-                                    font-size: 10px;
-                                    margin-left: 4px;
+                                .mdx-typography-table tbody tr:last-child {
+                                    border-bottom: 2pt solid #000;
+                                    font-weight: bold;
                                 }
-                                /* Highlight row (Ours) */
-                                .flowbite-table .highlight {
-                                    background: #eff6ff !important;
-                                    border-left: 4px solid #3b82f6;
-                                    font-weight: 600;
+                                /* Group separators (LaTeX \\midrule) */
+                                .mdx-typography-table .group-mid td {
+                                    border-bottom: 0.5pt solid #666;
                                 }
-                                .flowbite-table .highlight td {
-                                    color: #1e40af;
+                                .mdx-typography-table .cite {
+                                    color: #0000cc;
+                                    font-size: 9pt;
                                 }
-                                /* Group separators */
-                                .flowbite-table .group-end td {
-                                    border-bottom: 1px solid #d1d5db;
+                                .mdx-typography-table .venue {
+                                    color: #666;
+                                    font-size: 9pt;
+                                    font-style: italic;
                                 }
-                                /* Responsive wrapper */
-                                .flowbite-wrapper {
-                                    overflow-x: auto;
-                                    -webkit-overflow-scrolling: touch;
+                                /* Highlight row (Ours) - subtle, not flashy */
+                                .mdx-typography-table .highlight {
+                                    font-weight: bold;
                                 }
                             </style>
-                            <div class="flowbite-wrapper">
-                                <table>
+                            <table>
                                     <thead>
                                         <tr>
                                             <th rowspan="2">Method</th>
@@ -711,42 +686,42 @@ $$
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>PolaFormer <span class="cite">[32]</span><span class="venue">ICLR'25</span></td>
                                             <td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28±7.5</td>
                                             <td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01±8.1</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>Vision LSTM <span class="cite">[2]</span><span class="venue">ICLR'25</span></td>
                                             <td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36±7.6</td>
                                             <td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37±7.9</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>Cutie <span class="cite">[9]</span><span class="venue">CVPR'24</span></td>
                                             <td>91.43</td><td>3.97</td><td>0.629</td><td>0.44±9.8</td>
                                             <td>90.44</td><td>4.05</td><td>0.600</td><td>0.40±9.6</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr class="group-mid">
                                             <td>LiVOS <span class="cite">[29]</span><span class="venue">CVPR'25</span></td>
                                             <td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69±7.8</td>
                                             <td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04±7.5</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>SAMed-2 <span class="cite">[50]</span><span class="venue">MICCAI'25</span></td>
                                             <td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16±6.8</td>
                                             <td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02±7.3</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>EchoVim <span class="cite">[17]</span><span class="venue">ACM MM'25</span></td>
                                             <td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25±7.2</td>
                                             <td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62±6.2</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr>
                                             <td>Vivim <span class="cite">[52]</span><span class="venue">TCSVT'25</span></td>
                                             <td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09±7.3</td>
                                             <td>92.49</td><td>3.70</td><td>0.758</td><td>1.43±7.0</td>
                                         </tr>
-                                        <tr class="group-end">
+                                        <tr class="group-mid">
                                             <td>GDKVM <span class="cite">[47]</span><span class="venue">ICCV'25</span></td>
                                             <td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71±6.7</td>
                                             <td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08±6.5</td>
@@ -758,7 +733,6 @@ $$
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
                         </div>
                     </div>
 
