@@ -81,17 +81,29 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
       {h.news_heading}
     </h2>
     <ul class="news-list">
-      {h.news_items.map((item) => (
-        <li>
-          {item === 'Preparing CVPR Poster' || item === '准备 CVPR Poster' ? (
-            <a href="/works.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a>
-          ) : item === 'CV' || item === '简历' ? (
-            <a href="https://wangrui2025.github.io/zh/cv/" class="text-link-primary dark:text-link-dark hover:underline">{item}</a>
-          ) : (
-            item
-          )}
-        </li>
-      ))}
+      {h.news_items.map((item) => {
+        // Chinese items
+        if (item === '个人简历制作中') {
+          return <li><a href="https://wangrui2025.github.io/zh/cv/" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        if (item === '正在准备 CVPR Slides') {
+          return <li><a href="https://wangrui2025.github.io/slides.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        if (item === '正在准备 CVPR Poster') {
+          return <li><a href="https://wangrui2025.github.io/latextab_in_html.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        // English items
+        if (item === 'Building Personal CV') {
+          return <li><a href="https://wangrui2025.github.io/zh/cv/" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        if (item === 'Preparing CVPR Slides') {
+          return <li><a href="https://wangrui2025.github.io/slides.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        if (item === 'Preparing CVPR Poster') {
+          return <li><a href="https://wangrui2025.github.io/latextab_in_html.html" class="text-link-primary dark:text-link-dark hover:underline">{item}</a></li>;
+        }
+        return <li>{item}</li>;
+      })}
     </ul>
   </section>
 

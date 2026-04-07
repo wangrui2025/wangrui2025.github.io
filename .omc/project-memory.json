@@ -120,8 +120,8 @@
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 13,
-      "lastAccessed": 1775526247540,
+      "accessCount": 15,
+      "lastAccessed": 1775551495428,
       "type": "file"
     },
     {
@@ -201,6 +201,12 @@
       "accessCount": 5,
       "lastAccessed": 1775527778525,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/content/homepage/zh.json",
+      "accessCount": 5,
+      "lastAccessed": 1775551483147,
+      "type": "file"
     },
     {
       "path": "CLAUDE.md",
@@ -338,12 +344,6 @@
       "path": ".claude/case/scholar-citation-migration.md",
       "accessCount": 2,
       "lastAccessed": 1775526049425,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/homepage/zh.json",
-      "accessCount": 2,
-      "lastAccessed": 1775526155560,
       "type": "file"
     },
     {
