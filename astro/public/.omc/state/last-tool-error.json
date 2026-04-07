@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cat >> /Users/myk/Repo/wangrui2025.github.io/astro/public/works_new.html <> 'EOF'\\n\\n            </div>\\n        </div>\\n\\n        <!-- 底部控制面板 -->\\n        <div class=\\\"flex items-center g...",
-  "error": "Exit code 1\n(eval):4: parse error near `\\n'",
-  "timestamp": "2026-04-07T07:47:01.659Z",
-  "retry_count": 1
+  "tool_input_preview": "{\"command\":\"git pull --rebase && git push\",\"description\":\"Rebase and push font changes\"}",
+  "error": "Exit code 128\nerror: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-07T07:56:07.348Z",
+  "retry_count": 2
 }
