@@ -21,104 +21,126 @@
         <div class="w-[1280px] h-[720px] bg-white relative shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform">
             <!-- 幻灯片轨道 -->
             <div id="slideTrack" class="flex h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                <!-- ================= Slide 1: Experiments ================= -->
+                <!-- ================= Slide 1: IEEE/CVPR Style ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
-                    
+
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Experiments</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Experiments (IEEE/CVPR Style)</h1>
                         
                         <!-- Header Logos (Dynamically rendered) -->
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
 
+                    <!-- IEEE/CVPR Style Table -->
                     <div class="w-full px-4 mb-8 flex justify-center">
-                        <table class="w-max mx-auto border-collapse text-[15px] tabular-nums text-black">
-                            <thead class="border-t-[2px] border-b-[1px] border-black">
+                        <table class="ieee-table w-max mx-auto border-collapse text-[14.5px] text-black">
+                            <style>
+                                .ieee-table {
+                                    font-family: 'Times New Roman', Times, serif;
+                                    border-collapse: collapse;
+                                }
+                                .ieee-table th, .ieee-table td {
+                                    padding: 5px 10px;
+                                    border-left: none;
+                                    border-right: none;
+                                }
+                                .ieee-table thead tr:first-child th {
+                                    border-top: 2px solid #000;
+                                    border-bottom: 1px solid #000;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+                                .ieee-table thead tr:nth-child(2) th {
+                                    border-bottom: 1px solid #000;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+                                .ieee-table tbody tr:last-child td {
+                                    border-bottom: 2px solid #000;
+                                    font-weight: bold;
+                                }
+                                .ieee-table tbody tr:nth-child(4) td {
+                                    border-bottom: 1px solid #ccc;
+                                }
+                                .ieee-table tbody tr:nth-child(8) td {
+                                    border-bottom: 1px solid #ccc;
+                                }
+                                .ieee-table td:first-child {
+                                    text-align: left;
+                                }
+                                .ieee-table td:not(:first-child) {
+                                    text-align: center;
+                                }
+                                .ieee-table .cite {
+                                    color: #0066cc;
+                                    font-size: 11px;
+                                }
+                                .ieee-table .venue {
+                                    color: #666;
+                                    font-size: 10px;
+                                }
+                            </style>
+                            <thead>
                                 <tr>
-                                    <th rowspan="2" class="align-bottom text-left px-3 pb-2 font-bold">Method</th>
-                                    
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">CAMUS</div>
-                                    </th>
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">EchoNet-Dynamic</div>
-                                    </th>
+                                    <th rowspan="2" style="vertical-align: bottom; text-align: left;">Method</th>
+                                    <th colspan="4">CAMUS</th>
+                                    <th colspan="4">EchoNet-Dynamic</th>
                                 </tr>
                                 <tr>
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
-                                    
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
+                                    <th>mDice &uarr;</th>
+                                    <th>mHD95 &darr;</th>
+                                    <th>corr &uarr;</th>
+                                    <th>bias&plusmn;std (%)</th>
+                                    <th>mDice &uarr;</th>
+                                    <th>mHD95 &darr;</th>
+                                    <th>corr &uarr;</th>
+                                    <th>bias&plusmn;std (%)</th>
                                 </tr>
                             </thead>
-                            
-                            <tbody class="text-center text-[14.5px]">
+                            <tbody>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        PolaFormer <span class="text-blue-600">[32]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
-                                    </td>
+                                    <td>PolaFormer <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td>
                                     <td>92.47</td> <td>3.66</td> <td>0.792</td> <td>-0.28 &plusmn; 7.5</td>
                                     <td>91.51</td> <td>3.89</td> <td>0.678</td> <td>-0.01 &plusmn; 8.1</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vision LSTM <span class="text-blue-600">[2]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
-                                    </td>
+                                    <td>Vision LSTM <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td>
                                     <td>92.71</td> <td>3.47</td> <td>0.745</td> <td>-2.36 &plusmn; 7.6</td>
                                     <td>91.71</td> <td>3.85</td> <td>0.691</td> <td>-0.37 &plusmn; 7.9</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Cutie <span class="text-blue-600">[9]</span> <span class="text-gray-400 text-[12px]">CVPR'24</span>
-                                    </td>
+                                    <td>Cutie <span class="cite">[9]</span> <span class="venue">CVPR'24</span></td>
                                     <td>91.43</td> <td>3.97</td> <td>0.629</td> <td>0.44 &plusmn; 9.8</td>
                                     <td>90.44</td> <td>4.05</td> <td>0.600</td> <td>0.40 &plusmn; 9.6</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        LiVOS <span class="text-blue-600">[29]</span> <span class="text-gray-400 text-[12px]">CVPR'25</span>
-                                    </td>
-                                    <td class="pb-2">92.89</td> <td class="pb-2">3.56</td> <td class="pb-2">0.718</td> <td class="pb-2">-1.69 &plusmn; 7.8</td>
-                                    <td class="pb-2">91.92</td> <td class="pb-2">3.82</td> <td class="pb-2">0.702</td> <td class="pb-2">-0.04 &plusmn; 7.5</td>
-                                </tr>
-                
-                                <tr class="border-t-[1px] border-black">
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        SAMed-2 <span class="text-blue-600">[50]</span> <span class="text-gray-400 text-[12px]">MICCAI'25</span>
-                                    </td>
-                                    <td class="pt-2">93.55</td> <td class="pt-2">3.29</td> <td class="pt-2">0.815</td> <td class="pt-2">-2.16 &plusmn; 6.8</td>
-                                    <td class="pt-2">92.67</td> <td class="pt-2">3.60</td> <td class="pt-2">0.731</td> <td class="pt-2">-0.02 &plusmn; 7.3</td>
+                                    <td>LiVOS <span class="cite">[29]</span> <span class="venue">CVPR'25</span></td>
+                                    <td>92.89</td> <td>3.56</td> <td>0.718</td> <td>-1.69 &plusmn; 7.8</td>
+                                    <td>91.92</td> <td>3.82</td> <td>0.702</td> <td>-0.04 &plusmn; 7.5</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        EchoVim <span class="text-blue-600">[17]</span> <span class="text-gray-400 text-[12px]">ACM MM'25</span>
-                                    </td>
+                                    <td>SAMed-2 <span class="cite">[50]</span> <span class="venue">MICCAI'25</span></td>
+                                    <td>93.55</td> <td>3.29</td> <td>0.815</td> <td>-2.16 &plusmn; 6.8</td>
+                                    <td>92.67</td> <td>3.60</td> <td>0.731</td> <td>-0.02 &plusmn; 7.3</td>
+                                </tr>
+                                <tr>
+                                    <td>EchoVim <span class="cite">[17]</span> <span class="venue">ACM MM'25</span></td>
                                     <td>94.01</td> <td>3.21</td> <td>0.804</td> <td>-0.25 &plusmn; 7.2</td>
                                     <td>93.22</td> <td>3.47</td> <td>0.803</td> <td>-0.62 &plusmn; 6.2</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vivim <span class="text-blue-600">[52]</span> <span class="text-gray-400 text-[12px]">TCSVT'25</span>
-                                    </td>
+                                    <td>Vivim <span class="cite">[52]</span> <span class="venue">TCSVT'25</span></td>
                                     <td>93.36</td> <td>3.45</td> <td>0.817</td> <td>-0.09 &plusmn; 7.3</td>
                                     <td>92.49</td> <td>3.70</td> <td>0.758</td> <td>1.43 &plusmn; 7.0</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        GDKVM <span class="text-blue-600">[47]</span> <span class="text-gray-400 text-[12px]">ICCV'25</span>
-                                    </td>
-                                    <td class="pb-2">94.18</td> <td class="pb-2">3.31</td> <td class="pb-2">0.835</td> <td class="pb-2">-0.71 &plusmn; 6.7</td>
-                                    <td class="pb-2">93.33</td> <td class="pb-2">3.55</td> <td class="pb-2">0.810</td> <td class="pb-2">-0.08 &plusmn; 6.5</td>
+                                    <td>GDKVM <span class="cite">[47]</span> <span class="venue">ICCV'25</span></td>
+                                    <td>94.18</td> <td>3.31</td> <td>0.835</td> <td>-0.71 &plusmn; 6.7</td>
+                                    <td>93.33</td> <td>3.55</td> <td>0.810</td> <td>-0.08 &plusmn; 6.5</td>
                                 </tr>
-                
-                                <tr class="border-t-[1px] border-b-[2px] border-black font-bold">
-                                    <td class="text-left px-3 py-2">OSA</td>
+                                <tr>
+                                    <td>OSA</td>
                                     <td>94.82</td> <td>3.25</td> <td>0.830</td> <td>-0.44 &plusmn; 7.0</td>
                                     <td>93.90</td> <td>3.42</td> <td>0.816</td> <td>-1.08 &plusmn; 6.0</td>
                                 </tr>
@@ -129,60 +151,55 @@
                     <div class="flex flex-row justify-between items-start w-full px-4 gap-12 mt-2">
                         
                         <div class="w-[45%]">
-                            <table class="w-full border-collapse text-[15px] text-center">
+                            <table class="ieee-small-table w-full border-collapse text-[13px]">
+                                <style>
+                                    .ieee-small-table {
+                                        font-family: 'Times New Roman', Times, serif;
+                                        border-collapse: collapse;
+                                    }
+                                    .ieee-small-table th, .ieee-small-table td {
+                                        padding: 3px 8px;
+                                        border-left: none;
+                                        border-right: none;
+                                        text-align: center;
+                                    }
+                                    .ieee-small-table thead tr:first-child th {
+                                        border-top: 2px solid #000;
+                                        border-bottom: 1px solid #000;
+                                        font-weight: bold;
+                                    }
+                                    .ieee-small-table tbody tr:last-child td {
+                                        border-bottom: 2px solid #000;
+                                        font-weight: bold;
+                                    }
+                                    .ieee-small-table td:first-child, .ieee-small-table th:first-child {
+                                        text-align: left;
+                                    }
+                                    .ieee-small-table .paradigm-linear { color: #4d9900; }
+                                    .ieee-small-table .paradigm-retrieval { color: #cc6600; }
+                                    .ieee-small-table .paradigm-lkva { color: #008000; }
+                                    .ieee-small-table .paradigm-ssm { color: #4d9900; }
+                                    .ieee-small-table .paradigm-ours { color: #0000b3; }
+                                </style>
                                 <thead>
-                                    <tr class="border-t-[3px] border-black">
-                                        <th class="text-left font-bold py-1">Method</th>
-                                        <th class="font-bold py-1">Paradigm</th>
-                                        <th class="font-bold py-1">Para</th>
-                                        <th class="font-bold py-1">Mem</th>
-                                        <th class="font-bold py-1">Time</th>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Paradigm</th>
+                                        <th>Para</th>
+                                        <th>Mem</th>
+                                        <th>Time</th>
                                     </tr>
-                                    <tr class="border-b-[1px] border-black"></tr>
                                 </thead>
-                                <tbody class="text-[14.5px]">
-                                    <tr>
-                                        <td class="text-left py-1">PolaFormer</td>
-                                        <td class="text-[#4d9900]">Linear</td> <td>29.0</td><td>13.2</td><td>3.5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Vision LSTM</td>
-                                        <td class="text-[#4d9900]">Linear</td>
-                                        <td>5.9</td><td>4.5</td><td>2.5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Cutie</td>
-                                        <td class="text-[#cc6600]">Retrieval</td> <td>39.1</td><td>8.1</td><td>6.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">LiVOS</td>
-                                        <td class="text-[#008000]">LKVA</td> <td>35.1</td><td>7.4</td><td>5.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">SAMed-2</td>
-                                        <td class="text-[#cc6600]">Retrieval</td>
-                                        <td>110.1</td><td>27.5</td><td>7.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">EchoVim</td>
-                                        <td class="text-[#4d9900]">SSM</td>
-                                        <td>42.0</td><td>34.9</td><td>9.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Vivim</td>
-                                        <td class="text-[#4d9900]">SSM</td>
-                                        <td>59.6</td><td>5.8</td><td>10.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1 pb-2">GDKVM</td>
-                                        <td class="text-[#008000] pb-2">LKVA</td>
-                                        <td class="pb-2">35.2</td><td class="pb-2">7.5</td><td class="pb-2">4.5</td>
-                                    </tr>
-                                    <tr class="border-t-[1px] border-black font-bold">
-                                        <td class="text-left py-2">Ours</td>
-                                        <td class="text-[#0000b3]">Manifold Proj.</td> <td>38.3</td><td>7.6</td><td>3.0</td>
-                                    </tr>
-                                    <tr class="border-t-[3px] border-black"></tr>
+                                <tbody>
+                                    <tr><td>PolaFormer</td><td class="paradigm-linear">Linear</td><td>29.0</td><td>13.2</td><td>3.5</td></tr>
+                                    <tr><td>Vision LSTM</td><td class="paradigm-linear">Linear</td><td>5.9</td><td>4.5</td><td>2.5</td></tr>
+                                    <tr><td>Cutie</td><td class="paradigm-retrieval">Retrieval</td><td>39.1</td><td>8.1</td><td>6.0</td></tr>
+                                    <tr><td>LiVOS</td><td class="paradigm-lkva">LKVA</td><td>35.1</td><td>7.4</td><td>5.0</td></tr>
+                                    <tr><td>SAMed-2</td><td class="paradigm-retrieval">Retrieval</td><td>110.1</td><td>27.5</td><td>7.0</td></tr>
+                                    <tr><td>EchoVim</td><td class="paradigm-ssm">SSM</td><td>42.0</td><td>34.9</td><td>9.0</td></tr>
+                                    <tr><td>Vivim</td><td class="paradigm-ssm">SSM</td><td>59.6</td><td>5.8</td><td>10.0</td></tr>
+                                    <tr><td>GDKVM</td><td class="paradigm-lkva">LKVA</td><td>35.2</td><td>7.5</td><td>4.5</td></tr>
+                                    <tr><td>Ours</td><td class="paradigm-ours">Manifold Proj.</td><td>38.3</td><td>7.6</td><td>3.0</td></tr>
                                 </tbody>
                             </table>
                         </div>
