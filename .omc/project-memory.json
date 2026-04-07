@@ -143,15 +143,15 @@
       "type": "file"
     },
     {
-      "path": "scripts/fetch_scholar.py",
-      "accessCount": 8,
-      "lastAccessed": 1775472142472,
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 9,
+      "lastAccessed": 1775550222203,
       "type": "file"
     },
     {
-      "path": "astro/src/components/PaperCard.astro",
+      "path": "scripts/fetch_scholar.py",
       "accessCount": 8,
-      "lastAccessed": 1775475028122,
+      "lastAccessed": 1775472142472,
       "type": "file"
     },
     {
@@ -269,6 +269,18 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/papers/gdkvm.json",
+      "accessCount": 3,
+      "lastAccessed": 1775550222152,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/papers/osa.json",
+      "accessCount": 3,
+      "lastAccessed": 1775550236514,
+      "type": "file"
+    },
+    {
       "path": ".claude/case/cv-refactor-20260403.md",
       "accessCount": 2,
       "lastAccessed": 1775198894288,
@@ -309,18 +321,6 @@
       "accessCount": 2,
       "lastAccessed": 1775206673326,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/content/papers/gdkvm.json",
-      "accessCount": 2,
-      "lastAccessed": 1775470346566,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/papers/osa.json",
-      "accessCount": 2,
-      "lastAccessed": 1775470512748,
-      "type": "file"
     },
     {
       "path": "astro/src/data/cv.ts",

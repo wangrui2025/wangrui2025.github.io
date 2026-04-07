@@ -78,8 +78,8 @@ const image = imageMap[paper.data.image as keyof typeof imageMap];
     </div>
     <div class="flex gap-4 mt-3">
       {paper.data.project && (
-        <a href={paper.data.project} class="text-sm px-3 py-1 rounded bg-paper-accent dark:bg-paper-accent-dark text-white transition-all duration-200 hover:opacity-85 hover:-translate-y-0.5 no-underline" title={lang === 'zh' ? '项目主页' : 'Project Page'}>
-          🏠 {lang === 'zh' ? '项目' : 'Project'}
+        <a href={paper.data.project} target="_blank" rel="noopener" class="text-sm text-[#b31b1b] dark:text-[#ff6b6b] no-underline hover:underline" title={lang === 'zh' ? '项目主页' : 'Project Page'}>
+          [Project]
         </a>
       )}
       {paper.data.arxiv && (
