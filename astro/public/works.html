@@ -562,13 +562,126 @@ $$
                     </div>
                 </div>
 
+                <!-- ================= Slide 7: Prose LaTeX Style ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[28px] font-bold tracking-[1px] leading-tight text-center px-4">Prose<br>LaTeX</div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Prose LaTeX Table -->
+                        <div class="mt-4 prose-latex-table">
+                            <style>
+                                .prose-latex-table {
+                                    font-family: 'Times New Roman', Times, serif;
+                                    text-align: justify;
+                                    line-height: 1.6;
+                                    font-size: 11pt;
+                                    color: #000;
+                                }
+                                .prose-latex-table table {
+                                    border-collapse: collapse;
+                                    margin: 0 auto;
+                                    width: 95%;
+                                }
+                                .prose-latex-table th, .prose-latex-table td {
+                                    padding: 6px 12px;
+                                    border-left: none;
+                                    border-right: none;
+                                    font-size: 10.5pt;
+                                }
+                                .prose-latex-table thead tr:first-child th {
+                                    border-top: 2.5pt solid #000;
+                                    border-bottom: 0.75pt solid #000;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+                                .prose-latex-table thead tr:nth-child(2) th {
+                                    border-bottom: 0.75pt solid #000;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+                                .prose-latex-table tbody tr:last-child td {
+                                    border-bottom: 2.5pt solid #000;
+                                    font-weight: bold;
+                                }
+                                .prose-latex-table tbody tr:nth-child(4) td {
+                                    border-bottom: 0.5pt solid #999;
+                                }
+                                .prose-latex-table tbody tr:nth-child(8) td {
+                                    border-bottom: 0.5pt solid #999;
+                                }
+                                .prose-latex-table td:first-child {
+                                    text-align: left;
+                                }
+                                .prose-latex-table td:not(:first-child) {
+                                    text-align: center;
+                                }
+                                .prose-latex-table .cite {
+                                    color: #0066cc;
+                                    font-size: 9.5pt;
+                                }
+                                .prose-latex-table .venue {
+                                    color: #666;
+                                    font-size: 9pt;
+                                    font-style: italic;
+                                }
+                                /* LaTeX-style spacing: more vertical space */
+                                .prose-latex-table p {
+                                    margin-bottom: 0.5em;
+                                }
+                            </style>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Method</th>
+                                        <th colspan="5">CAMUS</th>
+                                        <th colspan="5">EchoNet-Dynamic</th>
+                                    </tr>
+                                    <tr>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>PolaFormer <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td><td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28</td><td>7.5</td><td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01</td><td>8.1</td></tr>
+                                    <tr><td>Vision LSTM <span class="cite">[2]</span> <span class="venue">ICLR'25</span></td><td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36</td><td>7.6</td><td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37</td><td>7.9</td></tr>
+                                    <tr><td>Cutie <span class="cite">[9]</span> <span class="venue">CVPR'24</span></td><td>91.43</td><td>3.97</td><td>0.629</td><td>0.44</td><td>9.8</td><td>90.44</td><td>4.05</td><td>0.600</td><td>0.40</td><td>9.6</td></tr>
+                                    <tr><td>LiVOS <span class="cite">[29]</span> <span class="venue">CVPR'25</span></td><td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69</td><td>7.8</td><td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04</td><td>7.5</td></tr>
+                                    <tr><td>SAMed-2 <span class="cite">[50]</span> <span class="venue">MICCAI'25</span></td><td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16</td><td>6.8</td><td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02</td><td>7.3</td></tr>
+                                    <tr><td>EchoVim <span class="cite">[17]</span> <span class="venue">ACM MM'25</span></td><td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25</td><td>7.2</td><td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62</td><td>6.2</td></tr>
+                                    <tr><td>Vivim <span class="cite">[52]</span> <span class="venue">TCSVT'25</span></td><td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09</td><td>7.3</td><td>92.49</td><td>3.70</td><td>0.758</td><td>1.43</td><td>7.0</td></tr>
+                                    <tr><td>GDKVM <span class="cite">[47]</span> <span class="venue">ICCV'25</span></td><td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71</td><td>6.7</td><td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08</td><td>6.5</td></tr>
+                                    <tr><td>OSA</td><td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44</td><td>7.0</td><td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08</td><td>6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
 <!-- 底部控制面板 -->
         <div class="flex items-center gap-5 bg-white px-[30px] py-[10px] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] font-sans mt-4">
             <button id="prevBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70" disabled>&#9664; Prev</button>
-            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">6</span></div>
+            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">7</span></div>
             <button id="nextBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70">Next &#9654;</button>
         </div>
 
@@ -605,7 +718,7 @@ $$
         const CONFIG = {
             SLIDE_WIDTH: 1280,
             SWIPE_THRESHOLD: 50,
-            TOTAL_SLIDES: 6
+            TOTAL_SLIDES: 7
         };
 
         // Logo SVG 模板
