@@ -102,8 +102,8 @@
     },
     {
       "path": "astro/src",
-      "accessCount": 25,
-      "lastAccessed": 1775526163035,
+      "accessCount": 26,
+      "lastAccessed": 1775552871656,
       "type": "directory"
     },
     {
@@ -114,8 +114,8 @@
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 17,
-      "lastAccessed": 1775551692119,
+      "accessCount": 18,
+      "lastAccessed": 1775551900994,
       "type": "file"
     },
     {
@@ -167,6 +167,12 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 7,
+      "lastAccessed": 1775552876398,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/content/scholar/stats.json",
       "accessCount": 6,
       "lastAccessed": 1775473215327,
@@ -201,12 +207,6 @@
       "accessCount": 5,
       "lastAccessed": 1775475010970,
       "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 5,
-      "lastAccessed": 1775527778525,
-      "type": "directory"
     },
     {
       "path": "CLAUDE.md",

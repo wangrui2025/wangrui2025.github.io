@@ -495,10 +495,10 @@ $$
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
                 </div>
 
-                <!-- ================= Slide 7: Prose Tailwind + Times New Roman ================= -->
+                <!-- ================= Slide 7: Tailwind CSS + Booktabs ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Tailwind Typography</h1>
+                        <h1 class="text-[44px] font-bold text-[#842043]">Tailwind CSS + Booktabs</h1>
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
                     <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
@@ -595,13 +595,183 @@ $$
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                 </div>
 
+                <!-- ================= Slide 8: MDX Component + Flowbite/Preline ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">MDX Component + Flowbite</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
+                    </div>
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- Flowbite/Preline Style Table -->
+                    <div class="flex justify-center">
+                        <div class="flowbite-table">
+                            <style>
+                                .flowbite-table {
+                                    font-family: 'Times New Roman', Times, serif;
+                                    font-size: 12px;
+                                    color: #374151;
+                                }
+                                .flowbite-table table {
+                                    border-collapse: collapse;
+                                    margin: 0 auto;
+                                    width: 95%;
+                                    overflow: hidden;
+                                    border-radius: 12px;
+                                    border: 1px solid #e5e7eb;
+                                    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                                }
+                                .flowbite-table thead {
+                                    background: #f9fafb;
+                                    border-bottom: 2px solid #e5e7eb;
+                                }
+                                .flowbite-table th {
+                                    padding: 14px 20px;
+                                    font-weight: 700;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.05em;
+                                    color: #111827;
+                                    border-right: 1px solid #e5e7eb;
+                                }
+                                .flowbite-table th:last-child {
+                                    border-right: none;
+                                }
+                                .flowbite-table tbody tr {
+                                    border-bottom: 1px solid #e5e7eb;
+                                    transition: background-color 0.15s ease-in-out;
+                                }
+                                .flowbite-table tbody tr:last-child {
+                                    border-bottom: none;
+                                }
+                                .flowbite-table tbody tr:hover {
+                                    background: #f3f4f6;
+                                }
+                                .flowbite-table tbody tr:last-child:hover {
+                                    background: #eff6ff;
+                                }
+                                .flowbite-table td {
+                                    padding: 12px 20px;
+                                    text-align: center;
+                                    border-right: 1px solid #e5e7eb;
+                                    white-space: nowrap;
+                                }
+                                .flowbite-table td:last-child {
+                                    border-right: none;
+                                }
+                                .flowbite-table td:first-child {
+                                    text-align: left;
+                                    font-weight: 500;
+                                }
+                                .flowbite-table .cite {
+                                    color: #2563eb;
+                                    font-size: 11px;
+                                }
+                                .flowbite-table .venue {
+                                    color: #6b7280;
+                                    font-size: 10px;
+                                    margin-left: 4px;
+                                }
+                                /* Highlight row (Ours) */
+                                .flowbite-table .highlight {
+                                    background: #eff6ff !important;
+                                    border-left: 4px solid #3b82f6;
+                                    font-weight: 600;
+                                }
+                                .flowbite-table .highlight td {
+                                    color: #1e40af;
+                                }
+                                /* Group separators */
+                                .flowbite-table .group-end td {
+                                    border-bottom: 1px solid #d1d5db;
+                                }
+                                /* Responsive wrapper */
+                                .flowbite-wrapper {
+                                    overflow-x: auto;
+                                    -webkit-overflow-scrolling: touch;
+                                }
+                            </style>
+                            <div class="flowbite-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">Method</th>
+                                            <th colspan="4">CAMUS</th>
+                                            <th colspan="4">EchoNet-Dynamic</th>
+                                        </tr>
+                                        <tr>
+                                            <th>mDice ↑</th>
+                                            <th>mHD95 ↓</th>
+                                            <th>corr ↑</th>
+                                            <th>bias±std (%)</th>
+                                            <th>mDice ↑</th>
+                                            <th>mHD95 ↓</th>
+                                            <th>corr ↑</th>
+                                            <th>bias±std (%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="group-end">
+                                            <td>PolaFormer <span class="cite">[32]</span><span class="venue">ICLR'25</span></td>
+                                            <td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28±7.5</td>
+                                            <td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01±8.1</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>Vision LSTM <span class="cite">[2]</span><span class="venue">ICLR'25</span></td>
+                                            <td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36±7.6</td>
+                                            <td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37±7.9</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>Cutie <span class="cite">[9]</span><span class="venue">CVPR'24</span></td>
+                                            <td>91.43</td><td>3.97</td><td>0.629</td><td>0.44±9.8</td>
+                                            <td>90.44</td><td>4.05</td><td>0.600</td><td>0.40±9.6</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>LiVOS <span class="cite">[29]</span><span class="venue">CVPR'25</span></td>
+                                            <td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69±7.8</td>
+                                            <td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04±7.5</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>SAMed-2 <span class="cite">[50]</span><span class="venue">MICCAI'25</span></td>
+                                            <td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16±6.8</td>
+                                            <td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02±7.3</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>EchoVim <span class="cite">[17]</span><span class="venue">ACM MM'25</span></td>
+                                            <td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25±7.2</td>
+                                            <td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62±6.2</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>Vivim <span class="cite">[52]</span><span class="venue">TCSVT'25</span></td>
+                                            <td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09±7.3</td>
+                                            <td>92.49</td><td>3.70</td><td>0.758</td><td>1.43±7.0</td>
+                                        </tr>
+                                        <tr class="group-end">
+                                            <td>GDKVM <span class="cite">[47]</span><span class="venue">ICCV'25</span></td>
+                                            <td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71±6.7</td>
+                                            <td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08±6.5</td>
+                                        </tr>
+                                        <tr class="highlight">
+                                            <td>OSA (Ours)</td>
+                                            <td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44±7.0</td>
+                                            <td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08±6.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">8</div>
+                </div>
+
             </div>
         </div>
 
 <!-- 底部控制面板 -->
         <div class="flex items-center gap-5 bg-white px-[30px] py-[10px] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] font-sans mt-4">
             <button id="prevBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70" disabled>&#9664; Prev</button>
-            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">7</span></div>
+            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">8</span></div>
             <button id="nextBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70">Next &#9654;</button>
         </div>
 
@@ -638,7 +808,7 @@ $$
         const CONFIG = {
             SLIDE_WIDTH: 1280,
             SWIPE_THRESHOLD: 50,
-            TOTAL_SLIDES: 7
+            TOTAL_SLIDES: 8
         };
 
         // Logo SVG 模板
