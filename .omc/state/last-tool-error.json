@@ -1,7 +1,7 @@
 {
-  "tool_name": "Read",
-  "tool_input_preview": "{\"file_path\":\"/Users/myk/Repo/wangrui2025.github.io/astro/src/utils\"}",
-  "error": "EISDIR: illegal operation on a directory, read '/Users/myk/Repo/wangrui2025.github.io/astro/src/utils'",
-  "timestamp": "2026-04-06T11:29:30.062Z",
-  "retry_count": 1
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git pull --rebase && git push\",\"description\":\"Pull rebase and push\"}",
+  "error": "Exit code 128\nerror: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-06T11:32:58.154Z",
+  "retry_count": 2
 }
