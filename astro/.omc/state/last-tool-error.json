@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git add -A && git commit -m \\\"feat: remove Works from nav, link CVPR Poster to works.html\\\" && git push\",\"description\":\"Commit and push changes\"}",
-  "error": "Exit code 1\n[main b38d0f3] feat: remove Works from nav, link CVPR Poster to works.html\n 6 files changed, 46 insertions(+), 42 deletions(-)\nTo https://github.com/wangrui2025/wangrui2025.github.io.git\n ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at b38d0f349b454f0a35ba6a3c587c8167da6b59b3 but expected ed39ed1498772c5f5d47ed53f79b1dc94f1f36f0)\nerror: failed to push some refs to 'https://github.com/wangrui2025/wangrui2025.github.io.git'",
-  "timestamp": "2026-04-07T01:44:26.556Z",
-  "retry_count": 1
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && ./scripts/autopush.sh \\\"refactor(AuthorProfile): move CVPR Poster and CV links from sidebar to main page status section\\\"\",\"description\":\"Commit...",
+  "error": "Exit code 1\n❌ 错误：请遵循 Conventional Commits 格式。\n   正确示例: feat(cv): add export button 或 fix(style): adjust padding\n\n💡 提示：检测到以下改动，请基于此重新生成具体的 commit message：\n-----------------------------------\n.omc/project-memory.json\n.omc/state/hud-state.json\n.omc/state/hud-stdin-cache.json\n.omc/state/idle-notif-cooldown.json\nastro/.omc/state/last-tool-error.json\nastro/src/components/AuthorProfile.astro\n-----------------------------------\n 6 files changed, 15 insertions(+), 11 deletions(-)",
+  "timestamp": "2026-04-07T07:43:10.731Z",
+  "retry_count": 2
 }
