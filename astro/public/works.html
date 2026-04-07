@@ -21,12 +21,12 @@
         <div class="w-[1280px] h-[720px] bg-white relative shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform">
             <!-- 幻灯片轨道 -->
             <div id="slideTrack" class="flex h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-                <!-- ================= Slide 1: IEEE/CVPR Style ================= -->
+                <!-- ================= Slide 1: HTML + Tailwind CSS (IEEE/CVPR Style) ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
 
                     <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Experiments (IEEE/CVPR Style)</h1>
-                        
+                        <h1 class="text-[44px] font-bold text-[#842043]">HTML + Tailwind CSS (IEEE/CVPR Style)</h1>
+
                         <!-- Header Logos (Dynamically rendered) -->
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
@@ -149,7 +149,7 @@
                     </div>
 
                     <div class="flex flex-row justify-between items-start w-full px-4 gap-12 mt-2">
-                        
+
                         <div class="w-[45%]">
                             <table class="ieee-small-table w-full border-collapse text-[13px]">
                                 <style>
@@ -220,35 +220,17 @@
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">1</div>
                 </div>
 
-                <!-- ================= Slide 2: Experiments (MathJax Table) ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Experiments</div>
+                <!-- ================= Slide 2: MathJax + LaTeX (Booktabs) ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">MathJax + LaTeX (Booktabs)</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
 
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Table Content -->
-                        <div class="mt-4">
-                            <div class="text-[11px] overflow-x-auto">
+                    <!-- Table Content -->
+                    <div class="flex justify-center">
+                        <div class="text-[11px] overflow-x-auto">
 $$
 \begin{array}{l ccc r@{${}\pm{}$}l ccc r@{${}\pm{}$}l}
     \toprule
@@ -288,37 +270,23 @@ $$
     \bottomrule
 \end{array}
 $$
-                            </div>
                         </div>
-
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">2</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">2</div>
                 </div>
 
-                <!-- ================= Slide 3: LaTeX.css ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">LaTeX.css</div>
+                <!-- ================= Slide 3: LaTeX.css + Latin Modern ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">LaTeX.css + Latin Modern</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- LaTeX.css Table -->
-                        <div class="mt-4 latex-css-table">
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- LaTeX.css Table -->
+                    <div class="flex justify-center">
+                        <div class="latex-css-table">
                             <style>
                                 .latex-css-table { font-family: 'Times New Roman', Times, serif; }
                                 .latex-css-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; }
@@ -358,34 +326,22 @@ $$
                                 </tbody>
                             </table>
                         </div>
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">3</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">3</div>
                 </div>
 
-                <!-- ================= Slide 4: Tufte CSS ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">Tufte CSS</div>
+                <!-- ================= Slide 4: Tufte CSS + ETBook ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">Tufte CSS + ETBook</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Tufte CSS Table -->
-                        <div class="mt-4 tufte-table">
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- Tufte CSS Table -->
+                    <div class="flex justify-center">
+                        <div class="tufte-table">
                             <style>
                                 .tufte-table { font-family: 'Times New Roman', Times, serif; }
                                 .tufte-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; border-spacing: 0; }
@@ -425,34 +381,22 @@ $$
                                 </tbody>
                             </table>
                         </div>
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
                 </div>
 
                 <!-- ================= Slide 5: Custom Booktabs CSS ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[28px] font-bold tracking-[1px] leading-tight text-center px-4">Custom<br>Booktabs</div>
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">Custom Booktabs CSS</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Custom Booktabs Table -->
-                        <div class="mt-4 custom-table">
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- Custom Booktabs Table -->
+                    <div class="flex justify-center">
+                        <div class="custom-table">
                             <style>
                                 .custom-table { font-family: 'Times New Roman', Times, serif; }
                                 .custom-table table { border-collapse: collapse; margin: 0 auto; font-size: 11.5px; }
@@ -492,34 +436,22 @@ $$
                                 </tbody>
                             </table>
                         </div>
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
                 </div>
 
-                <!-- ================= Slide 6: Quarto-style ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">Quarto</div>
+                <!-- ================= Slide 6: Quarto + Source Sans ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">Quarto + Source Sans</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Quarto-style Table -->
-                        <div class="mt-4 quarto-table">
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- Quarto-style Table -->
+                    <div class="flex justify-center">
+                        <div class="quarto-table">
                             <style>
                                 .quarto-table { font-family: 'Times New Roman', Times, serif; }
                                 .quarto-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; color: #333; }
@@ -558,34 +490,22 @@ $$
                                 </tbody>
                             </table>
                         </div>
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
                 </div>
 
-                <!-- ================= Slide 7: Prose LaTeX Style ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[28px] font-bold tracking-[1px] leading-tight text-center px-4">Prose<br>LaTeX</div>
+                <!-- ================= Slide 7: Prose Tailwind + Times New Roman ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">Prose Tailwind + Times New Roman</h1>
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Prose LaTeX Table -->
-                        <div class="mt-4 prose-latex-table">
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+
+                    <!-- Prose LaTeX Table -->
+                    <div class="flex justify-center">
+                        <div class="prose-latex-table">
                             <style>
                                 .prose-latex-table {
                                     font-family: 'Times New Roman', Times, serif;
@@ -641,7 +561,6 @@ $$
                                     font-size: 9pt;
                                     font-style: italic;
                                 }
-                                /* LaTeX-style spacing: more vertical space */
                                 .prose-latex-table p {
                                     margin-bottom: 0.5em;
                                 }
@@ -671,8 +590,9 @@ $$
                                 </tbody>
                             </table>
                         </div>
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                     </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                 </div>
 
             </div>
