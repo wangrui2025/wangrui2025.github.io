@@ -220,25 +220,403 @@
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">1</div>
                 </div>
 
+                <!-- ================= Slide 2: Experiments (MathJax Table) ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Experiments</div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Table Content -->
+                        <div class="mt-4">
+                            <div class="text-[11px] overflow-x-auto">
+$$
+\begin{array}{l ccc r@{${}\pm{}$}l ccc r@{${}\pm{}$}l}
+    \toprule
+    \textbf{\text{Method}} & \multicolumn{5}{c}{\textbf{\text{CAMUS}}} & \multicolumn{5}{c}{\textbf{\text{EchoNet-Dynamic}}} \\
+    \cmidrule{2-6} \cmidrule{7-11}
+    & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} \\
+    \midrule
+    \text{PolaFormer} \color{blue}{\text{ [32]}} \color{gray}{\text{ ICLR'25}} &
+    92.47 & 3.66 & 0.792 & -0.28 & 7.5 &
+    91.51 & 3.89 & 0.678 & -0.01 & 8.1 \\
+    \text{Vision LSTM} \color{blue}{\text{ [2]}} \color{gray}{\text{ ICLR'25}} &
+    92.71 & 3.47 & 0.745 & -2.36 & 7.6 &
+    91.71 & 3.85 & 0.691 & -0.37 & 7.9 \\
+    \text{Cutie} \color{blue}{\text{ [9]}} \color{gray}{\text{ CVPR'24}} &
+    91.43 & 3.97 & 0.629 &  0.44 & 9.8 &
+    90.44 & 4.05 & 0.600 &  0.40 & 9.6 \\
+    \text{LiVOS} \color{blue}{\text{ [29]}} \color{gray}{\text{ CVPR'25}} &
+    92.89 & 3.56 & 0.718 & -1.69 & 7.8 &
+    91.92 & 3.82 & 0.702 & -0.04 & 7.5 \\
+    \midrule
+    \text{SAMed-2} \color{blue}{\text{ [50]}} \color{gray}{\text{ MICCAI'25}} &
+    93.55 & 3.29 & 0.815 & -2.16 & 6.8 &
+    92.67 & 3.60 & 0.731 & -0.02 & 7.3 \\
+    \text{EchoVim} \color{blue}{\text{ [17]}} \color{gray}{\text{ ACM MM'25}} &
+    94.01 & 3.21 & 0.804 & -0.25 & 7.2 &
+    93.22 & 3.47 & 0.803 & -0.62 & 6.2 \\
+    \text{Vivim} \color{blue}{\text{ [52]}} \color{gray}{\text{ TCSVT'25}} &
+    93.36 & 3.45 & 0.817 & -0.09 & 7.3 &
+    92.49 & 3.70 & 0.758 &  1.43 & 7.0 \\
+    \text{GDKVM} \color{blue}{\text{ [47]}} \color{gray}{\text{ ICCV'25}} &
+    94.18 & 3.31 & 0.835 & -0.71 & 6.7 &
+    93.33 & 3.55 & 0.810 & -0.08 & 6.5 \\
+    \midrule
+    \textbf{\text{OSA}} &
+    \textbf{94.82} & \textbf{3.25} & \textbf{0.830} & \textbf{-0.44} & \textbf{7.0} &
+    \textbf{93.90} & \textbf{3.42} & \textbf{0.816} & \textbf{-1.08} & \textbf{6.0} \\
+    \bottomrule
+\end{array}
+$$
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">2</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 3: LaTeX.css ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">LaTeX.css</div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- LaTeX.css Table -->
+                        <div class="mt-4 latex-css-table">
+                            <style>
+                                .latex-css-table { font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, serif; }
+                                .latex-css-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; }
+                                .latex-css-table th, .latex-css-table td { padding: 6px 10px; text-align: center; }
+                                .latex-css-table th { border-top: 2px solid #000; border-bottom: 1px solid #000; font-weight: bold; }
+                                .latex-css-table tbody tr:last-child td { border-bottom: 2px solid #000; }
+                                .latex-css-table tbody tr:nth-child(4) td { border-bottom: 1px solid #999; }
+                                .latex-css-table tbody tr:nth-child(8) td { border-bottom: 1px solid #999; }
+                                .latex-css-table td:first-child { text-align: left; }
+                                .latex-css-table .method-name { font-weight: 500; }
+                                .latex-css-table .method-cite { color: #2563eb; }
+                                .latex-css-table .method-venue { color: #6b7280; font-size: 10px; }
+                                .latex-css-table .best { font-weight: bold; }
+                            </style>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Method</th>
+                                        <th colspan="5">CAMUS</th>
+                                        <th colspan="5">EchoNet-Dynamic</th>
+                                    </tr>
+                                    <tr>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><span class="method-name">PolaFormer</span> <span class="method-cite">[32]</span> <span class="method-venue">ICLR'25</span></td><td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28</td><td>7.5</td><td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01</td><td>8.1</td></tr>
+                                    <tr><td><span class="method-name">Vision LSTM</span> <span class="method-cite">[2]</span> <span class="method-venue">ICLR'25</span></td><td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36</td><td>7.6</td><td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37</td><td>7.9</td></tr>
+                                    <tr><td><span class="method-name">Cutie</span> <span class="method-cite">[9]</span> <span class="method-venue">CVPR'24</span></td><td>91.43</td><td>3.97</td><td>0.629</td><td>0.44</td><td>9.8</td><td>90.44</td><td>4.05</td><td>0.600</td><td>0.40</td><td>9.6</td></tr>
+                                    <tr><td><span class="method-name">LiVOS</span> <span class="method-cite">[29]</span> <span class="method-venue">CVPR'25</span></td><td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69</td><td>7.8</td><td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04</td><td>7.5</td></tr>
+                                    <tr><td><span class="method-name">SAMed-2</span> <span class="method-cite">[50]</span> <span class="method-venue">MICCAI'25</span></td><td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16</td><td>6.8</td><td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02</td><td>7.3</td></tr>
+                                    <tr><td><span class="method-name">EchoVim</span> <span class="method-cite">[17]</span> <span class="method-venue">ACM MM'25</span></td><td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25</td><td>7.2</td><td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62</td><td>6.2</td></tr>
+                                    <tr><td><span class="method-name">Vivim</span> <span class="method-cite">[52]</span> <span class="method-venue">TCSVT'25</span></td><td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09</td><td>7.3</td><td>92.49</td><td>3.70</td><td>0.758</td><td>1.43</td><td>7.0</td></tr>
+                                    <tr><td><span class="method-name">GDKVM</span> <span class="method-cite">[47]</span> <span class="method-venue">ICCV'25</span></td><td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71</td><td>6.7</td><td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08</td><td>6.5</td></tr>
+                                    <tr class="best"><td>OSA</td><td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44</td><td>7.0</td><td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08</td><td>6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">3</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 4: Tufte CSS ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">Tufte CSS</div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Tufte CSS Table -->
+                        <div class="mt-4 tufte-table">
+                            <style>
+                                .tufte-table { font-family: 'ETBook', 'Palatino', 'Georgia', serif; }
+                                .tufte-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; border-spacing: 0; }
+                                .tufte-table th, .tufte-table td { padding: 5px 8px; text-align: right; font-feature-settings: 'tnum' 1; }
+                                .tufte-table th { font-weight: 600; border-bottom: 1px solid #333; }
+                                .tufte-table thead tr:first-child th { border-top: 2px solid #111; padding-top: 8px; }
+                                .tufte-table tbody tr:last-child td { border-bottom: 2px solid #111; padding-bottom: 8px; }
+                                .tufte-table tbody tr:nth-child(4) td { border-bottom: 1px solid #ccc; }
+                                .tufte-table tbody tr:nth-child(8) td { border-bottom: 1px solid #ccc; }
+                                .tufte-table td:first-child, .tufte-table th:first-child { text-align: left; }
+                                .tufte-table .method-cite { color: #1a5276; }
+                                .tufte-table .method-venue { color: #666; font-size: 9px; }
+                                .tufte-table .osa-row { font-weight: 600; }
+                            </style>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Method</th>
+                                        <th colspan="5">CAMUS</th>
+                                        <th colspan="5">EchoNet-Dynamic</th>
+                                    </tr>
+                                    <tr>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>PolaFormer <span class="method-cite">[32]</span> <span class="method-venue">ICLR'25</span></td><td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28</td><td>7.5</td><td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01</td><td>8.1</td></tr>
+                                    <tr><td>Vision LSTM <span class="method-cite">[2]</span> <span class="method-venue">ICLR'25</span></td><td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36</td><td>7.6</td><td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37</td><td>7.9</td></tr>
+                                    <tr><td>Cutie <span class="method-cite">[9]</span> <span class="method-venue">CVPR'24</span></td><td>91.43</td><td>3.97</td><td>0.629</td><td>0.44</td><td>9.8</td><td>90.44</td><td>4.05</td><td>0.600</td><td>0.40</td><td>9.6</td></tr>
+                                    <tr><td>LiVOS <span class="method-cite">[29]</span> <span class="method-venue">CVPR'25</span></td><td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69</td><td>7.8</td><td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04</td><td>7.5</td></tr>
+                                    <tr><td>SAMed-2 <span class="method-cite">[50]</span> <span class="method-venue">MICCAI'25</span></td><td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16</td><td>6.8</td><td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02</td><td>7.3</td></tr>
+                                    <tr><td>EchoVim <span class="method-cite">[17]</span> <span class="method-venue">ACM MM'25</span></td><td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25</td><td>7.2</td><td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62</td><td>6.2</td></tr>
+                                    <tr><td>Vivim <span class="method-cite">[52]</span> <span class="method-venue">TCSVT'25</span></td><td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09</td><td>7.3</td><td>92.49</td><td>3.70</td><td>0.758</td><td>1.43</td><td>7.0</td></tr>
+                                    <tr><td>GDKVM <span class="method-cite">[47]</span> <span class="method-venue">ICCV'25</span></td><td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71</td><td>6.7</td><td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08</td><td>6.5</td></tr>
+                                    <tr class="osa-row"><td>OSA</td><td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44</td><td>7.0</td><td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08</td><td>6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 5: Custom Booktabs CSS ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[28px] font-bold tracking-[1px] leading-tight text-center px-4">Custom<br>Booktabs</div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Custom Booktabs Table -->
+                        <div class="mt-4 custom-table">
+                            <style>
+                                @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+                                .custom-table { font-family: 'Source Serif 4', 'Times New Roman', serif; }
+                                .custom-table table { border-collapse: collapse; margin: 0 auto; font-size: 11.5px; }
+                                .custom-table th { font-weight: 600; padding: 8px 10px; border-top: 2.5px solid #000; border-bottom: 1px solid #000; text-align: center; }
+                                .custom-table td { padding: 6px 10px; text-align: right; font-variant-numeric: tabular-nums; }
+                                .custom-table td:first-child { text-align: left; }
+                                .custom-table tbody tr:nth-child(4) td { border-bottom: 0.5px solid #999; padding-bottom: 8px; }
+                                .custom-table tbody tr:nth-child(5) td { padding-top: 8px; }
+                                .custom-table tbody tr:nth-child(8) td { border-bottom: 0.5px solid #999; padding-bottom: 8px; }
+                                .custom-table tbody tr:nth-child(9) td { padding-top: 8px; }
+                                .custom-table tbody tr:last-child td { border-bottom: 2.5px solid #000; padding-bottom: 8px; font-weight: 700; }
+                                .custom-table .cite { color: #0066cc; font-size: 10px; }
+                                .custom-table .venue { color: #666; font-size: 9px; font-style: italic; }
+                            </style>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Method</th>
+                                        <th colspan="5">CAMUS</th>
+                                        <th colspan="5">EchoNet-Dynamic</th>
+                                    </tr>
+                                    <tr>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>PolaFormer <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td><td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28</td><td>7.5</td><td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01</td><td>8.1</td></tr>
+                                    <tr><td>Vision LSTM <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td><td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36</td><td>7.6</td><td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37</td><td>7.9</td></tr>
+                                    <tr><td>Cutie <span class="cite">[9]</span> <span class="venue">CVPR'24</span></td><td>91.43</td><td>3.97</td><td>0.629</td><td>0.44</td><td>9.8</td><td>90.44</td><td>4.05</td><td>0.600</td><td>0.40</td><td>9.6</td></tr>
+                                    <tr><td>LiVOS <span class="cite">[29]</span> <span class="venue">CVPR'25</span></td><td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69</td><td>7.8</td><td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04</td><td>7.5</td></tr>
+                                    <tr><td>SAMed-2 <span class="cite">[50]</span> <span class="venue">MICCAI'25</span></td><td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16</td><td>6.8</td><td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02</td><td>7.3</td></tr>
+                                    <tr><td>EchoVim <span class="cite">[17]</span> <span class="venue">ACM MM'25</span></td><td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25</td><td>7.2</td><td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62</td><td>6.2</td></tr>
+                                    <tr><td>Vivim <span class="cite">[52]</span> <span class="venue">TCSVT'25</span></td><td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09</td><td>7.3</td><td>92.49</td><td>3.70</td><td>0.758</td><td>1.43</td><td>7.0</td></tr>
+                                    <tr><td>GDKVM <span class="cite">[47]</span> <span class="venue">ICCV'25</span></td><td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71</td><td>6.7</td><td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08</td><td>6.5</td></tr>
+                                    <tr><td>OSA</td><td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44</td><td>7.0</td><td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08</td><td>6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 6: Quarto-style ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[36px] font-bold tracking-[1px] leading-tight text-center px-4">Quarto</div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Quarto-style Table -->
+                        <div class="mt-4 quarto-table">
+                            <style>
+                                @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+                                .quarto-table { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; }
+                                .quarto-table table { border-collapse: collapse; margin: 0 auto; font-size: 11px; color: #333; }
+                                .quarto-table th { font-weight: 600; padding: 10px 8px; background: #f8f9fa; border-bottom: 2px solid #dee2e6; border-top: 2px solid #495057; text-align: center; }
+                                .quarto-table td { padding: 7px 8px; text-align: right; border-bottom: 1px solid #e9ecef; }
+                                .quarto-table td:first-child { text-align: left; font-weight: 500; }
+                                .quarto-table tbody tr:nth-child(4) td { border-bottom: 1px solid #adb5bd; }
+                                .quarto-table tbody tr:nth-child(8) td { border-bottom: 1px solid #adb5bd; }
+                                .quarto-table tbody tr:last-child td { background: #e7f3ff; border-bottom: 2px solid #495057; font-weight: 700; color: #000; }
+                                .quarto-table .cite { color: #0d6efd; }
+                                .quarto-table .venue { color: #6c757d; font-size: 9px; }
+                                .quarto-table thead tr:nth-child(2) th { background: #fff; padding-top: 6px; padding-bottom: 6px; }
+                            </style>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Method</th>
+                                        <th colspan="5">CAMUS</th>
+                                        <th colspan="5">EchoNet-Dynamic</th>
+                                    </tr>
+                                    <tr>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                        <th>mDice ↑</th><th>mHD95 ↓</th><th>corr ↑</th><th colspan="2">bias±std (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>PolaFormer <span class="cite">[32]</span> <span class="venue">ICLR'25</span></td><td>92.47</td><td>3.66</td><td>0.792</td><td>-0.28</td><td>7.5</td><td>91.51</td><td>3.89</td><td>0.678</td><td>-0.01</td><td>8.1</td></tr>
+                                    <tr><td>Vision LSTM <span class="cite">[2]</span> <span class="venue">ICLR'25</span></td><td>92.71</td><td>3.47</td><td>0.745</td><td>-2.36</td><td>7.6</td><td>91.71</td><td>3.85</td><td>0.691</td><td>-0.37</td><td>7.9</td></tr>
+                                    <tr><td>Cutie <span class="cite">[9]</span> <span class="venue">CVPR'24</span></td><td>91.43</td><td>3.97</td><td>0.629</td><td>0.44</td><td>9.8</td><td>90.44</td><td>4.05</td><td>0.600</td><td>0.40</td><td>9.6</td></tr>
+                                    <tr><td>LiVOS <span class="cite">[29]</span> <span class="venue">CVPR'25</span></td><td>92.89</td><td>3.56</td><td>0.718</td><td>-1.69</td><td>7.8</td><td>91.92</td><td>3.82</td><td>0.702</td><td>-0.04</td><td>7.5</td></tr>
+                                    <tr><td>SAMed-2 <span class="cite">[50]</span> <span class="venue">MICCAI'25</span></td><td>93.55</td><td>3.29</td><td>0.815</td><td>-2.16</td><td>6.8</td><td>92.67</td><td>3.60</td><td>0.731</td><td>-0.02</td><td>7.3</td></tr>
+                                    <tr><td>EchoVim <span class="cite">[17]</span> <span class="venue">ACM MM'25</span></td><td>94.01</td><td>3.21</td><td>0.804</td><td>-0.25</td><td>7.2</td><td>93.22</td><td>3.47</td><td>0.803</td><td>-0.62</td><td>6.2</td></tr>
+                                    <tr><td>Vivim <span class="cite">[52]</span> <span class="venue">TCSVT'25</span></td><td>93.36</td><td>3.45</td><td>0.817</td><td>-0.09</td><td>7.3</td><td>92.49</td><td>3.70</td><td>0.758</td><td>1.43</td><td>7.0</td></tr>
+                                    <tr><td>GDKVM <span class="cite">[47]</span> <span class="venue">ICCV'25</span></td><td>94.18</td><td>3.31</td><td>0.835</td><td>-0.71</td><td>6.7</td><td>93.33</td><td>3.55</td><td>0.810</td><td>-0.08</td><td>6.5</td></tr>
+                                    <tr><td>OSA</td><td>94.82</td><td>3.25</td><td>0.830</td><td>-0.44</td><td>7.0</td><td>93.90</td><td>3.42</td><td>0.816</td><td>-1.08</td><td>6.0</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- 底部控制面板 -->
+<!-- 底部控制面板 -->
         <div class="flex items-center gap-5 bg-white px-[30px] py-[10px] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] font-sans mt-4">
             <button id="prevBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70" disabled>&#9664; Prev</button>
-            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">1</span></div>
-            <button id="nextBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70" disabled>Next &#9654;</button>
+            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">6</span></div>
+            <button id="nextBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70">Next &#9654;</button>
         </div>
 
     </div>
 
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- MathJax for complex tables -->
+    <script>
+        window.MathJax = {
+            tex: {
+                packages: {'[+]': ['booktabs', 'color']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            loader: {
+                load: ['[tex]/booktabs', '[tex]/color']
+            },
+            startup: {
+                pageReady: function() {
+                    return MathJax.typesetPromise();
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
     <!-- 交互脚本 -->
     <script>
+        // 配置常量
+        const CONFIG = {
+            SLIDE_WIDTH: 1280,
+            SWIPE_THRESHOLD: 50,
+            TOTAL_SLIDES: 6
+        };
+
+        // Logo SVG 模板
         const LOGO_TEMPLATES = {
             szu: (size) => `<div class="w-[${size}px] h-[${size}px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[12px] text-center font-sans bg-white"><div>SZU<br>Logo</div></div>`,
             polyu: (size) => `<div class="w-[${size}px] h-[${size}px] flex justify-center items-center bg-white"><svg width="${size}" height="${size}" viewBox="0 0 100 100" fill="none"><path d="M20 20 H50 V50 H20 Z" fill="#842043"/><path d="M55 20 H85 V50 H55 Z" fill="#842043"/><path d="M20 55 H50 V85 H20 Z" fill="#842043"/><path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/></svg></div>`
         };
 
+        // 动态生成 Header Logos
         function renderHeaderLogos() {
             document.querySelectorAll('.slide-header-logos').forEach(container => {
                 const size = container.dataset.size || 75;
@@ -246,8 +624,140 @@
             });
         }
 
+        let currentSlide = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const track = document.getElementById('slideTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentNum = document.getElementById('currentNum');
+        const totalNum = document.getElementById('totalNum');
+
+        // 更新总页数
+        if (totalNum) totalNum.innerText = CONFIG.TOTAL_SLIDES;
+
+        function updateSlidePosition() {
+            if (!track) return;
+
+            track.style.transform = `translateX(-${currentSlide * CONFIG.SLIDE_WIDTH}px)`;
+
+            if (currentNum) currentNum.innerText = (currentSlide + 1).toString();
+            if (prevBtn) prevBtn.disabled = currentSlide === 0;
+            if (nextBtn) nextBtn.disabled = currentSlide === CONFIG.TOTAL_SLIDES - 1;
+
+            // 更新 URL hash 支持深链接
+            history.replaceState(null, null, `#slide=${currentSlide + 1}`);
+        }
+
+        function nextSlide() {
+            if (currentSlide < CONFIG.TOTAL_SLIDES - 1) {
+                currentSlide++;
+                updateSlidePosition();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlidePosition();
+            }
+        }
+
+        function goToSlide(index) {
+            if (index >= 0 && index < CONFIG.TOTAL_SLIDES) {
+                currentSlide = index;
+                updateSlidePosition();
+            }
+        }
+
+        // 按钮事件
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // 键盘导航
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
+                event.preventDefault();
+                nextSlide();
+            } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+                event.preventDefault();
+                prevSlide();
+            } else if (event.key === 'Home') {
+                event.preventDefault();
+                goToSlide(0);
+            } else if (event.key === 'End') {
+                event.preventDefault();
+                goToSlide(CONFIG.TOTAL_SLIDES - 1);
+            }
+        });
+
+        // 触摸/滑动支持
+        const slideContainer = document.querySelector('.w\\[1280px\\].h\\[720px\\]');
+        if (slideContainer) {
+            slideContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            slideContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > CONFIG.SWIPE_THRESHOLD) {
+                    if (diff > 0) {
+                        nextSlide(); // 向左滑 -> 下一页
+                    } else {
+                        prevSlide(); // 向右滑 -> 上一页
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // 解析 URL hash 初始化
+        function parseHash() {
+            const hash = window.location.hash;
+            const match = hash.match(/slide=(\d+)/);
+            if (match) {
+                const slideIndex = parseInt(match[1], 10) - 1;
+                goToSlide(slideIndex);
+            }
+        }
+
+        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
+            // 渲染 Header Logos
             renderHeaderLogos();
+
+            // KaTeX 渲染公式
+            if (typeof renderMathInElement !== 'undefined') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+
+            // MathJax 渲染公式
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise().catch(function(err) {
+                    console.log('MathJax typeset failed:', err);
+                });
+            }
+
+            // 解析 URL hash
+            parseHash();
+
+            // 监听 hash 变化
+            window.addEventListener('hashchange', parseHash);
+        });
+
+        // 防止空格键滚动页面
+        window.addEventListener('keydown', (e) => {
+            if (e.key === ' ' && e.target === document.body) {
+                e.preventDefault();
+            }
         });
     </script>
 </body>
