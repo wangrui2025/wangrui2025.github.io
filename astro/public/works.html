@@ -21,8 +21,264 @@
         <div class="w-[1280px] h-[720px] bg-white relative shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform">
             <!-- 幻灯片轨道 -->
             <div id="slideTrack" class="flex h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+                <!-- ================= Slide 1: Experiments ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    
+                    <div class="flex justify-between items-end mb-3">
+                        <h1 class="text-[44px] font-bold text-[#842043]">Experiments</h1>
+                        
+                        <!-- Header Logos (Dynamically rendered) -->
+                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
+                    </div>
+                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
 
-                <!-- ================= Slide 1: 首页 ================= -->
+                    <div class="w-full px-4 mb-8 flex justify-center">
+                        <table class="w-max mx-auto border-collapse text-[15px] tabular-nums text-black">
+                            <thead class="border-t-[2px] border-b-[1px] border-black">
+                                <tr>
+                                    <th rowspan="2" class="align-bottom text-left px-3 pb-2 font-bold">Method</th>
+                                    
+                                    <th colspan="4" class="pt-2 pb-1 px-1">
+                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">CAMUS</div>
+                                    </th>
+                                    <th colspan="4" class="pt-2 pb-1 px-1">
+                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">EchoNet-Dynamic</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
+                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
+                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
+                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
+                                    
+                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
+                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
+                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
+                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody class="text-center text-[14.5px]">
+                                <tr>
+                                    <td class="text-left px-3 py-1.5 pt-2">
+                                        PolaFormer <span class="text-blue-600">[32]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
+                                    </td>
+                                    <td>92.47</td> <td>3.66</td> <td>0.792</td> <td>-0.28 &plusmn; 7.5</td>
+                                    <td>91.51</td> <td>3.89</td> <td>0.678</td> <td>-0.01 &plusmn; 8.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5">
+                                        Vision LSTM <span class="text-blue-600">[2]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
+                                    </td>
+                                    <td>92.71</td> <td>3.47</td> <td>0.745</td> <td>-2.36 &plusmn; 7.6</td>
+                                    <td>91.71</td> <td>3.85</td> <td>0.691</td> <td>-0.37 &plusmn; 7.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5">
+                                        Cutie <span class="text-blue-600">[9]</span> <span class="text-gray-400 text-[12px]">CVPR'24</span>
+                                    </td>
+                                    <td>91.43</td> <td>3.97</td> <td>0.629</td> <td>0.44 &plusmn; 9.8</td>
+                                    <td>90.44</td> <td>4.05</td> <td>0.600</td> <td>0.40 &plusmn; 9.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5 pb-2">
+                                        LiVOS <span class="text-blue-600">[29]</span> <span class="text-gray-400 text-[12px]">CVPR'25</span>
+                                    </td>
+                                    <td class="pb-2">92.89</td> <td class="pb-2">3.56</td> <td class="pb-2">0.718</td> <td class="pb-2">-1.69 &plusmn; 7.8</td>
+                                    <td class="pb-2">91.92</td> <td class="pb-2">3.82</td> <td class="pb-2">0.702</td> <td class="pb-2">-0.04 &plusmn; 7.5</td>
+                                </tr>
+                
+                                <tr class="border-t-[1px] border-black">
+                                    <td class="text-left px-3 py-1.5 pt-2">
+                                        SAMed-2 <span class="text-blue-600">[50]</span> <span class="text-gray-400 text-[12px]">MICCAI'25</span>
+                                    </td>
+                                    <td class="pt-2">93.55</td> <td class="pt-2">3.29</td> <td class="pt-2">0.815</td> <td class="pt-2">-2.16 &plusmn; 6.8</td>
+                                    <td class="pt-2">92.67</td> <td class="pt-2">3.60</td> <td class="pt-2">0.731</td> <td class="pt-2">-0.02 &plusmn; 7.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5">
+                                        EchoVim <span class="text-blue-600">[17]</span> <span class="text-gray-400 text-[12px]">ACM MM'25</span>
+                                    </td>
+                                    <td>94.01</td> <td>3.21</td> <td>0.804</td> <td>-0.25 &plusmn; 7.2</td>
+                                    <td>93.22</td> <td>3.47</td> <td>0.803</td> <td>-0.62 &plusmn; 6.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5">
+                                        Vivim <span class="text-blue-600">[52]</span> <span class="text-gray-400 text-[12px]">TCSVT'25</span>
+                                    </td>
+                                    <td>93.36</td> <td>3.45</td> <td>0.817</td> <td>-0.09 &plusmn; 7.3</td>
+                                    <td>92.49</td> <td>3.70</td> <td>0.758</td> <td>1.43 &plusmn; 7.0</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left px-3 py-1.5 pb-2">
+                                        GDKVM <span class="text-blue-600">[47]</span> <span class="text-gray-400 text-[12px]">ICCV'25</span>
+                                    </td>
+                                    <td class="pb-2">94.18</td> <td class="pb-2">3.31</td> <td class="pb-2">0.835</td> <td class="pb-2">-0.71 &plusmn; 6.7</td>
+                                    <td class="pb-2">93.33</td> <td class="pb-2">3.55</td> <td class="pb-2">0.810</td> <td class="pb-2">-0.08 &plusmn; 6.5</td>
+                                </tr>
+                
+                                <tr class="border-t-[1px] border-b-[2px] border-black font-bold">
+                                    <td class="text-left px-3 py-2">OSA</td>
+                                    <td>94.82</td> <td>3.25</td> <td>0.830</td> <td>-0.44 &plusmn; 7.0</td>
+                                    <td>93.90</td> <td>3.42</td> <td>0.816</td> <td>-1.08 &plusmn; 6.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex flex-row justify-between items-start w-full px-4 gap-12 mt-2">
+                        
+                        <div class="w-[45%]">
+                            <table class="w-full border-collapse text-[15px] text-center">
+                                <thead>
+                                    <tr class="border-t-[3px] border-black">
+                                        <th class="text-left font-bold py-1">Method</th>
+                                        <th class="font-bold py-1">Paradigm</th>
+                                        <th class="font-bold py-1">Para</th>
+                                        <th class="font-bold py-1">Mem</th>
+                                        <th class="font-bold py-1">Time</th>
+                                    </tr>
+                                    <tr class="border-b-[1px] border-black"></tr>
+                                </thead>
+                                <tbody class="text-[14.5px]">
+                                    <tr>
+                                        <td class="text-left py-1">PolaFormer</td>
+                                        <td class="text-[#4d9900]">Linear</td> <td>29.0</td><td>13.2</td><td>3.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">Vision LSTM</td>
+                                        <td class="text-[#4d9900]">Linear</td>
+                                        <td>5.9</td><td>4.5</td><td>2.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">Cutie</td>
+                                        <td class="text-[#cc6600]">Retrieval</td> <td>39.1</td><td>8.1</td><td>6.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">LiVOS</td>
+                                        <td class="text-[#008000]">LKVA</td> <td>35.1</td><td>7.4</td><td>5.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">SAMed-2</td>
+                                        <td class="text-[#cc6600]">Retrieval</td>
+                                        <td>110.1</td><td>27.5</td><td>7.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">EchoVim</td>
+                                        <td class="text-[#4d9900]">SSM</td>
+                                        <td>42.0</td><td>34.9</td><td>9.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1">Vivim</td>
+                                        <td class="text-[#4d9900]">SSM</td>
+                                        <td>59.6</td><td>5.8</td><td>10.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left py-1 pb-2">GDKVM</td>
+                                        <td class="text-[#008000] pb-2">LKVA</td>
+                                        <td class="pb-2">35.2</td><td class="pb-2">7.5</td><td class="pb-2">4.5</td>
+                                    </tr>
+                                    <tr class="border-t-[1px] border-black font-bold">
+                                        <td class="text-left py-2">Ours</td>
+                                        <td class="text-[#0000b3]">Manifold Proj.</td> <td>38.3</td><td>7.6</td><td>3.0</td>
+                                    </tr>
+                                    <tr class="border-t-[3px] border-black"></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="w-[55%] flex gap-6 h-[220px]">
+                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
+                                <span>Middle Block Placeholder</span>
+                                <span class="text-xs mt-2">(As requested)</span>
+                            </div>
+                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
+                                <span>Right Block Placeholder</span>
+                                <span class="text-xs mt-2">(As requested)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">1</div>
+                </div>
+
+                <!-- ================= Slide 2: Experiments (MathJax Table) ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Experiments</div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Table Content -->
+                        <div class="mt-4">
+                            <div class="text-[11px] overflow-x-auto">
+$$
+\begin{array}{l ccc r@{${}\pm{}$}l ccc r@{${}\pm{}$}l}
+    \toprule
+    \textbf{\text{Method}} & \multicolumn{5}{c}{\textbf{\text{CAMUS}}} & \multicolumn{5}{c}{\textbf{\text{EchoNet-Dynamic}}} \\
+    \cmidrule{2-6} \cmidrule{7-11}
+    & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} \\
+    \midrule
+    \text{PolaFormer} \color{blue}{\text{ [32]}} \color{gray}{\text{ ICLR'25}} &
+    92.47 & 3.66 & 0.792 & -0.28 & 7.5 &
+    91.51 & 3.89 & 0.678 & -0.01 & 8.1 \\
+    \text{Vision LSTM} \color{blue}{\text{ [2]}} \color{gray}{\text{ ICLR'25}} &
+    92.71 & 3.47 & 0.745 & -2.36 & 7.6 &
+    91.71 & 3.85 & 0.691 & -0.37 & 7.9 \\
+    \text{Cutie} \color{blue}{\text{ [9]}} \color{gray}{\text{ CVPR'24}} &
+    91.43 & 3.97 & 0.629 &  0.44 & 9.8 &
+    90.44 & 4.05 & 0.600 &  0.40 & 9.6 \\
+    \text{LiVOS} \color{blue}{\text{ [29]}} \color{gray}{\text{ CVPR'25}} &
+    92.89 & 3.56 & 0.718 & -1.69 & 7.8 &
+    91.92 & 3.82 & 0.702 & -0.04 & 7.5 \\
+    \midrule
+    \text{SAMed-2} \color{blue}{\text{ [50]}} \color{gray}{\text{ MICCAI'25}} &
+    93.55 & 3.29 & 0.815 & -2.16 & 6.8 &
+    92.67 & 3.60 & 0.731 & -0.02 & 7.3 \\
+    \text{EchoVim} \color{blue}{\text{ [17]}} \color{gray}{\text{ ACM MM'25}} &
+    94.01 & 3.21 & 0.804 & -0.25 & 7.2 &
+    93.22 & 3.47 & 0.803 & -0.62 & 6.2 \\
+    \text{Vivim} \color{blue}{\text{ [52]}} \color{gray}{\text{ TCSVT'25}} &
+    93.36 & 3.45 & 0.817 & -0.09 & 7.3 &
+    92.49 & 3.70 & 0.758 &  1.43 & 7.0 \\
+    \text{GDKVM} \color{blue}{\text{ [47]}} \color{gray}{\text{ ICCV'25}} &
+    94.18 & 3.31 & 0.835 & -0.71 & 6.7 &
+    93.33 & 3.55 & 0.810 & -0.08 & 6.5 \\
+    \midrule
+    \textbf{\text{OSA}} &
+    \textbf{94.82} & \textbf{3.25} & \textbf{0.830} & \textbf{-0.44} & \textbf{7.0} &
+    \textbf{93.90} & \textbf{3.42} & \textbf{0.816} & \textbf{-1.08} & \textbf{6.0} \\
+    \bottomrule
+\end{array}
+$$
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">2</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 3: 首页 ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col">
 
                     <!-- Header (Logos) -->
@@ -79,7 +335,7 @@
                     </div>
                 </div>
 
-                <!-- ================= Slide 2: 目录页 ================= -->
+                <!-- ================= Slide 4: 目录页 ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
 
                     <!-- Sidebar -->
@@ -117,11 +373,11 @@
                             </div>
                         </div>
 
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">2</div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
                     </div>
                 </div>
 
-                <!-- ================= Slide 3: Problem Setting ================= -->
+                <!-- ================= Slide 5: Problem Setting ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-12 px-[60px]">
 
                     <div class="flex justify-between items-end mb-4">
@@ -222,10 +478,10 @@
 
                     </div>
 
-                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">3</div>
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
                 </div>
 
-                <!-- ================= Slide 4: Method Overview ================= -->
+                <!-- ================= Slide 6: Method Overview ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden">
                     
                     <div class="flex justify-between items-end mb-3">
@@ -480,10 +736,10 @@
 
                     </div>
 
-                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
                 </div>
 
-                <!-- ================= Slide 5: Method OSU ================= -->
+                <!-- ================= Slide 7: Method OSU ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
 
                     <!-- Sidebar -->
@@ -546,11 +802,11 @@
                             </div>
                         </div>
 
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                     </div>
                 </div>
 
-                <!-- ================= Slide 6: Method APFE ================= -->
+                <!-- ================= Slide 8: Method APFE ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
 
                     <!-- Sidebar -->
@@ -612,263 +868,6 @@
                                         <strong>$X_{t}^{+}$</strong> isolates high-frequency edges (myocardium), while <strong>$X_{t}^{-}$</strong> captures low-response regions (blood pools).
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
-                    </div>
-                </div>
-
-                <!-- ================= Slide 7: Experiments ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
-                    
-                    <div class="flex justify-between items-end mb-3">
-                        <h1 class="text-[44px] font-bold text-[#842043]">Experiments</h1>
-                        
-                        <!-- Header Logos (Dynamically rendered) -->
-                        <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
-                    </div>
-                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
-
-                    <div class="w-full px-4 mb-8 flex justify-center">
-                        <table class="w-max mx-auto border-collapse text-[15px] tabular-nums text-black">
-                            <thead class="border-t-[2px] border-b-[1px] border-black">
-                                <tr>
-                                    <th rowspan="2" class="align-bottom text-left px-3 pb-2 font-bold">Method</th>
-                                    
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">CAMUS</div>
-                                    </th>
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">EchoNet-Dynamic</div>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
-                                    
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody class="text-center text-[14.5px]">
-                                <tr>
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        PolaFormer <span class="text-blue-600">[32]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
-                                    </td>
-                                    <td>92.47</td> <td>3.66</td> <td>0.792</td> <td>-0.28 &plusmn; 7.5</td>
-                                    <td>91.51</td> <td>3.89</td> <td>0.678</td> <td>-0.01 &plusmn; 8.1</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vision LSTM <span class="text-blue-600">[2]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
-                                    </td>
-                                    <td>92.71</td> <td>3.47</td> <td>0.745</td> <td>-2.36 &plusmn; 7.6</td>
-                                    <td>91.71</td> <td>3.85</td> <td>0.691</td> <td>-0.37 &plusmn; 7.9</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Cutie <span class="text-blue-600">[9]</span> <span class="text-gray-400 text-[12px]">CVPR'24</span>
-                                    </td>
-                                    <td>91.43</td> <td>3.97</td> <td>0.629</td> <td>0.44 &plusmn; 9.8</td>
-                                    <td>90.44</td> <td>4.05</td> <td>0.600</td> <td>0.40 &plusmn; 9.6</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        LiVOS <span class="text-blue-600">[29]</span> <span class="text-gray-400 text-[12px]">CVPR'25</span>
-                                    </td>
-                                    <td class="pb-2">92.89</td> <td class="pb-2">3.56</td> <td class="pb-2">0.718</td> <td class="pb-2">-1.69 &plusmn; 7.8</td>
-                                    <td class="pb-2">91.92</td> <td class="pb-2">3.82</td> <td class="pb-2">0.702</td> <td class="pb-2">-0.04 &plusmn; 7.5</td>
-                                </tr>
-                
-                                <tr class="border-t-[1px] border-black">
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        SAMed-2 <span class="text-blue-600">[50]</span> <span class="text-gray-400 text-[12px]">MICCAI'25</span>
-                                    </td>
-                                    <td class="pt-2">93.55</td> <td class="pt-2">3.29</td> <td class="pt-2">0.815</td> <td class="pt-2">-2.16 &plusmn; 6.8</td>
-                                    <td class="pt-2">92.67</td> <td class="pt-2">3.60</td> <td class="pt-2">0.731</td> <td class="pt-2">-0.02 &plusmn; 7.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        EchoVim <span class="text-blue-600">[17]</span> <span class="text-gray-400 text-[12px]">ACM MM'25</span>
-                                    </td>
-                                    <td>94.01</td> <td>3.21</td> <td>0.804</td> <td>-0.25 &plusmn; 7.2</td>
-                                    <td>93.22</td> <td>3.47</td> <td>0.803</td> <td>-0.62 &plusmn; 6.2</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vivim <span class="text-blue-600">[52]</span> <span class="text-gray-400 text-[12px]">TCSVT'25</span>
-                                    </td>
-                                    <td>93.36</td> <td>3.45</td> <td>0.817</td> <td>-0.09 &plusmn; 7.3</td>
-                                    <td>92.49</td> <td>3.70</td> <td>0.758</td> <td>1.43 &plusmn; 7.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        GDKVM <span class="text-blue-600">[47]</span> <span class="text-gray-400 text-[12px]">ICCV'25</span>
-                                    </td>
-                                    <td class="pb-2">94.18</td> <td class="pb-2">3.31</td> <td class="pb-2">0.835</td> <td class="pb-2">-0.71 &plusmn; 6.7</td>
-                                    <td class="pb-2">93.33</td> <td class="pb-2">3.55</td> <td class="pb-2">0.810</td> <td class="pb-2">-0.08 &plusmn; 6.5</td>
-                                </tr>
-                
-                                <tr class="border-t-[1px] border-b-[2px] border-black font-bold">
-                                    <td class="text-left px-3 py-2">OSA</td>
-                                    <td>94.82</td> <td>3.25</td> <td>0.830</td> <td>-0.44 &plusmn; 7.0</td>
-                                    <td>93.90</td> <td>3.42</td> <td>0.816</td> <td>-1.08 &plusmn; 6.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="flex flex-row justify-between items-start w-full px-4 gap-12 mt-2">
-                        
-                        <div class="w-[45%]">
-                            <table class="w-full border-collapse text-[15px] text-center">
-                                <thead>
-                                    <tr class="border-t-[3px] border-black">
-                                        <th class="text-left font-bold py-1">Method</th>
-                                        <th class="font-bold py-1">Paradigm</th>
-                                        <th class="font-bold py-1">Para</th>
-                                        <th class="font-bold py-1">Mem</th>
-                                        <th class="font-bold py-1">Time</th>
-                                    </tr>
-                                    <tr class="border-b-[1px] border-black"></tr>
-                                </thead>
-                                <tbody class="text-[14.5px]">
-                                    <tr>
-                                        <td class="text-left py-1">PolaFormer</td>
-                                        <td class="text-[#4d9900]">Linear</td> <td>29.0</td><td>13.2</td><td>3.5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Vision LSTM</td>
-                                        <td class="text-[#4d9900]">Linear</td>
-                                        <td>5.9</td><td>4.5</td><td>2.5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Cutie</td>
-                                        <td class="text-[#cc6600]">Retrieval</td> <td>39.1</td><td>8.1</td><td>6.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">LiVOS</td>
-                                        <td class="text-[#008000]">LKVA</td> <td>35.1</td><td>7.4</td><td>5.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">SAMed-2</td>
-                                        <td class="text-[#cc6600]">Retrieval</td>
-                                        <td>110.1</td><td>27.5</td><td>7.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">EchoVim</td>
-                                        <td class="text-[#4d9900]">SSM</td>
-                                        <td>42.0</td><td>34.9</td><td>9.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1">Vivim</td>
-                                        <td class="text-[#4d9900]">SSM</td>
-                                        <td>59.6</td><td>5.8</td><td>10.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left py-1 pb-2">GDKVM</td>
-                                        <td class="text-[#008000] pb-2">LKVA</td>
-                                        <td class="pb-2">35.2</td><td class="pb-2">7.5</td><td class="pb-2">4.5</td>
-                                    </tr>
-                                    <tr class="border-t-[1px] border-black font-bold">
-                                        <td class="text-left py-2">Ours</td>
-                                        <td class="text-[#0000b3]">Manifold Proj.</td> <td>38.3</td><td>7.6</td><td>3.0</td>
-                                    </tr>
-                                    <tr class="border-t-[3px] border-black"></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="w-[55%] flex gap-6 h-[220px]">
-                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
-                                <span>Middle Block Placeholder</span>
-                                <span class="text-xs mt-2">(As requested)</span>
-                            </div>
-                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
-                                <span>Right Block Placeholder</span>
-                                <span class="text-xs mt-2">(As requested)</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
-                </div>
-
-                <!-- ================= Slide 8: Experiments (MathJax Table) ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-
-                    <!-- Sidebar -->
-                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Experiments</div>
-                    </div>
-
-                    <!-- Main Content -->
-                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
-
-                        <!-- Header Logos -->
-                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
-                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
-                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Table Content -->
-                        <div class="mt-4">
-                            <div class="text-[11px] overflow-x-auto">
-$$
-\begin{array}{l ccc r@{${}\pm{}$}l ccc r@{${}\pm{}$}l}
-    \toprule
-    \textbf{\text{Method}} & \multicolumn{5}{c}{\textbf{\text{CAMUS}}} & \multicolumn{5}{c}{\textbf{\text{EchoNet-Dynamic}}} \\
-    \cmidrule{2-6} \cmidrule{7-11}
-    & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} \\
-    \midrule
-    \text{PolaFormer} \color{blue}{\text{ [32]}} \color{gray}{\text{ ICLR'25}} &
-    92.47 & 3.66 & 0.792 & -0.28 & 7.5 &
-    91.51 & 3.89 & 0.678 & -0.01 & 8.1 \\
-    \text{Vision LSTM} \color{blue}{\text{ [2]}} \color{gray}{\text{ ICLR'25}} &
-    92.71 & 3.47 & 0.745 & -2.36 & 7.6 &
-    91.71 & 3.85 & 0.691 & -0.37 & 7.9 \\
-    \text{Cutie} \color{blue}{\text{ [9]}} \color{gray}{\text{ CVPR'24}} &
-    91.43 & 3.97 & 0.629 &  0.44 & 9.8 &
-    90.44 & 4.05 & 0.600 &  0.40 & 9.6 \\
-    \text{LiVOS} \color{blue}{\text{ [29]}} \color{gray}{\text{ CVPR'25}} &
-    92.89 & 3.56 & 0.718 & -1.69 & 7.8 &
-    91.92 & 3.82 & 0.702 & -0.04 & 7.5 \\
-    \midrule
-    \text{SAMed-2} \color{blue}{\text{ [50]}} \color{gray}{\text{ MICCAI'25}} &
-    93.55 & 3.29 & 0.815 & -2.16 & 6.8 &
-    92.67 & 3.60 & 0.731 & -0.02 & 7.3 \\
-    \text{EchoVim} \color{blue}{\text{ [17]}} \color{gray}{\text{ ACM MM'25}} &
-    94.01 & 3.21 & 0.804 & -0.25 & 7.2 &
-    93.22 & 3.47 & 0.803 & -0.62 & 6.2 \\
-    \text{Vivim} \color{blue}{\text{ [52]}} \color{gray}{\text{ TCSVT'25}} &
-    93.36 & 3.45 & 0.817 & -0.09 & 7.3 &
-    92.49 & 3.70 & 0.758 &  1.43 & 7.0 \\
-    \text{GDKVM} \color{blue}{\text{ [47]}} \color{gray}{\text{ ICCV'25}} &
-    94.18 & 3.31 & 0.835 & -0.71 & 6.7 &
-    93.33 & 3.55 & 0.810 & -0.08 & 6.5 \\
-    \midrule
-    \textbf{\text{OSA}} &
-    \textbf{94.82} & \textbf{3.25} & \textbf{0.830} & \textbf{-0.44} & \textbf{7.0} &
-    \textbf{93.90} & \textbf{3.42} & \textbf{0.816} & \textbf{-1.08} & \textbf{6.0} \\
-    \bottomrule
-\end{array}
-$$
                             </div>
                         </div>
 
@@ -1087,6 +1086,13 @@ $$
                         {left: '$', right: '$', display: false}
                     ],
                     throwOnError: false
+                });
+            }
+
+            // MathJax 渲染公式
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise().catch(function(err) {
+                    console.log('MathJax typeset failed:', err);
                 });
             }
 
