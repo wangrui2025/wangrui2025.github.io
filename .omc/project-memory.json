@@ -95,16 +95,16 @@
   },
   "hotPaths": [
     {
+      "path": "astro/public/works.html",
+      "accessCount": 28,
+      "lastAccessed": 1775538682843,
+      "type": "file"
+    },
+    {
       "path": "astro/src",
       "accessCount": 25,
       "lastAccessed": 1775526163035,
       "type": "directory"
-    },
-    {
-      "path": "astro/public/works.html",
-      "accessCount": 24,
-      "lastAccessed": 1775474571248,
-      "type": "file"
     },
     {
       "path": "astro/src/layouts/BaseLayout.astro",
