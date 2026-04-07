@@ -164,34 +164,30 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Honors Section -->
   <section id="honors" class="mb-8">
-    <h2 class="section-heading text-2xl font-serif font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold mb-4">
       {h.section_honors}
     </h2>
-
-    <h3 class="text-lg font-semibold mb-2">{h.honors_graduate_header}</h3>
-    {graduateHonors.map((item) => (
-      <CvHonorItem text={item[lang].text} period={item.period} secondary={false} />
-    ))}
-
-    <h3 class="text-lg font-semibold mb-2 mt-4">{h.honors_undergraduate_header}</h3>
-    {undergraduateHonors.map((item) => (
-      <CvHonorItem text={item[lang].text} period={item.period} secondary={false} />
-    ))}
+    <div class="flex flex-col gap-2">
+      {graduateHonors.map((item) => (
+        <CvHonorItem text={item[lang].text} period={item.period} secondary={false} />
+      ))}
+      {undergraduateHonors.map((item) => (
+        <CvHonorItem text={item[lang].text} period={item.period} secondary={true} />
+      ))}
+    </div>
   </section>
 
   <!-- Project Section -->
   <section id="project" class="mb-8">
-    <h2 class="section-heading text-2xl font-serif font-bold">
+    <h2 class="section-heading text-2xl font-serif font-bold mb-4">
       {h.section_project}
     </h2>
-    <ul class="project-list">
-      <li>
-        <a href={h.project_url} class="font-semibold hover:underline" target="_blank">
-          {h.project_title}
-        </a>
-        <p class="text-text-secondary dark:text-text-secondary-dark mt-1">{h.project_description}</p>
-      </li>
-    </ul>
+    <div class="text-base">
+      <a href={h.project_url} class="font-semibold text-link-primary dark:text-link-dark hover:underline" target="_blank">
+        {h.project_title}
+      </a>
+      <p class="mt-2 text-text-secondary dark:text-text-secondary-dark leading-relaxed">{h.project_description}</p>
+    </div>
   </section>
 
   <!-- Skills & Interests Section -->

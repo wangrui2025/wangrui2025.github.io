@@ -108,8 +108,14 @@
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 26,
-      "lastAccessed": 1775554339994,
+      "accessCount": 28,
+      "lastAccessed": 1775554635994,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 23,
+      "lastAccessed": 1775554458163,
       "type": "file"
     },
     {
@@ -122,12 +128,6 @@
       "path": "astro/src/layouts/BaseLayout.astro",
       "accessCount": 19,
       "lastAccessed": 1775553531314,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 19,
-      "lastAccessed": 1775554383920,
       "type": "file"
     },
     {
@@ -168,14 +168,14 @@
     },
     {
       "path": "astro/src/content/homepage/zh.json",
-      "accessCount": 7,
-      "lastAccessed": 1775551881930,
+      "accessCount": 8,
+      "lastAccessed": 1775554611310,
       "type": "file"
     },
     {
       "path": "astro/src/components/CvHonorItem.astro",
-      "accessCount": 7,
-      "lastAccessed": 1775553727299,
+      "accessCount": 8,
+      "lastAccessed": 1775554626913,
       "type": "file"
     },
     {
