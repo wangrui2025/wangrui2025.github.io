@@ -143,6 +143,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/homepage/zh.json",
+      "accessCount": 11,
+      "lastAccessed": 1775555419022,
+      "type": "file"
+    },
+    {
       "path": "astro/src/components/AuthorProfile.astro",
       "accessCount": 10,
       "lastAccessed": 1775553749218,
@@ -164,12 +170,6 @@
       "path": "scripts/fetch_scholar.py",
       "accessCount": 8,
       "lastAccessed": 1775472142472,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/homepage/zh.json",
-      "accessCount": 8,
-      "lastAccessed": 1775554611310,
       "type": "file"
     },
     {

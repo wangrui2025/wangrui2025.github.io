@@ -17,10 +17,17 @@
       "status": "completed",
       "completed_at": "2026-04-03T08:44:19.588Z",
       "duration_ms": 167522
+    },
+    {
+      "agent_id": "aba7b6252471094d2",
+      "agent_type": "security-reviewer",
+      "started_at": "2026-04-07T09:50:16.163Z",
+      "parent_mode": "none",
+      "status": "running"
     }
   ],
-  "total_spawned": 1,
+  "total_spawned": 2,
   "total_completed": 2,
   "total_failed": 0,
-  "last_updated": "2026-04-03T08:46:00.095Z"
+  "last_updated": "2026-04-07T09:50:16.277Z"
 }
