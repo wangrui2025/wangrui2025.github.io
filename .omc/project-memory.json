@@ -191,6 +191,12 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 5,
+      "lastAccessed": 1775527778525,
+      "type": "directory"
+    },
+    {
       "path": "CLAUDE.md",
       "accessCount": 4,
       "lastAccessed": 1775200220684,
@@ -261,12 +267,6 @@
       "accessCount": 3,
       "lastAccessed": 1775474763157,
       "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1775526136656,
-      "type": "directory"
     },
     {
       "path": ".claude/case/cv-refactor-20260403.md",

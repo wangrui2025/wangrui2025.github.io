@@ -801,7 +801,82 @@
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">7</div>
                 </div>
 
-                <!-- ================= Slide 8: Discussion ================= -->
+                <!-- ================= Slide 8: Experiments (MathJax Table) ================= -->
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
+
+                    <!-- Sidebar -->
+                    <div class="w-[20%] bg-[#6D243A] flex justify-center items-center">
+                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Experiments</div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="w-[80%] relative flex flex-col justify-center px-[40px] py-[60px]">
+
+                        <!-- Header Logos -->
+                        <div class="absolute top-[25px] right-[35px] flex items-center gap-[12px]">
+                            <div class="w-[65px] h-[65px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[10px] text-center font-sans bg-white">
+                                <div>SZU<br>Logo</div>
+                            </div>
+                            <div class="w-[65px] h-[65px] flex justify-center items-center bg-white">
+                                <svg width="65" height="65" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
+                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
+                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
+                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Table Content -->
+                        <div class="mt-4">
+                            <div class="text-[11px] overflow-x-auto">
+$$
+\begin{array}{l ccc r@{${}\pm{}$}l ccc r@{${}\pm{}$}l}
+    \toprule
+    \textbf{\text{Method}} & \multicolumn{5}{c}{\textbf{\text{CAMUS}}} & \multicolumn{5}{c}{\textbf{\text{EchoNet-Dynamic}}} \\
+    \cmidrule{2-6} \cmidrule{7-11}
+    & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} & \textbf{\text{mDice }} \uparrow & \textbf{\text{mHD95 }} \downarrow & \textbf{\text{corr }} \uparrow & \multicolumn{2}{c}{\textbf{\text{bias}}\pm\textbf{\text{std (\%)}}} \\
+    \midrule
+    \text{PolaFormer} \color{blue}{\text{ [32]}} \color{gray}{\text{ ICLR'25}} &
+    92.47 & 3.66 & 0.792 & -0.28 & 7.5 &
+    91.51 & 3.89 & 0.678 & -0.01 & 8.1 \\
+    \text{Vision LSTM} \color{blue}{\text{ [2]}} \color{gray}{\text{ ICLR'25}} &
+    92.71 & 3.47 & 0.745 & -2.36 & 7.6 &
+    91.71 & 3.85 & 0.691 & -0.37 & 7.9 \\
+    \text{Cutie} \color{blue}{\text{ [9]}} \color{gray}{\text{ CVPR'24}} &
+    91.43 & 3.97 & 0.629 &  0.44 & 9.8 &
+    90.44 & 4.05 & 0.600 &  0.40 & 9.6 \\
+    \text{LiVOS} \color{blue}{\text{ [29]}} \color{gray}{\text{ CVPR'25}} &
+    92.89 & 3.56 & 0.718 & -1.69 & 7.8 &
+    91.92 & 3.82 & 0.702 & -0.04 & 7.5 \\
+    \midrule
+    \text{SAMed-2} \color{blue}{\text{ [50]}} \color{gray}{\text{ MICCAI'25}} &
+    93.55 & 3.29 & 0.815 & -2.16 & 6.8 &
+    92.67 & 3.60 & 0.731 & -0.02 & 7.3 \\
+    \text{EchoVim} \color{blue}{\text{ [17]}} \color{gray}{\text{ ACM MM'25}} &
+    94.01 & 3.21 & 0.804 & -0.25 & 7.2 &
+    93.22 & 3.47 & 0.803 & -0.62 & 6.2 \\
+    \text{Vivim} \color{blue}{\text{ [52]}} \color{gray}{\text{ TCSVT'25}} &
+    93.36 & 3.45 & 0.817 & -0.09 & 7.3 &
+    92.49 & 3.70 & 0.758 &  1.43 & 7.0 \\
+    \text{GDKVM} \color{blue}{\text{ [47]}} \color{gray}{\text{ ICCV'25}} &
+    94.18 & 3.31 & 0.835 & -0.71 & 6.7 &
+    93.33 & 3.55 & 0.810 & -0.08 & 6.5 \\
+    \midrule
+    \textbf{\text{OSA}} &
+    \textbf{94.82} & \textbf{3.25} & \textbf{0.830} & \textbf{-0.44} & \textbf{7.0} &
+    \textbf{93.90} & \textbf{3.42} & \textbf{0.816} & \textbf{-1.08} & \textbf{6.0} \\
+    \bottomrule
+\end{array}
+$$
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">8</div>
+                    </div>
+                </div>
+
+                <!-- ================= Slide 9: Discussion ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
 
                     <!-- Sidebar -->
@@ -841,7 +916,7 @@
                             <div class="text-[#1a365d] text-[56px] font-bold mt-[20px]">Thanks!</div>
                         </div>
 
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">8</div>
+                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">9</div>
                     </div>
                 </div>
 
@@ -851,7 +926,7 @@
         <!-- 底部控制面板 -->
         <div class="flex items-center gap-5 bg-white px-[30px] py-[10px] rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] font-sans mt-4">
             <button id="prevBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70" disabled>&#9664; Prev</button>
-            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">8</span></div>
+            <div class="text-base font-bold text-gray-800 min-w-[80px] text-center"><span id="currentNum">1</span> / <span id="totalNum">9</span></div>
             <button id="nextBtn" class="bg-[#842043] text-white border-none px-5 py-2.5 rounded-full text-base cursor-pointer transition-colors duration-200 hover:bg-[#6D243A] disabled:bg-[#cccccc] disabled:cursor-not-allowed disabled:opacity-70">Next &#9654;</button>
         </div>
 
@@ -861,6 +936,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- MathJax for complex tables -->
+    <script>
+        MathJax = {
+            tex: {
+                packages: {'[+]': ['booktabs', 'color']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            loader: {
+                load: ['[tex]/booktabs', '[tex]/color']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
     <!-- 交互脚本 -->
     <script>
