@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.7;
+  line-height: 1.60;
   margin: 0;
 }
 
@@ -179,16 +179,16 @@ code {
 
 /* ===== Info Card ===== */
 .info-card {
-  background: rgb(249 250 251 / 0.6);
-  border: 1px solid rgb(229 231 235 / 0.8);
-  border-radius: 0.5rem;
+  background: rgb(250 249 245 / 0.6);
+  border: 1px solid rgb(240 238 230 / 0.8);
+  border-radius: 0.75rem;
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
 }
 
 .dark .info-card {
-  background: rgb(17 24 39 / 0.4);
-  border-color: rgb(75 85 99 / 0.4);
+  background: rgb(48 48 46 / 0.4);
+  border-color: rgb(48 48 46 / 0.4);
 }
 
 .info-card-title {
@@ -220,11 +220,11 @@ code {
   content: "•";
   position: absolute;
   left: 0;
-  color: rgb(156 163 175);
+  color: rgb(135 134 127);
 }
 
 .dark .about-list li::before {
-  color: rgb(156 163 175);
+  color: rgb(135 134 127);
 }
 
 /* ===== News List ===== */
@@ -245,7 +245,7 @@ code {
   content: ">";
   position: absolute;
   left: 0;
-  color: rgb(156 163 175);
+  color: rgb(135 134 127);
   font-weight: 600;
 }
 
@@ -265,14 +265,14 @@ code {
 }
 
 .honors-list .period {
-  color: rgb(107 114 128);
+  color: rgb(94 93 89);
   font-size: 0.75rem; /* text-xs - metadata */
   white-space: nowrap;
   margin-right: 1rem;
 }
 
 .dark .honors-list .period {
-  color: rgb(156 163 175);
+  color: rgb(135 134 127);
 }
 
 .honor-text {
@@ -349,11 +349,11 @@ details[open] .toggle-text-expanded {
 .timeline-container {
   margin-top: 1rem;
   padding-left: 1rem;
-  border-left: 2px solid rgb(229 231 235);
+  border-left: 2px solid rgb(240 238 230);
 }
 
 .dark .timeline-container {
-  border-color: rgb(75 85 99);
+  border-color: rgb(48 48 46);
 }
 
 .timeline-item {
@@ -371,13 +371,13 @@ details[open] .toggle-text-expanded {
   top: 0.25rem;
   width: 0.5rem;
   height: 0.5rem;
-  background: rgb(156 163 175);
+  background: rgb(135 134 127);
   border-radius: 50%;
 }
 
 .timeline-period {
   font-size: 0.875rem;
-  color: rgb(107 114 128);
+  color: rgb(94 93 89);
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
@@ -389,7 +389,7 @@ details[open] .toggle-text-expanded {
 
 .timeline-description {
   font-size: 0.9rem;
-  color: rgb(107 114 128);
+  color: rgb(94 93 89);
   margin-top: 0.25rem;
 }
 
@@ -403,14 +403,14 @@ details[open] .toggle-text-expanded {
 .timeline-tag {
   font-size: 0.75rem;
   padding: 0.125rem 0.5rem;
-  background: rgb(229 231 235);
+  background: rgb(232 230 220);
   border-radius: 9999px;
-  color: rgb(75 85 99);
+  color: rgb(77 76 72);
 }
 
 .dark .timeline-tag {
-  background: rgb(75 85 99);
-  color: rgb(209 213 219);
+  background: rgb(58 58 54);
+  color: rgb(176 174 165);
 }
 
 .timeline-tag[href] {
@@ -419,12 +419,12 @@ details[open] .toggle-text-expanded {
 }
 
 .timeline-tag[href]:hover {
-  background: rgb(209 213 219);
+  background: rgb(201 197 187);
   text-decoration: none;
 }
 
 .dark .timeline-tag[href]:hover {
-  background: rgb(107 114 128);
+  background: rgb(77 76 72);
 }
 
 /* ===== Works Page — Reveal.js PPT ===== */

@@ -11,32 +11,32 @@ export default {
         'noto-serif': ['"Noto Serif SC"', 'serif'],
       },
       colors: {
-        // Light theme colors
-        'bg-primary': '#FAF8F5',
-        'bg-dark': '#121212',
-        'text-primary': '#3d3d3d',
-        'text-dark': '#c9c9c9',
-        'heading-primary': '#1a1a1a',
-        'heading-dark': '#e8e8e8',
-        'link-primary': '#2563eb',
-        'link-dark': '#60a5fa',
-        'border-primary': '#E5E5E5',
-        'border-dark': '#2A2A2A',
-        'paper-bg': '#FFFFFF',
-        'paper-bg-dark': '#1E1E1E',
-        'paper-border': '#E5E5E5',
-        'paper-border-dark': '#2A2A2A',
-        'paper-accent': '#1e3a5f',
-        'paper-accent-dark': '#60a5fa',
-        // Tag colors
-        'tag-field-bg': '#dbeafe',
-        'tag-field-bg-dark': '#1e3a5f',
-        'tag-field-text': '#1e40af',
-        'tag-field-text-dark': '#93c5fd',
-        'tag-tech-bg': '#f3f4f6',
-        'tag-tech-bg-dark': '#3a3a3a',
-        'tag-tech-text': '#374151',
-        'tag-tech-text-dark': '#d1d5db',
+        // Light theme colors - Claude Design
+        'bg-primary': '#f5f4ed',       // Parchment
+        'bg-dark': '#141413',          // Deep Dark
+        'text-primary': '#3d3d3d',     // (keep)
+        'text-dark': '#c9c9c9',        // (keep)
+        'heading-primary': '#141413',  // Anthropic Near Black
+        'heading-dark': '#e8e8e8',      // (keep)
+        'link-primary': '#c96442',      // Terracotta Brand
+        'link-dark': '#d97757',         // Coral Accent
+        'border-primary': '#f0eee6',   // Border Cream
+        'border-dark': '#30302e',       // Dark Surface
+        'paper-bg': '#faf9f5',         // Ivory
+        'paper-bg-dark': '#30302e',    // Dark Surface
+        'paper-border': '#f0eee6',      // Border Cream
+        'paper-border-dark': '#30302e', // Dark Surface
+        'paper-accent': '#c96442',     // Terracotta Brand
+        'paper-accent-dark': '#d97757', // Coral Accent
+        // Tag colors - warm tones
+        'tag-field-bg': '#e8dcc8',      // Warm tan
+        'tag-field-bg-dark': '#3d3529', // Dark warm brown
+        'tag-field-text': '#5e4a3a',    // Dark brown
+        'tag-field-text-dark': '#c9b89a', // Light tan
+        'tag-tech-bg': '#e8e6dc',       // Warm sand
+        'tag-tech-bg-dark': '#3a3a36',  // Dark warm gray
+        'tag-tech-text': '#4d4c48',     // Charcoal warm
+        'tag-tech-text-dark': '#b0aea5', // Warm silver
         // Scholar badge colors
         'scholar-badge-bg': '#f6f6f6',
         'scholar-badge-bg-dark': '#2d2d2d',
@@ -46,9 +46,9 @@ export default {
         'scholar-badge-text': '#3d3d3d',
         'scholar-badge-text-dark': '#c9c9c9',
         'scholar-badge-count': '#4A90E2',
-        // Secondary text color
-        'text-secondary': '#6b7280',
-        'text-secondary-dark': '#9ca3af',
+        // Secondary text color - warm grays
+        'text-secondary': '#5e5d59',   // Olive Gray
+        'text-secondary-dark': '#87867f', // Stone Gray
       },
     },
   },

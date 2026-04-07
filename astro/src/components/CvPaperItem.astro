@@ -15,7 +15,7 @@ const corrSuffix = '*';
 ---
 
 <div class="relative pl-[55pt] mb-1.5">
-  <div class="absolute left-0 top-0 w-[52pt] text-[8.5pt] text-gray-600 dark:text-gray-400 font-bold break-words text-right">
+  <div class="absolute left-0 top-0 w-[52pt] text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold break-words text-right">
     [{paper.data.venue}]
   </div>
   <div class="flex flex-col gap-0.5">
@@ -24,19 +24,19 @@ const corrSuffix = '*';
     </div>
     <div class="text-[9pt] leading-snug">
       {localized.authors.map((author, i) => (
-        <span class={author.is_self ? 'text-heading-primary dark:text-heading-dark' : 'font-normal text-gray-500 dark:text-gray-400'}>
+        <span class={author.is_self ? 'text-heading-primary dark:text-heading-dark' : 'font-normal text-[#5e5d59] dark:text-[#87867f]'}>
           {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localized.authors.length - 1 ? sep : ''}
         </span>
       ))}
     </div>
     <div class="flex gap-2 mt-0.5">
       {paper.data.arxiv && (
-        <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-[8.5pt] text-gray-600 dark:text-gray-400 no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
+        <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
           [arXiv]
         </a>
       )}
       {paper.data.project && (
-        <a href={paper.data.project} target="_blank" rel="noopener" class="text-[8.5pt] text-gray-600 dark:text-gray-400 no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
+        <a href={paper.data.project} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
           [Project]
         </a>
       )}

@@ -101,16 +101,16 @@
       "type": "file"
     },
     {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 29,
+      "lastAccessed": 1775554645405,
+      "type": "file"
+    },
+    {
       "path": "astro/src",
       "accessCount": 28,
       "lastAccessed": 1775553511851,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 28,
-      "lastAccessed": 1775554635994,
-      "type": "file"
     },
     {
       "path": "astro/src/styles/global.css",
