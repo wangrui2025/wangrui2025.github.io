@@ -96,8 +96,8 @@
   "hotPaths": [
     {
       "path": "astro/public/works.html",
-      "accessCount": 29,
-      "lastAccessed": 1775547759507,
+      "accessCount": 30,
+      "lastAccessed": 1775547882181,
       "type": "file"
     },
     {
@@ -167,6 +167,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775547929383,
+      "type": "file"
+    },
+    {
       "path": "astro/src/pages/works.astro",
       "accessCount": 5,
       "lastAccessed": 1775209498269,
@@ -195,12 +201,6 @@
       "accessCount": 5,
       "lastAccessed": 1775527778525,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775538254582,
-      "type": "file"
     },
     {
       "path": "CLAUDE.md",
