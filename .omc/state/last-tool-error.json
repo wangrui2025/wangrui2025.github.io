@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git fetch origin && git reset --hard origin/main && git push --force\"}",
+  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
+  "timestamp": "2026-04-08T09:26:22.336Z",
+  "retry_count": 6
+}
