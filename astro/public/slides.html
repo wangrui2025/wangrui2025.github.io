@@ -11,10 +11,7 @@
             text-orientation: mixed;
             transform: rotate(180deg);
         }
-        /* 核心修复：强制压缩 MathJax 和 KaTeX 的默认块级公式外边距，防止页面被撑爆溢出 */
-        mjx-container[jax="CHTML"][display="true"] {
-            margin: 0.1em 0 !important;
-        }
+        /* 核心修复：强制压缩 KaTeX 的默认块级公式外边距，防止页面被撑爆溢出 */
         .katex-display {
             margin: 0.1em 0 !important;
         }
@@ -28,7 +25,7 @@
         <div class="w-[1280px] h-[720px] bg-white relative shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform">
             <!-- 幻灯片轨道 -->
             <div id="slideTrack" class="flex h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
-
+                
                 <!-- ================= Slide 1: 首页 ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col">
 
@@ -142,7 +139,7 @@
 
                     <!-- 两栏布局结构 -->
                     <div class="w-full flex-1 flex gap-10 mt-2 mb-6">
-
+                        
                         <!-- 左栏：文本说明 -->
                         <div class="w-[50%] flex flex-col gap-8 text-[22px] leading-[1.5] text-black pr-4">
                             <div>
@@ -150,9 +147,9 @@
                                 <div class="flex pl-2">
                                     <span class="mr-3 text-[#861F41] font-bold">•</span>
                                     <p class="text-[21px]">
-                                        <span class="font-bold text-gray-500">(a)</span> Speckle Noise,
-                                        <span class="font-bold text-gray-500">(b)</span> Blurred Contours, and
-                                        <span class="font-bold text-gray-500">(c-f)</span> Pronounced Variations in Morphology
+                                        <span class="font-bold text-gray-500">(a)</span> Speckle Noise, 
+                                        <span class="font-bold text-gray-500">(b)</span> Blurred Contours, and 
+                                        <span class="font-bold text-gray-500">(c-f)</span> Pronounced Variations in the Target's Morphology Across the Cardiac Cycle
                                     </p>
                                 </div>
                             </div>
@@ -162,8 +159,9 @@
                                 <div class="flex pl-2">
                                     <span class="mr-3 text-[#861F41] font-bold">-</span>
                                     <p class="text-[21px]">
-                                        <span class="font-bold text-gray-500">(a)</span> Extended Temporal Contexts,
-                                        <span class="font-bold text-gray-500">(b)</span> Efficiency–Accuracy Trade-off
+                                        <span class="font-bold text-gray-500">(a)</span> Extended Temporal Contexts, 
+                                        <span class="font-bold text-gray-500">(b)</span> Efficiency–Accuracy Trade-off in Recall, 
+                                        <span class="font-bold text-gray-500">(c)</span> Computational Burden
                                     </p>
                                 </div>
                             </div>
@@ -173,7 +171,7 @@
                                 <div class="flex pl-2">
                                     <span class="mr-3 text-[#861F41] font-bold">-</span>
                                     <p class="text-[21px]">
-                                        Clinical Simulation Setting — Absence of Ground Truth at Inference
+                                        Clinical Simulation Setting — Absence of Ground Truth at Inference; Training via Boundary-Frame Prediction and Loss Computation
                                     </p>
                                 </div>
                             </div>
@@ -185,7 +183,7 @@
                             <div class="flex-1 bg-[#f8fafc] border-[3px] border-dashed border-[#861F41]/30 rounded-2xl flex items-center justify-center shadow-inner">
                                 <span class="text-[#64748b] text-2xl font-bold tracking-wide">Top Image Placeholder</span>
                             </div>
-
+                            
                             <!-- 下面组合的空白长方形 -->
                             <div class="flex-1 bg-[#f8fafc] border-[3px] border-dashed border-[#861F41]/30 rounded-2xl flex items-center justify-center shadow-inner">
                                 <div class="text-center">
@@ -202,7 +200,7 @@
 
                 <!-- ================= Slide 4: Method Overview ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden">
-
+                    
                     <div class="flex justify-between items-end mb-3">
                         <h1 class="text-[44px] font-bold text-[#861F41]">Method</h1>
                         <!-- Header Logos -->
@@ -227,7 +225,7 @@
 
                 <!-- ================= Slide 5: Method OSU ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-6 px-12 overflow-hidden text-black">
-
+                    
                     <div class="relative w-full flex justify-between items-start mb-2">
                         <div class="w-[75%] flex flex-col mt-2">
                             <h1 class="text-[44px] font-bold text-[#861F41] mb-2">Method</h1>
@@ -242,16 +240,16 @@
                     </div>
 
                     <div class="w-full flex-1 flex gap-4 px-4">
-
+                        
                         <div class="w-[55%] flex flex-col justify-between pb-6">
                             <div class="leading-relaxed tracking-wide w-full flex flex-col gap-[6px]">
-
-                                <!-- 公式 1: Euc State Update -->
+                                
+                                <!-- 公式 1: Euc State Update (w-fit mx-auto 缩小左右空白) -->
                                 <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto">
                                     <div class="text-[15px] font-mono text-[#0f172a] leading-tight">
                                         $$\begin{aligned}
                                         \mathbf{S}_t^{\text{Euc}} &= \mathbf{S}_{t-1}\left(\alpha_t (\mathbf{I}_{C_k} - \beta_t \mathbf{k}_t \mathbf{k}_t^\top)\right) + \beta_t \mathbf{v}_t \mathbf{k}_t^\top \\
-                                        &= \underset{\mathbf{S} \in \mathbb{R}^{C_v \times C_k}}{\arg\min} \left( \ell_t(\mathbf{S}) + \frac{1}{2} \|\mathbf{S} - \alpha_t \mathbf{S}_{t-1}\|_F^2 \right).
+                                        &= \underset{\mathbf{S} \in \mathbb{R}^{C_v \times C_k}}{\arg \min} \left( \ell_t(\mathbf{S}) + \frac{1}{2} \|\mathbf{S} - \alpha_t \mathbf{S}_{t-1}\|_F^2 \right).
                                         \end{aligned}$$
                                     </div>
                                 </div>
@@ -263,10 +261,10 @@
                                     </div>
                                 </div>
 
-                                <!-- 公式 3: 投影操作 -->
+                                <!-- 公式 3: 投影操作 (带argmin) -->
                                 <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto mt-1">
                                     <div class="text-[15px] font-mono text-[#0f172a]">
-                                        $$\mathbf{S}_t = \operatorname{Proj}_{\mathcal{V}}(\mathbf{S}_t^{\text{Euc}}) = \underset{\mathbf{S} \in \mathcal{V}_{C_v, C_k}}{\arg\min} \frac{1}{2} \|\mathbf{S} - \mathbf{S}_t^{\text{Euc}}\|_F^2.$$
+                                        $$\mathbf{S}_t = \operatorname{Proj}_{\mathcal{V}}(\mathbf{S}_t^{\text{Euc}}) = \underset{\mathbf{S} \in \mathcal{V}_{C_v, C_k}}{\arg \min} \frac{1}{2} \|\mathbf{S} - \mathbf{S}_t^{\text{Euc}}\|_F^2.$$
                                     </div>
                                 </div>
 
@@ -279,22 +277,28 @@
 
                             </div>
 
-                            <div class="w-full h-[140px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg mt-2">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Flowchart Placeholder</span>
+                            <!-- 调整：左侧流程图占位框 -> 16:9 -->
+                            <div class="w-[95%] mx-auto aspect-video bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg mt-auto">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Flowchart Placeholder (16:9)</span>
                                 <span class="text-gray-400 text-sm mt-1">(Diagram of OSU)</span>
                             </div>
                         </div>
 
-                        <div class="w-[45%] flex flex-col justify-between pb-6">
-                            <div class="w-full h-[140px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Table Placeholder</span>
+                        <!-- 调整：右侧区域使用 flex 和 gap-6 堆叠布局，底部对齐 -->
+                        <div class="w-[45%] flex flex-col items-center justify-end pb-6 gap-6">
+                            
+                            <!-- 调整：右侧上方表格占位框 -> 2:1 -->
+                            <div class="w-full aspect-[2/1] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Table Placeholder (2:1)</span>
                                 <span class="text-gray-400 text-sm mt-1">(Equation Comparison)</span>
                             </div>
 
-                            <div class="w-full h-[180px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Charts Placeholder</span>
+                            <!-- 调整：右侧下方图表占位框 -> 1:1 -->
+                            <div class="h-[250px] aspect-square bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Charts Placeholder (1:1)</span>
                                 <span class="text-gray-400 text-sm mt-1">(Data Visualization)</span>
                             </div>
+                            
                         </div>
 
                     </div>
@@ -304,7 +308,7 @@
 
                 <!-- ================= Slide 6: Method APFE ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-8 px-12 overflow-hidden text-black">
-
+                    
                     <div class="relative w-full flex justify-between items-start mb-2">
                         <div class="w-[75%] flex flex-col mt-2">
                             <h1 class="text-[44px] font-bold text-[#861F41] mb-2">Method</h1>
@@ -318,61 +322,49 @@
                         <span>Anatomical Prior-aware Feature Enhancement</span>
                     </div>
 
-                    <div class="w-full flex-1 flex gap-4 px-4">
-
-                        <div class="w-[55%] flex flex-col justify-between pb-6">
-                            <div class="leading-relaxed tracking-wide w-full flex flex-col gap-6 mt-4">
-                                <div class="flex flex-col gap-[6px]">
-
-                                    <!-- 公式 1: AvgPool -->
-                                    <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto">
-                                        <div class="text-[15px] font-mono text-[#0f172a]">
-                                            $$\mathbf{M}_t = \mathrm{AvgPool}_{K \times K}(\mathbf{X}_t)$$
-                                        </div>
-                                    </div>
-
-                                    <!-- 公式 2: X_t+ / X_t- -->
-                                    <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto">
-                                        <div class="text-[15px] font-mono text-[#0f172a]">
-                                            $$\mathbf{X}_t^{+} = \mathrm{ReLU}(\mathbf{X}_t - \mathbf{M}_t), \quad \mathbf{X}_t^{-} = \mathrm{ReLU}(\mathbf{M}_t - \mathbf{X}_t)$$
-                                        </div>
-                                    </div>
-
-                                    <!-- 公式 3: H_t+ / H_t- -->
-                                    <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto">
-                                        <div class="text-[15px] font-mono text-[#0f172a]">
-                                            $$\mathbf{H}_t^{+} = \phi^{+}(\mathbf{X}_t^{+}), \quad \mathbf{H}_t^{-} = \phi^{-}(\mathbf{X}_t^{-})$$
-                                        </div>
-                                    </div>
-
-                                    <!-- 公式 4: Gating -->
-                                    <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[2px] px-[20px] text-center w-fit mx-auto">
-                                        <div class="text-[15px] font-mono text-[#0f172a] leading-tight">
-                                            $$\begin{aligned}
-                                            \lambda_t &= \sigma\!\left( \mathbf{W}_g \left[\mathbf{H}_t^{+};\, \mathbf{H}_t^{-}\right] \right), \\
-                                            \mathbf{Z}_t &= \lambda_t \odot \mathbf{H}_t^{+} + (1 - \lambda_t) \odot \mathbf{H}_t^{-}
-                                            \end{aligned}$$
-                                        </div>
-                                    </div>
-
+                    <div class="w-full flex-1 flex gap-8 px-4 mt-2 mb-6">
+                        
+                        <!-- 左边：纯公式区域 -->
+                        <div class="w-[50%] flex flex-col justify-center gap-8 pb-4">
+                            
+                            <!-- 公式 1: AvgPool -->
+                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[6px] px-[20px] text-center w-fit mx-auto shadow-sm">
+                                <div class="text-[16px] font-mono text-[#0f172a]">
+                                    $$\mathbf{M}_t = \mathrm{AvgPool}_{K \times K}(\mathbf{X}_t)$$
                                 </div>
                             </div>
 
-                            <div class="w-full h-[180px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg mt-auto">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Flowchart Placeholder</span>
-                                <span class="text-gray-400 text-sm mt-1">(Diagram of APFE)</span>
+                            <!-- 公式 2: X_t+ / X_t- -->
+                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[6px] px-[20px] text-center w-fit mx-auto shadow-sm">
+                                <div class="text-[16px] font-mono text-[#0f172a]">
+                                    $$\mathbf{X}_t^{+} = \mathrm{ReLU}(\mathbf{X}_t - \mathbf{M}_t), \quad \mathbf{X}_t^{-} = \mathrm{ReLU}(\mathbf{M}_t - \mathbf{X}_t)$$
+                                </div>
                             </div>
+
+                            <!-- 公式 3: H_t+ / H_t- -->
+                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[6px] px-[20px] text-center w-fit mx-auto shadow-sm">
+                                <div class="text-[16px] font-mono text-[#0f172a]">
+                                    $$\mathbf{H}_t^{+} = \phi^{+}(\mathbf{X}_t^{+}), \quad \mathbf{H}_t^{-} = \phi^{-}(\mathbf{X}_t^{-})$$
+                                </div>
+                            </div>
+
+                            <!-- 公式 4: Gating -->
+                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#861F41] rounded-[6px] py-[6px] px-[20px] text-center w-fit mx-auto shadow-sm">
+                                <div class="text-[16px] font-mono text-[#0f172a] leading-tight">
+                                    $$\begin{aligned}
+                                    \lambda_t &= \sigma\!\left( \mathbf{W}_g \left[\mathbf{H}_t^{+};\, \mathbf{H}_t^{-}\right] \right), \\
+                                    \mathbf{Z}_t &= \lambda_t \odot \mathbf{H}_t^{+} + (1 - \lambda_t) \odot \mathbf{H}_t^{-}
+                                    \end{aligned}$$
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="w-[45%] flex flex-col justify-between pb-6">
-                            <div class="w-full h-[140px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Table Placeholder</span>
-                                <span class="text-gray-400 text-sm mt-1">(Ablation Study)</span>
-                            </div>
-
-                            <div class="w-full h-[200px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
-                                <span class="text-gray-400 text-lg font-bold tracking-wide">Charts Placeholder</span>
-                                <span class="text-gray-400 text-sm mt-1">(Data Visualization)</span>
+                        <!-- 右边：一个单一的空白方块 -->
+                        <div class="w-[50%] flex flex-col items-center justify-center pb-4 pr-6">
+                            <div class="w-full h-full min-h-[400px] bg-[#f8fafc] border-[3px] border-dashed border-[#861F41]/30 rounded-2xl flex flex-col items-center justify-center shadow-inner">
+                                <span class="text-[#64748b] text-2xl font-bold tracking-wide">Image / Diagram Placeholder</span>
+                                <span class="text-[#94a3b8] text-base mt-2">(Please insert large figure here)</span>
                             </div>
                         </div>
 
@@ -383,7 +375,7 @@
 
                 <!-- ================= Slide 7: Experiments (Part 1) ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
-
+                    
                     <div class="flex justify-between items-end mb-3">
                         <h1 class="text-[44px] font-bold text-[#861F41]">Experiments</h1>
                         <!-- Header Logos -->
@@ -404,7 +396,7 @@
 
                 <!-- ================= Slide 8: Experiments (Part 2) ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
-
+                    
                     <div class="flex justify-between items-end mb-3">
                         <h1 class="text-[44px] font-bold text-[#861F41]">Experiments</h1>
                         <!-- Header Logos -->
@@ -425,7 +417,7 @@
 
                 <!-- ================= Slide 9: Discussion (Future Work) ================= -->
                 <div class="w-[1280px] h-[720px] shrink-0 bg-white relative overflow-hidden">
-
+                    
                     <div class="absolute top-[50px] left-[60px] right-[60px] flex justify-between items-start">
                         <div class="flex flex-col w-[76%]">
                             <h1 class="text-[48px] font-bold text-[#861F41] mb-4">Discussion</h1>
@@ -441,14 +433,14 @@
                                 <span class="font-bold text-[#861F41]">Generality:</span> Extend to broader ultrasound datasets.
                             </p>
                         </div>
-
+                        
                         <div class="flex items-start">
                             <span class="text-[#861F41] text-[30px] mr-5 leading-[1.6]">•</span>
                             <p class="text-[30px] leading-[1.6] text-black">
                                 <span class="font-bold text-[#861F41]">Harder video tasks:</span> Tackle longer sequences, complex rhythms, and <br>difficult cases.
                             </p>
                         </div>
-
+                        
                         <div class="flex items-start">
                             <span class="text-[#861F41] text-[30px] mr-5 leading-[1.6]">•</span>
                             <p class="text-[30px] leading-[1.6] text-black">
@@ -525,25 +517,10 @@
 
     </div>
 
-    <!-- KaTeX for math rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js"></script>
+    <!-- KaTeX for math rendering (更稳定、更快速的方案) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-
-    <!-- MathJax for complex tables -->
-    <script>
-        MathJax = {
-            tex: {
-                packages: {'[+]': ['booktabs', 'color']},
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            },
-            loader: {
-                load: ['[tex]/booktabs', '[tex]/color']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
     <!-- 交互脚本 -->
     <script>
@@ -637,7 +614,7 @@
         });
 
         // 触摸/滑动支持
-        const slideContainer = document.querySelector('.w-\\[1280px\\]');
+        const slideContainer = document.querySelector('.w\\[1280px\\].h\\[720px\\]');
         if (slideContainer) {
             slideContainer.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
@@ -672,21 +649,15 @@
             // 渲染 Header Logos
             renderHeaderLogos();
 
-            // KaTeX 渲染公式
+            // KaTeX 渲染公式 (添加错误容忍配置)
             if (typeof renderMathInElement !== 'undefined') {
                 renderMathInElement(document.body, {
                     delimiters: [
                         {left: '$$', right: '$$', display: true},
                         {left: '$', right: '$', display: false}
                     ],
-                    throwOnError: false
-                });
-            }
-
-            // MathJax 渲染公式
-            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-                MathJax.typesetPromise().catch(function(err) {
-                    console.log('MathJax typeset failed:', err);
+                    throwOnError: false, // 防止个别公式错误导致整个页面公式崩溃
+                    strict: false
                 });
             }
 
