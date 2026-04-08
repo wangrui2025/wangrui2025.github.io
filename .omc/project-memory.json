@@ -95,21 +95,21 @@
   },
   "hotPaths": [
     {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 32,
+      "lastAccessed": 1775610831285,
+      "type": "file"
+    },
+    {
       "path": "astro/public/works.html",
       "accessCount": 30,
       "lastAccessed": 1775547882181,
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 29,
-      "lastAccessed": 1775554645405,
-      "type": "file"
-    },
-    {
       "path": "astro/src",
-      "accessCount": 28,
-      "lastAccessed": 1775553511851,
+      "accessCount": 29,
+      "lastAccessed": 1775610785615,
       "type": "directory"
     },
     {
@@ -179,6 +179,12 @@
       "type": "file"
     },
     {
+      "path": "astro",
+      "accessCount": 7,
+      "lastAccessed": 1775610806686,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/content/scholar/stats.json",
       "accessCount": 6,
       "lastAccessed": 1775473215327,
@@ -195,12 +201,6 @@
       "accessCount": 6,
       "lastAccessed": 1775553727577,
       "type": "file"
-    },
-    {
-      "path": "astro",
-      "accessCount": 6,
-      "lastAccessed": 1775553732576,
-      "type": "directory"
     },
     {
       "path": "astro/src/pages/works.astro",
@@ -230,6 +230,12 @@
       "path": "astro/src/components/Sidebar.astro",
       "accessCount": 5,
       "lastAccessed": 1775553740814,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/index.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775610802084,
       "type": "file"
     },
     {
@@ -266,12 +272,6 @@
       "path": "astro/src/pages/[lang]/index.astro",
       "accessCount": 4,
       "lastAccessed": 1775553523117,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/index.astro",
-      "accessCount": 4,
-      "lastAccessed": 1775553531419,
       "type": "file"
     },
     {
@@ -347,6 +347,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/layouts",
+      "accessCount": 2,
+      "lastAccessed": 1775610815505,
+      "type": "directory"
+    },
+    {
       "path": ".claude/state/dialogue-count",
       "accessCount": 1,
       "lastAccessed": 1775199769455,
@@ -374,12 +380,6 @@
       "path": ".claude/knowledge/cases",
       "accessCount": 1,
       "lastAccessed": 1775205140194,
-      "type": "directory"
-    },
-    {
-      "path": "astro/src/layouts",
-      "accessCount": 1,
-      "lastAccessed": 1775206412582,
       "type": "directory"
     },
     {

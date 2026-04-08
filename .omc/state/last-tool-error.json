@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git add astro/src/content/homepage/zh.json astro/src/content/homepage/en.json && git commit -m \\\"refactor(homepage): remove emojis from section titles\\\" && git push\",\"description\":\"Commit ...",
-  "error": "Exit code 1\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   .omc/project-memory.json\n\tmodified:   astro/.omc/state/agent-replay-cd189b81-83c7-416e-89a4-1e073988788d.jsonl\n\tmodified:   astro/.omc/state/last-tool-error.json\n\tmodified:   astro/.omc/state/mission-state.json\n\tmodified:   astro/.omc/state/subagent...",
-  "timestamp": "2026-04-07T09:51:26.980Z",
-  "retry_count": 2
-}
