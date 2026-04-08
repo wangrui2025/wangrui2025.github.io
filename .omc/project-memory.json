@@ -109,6 +109,12 @@
       "accessCount": 1,
       "lastAccessed": 1775639989561,
       "type": "file"
+    },
+    {
+      "path": "astro/src/pages/slides.html",
+      "accessCount": 1,
+      "lastAccessed": 1775640649431,
+      "type": "directory"
     }
   ],
   "userDirectives": []
