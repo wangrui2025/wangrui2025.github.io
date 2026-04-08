@@ -162,7 +162,7 @@ const TOTAL_SLIDES = 10;
           </div>
         </div>
 
-        <!-- ================= Slide 5: Method OSU ================= -->
+        <!-- ================= Slide 5: Method APFE ================= -->
         <div class="slide" data-index="4" style="width: 1280px; height: 720px; flex-shrink: 0;">
           <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 24px 48px; overflow: hidden; color: black;">
             <div style="position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
@@ -172,27 +172,31 @@ const TOTAL_SLIDES = 10;
               </div>
             </div>
             <div style="font-size: 26px; font-weight: bold; margin-bottom: 8px; margin-left: 16px; color: #861F41; display: flex; align-items: center; gap: 12px;">
-              <span>-</span><span>Orthogonalized State Update (OSU)</span>
+              <span>-</span><span>Anatomical Prior-aware Feature Enhancement</span>
             </div>
             <div style="width: 100%; flex: 1; display: flex; gap: 16px; padding: 0 16px;">
               <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
-                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 6px;">
+                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+
                   <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
-                    <div style="font-size: 15px; font-family: monospace; color: #0f172a; line-height: 1.25;">S_t^Euc formula</div>
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{M}_t = \\mathrm{AvgPool}_{K \\times K}(\\mathbf{X}_t)$$" />
                   </div>
-                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
-                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Stiefel Manifold definition</div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto; margin-top: 4px;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{X}_t^{+} = \\mathrm{ReLU}(\\mathbf{X}_t - \\mathbf{M}_t), \\quad \\mathbf{X}_t^{-} = \\mathrm{ReLU}(\\mathbf{M}_t - \\mathbf{X}_t)$$" />
                   </div>
-                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
-                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Projection operation</div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto; margin-top: 4px;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{H}_t^{+} = \\phi^{+}(\\mathbf{X}_t^{+}), \\quad \\mathbf{H}_t^{-} = \\phi^{-}(\\mathbf{X}_t^{-})$$" />
                   </div>
-                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
-                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Newton-Schulz initialization</div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto; margin-top: 4px;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a; line-height: 1.25;" set:html="$$\\begin{aligned} \\lambda_t &= \\sigma\\!\\left( \\mathbf{W}_g \\left[\\mathbf{H}_t^{+};\\, \\mathbf{H}_t^{-}\\right] \\right), \\\\\\n                      \\mathbf{Z}_t &= \\lambda_t \\odot \\mathbf{H}_t^{+} + (1 - \\lambda_t) \\odot \\mathbf{H}_t^{-} \\end{aligned}$$" />
                   </div>
+
                 </div>
                 <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px; margin-top: 8px;">
-                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Flowchart Placeholder</span>
-                  <span style="color: #9ca3af; font-size: 14px; margin-top: 4px;">(Diagram of OSU)</span>
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">APFE Architecture Diagram</span>
                 </div>
               </div>
               <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
@@ -208,49 +212,45 @@ const TOTAL_SLIDES = 10;
           </div>
         </div>
 
-        <!-- ================= Slide 6: Method APFE ================= -->
+        <!-- ================= Slide 6: Method OSU ================= -->
         <div class="slide" data-index="5" style="width: 1280px; height: 720px; flex-shrink: 0;">
-          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 32px 48px; overflow: hidden; color: black;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 24px 48px; overflow: hidden; color: black;">
             <div style="position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
               <div style="width: 75%; display: flex; flex-direction: column; margin-top: 8px;">
                 <h1 style="font-size: 44px; font-weight: bold; margin-bottom: 8px; color: #861F41;">Method</h1>
                 <div style="width: 100%; height: 2.5px; background: #861F41;"></div>
               </div>
             </div>
-            <div style="font-size: 26px; font-weight: bold; margin-bottom: 12px; margin-left: 16px; color: #861F41; display: flex; align-items: center; gap: 12px;">
-              <span>-</span><span>Anatomical Prior-aware Feature Enhancement</span>
+            <div style="font-size: 26px; font-weight: bold; margin-bottom: 8px; margin-left: 16px; color: #861F41; display: flex; align-items: center; gap: 12px;">
+              <span>-</span><span>Orthogonalized State Update</span>
             </div>
             <div style="width: 100%; flex: 1; display: flex; gap: 16px; padding: 0 16px;">
               <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
-                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 24px; margin-top: 16px;">
-                  <div style="display: flex; flex-direction: column; gap: 16px;">
-                    <div style="display: flex; align-items: flex-start;">
-                      <div style="flex: 1;">
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 6px 24px; text-align: center; width: fit-content; margin: 0 auto;">
-                          <span style="font-size: 18px; font-family: monospace; color: #0f172a;">M_t = AvgPool(X_t)</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; margin-top: 8px;">
-                      <div style="flex: 1;">
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 6px 24px; text-align: center; width: fit-content; margin: 0 auto;">
-                          <span style="font-size: 16px; font-family: monospace; color: #0f172a;">X_t+ = ReLU(X_t - M_t)</span>
-                        </div>
-                      </div>
-                    </div>
+                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 12px 20px; text-align: center; width: fit-content; margin: 0 auto;">
+                    <div style="font-size: 16px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{S}_t = \\mathbf{W}_s \\mathbf{S}_{t-1} + \\mathbf{W}_x \\mathbf{X}_t$$" />
                   </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 12px 20px; text-align: center; width: fit-content; margin: 0 auto; margin-top: 4px;">
+                    <div style="font-size: 16px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{S}_t^{\\perp} = \\mathbf{S}_t - \\sum_{i=1}^{t-1} \\frac{\\langle \\mathbf{S}_t, \\mathbf{S}_i \\rangle}{\\langle \\mathbf{S}_i, \\mathbf{S}_i \\rangle} \\mathbf{S}_i$$" />
+                  </div>
+
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 12px 20px; text-align: center; width: fit-content; margin: 0 auto; margin-top: 4px;">
+                    <div style="font-size: 16px; font-family: monospace; color: #0f172a;" set:html="$$\\mathbf{H}_t = \\phi(\\mathbf{S}_t^{\\perp})$$" />
+                  </div>
+
                 </div>
-                <div style="width: 100%; height: 180px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px; margin-top: auto;">
-                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Flowchart Placeholder</span>
-                  <span style="color: #9ca3af; font-size: 14px; margin-top: 4px;">(Diagram of APFE)</span>
+                <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px; margin-top: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">OSU Architecture Diagram</span>
                 </div>
               </div>
               <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
-                <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
-                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Table Placeholder</span>
-                </div>
                 <div style="width: 100%; height: 200px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
-                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Charts Placeholder</span>
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">State Transition Visualization</span>
+                </div>
+                <div style="width: 100%; height: 180px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Orthogonalization Process</span>
                 </div>
               </div>
             </div>
