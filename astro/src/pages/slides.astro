@@ -1,0 +1,480 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const PRIMARY_COLOR = '#861F41';
+const TOTAL_SLIDES = 10;
+---
+
+<BaseLayout title="OSA Presentation - Slides" description="Academic presentation slides for OSA paper">
+  <div class="slides-container" style="background: #e0e0e0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px;">
+
+    <!-- Slide Viewport -->
+    <div class="slide-viewport" style="width: 1280px; height: 720px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative; overflow: hidden;">
+
+      <!-- Slide Track -->
+      <div id="slideTrack" style="display: flex; height: 100%; transition: transform 0.5s ease-out;">
+
+        <!-- ================= Slide 1: Title ================= -->
+        <div class="slide" data-index="0" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; display: flex; flex-direction: column;">
+            <!-- Header -->
+            <div style="height: 24%; display: flex; justify-content: space-between; align-items: center; padding: 0 60px;">
+              <div style="display: flex; align-items: center; gap: 8px; color: #861F41;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                  <div style="font-size: 56px; font-weight: 900; line-height: 0.85; letter-spacing: -1px;">arXiv</div>
+                  <div style="font-size: 16px; font-weight: bold; margin-top: 4px; letter-spacing: 0.5px;">PREPRINT 2026</div>
+                </div>
+                <svg viewBox="0 0 100 100" width="60" height="60" style="fill: #861F41;">
+                  <path d="M50 15 C60 15 70 30 65 45 C80 40 95 50 85 60 C90 75 75 85 60 80 C55 95 35 90 40 75 C25 80 10 70 20 55 C10 40 25 30 40 40 C35 25 45 15 50 15 Z"/>
+                  <circle cx="50" cy="50" r="8" fill="#F8C471"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                  <div style="font-size: 22px; font-weight: bold; line-height: 1; letter-spacing: 1px;">SHENZHEN</div>
+                  <div style="font-size: 38px; font-weight: bold; line-height: 0.9;">UNIVERSITY</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 25px;">
+                <div style="width: 90px; height: 90px; border-radius: 50%; border: 1.5px solid #861F41; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #861F41; font-size: 12px; text-align: center; background: white;">
+                  <span>SZU</span><span>Logo</span>
+                </div>
+                <svg width="80" height="80" viewBox="0 0 100 100">
+                  <rect x="20" y="20" width="30" height="30" fill="#861F41"/>
+                  <rect x="55" y="20" width="30" height="30" fill="#861F41"/>
+                  <rect x="20" y="55" width="30" height="30" fill="#861F41"/>
+                  <rect x="55" y="55" width="30" height="30" stroke="#861F41" stroke-width="8" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Banner -->
+            <div style="height: 38%; background: #861F41; display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 40px;">
+              <div style="color: white; font-weight: bold; line-height: 1.3; font-size: 35px; letter-spacing: -0.5px;">
+                OSA: Echocardiography Video Segmentation via<br/>
+                Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement
+              </div>
+            </div>
+            <!-- Footer -->
+            <div style="height: 38%; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding-top: 50px; text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 12px;">
+                Rui Wang<sup style="font-size: 14px; margin-left: 2px;">1</sup>, Huisi Wu<sup style="font-size: 14px; margin-left: 2px;">1*</sup>, Jing Qin<sup style="font-size: 14px; margin-left: 2px;">2</sup>
+              </div>
+              <div style="font-size: 16px; line-height: 1.6;">
+                <sup style="font-size: 12px; margin-right: 4px;">1</sup>College of Computer Science and Software Engineering, Shenzhen University<br/>
+                <sup style="font-size: 12px; margin-right: 4px;">2</sup>Centre for Smart Health, School of Nursing, The Hong Kong Polytechnic University
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 2: Contents ================= -->
+        <div class="slide" data-index="1" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; display: flex; flex-direction: row;">
+            <div style="width: 35%; background: #861F41; display: flex; justify-content: center; align-items: center;">
+              <div style="color: white; font-size: 64px; font-weight: bold; letter-spacing: 1px;">Contents</div>
+            </div>
+            <div style="width: 65%; position: relative; display: flex; justify-content: center; align-items: center;">
+              <div style="display: flex; flex-direction: column; gap: 50px; margin-top: -20px;">
+                <div style="display: flex; align-items: center;">
+                  <div style="font-size: 46px; font-weight: bold; width: 65px; text-align: right; color: #861F41;">01</div>
+                  <div style="width: 2px; height: 42px; background: black; margin: 0 25px;"></div>
+                  <div style="color: black; font-size: 38px; font-weight: bold; letter-spacing: 0.5px;">Problem Setting</div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <div style="font-size: 46px; font-weight: bold; width: 65px; text-align: right; color: #861F41;">02</div>
+                  <div style="width: 2px; height: 42px; background: black; margin: 0 25px;"></div>
+                  <div style="color: black; font-size: 38px; font-weight: bold; letter-spacing: 0.5px;">Method</div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <div style="font-size: 46px; font-weight: bold; width: 65px; text-align: right; color: #861F41;">03</div>
+                  <div style="width: 2px; height: 42px; background: black; margin: 0 25px;"></div>
+                  <div style="color: black; font-size: 38px; font-weight: bold; letter-spacing: 0.5px;">Experiments</div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <div style="font-size: 46px; font-weight: bold; width: 65px; text-align: right; color: #861F41;">04</div>
+                  <div style="width: 2px; height: 42px; background: black; margin: 0 25px;"></div>
+                  <div style="color: black; font-size: 38px; font-weight: bold; letter-spacing: 0.5px;">Discussion</div>
+                </div>
+              </div>
+              <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 3: Problem Setting ================= -->
+        <div class="slide" data-index="2" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 32px 60px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+              <h1 style="font-size: 48px; font-weight: bold; color: #861F41;">Problem Setting</h1>
+            </div>
+            <div style="width: 100%; height: 2px; background: #861F41; margin-bottom: 24px;"></div>
+            <div style="width: 100%; flex: 1; display: flex; gap: 40px; margin-top: 8px; margin-bottom: 24px;">
+              <!-- Left: Text -->
+              <div style="width: 50%; display: flex; flex-direction: column; gap: 32px; font-size: 22px; line-height: 1.5; color: black; padding-right: 16px;">
+                <div>
+                  <h2 style="font-weight: bold; margin-bottom: 8px; color: #861F41;">Medical</h2>
+                  <p style="font-size: 21px; padding-left: 8px;">
+                    <span style="font-weight: bold; color: #6b7280;">(a)</span> Speckle Noise,
+                    <span style="font-weight: bold; color: #6b7280;">(b)</span> Blurred Contours, and
+                    <span style="font-weight: bold; color: #6b7280;">(c-f)</span> Pronounced Variations in Morphology
+                  </p>
+                </div>
+                <div>
+                  <h2 style="font-weight: bold; margin-bottom: 8px; color: #861F41;">Video</h2>
+                  <p style="font-size: 21px; padding-left: 8px;">
+                    <span style="font-weight: bold; color: #6b7280;">(a)</span> Extended Temporal Contexts,
+                    <span style="font-weight: bold; color: #6b7280;">(b)</span> Efficiency-Accuracy Trade-off
+                  </p>
+                </div>
+                <div>
+                  <h2 style="font-weight: bold; margin-bottom: 8px; color: #861F41;">Task</h2>
+                  <p style="font-size: 21px; padding-left: 8px;">
+                    Clinical Simulation Setting - Absence of Ground Truth at Inference
+                  </p>
+                </div>
+              </div>
+              <!-- Right: Placeholders -->
+              <div style="width: 50%; display: flex; flex-direction: column; gap: 24px;">
+                <div style="flex: 1; background: #f8fafc; border: 3px dashed rgba(134,31,65,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #64748b; font-size: 24px; font-weight: bold; letter-spacing: 0.5px;">Top Image Placeholder</span>
+                </div>
+                <div style="flex: 1; background: #f8fafc; border: 3px dashed rgba(134,31,65,0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #64748b; font-size: 24px; font-weight: bold; letter-spacing: 0.5px;">6 Small Images Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">3</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 4: Method Overview ================= -->
+        <div class="slide" data-index="3" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 40px 48px; overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+              <h1 style="font-size: 44px; font-weight: bold; color: #861F41;">Method</h1>
+            </div>
+            <div style="width: 100%; height: 2px; background: #861F41; margin-bottom: 24px;"></div>
+            <div style="font-size: 28px; font-weight: bold; margin-bottom: 16px; margin-left: 16px; color: #861F41;">- Overview</div>
+            <div style="width: 100%; height: 460px; position: relative; margin-top: 8px; margin-bottom: 16px;">
+              <div style="width: 100%; height: 100%; border: 4px dashed rgba(134,31,65,0.2); background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 16px;">
+                <span style="color: #64748b; font-size: 30px; font-weight: bold; letter-spacing: 0.5px;">Overview Flowchart Placeholder</span>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">4</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 5: Method OSU ================= -->
+        <div class="slide" data-index="4" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 24px 48px; overflow: hidden; color: black;">
+            <div style="position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <div style="width: 75%; display: flex; flex-direction: column; margin-top: 8px;">
+                <h1 style="font-size: 44px; font-weight: bold; margin-bottom: 8px; color: #861F41;">Method</h1>
+                <div style="width: 100%; height: 2.5px; background: #861F41;"></div>
+              </div>
+            </div>
+            <div style="font-size: 26px; font-weight: bold; margin-bottom: 8px; margin-left: 16px; color: #861F41; display: flex; align-items: center; gap: 12px;">
+              <span>-</span><span>Orthogonalized State Update (OSU)</span>
+            </div>
+            <div style="width: 100%; flex: 1; display: flex; gap: 16px; padding: 0 16px;">
+              <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
+                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 6px;">
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a; line-height: 1.25;">S_t^Euc formula</div>
+                  </div>
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Stiefel Manifold definition</div>
+                  </div>
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Projection operation</div>
+                  </div>
+                  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 2px 20px; text-align: center; width: fit-content; margin: 0 auto;">
+                    <div style="font-size: 15px; font-family: monospace; color: #0f172a;">Newton-Schulz initialization</div>
+                  </div>
+                </div>
+                <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px; margin-top: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Flowchart Placeholder</span>
+                  <span style="color: #9ca3af; font-size: 14px; margin-top: 4px;">(Diagram of OSU)</span>
+                </div>
+              </div>
+              <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
+                <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Table Placeholder</span>
+                </div>
+                <div style="width: 100%; height: 180px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Charts Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">5</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 6: Method APFE ================= -->
+        <div class="slide" data-index="5" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 32px 48px; overflow: hidden; color: black;">
+            <div style="position: relative; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <div style="width: 75%; display: flex; flex-direction: column; margin-top: 8px;">
+                <h1 style="font-size: 44px; font-weight: bold; margin-bottom: 8px; color: #861F41;">Method</h1>
+                <div style="width: 100%; height: 2.5px; background: #861F41;"></div>
+              </div>
+            </div>
+            <div style="font-size: 26px; font-weight: bold; margin-bottom: 12px; margin-left: 16px; color: #861F41; display: flex; align-items: center; gap: 12px;">
+              <span>-</span><span>Anatomical Prior-aware Feature Enhancement</span>
+            </div>
+            <div style="width: 100%; flex: 1; display: flex; gap: 16px; padding: 0 16px;">
+              <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
+                <div style="line-height: 1.6; letter-spacing: 0.5px; width: 100%; display: flex; flex-direction: column; gap: 24px; margin-top: 16px;">
+                  <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="display: flex; align-items: flex-start;">
+                      <div style="flex: 1;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 6px 24px; text-align: center; width: fit-content; margin: 0 auto;">
+                          <span style="font-size: 18px; font-family: monospace; color: #0f172a;">M_t = AvgPool(X_t)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-top: 8px;">
+                      <div style="flex: 1;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #861F41; border-radius: 6px; padding: 6px 24px; text-align: center; width: fit-content; margin: 0 auto;">
+                          <span style="font-size: 16px; font-family: monospace; color: #0f172a;">X_t+ = ReLU(X_t - M_t)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="width: 100%; height: 180px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px; margin-top: auto;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Flowchart Placeholder</span>
+                  <span style="color: #9ca3af; font-size: 14px; margin-top: 4px;">(Diagram of APFE)</span>
+                </div>
+              </div>
+              <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px;">
+                <div style="width: 100%; height: 140px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Table Placeholder</span>
+                </div>
+                <div style="width: 100%; height: 200px; background: white; border: 2px dashed #9ca3af; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border-radius: 8px;">
+                  <span style="color: #9ca3af; font-size: 18px; font-weight: bold; letter-spacing: 0.5px;">Charts Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">6</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 7: Experiments Part 1 ================= -->
+        <div class="slide" data-index="6" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 40px 48px; overflow: hidden; color: black;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+              <h1 style="font-size: 44px; font-weight: bold; color: #861F41;">Experiments</h1>
+            </div>
+            <div style="width: 100%; height: 2px; background: #861F41; margin-bottom: 16px;"></div>
+            <div style="width: 100%; height: 480px; position: relative; margin-top: 16px; margin-bottom: 16px;">
+              <div style="width: 100%; height: 100%; border: 4px dashed rgba(134,31,65,0.2); background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 16px;">
+                <span style="color: #64748b; font-size: 30px; font-weight: bold; letter-spacing: 0.5px;">Experiments Table Placeholder (Part 1)</span>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">7</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 8: Experiments Part 2 ================= -->
+        <div class="slide" data-index="7" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; padding: 40px 48px; overflow: hidden; color: black;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+              <h1 style="font-size: 44px; font-weight: bold; color: #861F41;">Experiments</h1>
+            </div>
+            <div style="width: 100%; height: 2px; background: #861F41; margin-bottom: 16px;"></div>
+            <div style="width: 100%; height: 480px; position: relative; margin-top: 16px; margin-bottom: 16px;">
+              <div style="width: 100%; height: 100%; border: 4px dashed rgba(134,31,65,0.2); background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 16px;">
+                <span style="color: #64748b; font-size: 30px; font-weight: bold; letter-spacing: 0.5px;">Experiments Details Placeholder (Part 2)</span>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">8</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 9: Discussion ================= -->
+        <div class="slide" data-index="8" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 50px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: flex-start;">
+              <div style="display: flex; flex-direction: column; width: 76%;">
+                <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 16px; color: #861F41;">Discussion</h1>
+                <div style="width: 100%; height: 3px; background: #861F41;"></div>
+              </div>
+            </div>
+            <div style="position: absolute; top: 180px; left: 130px; right: 100px; display: flex; flex-direction: column; gap: 24px;">
+              <div style="display: flex; align-items: flex-start;">
+                <span style="font-size: 30px; margin-right: 20px; line-height: 1.6; color: #861F41;">•</span>
+                <p style="font-size: 30px; line-height: 1.6; color: black;">
+                  <span style="font-weight: bold; color: #861F41;">Generality:</span> Extend to broader ultrasound datasets.
+                </p>
+              </div>
+              <div style="display: flex; align-items: flex-start;">
+                <span style="font-size: 30px; margin-right: 20px; line-height: 1.6; color: #861F41;">•</span>
+                <p style="font-size: 30px; line-height: 1.6; color: black;">
+                  <span style="font-weight: bold; color: #861F41;">Harder video tasks:</span> Tackle longer sequences, complex rhythms, and difficult cases.
+                </p>
+              </div>
+              <div style="display: flex; align-items: flex-start;">
+                <span style="font-size: 30px; margin-right: 20px; line-height: 1.6; color: #861F41;">•</span>
+                <p style="font-size: 30px; line-height: 1.6; color: black;">
+                  <span style="font-weight: bold; color: #861F41;">Hardware-aware:</span> Optimize the matrix state for parallel acceleration.
+                </p>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 40px; right: 60px; font-size: 36px; font-weight: bold; color: #6b7280;">9</div>
+          </div>
+        </div>
+
+        <!-- ================= Slide 10: Thanks ================= -->
+        <div class="slide" data-index="9" style="width: 1280px; height: 720px; flex-shrink: 0;">
+          <div style="width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column;">
+            <div style="height: 24%; display: flex; justify-content: space-between; align-items: center; padding: 0 60px;">
+              <div style="display: flex; align-items: center; gap: 8px; color: #861F41;">
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                  <div style="font-size: 56px; font-weight: 900; line-height: 0.85; letter-spacing: -2px;">ICCV</div>
+                  <div style="font-size: 16px; font-weight: bold; color: black; margin-top: 4px; letter-spacing: 0.5px;">OCT 19-23, 2025</div>
+                </div>
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                  <path d="M50 15 C60 15 70 30 65 45 C80 40 95 50 85 60 C90 75 75 85 60 80 C55 95 35 90 40 75 C25 80 10 70 20 55 C10 40 25 30 40 40 C35 25 45 15 50 15 Z" fill="#861F41"/>
+                  <circle cx="50" cy="50" r="8" fill="#F8C471"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                  <div style="font-size: 22px; font-weight: bold; line-height: 1; letter-spacing: 2px;">HONOLULU</div>
+                  <div style="font-size: 38px; font-weight: bold; line-height: 0.9; letter-spacing: -1px;">HAWAII</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 25px;">
+                <div style="width: 90px; height: 90px; border-radius: 50%; border: 1.5px solid #861F41; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #861F41; font-size: 12px; text-align: center; background: white;">
+                  <span>SZU</span><span>Logo</span>
+                </div>
+                <svg width="80" height="80" viewBox="0 0 100 100">
+                  <rect x="20" y="20" width="30" height="30" fill="#861F41"/>
+                  <rect x="55" y="20" width="30" height="30" fill="#861F41"/>
+                  <rect x="20" y="55" width="30" height="30" fill="#861F41"/>
+                  <rect x="55" y="55" width="30" height="30" stroke="#861F41" stroke-width="8" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <div style="height: 38%; width: 100%; display: flex; justify-content: center; align-items: center; background: #861F41;">
+              <span style="color: white; font-size: 100px; font-weight: bold; letter-spacing: 0.5px;">Thanks!</span>
+            </div>
+            <div style="height: 38%; width: 100%; background: white;"></div>
+            <div style="position: absolute; bottom: 40px; right: 50px; color: #777; font-size: 36px; font-weight: bold;">10</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls" style="display: flex; align-items: center; gap: 20px; background: white; padding: 10px 30px; border-radius: 9999px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-family: sans-serif; margin-top: 16px;">
+      <button id="prevBtn" style="background: #861F41; color: white; border: none; padding: 10px 20px; border-radius: 9999px; font-size: 16px; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#6A1833'" onmouseout="this.style.background='#861F41'" disabled>&#9664; Prev</button>
+      <span style="font-size: 16px; font-weight: bold; color: #1f2937; min-width: 80px; text-align: center;"><span id="currentSlide">1</span> / 10</span>
+      <button id="nextBtn" style="background: #861F41; color: white; border: none; padding: 10px 20px; border-radius: 9999px; font-size: 16px; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#6A1833'" onmouseout="this.style.background='#861F41'">Next &#9654;</button>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  (function() {
+    let currentIndex = 0;
+    const TOTAL_SLIDES = 10;
+    const SLIDE_WIDTH = 1280;
+
+    const track = document.getElementById('slideTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideEl = document.getElementById('currentSlide');
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentIndex * SLIDE_WIDTH}px)`;
+      currentSlideEl.textContent = currentIndex + 1;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === TOTAL_SLIDES - 1;
+      history.replaceState(null, '', `#slide=${currentIndex + 1}`);
+    }
+
+    function nextSlide() {
+      if (currentIndex < TOTAL_SLIDES - 1) {
+        currentIndex++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlide();
+      }
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        currentIndex = 0;
+        updateSlide();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        currentIndex = TOTAL_SLIDES - 1;
+        updateSlide();
+      }
+    });
+
+    // Touch support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+    }, { passive: true });
+
+    // Parse hash
+    const hash = window.location.hash;
+    const match = hash.match(/slide=(\d+)/);
+    if (match) {
+      const slideIndex = parseInt(match[1], 10) - 1;
+      if (slideIndex >= 0 && slideIndex < TOTAL_SLIDES) {
+        currentIndex = slideIndex;
+        updateSlide();
+      }
+    }
+
+    window.addEventListener('hashchange', () => {
+      const match = window.location.hash.match(/slide=(\d+)/);
+      if (match) {
+        const slideIndex = parseInt(match[1], 10) - 1;
+        if (slideIndex >= 0 && slideIndex < TOTAL_SLIDES) {
+          currentIndex = slideIndex;
+          updateSlide();
+        }
+      }
+    });
+  })();
+</script>
+
+<style>
+  .slide-viewport {
+    transform: scale(0.75);
+    transform-origin: center;
+  }
+  @media (min-width: 1400px) {
+    .slide-viewport { transform: scale(0.9); }
+  }
+  @media (min-width: 1600px) {
+    .slide-viewport { transform: scale(1); }
+  }
+</style>

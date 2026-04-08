@@ -10,7 +10,7 @@ const { tag, href } = Astro.props;
 const url = href ?? TAG_URLS[tag];
 ---
 
-{tagUrls[tag] ? (
+{url ? (
   <a href={url} class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle hover:opacity-80 hover:underline transition-opacity no-underline" target="_blank" rel="noopener noreferrer">{tag}</a>
 ) : (
   <span class="inline-block text-[0.7rem] px-2 py-0.5 rounded bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark opacity-50 font-medium ml-2 align-middle">{tag}</span>

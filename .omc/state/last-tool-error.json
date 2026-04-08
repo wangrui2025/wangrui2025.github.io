@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git show fbac98c:astro/public/latextab_in_html.html > /Users/myk/Repo/wangrui2025.github.io/arch/latextab_in_html.html 2>/dev/null || git show c3b334c:astro/public/latextab_in_html.html > ...",
-  "error": "Exit code 128\nfatal: path 'astro/public/latextab_in_html.html' does not exist in 'c3b334c'",
-  "timestamp": "2026-04-08T01:21:31.304Z",
-  "retry_count": 2
-}

@@ -5,17 +5,32 @@ import { cvData } from '../data/cv';
 import CvPaperItem from '../components/CvPaperItem.astro';
 import CvHonorItem from '../components/CvHonorItem.astro';
 import CvEducationItem from '../components/CvEducationItem.astro';
+import '../styles/cv.css';
 
-const cv = cvData.en;
-const lang: 'en' | 'zh' = 'en';
+const lang = 'en' as const;
+const cv = cvData[lang];
+const isZh = false;
+
+// Translations
+const labels = {
+  title: 'CV - Rui Wang',
+  description: 'Curriculum Vitae of Rui Wang',
+  education: 'Education',
+  publications: 'Publications',
+  researchDirections: 'Research Directions',
+  honors: 'Honors & Awards',
+  projects: 'Projects',
+  skills: 'Skills',
+  hobbies: 'Hobbies',
+};
 
 // Fetch from content collections
-const papers = await getCollection('papers', (p) => p.data.show_on_cv);
+const papersCollection = await getCollection('papers', (p) => p.data.show_on_cv);
 const honors = await getEntry('honors', 'honors');
 const education = await getEntry('education', 'education');
 
 // Sort papers by date (newest first) - use spread to avoid mutation
-const sortedPapers = [...papers].sort((a, b) => b.data.date.localeCompare(a.data.date));
+const sortedPapers = [...papersCollection].sort((a, b) => b.data.date.localeCompare(a.data.date));
 
 // Get first project safely
 const firstProject = cv.projects.length > 0 ? cv.projects[0] : null;
@@ -30,8 +45,8 @@ const undergraduateHonors = honors.data.undergraduate
 ---
 
 <CVLayout
-  title="CV - Rui Wang"
-  description="Curriculum Vitae of Rui Wang"
+  title={labels.title}
+  description={labels.description}
   lang={lang}
 >
   <section id="cv" class="cv-page">
@@ -55,7 +70,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Education -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Education</h2>
+      <h2 class="cv-section-title">{labels.education}</h2>
       <CvEducationItem
         university={education.data.master.university}
         universityUrl={education.data.master.universityUrl}
@@ -79,7 +94,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Publications -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Publications</h2>
+      <h2 class="cv-section-title">{labels.publications}</h2>
       {sortedPapers.map((paper) => (
         <CvPaperItem paper={paper} lang={lang} />
       ))}
@@ -87,7 +102,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Research Directions -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Research Directions</h2>
+      <h2 class="cv-section-title">{labels.researchDirections}</h2>
       <div class="cv-grid-2">
         {cv.researchDirections.map((dir) => (
           <div>• {dir}</div>
@@ -97,7 +112,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Honors -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Honors & Awards</h2>
+      <h2 class="cv-section-title">{labels.honors}</h2>
       <div class="cv-grid">
         {graduateHonors.map((honor) => (
           <CvHonorItem
@@ -126,7 +141,7 @@ const undergraduateHonors = honors.data.undergraduate
     <!-- Projects -->
     {firstProject && (
     <section class="cv-section">
-      <h2 class="cv-section-title">Projects</h2>
+      <h2 class="cv-section-title">{labels.projects}</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
           <span class="cv-entry-title">
@@ -144,7 +159,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Skills -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Skills</h2>
+      <h2 class="cv-section-title">{labels.skills}</h2>
       <div class="cv-grid-2">
         {cv.skills.map((skill) => (
           <div><span class="skill-label">{skill.category}:</span> {skill.items}</div>
@@ -154,7 +169,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Hobbies -->
     <section class="cv-section">
-      <h2 class="cv-section-title">Hobbies</h2>
+      <h2 class="cv-section-title">{labels.hobbies}</h2>
       <div class="cv-hobbies">
         {cv.hobbies.map((hobby, i) => (
           <>
@@ -166,206 +181,3 @@ const undergraduateHonors = honors.data.undergraduate
     </section>
   </section>
 </CVLayout>
-
-<style>
-  /* A4: 210mm x 297mm */
-  .cv-page {
-    font-family: 'Times New Roman', 'Noto Serif SC', serif;
-    font-size: 10pt;
-    line-height: 1.35;
-    width: 210mm;
-    min-height: 297mm;
-    max-width: 210mm;
-    margin: 0 auto;
-    padding: 15mm 20mm;
-    background: white;
-    color: #1a1a1a;
-    box-sizing: border-box;
-  }
-
-  .cv-header {
-    text-align: center;
-    margin-bottom: 12pt;
-    padding-bottom: 8pt;
-    border-bottom: 1.5pt solid #1a1a1a;
-  }
-
-  .cv-name {
-    font-size: 18pt;
-    letter-spacing: 3pt;
-    margin: 0 0 2pt 0;
-  }
-
-  .cv-contact,
-  .cv-meta {
-    font-size: 9pt;
-    color: #5e5d59;
-    margin-bottom: 2pt;
-  }
-
-  .sep {
-    margin: 0 6pt;
-    color: #87867f;
-  }
-
-  .cv-section {
-    margin-bottom: 9pt;
-  }
-
-  .cv-section-title {
-    font-size: 10.5pt;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5pt;
-    margin-bottom: 5pt;
-    padding-bottom: 2pt;
-    border-bottom: 0.75pt solid #1a1a1a;
-  }
-
-  .cv-entry {
-    margin-bottom: 5pt;
-  }
-
-  .cv-entry:last-child {
-    margin-bottom: 0;
-  }
-
-  .cv-entry-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 6pt;
-  }
-
-  .cv-entry-title {
-    font-weight: 600;
-    font-size: 10pt;
-    line-height: 1.3;
-  }
-
-  .cv-entry-sub {
-    font-size: 9pt;
-    color: #5e5d59;
-    margin-top: 1pt;
-  }
-
-  .cv-entry-detail {
-    font-size: 8.5pt;
-    color: #5e5d59;
-    margin-top: 1pt;
-  }
-
-  .cv-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2pt;
-  }
-
-  .cv-grid-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8pt;
-  }
-
-  .secondary-tag {
-    font-size: 7pt;
-    color: #87867f;
-    border: 0.5pt solid #b0aea5;
-    border-radius: 2pt;
-    padding: 0 2pt;
-    margin-left: 3pt;
-    vertical-align: middle;
-  }
-
-  .cv-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2pt 12pt;
-    font-size: 9pt;
-  }
-
-  .skill-label {
-    font-weight: 600;
-  }
-
-  .cv-hobbies {
-    font-size: 9pt;
-    color: #444;
-  }
-
-  /* Publications - Hanging layout (悬挂式布局) */
-  .cv-pub-entry {
-    position: relative;
-    padding-left: 55pt;
-    margin-bottom: 6pt;
-  }
-
-  .cv-pub-venue {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 52pt;
-    font-size: 8.5pt;
-    color: #5e5d59;
-    font-weight: 700;
-    word-break: break-word;
-    text-align: right;
-  }
-
-  .cv-pub-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1pt;
-  }
-
-  .cv-pub-title {
-    font-weight: 600;
-    font-size: 10pt;
-    line-height: 1.3;
-    color: #1a1a1a;
-  }
-
-  .cv-pub-authors {
-    font-size: 9pt;
-    line-height: 1.4;
-  }
-
-  .cv-pub-links {
-    display: flex;
-    gap: 8pt;
-    margin-top: 1pt;
-  }
-
-  /* Authors */
-  .author-self {
-    color: #1a1a1a;
-  }
-
-  .author-other {
-    font-weight: 400;
-    color: #5e5d59;
-  }
-
-  .pub-link {
-    font-size: 8.5pt;
-    color: #5e5d59;
-    text-decoration: none;
-  }
-
-  .pub-link:hover {
-    color: #141413;
-    text-decoration: underline;
-  }
-
-  .sep-dot {
-    margin: 0 6pt;
-    color: #87867f;
-  }
-
-  .project-name-link {
-    color: #1a1a1a;
-    text-decoration: none;
-    border-bottom: 0.5pt solid #1a1a1a;
-  }
-</style>
