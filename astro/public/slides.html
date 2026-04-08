@@ -484,138 +484,179 @@
                 </div>
 
                 <!-- ================= Slide 5: Method OSU ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-
-                    <!-- Sidebar -->
-                    <div class="w-[35%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Method: OSU</div>
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    
+                    <div class="relative w-full flex justify-between items-start mb-4">
+                        <div class="w-[75%] flex flex-col mt-2">
+                            <h1 class="text-[44px] font-bold text-[#842043] mb-3">Method</h1>
+                            <div class="w-full h-[2.5px] bg-[#842043]"></div>
+                        </div>
+                        
+                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="75"></div>
                     </div>
 
-                    <!-- Main Content -->
-                    <div class="w-[65%] relative flex flex-col justify-center px-[60px] py-[80px]">
+                    <div class="text-[#842043] text-[28px] font-bold mb-4 ml-4 flex items-center gap-3">
+                        <span>-</span>
+                        <span>Orthogonalized State Update (OSU)</span>
+                    </div>
 
-                        <!-- Header Logos -->
-                        <div class="absolute top-[30px] right-[40px] flex items-center gap-[15px]">
-                            <div class="w-[75px] h-[75px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[12px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
+                    <div class="w-full flex-1 flex gap-8 px-4">
+                        
+                        <div class="w-[55%] flex flex-col justify-between pb-10">
+                            <div class="text-[22px] leading-relaxed tracking-wide w-full flex flex-col gap-3">
+                                <div class="text-[#475569] text-[18px] leading-[1.4]">
+                                    To prevent rank collapse, we constrain the memory evolution on the <strong>Stiefel Manifold</strong>:
+                                </div>
+
+                                <!-- 公式 1: Euc State Update (多行) -->
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[8px] text-center">
+                                    <div class="text-[17px] font-mono text-[#0f172a] leading-relaxed">
+                                        $$\begin{aligned}
+                                        \mathbf{S}_t^{\text{Euc}} &= \mathbf{S}_{t-1}\left(\alpha_t (\mathbf{I}_{C_k} - \beta_t \mathbf{k}_t \mathbf{k}_t^\top)\right) + \beta_t \mathbf{v}_t \mathbf{k}_t^\top \\
+                                        &= \underset{\mathbf{S} \in \mathbb{R}^{C_v \times C_k}}{\arg\min} \left( \ell_t(\mathbf{S}) + \frac{1}{2} \|\mathbf{S} - \alpha_t \mathbf{S}_{t-1}\|_F^2 \right).
+                                        \end{aligned}$$
+                                    </div>
+                                </div>
+
+                                <!-- 公式 2: Stiefel Manifold 定义 -->
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
+                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                        $$\mathcal{V}_{C_v, C_k} = \{\mathbf{S} \in \mathbb{R}^{C_v \times C_k} : \mathbf{S}^\top \mathbf{S} = \mathbf{I}_{C_k}\}.$$
+                                    </div>
+                                </div>
+
+                                <!-- 公式 3: 投影操作 (带argmin) -->
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
+                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                        $$\mathbf{S}_t = \operatorname{Proj}_{\mathcal{V}}(\mathbf{S}_t^{\text{Euc}}) = \underset{\mathbf{S} \in \mathcal{V}_{C_v, C_k}}{\arg\min} \frac{1}{2} \|\mathbf{S} - \mathbf{S}_t^{\text{Euc}}\|_F^2.$$
+                                    </div>
+                                </div>
+
+                                <!-- 公式 4: Newton-Schulz 初始化 -->
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
+                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                        $$\mathbf{X}^{(0)} = \frac{\mathbf{S}_t^{\text{Euc}}}{\|\mathbf{S}_t^{\text{Euc}}\|_F + \epsilon}.$$
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-[6px] mt-1">
+                                    <div class="flex items-start">
+                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">1.</div>
+                                        <div class="flex-1 text-[#334155] text-[16px] leading-[1.3]">
+                                            <strong>High-order Newton-Schulz Iteration:</strong> Efficient projection without expensive SVD computation.
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">2.</div>
+                                        <div class="flex-1 text-[#334155] text-[16px] leading-[1.3]">
+                                            <strong>Geometric Stability:</strong> Preserves fine-grained valvular motion across temporal transitions.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="w-[75px] h-[75px] flex justify-center items-center bg-white">
-                                <svg width="75" height="75" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
+
+                            <div class="w-full h-[280px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Flowchart Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(Complex Diagram of OSU)</span>
                             </div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="flex flex-col gap-[25px]">
-                            <div class="text-[#1a365d] text-[26px] font-bold mb-[5px]">
-                                Orthogonalized State Update (OSU)
-                            </div>
-                            <div class="text-[#475569] text-[20px] leading-[1.6] mb-[10px]">
-                                To prevent rank collapse, we constrain the memory evolution on the <strong>Stiefel Manifold</strong>:
+                        <div class="w-[45%] flex flex-col justify-between pb-10">
+                            <div class="w-full h-[200px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Table Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(Recurrence Equation Comparison)</span>
                             </div>
 
-                            <!-- Formula Box -->
-                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[20px] text-center mb-[10px]">
-                                <div class="text-[22px] font-mono text-[#0f172a]">
-                                    $$\mathcal{V}_{C_{v},C_{k}}=\{S\in\mathbb{R}^{C_{v}\times C_{k}}:S^{\top}S=I_{C_{k}}\}$$
-                                </div>
-                            </div>
-                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[20px] text-center mb-[15px]">
-                                <div class="text-[22px] font-mono text-[#0f172a]">
-                                    $$S_{t}=\mathrm{Proj}_{\mathcal{V}}(S_{t}^{\mathrm{Euc}})$$
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col gap-[15px]">
-                                <div class="flex items-start">
-                                    <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">1.</div>
-                                    <div class="flex-1 text-[#334155] text-[20px] leading-[1.6]">
-                                        <strong>High-order Newton-Schulz Iteration:</strong> Efficient projection without expensive SVD computation.
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">2.</div>
-                                    <div class="flex-1 text-[#334155] text-[20px] leading-[1.6]">
-                                        <strong>Geometric Stability:</strong> Preserves fine-grained valvular motion across temporal transitions.
-                                    </div>
-                                </div>
+                            <div class="w-full h-[260px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Charts Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(4 Data Visualization Sub-figures)</span>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
+                    </div>
+
+                    <div class="absolute bottom-10 right-14 text-[32px] font-bold text-gray-500">
+                        5
                     </div>
                 </div>
 
                 <!-- ================= Slide 6: Method APFE ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-row">
-
-                    <!-- Sidebar -->
-                    <div class="w-[35%] bg-[#6D243A] flex justify-center items-center">
-                        <div class="text-white text-[42px] font-bold tracking-[1px] leading-tight text-center px-4">Method: APFE</div>
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                    
+                    <div class="relative w-full flex justify-between items-start mb-4">
+                        <div class="w-[75%] flex flex-col mt-2">
+                            <h1 class="text-[44px] font-bold text-[#842043] mb-3">Method</h1>
+                            <div class="w-full h-[2.5px] bg-[#842043]"></div>
+                        </div>
+                        
+                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="75"></div>
                     </div>
 
-                    <!-- Main Content -->
-                    <div class="w-[65%] relative flex flex-col justify-center px-[60px] py-[80px]">
+                    <div class="text-[#842043] text-[28px] font-bold mb-4 ml-4 flex items-center gap-3">
+                        <span>-</span>
+                        <span>Anatomical Prior-aware Feature Enhancement</span>
+                    </div>
 
-                        <!-- Header Logos -->
-                        <div class="absolute top-[30px] right-[40px] flex items-center gap-[15px]">
-                            <div class="w-[75px] h-[75px] rounded-full border border-[#842043] flex justify-center items-center text-[#842043] text-[12px] text-center font-sans bg-white">
-                                <div>SZU<br>Logo</div>
-                            </div>
-                            <div class="w-[75px] h-[75px] flex justify-center items-center bg-white">
-                                <svg width="75" height="75" viewBox="0 0 100 100" fill="none">
-                                    <path d="M20 20 H50 V50 H20 Z" fill="#842043"/>
-                                    <path d="M55 20 H85 V50 H55 Z" fill="#842043"/>
-                                    <path d="M20 55 H50 V85 H20 Z" fill="#842043"/>
-                                    <path d="M55 55 H85 V85 H55 Z" stroke="#842043" stroke-width="8"/>
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="w-full flex-1 flex gap-8 px-4">
+                        
+                        <div class="w-[55%] flex flex-col justify-between pb-10">
+                            <div class="text-[22px] leading-relaxed tracking-wide w-full flex flex-col gap-4">
+                                <div class="text-[#475569] text-[20px] leading-[1.6]">
+                                    A physics-driven process explicitly separates anatomical structures from speckle noise:
+                                </div>
 
-                        <!-- Content -->
-                        <div class="flex flex-col gap-[25px]">
-                            <div class="text-[#1a365d] text-[26px] font-bold mb-[5px]">
-                                Anatomical Prior-aware Feature Enhancement
-                            </div>
-                            <div class="text-[#475569] text-[20px] leading-[1.6] mb-[10px]">
-                                A physics-driven process explicitly separates anatomical structures from speckle noise:
-                            </div>
+                                <div class="flex flex-col gap-[15px]">
+                                    <div class="flex items-start">
+                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">1.</div>
+                                        <div class="flex-1">
+                                            <div class="text-[#1a365d] text-[20px] font-bold mb-[4px]">Acoustic Bias Estimation</div>
+                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[10px] text-center">
+                                                <span class="text-[20px] font-mono text-[#0f172a]">$$M_{t}=AvgPool_{K\times K}(X_{t})$$</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="flex flex-col gap-[20px]">
-                                <div class="flex items-start">
-                                    <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">1.</div>
-                                    <div class="flex-1">
-                                        <div class="text-[#1a365d] text-[22px] font-bold mb-[8px]">Acoustic Bias Estimation</div>
-                                        <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[15px] text-center mb-[5px]">
-                                            <span class="text-[20px] font-mono text-[#0f172a]">$$M_{t}=AvgPool_{K\times K}(X_{t})$$</span>
+                                    <div class="flex items-start">
+                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">2.</div>
+                                        <div class="flex-1">
+                                            <div class="text-[#1a365d] text-[20px] font-bold mb-[4px]">Polarity-aware Decoupling</div>
+                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[10px] text-center">
+                                                <span class="text-[18px] font-mono text-[#0f172a]">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">3.</div>
+                                        <div class="flex-1 text-[#334155] text-[18px] leading-[1.4]">
+                                            <strong>$X_{t}^{+}$</strong> isolates high-frequency edges, while <strong>$X_{t}^{-}$</strong> captures low-response regions.
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="flex items-start">
-                                    <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">2.</div>
-                                    <div class="flex-1">
-                                        <div class="text-[#1a365d] text-[22px] font-bold mb-[8px]">Polarity-aware Decoupling</div>
-                                        <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[15px] text-center mb-[5px]">
-                                            <span class="text-[18px] font-mono text-[#0f172a]">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start">
-                                    <div class="text-[#6D243A] text-[24px] font-bold mr-[15px]">3.</div>
-                                    <div class="flex-1 text-[#334155] text-[20px] leading-[1.6]">
-                                        <strong>$X_{t}^{+}$</strong> isolates high-frequency edges (myocardium), while <strong>$X_{t}^{-}$</strong> captures low-response regions (blood pools).
-                                    </div>
-                                </div>
+                            <div class="w-full h-[280px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Flowchart Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(Complex Diagram of APFE)</span>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
+                        <div class="w-[45%] flex flex-col justify-between pb-10">
+                            <div class="w-full h-[200px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Table Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(Ablation Study / Comparison)</span>
+                            </div>
+
+                            <div class="w-full h-[260px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
+                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Charts Placeholder</span>
+                                <span class="text-gray-400 text-base mt-2">(Data Visualization)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="absolute bottom-10 right-14 text-[32px] font-bold text-gray-500">
+                        6
                     </div>
                 </div>
 
