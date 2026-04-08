@@ -5,3 +5,4 @@
 {"t":0,"agent":"a313adf","agent_type":"executor","event":"agent_start","parent_mode":"none"}
 {"t":0,"agent":"ac4201e","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":16608}
 {"t":0,"agent":"acaadb7","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":48887}
+{"t":0,"agent":"a313adf","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":115966}
