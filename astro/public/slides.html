@@ -11,6 +11,13 @@
             text-orientation: mixed;
             transform: rotate(180deg);
         }
+        /* 核心修复：强制压缩 MathJax 和 KaTeX 的默认块级公式外边距，防止页面被撑爆溢出 */
+        mjx-container[jax="CHTML"][display="true"] {
+            margin: 0.1em 0 !important;
+        }
+        .katex-display {
+            margin: 0.1em 0 !important;
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen bg-[#e0e0e0] font-['Times_New_Roman',Times,serif]">
@@ -122,18 +129,17 @@
                 </div>
 
                 <!-- ================= Slide 3: Problem Setting ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-12 px-[60px]">
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-8 px-[60px]">
 
-                    <div class="flex justify-between items-end mb-4">
+                    <div class="flex justify-between items-end mb-3">
                         <h1 class="text-5xl font-bold text-[#842043]">Problem Setting</h1>
-                        
                         <!-- Header Logos (Dynamically rendered) -->
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
 
-                    <div class="w-full h-[2px] bg-[#842043] mb-8"></div>
+                    <div class="w-full h-[2px] bg-[#842043] mb-4"></div>
 
-                    <div class="flex flex-col gap-6 text-[26px] leading-[1.4] text-black">
+                    <div class="flex flex-col gap-2 text-[22px] leading-[1.3] text-black">
                         
                         <div>
                             <h2 class="text-[#842043] font-bold mb-1">Medical</h2>
@@ -170,54 +176,54 @@
                         </div>
                     </div>
 
-                    <div class="mt-auto mb-16 flex justify-between px-6 gap-2">
+                    <div class="mt-auto mb-6 flex justify-between px-6 gap-2">
                         
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute bottom-4 right-4 w-6 h-10 border-2 border-[#D35400]"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute bottom-3 right-3 w-4 h-6 border-2 border-[#D35400]"></div>
                             </div>
-                            <span class="text-3xl text-black">(a)</span>
+                            <span class="text-xl text-black">(a)</span>
                         </div>
 
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute bottom-6 right-3 w-8 h-12 border-2 border-[#D35400]"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute bottom-4 right-2 w-6 h-8 border-2 border-[#D35400]"></div>
                             </div>
-                            <span class="text-3xl text-black">(b)</span>
+                            <span class="text-xl text-black">(b)</span>
                         </div>
 
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute inset-0 m-auto w-12 h-24 border-2 border-[#D35400] rounded-full rotate-[-10deg] opacity-70"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute inset-0 m-auto w-8 h-16 border-2 border-[#D35400] rounded-full rotate-[-10deg] opacity-70"></div>
                             </div>
-                            <span class="text-3xl text-black">(c)</span>
+                            <span class="text-xl text-black">(c)</span>
                         </div>
 
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute inset-0 m-auto w-10 h-20 border-2 border-[#D35400] rounded-[40%] rotate-[15deg] opacity-70"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute inset-0 m-auto w-6 h-14 border-2 border-[#D35400] rounded-[40%] rotate-[15deg] opacity-70"></div>
                             </div>
-                            <span class="text-3xl text-black">(d)</span>
+                            <span class="text-xl text-black">(d)</span>
                         </div>
 
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute inset-0 m-auto w-14 h-28 border-2 border-[#D35400] rounded-[50%] opacity-70"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute inset-0 m-auto w-10 h-20 border-2 border-[#D35400] rounded-[50%] opacity-70"></div>
                             </div>
-                            <span class="text-3xl text-black">(e)</span>
+                            <span class="text-xl text-black">(e)</span>
                         </div>
 
-                        <div class="flex flex-col items-center gap-4">
-                            <div class="w-[170px] h-[160px] bg-black flex items-center justify-center relative">
-                                <span class="text-gray-400 text-sm">图片占位</span>
-                                <div class="absolute inset-0 m-auto w-10 h-24 border-2 border-[#D35400] rounded-full opacity-70"></div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="w-[140px] h-[120px] bg-black flex items-center justify-center relative rounded-md">
+                                <span class="text-gray-400 text-xs">图片占位</span>
+                                <div class="absolute inset-0 m-auto w-6 h-16 border-2 border-[#D35400] rounded-full opacity-70"></div>
                             </div>
-                            <span class="text-3xl text-black">(f)</span>
+                            <span class="text-xl text-black">(f)</span>
                         </div>
 
                     </div>
@@ -240,277 +246,45 @@
                         - &nbsp;&nbsp;Overview
                     </div>
 
-                    <div class="w-full h-[520px] relative mt-2">
-
-                        <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                                    <polygon points="0 0, 8 3, 0 6" fill="black" />
-                                </marker>
-                                <marker id="small-arrow" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-                                    <polygon points="0 0, 6 2, 0 4" fill="black" />
-                                </marker>
-                            </defs>
-                            
-                            <line x1="140" y1="90" x2="200" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <line x1="140" y1="240" x2="200" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <line x1="140" y1="390" x2="200" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            
-                            <line x1="280" y1="90" x2="455" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <line x1="560" y1="90" x2="625" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <line x1="280" y1="240" x2="305" y2="240" stroke="black" stroke-width="2"/>
-                            <line x1="280" y1="390" x2="710" y2="390" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-
-                            <line x1="655" y1="90" x2="955" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <line x1="1025" y1="90" x2="1055" y2="90" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
-
-                            <path d="M 305 240 L 305 150 L 385 150" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <path d="M 305 240 L 305 320 L 385 320" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            
-                            <line x1="415" y1="150" x2="475" y2="150" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <line x1="415" y1="320" x2="475" y2="320" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            
-                            <line x1="505" y1="150" x2="525" y2="150" stroke="black" stroke-width="1.5"/>
-                            <line x1="505" y1="320" x2="525" y2="320" stroke="black" stroke-width="1.5"/>
-
-                            <path d="M 545 150 L 600 150 L 600 305" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <path d="M 590 320 L 600 320" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <line x1="620" y1="320" x2="680" y2="320" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-
-                            <line x1="640" y1="105" x2="640" y2="165" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                            <line x1="785" y1="200" x2="750" y2="200" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                            
-                            <line x1="640" y1="225" x2="640" y2="245" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <line x1="640" y1="275" x2="640" y2="295" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-
-                            <line x1="750" y1="225" x2="750" y2="245" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                            <line x1="750" y1="275" x2="750" y2="295" stroke="black" stroke-width="1.5" marker-end="url(#small-arrow)"/>
-                        </svg>
-
-                        <div class="absolute left-[40px] top-[40px] w-[100px] h-[100px] bg-black border-2 border-gray-400 flex items-center justify-center">
-                            <span class="text-white text-xs opacity-60">超声占位</span>
+                    <!-- 一整个空白方块 -->
+                    <div class="w-full h-[460px] relative mt-2 mb-4">
+                        <div class="w-full h-full border-4 border-dashed border-[#842043]/30 bg-[#f8fafc] flex flex-col items-center justify-center rounded-2xl shadow-inner">
+                            <span class="text-[#64748b] text-3xl font-bold tracking-wide">Overview Flowchart Placeholder</span>
+                            <span class="text-[#94a3b8] text-lg mt-3">(Please insert your diagram image here)</span>
                         </div>
-
-                        <div class="absolute left-[30px] top-[180px] w-[100px] h-[100px] bg-black border-2 border-white"></div>
-                        <div class="absolute left-[35px] top-[185px] w-[100px] h-[100px] bg-black border-2 border-white"></div>
-                        <div class="absolute left-[40px] top-[190px] w-[100px] h-[100px] bg-black border-2 border-gray-400 flex items-center justify-center">
-                            <span class="text-white text-xs opacity-60">超声帧序列</span>
-                        </div>
-
-                        <div class="absolute left-[30px] top-[330px] w-[100px] h-[100px] bg-black border-2 border-white"></div>
-                        <div class="absolute left-[35px] top-[335px] w-[100px] h-[100px] bg-black border-2 border-white"></div>
-                        <div class="absolute left-[40px] top-[340px] w-[100px] h-[100px] bg-black border-2 border-gray-400 flex items-center justify-center">
-                            <div class="w-[20px] h-[40px] bg-white rounded-full rotate-[15deg]"></div>
-                        </div>
-
-                        <div class="absolute left-[195px] top-[40px] w-[80px] h-[100px] z-20">
-                            <svg width="100%" height="100%" viewBox="0 0 80 100" preserveAspectRatio="none">
-                                <polygon points="0,15 80,0 80,100 0,85" fill="#E5E7EB" stroke="black" stroke-width="2"/>
-                                <text x="40" y="45" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Query</text>
-                                <text x="40" y="65" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Enc</text>
-                            </svg>
-                        </div>
-
-                        <div class="absolute left-[195px] top-[190px] w-[80px] h-[100px] z-20">
-                            <svg width="100%" height="100%" viewBox="0 0 80 100" preserveAspectRatio="none">
-                                <polygon points="0,15 80,0 80,100 0,85" fill="#E5E7EB" stroke="black" stroke-width="2"/>
-                                <text x="40" y="45" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Key</text>
-                                <text x="40" y="65" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Enc</text>
-                            </svg>
-                        </div>
-
-                        <div class="absolute left-[195px] top-[340px] w-[80px] h-[100px] z-20">
-                            <svg width="100%" height="100%" viewBox="0 0 80 100" preserveAspectRatio="none">
-                                <polygon points="0,15 80,0 80,100 0,85" fill="#E5E7EB" stroke="black" stroke-width="2"/>
-                                <text x="40" y="45" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Value</text>
-                                <text x="40" y="65" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Enc</text>
-                            </svg>
-                        </div>
-
-                        <div class="absolute left-[450px] top-[75px] bg-[#dbeafe] border-2 border-blue-200 px-6 py-1 rounded-full text-xl z-20 shadow-sm">
-                            KPFF
-                        </div>
-                        
-                        <div class="absolute left-[640px] top-[75px] bg-white border-2 border-gray-400 px-4 py-1 rounded-full text-xl z-20 shadow-sm">
-                            Query
-                        </div>
-
-                        <div class="absolute left-[280px] top-[110px] w-[380px] h-[310px] bg-[#dbeafe] bg-opacity-70 border-2 border-dashed border-gray-400 rounded-3xl z-0"></div>
-
-                        <div class="absolute left-[300px] top-[120px] w-[60px] h-[60px] bg-blue-900 border border-gray-400 flex items-center justify-center transform -skew-x-12 z-20">
-                            <div class="w-4 h-6 bg-red-500 rounded-full blur-[2px]"></div>
-                        </div>
-                        <div class="absolute left-[300px] top-[290px] w-[60px] h-[60px] bg-blue-900 border border-gray-400 flex items-center justify-center transform -skew-x-12 z-20">
-                            <div class="w-4 h-6 bg-red-500 rounded-full blur-[2px]"></div>
-                        </div>
-
-                        <div class="absolute left-[380px] top-[115px] bg-white border-2 border-black rounded-lg px-2 py-4 z-20 text-[16px]">
-                            <div class="vertical-text">Conv1 × 1</div>
-                        </div>
-                        <div class="absolute left-[380px] top-[285px] bg-white border-2 border-black rounded-lg px-2 py-4 z-20 text-[16px]">
-                            <div class="vertical-text">Conv1 × 1</div>
-                        </div>
-
-                        <div class="absolute left-[470px] top-[115px] bg-white border-2 border-black rounded-lg px-2 py-4 z-20 text-[16px]">
-                            <div class="vertical-text">Conv1 × 1</div>
-                        </div>
-                        <div class="absolute left-[470px] top-[285px] bg-white border-2 border-black rounded-lg px-2 py-4 z-20 text-[16px]">
-                            <div class="vertical-text">Conv1 × 1</div>
-                        </div>
-
-                        <div class="absolute left-[445px] top-[140px] w-5 h-5 rounded-full border border-black bg-white flex items-center justify-center z-20">
-                            <svg width="12" height="12" viewBox="0 0 10 10"><path d="M 1 8 L 5 8 L 8 2" stroke="black" fill="none" stroke-width="1"/></svg>
-                        </div>
-                        <div class="absolute left-[445px] top-[310px] w-5 h-5 rounded-full border border-black bg-white flex items-center justify-center z-20">
-                            <svg width="12" height="12" viewBox="0 0 10 10"><path d="M 1 8 L 5 8 L 8 2" stroke="black" fill="none" stroke-width="1"/></svg>
-                        </div>
-
-                        <div class="absolute left-[520px] top-[305px] bg-[#dcfce7] border-2 border-black rounded-full px-3 py-1 text-lg z-20">
-                            GAP
-                        </div>
-
-                        <div class="absolute left-[540px] top-[105px] bg-white border-2 border-black rounded-lg px-2 py-6 z-20 text-[16px]">
-                            <div class="vertical-text">Conv3 × 3</div>
-                        </div>
-
-                        <div class="absolute left-[595px] top-[305px] w-6 h-6 rounded-full border border-black bg-white flex items-center justify-center text-lg z-20 font-bold">
-                            G
-                        </div>
-
-                        <div class="absolute left-[625px] top-[290px] w-[60px] h-[60px] bg-blue-900 border border-gray-400 flex items-center justify-center transform -skew-x-12 z-20">
-                            <div class="w-4 h-6 bg-red-500 rounded-full blur-[2px]"></div>
-                        </div>
-
-                        <div class="absolute left-[690px] top-[110px] w-[300px] h-[310px] bg-[#f3e8ff] bg-opacity-80 border-[3px] border-[#d8b4fe] rounded-3xl z-0"></div>
-
-                        <div class="absolute left-[770px] top-[75px] w-8 h-8 rounded-full border-2 border-black bg-white flex items-center justify-center text-2xl z-20 font-bold leading-none">
-                            ×
-                        </div>
-
-                        <div class="absolute left-[750px] top-[160px] w-[70px] h-[70px] grid grid-cols-2 grid-rows-2 z-20 shadow-sm border border-gray-300 relative group">
-                            <div class="bg-purple-300"></div><div class="bg-purple-200"></div>
-                            <div class="bg-purple-400"></div><div class="bg-purple-100"></div>
-                            <div class="absolute inset-0 flex items-center justify-center text-[28px] font-bold font-serif">S<sub>t</sub></div>
-                        </div>
-
-                        <div class="absolute left-[860px] top-[160px] w-[70px] h-[70px] grid grid-cols-2 grid-rows-2 z-20 shadow-sm border border-gray-300 relative">
-                            <div class="bg-pink-100"></div><div class="bg-pink-200"></div>
-                            <div class="bg-purple-100"></div><div class="bg-pink-50"></div>
-                            <div class="absolute inset-0 flex items-center justify-center text-[24px] font-bold font-serif">S<sub>t-1</sub></div>
-                        </div>
-
-                        <div class="absolute left-[770px] top-[250px] w-7 h-7 rounded-full border-[1.5px] border-black bg-white flex items-center justify-center text-2xl z-20 font-bold leading-none">
-                            +
-                        </div>
-                        <div class="absolute left-[880px] top-[250px] w-7 h-7 rounded-full border-[1.5px] border-black bg-white flex items-center justify-center text-3xl z-20 font-bold leading-none">
-                            -
-                        </div>
-
-                        <div class="absolute left-[750px] top-[300px] bg-white border-2 border-blue-400 text-blue-600 rounded-full px-4 py-0.5 text-lg font-bold z-20 shadow-sm shadow-blue-200">
-                            Keys
-                        </div>
-                        
-                        <div class="absolute left-[865px] top-[300px] bg-white border-2 border-purple-300 text-purple-700 rounded-full px-4 py-0.5 text-lg font-bold z-20 shadow-sm font-serif">
-                            K<sub>t</sub>
-                        </div>
-
-                        <div class="absolute left-[715px] top-[330px] z-20 flex flex-col-reverse">
-                            <div class="bg-red-200 border-2 border-red-500 rounded-md w-[25px] h-[60px] relative -mt-[50px] ml-1"></div>
-                            <div class="bg-red-200 border-2 border-red-500 rounded-md w-[25px] h-[60px] relative -mt-[50px] ml-2"></div>
-                            <div class="bg-red-200 border-2 border-red-500 rounded-md w-[25px] h-[60px] relative ml-3 flex items-center justify-center shadow-md">
-                                <span class="vertical-text text-[14px] font-bold">Values</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute left-[760px] top-[340px] w-[60px] h-[50px] bg-gradient-to-br from-pink-300 to-purple-300 z-20 border border-gray-300 flex items-center justify-center">
-                            <span class="bg-cyan-200 font-bold px-1 rounded">LKVA</span>
-                        </div>
-
-                        <div class="absolute left-[860px] top-[340px] w-[70px] h-[50px] bg-gradient-to-r from-purple-200 to-blue-200 z-20 border border-gray-300 flex items-center justify-center font-bold text-xl font-serif">
-                            S_
-                        </div>
-
-                        <div class="absolute left-[940px] top-[340px] w-[25px] h-[50px] bg-green-200 border-2 border-green-600 rounded-md z-20 flex items-center justify-center font-bold text-sm font-serif shadow-md">
-                            K<sub>t</sub><sup class="text-[10px]">T</sup>
-                        </div>
-
-
-                        <div class="absolute left-[965px] top-[40px] w-[60px] h-[100px] z-20">
-                            <svg width="100%" height="100%" viewBox="0 0 60 100" preserveAspectRatio="none">
-                                <polygon points="0,0 60,15 60,85 0,100" fill="#E5E7EB" stroke="black" stroke-width="2"/>
-                                <text x="30" y="55" font-family="Times New Roman" font-size="20" text-anchor="middle" fill="black">Dec</text>
-                            </svg>
-                        </div>
-
-                        <div class="absolute left-[1065px] top-[20px] w-[100px] h-[100px] bg-blue-900 border-2 border-gray-400 flex items-center justify-center z-20">
-                            <div class="w-8 h-16 bg-red-600 rounded-[40%] blur-[1px] border border-yellow-500"></div>
-                        </div>
-
-                        <div class="absolute left-[1065px] top-[140px] w-[100px] h-[100px] bg-black border-2 border-gray-400 flex items-center justify-center z-20">
-                            <div class="w-8 h-14 bg-white rounded-[40%] rotate-6"></div>
-                        </div>
-
-                        <div class="absolute left-[1165px] top-[70px] z-20">
-                            <svg width="50" height="120">
-                                <path d="M 0 0 L 20 0 Q 30 0 30 10 L 30 110 Q 30 120 20 120 L 0 120" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-                            </svg>
-                        </div>
-                        <div class="absolute left-[1175px] top-[95px] bg-white border-2 border-black rounded-lg px-2 py-4 z-30 font-bold text-lg">
-                            <div class="vertical-text">Loss</div>
-                        </div>
-
-                        <div class="absolute right-[20px] bottom-[20px] bg-[#f8fafc] bg-opacity-90 border-[1.5px] border-dashed border-gray-400 p-3 rounded-md text-sm z-30 flex flex-col gap-2">
-                            <div class="flex items-center gap-3">
-                                <div class="w-5 h-5 rounded-full border border-black bg-white flex items-center justify-center font-bold text-xs leading-none">×</div>
-                                <span class="text-gray-600">Matrix Multiplication</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-[#f3e8ff] border border-purple-300 px-1 rounded text-xs">GDR</div>
-                                <span class="text-gray-600">Gated Delta Rule</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-[#dbeafe] border border-blue-200 px-1 rounded text-xs">KPFF</div>
-                                <span class="text-gray-600">Key-Pixel Feature Fusion</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-white border border-black rounded px-2 text-xs">Loss</div>
-                                <span class="text-gray-600">Loss Caculation</span>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">4</div>
                 </div>
 
                 <!-- ================= Slide 5: Method OSU ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-6 px-12 overflow-hidden text-black">
                     
-                    <div class="relative w-full flex justify-between items-start mb-4">
+                    <div class="relative w-full flex justify-between items-start mb-2">
                         <div class="w-[75%] flex flex-col mt-2">
-                            <h1 class="text-[44px] font-bold text-[#842043] mb-3">Method</h1>
+                            <h1 class="text-[44px] font-bold text-[#842043] mb-2">Method</h1>
                             <div class="w-full h-[2.5px] bg-[#842043]"></div>
                         </div>
                         
-                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="75"></div>
+                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="70"></div>
                     </div>
 
-                    <div class="text-[#842043] text-[28px] font-bold mb-4 ml-4 flex items-center gap-3">
+                    <div class="text-[#842043] text-[26px] font-bold mb-2 ml-4 flex items-center gap-3">
                         <span>-</span>
                         <span>Orthogonalized State Update (OSU)</span>
                     </div>
 
-                    <div class="w-full flex-1 flex gap-8 px-4">
+                    <div class="w-full flex-1 flex gap-4 px-4">
                         
-                        <div class="w-[55%] flex flex-col justify-between pb-10">
-                            <div class="text-[22px] leading-relaxed tracking-wide w-full flex flex-col gap-3">
-                                <div class="text-[#475569] text-[18px] leading-[1.4]">
+                        <div class="w-[55%] flex flex-col justify-between pb-6">
+                            <div class="leading-relaxed tracking-wide w-full flex flex-col gap-[6px]">
+                                <div class="text-[#475569] text-[18px] leading-[1.3]">
                                     To prevent rank collapse, we constrain the memory evolution on the <strong>Stiefel Manifold</strong>:
                                 </div>
 
                                 <!-- 公式 1: Euc State Update (多行) -->
-                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[8px] text-center">
-                                    <div class="text-[17px] font-mono text-[#0f172a] leading-relaxed">
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[2px] px-[8px] text-center">
+                                    <div class="text-[15px] font-mono text-[#0f172a] leading-tight">
                                         $$\begin{aligned}
                                         \mathbf{S}_t^{\text{Euc}} &= \mathbf{S}_{t-1}\left(\alpha_t (\mathbf{I}_{C_k} - \beta_t \mathbf{k}_t \mathbf{k}_t^\top)\right) + \beta_t \mathbf{v}_t \mathbf{k}_t^\top \\
                                         &= \underset{\mathbf{S} \in \mathbb{R}^{C_v \times C_k}}{\arg\min} \left( \ell_t(\mathbf{S}) + \frac{1}{2} \|\mathbf{S} - \alpha_t \mathbf{S}_{t-1}\|_F^2 \right).
@@ -519,245 +293,240 @@
                                 </div>
 
                                 <!-- 公式 2: Stiefel Manifold 定义 -->
-                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
-                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[2px] px-[8px] text-center">
+                                    <div class="text-[15px] font-mono text-[#0f172a]">
                                         $$\mathcal{V}_{C_v, C_k} = \{\mathbf{S} \in \mathbb{R}^{C_v \times C_k} : \mathbf{S}^\top \mathbf{S} = \mathbf{I}_{C_k}\}.$$
                                     </div>
                                 </div>
 
                                 <!-- 公式 3: 投影操作 (带argmin) -->
-                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
-                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[2px] px-[8px] text-center">
+                                    <div class="text-[15px] font-mono text-[#0f172a]">
                                         $$\mathbf{S}_t = \operatorname{Proj}_{\mathcal{V}}(\mathbf{S}_t^{\text{Euc}}) = \underset{\mathbf{S} \in \mathcal{V}_{C_v, C_k}}{\arg\min} \frac{1}{2} \|\mathbf{S} - \mathbf{S}_t^{\text{Euc}}\|_F^2.$$
                                     </div>
                                 </div>
 
                                 <!-- 公式 4: Newton-Schulz 初始化 -->
-                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[6px] text-center">
-                                    <div class="text-[18px] font-mono text-[#0f172a]">
+                                <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[2px] px-[8px] text-center">
+                                    <div class="text-[15px] font-mono text-[#0f172a]">
                                         $$\mathbf{X}^{(0)} = \frac{\mathbf{S}_t^{\text{Euc}}}{\|\mathbf{S}_t^{\text{Euc}}\|_F + \epsilon}.$$
                                     </div>
                                 </div>
 
-                                <div class="flex flex-col gap-[6px] mt-1">
+                                <div class="flex flex-col gap-[2px] mt-1">
                                     <div class="flex items-start">
-                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">1.</div>
-                                        <div class="flex-1 text-[#334155] text-[16px] leading-[1.3]">
+                                        <div class="text-[#6D243A] text-[16px] font-bold mr-[8px]">1.</div>
+                                        <div class="flex-1 text-[#334155] text-[14px] leading-[1.3]">
                                             <strong>High-order Newton-Schulz Iteration:</strong> Efficient projection without expensive SVD computation.
                                         </div>
                                     </div>
                                     <div class="flex items-start">
-                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">2.</div>
-                                        <div class="flex-1 text-[#334155] text-[16px] leading-[1.3]">
+                                        <div class="text-[#6D243A] text-[16px] font-bold mr-[8px]">2.</div>
+                                        <div class="flex-1 text-[#334155] text-[14px] leading-[1.3]">
                                             <strong>Geometric Stability:</strong> Preserves fine-grained valvular motion across temporal transitions.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="w-full h-[280px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Flowchart Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(Complex Diagram of OSU)</span>
+                            <div class="w-full h-[120px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg mt-1">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Flowchart Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Diagram of OSU)</span>
                             </div>
                         </div>
 
-                        <div class="w-[45%] flex flex-col justify-between pb-10">
-                            <div class="w-full h-[200px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Table Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(Recurrence Equation Comparison)</span>
+                        <div class="w-[45%] flex flex-col justify-between pb-6">
+                            <div class="w-full h-[120px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Table Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Equation Comparison)</span>
                             </div>
 
-                            <div class="w-full h-[260px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Charts Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(4 Data Visualization Sub-figures)</span>
+                            <div class="w-full h-[180px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Charts Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Data Visualization)</span>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="absolute bottom-10 right-14 text-[32px] font-bold text-gray-500">
-                        5
-                    </div>
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">5</div>
                 </div>
 
                 <!-- ================= Slide 6: Method APFE ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-8 px-12 overflow-hidden text-black">
                     
-                    <div class="relative w-full flex justify-between items-start mb-4">
+                    <div class="relative w-full flex justify-between items-start mb-2">
                         <div class="w-[75%] flex flex-col mt-2">
-                            <h1 class="text-[44px] font-bold text-[#842043] mb-3">Method</h1>
+                            <h1 class="text-[44px] font-bold text-[#842043] mb-2">Method</h1>
                             <div class="w-full h-[2.5px] bg-[#842043]"></div>
                         </div>
                         
-                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="75"></div>
+                        <div class="absolute right-0 top-0 flex items-center gap-4 slide-header-logos" data-size="70"></div>
                     </div>
 
-                    <div class="text-[#842043] text-[28px] font-bold mb-4 ml-4 flex items-center gap-3">
+                    <div class="text-[#842043] text-[26px] font-bold mb-3 ml-4 flex items-center gap-3">
                         <span>-</span>
                         <span>Anatomical Prior-aware Feature Enhancement</span>
                     </div>
 
-                    <div class="w-full flex-1 flex gap-8 px-4">
+                    <div class="w-full flex-1 flex gap-4 px-4">
                         
-                        <div class="w-[55%] flex flex-col justify-between pb-10">
-                            <div class="text-[22px] leading-relaxed tracking-wide w-full flex flex-col gap-4">
-                                <div class="text-[#475569] text-[20px] leading-[1.6]">
+                        <div class="w-[55%] flex flex-col justify-between pb-6">
+                            <div class="leading-relaxed tracking-wide w-full flex flex-col gap-4">
+                                <div class="text-[#475569] text-[18px] leading-[1.4]">
                                     A physics-driven process explicitly separates anatomical structures from speckle noise:
                                 </div>
 
-                                <div class="flex flex-col gap-[15px]">
+                                <div class="flex flex-col gap-[8px]">
                                     <div class="flex items-start">
-                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">1.</div>
+                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">1.</div>
                                         <div class="flex-1">
-                                            <div class="text-[#1a365d] text-[20px] font-bold mb-[4px]">Acoustic Bias Estimation</div>
-                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[10px] text-center">
-                                                <span class="text-[20px] font-mono text-[#0f172a]">$$M_{t}=AvgPool_{K\times K}(X_{t})$$</span>
+                                            <div class="text-[#1a365d] text-[17px] font-bold mb-[2px]">Acoustic Bias Estimation</div>
+                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[4px] px-[8px] text-center">
+                                                <span class="text-[16px] font-mono text-[#0f172a]">$$M_{t}=AvgPool_{K\times K}(X_{t})$$</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="flex items-start">
-                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">2.</div>
+                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">2.</div>
                                         <div class="flex-1">
-                                            <div class="text-[#1a365d] text-[20px] font-bold mb-[4px]">Polarity-aware Decoupling</div>
-                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] p-[10px] text-center">
-                                                <span class="text-[18px] font-mono text-[#0f172a]">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$</span>
+                                            <div class="text-[#1a365d] text-[17px] font-bold mb-[2px]">Polarity-aware Decoupling</div>
+                                            <div class="bg-[#f8fafc] border border-[#e2e8f0] border-l-[4px] border-l-[#6D243A] rounded-[6px] py-[4px] px-[8px] text-center">
+                                                <span class="text-[15px] font-mono text-[#0f172a]">$$X_{t}^{+}=ReLU(X_{t}-M_{t}), \quad X_{t}^{-}=ReLU(M_{t}-X_{t})$$</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="flex items-start">
-                                        <div class="text-[#6D243A] text-[20px] font-bold mr-[10px]">3.</div>
-                                        <div class="flex-1 text-[#334155] text-[18px] leading-[1.4]">
+                                        <div class="text-[#6D243A] text-[18px] font-bold mr-[10px]">3.</div>
+                                        <div class="flex-1 text-[#334155] text-[15px] leading-[1.3]">
                                             <strong>$X_{t}^{+}$</strong> isolates high-frequency edges, while <strong>$X_{t}^{-}$</strong> captures low-response regions.
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="w-full h-[280px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Flowchart Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(Complex Diagram of APFE)</span>
+                            <div class="w-full h-[140px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg mt-1">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Flowchart Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Diagram of APFE)</span>
                             </div>
                         </div>
 
-                        <div class="w-[45%] flex flex-col justify-between pb-10">
-                            <div class="w-full h-[200px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Table Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(Ablation Study / Comparison)</span>
+                        <div class="w-[45%] flex flex-col justify-between pb-6">
+                            <div class="w-full h-[130px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Table Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Ablation Study)</span>
                             </div>
 
-                            <div class="w-full h-[260px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm">
-                                <span class="text-gray-400 text-2xl font-bold tracking-wide">Charts Placeholder</span>
-                                <span class="text-gray-400 text-base mt-2">(Data Visualization)</span>
+                            <div class="w-full h-[180px] bg-white border-[2px] border-dashed border-gray-400 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                                <span class="text-gray-400 text-lg font-bold tracking-wide">Charts Placeholder</span>
+                                <span class="text-gray-400 text-sm mt-1">(Data Visualization)</span>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="absolute bottom-10 right-14 text-[32px] font-bold text-gray-500">
-                        6
-                    </div>
+                    <div class="absolute bottom-[40px] right-[50px] text-[#777777] text-[36px] font-bold">6</div>
                 </div>
 
                 <!-- ================= Slide 7: Experiments ================= -->
-                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-10 px-12 overflow-hidden text-black">
+                <div class="w-[1280px] h-[720px] shrink-0 bg-white relative flex flex-col pt-6 px-12 overflow-hidden text-black">
                     
                     <div class="flex justify-between items-end mb-3">
                         <h1 class="text-[44px] font-bold text-[#842043]">Experiments</h1>
-                        
-                        <!-- Header Logos (Dynamically rendered) -->
+                        <!-- Header Logos -->
                         <div class="slide-header-logos flex items-center gap-4 mb-2" data-size="70"></div>
                     </div>
-                    <div class="w-full h-[2px] bg-[#842043] mb-6"></div>
+                    <div class="w-full h-[2px] bg-[#842043] mb-4"></div>
 
-                    <div class="w-full px-4 mb-8 flex justify-center">
-                        <table class="w-max mx-auto border-collapse text-[15px] tabular-nums text-black">
+                    <div class="w-full px-4 mb-3 flex justify-center">
+                        <table class="w-max mx-auto border-collapse text-[13px] tabular-nums text-black">
                             <thead class="border-t-[2px] border-b-[1px] border-black">
                                 <tr>
-                                    <th rowspan="2" class="align-bottom text-left px-3 pb-2 font-bold">Method</th>
+                                    <th rowspan="2" class="align-bottom text-left px-3 pb-0.5 font-bold">Method</th>
                                     
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">CAMUS</div>
+                                    <th colspan="4" class="pt-0.5 pb-0.5 px-1">
+                                        <div class="border-b-[1px] border-black mx-4 pb-0.5 text-center font-bold">CAMUS</div>
                                     </th>
-                                    <th colspan="4" class="pt-2 pb-1 px-1">
-                                        <div class="border-b-[1px] border-black mx-4 pb-1 text-center font-bold">EchoNet-Dynamic</div>
+                                    <th colspan="4" class="pt-0.5 pb-0.5 px-1">
+                                        <div class="border-b-[1px] border-black mx-4 pb-0.5 text-center font-bold">EchoNet-Dynamic</div>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
+                                    <th class="px-4 pb-1 font-bold">mDice &uarr;</th>
+                                    <th class="px-4 pb-1 font-bold">mHD95 &darr;</th>
+                                    <th class="px-4 pb-1 font-bold">corr &uarr;</th>
+                                    <th class="px-4 pb-1 font-bold">bias&plusmn;std (%)</th>
                                     
-                                    <th class="px-4 pb-2 font-bold">mDice &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">mHD95 &darr;</th>
-                                    <th class="px-4 pb-2 font-bold">corr &uarr;</th>
-                                    <th class="px-4 pb-2 font-bold">bias&plusmn;std (%)</th>
+                                    <th class="px-4 pb-1 font-bold">mDice &uarr;</th>
+                                    <th class="px-4 pb-1 font-bold">mHD95 &darr;</th>
+                                    <th class="px-4 pb-1 font-bold">corr &uarr;</th>
+                                    <th class="px-4 pb-1 font-bold">bias&plusmn;std (%)</th>
                                 </tr>
                             </thead>
                             
-                            <tbody class="text-center text-[14.5px]">
+                            <tbody class="text-center text-[12.5px]">
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        PolaFormer <span class="text-blue-600">[32]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
+                                    <td class="text-left px-3 py-0.5 pt-1.5">
+                                        PolaFormer <span class="text-blue-600">[32]</span> <span class="text-gray-400 text-[11px]">ICLR'25</span>
                                     </td>
                                     <td>92.47</td> <td>3.66</td> <td>0.792</td> <td>-0.28 &plusmn; 7.5</td>
                                     <td>91.51</td> <td>3.89</td> <td>0.678</td> <td>-0.01 &plusmn; 8.1</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vision LSTM <span class="text-blue-600">[2]</span> <span class="text-gray-400 text-[12px]">ICLR'25</span>
+                                    <td class="text-left px-3 py-0.5">
+                                        Vision LSTM <span class="text-blue-600">[2]</span> <span class="text-gray-400 text-[11px]">ICLR'25</span>
                                     </td>
                                     <td>92.71</td> <td>3.47</td> <td>0.745</td> <td>-2.36 &plusmn; 7.6</td>
                                     <td>91.71</td> <td>3.85</td> <td>0.691</td> <td>-0.37 &plusmn; 7.9</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Cutie <span class="text-blue-600">[9]</span> <span class="text-gray-400 text-[12px]">CVPR'24</span>
+                                    <td class="text-left px-3 py-0.5">
+                                        Cutie <span class="text-blue-600">[9]</span> <span class="text-gray-400 text-[11px]">CVPR'24</span>
                                     </td>
                                     <td>91.43</td> <td>3.97</td> <td>0.629</td> <td>0.44 &plusmn; 9.8</td>
                                     <td>90.44</td> <td>4.05</td> <td>0.600</td> <td>0.40 &plusmn; 9.6</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        LiVOS <span class="text-blue-600">[29]</span> <span class="text-gray-400 text-[12px]">CVPR'25</span>
+                                    <td class="text-left px-3 py-0.5 pb-1">
+                                        LiVOS <span class="text-blue-600">[29]</span> <span class="text-gray-400 text-[11px]">CVPR'25</span>
                                     </td>
-                                    <td class="pb-2">92.89</td> <td class="pb-2">3.56</td> <td class="pb-2">0.718</td> <td class="pb-2">-1.69 &plusmn; 7.8</td>
-                                    <td class="pb-2">91.92</td> <td class="pb-2">3.82</td> <td class="pb-2">0.702</td> <td class="pb-2">-0.04 &plusmn; 7.5</td>
+                                    <td class="pb-0.5">92.89</td> <td class="pb-0.5">3.56</td> <td class="pb-0.5">0.718</td> <td class="pb-0.5">-1.69 &plusmn; 7.8</td>
+                                    <td class="pb-0.5">91.92</td> <td class="pb-0.5">3.82</td> <td class="pb-0.5">0.702</td> <td class="pb-0.5">-0.04 &plusmn; 7.5</td>
                                 </tr>
                 
                                 <tr class="border-t-[1px] border-black">
-                                    <td class="text-left px-3 py-1.5 pt-2">
-                                        SAMed-2 <span class="text-blue-600">[50]</span> <span class="text-gray-400 text-[12px]">MICCAI'25</span>
+                                    <td class="text-left px-3 py-0.5 pt-1">
+                                        SAMed-2 <span class="text-blue-600">[50]</span> <span class="text-gray-400 text-[11px]">MICCAI'25</span>
                                     </td>
-                                    <td class="pt-2">93.55</td> <td class="pt-2">3.29</td> <td class="pt-2">0.815</td> <td class="pt-2">-2.16 &plusmn; 6.8</td>
-                                    <td class="pt-2">92.67</td> <td class="pt-2">3.60</td> <td class="pt-2">0.731</td> <td class="pt-2">-0.02 &plusmn; 7.3</td>
+                                    <td class="pt-0.5">93.55</td> <td class="pt-0.5">3.29</td> <td class="pt-0.5">0.815</td> <td class="pt-0.5">-2.16 &plusmn; 6.8</td>
+                                    <td class="pt-0.5">92.67</td> <td class="pt-0.5">3.60</td> <td class="pt-0.5">0.731</td> <td class="pt-0.5">-0.02 &plusmn; 7.3</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        EchoVim <span class="text-blue-600">[17]</span> <span class="text-gray-400 text-[12px]">ACM MM'25</span>
+                                    <td class="text-left px-3 py-0.5">
+                                        EchoVim <span class="text-blue-600">[17]</span> <span class="text-gray-400 text-[11px]">ACM MM'25</span>
                                     </td>
                                     <td>94.01</td> <td>3.21</td> <td>0.804</td> <td>-0.25 &plusmn; 7.2</td>
                                     <td>93.22</td> <td>3.47</td> <td>0.803</td> <td>-0.62 &plusmn; 6.2</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5">
-                                        Vivim <span class="text-blue-600">[52]</span> <span class="text-gray-400 text-[12px]">TCSVT'25</span>
+                                    <td class="text-left px-3 py-0.5">
+                                        Vivim <span class="text-blue-600">[52]</span> <span class="text-gray-400 text-[11px]">TCSVT'25</span>
                                     </td>
                                     <td>93.36</td> <td>3.45</td> <td>0.817</td> <td>-0.09 &plusmn; 7.3</td>
                                     <td>92.49</td> <td>3.70</td> <td>0.758</td> <td>1.43 &plusmn; 7.0</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-left px-3 py-1.5 pb-2">
-                                        GDKVM <span class="text-blue-600">[47]</span> <span class="text-gray-400 text-[12px]">ICCV'25</span>
+                                    <td class="text-left px-3 py-0.5 pb-1.5">
+                                        GDKVM <span class="text-blue-600">[47]</span> <span class="text-gray-400 text-[11px]">ICCV'25</span>
                                     </td>
-                                    <td class="pb-2">94.18</td> <td class="pb-2">3.31</td> <td class="pb-2">0.835</td> <td class="pb-2">-0.71 &plusmn; 6.7</td>
-                                    <td class="pb-2">93.33</td> <td class="pb-2">3.55</td> <td class="pb-2">0.810</td> <td class="pb-2">-0.08 &plusmn; 6.5</td>
+                                    <td class="pb-0.5">94.18</td> <td class="pb-0.5">3.31</td> <td class="pb-0.5">0.835</td> <td class="pb-0.5">-0.71 &plusmn; 6.7</td>
+                                    <td class="pb-0.5">93.33</td> <td class="pb-0.5">3.55</td> <td class="pb-0.5">0.810</td> <td class="pb-0.5">-0.08 &plusmn; 6.5</td>
                                 </tr>
                 
                                 <tr class="border-t-[1px] border-b-[2px] border-black font-bold">
-                                    <td class="text-left px-3 py-2">OSA</td>
+                                    <td class="text-left px-3 py-1">OSA</td>
                                     <td>94.82</td> <td>3.25</td> <td>0.830</td> <td>-0.44 &plusmn; 7.0</td>
                                     <td>93.90</td> <td>3.42</td> <td>0.816</td> <td>-1.08 &plusmn; 6.0</td>
                                 </tr>
@@ -765,60 +534,60 @@
                         </table>
                     </div>
 
-                    <div class="flex flex-row justify-between items-start w-full px-4 gap-12 mt-2">
+                    <div class="flex flex-row justify-between items-start w-full px-4 gap-8 mt-1">
                         
                         <div class="w-[45%]">
-                            <table class="w-full border-collapse text-[15px] text-center">
+                            <table class="w-full border-collapse text-[13px] text-center">
                                 <thead>
                                     <tr class="border-t-[3px] border-black">
-                                        <th class="text-left font-bold py-1">Method</th>
-                                        <th class="font-bold py-1">Paradigm</th>
-                                        <th class="font-bold py-1">Para</th>
-                                        <th class="font-bold py-1">Mem</th>
-                                        <th class="font-bold py-1">Time</th>
+                                        <th class="text-left font-bold py-0.5">Method</th>
+                                        <th class="font-bold py-0.5">Paradigm</th>
+                                        <th class="font-bold py-0.5">Para</th>
+                                        <th class="font-bold py-0.5">Mem</th>
+                                        <th class="font-bold py-0.5">Time</th>
                                     </tr>
                                     <tr class="border-b-[1px] border-black"></tr>
                                 </thead>
-                                <tbody class="text-[14.5px]">
+                                <tbody class="text-[12.5px]">
                                     <tr>
-                                        <td class="text-left py-1">PolaFormer</td>
+                                        <td class="text-left py-0.5">PolaFormer</td>
                                         <td class="text-[#4d9900]">Linear</td> <td>29.0</td><td>13.2</td><td>3.5</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">Vision LSTM</td>
+                                        <td class="text-left py-0.5">Vision LSTM</td>
                                         <td class="text-[#4d9900]">Linear</td>
                                         <td>5.9</td><td>4.5</td><td>2.5</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">Cutie</td>
+                                        <td class="text-left py-0.5">Cutie</td>
                                         <td class="text-[#cc6600]">Retrieval</td> <td>39.1</td><td>8.1</td><td>6.0</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">LiVOS</td>
+                                        <td class="text-left py-0.5">LiVOS</td>
                                         <td class="text-[#008000]">LKVA</td> <td>35.1</td><td>7.4</td><td>5.0</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">SAMed-2</td>
+                                        <td class="text-left py-0.5">SAMed-2</td>
                                         <td class="text-[#cc6600]">Retrieval</td>
                                         <td>110.1</td><td>27.5</td><td>7.0</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">EchoVim</td>
+                                        <td class="text-left py-0.5">EchoVim</td>
                                         <td class="text-[#4d9900]">SSM</td>
                                         <td>42.0</td><td>34.9</td><td>9.0</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1">Vivim</td>
+                                        <td class="text-left py-0.5">Vivim</td>
                                         <td class="text-[#4d9900]">SSM</td>
                                         <td>59.6</td><td>5.8</td><td>10.0</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left py-1 pb-2">GDKVM</td>
-                                        <td class="text-[#008000] pb-2">LKVA</td>
-                                        <td class="pb-2">35.2</td><td class="pb-2">7.5</td><td class="pb-2">4.5</td>
+                                        <td class="text-left py-0.5 pb-1">GDKVM</td>
+                                        <td class="text-[#008000] pb-1">LKVA</td>
+                                        <td class="pb-1">35.2</td><td class="pb-1">7.5</td><td class="pb-1">4.5</td>
                                     </tr>
                                     <tr class="border-t-[1px] border-black font-bold">
-                                        <td class="text-left py-2">Ours</td>
+                                        <td class="text-left py-1">Ours</td>
                                         <td class="text-[#0000b3]">Manifold Proj.</td> <td>38.3</td><td>7.6</td><td>3.0</td>
                                     </tr>
                                     <tr class="border-t-[3px] border-black"></tr>
@@ -826,14 +595,14 @@
                             </table>
                         </div>
 
-                        <div class="w-[55%] flex gap-6 h-[220px]">
-                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
+                        <div class="w-[55%] flex gap-6 h-[120px]">
+                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300 rounded-lg">
                                 <span>Middle Block Placeholder</span>
-                                <span class="text-xs mt-2">(As requested)</span>
+                                <span class="text-xs mt-1">(As requested)</span>
                             </div>
-                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300">
+                            <div class="flex-1 bg-white border border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-300 rounded-lg">
                                 <span>Right Block Placeholder</span>
-                                <span class="text-xs mt-2">(As requested)</span>
+                                <span class="text-xs mt-1">(As requested)</span>
                             </div>
                         </div>
 
@@ -855,26 +624,25 @@
                         <div class="slide-header-logos flex items-center gap-5 -mt-3" data-size="85"></div>
                     </div>
 
-                    <!-- 移除容易坍塌的 flex-1，改用绝对定位确保内容可见 -->
-                    <div class="absolute top-[220px] left-[130px] right-[100px] flex flex-col gap-10">
+                    <div class="absolute top-[180px] left-[130px] right-[100px] flex flex-col gap-6">
                         
                         <div class="flex items-start">
-                            <span class="text-[#842043] text-[34px] mr-5 leading-[1.6]">•</span>
-                            <p class="text-[34px] leading-[1.6] text-black">
+                            <span class="text-[#842043] text-[30px] mr-5 leading-[1.6]">•</span>
+                            <p class="text-[30px] leading-[1.6] text-black">
                                 <span class="font-bold text-[#842043]">Generality:</span> Extend to broader ultrasound datasets.
                             </p>
                         </div>
                         
                         <div class="flex items-start">
-                            <span class="text-[#842043] text-[34px] mr-5 leading-[1.6]">•</span>
-                            <p class="text-[34px] leading-[1.6] text-black">
+                            <span class="text-[#842043] text-[30px] mr-5 leading-[1.6]">•</span>
+                            <p class="text-[30px] leading-[1.6] text-black">
                                 <span class="font-bold text-[#842043]">Harder video tasks:</span> Tackle longer sequences, complex rhythms, and <br>difficult cases.
                             </p>
                         </div>
                         
                         <div class="flex items-start">
-                            <span class="text-[#842043] text-[34px] mr-5 leading-[1.6]">•</span>
-                            <p class="text-[34px] leading-[1.6] text-black">
+                            <span class="text-[#842043] text-[30px] mr-5 leading-[1.6]">•</span>
+                            <p class="text-[30px] leading-[1.6] text-black">
                                 <span class="font-bold text-[#842043]">Hardware-aware:</span> Optimize the matrix state for parallel acceleration.
                             </p>
                         </div>
