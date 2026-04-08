@@ -1,3 +1,15 @@
+## 重启工作流 / Restart Workflow
+
+如需重新查看或继续此项目，无需配置本地环境：
+
+1. **直接渲染**: 将 `latextab_in_html.html` 文件内容复制到 [Gemini Canvas](https://gemini.google.com/canvas) 或 [Claude Artifacts](https://claude.ai/new) 即可实时预览
+2. **在线编辑**: 使用 GitHub Codespaces 或 Gitpod 打开本仓库，无需本地安装
+3. **快速分享**: 归档中的 HTML 文件可直接在浏览器打开（文件 → 右键 → 用浏览器打开）
+
+**注意**: 此项目已废弃，重启仅供参考学习，不建议投入生产使用。
+
+---
+
 # 废弃项目存档 / Archived Projects
 
 ## latextab_in_html 计划（已废弃）

@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Sitemap: https://wangrui2025.github.io/sitemap-index.xml
+
+# Archive files - not for indexing
+Disallow: /arch/
