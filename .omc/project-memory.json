@@ -111,15 +111,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/pages/cv.astro",
-      "accessCount": 9,
-      "lastAccessed": 1775733682748,
+      "path": "astro/src/pages/[lang]/cv.astro",
+      "accessCount": 10,
+      "lastAccessed": 1775734120664,
       "type": "file"
     },
     {
-      "path": "astro/src/pages/[lang]/cv.astro",
+      "path": "astro/src/pages/cv.astro",
       "accessCount": 9,
-      "lastAccessed": 1775733995755,
+      "lastAccessed": 1775733682748,
       "type": "file"
     },
     {
@@ -148,21 +148,27 @@
     },
     {
       "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775733956549,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/config.ts",
-      "accessCount": 5,
-      "lastAccessed": 1775733956443,
+      "accessCount": 7,
+      "lastAccessed": 1775734189105,
       "type": "file"
     },
     {
       "path": "astro/src/components/PaperCard.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775733999990,
+      "accessCount": 6,
+      "lastAccessed": 1775734188643,
       "type": "file"
+    },
+    {
+      "path": "astro/src/content/config.ts",
+      "accessCount": 6,
+      "lastAccessed": 1775734189130,
+      "type": "file"
+    },
+    {
+      "path": "astro",
+      "accessCount": 3,
+      "lastAccessed": 1775734188702,
+      "type": "directory"
     },
     {
       "path": "astro/astro.config.mjs",
@@ -175,12 +181,6 @@
       "accessCount": 2,
       "lastAccessed": 1775733940586,
       "type": "file"
-    },
-    {
-      "path": "astro",
-      "accessCount": 2,
-      "lastAccessed": 1775733940644,
-      "type": "directory"
     },
     {
       "path": "astro/src/styles/global.css",
@@ -306,6 +306,18 @@
       "path": "astro/src/data/loaders.ts",
       "accessCount": 1,
       "lastAccessed": 1775733999884,
+      "type": "file"
+    },
+    {
+      "path": "astro/postcss.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775734011606,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/styles/cv.css",
+      "accessCount": 1,
+      "lastAccessed": 1775734182872,
       "type": "file"
     }
   ],

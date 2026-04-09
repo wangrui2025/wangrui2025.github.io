@@ -114,7 +114,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2pt 12pt;
-  font-size: 9pt;
+  font-size: 10pt;
 }
 
 .skill-label {
