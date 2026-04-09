@@ -56,12 +56,38 @@
               "type": "number"
             }
           },
-          "url_picture": {
-            "type": "string",
-            "format": "uri"
-          },
           "updated": {
             "type": "string"
+          },
+          "papers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "arxiv_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "citations": {
+                  "type": "number"
+                },
+                "authors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "arxiv_id",
+                "title",
+                "citations",
+                "authors"
+              ],
+              "additionalProperties": false
+            }
           }
         },
         "required": [

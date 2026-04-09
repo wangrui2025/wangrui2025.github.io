@@ -112,8 +112,8 @@
     },
     {
       "path": "astro/src/content/config.ts",
-      "accessCount": 15,
-      "lastAccessed": 1775735024071,
+      "accessCount": 20,
+      "lastAccessed": 1775735229746,
       "type": "file"
     },
     {
@@ -171,6 +171,18 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/scholar/stats.json",
+      "accessCount": 6,
+      "lastAccessed": 1775735189819,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content",
+      "accessCount": 5,
+      "lastAccessed": 1775735171058,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/data/cv.ts",
       "accessCount": 4,
       "lastAccessed": 1775734474870,
@@ -178,14 +190,8 @@
     },
     {
       "path": "astro",
-      "accessCount": 3,
-      "lastAccessed": 1775734188702,
-      "type": "directory"
-    },
-    {
-      "path": "astro/src/content",
-      "accessCount": 3,
-      "lastAccessed": 1775734446590,
+      "accessCount": 4,
+      "lastAccessed": 1775735136134,
       "type": "directory"
     },
     {
@@ -201,15 +207,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/content/scholar/stats.json",
+      "path": "astro/astro.config.mjs",
       "accessCount": 3,
-      "lastAccessed": 1775735078618,
+      "lastAccessed": 1775735139446,
       "type": "file"
     },
     {
-      "path": "astro/astro.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1775733940535,
+      "path": "astro/src/content/education/education.json",
+      "accessCount": 3,
+      "lastAccessed": 1775735232791,
       "type": "file"
     },
     {
@@ -283,6 +289,12 @@
       "accessCount": 2,
       "lastAccessed": 1775735066373,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/content/honors/honors.json",
+      "accessCount": 2,
+      "lastAccessed": 1775735232637,
+      "type": "file"
     },
     {
       "path": "astro/src/pages/slides.astro",
@@ -372,12 +384,6 @@
       "path": "astro/.astro/data-store.json",
       "accessCount": 1,
       "lastAccessed": 1775734411942,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/content/education/education.json",
-      "accessCount": 1,
-      "lastAccessed": 1775734450703,
       "type": "file"
     },
     {

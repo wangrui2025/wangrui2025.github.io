@@ -55,8 +55,13 @@ const scholar = defineCollection({
     i10index: z.number(),
     i10index5y: z.number(),
     cites_per_year: z.record(z.string(), z.number()),
-    url_picture: z.string().url().optional(),
     updated: z.string(),
+    papers: z.record(z.string(), z.object({
+      arxiv_id: z.string(),
+      title: z.string(),
+      citations: z.number(),
+      authors: z.array(z.string()),
+    })).optional(),
   }),
 });
 
