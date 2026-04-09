@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob, file } from 'astro/loaders';
 
 const papers = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/papers', pattern: '**/*.json' }),
   schema: z.object({
     date: z.string().regex(/^\d{4}-\d{2}$/, 'Date must be YYYY-MM format'),
     venue: z.string(),
@@ -39,7 +40,7 @@ const papers = defineCollection({
 });
 
 const scholar = defineCollection({
-  type: 'data',
+  loader: file('src/content/scholar/stats.json'),
   schema: z.object({
     scholar_id: z.string(),
     name: z.string(),
@@ -60,7 +61,7 @@ const scholar = defineCollection({
 });
 
 const honors = defineCollection({
-  type: 'data',
+  loader: file('src/content/honors/honors.json'),
   schema: z.object({
     graduate: z.array(z.object({
       period: z.string(),
@@ -82,7 +83,7 @@ const honors = defineCollection({
 });
 
 const education = defineCollection({
-  type: 'data',
+  loader: file('src/content/education/education.json'),
   schema: z.object({
     master: z.object({
       university: z.object({ zh: z.string(), en: z.string() }),
@@ -109,7 +110,7 @@ const education = defineCollection({
 });
 
 const homepage = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/homepage', pattern: '**/*.json' }),
   schema: z.object({
     // SEO metadata
     title: z.string(),

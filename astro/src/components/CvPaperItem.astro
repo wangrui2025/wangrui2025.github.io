@@ -24,7 +24,7 @@ const corrSuffix = '*';
     </div>
     <div class="text-[9pt] leading-tight">
       {localized.authors.map((author, i) => (
-        <span class="text-heading-primary dark:text-heading-dark">
+        <span class="text-[#1a1a1a]">
           {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localized.authors.length - 1 ? sep : ''}
         </span>
       ))}
