@@ -124,8 +124,8 @@
     },
     {
       "path": "astro/src/pages/[lang]/cv.astro",
-      "accessCount": 10,
-      "lastAccessed": 1775734120664,
+      "accessCount": 11,
+      "lastAccessed": 1775734483732,
       "type": "file"
     },
     {
@@ -142,8 +142,8 @@
     },
     {
       "path": "astro/src/pages/cv.astro",
-      "accessCount": 9,
-      "lastAccessed": 1775733682748,
+      "accessCount": 10,
+      "lastAccessed": 1775734479745,
       "type": "file"
     },
     {
@@ -165,9 +165,21 @@
       "type": "file"
     },
     {
+      "path": "astro/src/data/cv.ts",
+      "accessCount": 4,
+      "lastAccessed": 1775734474870,
+      "type": "file"
+    },
+    {
       "path": "astro",
       "accessCount": 3,
       "lastAccessed": 1775734188702,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/content",
+      "accessCount": 3,
+      "lastAccessed": 1775734446590,
       "type": "directory"
     },
     {
@@ -243,10 +255,10 @@
       "type": "file"
     },
     {
-      "path": "astro/src/content",
+      "path": "astro/src/styles/cv.css",
       "accessCount": 2,
-      "lastAccessed": 1775734264255,
-      "type": "directory"
+      "lastAccessed": 1775734489488,
+      "type": "file"
     },
     {
       "path": "astro/src/pages/slides.astro",
@@ -321,12 +333,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src/styles/cv.css",
-      "accessCount": 1,
-      "lastAccessed": 1775734182872,
-      "type": "file"
-    },
-    {
       "path": "astro/src/assets",
       "accessCount": 1,
       "lastAccessed": 1775734195557,
@@ -348,6 +354,18 @@
       "path": "astro/.astro/content.d.ts",
       "accessCount": 1,
       "lastAccessed": 1775734323069,
+      "type": "file"
+    },
+    {
+      "path": "astro/.astro/data-store.json",
+      "accessCount": 1,
+      "lastAccessed": 1775734411942,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/education/education.json",
+      "accessCount": 1,
+      "lastAccessed": 1775734450703,
       "type": "file"
     }
   ],

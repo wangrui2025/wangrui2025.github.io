@@ -21,7 +21,7 @@ export interface CVData {
     location: string;
     gender: string;
   };
-  researchDirections: string[];
+  researchDirections: Array<{ main: string; sub?: string }>;
   // Honors kept here for competition awards (CCF-CSP, 蓝桥杯, etc.) not in content collections
   honors: Array<{ text: string; period: string; secondary?: boolean }>;
   projects: CVProject[];
@@ -38,11 +38,11 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       gender: '男（he/him）',
     },
     researchDirections: [
-      '高效神经网络架构设计',
-      '非凸优化 / 几何深度学习',
-      '计算机视觉长程依赖建模',
-      '大规模多模态预训练',
-      '视觉-语言模型推理效率优化',
+      { main: '高效神经网络架构设计', sub: '模型压缩 / 神经架构搜索' },
+      { main: '非凸优化 / 几何深度学习', sub: '优化理论 / 几何表示学习' },
+      { main: '计算机视觉长程依赖建模', sub: '注意力机制 / Transformer' },
+      { main: '大规模多模态预训练', sub: '视觉-语言对齐 / 跨模态推理' },
+      { main: '视觉-语言模型推理效率优化', sub: '剪枝 / 量化 / 蒸馏' },
     ],
     // Competition awards not in content collections
     honors: [
@@ -76,11 +76,11 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       gender: 'Male（he/him）',
     },
     researchDirections: [
-      'Efficient Neural Architecture Design',
-      'Non-convex Optimization / Geometric Deep Learning',
-      'Long-range Dependency Modeling in Computer Vision',
-      'Large-scale Multimodal Pre-training',
-      'Vision-Language Model Inference Efficiency',
+      { main: 'Efficient Neural Architecture Design', sub: 'Model Compression / NAS' },
+      { main: 'Non-convex Optimization / Geometric Deep Learning', sub: 'Optimization Theory / Geometric Representation' },
+      { main: 'Long-range Dependency Modeling in Computer Vision', sub: 'Attention Mechanism / Transformer' },
+      { main: 'Large-scale Multimodal Pre-training', sub: 'Vision-Language Alignment / Cross-modal Reasoning' },
+      { main: 'Vision-Language Model Inference Efficiency', sub: 'Pruning / Quantization / Distillation' },
     ],
     // Competition awards not in content collections
     honors: [

@@ -128,7 +128,10 @@ const undergraduateHonors = honors.data.undergraduate
       <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:target" class="w-4 h-4 text-[#c96442]" />{labels.researchDirections}</h2>
       <div class="cv-grid-2">
         {cv.researchDirections.map((dir) => (
-          <div>• {dir}</div>
+          <div class="cv-bullet-item">
+            <span class="cv-bullet-main">• {dir.main}</span>
+            {dir.sub && <span class="cv-bullet-sub"> / {dir.sub}</span>}
+          </div>
         ))}
       </div>
     </section>

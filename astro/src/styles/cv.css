@@ -117,6 +117,23 @@
   font-size: 10pt;
 }
 
+.cv-bullet-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1pt;
+}
+
+.cv-bullet-main {
+  font-weight: 600;
+}
+
+.cv-bullet-sub {
+  font-size: 9pt;
+  color: #5e5d59;
+  font-weight: 400;
+  padding-left: 8pt;
+}
+
 .skill-label {
   font-weight: 600;
 }
