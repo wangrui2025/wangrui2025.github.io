@@ -106,8 +106,8 @@
   "hotPaths": [
     {
       "path": "astro/public/slides.html",
-      "accessCount": 23,
-      "lastAccessed": 1775645758381,
+      "accessCount": 24,
+      "lastAccessed": 1775701610612,
       "type": "file"
     },
     {
@@ -121,6 +121,12 @@
       "accessCount": 1,
       "lastAccessed": 1775640649431,
       "type": "directory"
+    },
+    {
+      "path": "astro/public/slides-README.md",
+      "accessCount": 1,
+      "lastAccessed": 1775701691532,
+      "type": "file"
     }
   ],
   "userDirectives": []
