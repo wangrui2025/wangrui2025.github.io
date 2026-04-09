@@ -47,6 +47,15 @@ const personSchema = getPersonSchema({
 <!doctype html>
 <html lang={lang} class="no-js">
   <head>
+    <!-- Theme initialization - runs FIRST to prevent FOUC -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme')
+          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -73,15 +82,6 @@ const personSchema = getPersonSchema({
     <meta name="twitter:image" content={new URL('/images/avatar.png', siteUrl)} />
 
     <meta name="description" content={description} />
-
-    <!-- Theme initialization - single source of truth via classList -->
-    <script is:inline>
-      (function() {
-        const theme = localStorage.getItem('theme')
-          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-      })();
-    </script>
 
     <!-- Optimized Font Loading with preconnect and display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
