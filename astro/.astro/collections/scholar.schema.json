@@ -11,6 +11,9 @@
       "additionalProperties": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "scholar_id": {
             "type": "string"
           },
@@ -91,6 +94,7 @@
           }
         },
         "required": [
+          "id",
           "scholar_id",
           "name",
           "affiliation",

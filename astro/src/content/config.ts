@@ -42,6 +42,7 @@ const papers = defineCollection({
 const scholar = defineCollection({
   loader: file('src/content/scholar/stats.json'),
   schema: z.object({
+    id: z.string(),
     scholar_id: z.string(),
     name: z.string(),
     affiliation: z.string(),
@@ -68,6 +69,7 @@ const scholar = defineCollection({
 const honors = defineCollection({
   loader: file('src/content/honors/honors.json'),
   schema: z.object({
+    id: z.string(),
     graduate: z.array(z.object({
       period: z.string(),
       rank: z.number(),
@@ -90,6 +92,7 @@ const honors = defineCollection({
 const education = defineCollection({
   loader: file('src/content/education/education.json'),
   schema: z.object({
+    id: z.string(),
     master: z.object({
       university: z.object({ zh: z.string(), en: z.string() }),
       universityUrl: z.object({ zh: z.string(), en: z.string() }),
