@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io/astro && cat package.json | grep -E '\\\"astro\\\"|\\\"@astrojs\\\"'\",\"description\":\"Check Astro version\"}",
-  "error": "Exit code 2\nrg: error parsing flag -E: grep config error: unknown encoding: \"astro\"|\"@astrojs\"",
-  "timestamp": "2026-04-09T11:31:50.211Z",
-  "retry_count": 10
+  "tool_input_preview": "{\"command\":\"git push\",\"timeout\":30000}",
+  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
+  "timestamp": "2026-04-09T11:42:04.193Z",
+  "retry_count": 4
 }
