@@ -1,7 +1,7 @@
 {
-  "tool_name": "mcp__plugin_oh-my-claudecode_t__lsp_diagnostics",
-  "tool_input_preview": "{\"file\":\"/Users/myk/Repo/wangrui2025.github.io/astro/src/layouts/HomepageLayout.astro\"}",
-  "error": "No language server available for file type: /Users/myk/Repo/wangrui2025.github.io/astro/src/layouts/HomepageLayout.astro\n\nUse lsp_servers tool to see available language servers.",
-  "timestamp": "2026-04-09T11:19:48.839Z",
-  "retry_count": 4
+  "tool_name": "mcp__context7__resolve-library-id",
+  "tool_input_preview": "{\"query\":\"astro.build framework\"}",
+  "error": "MCP error -32602: Input validation error: Invalid arguments for tool resolve-library-id: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"libraryName\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]",
+  "timestamp": "2026-04-09T11:26:05.466Z",
+  "retry_count": 2
 }

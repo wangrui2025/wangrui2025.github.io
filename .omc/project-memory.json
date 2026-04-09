@@ -117,9 +117,21 @@
       "type": "file"
     },
     {
+      "path": "astro/src/pages/[lang]/cv.astro",
+      "accessCount": 9,
+      "lastAccessed": 1775733995755,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 8,
+      "lastAccessed": 1775733992482,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content/homepage/en.json",
-      "accessCount": 7,
-      "lastAccessed": 1775733784711,
+      "accessCount": 8,
+      "lastAccessed": 1775733992641,
       "type": "file"
     },
     {
@@ -129,33 +141,99 @@
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 7,
-      "lastAccessed": 1775733785183,
-      "type": "file"
-    },
-    {
       "path": "astro/src",
-      "accessCount": 6,
-      "lastAccessed": 1775733759618,
+      "accessCount": 7,
+      "lastAccessed": 1775733949340,
       "type": "directory"
     },
     {
       "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775733782334,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/PaperCard.astro",
-      "accessCount": 4,
-      "lastAccessed": 1775733773859,
+      "accessCount": 6,
+      "lastAccessed": 1775733956549,
       "type": "file"
     },
     {
       "path": "astro/src/content/config.ts",
-      "accessCount": 4,
-      "lastAccessed": 1775733785024,
+      "accessCount": 5,
+      "lastAccessed": 1775733956443,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775733999990,
+      "type": "file"
+    },
+    {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775733940535,
+      "type": "file"
+    },
+    {
+      "path": "astro/tailwind.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775733940586,
+      "type": "file"
+    },
+    {
+      "path": "astro",
+      "accessCount": 2,
+      "lastAccessed": 1775733940644,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 2,
+      "lastAccessed": 1775733949288,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/utils/i18n.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775733956456,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Masthead.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775733956495,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/utils/structuredData.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775733963936,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/data/navigation.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775733963995,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Scripts.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775733964099,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages/[lang]/index.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775733992534,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775733999832,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/utils/constants.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775733999938,
       "type": "file"
     },
     {
@@ -177,63 +255,9 @@
       "type": "file"
     },
     {
-      "path": "astro/astro.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775733537701,
-      "type": "file"
-    },
-    {
-      "path": "astro/tailwind.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775733537850,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/pages/[lang]/index.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733537958,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/Scripts.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733552999,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 1,
-      "lastAccessed": 1775733553011,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/utils/constants.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775733553058,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/Masthead.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733553109,
-      "type": "file"
-    },
-    {
       "path": "astro/src/utils/lastUpdated.ts",
       "accessCount": 1,
       "lastAccessed": 1775733560299,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/utils/i18n.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775733560354,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/data/navigation.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775733560406,
       "type": "file"
     },
     {
@@ -249,21 +273,39 @@
       "type": "file"
     },
     {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733600299,
-      "type": "file"
-    },
-    {
       "path": "astro/src/content",
       "accessCount": 1,
       "lastAccessed": 1775733759565,
       "type": "directory"
     },
     {
-      "path": "astro/src/utils/structuredData.ts",
+      "path": "astro/tsconfig.json",
       "accessCount": 1,
-      "lastAccessed": 1775733765968,
+      "lastAccessed": 1775733949233,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/pages",
+      "accessCount": 1,
+      "lastAccessed": 1775733962751,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/pages/index.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775733964047,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components",
+      "accessCount": 1,
+      "lastAccessed": 1775733992588,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/data/loaders.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775733999884,
       "type": "file"
     }
   ],
