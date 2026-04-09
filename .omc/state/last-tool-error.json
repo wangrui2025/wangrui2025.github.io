@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git fetch origin && git reset --hard origin/main && git push --force\"}",
-  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
-  "timestamp": "2026-04-08T09:26:22.336Z",
-  "retry_count": 6
+  "tool_input_preview": "{\"command\":\"git -C ~/.claude push --no-thin\",\"timeout\":120000,\"description\":\"Retry push without thin pack\"}",
+  "error": "Exit code 1\nTo https://github.com/mykcs/.claude.git\n ! [rejected]        main -> main (non-fast-forward)\nerror: failed to push some refs to 'https://github.com/mykcs/.claude.git'\nhint: Updates were rejected because the tip of your current branch is behind\nhint: its remote counterpart. If you want to integrate the remote changes,\nhint: use 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.",
+  "timestamp": "2026-04-09T08:53:41.114Z",
+  "retry_count": 4
 }
