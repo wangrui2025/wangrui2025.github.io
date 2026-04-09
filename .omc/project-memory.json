@@ -118,32 +118,44 @@
     },
     {
       "path": "astro/src/content/homepage/en.json",
-      "accessCount": 5,
-      "lastAccessed": 1775733537684,
+      "accessCount": 7,
+      "lastAccessed": 1775733784711,
       "type": "file"
     },
     {
       "path": "astro/src/content/homepage/zh.json",
-      "accessCount": 5,
-      "lastAccessed": 1775733537901,
+      "accessCount": 7,
+      "lastAccessed": 1775733784867,
       "type": "file"
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775733649565,
+      "accessCount": 7,
+      "lastAccessed": 1775733785183,
       "type": "file"
     },
     {
       "path": "astro/src",
-      "accessCount": 4,
-      "lastAccessed": 1775733546982,
+      "accessCount": 6,
+      "lastAccessed": 1775733759618,
       "type": "directory"
     },
     {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775733782334,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 4,
+      "lastAccessed": 1775733773859,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content/config.ts",
-      "accessCount": 2,
-      "lastAccessed": 1775733552945,
+      "accessCount": 4,
+      "lastAccessed": 1775733785024,
       "type": "file"
     },
     {
@@ -171,12 +183,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733537744,
-      "type": "file"
-    },
-    {
       "path": "astro/tailwind.config.mjs",
       "accessCount": 1,
       "lastAccessed": 1775733537850,
@@ -186,12 +192,6 @@
       "path": "astro/src/pages/[lang]/index.astro",
       "accessCount": 1,
       "lastAccessed": 1775733537958,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/PaperCard.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775733552960,
       "type": "file"
     },
     {
@@ -252,6 +252,18 @@
       "path": "astro/src/components/AuthorProfile.astro",
       "accessCount": 1,
       "lastAccessed": 1775733600299,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content",
+      "accessCount": 1,
+      "lastAccessed": 1775733759565,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/utils/structuredData.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775733765968,
       "type": "file"
     }
   ],

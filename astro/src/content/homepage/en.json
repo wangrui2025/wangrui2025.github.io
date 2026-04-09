@@ -22,11 +22,11 @@
   },
   "news_heading": "Status",
   "news_items": [
-    "Applying for PhD, Fall 2027 Entry",
-    "Building Personal CV",
-    "Building Personal Website",
-    "Preparing CVPR Slides",
-    "Preparing CVPR Poster"
+    { "text": "Applying for PhD, Fall 2027 Entry", "url": null },
+    { "text": "Building Personal CV", "url": "/zh/cv/" },
+    { "text": "Building Personal Website", "url": null },
+    { "text": "Preparing CVPR Slides", "url": "/slides.html" },
+    { "text": "Preparing CVPR Poster", "url": null }
   ],
   "section_publications": "Publications",
   "section_education": "Education",

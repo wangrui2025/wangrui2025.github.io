@@ -1,2 +1,8 @@
 {"t":0,"agent":"aa40957","agent_type":"code-reviewer","event":"agent_start","parent_mode":"none"}
 {"t":0,"agent":"aa40957","agent_type":"code-reviewer","event":"agent_stop","success":true,"duration_ms":128565}
+{"t":0,"agent":"a1da54e","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a4a799d","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a9e419c","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a9e419c","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":35708}
+{"t":0,"agent":"a1da54e","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":50365}
+{"t":0,"agent":"a4a799d","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":57673}

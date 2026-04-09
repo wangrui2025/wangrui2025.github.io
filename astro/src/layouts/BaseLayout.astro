@@ -4,6 +4,7 @@ import Masthead from '../components/Masthead.astro';
 import Scripts from '../components/Scripts.astro';
 import { SITE_URL } from '../utils/constants';
 import { getLastUpdated } from '../utils/lastUpdated';
+import { getPersonSchema } from '../utils/structuredData';
 import '../styles/global.css';
 
 export interface Props {
@@ -27,6 +28,20 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 
 // Get the last commit date for "Last updated" display
 const lastUpdated = getLastUpdated();
+
+// Schema.org Person structured data
+const personSchema = getPersonSchema({
+  name: "Rui Wang",
+  url: "https://wangrui2025.github.io",
+  email: "wangrui2025@example.com",
+  affiliation: "Shenzhen University",
+  sameAs: [
+    "https://scholar.google.com/citations?user=01amzbYAAAAJ",
+    "https://github.com/wangrui2025",
+    "https://orcid.org/0009-0001-0278-1985"
+  ],
+  description: "M.S. Candidate at Shenzhen University"
+});
 ---
 
 <!doctype html>
@@ -124,32 +139,7 @@ const lastUpdated = getLastUpdated();
     </script>
 
     <!-- Schema.org Person Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Rui Wang",
-        "alternateName": "王锐",
-        "url": "https://wangrui2025.github.io",
-        "jobTitle": "M.S. Candidate",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Shenzhen University",
-          "url": "https://www.szu.edu.cn"
-        },
-        "sameAs": [
-          "https://scholar.google.com/citations?user=01amzbYAAAAJ",
-          "https://github.com/wangrui2025",
-          "https://orcid.org/0009-0001-0278-1985"
-        ],
-        "knowsAbout": [
-          "Medical Imaging Analysis",
-          "Echocardiography Video Segmentation",
-          "Computer Vision",
-          "Deep Learning"
-        ]
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   </head>
 
   <body class="bg-bg-primary text-text-primary dark:bg-bg-dark dark:text-text-dark">

@@ -130,7 +130,10 @@ const homepage = defineCollection({
     }),
     // News
     news_heading: z.string(),
-    news_items: z.array(z.string()),
+    news_items: z.array(z.object({
+      text: z.string(),
+      url: z.string().nullable(),
+    })),
     // Section titles
     section_publications: z.string(),
     section_education: z.string(),

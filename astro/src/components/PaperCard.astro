@@ -2,14 +2,9 @@
 import { Image } from 'astro:assets';
 import { getEntry, type CollectionEntry } from 'astro:content';
 import { TAG_URLS } from '../utils/constants';
-import osaImage from '../assets/paper/fig_osu_page-0001.jpg';
-import gdkvmImage from '../assets/paper/fig_gdkvm_page-0001.jpg';
 
-// Image path → imported image mapping (required for astro:assets <Image />)
-const imageMap = {
-  '../assets/paper/fig_osu_page-0001.jpg': osaImage,
-  '../assets/paper/fig_gdkvm_page-0001.jpg': gdkvmImage,
-} as const;
+// Dynamic image loading via import.meta.glob
+const imageMap = import.meta.glob('../assets/paper/*.jpg', { eager: true, query: { w: '600', format: 'webp' }, import: 'default' });
 
 export interface Props {
   paperKey?: 'osa' | 'gdkvm';
