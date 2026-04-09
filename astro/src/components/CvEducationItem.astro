@@ -42,6 +42,15 @@ const displayExamScores = examScores?.[lang];
     <span class="text-sm text-text-primary/60 dark:text-text-dark/60 tabular-nums">{displayPeriod}</span>
   </div>
   <div class="text-text-primary/80 dark:text-text-dark/80">{displayMajor} · {degree[lang]}</div>
-  {displayDetail && <div class="text-text-primary/70 dark:text-text-dark/70">{displayDetail}</div>}
+  {displayDetail && (
+    <div class="text-text-primary/70 dark:text-text-dark/70">
+      {displayDetail.split('·').map((part: string, i: number) => (
+        <>
+          {i > 0 && <span class="text-[#c96442] font-semibold">·</span>}
+          <span class={i === 0 ? 'font-semibold text-[#c96442]' : ''}>{part.trim()}</span>
+        </>
+      ))}
+    </div>
+  )}
   {displayExamScores && <div class="text-text-primary/70 dark:text-text-dark/70">{displayExamScores}</div>}
 </div>

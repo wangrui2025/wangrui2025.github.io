@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add -A && git commit -m \\\"refactor(homepage): improve code quality across multiple files\\n\\n- HomepageLayout: simplify news_items rendering ...",
-  "error": "Exit code 128\nfatal: unable to stat '.omc/state/.hud-state.json.tmp.1bfc31bc-88fe-4b8c-910f-4ff4b99058d9': No such file or directory",
-  "timestamp": "2026-04-09T11:23:45.958Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git fetch origin && git rebase origin/main && git push\",\"timeout\":30000}",
+  "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-09T11:35:08.448Z",
+  "retry_count": 4
 }

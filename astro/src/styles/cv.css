@@ -136,6 +136,9 @@
 
 .skill-label {
   font-weight: 600;
+  padding-left: 4pt;
+  border-left: 2pt solid #c96442;
+  margin-right: 2pt;
 }
 
 .cv-hobbies {
