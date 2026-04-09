@@ -117,16 +117,16 @@
       "type": "file"
     },
     {
+      "path": "astro/src/content/homepage/en.json",
+      "accessCount": 3,
+      "lastAccessed": 1775728689359,
+      "type": "file"
+    },
+    {
       "path": "astro/src",
       "accessCount": 2,
       "lastAccessed": 1775728091057,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/content/homepage/en.json",
-      "accessCount": 2,
-      "lastAccessed": 1775728134003,
-      "type": "file"
     },
     {
       "path": "astro/src/content/homepage/zh.json",
