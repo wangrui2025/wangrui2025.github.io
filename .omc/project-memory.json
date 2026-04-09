@@ -127,6 +127,12 @@
       "accessCount": 1,
       "lastAccessed": 1775701691532,
       "type": "file"
+    },
+    {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775727967990,
+      "type": "file"
     }
   ],
   "userDirectives": []
