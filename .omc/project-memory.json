@@ -111,6 +111,30 @@
       "type": "file"
     },
     {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775728128922,
+      "type": "file"
+    },
+    {
+      "path": "astro/src",
+      "accessCount": 2,
+      "lastAccessed": 1775728091057,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/content/homepage/en.json",
+      "accessCount": 2,
+      "lastAccessed": 1775728134003,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/homepage/zh.json",
+      "accessCount": 2,
+      "lastAccessed": 1775728138894,
+      "type": "file"
+    },
+    {
       "path": "astro/src/pages/slides.astro",
       "accessCount": 1,
       "lastAccessed": 1775639989561,
@@ -129,9 +153,9 @@
       "type": "file"
     },
     {
-      "path": "astro/src/layouts/HomepageLayout.astro",
+      "path": "astro/src/content/config.ts",
       "accessCount": 1,
-      "lastAccessed": 1775727967990,
+      "lastAccessed": 1775728102735,
       "type": "file"
     }
   ],

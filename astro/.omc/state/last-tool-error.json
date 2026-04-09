@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && ./scripts/autopush.sh \\\"feat(homepage): add coffee notion iframe to skills section\\\"\",\"description\":\"Auto-push changes to GitHub\"}",
-  "error": "Exit code 1\n[main 86c5bb9] feat(homepage): add coffee notion iframe to skills section\n 7 files changed, 29 insertions(+), 11 deletions(-)\n create mode 100644 .omc/sessions/26547e52-d4a5-430c-8cac-4bd3de3258b2.json\n create mode 100644 .omc/sessions/a7702eba-ef00-43fd-9f65-30e217e0e543.json\n create mode 100644 .omc/sessions/ccb38604-f7cd-4edf-a5c3-2f4a0ec1eeca.json\n delete mode 100644 .omc/state/last-tool-error.json\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash the...",
-  "timestamp": "2026-04-09T09:42:22.012Z",
-  "retry_count": 1
+  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add -A && git commit -m \\\"feat(homepage): replace coffee iframe with simple link\\\" && git push\",\"description\":\"Commit and push the simplifie...",
+  "error": "Exit code 1\n[main adad5ca] feat(homepage): replace coffee iframe with simple link\n 3 files changed, 12 insertions(+), 2 deletions(-)\nTo https://github.com/wangrui2025/wangrui2025.github.io.git\n ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at adad5cad389514657221395097ff78feeecca5c4 but expected 2de8488cf6982683e982134f9e6ca75c9f527164)\nerror: failed to push some refs to 'https://github.com/wangrui2025/wangrui2025.github.io.git'",
+  "timestamp": "2026-04-09T09:46:22.516Z",
+  "retry_count": 2
 }

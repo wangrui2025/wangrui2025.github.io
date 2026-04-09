@@ -204,13 +204,8 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
     </h2>
     <ul class="skills-list">
       {h.skills_items.map((item) => (
-        <li class="text-base">{item}</li>
+        <li class="text-base" set:html={item} />
       ))}
-      <li class="text-base">
-        <a href="https://myk-cafe.notion.site/ebd//294c5c9d8f2c8138b447fcd628b69801" target="_blank" rel="noopener noreferrer" class="text-link-primary dark:text-link-dark hover:underline">
-          咖啡
-        </a>
-      </li>
     </ul>
   </section>
 
