@@ -8,7 +8,6 @@ export interface Props {
 }
 
 const { lang = 'en' } = Astro.props;
-/* FIXED: displayName - CN: 王锐 / EN: Rui Wang（王锐） */
 const displayName = lang === 'en' ? 'Rui Wang（王锐）' : '王锐';
 const title = lang === 'en' ? 'M.S. Candidate' : '硕士研究生';
 const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
