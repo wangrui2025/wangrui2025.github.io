@@ -19,7 +19,8 @@ const corrSuffix = '*';
 ---
 
 <div class="mb-1.5">
-  <div class="flex flex-col gap-0.5">
+  <div class="flex justify-between items-start gap-2">
+  <div class="flex flex-col gap-0.5 flex-1 min-w-0">
     <div>
       <span class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold mr-1">
         [{paper.data.venue_full}]
@@ -48,4 +49,12 @@ const corrSuffix = '*';
       )}
     </div>
   </div>
+  {paper.data.venue_logo && (
+    <img
+      src={paper.data.venue_logo}
+      alt={paper.data.venue_full}
+      class="h-5 w-auto object-contain flex-shrink-0 mt-0.5"
+    />
+  )}
+</div>
 </div>
