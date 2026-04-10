@@ -171,15 +171,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/content/scholar/stats.json",
-      "accessCount": 6,
-      "lastAccessed": 1775735189819,
+      "path": "astro/src/data/cv.ts",
+      "accessCount": 7,
+      "lastAccessed": 1775806963786,
       "type": "file"
     },
     {
-      "path": "astro/src/data/cv.ts",
+      "path": "astro/src/content/scholar/stats.json",
       "accessCount": 6,
-      "lastAccessed": 1775806939340,
+      "lastAccessed": 1775735189819,
       "type": "file"
     },
     {

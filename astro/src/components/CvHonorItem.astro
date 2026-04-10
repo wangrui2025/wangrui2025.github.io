@@ -8,11 +8,11 @@ export interface Props {
 const { text, period, secondary = false } = Astro.props;
 ---
 
-<div class="flex justify-between items-baseline gap-4 w-full">
-  <span class={`text-base break-words ${secondary ? 'text-[#9a9a9a] dark:text-[#9a9a9a]' : 'text-text-primary dark:text-text-dark'}`}>
+<div class="flex justify-between items-baseline gap-4 w-full text-[10pt]">
+  <span class={`break-words ${secondary ? 'text-[#9a9a9a] dark:text-[#9a9a9a]' : 'text-text-primary dark:text-text-dark'}`}>
     {text}
   </span>
-  <span class="text-xs text-[#5e5d59] dark:text-[#87867f] text-right shrink-0 whitespace-nowrap">
+  <span class="text-[#9a9a9a] dark:text-[#9a9a9a] text-right shrink-0 whitespace-nowrap">
     {period}
   </span>
 </div>
