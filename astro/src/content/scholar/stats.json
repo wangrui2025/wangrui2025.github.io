@@ -1,47 +1,44 @@
-[
-  {
-    "id": "stats",
-    "scholar_id": "01amzbYAAAAJ",
-    "name": "Rui Wang",
-    "affiliation": "Shenzhen University",
-    "email_domain": "@mails.szu.edu.cn",
-    "homepage": "https://github.com/wangrui2025",
-    "interests": [
-      "Linear Recurrent Models",
-      "Video Segmentation",
-      "Linear Attention"
-    ],
-    "citedby": 3,
-    "citedby5y": 0,
-    "hindex": 1,
-    "hindex5y": 0,
-    "i10index": 0,
-    "i10index5y": 0,
-    "cites_per_year": {},
-    "updated": "2026-04-06 10:43:30.582989",
-    "papers": {
-      "2512.10252": {
-        "arxiv_id": "2512.10252",
-        "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
-        "citations": 1,
-        "authors": [
-          "Rui Wang",
-          "Yimu Sun",
-          "Jingxing Guo",
-          "Huisi Wu",
-          "Jing Qin"
-        ]
-      },
-      "2603.26188": {
-        "arxiv_id": "2603.26188",
-        "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
-        "citations": 0,
-        "authors": [
-          "Rui Wang",
-          "Huisi Wu",
-          "Jing Qin"
-        ]
-      }
+{
+  "scholar_id": "01amzbYAAAAJ",
+  "name": "Rui Wang",
+  "affiliation": "Shenzhen University",
+  "email_domain": "@mails.szu.edu.cn",
+  "homepage": "https://github.com/wangrui2025",
+  "interests": [
+    "Linear Recurrent Models",
+    "Video Segmentation",
+    "Linear Attention"
+  ],
+  "citedby": 3,
+  "citedby5y": 0,
+  "hindex": 1,
+  "hindex5y": 0,
+  "i10index": 0,
+  "i10index5y": 0,
+  "cites_per_year": {},
+  "updated": "2026-04-06 10:43:30.582989",
+  "papers": {
+    "2512.10252": {
+      "arxiv_id": "2512.10252",
+      "title": "GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule",
+      "citations": 1,
+      "authors": [
+        "Rui Wang",
+        "Yimu Sun",
+        "Jingxing Guo",
+        "Huisi Wu",
+        "Jing Qin"
+      ]
+    },
+    "2603.26188": {
+      "arxiv_id": "2603.26188",
+      "title": "OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement",
+      "citations": 0,
+      "authors": [
+        "Rui Wang",
+        "Huisi Wu",
+        "Jing Qin"
+      ]
     }
   }
-]
+}
