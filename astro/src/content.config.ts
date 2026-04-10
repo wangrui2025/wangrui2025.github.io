@@ -122,7 +122,6 @@ const homepage = defineCollection({
     description: z.string(),
     // About section
     status_badge: z.string(),
-    about_text: z.string().optional(), // HTML content (deprecated, use background.intro)
     background: z.object({
       heading: z.string(),
       intro: z.string(), // HTML content
