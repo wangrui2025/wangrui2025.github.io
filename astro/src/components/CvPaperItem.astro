@@ -4,10 +4,6 @@ import type { CollectionEntry } from 'astro:content';
 
 import iccvLogo from '../assets/paper/iccv_logo.png';
 
-const logoMap = {
-  'ICCV 2025': iccvLogo,
-};
-
 export interface Props {
   paper: CollectionEntry<'papers'>;
   lang: 'en' | 'zh';
@@ -24,7 +20,7 @@ const sep = authorLang === 'zh' ? '，' : ', ';
 const localizedAuthors = paper.data[authorLang].authors;
 const corrSuffix = '*';
 
-const venueLogo = paper.data.venue_full ? logoMap[paper.data.venue_full] : undefined;
+const showIccvLogo = paper.data.venue_full === 'ICCV 2025';
 
 <div class="mb-1.5">
   <div class="flex justify-between items-start gap-2">
