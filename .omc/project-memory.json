@@ -243,6 +243,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/Scripts.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775815752348,
+      "type": "file"
+    },
+    {
       "path": "astro/tailwind.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1775733940586,
@@ -270,12 +276,6 @@
       "path": "astro/src/data/navigation.ts",
       "accessCount": 2,
       "lastAccessed": 1775733963995,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/Scripts.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775733964099,
       "type": "file"
     },
     {
