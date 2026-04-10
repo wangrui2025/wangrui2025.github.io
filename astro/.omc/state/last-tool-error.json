@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\"}",
-  "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
-  "timestamp": "2026-04-10T10:19:37.471Z",
-  "retry_count": 6
+  "tool_input_preview": "{\"command\":\"pnpm build 2>&1\",\"timeout\":120000,\"description\":\"Run astro check and build\"}",
+  "error": "Exit code 1\n\n> astro-site@1.0.0 build /Users/myk/Repo/wangrui2025.github.io/astro\n> astro check && astro build\n\n18:50:14 [vite] Re-optimizing dependencies because lockfile has changed\n18:50:14 [content] Syncing content\n18:50:14 [content] Astro config changed\n18:50:14 [content] Content config changed\n18:50:14 [content] Clearing content store\n[InvalidContentEntryDataError] scholar → scholar_id data does not match collection schema.\n\n  ****: Expected type `\"object\"`, received `\"string\"`\n\n  Hint:\n  ...",
+  "timestamp": "2026-04-10T10:50:14.943Z",
+  "retry_count": 2
 }

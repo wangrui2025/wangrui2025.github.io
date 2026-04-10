@@ -40,7 +40,7 @@ const papers = defineCollection({
 });
 
 const scholar = defineCollection({
-  loader: file('src/content/scholar/stats.json'),
+  loader: glob({ base: './src/content/scholar', pattern: '**/*.json' }),
   schema: z.object({
     scholar_id: z.string(),
     name: z.string(),
