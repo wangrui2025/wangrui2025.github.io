@@ -11,9 +11,6 @@
     "status_badge": {
       "type": "string"
     },
-    "about_text": {
-      "type": "string"
-    },
     "background": {
       "type": "object",
       "properties": {

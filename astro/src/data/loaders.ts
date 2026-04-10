@@ -11,19 +11,25 @@ export async function loadPapersForCV() {
  * Load honors data
  */
 export async function loadHonors() {
-  return await getEntry('honors', 'honors');
+  const entry = await getEntry('honors', 'honors');
+  if (!entry) throw new Error('honors entry not found');
+  return entry;
 }
 
 /**
  * Load education data
  */
 export async function loadEducation() {
-  return await getEntry('education', 'education');
+  const entry = await getEntry('education', 'education');
+  if (!entry) throw new Error('education entry not found');
+  return entry;
 }
 
 /**
  * Load homepage content for specific language
  */
 export async function loadHomepageContent(lang: 'en' | 'zh') {
-  return await getEntry('homepage', lang);
+  const entry = await getEntry('homepage', lang);
+  if (!entry) throw new Error(`homepage entry "${lang}" not found`);
+  return entry;
 }
