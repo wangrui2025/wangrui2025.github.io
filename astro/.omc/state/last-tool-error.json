@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npm run build 2>&1 | grep -E \\\"ERROR|error|CvPaperItem\\\"\",\"timeout\":60000}",
-  "error": "Exit code 2\nrg: error parsing flag -E: grep config error: unknown encoding: ERROR|error|CvPaperItem",
-  "timestamp": "2026-04-10T09:45:30.548Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"cp /Users/myk/Repo/wangrui2025.github.io/astro/src/assets/paper/iccv_logo.png /Users/myk/Repo/wangrui2025.github.io/astro/public/assets/paper/iccv_logo.png\"}",
+  "error": "Exit code 1\ncp: /Users/myk/Repo/wangrui2025.github.io/astro/public/assets/paper/iccv_logo.png: No such file or directory",
+  "timestamp": "2026-04-10T09:47:17.825Z",
+  "retry_count": 8
 }
