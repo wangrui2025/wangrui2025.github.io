@@ -22,49 +22,51 @@ const showCvprLogo = paper.data.venue_full === 'CVPR 2026 Highlight';
 ---
 
 <div class="mb-1.5">
-  <div class="flex justify-between items-start gap-2">
-  <div class="flex flex-col gap-0.5 flex-1 min-w-0">
-    <div>
-      <span class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold mr-1">
-        [{paper.data.venue_full}]
-      </span>
-      <span class="font-semibold text-[11pt] leading-tight text-heading-primary dark:text-heading-dark">
-        {localized.title}
-      </span>
-    </div>
-    <div class="text-[9pt] leading-tight">
-      {localizedAuthors.map((author, i) => (
-        <span class={author.is_self ? 'text-[#1a1a1a] font-semibold' : 'text-[#5e5d59]'}>
-          {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localizedAuthors.length - 1 ? sep : ''}
+  <div class="flex justify-between items-stretch gap-2">
+    <div class="flex flex-col gap-0.5 flex-1 min-w-0">
+      <div>
+        <span class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold mr-1">
+          [{paper.data.venue_full}]
         </span>
-      ))}
+        <span class="font-semibold text-[11pt] leading-tight text-heading-primary dark:text-heading-dark">
+          {localized.title}
+        </span>
+      </div>
+      <div class="text-[9pt] leading-tight">
+        {localizedAuthors.map((author, i) => (
+          <span class={author.is_self ? 'text-[#1a1a1a] font-semibold' : 'text-[#5e5d59]'}>
+            {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localizedAuthors.length - 1 ? sep : ''}
+          </span>
+        ))}
+      </div>
+      <div class="flex gap-2 mt-0.5">
+        {paper.data.arxiv && (
+          <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
+            [arXiv]
+          </a>
+        )}
+        {paper.data.project && (
+          <a href={paper.data.project} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
+            [Project]
+          </a>
+        )}
+      </div>
     </div>
-    <div class="flex gap-2 items-center mt-0.5">
-      {paper.data.arxiv && (
-        <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
-          [arXiv]
-        </a>
-      )}
-      {paper.data.project && (
-        <a href={paper.data.project} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
-          [Project]
-        </a>
-      )}
+    <div class="flex items-center gap-1 self-start pt-0.5">
       {showIccvLogo && (
         <img
           src="/assets/paper/iccv_logo.png"
           alt="ICCV 2025"
-          class="h-4 w-auto object-contain flex-shrink-0"
+          class="h-full w-auto object-contain"
         />
       )}
       {showCvprLogo && (
         <img
           src="/assets/paper/cvpr_logo.svg"
           alt="CVPR 2026"
-          class="h-4 w-auto object-contain flex-shrink-0"
+          class="h-full w-auto object-contain"
         />
       )}
     </div>
   </div>
-</div>
 </div>
