@@ -94,7 +94,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       {
         name: 'how2research',
         type: 'Open Source',
-        description: 'An open-source research guide for graduate students, covering CVPR/ICCV submission processes, efficient LaTeX writing tips, research prompt engineering, and development environment setup (uv, VSCode). Maintained by "miyuki11".',
+        description: 'An open-source research guide for graduate students, covering conference submission processes, efficient LaTeX writing tips, research prompt engineering, and development environment setup (uv, VSCode). Maintained by "miyuki11".',
         url: 'https://how2research-apple.notion.site/858e9f718aff8270806e81385f3d6a69?v=707e9f718aff828ab4df08eb2a69c945',
       },
     ],
