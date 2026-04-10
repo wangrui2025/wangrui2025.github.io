@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\",\"description\":\"Fetch, rebase, and push\"}",
-  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
-  "timestamp": "2026-04-10T08:03:57.953Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"git add astro/src/data/cv.ts && git commit -m \\\"style(cv): simplify project description, use general 'conference' instead of CVPR/ICCV\\\" && git push\",\"description\":\"Commit and push cv.ts c...",
+  "error": "Exit code 128\nwarning: could not open directory 'astro/astro/src/data/': No such file or directory\nfatal: pathspec 'astro/src/data/cv.ts' did not match any files",
+  "timestamp": "2026-04-10T08:12:47.461Z",
+  "retry_count": 2
 }
