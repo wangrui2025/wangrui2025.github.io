@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\",\"timeout\":30000}",
-  "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
-  "timestamp": "2026-04-09T11:47:28.418Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"git remote set-url origin git@github.com:wangrui2025/wangrui2025.github.io.git && git push\",\"timeout\":30000}",
+  "error": "Exit code 128\nkex_exchange_identification: read: Connection reset by peer\r\nConnection reset by 198.18.16.214 port 22\r\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.",
+  "timestamp": "2026-04-09T11:50:41.719Z",
+  "retry_count": 6
 }
