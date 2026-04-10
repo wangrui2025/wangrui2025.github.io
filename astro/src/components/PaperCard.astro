@@ -27,7 +27,7 @@ if (!paper) {
 }
 
 const localized = paper.data[lang];
-const imageSrc = imageMap[paper.data.image.split('/').pop() || ''];
+const imageSrc = imageMap[paper.data.image.split('/').pop() as keyof typeof imageMap];
 ---
 
 <div class="flex flex-col border border-paper-border dark:border-paper-border-dark rounded-xl p-5 mb-6 bg-paper-bg dark:bg-paper-bg-dark border-l-4 border-l-paper-accent dark:border-l-paper-accent-dark shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
