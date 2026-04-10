@@ -78,15 +78,21 @@ const lastUpdated = getLastUpdated();
         const page = document.querySelector('.cv-page') as HTMLElement | null;
         if (page) {
           page.style.transform = '';
-          page.style.width = '';
+          page.style.transformOrigin = '';
         }
       }
 
       document.getElementById('export-pdf')?.addEventListener('click', () => {
-        setupPrintScale();
-        window.print();
+        // Reset before measuring in case a previous print was cancelled
+        resetPrintScale();
+        // Wait for fonts to be ready before measuring
+        document.fonts.ready.then(() => {
+          setupPrintScale();
+          window.print();
+        });
       });
 
+      // Reliable cleanup: reset on afterprint + safety fallback
       window.addEventListener('afterprint', resetPrintScale);
     </script>
 
