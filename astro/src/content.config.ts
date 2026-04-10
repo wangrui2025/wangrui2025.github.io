@@ -42,7 +42,6 @@ const papers = defineCollection({
 const scholar = defineCollection({
   loader: file('src/content/scholar/stats.json'),
   schema: z.object({
-    id: z.string(),
     scholar_id: z.string(),
     name: z.string(),
     affiliation: z.string(),
