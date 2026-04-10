@@ -38,7 +38,7 @@ const showIccvLogo = paper.data.venue_full === 'ICCV 2025';
         </span>
       ))}
     </div>
-    <div class="flex gap-2 mt-0.5">
+    <div class="flex gap-2 items-center mt-0.5">
       {paper.data.arxiv && (
         <a href={paper.data.arxiv} target="_blank" rel="noopener" class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] no-underline hover:text-heading-primary dark:hover:text-heading-dark hover:underline">
           [arXiv]
@@ -49,14 +49,14 @@ const showIccvLogo = paper.data.venue_full === 'ICCV 2025';
           [Project]
         </a>
       )}
+      {showIccvLogo && (
+        <img
+          src="/assets/paper/iccv_logo.png"
+          alt="ICCV 2025"
+          class="h-4 w-auto object-contain flex-shrink-0"
+        />
+      )}
     </div>
   </div>
-  {showIccvLogo && (
-    <img
-      src="/assets/paper/iccv_logo.png"
-      alt="ICCV 2025"
-      class="h-5 w-auto object-contain flex-shrink-0 align-middle mx-1"
-    />
-  )}
 </div>
 </div>

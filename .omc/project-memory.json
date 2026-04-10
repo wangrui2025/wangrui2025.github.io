@@ -118,8 +118,8 @@
     },
     {
       "path": "astro/src/components/CvPaperItem.astro",
-      "accessCount": 22,
-      "lastAccessed": 1775814826335,
+      "accessCount": 24,
+      "lastAccessed": 1775814872766,
       "type": "file"
     },
     {
@@ -130,8 +130,8 @@
     },
     {
       "path": "astro/src/pages/[lang]/cv.astro",
-      "accessCount": 17,
-      "lastAccessed": 1775814805951,
+      "accessCount": 18,
+      "lastAccessed": 1775814839142,
       "type": "file"
     },
     {
