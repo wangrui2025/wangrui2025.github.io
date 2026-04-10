@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git push\",\"description\":\"Force push current branch\"}",
+  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\",\"description\":\"Fetch, rebase, and push\"}",
   "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
-  "timestamp": "2026-04-10T08:02:47.697Z",
-  "retry_count": 6
+  "timestamp": "2026-04-10T08:03:57.953Z",
+  "retry_count": 4
 }

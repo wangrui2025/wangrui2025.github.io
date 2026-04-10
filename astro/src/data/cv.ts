@@ -56,7 +56,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       {
         name: 'how2research',
         type: '开源项目',
-        description: '面向研究生的开源科研指南。涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程及开发环境配置（uv, VSCode）等。由 "miyuki11" 维护。',
+        description: '面向研究生的开源科研指南。涵盖计算机会议投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程及开发环境配置（uv, VSCode）等。本人以 "miyuki11" 的身份维护。',
         url: 'https://how2research-apple.notion.site/858e9f718aff8270806e81385f3d6a69?v=707e9f718aff828ab4df08eb2a69c945',
       },
     ],
