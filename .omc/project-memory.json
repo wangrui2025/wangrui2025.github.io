@@ -183,16 +183,16 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775808120490,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content",
       "accessCount": 5,
       "lastAccessed": 1775735171058,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775808115274,
-      "type": "file"
     },
     {
       "path": "astro",
