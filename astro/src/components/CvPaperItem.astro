@@ -4,13 +4,17 @@ import type { CollectionEntry } from 'astro:content';
 export interface Props {
   paper: CollectionEntry<'papers'>;
   lang: 'en' | 'zh';
+  titleLang?: 'en' | 'zh';
 }
 
-const { paper, lang } = Astro.props;
-const localized = paper.data[lang];
+const { paper, lang, titleLang } = Astro.props;
+const displayLang = titleLang ?? lang;
+const localized = paper.data[displayLang];
+const authorLang = lang;
 
 // Separator and asterisk based on language
-const sep = lang === 'zh' ? '，' : ', ';
+const sep = authorLang === 'zh' ? '，' : ', ';
+const localizedAuthors = paper.data[authorLang].authors;
 const corrSuffix = '*';
 ---
 
@@ -23,7 +27,7 @@ const corrSuffix = '*';
       {localized.title}
     </div>
     <div class="text-[9pt] leading-tight">
-      {localized.authors.map((author, i) => (
+      {localizedAuthors.map((author, i) => (
         <span class={author.is_self ? 'text-[#1a1a1a] font-semibold' : 'text-[#5e5d59]'}>
           {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localized.authors.length - 1 ? sep : ''}
         </span>
