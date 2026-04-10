@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io/astro && npm run build 2>&1 | tail -5 && cd .. && git add -A && git commit -m \\\"chore(cv): update how2research description\\\" && git push\",\"timeout\"...",
-  "error": "Exit code 128\n16:04:50 ✓ Completed in 2ms.\n\n16:04:50 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`\n16:04:50 [build] 4 page(s) built in 1.34s\n16:04:50 [build] Complete!\n[main 3ea4167] chore(cv): update how2research description\n 5 files changed, 14 insertions(+), 14 deletions(-)\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Recv failure: Connection reset by peer",
-  "timestamp": "2026-04-10T08:04:50.718Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\",\"timeout\":30000}",
+  "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-10T08:08:02.396Z",
+  "retry_count": 4
 }

@@ -61,9 +61,9 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       },
     ],
     skills: [
-      { category: '编程语言', items: 'Python, C/C++, SQL, JavaScript' },
-      { category: '深度学习', items: 'PyTorch, TensorFlow, 医学影像分析' },
-      { category: '开发工具', items: 'Git, Linux, Docker, VS Code, PyCharm' },
+      { category: '编程语言', items: 'Python, C/C++' },
+      { category: '深度学习', items: 'PyTorch' },
+      { category: '开发工具', items: 'Git, VS Code' },
       { category: '科研工具', items: 'Claude Code, Harness Engineering, LaTeX' },
     ],
     hobbies: ['排球', '棒垒球', '书法'],
