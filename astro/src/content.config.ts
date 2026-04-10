@@ -88,7 +88,7 @@ const honors = defineCollection({
 });
 
 const education = defineCollection({
-  loader: file('src/content/education/education.json'),
+  loader: glob({ base: './src/content/education', pattern: '**/*.json' }),
   schema: z.object({
     master: z.object({
       university: z.object({ zh: z.string(), en: z.string() }),
