@@ -1,14 +1,11 @@
-[
-  {
-    "id": "honors",
-    "graduate": [
-      { "period": "2025.12", "rank": 1, "zh": { "text": "研究生国家奖学金" }, "en": { "text": "National Graduate Scholarship" }, "show_on_cv": true, "show_on_homepage": true },
-      { "period": "2024.12", "rank": 2, "zh": { "text": "深圳大学研究生学业奖学金特等奖" }, "en": { "text": "Shenzhen University Graduate Academic Scholarship — Special Prize" }, "show_on_cv": true, "show_on_homepage": true },
-      { "period": "2025.12", "rank": 3, "zh": { "text": "深圳大学研究生学业奖学金一等奖" }, "en": { "text": "Shenzhen University Graduate Academic Scholarship — First Prize" }, "show_on_cv": true, "show_on_homepage": true },
-      { "period": "2026.01", "rank": 4, "zh": { "text": "深圳大学学术启航奖学金" }, "en": { "text": "Shenzhen University Academic Launch Scholarship" }, "show_on_cv": true, "show_on_homepage": true }
-    ],
-    "undergraduate": [
-      { "period": "2022.12", "rank": 5, "zh": { "text": "河南大学三好学生、河南大学奖学金" }, "en": { "text": "Henan University Merit Student, Henan University Scholarship" }, "show_on_cv": true, "show_on_homepage": true }
-    ]
-  }
-]
+{
+  "graduate": [
+    { "period": "2025.12", "rank": 1, "zh": { "text": "研究生国家奖学金" }, "en": { "text": "National Graduate Scholarship" }, "show_on_cv": true, "show_on_homepage": true },
+    { "period": "2024.12", "rank": 2, "zh": { "text": "深圳大学研究生学业奖学金特等奖" }, "en": { "text": "Shenzhen University Graduate Academic Scholarship — Special Prize" }, "show_on_cv": true, "show_on_homepage": true },
+    { "period": "2025.12", "rank": 3, "zh": { "text": "深圳大学研究生学业奖学金一等奖" }, "en": { "text": "Shenzhen University Graduate Academic Scholarship — First Prize" }, "show_on_cv": true, "show_on_homepage": true },
+    { "period": "2026.01", "rank": 4, "zh": { "text": "深圳大学学术启航奖学金" }, "en": { "text": "Shenzhen University Academic Launch Scholarship" }, "show_on_cv": true, "show_on_homepage": true }
+  ],
+  "undergraduate": [
+    { "period": "2022.12", "rank": 5, "zh": { "text": "河南大学三好学生、河南大学奖学金" }, "en": { "text": "Henan University Merit Student, Henan University Scholarship" }, "show_on_cv": true, "show_on_homepage": true }
+  ]
+}
