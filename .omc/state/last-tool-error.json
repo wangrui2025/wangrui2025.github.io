@@ -1,0 +1,7 @@
+{
+  "tool_name": "Agent",
+  "tool_input_preview": "{\"description\":\"Research CV venue format benchmark\",\"prompt\":\"Search for personal homepage/CV pages of 2-3 top computer vision researchers (e.g., Andrew Zisserman Oxford, Alexei Efros Berkeley, or sim...",
+  "error": "Agent type 'ecc:scientist' not found. Available agents: general-purpose, statusline-setup, Explore, Plan, claude-code-guide, everything-claude-code:architect, everything-claude-code:build-error-resolver, everything-claude-code:chief-of-staff, everything-claude-code:code-reviewer, everything-claude-code:cpp-build-resolver, everything-claude-code:cpp-reviewer, everything-claude-code:database-reviewer, everything-claude-code:doc-updater, everything-claude-code:docs-lookup, everything-claude-code:e2...",
+  "timestamp": "2026-04-10T08:35:39.745Z",
+  "retry_count": 4
+}
