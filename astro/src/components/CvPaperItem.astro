@@ -57,9 +57,9 @@ const venueLogo = paper.data.venue_full ? logoMap[paper.data.venue_full] : undef
       )}
     </div>
   </div>
-  {paper.data.venue_logo && (
-    <img
-      src={paper.data.venue_logo}
+  {venueLogo && (
+    <Image
+      src={venueLogo}
       alt={paper.data.venue_full}
       class="h-5 w-auto object-contain flex-shrink-0 mt-0.5"
     />
