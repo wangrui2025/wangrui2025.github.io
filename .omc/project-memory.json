@@ -178,14 +178,14 @@
     },
     {
       "path": "astro/astro.config.mjs",
-      "accessCount": 7,
-      "lastAccessed": 1775812778368,
+      "accessCount": 8,
+      "lastAccessed": 1775813106809,
       "type": "file"
     },
     {
       "path": "astro/package.json",
-      "accessCount": 7,
-      "lastAccessed": 1775812778419,
+      "accessCount": 8,
+      "lastAccessed": 1775813106860,
       "type": "directory"
     },
     {
@@ -201,15 +201,15 @@
       "type": "file"
     },
     {
-      "path": "astro/src/content",
-      "accessCount": 5,
-      "lastAccessed": 1775735171058,
+      "path": "astro",
+      "accessCount": 6,
+      "lastAccessed": 1775813115964,
       "type": "directory"
     },
     {
-      "path": "astro",
+      "path": "astro/src/content",
       "accessCount": 5,
-      "lastAccessed": 1775810865909,
+      "lastAccessed": 1775735171058,
       "type": "directory"
     },
     {
