@@ -17,8 +17,8 @@ const sep = authorLang === 'zh' ? '，' : ', ';
 const localizedAuthors = paper.data[authorLang].authors;
 const corrSuffix = '*';
 
-const showIccvLogo = paper.data.venue_full === 'ICCV 2025';
-const showCvprLogo = paper.data.venue_full === 'CVPR 2026 Highlight';
+const showIccvLogo = paper.data.venue_full?.includes('ICCV 2025');
+const showCvprLogo = paper.data.venue_full?.includes('CVPR 2026');
 ---
 
 <div class="mb-1.5">
