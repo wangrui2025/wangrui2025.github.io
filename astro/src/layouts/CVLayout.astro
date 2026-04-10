@@ -61,9 +61,34 @@ const lastUpdated = getLastUpdated();
     </footer>
 
     <script>
+      const A4_HEIGHT_PX = 1123; // 297mm * 3.78px/mm at 96dpi
+
+      function setupPrintScale() {
+        const page = document.querySelector('.cv-page');
+        if (!page) return;
+        const contentHeight = page.scrollHeight;
+        if (contentHeight > A4_HEIGHT_PX) {
+          const scale = A4_HEIGHT_PX / contentHeight;
+          page.style.setProperty('transform', `scale(${scale})`);
+          page.style.setProperty('transform-origin', 'top left');
+          page.style.setProperty('width', `calc(210mm / ${scale})`);
+        }
+      }
+
+      function resetPrintScale() {
+        const page = document.querySelector('.cv-page');
+        if (page) {
+          page.style.transform = '';
+          page.style.width = '';
+        }
+      }
+
       document.getElementById('export-pdf')?.addEventListener('click', () => {
+        setupPrintScale();
         window.print();
       });
+
+      window.addEventListener('afterprint', resetPrintScale);
     </script>
 
     <style>
