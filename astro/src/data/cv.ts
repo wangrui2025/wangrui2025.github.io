@@ -46,11 +46,11 @@ export const cvData: Record<'zh' | 'en', CVData> = {
     ],
     // Competition awards not in content collections
     honors: [
-      { text: 'CCF-CSP认证 — 170分（前28%）', period: '2022.03', secondary: false },
-      { text: '第十三届蓝桥杯C/C++程序设计组 — 省三等奖', period: '2022.05', secondary: false },
-      { text: '第十六届中国大学生计算机设计大赛 — 省三等奖', period: '2023.05', secondary: false },
-      { text: '第十六届"挑战杯"大学生课外学术科技作品竞赛 — 省三等奖', period: '2023.08', secondary: false },
-      { text: '第九届中国"互联网+"大学生创新创业大赛 — 省三等奖', period: '2023.08', secondary: false },
+      { text: 'CCF-CSP认证 — 170分（前28%）', period: '2022.03', secondary: true },
+      { text: '第十三届蓝桥杯C/C++程序设计组 — 省三等奖', period: '2022.05', secondary: true },
+      { text: '第十六届中国大学生计算机设计大赛 — 省三等奖', period: '2023.05', secondary: true },
+      { text: '第十六届"挑战杯"大学生课外学术科技作品竞赛 — 省三等奖', period: '2023.08', secondary: true },
+      { text: '第九届中国"互联网+"大学生创新创业大赛 — 省三等奖', period: '2023.08', secondary: true },
     ],
     projects: [
       {
