@@ -52,19 +52,19 @@ const showCvprLogo = paper.data.venue_full?.includes('CVPR 2026');
         )}
       </div>
     </div>
-    <div class="flex items-center self-stretch py-0.5 gap-1">
+    <div class="flex items-center justify-end self-stretch py-0.5 w-28 sm:w-36 shrink-0">
       {showIccvLogo && (
         <img
           src="/assets/paper/iccv_logo.png"
           alt="ICCV 2025"
-          class="h-full max-h-[4.5rem] w-auto object-contain"
+          class="h-full w-full max-h-[4.5rem] object-contain object-right"
         />
       )}
       {showCvprLogo && (
         <img
           src="/assets/paper/cvpr_logo.svg"
           alt="CVPR 2026"
-          class="h-full max-h-[4.5rem] w-auto object-contain"
+          class="h-full w-full max-h-[4.5rem] object-contain object-right"
         />
       )}
     </div>
