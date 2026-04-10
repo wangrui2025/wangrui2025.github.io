@@ -105,15 +105,15 @@
   },
   "hotPaths": [
     {
-      "path": "astro/src/content/config.ts",
-      "accessCount": 26,
-      "lastAccessed": 1775812529097,
+      "path": "astro/src/components/CvPaperItem.astro",
+      "accessCount": 27,
+      "lastAccessed": 1775815572433,
       "type": "file"
     },
     {
-      "path": "astro/src/components/CvPaperItem.astro",
+      "path": "astro/src/content/config.ts",
       "accessCount": 26,
-      "lastAccessed": 1775815059698,
+      "lastAccessed": 1775812529097,
       "type": "file"
     },
     {

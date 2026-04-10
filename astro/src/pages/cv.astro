@@ -27,8 +27,8 @@ const labels = {
 
 // Fetch from content collections
 const papersCollection = await getCollection('papers', (p) => p.data.show_on_cv);
-const honors = await getEntry('honors', 'honors');
-const education = await getEntry('education', 'education');
+const honors = await getEntry('honors', 'honors')!;
+const education = await getEntry('education', 'education')!;
 
 // Sort papers by date (newest first) - use spread to avoid mutation
 const sortedPapers = [...papersCollection].sort((a, b) => b.data.date.localeCompare(a.data.date));
