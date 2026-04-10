@@ -18,18 +18,20 @@ const localizedAuthors = paper.data[authorLang].authors;
 const corrSuffix = '*';
 ---
 
-<div class="relative pl-[55pt] mb-1.5">
-  <div class="absolute left-0 top-0 w-[52pt] text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold break-words text-right">
-    [{paper.data.venue}]
-  </div>
+<div class="mb-1.5">
   <div class="flex flex-col gap-0.5">
-    <div class="font-semibold text-[11pt] leading-tight text-heading-primary dark:text-heading-dark">
-      {localized.title}
+    <div>
+      <span class="font-semibold text-[11pt] leading-tight text-heading-primary dark:text-heading-dark">
+        {localized.title}
+      </span>
+      <span class="text-[8.5pt] text-[#5e5d59] dark:text-[#87867f] font-bold ml-1">
+        [{paper.data.venue}]
+      </span>
     </div>
     <div class="text-[9pt] leading-tight">
       {localizedAuthors.map((author, i) => (
         <span class={author.is_self ? 'text-[#1a1a1a] font-semibold' : 'text-[#5e5d59]'}>
-          {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localized.authors.length - 1 ? sep : ''}
+          {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localizedAuthors.length - 1 ? sep : ''}
         </span>
       ))}
     </div>
