@@ -64,7 +64,7 @@ const lastUpdated = getLastUpdated();
       const A4_HEIGHT_PX = 1123; // 297mm * 3.78px/mm at 96dpi
 
       function setupPrintScale() {
-        const page = document.querySelector('.cv-page');
+        const page = document.querySelector('.cv-page') as HTMLElement | null;
         if (!page) return;
         const contentHeight = page.scrollHeight;
         if (contentHeight > A4_HEIGHT_PX) {
@@ -76,7 +76,7 @@ const lastUpdated = getLastUpdated();
       }
 
       function resetPrintScale() {
-        const page = document.querySelector('.cv-page');
+        const page = document.querySelector('.cv-page') as HTMLElement | null;
         if (page) {
           page.style.transform = '';
           page.style.width = '';
