@@ -14,6 +14,44 @@
   box-sizing: border-box;
 }
 
+/* === Print Optimizations === */
+@media print {
+  /* Remove min-height constraint — let height be content-driven */
+  .cv-page {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  /* Hide section icons (astro-icon, inline SVG, [data-section-icon]) */
+  .icon,
+  svg.icon,
+  [data-section-icon] {
+    display: none !important;
+  }
+
+  /* Hide conference venue logos/badges */
+  .venue,
+  .badge,
+  .cv-venue-badge {
+    display: none !important;
+  }
+
+  /* Reduce section margins in print */
+  .cv-section {
+    margin-bottom: 6pt !important;
+  }
+
+  /* Reduce paper title font size in print */
+  .cv-pub-title {
+    font-size: 9.5pt !important;
+  }
+
+  /* Paper title in CvPaperItem (uses Tailwind text-11pt) */
+  .cv-paper-item .cv-paper-title {
+    font-size: 9.5pt !important;
+  }
+}
+
 .cv-header {
   text-align: center;
   margin-bottom: 12pt;
