@@ -33,7 +33,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
             </li>
           ))}
           <li class="m-0">
-            <a href={switchUrl} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">{switchLabel}</a>
+            <a href={switchUrl} data-astro-prefetch class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10" aria-label={lang === 'zh' ? 'Switch to English' : '切换到中文'}>{switchLabel}</a>
           </li>
         </ul>
         <ul class="hidden md:hidden"></ul>
