@@ -1,172 +1,159 @@
 {
-  "$ref": "#/definitions/papers",
-  "definitions": {
-    "papers": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}$"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "venue_full": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "image": {
+      "type": "string"
+    },
+    "alt_zh": {
+      "type": "string"
+    },
+    "alt_en": {
+      "type": "string"
+    },
+    "arxiv": {
+      "type": "string",
+      "format": "uri"
+    },
+    "project": {
+      "type": "string",
+      "format": "uri"
+    },
+    "equal_contribution": {
+      "type": "boolean"
+    },
+    "show_on_cv": {
+      "default": true,
+      "type": "boolean"
+    },
+    "show_on_homepage": {
+      "default": true,
+      "type": "boolean"
+    },
+    "zh": {
       "type": "object",
       "properties": {
-        "date": {
-          "type": "string",
-          "pattern": "^\\d{4}-\\d{2}$",
-          "errorMessage": {
-            "pattern": "Date must be YYYY-MM format"
+        "title": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "is_corresponding": {
+                "default": false,
+                "type": "boolean"
+              },
+              "is_self": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name"
+            ]
           }
         },
-        "venue": {
-          "type": "string"
-        },
-        "venue_full": {
-          "type": "string"
-        },
-        "tags": {
+        "fields": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "image": {
-          "type": "string"
-        },
-        "alt_zh": {
-          "type": "string"
-        },
-        "alt_en": {
-          "type": "string"
-        },
-        "arxiv": {
-          "type": "string",
-          "format": "uri"
-        },
-        "project": {
-          "type": "string",
-          "format": "uri"
-        },
-        "equal_contribution": {
-          "type": "boolean"
-        },
-        "show_on_cv": {
-          "type": "boolean",
-          "default": true
-        },
-        "show_on_homepage": {
-          "type": "boolean",
-          "default": true
-        },
-        "zh": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string"
-            },
-            "authors": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "is_corresponding": {
-                    "type": "boolean",
-                    "default": false
-                  },
-                  "is_self": {
-                    "type": "boolean",
-                    "default": false
-                  }
-                },
-                "required": [
-                  "name"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "fields": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "technologies": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "required": [
-            "title",
-            "authors",
-            "fields",
-            "technologies"
-          ],
-          "additionalProperties": false
-        },
-        "en": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string"
-            },
-            "authors": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "is_corresponding": {
-                    "type": "boolean",
-                    "default": false
-                  },
-                  "is_self": {
-                    "type": "boolean",
-                    "default": false
-                  }
-                },
-                "required": [
-                  "name"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "fields": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "technologies": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "required": [
-            "title",
-            "authors",
-            "fields",
-            "technologies"
-          ],
-          "additionalProperties": false
-        },
-        "$schema": {
-          "type": "string"
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
-        "date",
-        "venue",
-        "venue_full",
-        "image",
-        "alt_zh",
-        "alt_en",
-        "zh",
-        "en"
-      ],
-      "additionalProperties": false
+        "title",
+        "authors",
+        "fields",
+        "technologies"
+      ]
+    },
+    "en": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "is_corresponding": {
+                "default": false,
+                "type": "boolean"
+              },
+              "is_self": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "authors",
+        "fields",
+        "technologies"
+      ]
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "date",
+    "venue",
+    "venue_full",
+    "image",
+    "alt_zh",
+    "alt_en",
+    "zh",
+    "en"
+  ]
 }

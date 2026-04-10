@@ -1,198 +1,192 @@
 {
-  "$ref": "#/definitions/homepage",
-  "definitions": {
-    "homepage": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status_badge": {
+      "type": "string"
+    },
+    "about_text": {
+      "type": "string"
+    },
+    "background": {
       "type": "object",
       "properties": {
-        "title": {
+        "heading": {
           "type": "string"
         },
-        "description": {
+        "intro": {
           "type": "string"
         },
-        "status_badge": {
+        "research": {
           "type": "string"
         },
-        "about_text": {
-          "type": "string"
-        },
-        "background": {
-          "type": "object",
-          "properties": {
-            "heading": {
-              "type": "string"
-            },
-            "intro": {
-              "type": "string"
-            },
-            "research": {
-              "type": "string"
-            },
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "required": [
-            "heading",
-            "intro",
-            "items"
-          ],
-          "additionalProperties": false
-        },
-        "target_areas": {
-          "type": "object",
-          "properties": {
-            "heading": {
-              "type": "string"
-            },
-            "subheading": {
-              "type": "string"
-            },
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "required": [
-            "heading",
-            "subheading",
-            "items"
-          ],
-          "additionalProperties": false
-        },
-        "news_heading": {
-          "type": "string"
-        },
-        "news_items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": "string"
-              },
-              "url": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            },
-            "required": [
-              "text",
-              "url"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "section_publications": {
-          "type": "string"
-        },
-        "section_education": {
-          "type": "string"
-        },
-        "section_honors": {
-          "type": "string"
-        },
-        "section_skills": {
-          "type": "string"
-        },
-        "skills_items": {
+        "items": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "section_project": {
-          "type": "string"
-        },
-        "project_title": {
-          "type": "string"
-        },
-        "project_description": {
-          "type": "string"
-        },
-        "project_url": {
-          "type": "string"
-        },
-        "honors_graduate_header": {
-          "type": "string"
-        },
-        "honors_undergraduate_header": {
-          "type": "string"
-        },
-        "timeline_heading": {
-          "type": "string"
-        },
-        "timeline_collapsed_text": {
-          "type": "string"
-        },
-        "timeline_expanded_text": {
-          "type": "string"
-        },
-        "timeline_items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "period": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "tags": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            },
-            "required": [
-              "period",
-              "title"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "$schema": {
-          "type": "string"
         }
       },
       "required": [
-        "title",
-        "description",
-        "status_badge",
-        "background",
-        "target_areas",
-        "news_heading",
-        "news_items",
-        "section_publications",
-        "section_education",
-        "section_honors",
-        "section_skills",
-        "skills_items",
-        "section_project",
-        "project_title",
-        "project_description",
-        "project_url",
-        "honors_graduate_header",
-        "honors_undergraduate_header",
-        "timeline_heading",
-        "timeline_collapsed_text",
-        "timeline_expanded_text",
-        "timeline_items"
-      ],
-      "additionalProperties": false
+        "heading",
+        "intro",
+        "items"
+      ]
+    },
+    "target_areas": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "subheading": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items"
+      ]
+    },
+    "news_heading": {
+      "type": "string"
+    },
+    "news_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "text",
+          "url"
+        ]
+      }
+    },
+    "section_publications": {
+      "type": "string"
+    },
+    "section_education": {
+      "type": "string"
+    },
+    "section_honors": {
+      "type": "string"
+    },
+    "section_skills": {
+      "type": "string"
+    },
+    "skills_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "section_project": {
+      "type": "string"
+    },
+    "project_title": {
+      "type": "string"
+    },
+    "project_description": {
+      "type": "string"
+    },
+    "project_url": {
+      "type": "string"
+    },
+    "honors_graduate_header": {
+      "type": "string"
+    },
+    "honors_undergraduate_header": {
+      "type": "string"
+    },
+    "timeline_heading": {
+      "type": "string"
+    },
+    "timeline_collapsed_text": {
+      "type": "string"
+    },
+    "timeline_expanded_text": {
+      "type": "string"
+    },
+    "timeline_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "period",
+          "title"
+        ]
+      }
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "description",
+    "status_badge",
+    "background",
+    "target_areas",
+    "news_heading",
+    "news_items",
+    "section_publications",
+    "section_education",
+    "section_honors",
+    "section_skills",
+    "skills_items",
+    "section_project",
+    "project_title",
+    "project_description",
+    "project_url",
+    "honors_graduate_header",
+    "honors_undergraduate_header",
+    "timeline_heading",
+    "timeline_collapsed_text",
+    "timeline_expanded_text",
+    "timeline_items"
+  ]
 }

@@ -1,118 +1,117 @@
 {
-  "$ref": "#/definitions/scholar",
-  "definitions": {
-    "scholar": {
-      "type": "object",
-      "properties": {
-        "$schema": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "scholar_id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "affiliation": {
+        "type": "string"
+      },
+      "email_domain": {
+        "type": "string"
+      },
+      "homepage": {
+        "type": "string"
+      },
+      "interests": {
+        "type": "array",
+        "items": {
           "type": "string"
         }
       },
-      "additionalProperties": {
+      "citedby": {
+        "type": "number"
+      },
+      "citedby5y": {
+        "type": "number"
+      },
+      "hindex": {
+        "type": "number"
+      },
+      "hindex5y": {
+        "type": "number"
+      },
+      "i10index": {
+        "type": "number"
+      },
+      "i10index5y": {
+        "type": "number"
+      },
+      "cites_per_year": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "scholar_id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "affiliation": {
-            "type": "string"
-          },
-          "email_domain": {
-            "type": "string"
-          },
-          "homepage": {
-            "type": "string"
-          },
-          "interests": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "citedby": {
-            "type": "number"
-          },
-          "citedby5y": {
-            "type": "number"
-          },
-          "hindex": {
-            "type": "number"
-          },
-          "hindex5y": {
-            "type": "number"
-          },
-          "i10index": {
-            "type": "number"
-          },
-          "i10index5y": {
-            "type": "number"
-          },
-          "cites_per_year": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "number"
-            }
-          },
-          "updated": {
-            "type": "string"
-          },
-          "papers": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "properties": {
-                "arxiv_id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "citations": {
-                  "type": "number"
-                },
-                "authors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "arxiv_id",
-                "title",
-                "citations",
-                "authors"
-              ],
-              "additionalProperties": false
-            }
-          }
+        "propertyNames": {
+          "type": "string"
         },
-        "required": [
-          "id",
-          "scholar_id",
-          "name",
-          "affiliation",
-          "email_domain",
-          "homepage",
-          "interests",
-          "citedby",
-          "citedby5y",
-          "hindex",
-          "hindex5y",
-          "i10index",
-          "i10index5y",
-          "cites_per_year",
-          "updated"
-        ],
-        "additionalProperties": false
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "updated": {
+        "type": "string"
+      },
+      "papers": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "arxiv_id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "citations": {
+              "type": "number"
+            },
+            "authors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "arxiv_id",
+            "title",
+            "citations",
+            "authors"
+          ]
+        }
       }
-    }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "required": [
+      "id",
+      "scholar_id",
+      "name",
+      "affiliation",
+      "email_domain",
+      "homepage",
+      "interests",
+      "citedby",
+      "citedby5y",
+      "hindex",
+      "hindex5y",
+      "i10index",
+      "i10index5y",
+      "cites_per_year",
+      "updated"
+    ]
+  }
 }

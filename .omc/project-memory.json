@@ -106,8 +106,8 @@
   "hotPaths": [
     {
       "path": "astro/src/content/config.ts",
-      "accessCount": 25,
-      "lastAccessed": 1775735331876,
+      "accessCount": 26,
+      "lastAccessed": 1775812529097,
       "type": "file"
     },
     {
@@ -129,16 +129,16 @@
       "type": "file"
     },
     {
+      "path": "astro/src",
+      "accessCount": 16,
+      "lastAccessed": 1775810876615,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/components/PaperCard.astro",
       "accessCount": 13,
       "lastAccessed": 1775735344676,
       "type": "file"
-    },
-    {
-      "path": "astro/src",
-      "accessCount": 13,
-      "lastAccessed": 1775806935965,
-      "type": "directory"
     },
     {
       "path": "astro/src/pages/cv.astro",
@@ -177,6 +177,18 @@
       "type": "file"
     },
     {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 7,
+      "lastAccessed": 1775812778368,
+      "type": "file"
+    },
+    {
+      "path": "astro/package.json",
+      "accessCount": 7,
+      "lastAccessed": 1775812778419,
+      "type": "directory"
+    },
+    {
       "path": "astro/src/content/scholar/stats.json",
       "accessCount": 6,
       "lastAccessed": 1775735189819,
@@ -196,8 +208,8 @@
     },
     {
       "path": "astro",
-      "accessCount": 4,
-      "lastAccessed": 1775735136134,
+      "accessCount": 5,
+      "lastAccessed": 1775810865909,
       "type": "directory"
     },
     {
@@ -213,12 +225,6 @@
       "type": "file"
     },
     {
-      "path": "astro/astro.config.mjs",
-      "accessCount": 3,
-      "lastAccessed": 1775735139446,
-      "type": "file"
-    },
-    {
       "path": "astro/src/content/education/education.json",
       "accessCount": 3,
       "lastAccessed": 1775735232791,
@@ -228,12 +234,6 @@
       "path": "astro/src/components",
       "accessCount": 3,
       "lastAccessed": 1775808102767,
-      "type": "directory"
-    },
-    {
-      "path": "astro/package.json",
-      "accessCount": 3,
-      "lastAccessed": 1775810808052,
       "type": "directory"
     },
     {

@@ -30,8 +30,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-          cache-dependency-path: astro/package-lock.json
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Restore pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('astro/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
       - name: Restore Astro build cache
         uses: actions/cache@v4
@@ -39,19 +50,19 @@ jobs:
           path: |
             astro/.astro
             astro/dist
-          key: astro-cache-${{ runner.os }}-${{ hashFiles('astro/package-lock.json') }}
+          key: astro-cache-${{ runner.os }}-${{ hashFiles('astro/pnpm-lock.yaml') }}
           restore-keys: |
             astro-cache-${{ runner.os }}-
 
       - name: Install dependencies
         run: |
           cd astro
-          npm ci
+          pnpm install --frozen-lockfile
 
       - name: Build Astro
         run: |
           cd astro
-          npm run build
+          pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
