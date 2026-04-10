@@ -68,7 +68,9 @@
       "agent_type": "oh-my-claudecode:document-specialist",
       "started_at": "2026-04-10T09:55:50.672Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-10T09:57:40.510Z",
+      "duration_ms": 109838
     },
     {
       "agent_id": "ae50582e3545dce4e",
@@ -81,7 +83,7 @@
     }
   ],
   "total_spawned": 5,
-  "total_completed": 8,
+  "total_completed": 9,
   "total_failed": 0,
-  "last_updated": "2026-04-10T09:57:23.113Z"
+  "last_updated": "2026-04-10T09:57:40.613Z"
 }
