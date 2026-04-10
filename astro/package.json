@@ -25,5 +25,8 @@
       "sharp",
       "esbuild"
     ]
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8"
   }
 }

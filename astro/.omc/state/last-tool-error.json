@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025.github.io && git add -A && git commit -m \\\"$(cat <<'EOF'\\nfeat(cv): add CVPR logo inline with links for OSA paper\\n\\n- Copy CVPR logo to public/assets/paper/...",
-  "error": "Exit code 1\n[main dd5f086] feat(cv): add CVPR logo inline with links for OSA paper\n 7 files changed, 132 insertions(+), 15 deletions(-)\n create mode 100644 astro/public/assets/paper/cvpr_logo.svg\n create mode 100644 astro/src/assets/paper/logos/cvpr-navbar-logo (1).svg\nTo https://github.com/wangrui2025/wangrui2025.github.io.git\n ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at dd5f086dd550131da2b6af32acd19dd94496e383 but expected 1c1e9f94ffc01e938a207ce44bcab1aa05c3f3c4...",
-  "timestamp": "2026-04-10T09:58:08.564Z",
+  "tool_input_preview": "{\"command\":\"pnpm astro check 2>&1 > /tmp/astro_check.txt && cat /tmp/astro_check.txt | grep \\\" error \\\" | head -30\",\"timeout\":60000,\"description\":\"Save check output and grep for errors\"}",
+  "error": "Exit code 1",
+  "timestamp": "2026-04-10T10:01:48.642Z",
   "retry_count": 2
 }
