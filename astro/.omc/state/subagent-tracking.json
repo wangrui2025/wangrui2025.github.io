@@ -26,10 +26,17 @@
       "status": "completed",
       "completed_at": "2026-04-07T09:51:10.156Z",
       "duration_ms": 53993
+    },
+    {
+      "agent_id": "adb5c105824e49a51",
+      "agent_type": "oh-my-claudecode:document-specialist",
+      "started_at": "2026-04-10T09:51:46.713Z",
+      "parent_mode": "none",
+      "status": "running"
     }
   ],
-  "total_spawned": 2,
+  "total_spawned": 3,
   "total_completed": 3,
   "total_failed": 0,
-  "last_updated": "2026-04-08T03:22:55.674Z"
+  "last_updated": "2026-04-10T09:51:46.815Z"
 }
