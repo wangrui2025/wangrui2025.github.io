@@ -66,7 +66,7 @@ const scholar = defineCollection({
 });
 
 const honors = defineCollection({
-  loader: file('src/content/honors/honors.json'),
+  loader: glob({ base: './src/content/honors', pattern: '**/*.json' }),
   schema: z.object({
     graduate: z.array(z.object({
       period: z.string(),
