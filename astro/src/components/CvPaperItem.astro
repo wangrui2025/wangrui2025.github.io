@@ -1,5 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+
+import iccvLogo from '../assets/paper/iccv_logo.png';
+
+const logoMap = {
+  'ICCV 2025': iccvLogo,
+} as const;
 
 export interface Props {
   paper: CollectionEntry<'papers'>;
@@ -16,7 +23,8 @@ const authorLang = lang;
 const sep = authorLang === 'zh' ? '，' : ', ';
 const localizedAuthors = paper.data[authorLang].authors;
 const corrSuffix = '*';
----
+
+const venueLogo = paper.data.venue_full ? logoMap[paper.data.venue_full] : undefined;
 
 <div class="mb-1.5">
   <div class="flex justify-between items-start gap-2">
