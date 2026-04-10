@@ -7,7 +7,7 @@ export interface Props {
 
 const { lang = 'en' } = Astro.props;
 
-const edu = await getEntry('education', 'education');
+const edu = await getEntry('education', 'education')!;
 const educationData = edu.data;
 const entries = [educationData.master, educationData.bachelor];
 ---
