@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git fetch origin && git rebase origin/main && git push\",\"timeout\":30000}",
+  "error": "Exit code 1\nerror: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them.",
+  "timestamp": "2026-04-10T07:57:30.445Z",
+  "retry_count": 4
+}

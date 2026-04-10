@@ -189,6 +189,12 @@
       "type": "directory"
     },
     {
+      "path": "astro/src/components/AuthorProfile.astro",
+      "accessCount": 5,
+      "lastAccessed": 1775808115274,
+      "type": "file"
+    },
+    {
       "path": "astro",
       "accessCount": 4,
       "lastAccessed": 1775735136134,
@@ -217,6 +223,12 @@
       "accessCount": 3,
       "lastAccessed": 1775735232791,
       "type": "file"
+    },
+    {
+      "path": "astro/src/components",
+      "accessCount": 3,
+      "lastAccessed": 1775808102767,
+      "type": "directory"
     },
     {
       "path": "astro/tailwind.config.mjs",
@@ -261,12 +273,6 @@
       "type": "file"
     },
     {
-      "path": "astro/src/components/AuthorProfile.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775733999832,
-      "type": "file"
-    },
-    {
       "path": "astro/src/utils/constants.ts",
       "accessCount": 2,
       "lastAccessed": 1775733999938,
@@ -277,12 +283,6 @@
       "accessCount": 2,
       "lastAccessed": 1775734600112,
       "type": "file"
-    },
-    {
-      "path": "astro/src/components",
-      "accessCount": 2,
-      "lastAccessed": 1775734716305,
-      "type": "directory"
     },
     {
       "path": "astro/src/styles",
