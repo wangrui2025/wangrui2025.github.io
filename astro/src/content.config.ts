@@ -90,7 +90,6 @@ const honors = defineCollection({
 const education = defineCollection({
   loader: file('src/content/education/education.json'),
   schema: z.object({
-    id: z.string(),
     master: z.object({
       university: z.object({ zh: z.string(), en: z.string() }),
       universityUrl: z.object({ zh: z.string(), en: z.string() }),
