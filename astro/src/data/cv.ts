@@ -57,7 +57,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         name: 'how2research',
         type: '开源项目',
         description: '面向研究生的开源科研指南。涵盖 CVPR/ICCV 投稿流程、高效 LaTeX 写作技巧、科研 Prompt 工程及开发环境配置（uv, VSCode）等。由 "miyuki11" 维护。',
-        url: 'https://github.com/miyuki11/how2research',
+        url: 'https://how2research-apple.notion.site/858e9f718aff8270806e81385f3d6a69?v=707e9f718aff828ab4df08eb2a69c945',
       },
     ],
     skills: [
@@ -95,7 +95,7 @@ export const cvData: Record<'zh' | 'en', CVData> = {
         name: 'how2research',
         type: 'Open Source',
         description: 'An open-source research guide for graduate students, covering CVPR/ICCV submission processes, efficient LaTeX writing tips, research prompt engineering, and development environment setup (uv, VSCode). Maintained by "miyuki11".',
-        url: 'https://github.com/miyuki11/how2research',
+        url: 'https://how2research-apple.notion.site/858e9f718aff8270806e81385f3d6a69?v=707e9f718aff828ab4df08eb2a69c945',
       },
     ],
     skills: [
