@@ -237,6 +237,12 @@
       "type": "directory"
     },
     {
+      "path": "astro/src/components/CvEducationItem.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775814891066,
+      "type": "file"
+    },
+    {
       "path": "astro/tailwind.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1775733940586,
@@ -300,12 +306,6 @@
       "path": "astro/src/content/honors/honors.json",
       "accessCount": 2,
       "lastAccessed": 1775735232637,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/CvEducationItem.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775814778389,
       "type": "file"
     },
     {
