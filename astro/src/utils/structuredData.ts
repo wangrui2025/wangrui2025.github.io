@@ -9,12 +9,14 @@ export function getPersonSchema(data: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://wangrui2025.github.io/#person",
     name: data.name,
     url: data.url,
     email: `mailto:${data.email}`,
     sameAs: data.sameAs,
     description: data.description,
-    knowsAbout: data.affiliation
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      "name": data.affiliation
+    }
   };
 }
