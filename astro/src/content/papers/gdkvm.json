@@ -1,7 +1,7 @@
 {
   "date": "2025-10",
   "venue": "ICCV 2025",
-  "venue_full": "Accepted to ICCV 2025",
+  "venue_full": "ICCV 2025",
   "tags": ["csranking", "CCF-A"],
   "image": "../assets/paper/fig_gdkvm_page-0001.jpg",
   "alt_zh": "GDKVM论文框架图",
