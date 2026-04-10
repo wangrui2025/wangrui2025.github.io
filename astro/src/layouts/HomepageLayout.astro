@@ -17,15 +17,15 @@ export interface Props {
 const { lang } = Astro.props;
 
 // Get homepage content from Content Collection
-const homepage = await getEntry('homepage', lang);
+const homepage = await getEntry('homepage', lang)!;
 const h = homepage.data;
 
 // Get scholar stats for citation badge
-const scholarStats = await getEntry('scholar', 'stats');
+const scholarStats = await getEntry('scholar', 'stats')!;
 const citedBy = scholarStats.data.citedby;
 
 // Get honors data (sorted by rank - use spread to avoid mutation)
-const honorsData = await getEntry('honors', 'honors');
+const honorsData = await getEntry('honors', 'honors')!;
 const graduateHonors = [...honorsData.data.graduate].sort((a, b) => a.rank - b.rank);
 const undergraduateHonors = [...honorsData.data.undergraduate].sort((a, b) => a.rank - b.rank);
 
