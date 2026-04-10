@@ -1,4 +1,91 @@
 {
-  "updatedAt": "2026-04-10T08:23:43.642Z",
-  "missions": []
+  "updatedAt": "2026-04-10T08:46:37.923Z",
+  "missions": [
+    {
+      "id": "session:476c7e20-ce22-4ab5-9d0b-4969013d0634:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-04-10T08:46:37.760Z",
+      "updatedAt": "2026-04-10T08:46:37.923Z",
+      "status": "running",
+      "workerCount": 4,
+      "taskCounts": {
+        "total": 4,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 4,
+        "completed": 0,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "executor:ad7f6dc",
+          "role": "executor",
+          "ownership": "ad7f6dc2ebaac2440",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-10T08:46:37.760Z"
+        },
+        {
+          "name": "executor:a3a999a",
+          "role": "executor",
+          "ownership": "a3a999a358ac974dc",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-10T08:46:37.812Z"
+        },
+        {
+          "name": "scientist:a272ef1",
+          "role": "scientist",
+          "ownership": "a272ef10d4e711c6e",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-10T08:46:37.865Z"
+        },
+        {
+          "name": "executor:ae8d2d4",
+          "role": "executor",
+          "ownership": "ae8d2d4b69ea408bb",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-10T08:46:37.923Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a3a999a358ac974dc:2026-04-10T08:46:37.812Z",
+          "at": "2026-04-10T08:46:37.812Z",
+          "kind": "update",
+          "agent": "executor:a3a999a",
+          "detail": "started executor:a3a999a",
+          "sourceKey": "session-start:a3a999a358ac974dc"
+        },
+        {
+          "id": "session-start:a272ef10d4e711c6e:2026-04-10T08:46:37.865Z",
+          "at": "2026-04-10T08:46:37.865Z",
+          "kind": "update",
+          "agent": "scientist:a272ef1",
+          "detail": "started scientist:a272ef1",
+          "sourceKey": "session-start:a272ef10d4e711c6e"
+        },
+        {
+          "id": "session-start:ae8d2d4b69ea408bb:2026-04-10T08:46:37.923Z",
+          "at": "2026-04-10T08:46:37.923Z",
+          "kind": "update",
+          "agent": "executor:ae8d2d4",
+          "detail": "started executor:ae8d2d4",
+          "sourceKey": "session-start:ae8d2d4b69ea408bb"
+        }
+      ]
+    }
+  ]
 }

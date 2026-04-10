@@ -39,9 +39,9 @@ jobs:
           path: |
             astro/.astro
             astro/dist
-          key: ${{ runner.os }}-astro-build-${{ github.sha }}
+          key: astro-cache-${{ runner.os }}-${{ hashFiles('astro/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-astro-build-
+            astro-cache-${{ runner.os }}-
 
       - name: Install dependencies
         run: |

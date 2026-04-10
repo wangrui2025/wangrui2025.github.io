@@ -231,6 +231,12 @@
       "type": "directory"
     },
     {
+      "path": "astro/package.json",
+      "accessCount": 3,
+      "lastAccessed": 1775810808052,
+      "type": "directory"
+    },
+    {
       "path": "astro/tailwind.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1775733940586,
@@ -367,12 +373,6 @@
       "accessCount": 1,
       "lastAccessed": 1775734302841,
       "type": "file"
-    },
-    {
-      "path": "astro/package.json",
-      "accessCount": 1,
-      "lastAccessed": 1775734312370,
-      "type": "directory"
     },
     {
       "path": "astro/.astro/content.d.ts",
