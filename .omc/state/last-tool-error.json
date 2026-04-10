@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npm run build 2>&1 | tail -5 && cd .. && git add -A && git commit -m \\\"style(cv): lighter gray for secondary honors\\\" && git push\",\"timeout\":60000}",
-  "error": "Exit code 128\nnpm error errno -2\nnpm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/myk/Repo/wangrui2025.github.io/package.json'\nnpm error enoent This is related to npm not being able to find a file.\nnpm error enoent\nnpm error A complete log of this run can be found in: /Users/myk/.npm/_logs/2026-04-10T02_47_33_967Z-debug-0.log\nfatal: not a git repository (or any of the parent directories): .git",
-  "timestamp": "2026-04-10T02:47:34.083Z",
-  "retry_count": 2
-}
