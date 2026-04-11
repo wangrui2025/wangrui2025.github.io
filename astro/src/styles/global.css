@@ -25,12 +25,6 @@
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
   --font-mono: 'Fira Code', Consolas, monospace;
 
-  /* Custom font sizes for Claude typography hierarchy */
-  --text-hero: 3.25rem;
-  --text-section: 1.75rem;
-  --text-feature: 1.3rem;
-}
-
   /* Colors — Light theme */
   --color-bg-primary: #f5f4ed;
   --color-bg-dark: #141413;
