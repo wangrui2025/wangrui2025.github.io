@@ -80,10 +80,19 @@
       "status": "completed",
       "completed_at": "2026-04-10T09:56:54.887Z",
       "duration_ms": 64154
+    },
+    {
+      "agent_id": "a3a1f67342687879a",
+      "agent_type": "oh-my-claudecode:scientist",
+      "started_at": "2026-04-11T11:27:56.013Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-04-11T11:32:08.616Z",
+      "duration_ms": 252603
     }
   ],
-  "total_spawned": 5,
-  "total_completed": 9,
+  "total_spawned": 6,
+  "total_completed": 10,
   "total_failed": 0,
-  "last_updated": "2026-04-10T09:57:40.613Z"
+  "last_updated": "2026-04-11T11:32:08.719Z"
 }
