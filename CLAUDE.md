@@ -28,7 +28,7 @@ The site will be available at http://127.0.0.1:4321 during local development.
 ## Architecture
 
 - **Astro static site**: GitHub Pages builds and serves the static site from `astro/dist`
-- **Framework**: Astro v6.1.5 with Tailwind CSS + `@astrojs/tailwind`
+- **Framework**: Astro v6.1.5 with Tailwind CSS v4 + `@tailwindcss/vite` (migrated from `@astrojs/tailwind` on 2026-04-11)
 - **Bilingual support**: English (`/`) and Chinese (`/zh/`) versions via `[lang]` dynamic route
 - **Google Scholar integration**: Stats stored in `astro/src/content/scholar/stats.json`
 - **Publications**: Managed via Content Collections in `astro/src/content/papers/`
