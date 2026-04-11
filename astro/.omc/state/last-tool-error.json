@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git -C /Users/myk/Repo/wangrui2025.github.io add astro/src && git -C /Users/myk/Repo/wangrui2025.github.io commit -m \\\"$(cat <<'EOF'\\nstyle(typography): apply Claude design system font hie...",
-  "error": "Exit code 1\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   .omc/state/hud-state.json\n\tmodified:   .omc/state/hud-stdin-cache.json\n\tmodified:   astro/.omc/state/last-tool-error.json\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\tastro/.omc/state/agent-replay-484e720e-c4c1...",
-  "timestamp": "2026-04-11T13:06:35.393Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"git -C /Users/myk add -A && git -C /Users/myk commit -m \\\"chore(scripts): restore autopush.sh git add -A, remove staging warning\\\" && git -C /Users/myk push\",\"timeout\":30000,\"description\":...",
+  "error": "Exit code 128\nfatal: not a git repository (or any of the parent directories): .git",
+  "timestamp": "2026-04-11T13:14:41.091Z",
+  "retry_count": 6
 }

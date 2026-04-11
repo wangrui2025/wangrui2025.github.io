@@ -1,6 +1,9 @@
 /* Tailwind v4 — theme config migrated from tailwind.config.mjs */
 @import "tailwindcss";
 
+/* Enable class-based dark mode (Tailwind v4 defaults to prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Self-hosted fonts via @fontsource */
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/400-italic.css";
