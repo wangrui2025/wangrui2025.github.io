@@ -173,8 +173,8 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 9,
-      "lastAccessed": 1775923409386,
+      "accessCount": 10,
+      "lastAccessed": 1775923419112,
       "type": "file"
     },
     {
