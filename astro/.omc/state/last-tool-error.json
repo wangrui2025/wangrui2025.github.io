@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"sleep 5 && git push\",\"timeout\":120000,\"description\":\"Retry git push after brief wait\"}",
-  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': Error in the HTTP2 framing layer",
-  "timestamp": "2026-04-11T15:36:58.800Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"curl -sI -o /dev/null -w \\\"%{http_code}\\\" --max-time 30 https://github.com 2>&1\",\"description\":\"Test GitHub HTTP response\"}",
+  "error": "Exit code 2\nerror: invalid value 'I' for '--style <THEME>'\n  [possible values: auto, solarized, monokai, fruity]\n\nFor more information, try '--help'.",
+  "timestamp": "2026-04-11T15:37:19.840Z",
+  "retry_count": 4
 }

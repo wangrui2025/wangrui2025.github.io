@@ -75,10 +75,10 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       gender: 'Male（he/him）',
     },
     researchDirections: [
-      { main: 'Efficient Sequence Modeling & Linear Attention', sub: 'Linear Key-Value / Gated Delta / Long-range Temporal / Real-time Video Understanding' },
-      { main: 'Geometric Deep Learning & Manifold Optimization', sub: 'Orthogonalized State Update / Stiefel Manifold / Newton-Schulz / Matrix Manifold Learning / Rank Collapse Mitigation' },
-      { main: 'Spatiotemporal Medical Image Analysis', sub: 'Echocardiography Video Segmentation / Cardiac Non-rigid Deformation / Speckle Noise / Clinical Real-time Diagnostics' },
-      { main: 'Non-convex Optimization & Dynamical Systems', sub: 'Geometric Regularization / Differentiable Memory Optimization / Anatomical Prior-aware Feature Enhancement' },
+      { main: 'Efficient Sequence Modeling & Long-range Dependency', sub: 'Linear Key-Value Association / Gated Delta Rule / Dynamic Memory Update / Real-time Video Understanding' },
+      { main: 'Geometric Deep Learning & Manifold Optimization', sub: 'Orthogonalized State Update / Stiefel Manifold / Newton-Schulz Iteration / Rank Collapse Mitigation' },
+      { main: 'Non-convex Optimization & Dynamical Systems', sub: 'Geometric Regularization / Differentiable Memory Optimization / Physics-informed Feature Enhancement' },
+      { main: 'Spatiotemporal Medical Image Analysis (Application)', sub: 'Echocardiography Video Segmentation / Cardiac Non-rigid Deformation / Speckle Noise Robustness / Clinical Real-time Diagnostics' },
     ],
     // Competition awards not in content collections
     honors: [
