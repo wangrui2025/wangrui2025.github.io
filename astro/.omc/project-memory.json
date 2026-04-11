@@ -220,6 +220,12 @@
       "type": "file"
     },
     {
+      "path": "astro.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775920869604,
+      "type": "file"
+    },
+    {
       "path": "src/components/CvEducationItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919145928,
