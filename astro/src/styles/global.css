@@ -446,6 +446,10 @@ details[open] .toggle-text-expanded {
   margin-bottom: 0.25rem;
 }
 
+.dark .timeline-period {
+  color: rgb(176 174 165);
+}
+
 .timeline-title {
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -455,6 +459,10 @@ details[open] .toggle-text-expanded {
   font-size: 0.9rem;
   color: rgb(94 93 89);
   margin-top: 0.25rem;
+}
+
+.dark .timeline-description {
+  color: rgb(176 174 165);
 }
 
 .timeline-tags {
