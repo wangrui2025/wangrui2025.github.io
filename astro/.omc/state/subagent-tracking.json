@@ -167,11 +167,13 @@
       "agent_type": "ecc:e2e-runner",
       "started_at": "2026-04-11T15:14:18.134Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-11T15:25:11.178Z",
+      "duration_ms": 653044
     }
   ],
   "total_spawned": 14,
-  "total_completed": 18,
+  "total_completed": 19,
   "total_failed": 0,
-  "last_updated": "2026-04-11T15:14:18.237Z"
+  "last_updated": "2026-04-11T15:25:11.281Z"
 }

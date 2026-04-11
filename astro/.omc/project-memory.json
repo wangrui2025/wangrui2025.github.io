@@ -172,9 +172,15 @@
   },
   "hotPaths": [
     {
+      "path": "src/styles/global.css",
+      "accessCount": 8,
+      "lastAccessed": 1775921126329,
+      "type": "file"
+    },
+    {
       "path": "src",
-      "accessCount": 6,
-      "lastAccessed": 1775920403566,
+      "accessCount": 7,
+      "lastAccessed": 1775920986244,
       "type": "directory"
     },
     {
@@ -184,16 +190,16 @@
       "type": "file"
     },
     {
-      "path": "src/styles/global.css",
-      "accessCount": 5,
-      "lastAccessed": 1775920466858,
-      "type": "file"
-    },
-    {
       "path": "scripts/inline-critical-css.mjs",
       "accessCount": 5,
       "lastAccessed": 1775920786556,
       "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 3,
+      "lastAccessed": 1775920992850,
+      "type": "directory"
     },
     {
       "path": "src/plugins/inline-critical-css.mjs",
@@ -223,6 +229,12 @@
       "path": "astro.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1775920869604,
+      "type": "file"
+    },
+    {
+      "path": "dark-mode-screenshot.png",
+      "accessCount": 2,
+      "lastAccessed": 1775920945677,
       "type": "file"
     },
     {
@@ -284,6 +296,18 @@
       "accessCount": 1,
       "lastAccessed": 1775920436859,
       "type": "file"
+    },
+    {
+      "path": "src/styles",
+      "accessCount": 1,
+      "lastAccessed": 1775920917811,
+      "type": "directory"
+    },
+    {
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775920992665,
+      "type": "directory"
     }
   ],
   "userDirectives": []
