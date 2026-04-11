@@ -75,11 +75,10 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       gender: 'Male（he/him）',
     },
     researchDirections: [
-      { main: 'Efficient Neural Architecture Design', sub: 'Model Compression / NAS' },
-      { main: 'Non-convex Optimization / Geometric Deep Learning', sub: 'Optimization Theory / Geometric Representation' },
-      { main: 'Long-range Dependency Modeling in Computer Vision', sub: 'Attention Mechanism / Transformer' },
-      { main: 'Large-scale Multimodal Pre-training', sub: 'Vision-Language Alignment / Cross-modal Reasoning' },
-      { main: 'Vision-Language Model Inference Efficiency', sub: 'Pruning / Quantization / Distillation' },
+      { main: 'Efficient Sequence Modeling & Linear Attention', sub: 'Linear Key-Value Association / Gated Delta Rule / Long-range Temporal Dependency / Real-time Video Understanding' },
+      { main: 'Geometric Deep Learning & Manifold Optimization', sub: 'Orthogonalized State Update / Stiefel Manifold Constraints / Newton-Schulz Iteration / Representation Learning on Matrix Manifolds / Rank Collapse Mitigation' },
+      { main: 'Spatiotemporal Medical Image Analysis', sub: 'Echocardiography Video Segmentation / Cardiac Non-rigid Deformation Modeling / Speckle Noise Robustness / Clinical Real-time Diagnostic Systems' },
+      { main: 'Non-convex Optimization & Dynamical Systems', sub: 'Geometric Regularization of Recurrent State Spaces / Differentiable Optimization of Memory / Anatomical Prior-aware Feature Enhancement' },
     ],
     // Competition awards not in content collections
     honors: [
