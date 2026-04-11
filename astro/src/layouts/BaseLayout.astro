@@ -60,14 +60,12 @@ const personSchema = getPersonSchema({
         margin: 0;
       }
 
-      h1, h2, h3, h4, h5, h6 {
-        font-family: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
-        font-weight: 600;
-        line-height: 1.3;
+      /* === Theme Variables === */
+      /* Light mode defaults — MUST be before :root to prevent white flash */
+      html {
+        background-color: #f5f4ed;
       }
 
-      /* === Theme Variables === */
-      /* Light mode defaults */
       :root {
         --color-bg-primary: #f5f4ed;
         --color-bg-dark: #141413;

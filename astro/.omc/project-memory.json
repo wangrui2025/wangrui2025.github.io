@@ -172,6 +172,12 @@
   },
   "hotPaths": [
     {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 9,
+      "lastAccessed": 1775923409386,
+      "type": "file"
+    },
+    {
       "path": "src/styles/global.css",
       "accessCount": 8,
       "lastAccessed": 1775921126329,
@@ -182,12 +188,6 @@
       "accessCount": 7,
       "lastAccessed": 1775920986244,
       "type": "directory"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775920526476,
-      "type": "file"
     },
     {
       "path": "scripts/inline-critical-css.mjs",
