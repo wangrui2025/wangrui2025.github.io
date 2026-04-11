@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/inline-critical-css.mjs",
     "preview": "astro preview",
     "pdf:cv": "node scripts/generate-cv-pdf.mjs"
   },
