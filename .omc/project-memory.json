@@ -141,6 +141,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/data/cv.ts",
+      "accessCount": 12,
+      "lastAccessed": 1775921896884,
+      "type": "file"
+    },
+    {
       "path": "astro/src/pages/cv.astro",
       "accessCount": 11,
       "lastAccessed": 1775734718051,
@@ -150,12 +156,6 @@
       "path": "astro/src/layouts/BaseLayout.astro",
       "accessCount": 10,
       "lastAccessed": 1775734337083,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/data/cv.ts",
-      "accessCount": 10,
-      "lastAccessed": 1775808523697,
       "type": "file"
     },
     {
