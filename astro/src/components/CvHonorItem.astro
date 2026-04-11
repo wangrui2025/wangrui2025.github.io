@@ -9,10 +9,10 @@ const { text, period, secondary = false } = Astro.props;
 ---
 
 <div class="flex justify-between items-baseline gap-4 w-full text-[10pt]">
-  <span class={`break-words ${secondary ? 'text-[#9a9a9a] dark:text-[#9a9a9a]' : 'text-text-primary dark:text-text-dark'}`}>
+  <span class={`break-words ${secondary ? 'text-text-secondary dark:text-text-secondary-dark' : 'text-text-primary dark:text-text-dark'}`}>
     {text}
   </span>
-  <span class="text-[#9a9a9a] dark:text-[#9a9a9a] text-right shrink-0 whitespace-nowrap">
+  <span class="text-text-secondary dark:text-text-secondary-dark text-right shrink-0 whitespace-nowrap">
     {period}
   </span>
 </div>
