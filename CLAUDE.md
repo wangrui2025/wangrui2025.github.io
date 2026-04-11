@@ -44,7 +44,7 @@ The site will be available at http://127.0.0.1:4321 during local development.
 - `astro/src/components/` - Reusable UI components
 - `astro/src/content/` - Content collections (papers, scholar, homepage)
 - `astro/src/styles/global.css` - Global styles and theme variables
-- `astro/tailwind.config.mjs` - Tailwind CSS configuration
+- `astro/tailwind.config.mjs` - Tailwind CSS v3 config (legacy, kept for reference; v4 theme migrated to `src/styles/global.css` @theme block)
 
 ## Academic Features
 
