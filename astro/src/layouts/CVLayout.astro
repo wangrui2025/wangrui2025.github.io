@@ -68,18 +68,15 @@ const lastUpdated = getLastUpdated();
         if (!page) return;
         const contentHeight = page.scrollHeight;
         if (contentHeight > A4_HEIGHT_PX) {
-          const scale = A4_HEIGHT_PX / contentHeight;
-          page.style.setProperty('transform', `scale(${scale})`);
-          page.style.setProperty('transform-origin', 'top left');
+          // zoom is applied to the root html element so ALL content scales proportionally
+          // including font sizes, margins, everything — this is what forces single-page
+          const zoomPct = Math.round((A4_HEIGHT_PX / contentHeight) * 100);
+          document.documentElement.style.setProperty('--print-zoom', `${zoomPct}%`);
         }
       }
 
       function resetPrintScale() {
-        const page = document.querySelector('.cv-page') as HTMLElement | null;
-        if (page) {
-          page.style.transform = '';
-          page.style.transformOrigin = '';
-        }
+        document.documentElement.style.setProperty('--print-zoom', '');
       }
 
       document.getElementById('export-pdf')?.addEventListener('click', () => {
@@ -92,7 +89,7 @@ const lastUpdated = getLastUpdated();
         });
       });
 
-      // Reliable cleanup: reset on afterprint + safety fallback
+      // Reliable cleanup: reset on afterprint + on next click (safety)
       window.addEventListener('afterprint', resetPrintScale);
     </script>
 
