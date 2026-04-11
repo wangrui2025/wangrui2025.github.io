@@ -63,10 +63,17 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 
 ## Content Management
 
-- Edit `astro/src/data/content.ts` for homepage UI text (EN/ZH)
-- Add papers as JSON files in `astro/src/content/papers/`
-- Education data in `astro/src/data/education.ts`
-- Honors data in `astro/src/data/honors.ts`
+**Content Collections** (Astro v6 loader API):
+
+| Collection | Path | Loader |
+|------------|------|--------|
+| Homepage | `src/content/homepage/{en,zh}.json` | `glob()` |
+| Papers | `src/content/papers/*.json` | `glob()` |
+| Scholar stats | `src/content/scholar/stats.json` | `glob()` |
+| Education | `src/content/education/education.json` | `glob()` |
+| Honors | `src/content/honors/honors.json` | `glob()` |
+
+**⚠️ Loader 规则：单文件=单entry 用 `glob()`，不用 `file()`。** `file()` 会把 JSON 顶级键拆成多个 entry。
 
 ## Bilingual Content — 中英文同步
 
