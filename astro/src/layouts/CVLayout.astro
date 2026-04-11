@@ -94,6 +94,8 @@ const lastUpdated = getLastUpdated();
     </script>
 
     <style>
+      /* JS-calculated zoom applied here — forces everything (fonts, margins, padding)
+         to scale proportionally so content fits exactly 1 page */
       @media print {
         @page {
           size: A4 portrait;
@@ -106,6 +108,8 @@ const lastUpdated = getLastUpdated();
           margin: 0 !important;
           padding: 0 !important;
           background: white !important;
+          /* zoom scales the entire layout tree — this is what forces single-page */
+          zoom: var(--print-zoom, 100%) !important;
         }
 
         #export-pdf,
@@ -127,6 +131,8 @@ const lastUpdated = getLastUpdated();
           margin: 0 !important;
           padding: 15mm 20mm !important;
           box-shadow: none !important;
+          /* Ensure no overflow within the scaled container */
+          overflow: hidden !important;
         }
       }
     </style>
