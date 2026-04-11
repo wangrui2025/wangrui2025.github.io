@@ -206,6 +206,12 @@
       "accessCount": 1,
       "lastAccessed": 1775919173520,
       "type": "file"
+    },
+    {
+      "path": "diagnose-dark-mode.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775919223673,
+      "type": "file"
     }
   ],
   "userDirectives": []
