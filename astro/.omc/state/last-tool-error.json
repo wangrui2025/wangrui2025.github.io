@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"node /Users/myk/Repo/wangrui2025.github.io/astro/scripts/inline-critical-css.mjs\",\"description\":\"Run inline-critical-css post-build script\"}",
-  "error": "Exit code 1\nnode:internal/modules/esm/translators:419\n    throw new ERR_UNKNOWN_BUILTIN_MODULE(url);\n          ^\n\nError [ERR_UNKNOWN_BUILTIN_MODULE]: No such built-in module: node:glob\n    at ModuleLoader.builtinStrategy (node:internal/modules/esm/translators:419:11)\n    at #translate (node:internal/modules/esm/loader:534:12)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:581:27) {\n  code: 'ERR_UNKNOWN_BUILTIN_MODULE'\n}\n\nNode.js v23.10.0",
-  "timestamp": "2026-04-11T15:10:05.480Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"python3 -c \\\"\\nimport re\\n\\nwith open('/Users/myk/Repo/wangrui2025.github.io/astro/dist/index.html') as f:\\n    content = f.read()\\n\\n# Get the <head> content\\nhead_end = content.find('</h...",
+  "error": "Exit code 1\nTraceback (most recent call last):\n  File \"<string>\", line 19, in <module>\n    theme_idx = head.find('dark', 'dark')\nTypeError: slice indices must be integers or None or have an __index__ method\nHead structure (tag order):\n  [0] <!DOCTYPE html><html lang=\"en\" class=\"no-js\"> <head><!-- Critical CSS: inline theme variables + base\n  [1] <style>\n  [2] \n      /* Tailwind v4 custom dark variant */\n      @custom-variant dark (&:where(.dark, .dark *));\n\n\n  [3] <script>\n  [4] \n      (function...",
+  "timestamp": "2026-04-11T15:11:09.123Z",
+  "retry_count": 2
 }

@@ -173,20 +173,20 @@
   "hotPaths": [
     {
       "path": "src",
-      "accessCount": 5,
-      "lastAccessed": 1775919145953,
+      "accessCount": 6,
+      "lastAccessed": 1775920403566,
       "type": "directory"
     },
     {
-      "path": "src/styles/global.css",
-      "accessCount": 4,
-      "lastAccessed": 1775919806538,
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775920526476,
       "type": "file"
     },
     {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775919166190,
+      "path": "src/styles/global.css",
+      "accessCount": 5,
+      "lastAccessed": 1775920466858,
       "type": "file"
     },
     {
@@ -202,6 +202,12 @@
       "type": "file"
     },
     {
+      "path": "src/layouts/CVLayout.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775920416334,
+      "type": "file"
+    },
+    {
       "path": "src/components/CvEducationItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919145928,
@@ -211,12 +217,6 @@
       "path": "src/components/CvPaperItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919146004,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775919173520,
       "type": "file"
     },
     {
@@ -241,6 +241,36 @@
       "path": "diagnose-dark-mode4.mjs",
       "accessCount": 1,
       "lastAccessed": 1775919580695,
+      "type": "file"
+    },
+    {
+      "path": "src/components",
+      "accessCount": 1,
+      "lastAccessed": 1775920403499,
+      "type": "directory"
+    },
+    {
+      "path": "src/components/AuthorProfile.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775920409021,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/[lang]/cv.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775920429663,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/cv.css",
+      "accessCount": 1,
+      "lastAccessed": 1775920436859,
+      "type": "file"
+    },
+    {
+      "path": "diagnose-gray-text.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775920558678,
       "type": "file"
     }
   ],

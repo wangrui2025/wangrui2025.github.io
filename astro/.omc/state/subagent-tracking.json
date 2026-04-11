@@ -158,11 +158,20 @@
       "agent_type": "ecc:e2e-runner",
       "started_at": "2026-04-11T15:06:28.994Z",
       "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-04-11T15:13:12.106Z",
+      "duration_ms": 403112
+    },
+    {
+      "agent_id": "acfb8a3bda5cccd0b",
+      "agent_type": "ecc:e2e-runner",
+      "started_at": "2026-04-11T15:14:18.134Z",
+      "parent_mode": "none",
       "status": "running"
     }
   ],
-  "total_spawned": 13,
-  "total_completed": 17,
+  "total_spawned": 14,
+  "total_completed": 18,
   "total_failed": 0,
-  "last_updated": "2026-04-11T15:06:29.096Z"
+  "last_updated": "2026-04-11T15:14:18.237Z"
 }
