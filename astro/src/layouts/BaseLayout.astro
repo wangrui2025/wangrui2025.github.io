@@ -145,7 +145,7 @@ const personSchema = getPersonSchema({
     </script>
 
     <!-- Schema.org Person Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
   </head>
 
   <body id="person" class="bg-bg-primary text-text-primary dark:bg-bg-dark dark:text-text-dark">
