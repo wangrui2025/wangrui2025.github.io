@@ -31,21 +31,6 @@
   --text-feature: 1.3rem;
 }
 
-@utility text-hero {
-  font-size: var(--text-hero);
-  line-height: 1.1;
-}
-
-@utility text-section {
-  font-size: var(--text-section);
-  line-height: 1.2;
-}
-
-@utility text-feature {
-  font-size: var(--text-feature);
-  line-height: 1.2;
-}
-
   /* Colors — Light theme */
   --color-bg-primary: #f5f4ed;
   --color-bg-dark: #141413;
