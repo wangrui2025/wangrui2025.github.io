@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-11T12:58:54.706Z",
+  "updatedAt": "2026-04-11T13:45:17.249Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -371,15 +371,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-11T12:53:16.351Z",
-      "updatedAt": "2026-04-11T12:58:54.706Z",
+      "updatedAt": "2026-04-11T13:45:17.249Z",
       "status": "done",
-      "workerCount": 2,
+      "workerCount": 3,
       "taskCounts": {
-        "total": 2,
+        "total": 3,
         "pending": 0,
         "blocked": 0,
         "inProgress": 0,
-        "completed": 2,
+        "completed": 3,
         "failed": 0
       },
       "agents": [
@@ -402,25 +402,19 @@
           "latestUpdate": "completed",
           "completedSummary": null,
           "updatedAt": "2026-04-11T12:58:54.706Z"
+        },
+        {
+          "name": "document-specialist:a4f8e4d",
+          "role": "document-specialist",
+          "ownership": "a4f8e4d5a7e39c565",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-04-11T13:45:17.249Z"
         }
       ],
       "timeline": [
-        {
-          "id": "session-start:aa62eb225b97a533c:2026-04-11T12:53:16.351Z",
-          "at": "2026-04-11T12:53:16.351Z",
-          "kind": "update",
-          "agent": "document-specialist:aa62eb2",
-          "detail": "started document-specialist:aa62eb2",
-          "sourceKey": "session-start:aa62eb225b97a533c"
-        },
-        {
-          "id": "session-stop:aa62eb225b97a533c:2026-04-11T12:54:12.326Z",
-          "at": "2026-04-11T12:54:12.326Z",
-          "kind": "completion",
-          "agent": "document-specialist:aa62eb2",
-          "detail": "completed",
-          "sourceKey": "session-stop:aa62eb225b97a533c"
-        },
         {
           "id": "session-start:a24637eebd6da1770:2026-04-11T12:54:16.422Z",
           "at": "2026-04-11T12:54:16.422Z",
@@ -436,6 +430,62 @@
           "agent": "document-specialist:a24637e",
           "detail": "completed",
           "sourceKey": "session-stop:a24637eebd6da1770"
+        },
+        {
+          "id": "session-start:a4f8e4d5a7e39c565:2026-04-11T13:37:49.804Z",
+          "at": "2026-04-11T13:37:49.804Z",
+          "kind": "update",
+          "agent": "document-specialist:a4f8e4d",
+          "detail": "started document-specialist:a4f8e4d",
+          "sourceKey": "session-start:a4f8e4d5a7e39c565"
+        },
+        {
+          "id": "session-stop:a4f8e4d5a7e39c565:2026-04-11T13:45:17.249Z",
+          "at": "2026-04-11T13:45:17.249Z",
+          "kind": "completion",
+          "agent": "document-specialist:a4f8e4d",
+          "detail": "completed",
+          "sourceKey": "session-stop:a4f8e4d5a7e39c565"
+        }
+      ]
+    },
+    {
+      "id": "session:c0940d49-84ed-4d26-abf7-605a355c9a04:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-04-11T13:44:54.055Z",
+      "updatedAt": "2026-04-11T13:44:54.055Z",
+      "status": "running",
+      "workerCount": 1,
+      "taskCounts": {
+        "total": 1,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 1,
+        "completed": 0,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "Explore:acdc8d9",
+          "role": "Explore",
+          "ownership": "acdc8d96e1990277b",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-11T13:44:54.055Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:acdc8d96e1990277b:2026-04-11T13:44:54.055Z",
+          "at": "2026-04-11T13:44:54.055Z",
+          "kind": "update",
+          "agent": "Explore:acdc8d9",
+          "detail": "started Explore:acdc8d9",
+          "sourceKey": "session-start:acdc8d96e1990277b"
         }
       ]
     }
