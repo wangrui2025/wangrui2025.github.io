@@ -207,16 +207,16 @@
       "type": "directory"
     },
     {
+      "path": "astro/src/styles/global.css",
+      "accessCount": 6,
+      "lastAccessed": 1775919353336,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content",
       "accessCount": 5,
       "lastAccessed": 1775735171058,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/styles/global.css",
-      "accessCount": 5,
-      "lastAccessed": 1775919072436,
-      "type": "file"
     },
     {
       "path": "astro/src/content/education/education.json",

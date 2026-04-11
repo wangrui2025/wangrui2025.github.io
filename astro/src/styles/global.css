@@ -18,8 +18,8 @@
 @import "@fontsource/source-serif-4/500-italic.css";
 @theme {
   /* Font families — Claude aesthetic with CJK fallback */
-  --font-serif: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
+  --font-serif: Georgia, 'Source Serif 4', 'Songti SC', 'STSong', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Hiragino Sans GB', 'Heiti SC', sans-serif;
   --font-mono: 'Fira Code', Consolas, monospace;
 
   /* Colors — Light theme */
