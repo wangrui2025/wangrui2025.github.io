@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git push\",\"timeout\":30000}",
-  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443",
-  "timestamp": "2026-04-11T12:28:00.798Z",
-  "retry_count": 6
+  "tool_input_preview": "{\"command\":\"npx --yes getdesign@latest add claude --out /tmp/claude-design-md 2>&1 && echo \\\"---SUCCESS---\\\" && ls /tmp/claude-design-md/\",\"timeout\":60000,\"description\":\"Download claude DESIGN.md via ...",
+  "error": "Exit code 2\nCreated DESIGN.md from 'claude': /tmp/claude-design-md\n---SUCCESS---\nlsd: /tmp/claude-design-md/: Not a directory (os error 20).",
+  "timestamp": "2026-04-11T12:57:38.492Z",
+  "retry_count": 4
 }
