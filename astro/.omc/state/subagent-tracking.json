@@ -152,10 +152,17 @@
       "status": "completed",
       "completed_at": "2026-04-11T14:52:53.156Z",
       "duration_ms": 57369
+    },
+    {
+      "agent_id": "abf05b6b514b56f01",
+      "agent_type": "ecc:e2e-runner",
+      "started_at": "2026-04-11T15:06:28.994Z",
+      "parent_mode": "none",
+      "status": "running"
     }
   ],
-  "total_spawned": 12,
+  "total_spawned": 13,
   "total_completed": 17,
   "total_failed": 0,
-  "last_updated": "2026-04-11T15:02:51.793Z"
+  "last_updated": "2026-04-11T15:06:29.096Z"
 }
