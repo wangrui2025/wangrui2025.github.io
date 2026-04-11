@@ -26,7 +26,7 @@ const lastUpdated = getLastUpdated();
 <html lang={lang} class="no-js">
   <head>
     <!-- Critical CSS: inline theme variables to prevent FOUC on CV pages -->
-    <style>
+    <style is:inline>
       /* Tailwind v4 custom dark variant */
       @custom-variant dark (&:where(.dark, .dark *));
 
