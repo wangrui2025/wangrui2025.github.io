@@ -1,5 +1,6 @@
 ---
 import { getLastUpdated } from '../utils/lastUpdated';
+import { SITE_URL } from '../utils/constants';
 import '../styles/global.css';
 
 export interface Props {
@@ -17,6 +18,9 @@ const {
   viewport = 'width=794',
 } = Astro.props;
 
+const siteUrl = Astro.site ?? SITE_URL;
+const siteBase = 'https://wangrui2025.github.io';
+const canonicalURL = new URL(lang === 'zh' ? '/zh/cv/' : '/cv/', siteBase);
 const lastUpdated = getLastUpdated();
 ---
 
@@ -27,6 +31,29 @@ const lastUpdated = getLastUpdated();
     <meta name="viewport" content={`${viewport}, initial-scale=1.0, user-scalable=yes`} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Language alternates for SEO -->
+    <link rel="alternate" hreflang="en" href={new URL('/cv/', siteBase)} />
+    <link rel="alternate" hreflang="zh" href={new URL('/zh/cv/', siteBase)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/cv/', siteBase)} />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Rui Wang" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh-CN' : 'en'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/images/avatar.png', siteBase)} />
+    <meta property="og:image:alt" content="Rui Wang - CV Avatar" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/images/avatar.png', siteBase)} />
+
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <script is:inline>
       (function(){
