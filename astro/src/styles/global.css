@@ -30,10 +30,9 @@
   --text-feature: 1.3rem;   /* ~21px — feature/card titles */
 
   /* Font families — Claude aesthetic with CJK support */
-  --font-sans: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
-  --font-serif: 'Inter', system-ui, -apple-system, 'Noto Sans SC', sans-serif;
+  --font-serif: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Noto Sans SC', sans-serif;
   --font-mono: 'Fira Code', Consolas, monospace;
-  --font-noto-serif: 'Noto Serif SC', serif;
 
   /* Colors — Light theme */
   --color-bg-primary: #f5f4ed;
