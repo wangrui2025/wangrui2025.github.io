@@ -190,15 +190,15 @@
       "type": "file"
     },
     {
-      "path": "src/plugins/inline-critical-css.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1775920143296,
+      "path": "scripts/inline-critical-css.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1775920217716,
       "type": "file"
     },
     {
-      "path": "scripts/inline-critical-css.mjs",
+      "path": "src/plugins/inline-critical-css.mjs",
       "accessCount": 2,
-      "lastAccessed": 1775920210439,
+      "lastAccessed": 1775920143296,
       "type": "file"
     },
     {
