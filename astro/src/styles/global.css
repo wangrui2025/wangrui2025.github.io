@@ -29,9 +29,9 @@
   --text-subheading: 1.25rem; /* 20px — sub-headings */
   --text-feature: 1.3rem;   /* ~21px — feature/card titles */
 
-  /* Font families — Claude aesthetic */
+  /* Font families — Claude aesthetic with CJK support */
   --font-serif: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Noto Sans SC', sans-serif;
   --font-mono: 'Fira Code', Consolas, monospace;
 
   /* Colors — Light theme */
