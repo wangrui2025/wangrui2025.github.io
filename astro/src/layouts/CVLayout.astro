@@ -82,10 +82,14 @@ const lastUpdated = getLastUpdated();
       document.getElementById('export-pdf')?.addEventListener('click', () => {
         // Reset before measuring in case a previous print was cancelled
         resetPrintScale();
-        // Wait for fonts to be ready before measuring
+        // Wait for fonts + TWO paint cycles (double rAF) to ensure layout is final
         document.fonts.ready.then(() => {
-          setupPrintScale();
-          window.print();
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              setupPrintScale();
+              window.print();
+            });
+          });
         });
       });
 
