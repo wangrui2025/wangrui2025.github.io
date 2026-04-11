@@ -52,7 +52,10 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- About Me Section -->
   <section id="about-me" class="mb-8">
-    <h1 class="text-3xl font-serif font-bold mb-4">{aboutMeLabel}</h1>
+    <h1 class="text-3xl font-serif font-bold mb-2">{aboutMeLabel}</h1>
+    {h.status_badge && (
+      <p class="text-sm font-medium text-[#c96442] dark:text-[#e8a87c] mb-3">{h.status_badge}</p>
+    )}
     <p class="mb-4 text-base leading-relaxed text-text-primary dark:text-text-dark" set:html={h.background.intro} />
 
     <!-- Background -->

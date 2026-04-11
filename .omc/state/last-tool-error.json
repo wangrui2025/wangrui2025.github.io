@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git push 2>&1\",\"timeout\":30000,\"description\":\"Retry push after SSL error\"}",
-  "error": "Exit code 128\nfatal: unable to access 'https://github.com/wangrui2025/wangrui2025.github.io.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443",
-  "timestamp": "2026-04-11T11:26:39.587Z",
-  "retry_count": 4
-}
