@@ -236,6 +236,12 @@
       "accessCount": 1,
       "lastAccessed": 1775919580695,
       "type": "file"
+    },
+    {
+      "path": "scripts/inline-critical-css.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775920198805,
+      "type": "file"
     }
   ],
   "userDirectives": []
