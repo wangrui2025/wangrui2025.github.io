@@ -29,6 +29,12 @@ The site will be available at http://127.0.0.1:4321 during local development.
 
 - **Astro static site**: GitHub Pages builds and serves the static site from `astro/dist`
 - **Framework**: Astro v6.1.5 with Tailwind CSS v4 + `@tailwindcss/vite` (migrated from `@astrojs/tailwind` on 2026-04-11)
+- **⚠️ Tailwind v4 Critical Migration Rules**（迁移后已验证，禁止违反）:
+  - `tailwind.config.mjs` 完全被 v4 忽略（darkMode/content/theme/colors 全部失效）
+  - v4 主题必须写在 `src/styles/global.css` 的 `@theme {}` 块里
+  - dark mode 必须用 `@custom-variant dark (&:where(.dark, .dark *))` 启用 class 模式
+  - `@theme` 里的 `--text-*` 长度变量自动生成 `.text-*` 字体工具，**禁止用 `text-[--var]`**（会生成 `color:` 而非 `font-size:`）
+  - `tailwind.config.mjs` 保留仅为参考，不要往里面加任何影响构建的配置
 - **Bilingual support**: English (`/`) and Chinese (`/zh/`) versions via `[lang]` dynamic route
 - **Google Scholar integration**: Stats stored in `astro/src/content/scholar/stats.json`
 - **Publications**: Managed via Content Collections in `astro/src/content/papers/`
