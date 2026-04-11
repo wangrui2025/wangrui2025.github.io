@@ -90,7 +90,19 @@ fi
 
 # --- 主流程 ---
 
-git add -A
+# 检测是否有未提交的改动（多步骤编辑循环警告）
+UNCOMMITTED=$(git status --porcelain | grep -v "^??" | grep -v "^ M .omc/" | grep -v "^ M .omc/state/" | grep -v "^ M .omc/research/" || true)
+if [ -n "$UNCOMMITTED" ] && [ -n "$commit_msg" ]; then
+    echo "⚠️  警告：检测到未提交的改动，可能处于多步骤编辑循环中。"
+    echo "   当前未提交的文件："
+    echo "$UNCOMMITTED"
+    echo ""
+    echo "💡 提示：建议等整功能完成后再一起 push，避免碎片化 commit 历史。"
+fi
+
+# 暂存改动文件（排除 .omc/state/ 和 .omc/research/）
+git add \
+    $(git status --porcelain | grep -v "^??" | grep -v "^ M .omc/state/" | grep -v "^ M .omc/research/" | awk '{print $2}')
 
 if git diff --cached --quiet; then
     echo "No changes to commit"
