@@ -1,6 +1,17 @@
 /* Tailwind v4 — theme config migrated from tailwind.config.mjs */
 @import "tailwindcss";
 
+/* Self-hosted fonts via @fontsource */
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/source-serif-4/400-italic.css";
+@import "@fontsource/noto-serif-sc/400.css";
+@import "@fontsource/noto-serif-sc/600.css";
+
 @theme {
   /* Font families */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
