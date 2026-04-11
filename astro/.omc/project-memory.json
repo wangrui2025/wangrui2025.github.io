@@ -190,6 +190,12 @@
       "type": "file"
     },
     {
+      "path": "src/plugins/inline-critical-css.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775920143296,
+      "type": "file"
+    },
+    {
       "path": "src/components/CvEducationItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919145928,
@@ -229,12 +235,6 @@
       "path": "diagnose-dark-mode4.mjs",
       "accessCount": 1,
       "lastAccessed": 1775919580695,
-      "type": "file"
-    },
-    {
-      "path": "src/plugins/inline-critical-css.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775920102128,
       "type": "file"
     }
   ],
