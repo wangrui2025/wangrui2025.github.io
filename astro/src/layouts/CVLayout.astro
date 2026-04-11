@@ -30,7 +30,11 @@ const lastUpdated = getLastUpdated();
       /* Tailwind v4 custom dark variant */
       @custom-variant dark (&:where(.dark, .dark *));
 
-      /* Theme Variables — Light mode defaults */
+      /* Light mode — MUST be before :root to prevent white flash */
+      html {
+        background-color: #f5f4ed;
+      }
+
       :root {
         --color-bg-primary: #f5f4ed;
         --color-bg-dark: #141413;

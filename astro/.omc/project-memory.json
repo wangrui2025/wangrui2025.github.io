@@ -196,6 +196,12 @@
       "type": "file"
     },
     {
+      "path": "src/layouts/CVLayout.astro",
+      "accessCount": 4,
+      "lastAccessed": 1775923430605,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 3,
       "lastAccessed": 1775920992850,
@@ -211,12 +217,6 @@
       "path": "src/plugins/inline-critical-css.mjs",
       "accessCount": 2,
       "lastAccessed": 1775920143296,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775920416334,
       "type": "file"
     },
     {
