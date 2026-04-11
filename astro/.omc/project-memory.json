@@ -208,6 +208,12 @@
       "type": "file"
     },
     {
+      "path": "diagnose-gray-text.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775920811438,
+      "type": "file"
+    },
+    {
       "path": "src/components/CvEducationItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919145928,
@@ -265,12 +271,6 @@
       "path": "src/styles/cv.css",
       "accessCount": 1,
       "lastAccessed": 1775920436859,
-      "type": "file"
-    },
-    {
-      "path": "diagnose-gray-text.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775920558678,
       "type": "file"
     }
   ],
