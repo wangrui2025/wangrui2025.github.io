@@ -173,14 +173,32 @@
   "hotPaths": [
     {
       "path": "src",
-      "accessCount": 4,
-      "lastAccessed": 1775919129289,
+      "accessCount": 5,
+      "lastAccessed": 1775919145953,
       "type": "directory"
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1775919166190,
+      "type": "file"
     },
     {
       "path": "src/styles/global.css",
       "accessCount": 1,
       "lastAccessed": 1775919044637,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvEducationItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775919145928,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvPaperItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775919146004,
       "type": "file"
     }
   ],

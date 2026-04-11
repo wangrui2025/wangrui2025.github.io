@@ -49,7 +49,7 @@ const personSchema = getPersonSchema({
   <head>
     <!-- Critical CSS: inline theme variables + base styles to prevent FOUC -->
     <!-- Loaded synchronously before render; full stylesheet loaded async by Vite -->
-    <style>
+    <style is:inline>
       /* Tailwind v4 custom dark variant */
       @custom-variant dark (&:where(.dark, .dark *));
 
