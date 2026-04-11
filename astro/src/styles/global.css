@@ -17,6 +17,12 @@
 @import "@fontsource/noto-serif-sc/600.css";
 
 @theme {
+  /* Custom font sizes for Claude typography hierarchy */
+  --text-hero: 3.25rem;     /* 52px — main hero/display */
+  --text-section: 1.75rem;  /* 28px — section headings */
+  --text-subheading: 1.25rem; /* 20px — sub-headings */
+  --text-feature: 1.3rem;   /* ~21px — feature/card titles */
+
   /* Font families */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
