@@ -37,7 +37,7 @@ The site will be available at http://127.0.0.1:4321 during local development.
 
 ## Key Files
 
-- `astro/astro.config.mjs` - Astro configuration
+- `astro/astro.config.mjs` - Astro configuration (Rust compiler, sitemap, Tailwind)
 - `astro/src/layouts/BaseLayout.astro` - Main page layout template
 - `astro/src/pages/index.astro` - English homepage
 - `astro/src/pages/[lang]/index.astro` - Bilingual homepage template
