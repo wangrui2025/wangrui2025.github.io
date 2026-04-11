@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /tmp && node dark-mode-test.mjs 2>&1\",\"timeout\":60000,\"description\":\"Run Playwright dark mode color check\"}",
-  "error": "Exit code 1\nnode:internal/modules/package_json_reader:267\n  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n        ^\n\nError [ERR_MODULE_NOT_FOUND]: Cannot find package 'playwright' imported from /private/tmp/dark-mode-test.mjs\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:267:9)\n    at packageResolve (node:internal/modules/esm/resolve:768:81)\n    at moduleResolve (node:internal/modules/esm/resolve:854:18)\n    at defaultResolve (node:internal/...",
-  "timestamp": "2026-04-11T15:09:38.775Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"node /Users/myk/Repo/wangrui2025.github.io/astro/scripts/inline-critical-css.mjs\",\"description\":\"Run inline-critical-css post-build script\"}",
+  "error": "Exit code 1\nnode:internal/modules/esm/translators:419\n    throw new ERR_UNKNOWN_BUILTIN_MODULE(url);\n          ^\n\nError [ERR_UNKNOWN_BUILTIN_MODULE]: No such built-in module: node:glob\n    at ModuleLoader.builtinStrategy (node:internal/modules/esm/translators:419:11)\n    at #translate (node:internal/modules/esm/loader:534:12)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:581:27) {\n  code: 'ERR_UNKNOWN_BUILTIN_MODULE'\n}\n\nNode.js v23.10.0",
+  "timestamp": "2026-04-11T15:10:05.480Z",
+  "retry_count": 4
 }
