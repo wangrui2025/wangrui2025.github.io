@@ -35,6 +35,7 @@ The site will be available at http://127.0.0.1:4321 during local development.
   - dark mode 必须用 `@custom-variant dark (&:where(.dark, .dark *))` 启用 class 模式
   - `@theme` 里的 `--text-*` 长度变量自动生成 `.text-*` 字体工具，**禁止用 `text-[--var]`**（会生成 `color:` 而非 `font-size:`）
   - `tailwind.config.mjs` 保留仅为参考，不要往里面加任何影响构建的配置
+- **⚠️ FOUC 防护（2026-04-11）**：Tailwind v4 + Vite 将 utility class CSS 输出到外部 CSS 文件，通过 `<link rel="stylesheet">` 异步加载。`@font-face` 链式加载导致字体 FOUC。**必须使用 `scripts/inline-critical-css.mjs` post-build 脚本将全部 CSS 内联到 HTML `<head>` 中**，`npm run build` 已自动集成此步骤。
 - **Bilingual support**: English (`/`) and Chinese (`/zh/`) versions via `[lang]` dynamic route
 - **Google Scholar integration**: Stats stored in `astro/src/content/scholar/stats.json`
 - **Publications**: Managed via Content Collections in `astro/src/content/papers/`
