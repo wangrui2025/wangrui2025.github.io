@@ -159,6 +159,12 @@
       "type": "file"
     },
     {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 10,
+      "lastAccessed": 1775920052243,
+      "type": "file"
+    },
+    {
       "path": "astro/src/content/homepage/en.json",
       "accessCount": 9,
       "lastAccessed": 1775806903616,
@@ -168,12 +174,6 @@
       "path": "astro/src/layouts/HomepageLayout.astro",
       "accessCount": 9,
       "lastAccessed": 1775911400336,
-      "type": "file"
-    },
-    {
-      "path": "astro/astro.config.mjs",
-      "accessCount": 9,
-      "lastAccessed": 1775919989794,
       "type": "file"
     },
     {

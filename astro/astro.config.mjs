@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import astroIcon from 'astro-icon';
 
 import tailwindcss from '@tailwindcss/vite';
+import { inlineCriticalCSS } from './src/plugins/inline-critical-css.mjs';
 
 export default defineConfig({
   site: 'https://wangrui2025.github.io',
@@ -18,6 +19,6 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), inlineCriticalCSS()],
   },
 });
