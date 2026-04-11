@@ -1,61 +1,35 @@
 {
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-cp-zyCREts7kDvnlS2HQaCE3HcUhETl0U9VMwpY2cXAKbImzKOcrhwFL-BFYDCJ3KHM02CYlQqscWwgIrR_sk7R3li9Zc_S1GPBfs8Rtdovni6YxW9--83y_v0",
+    "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_MODEL": "MiniMax-M2.7",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_SHELL": "/bin/zsh",
+    "ENABLE_TOOL_SEARCH": "true"
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "Bash(python3 *)",
-      "Bash(bash *)",
-      "Bash(git:*)",
-      "Bash(ls *)",
-      "Bash(grep *)",
-      "Bash(awk *)",
-      "Bash(head *)",
-      "Bash(tail *)",
-      "Bash(cat *)",
-      "Bash(chmod *)",
-      "Bash(printf *)",
-      "Bash(mkdir *)",
-      "Bash(rm *)",
-      "Bash(find *)",
-      "Bash(cp *)",
-      "Bash(mv *)",
-      "Bash(sed *)",
-      "Bash(echo *)",
-      "Bash(npm:*)",
-      "Bash(npm run:*)",
-      "Bash(./scripts/autopush.sh *)",
-      "Bash(scripts/autopush.sh *)",
-      "Bash(.claude/scripts/evolution-trigger.sh *)",
-      "Skill(update-config)",
-      "Skill(update-config:*)",
-      "WebFetch(domain:github.com)",
-      "WebSearch",
-      "Read(/**)",
-      "Edit(/**)",
-      "Write(/**)",
-      "Bash(while read:*)",
-      "Bash(do echo:*)",
-      "Bash(done)",
-      "Bash(find /Users/myk/Repo/wangrui2025.github.io -maxdepth 3 -type f \\\\\\(-name *.sh -o -name *.py -o -name *.js -o -name *.mjs \\\\\\))",
-      "Bash(:)"
-    ],
-    "additionalDirectories": [
-      "/Users/myk/.claude",
-      "/Users/myk/Repo/wangrui2025.github.io",
-      "//Users/myk/Repo/wangrui2025.github.io",
-      "/Users/myk/Repo/wangrui2025.github.io/.git",
-      "/Users/myk/Repo/wangrui2025.github.io/.claude",
-      "/Users/myk/Repo/wangrui2025.github.io/.claude/case",
-      "/Users/myk/Repo/wangrui2025.github.io/.claude/scripts",
-      "/Users/myk/Repo/wangrui2025.github.io/.claude/state",
-      "/Users/myk/Repo/wangrui2025.github.io/.claude/logs",
-      "/Users/myk/.claude/knowledge/cases",
-      "/Users/myk/.claude/agents",
-      "/Users/myk/.claude/commands",
-      "/Users/myk/.claude/skills",
-      "/Users/myk/.claude/rules/common",
-      "/Users/myk/.claude/rules/typescript",
-      "/Users/myk/.claude/rules/python",
-      "/Users/myk/.claude/rules/golang",
-      "/Users/myk/.claude/rules/perl"
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Bash(bundle update:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "WebFetch(domain:minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com)",
+      "Bash(git fetch:*)",
+      "Bash(curl -sI https://mykcs.github.io  )",
+      "Bash(curl -s https://mykcs.github.io  )",
+      "Bash(curl -s https://mykcs.github.io/assets/css/main.css  )",
+      "Bash(git -C ~/.claude add:*)",
+      "Bash(git -C ~/.claude commit:*)",
+      "Bash(git -C ~/.claude push:*)"
     ]
   },
   "hooks": {
@@ -65,9 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash scripts/autopush.sh 2>&1 | head -10 || true",
-            "timeout": 60,
-            "async": true
+            "command": "$HOME/.claude/scripts/smart-autopush.sh ~/.claude 2>/dev/null || true"
           }
         ]
       },
@@ -76,12 +48,136 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/scripts/evolution-trigger.sh 2>&1 || true",
-            "timeout": 30,
+            "command": "jq -r '[.tool_input.command, .tool_response.exitCode] | @tsv' | { read -r cmd code; if [ \"$code\" = \"0\" ] && echo \"$cmd\" | grep -qE '(^npm run build|build$)'; then $HOME/.claude/scripts/smart-autopush.sh /Users/myk/Repo/wangrui2025.github.io; fi; } 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "Auto-pushing after build..."
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/scripts/smart-autopush.sh /Users/myk/Repo/wangrui2025.github.io 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "Auto-pushing after file change...",
             "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/scripts/evolution-trigger.sh 2>/dev/null || true",
+            "timeout": 5,
+            "statusMessage": "Checking evolution triggers...",
+            "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/post-tool-use.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/post-tool-use-failure.mjs\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/pre-tool-use.mjs\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/session-start.mjs\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/persistent-mode.mjs\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/code-simplifier.mjs\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/keyword-detector.mjs\""
           }
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/find-node.sh ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
+  },
+  "enabledPlugins": {
+    "claude-hud@claude-hud": true,
+    "everything-claude-code@everything-claude-code": true,
+    "oh-my-claudecode@omc": true,
+    "ecc@ecc": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    },
+    "everything-claude-code": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      }
+    },
+    "omc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "autoMemoryEnabled": true,
+  "autoMemoryDirectory": "~/.claude/memory"
 }

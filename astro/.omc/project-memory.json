@@ -308,6 +308,12 @@
       "accessCount": 1,
       "lastAccessed": 1775920992665,
       "type": "directory"
+    },
+    {
+      "path": "src/data/cv.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775921739343,
+      "type": "file"
     }
   ],
   "userDirectives": []
