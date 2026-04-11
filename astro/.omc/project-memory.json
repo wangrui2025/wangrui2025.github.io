@@ -1,0 +1,175 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775918187157,
+  "projectRoot": "/Users/myk/Repo/wangrui2025.github.io/astro",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "astro",
+        "version": "6.1.5",
+        "category": "fullstack"
+      },
+      {
+        "name": "playwright",
+        "version": "1.59.1",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "pnpm build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "dev": "astro dev",
+      "build": "astro check && astro build",
+      "preview": "astro preview",
+      "pdf:cv": "node scripts/generate-cv-pdf.mjs"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 12,
+      "lastAccessed": 1775918187141,
+      "keyFiles": [
+        "cv-en.pdf",
+        "cv-zh.pdf",
+        "favicon.svg",
+        "gs_data.json",
+        "index.html"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 9,
+      "lastAccessed": 1775918187142,
+      "keyFiles": [
+        "cv-en.pdf",
+        "cv-zh.pdf",
+        "favicon.svg",
+        "gs_data.json",
+        "manifest.json"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1775918187144,
+      "keyFiles": [
+        "generate-cv-pdf.mjs"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 2,
+      "lastAccessed": 1775918187145,
+      "keyFiles": [
+        "content.config.ts",
+        "env.d.ts"
+      ]
+    },
+    "dist/assets": {
+      "path": "dist/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775918187145,
+      "keyFiles": []
+    },
+    "public/assets": {
+      "path": "public/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775918187145,
+      "keyFiles": []
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 1,
+      "lastAccessed": 1775918187145,
+      "keyFiles": [
+        "avatar.png"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 11,
+      "lastAccessed": 1775918187145,
+      "keyFiles": [
+        "AuthorProfile.astro",
+        "CvEducationItem.astro",
+        "CvHonorItem.astro"
+      ]
+    },
+    "src/data": {
+      "path": "src/data",
+      "purpose": "Data files",
+      "fileCount": 4,
+      "lastAccessed": 1775918187145,
+      "keyFiles": [
+        "cv.ts",
+        "index.ts",
+        "loaders.ts"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 2,
+      "lastAccessed": 1775918187146,
+      "keyFiles": [
+        "cv.astro",
+        "index.astro"
+      ]
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}
