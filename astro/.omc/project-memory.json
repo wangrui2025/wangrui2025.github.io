@@ -170,6 +170,13 @@
       ]
     }
   },
-  "hotPaths": [],
+  "hotPaths": [
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 1,
+      "lastAccessed": 1775919044637,
+      "type": "file"
+    }
+  ],
   "userDirectives": []
 }
