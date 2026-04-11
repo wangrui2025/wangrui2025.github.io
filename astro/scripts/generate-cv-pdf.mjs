@@ -31,7 +31,7 @@ const PAGES = [
   { url: 'https://wangrui2025.github.io/zh/cv', outFile: 'cv-zh.pdf' },
 ];
 
-async function generatePDF(page, url, outFile) {
+async function generatePDF(_page, url, outFile) {
   const outPath = join(PUBLIC_DIR, outFile);
 
   console.log(`\n[${outFile}] Launching browser...`);
