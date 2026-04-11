@@ -172,6 +172,12 @@
   },
   "hotPaths": [
     {
+      "path": "src",
+      "accessCount": 4,
+      "lastAccessed": 1775919129289,
+      "type": "directory"
+    },
+    {
       "path": "src/styles/global.css",
       "accessCount": 1,
       "lastAccessed": 1775919044637,

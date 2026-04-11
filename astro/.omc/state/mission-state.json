@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-11T14:36:26.603Z",
+  "updatedAt": "2026-04-11T14:51:55.787Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -502,6 +502,64 @@
           "agent": "Explore:acdc8d9",
           "detail": "completed",
           "sourceKey": "session-stop:acdc8d96e1990277b"
+        }
+      ]
+    },
+    {
+      "id": "session:1c1c4992-5a8c-4354-869a-6c63c18d3d2b:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-04-11T14:51:55.725Z",
+      "updatedAt": "2026-04-11T14:51:55.787Z",
+      "status": "running",
+      "workerCount": 2,
+      "taskCounts": {
+        "total": 2,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 2,
+        "completed": 0,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "ecc:e2e-runner:a1c00ed",
+          "role": "ecc:e2e-runner",
+          "ownership": "a1c00eddccb092596",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-11T14:51:55.725Z"
+        },
+        {
+          "name": "explore:a9ba976",
+          "role": "explore",
+          "ownership": "a9ba976f379540b3c",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-11T14:51:55.787Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a1c00eddccb092596:2026-04-11T14:51:55.725Z",
+          "at": "2026-04-11T14:51:55.725Z",
+          "kind": "update",
+          "agent": "ecc:e2e-runner:a1c00ed",
+          "detail": "started ecc:e2e-runner:a1c00ed",
+          "sourceKey": "session-start:a1c00eddccb092596"
+        },
+        {
+          "id": "session-start:a9ba976f379540b3c:2026-04-11T14:51:55.787Z",
+          "at": "2026-04-11T14:51:55.787Z",
+          "kind": "update",
+          "agent": "explore:a9ba976",
+          "detail": "started explore:a9ba976",
+          "sourceKey": "session-start:a9ba976f379540b3c"
         }
       ]
     }
