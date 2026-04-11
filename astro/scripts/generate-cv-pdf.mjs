@@ -27,8 +27,8 @@ const A4_HEIGHT_MM = 297;
 const A4_HEIGHT_PX = Math.round((A4_HEIGHT_MM * 96) / 25.4); // ~1123px at 96dpi
 
 const PAGES = [
-  { url: 'http://localhost:4321/cv',    outFile: 'cv-en.pdf' },
-  { url: 'http://localhost:4321/zh/cv', outFile: 'cv-zh.pdf' },
+  { url: 'https://wangrui2025.github.io/cv',    outFile: 'cv-en.pdf' },
+  { url: 'https://wangrui2025.github.io/zh/cv', outFile: 'cv-zh.pdf' },
 ];
 
 async function generatePDF(page, url, outFile) {
