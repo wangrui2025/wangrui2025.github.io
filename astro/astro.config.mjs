@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import astroIcon from 'astro-icon';
 
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
   site: 'https://wangrui2025.github.io',
-  integrations: [tailwind(), sitemap(), astroIcon()],
+  integrations: [sitemap(), astroIcon()],
   experimental: {
     rustCompiler: true,
   },
@@ -17,8 +18,6 @@ export default defineConfig({
     },
   },
   vite: {
-    css: {
-      postcss: './postcss.config.mjs',
-    },
+    plugins: [tailwindcss()],
   },
 });
