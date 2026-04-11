@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"./scripts/autopush.sh \\\"refactor(cv): update research directions with four new research areas\\\"\",\"description\":\"Commit and push CV research directions update\"}",
-  "error": "Exit code 127\n(eval):1: no such file or directory: ./scripts/autopush.sh",
-  "timestamp": "2026-04-11T15:02:29.427Z",
+  "tool_input_preview": "{\"command\":\"git stash && git pull --rebase && git push && git stash pop\",\"description\":\"Stash unstaged changes, rebase, push, restore stash\"}",
+  "error": "Exit code 1\nSaved working directory and index state WIP on main: 41eb827 refactor(cv): update research directions with four new research areas\nAlready up to date.\nEverything up-to-date\nerror: Your local changes to the following files would be overwritten by merge:\n\t.omc/state/hud-state.json\n\t.omc/state/hud-stdin-cache.json\nPlease commit your changes or stash them before you merge.\nAborting\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git ad...",
+  "timestamp": "2026-04-11T15:05:05.768Z",
   "retry_count": 2
 }
