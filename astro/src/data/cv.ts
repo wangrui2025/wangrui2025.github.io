@@ -38,11 +38,10 @@ export const cvData: Record<'zh' | 'en', CVData> = {
       gender: '男（he/him）',
     },
     researchDirections: [
-      { main: '高效神经网络架构设计', sub: '模型压缩 / 神经架构搜索' },
-      { main: '非凸优化 / 几何深度学习', sub: '优化理论 / 几何表示学习' },
-      { main: '计算机视觉长程依赖建模', sub: '注意力机制 / Transformer' },
-      { main: '大规模多模态预训练', sub: '视觉-语言对齐 / 跨模态推理' },
-      { main: '视觉-语言模型推理效率优化', sub: '剪枝 / 量化 / 蒸馏' },
+      { main: '高效序列建模与线性注意力机制', sub: '线性键值关联（Linear Key-Value Association）/ 动态记忆更新（Gated Delta Rule）/ 长程时序依赖建模 / 实时视频理解' },
+      { main: '几何深度学习与流形优化', sub: '正交化状态更新（Orthogonalized State Update）/ Stiefel 流形约束 / Newton-Schulz 迭代 / 矩阵流形上的表示学习 / 秩崩塌（Rank Collapse）抑制' },
+      { main: '医学影像时空分析', sub: '超声心动图视频分割 / 心脏非刚性形变建模 / 散斑噪声鲁棒性 / 临床实时诊断系统' },
+      { main: '非凸优化与动态系统', sub: '递归状态空间的几何正则化 / 记忆机制的可微优化 / 物理先验驱动的特征增强（Anatomical Prior-aware Enhancement）' },
     ],
     // Competition awards not in content collections
     honors: [
