@@ -24,3 +24,4 @@
 - ✅ @astrojs/tailwind → @tailwindcss/vite 迁移（commit `0643d4c`）
 - ✅ CLAUDE.md 更新（commit `05abc04`）
 - ✅ 构建验证通过（0 errors, build 1.89s）
+- ✅ zod deprecation hints: 187 → 6（`is:inline` hints only，commit `fde6e2f`）
