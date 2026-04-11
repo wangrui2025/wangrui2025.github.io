@@ -25,6 +25,47 @@ const lastUpdated = getLastUpdated();
 <!doctype html>
 <html lang={lang} class="no-js">
   <head>
+    <!-- Critical CSS: inline theme variables to prevent FOUC on CV pages -->
+    <style>
+      /* Tailwind v4 custom dark variant */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme Variables — Light mode defaults */
+      :root {
+        --color-bg-primary: #f5f4ed;
+        --color-bg-dark: #141413;
+        --color-text-primary: #3d3d3d;
+        --color-text-dark: #c9c9c9;
+        --color-heading-primary: #141413;
+        --color-heading-dark: #e8e8e8;
+        --color-link-primary: #c96442;
+        --color-link-dark: #d97757;
+        --color-border-primary: #f0eee6;
+        --color-border-dark: #30302e;
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+      }
+
+      /* Dark mode overrides */
+      html.dark {
+        --color-bg-primary: #141413;
+        --color-text-primary: #c9c9c9;
+        --color-heading-primary: #e8e8e8;
+        --color-link-primary: #d97757;
+        --color-border-primary: #30302e;
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+      }
+    </style>
+
+    <!-- Theme initialization — runs BEFORE any paint to prevent FOUC -->
+    <script is:inline>
+      (function(){
+        const t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+        document.documentElement.classList.toggle('dark',t==='dark');
+      })();
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content={`${viewport}, initial-scale=1.0, user-scalable=yes`} />
     <title>{title}</title>
