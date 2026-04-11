@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"curl -s --max-time 15 -L \\\"https://getdesign.md/notion/design-md\\\" -H \\\"User-Agent: Mozilla/5.0\\\" -H \\\"Accept: text/html,text/markdown\\\" 2>/dev/null\",\"description\":\"Fetch Notion design-md ...",
-  "error": "Exit code 2",
-  "timestamp": "2026-04-11T13:40:22.193Z",
-  "retry_count": 6
+  "tool_input_preview": "{\"command\":\"git -C /Users/myk/Repo/wangrui2025.github.io show 6644e89 -- astro/src/styles/global.css | grep -E \\\"font-family|@fontsource|--font\\\"\",\"description\":\"Check font changes in latest commit\"}",
+  "error": "Exit code 2\nrg: error parsing flag -E: grep config error: unknown encoding: font-family|@fontsource|--font",
+  "timestamp": "2026-04-11T13:49:36.803Z",
+  "retry_count": 2
 }
