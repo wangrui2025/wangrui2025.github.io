@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"python3 -c \\\"\\nimport re\\n\\nwith open('/Users/myk/Repo/wangrui2025.github.io/astro/dist/index.html') as f:\\n    content = f.read()\\n\\n# Get the <head> content\\nhead_end = content.find('</h...",
-  "error": "Exit code 1\nTraceback (most recent call last):\n  File \"<string>\", line 19, in <module>\n    theme_idx = head.find('dark', 'dark')\nTypeError: slice indices must be integers or None or have an __index__ method\nHead structure (tag order):\n  [0] <!DOCTYPE html><html lang=\"en\" class=\"no-js\"> <head><!-- Critical CSS: inline theme variables + base\n  [1] <style>\n  [2] \n      /* Tailwind v4 custom dark variant */\n      @custom-variant dark (&:where(.dark, .dark *));\n\n\n  [3] <script>\n  [4] \n      (function...",
-  "timestamp": "2026-04-11T15:11:09.123Z",
+  "tool_input_preview": "{\"command\":\"npm run preview -- --host 0.0.0.0 --port 4322 &\\nsleep 3 && curl -s http://localhost:4322/ | python3 -c \\\"\\nimport sys, re\\nhtml = sys.stdin.read()\\nif not html:\\n    print('Server not rea...",
+  "error": "Exit code 1\n\n> astro-site@1.0.0 preview\n> astro preview --host 0.0.0.0 --port 4322\n\n astro  v6.1.5 ready in 10 ms\n┃ Local    http://localhost:4322/\n┃ Network  http://192.168.5.192:4322/\nerror: invalid value 'http://localhost:4322/' for '--style <THEME>'\n  [possible values: auto, solarized, monokai, fruity]\n\nFor more information, try '--help'.\nServer not ready",
+  "timestamp": "2026-04-11T15:18:20.979Z",
   "retry_count": 2
 }
