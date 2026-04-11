@@ -238,6 +238,12 @@
       "type": "file"
     },
     {
+      "path": "src/data/cv.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775921834013,
+      "type": "file"
+    },
+    {
       "path": "src/components/CvEducationItem.astro",
       "accessCount": 1,
       "lastAccessed": 1775919145928,
@@ -308,12 +314,6 @@
       "accessCount": 1,
       "lastAccessed": 1775920992665,
       "type": "directory"
-    },
-    {
-      "path": "src/data/cv.ts",
-      "accessCount": 1,
-      "lastAccessed": 1775921739343,
-      "type": "file"
     }
   ],
   "userDirectives": []
