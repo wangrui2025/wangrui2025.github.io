@@ -20,16 +20,15 @@
 @import "@fontsource/noto-serif-sc/600.css";
 
 @theme {
-  /* Custom font sizes for Claude typography hierarchy */
-  --text-hero: 3.25rem;     /* 52px — main hero/display */
-  --text-section: 1.75rem;  /* 28px — section headings */
-  --text-subheading: 1.25rem; /* 20px — sub-headings */
-  --text-feature: 1.3rem;   /* ~21px — feature/card titles */
-
   /* Font families — Claude aesthetic with CJK fallback */
   --font-serif: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
   --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
   --font-mono: 'Fira Code', Consolas, monospace;
+
+  /* Custom font sizes for Claude typography hierarchy */
+  --text-hero: 3.25rem;
+  --text-section: 1.75rem;
+  --text-feature: 1.3rem;
 }
 
 @utility text-hero {
@@ -46,9 +45,6 @@
   font-size: var(--text-feature);
   line-height: 1.2;
 }
-  --font-serif: Georgia, 'Source Serif 4', 'Noto Serif SC', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
-  --font-mono: 'Fira Code', Consolas, monospace;
 
   /* Colors — Light theme */
   --color-bg-primary: #f5f4ed;
