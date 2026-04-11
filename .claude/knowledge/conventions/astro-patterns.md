@@ -1,5 +1,14 @@
 # Astro 开发规范
 
+## Content Collections Loader 规则
+
+**单文件 = 单 entry 用 `glob()`，不用 `file()`。**
+
+| 场景 | Loader | 原因 |
+|------|--------|------|
+| 一个 JSON 文件 = 一条记录 | `glob({ pattern: '**/*.json' })` | `file()` 会把顶级键拆成多个 entry |
+| 一个目录 = 多个 JSON 文件 | `glob({ pattern: '**/*.json' })` | 正确，每个文件一个 entry |
+
 ## CSS 作用域 (Scoped CSS)
 
 Astro 使用 `data-astro-cid-xxx` 属性实现组件级 CSS 隔离。
