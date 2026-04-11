@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-11T15:35:25.609Z",
+  "updatedAt": "2026-04-11T15:37:34.745Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -511,14 +511,14 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-11T14:51:55.725Z",
-      "updatedAt": "2026-04-11T15:35:25.609Z",
-      "status": "done",
-      "workerCount": 4,
+      "updatedAt": "2026-04-11T15:37:34.745Z",
+      "status": "running",
+      "workerCount": 5,
       "taskCounts": {
-        "total": 4,
+        "total": 5,
         "pending": 0,
         "blocked": 0,
-        "inProgress": 0,
+        "inProgress": 1,
         "completed": 4,
         "failed": 0
       },
@@ -562,33 +562,19 @@
           "latestUpdate": "completed",
           "completedSummary": null,
           "updatedAt": "2026-04-11T15:25:11.178Z"
+        },
+        {
+          "name": "ecc:e2e-runner:aabc3c9",
+          "role": "ecc:e2e-runner",
+          "ownership": "aabc3c9867d2041a9",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-11T15:37:34.745Z"
         }
       ],
       "timeline": [
-        {
-          "id": "session-start:abf05b6b514b56f01:2026-04-11T15:06:28.994Z",
-          "at": "2026-04-11T15:06:28.994Z",
-          "kind": "update",
-          "agent": "ecc:e2e-runner:abf05b6",
-          "detail": "started ecc:e2e-runner:abf05b6",
-          "sourceKey": "session-start:abf05b6b514b56f01"
-        },
-        {
-          "id": "session-stop:abf05b6b514b56f01:2026-04-11T15:13:12.106Z",
-          "at": "2026-04-11T15:13:12.106Z",
-          "kind": "completion",
-          "agent": "ecc:e2e-runner:abf05b6",
-          "detail": "completed",
-          "sourceKey": "session-stop:abf05b6b514b56f01"
-        },
-        {
-          "id": "session-start:acfb8a3bda5cccd0b:2026-04-11T15:14:18.134Z",
-          "at": "2026-04-11T15:14:18.134Z",
-          "kind": "update",
-          "agent": "ecc:e2e-runner:acfb8a3",
-          "detail": "started ecc:e2e-runner:acfb8a3",
-          "sourceKey": "session-start:acfb8a3bda5cccd0b"
-        },
         {
           "id": "session-stop:acfb8a3bda5cccd0b:2026-04-11T15:25:11.178Z",
           "at": "2026-04-11T15:25:11.178Z",
@@ -604,6 +590,14 @@
           "agent": "ecc:e2e-runner:a1c00ed",
           "detail": "completed",
           "sourceKey": "session-stop:a72d598c92e63c902"
+        },
+        {
+          "id": "session-start:aabc3c9867d2041a9:2026-04-11T15:37:34.745Z",
+          "at": "2026-04-11T15:37:34.745Z",
+          "kind": "update",
+          "agent": "ecc:e2e-runner:aabc3c9",
+          "detail": "started ecc:e2e-runner:aabc3c9",
+          "sourceKey": "session-start:aabc3c9867d2041a9"
         }
       ]
     }
