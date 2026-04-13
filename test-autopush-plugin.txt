@@ -1,3 +1,0 @@
-# Plugin Test File
-Created: 2026-04-13
-Purpose: Verify file-change autopush hook
