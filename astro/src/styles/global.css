@@ -182,6 +182,15 @@ a:hover {
   justify-content: center;
 }
 
+/* ===== Footer ===== */
+.footer-builtwith {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.75rem;
+  margin-top: 2rem;
+  opacity: 0.6;
+}
+
 /* Light mode: show sun, hide moon */
 .icon-sun {
   display: block;
