@@ -173,20 +173,20 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 15,
-      "lastAccessed": 1776254400132,
+      "accessCount": 16,
+      "lastAccessed": 1776254413683,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 13,
-      "lastAccessed": 1776254394754,
+      "accessCount": 16,
+      "lastAccessed": 1776254438273,
       "type": "file"
     },
     {
       "path": "src",
-      "accessCount": 9,
-      "lastAccessed": 1776254342896,
+      "accessCount": 10,
+      "lastAccessed": 1776254429005,
       "type": "directory"
     },
     {
@@ -208,6 +208,12 @@
       "type": "directory"
     },
     {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776254413570,
+      "type": "file"
+    },
+    {
       "path": "src/data/cv.ts",
       "accessCount": 3,
       "lastAccessed": 1775921844129,
@@ -217,12 +223,6 @@
       "path": "src/components/Scripts.astro",
       "accessCount": 3,
       "lastAccessed": 1776254349543,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776254383800,
       "type": "file"
     },
     {
@@ -266,6 +266,12 @@
       "accessCount": 2,
       "lastAccessed": 1776254358928,
       "type": "directory"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776254413631,
+      "type": "file"
     },
     {
       "path": "src/components/CvEducationItem.astro",
@@ -344,12 +350,6 @@
       "accessCount": 1,
       "lastAccessed": 1776254358875,
       "type": "directory"
-    },
-    {
-      "path": "src/components/ThemeToggle.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776254375899,
-      "type": "file"
     }
   ],
   "userDirectives": []

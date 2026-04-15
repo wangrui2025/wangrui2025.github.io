@@ -446,7 +446,7 @@ html.dark .timeline-container {
   margin-bottom: 0.25rem;
 }
 
-.dark .timeline-period {
+html.dark .timeline-period {
   color: rgb(176 174 165);
 }
 
@@ -461,7 +461,7 @@ html.dark .timeline-container {
   margin-top: 0.25rem;
 }
 
-.dark .timeline-description {
+html.dark .timeline-description {
   color: rgb(176 174 165);
 }
 

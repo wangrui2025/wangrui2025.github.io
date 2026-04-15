@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"curl -sL --max-time 10 https://wangrui2025.github.io/ | python3 -c \\\"\\nimport sys, re\\nhtml = sys.stdin.read()\\nif not html:\\n    print('ERROR: Empty response')\\n    sys.exit(1)\\nprint(f'H...",
-  "error": "Exit code 1\nerror: invalid value 'L' for '--style <THEME>'\n  [possible values: auto, solarized, monokai, fruity]\n\nFor more information, try '--help'.\nERROR: Empty response",
-  "timestamp": "2026-04-11T15:52:14.285Z",
+  "tool_input_preview": "{\"command\":\"./scripts/autopush.sh \\\"refactor(theme): extract ThemeToggle component and consolidate astro:page-load binding\\\"\",\"timeout\":120000,\"description\":\"Push theme toggle refactor changes\"}",
+  "error": "Exit code 127\n(eval):1: no such file or directory: ./scripts/autopush.sh",
+  "timestamp": "2026-04-15T12:00:33.178Z",
   "retry_count": 2
 }
