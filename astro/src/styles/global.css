@@ -335,7 +335,7 @@ html.dark .about-list li::before {
   margin-right: 1rem;
 }
 
-.dark .honors-list .period {
+html.dark .honors-list .period {
   color: rgb(135 134 127);
 }
 
