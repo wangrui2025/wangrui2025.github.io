@@ -172,21 +172,21 @@
   },
   "hotPaths": [
     {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 16,
-      "lastAccessed": 1776254413683,
+      "path": "src/styles/global.css",
+      "accessCount": 19,
+      "lastAccessed": 1776254535691,
       "type": "file"
     },
     {
-      "path": "src/styles/global.css",
-      "accessCount": 16,
-      "lastAccessed": 1776254438273,
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 18,
+      "lastAccessed": 1776254598971,
       "type": "file"
     },
     {
       "path": "src",
-      "accessCount": 10,
-      "lastAccessed": 1776254429005,
+      "accessCount": 11,
+      "lastAccessed": 1776254469748,
       "type": "directory"
     },
     {
