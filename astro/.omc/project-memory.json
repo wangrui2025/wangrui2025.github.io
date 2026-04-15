@@ -173,21 +173,27 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 10,
-      "lastAccessed": 1775923419112,
+      "accessCount": 13,
+      "lastAccessed": 1776254349515,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 8,
-      "lastAccessed": 1775921126329,
+      "accessCount": 10,
+      "lastAccessed": 1776254349474,
       "type": "file"
     },
     {
       "path": "src",
-      "accessCount": 7,
-      "lastAccessed": 1775920986244,
+      "accessCount": 9,
+      "lastAccessed": 1776254342896,
       "type": "directory"
+    },
+    {
+      "path": "src/layouts/CVLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776254349531,
+      "type": "file"
     },
     {
       "path": "scripts/inline-critical-css.mjs",
@@ -196,21 +202,21 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 5,
-      "lastAccessed": 1775923437551,
-      "type": "file"
-    },
-    {
       "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1775920992850,
+      "accessCount": 4,
+      "lastAccessed": 1776254341167,
       "type": "directory"
     },
     {
       "path": "src/data/cv.ts",
       "accessCount": 3,
       "lastAccessed": 1775921844129,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Scripts.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776254349543,
       "type": "file"
     },
     {
@@ -241,6 +247,18 @@
       "path": "dark-mode-screenshot.png",
       "accessCount": 2,
       "lastAccessed": 1775920945677,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776254342843,
+      "type": "file"
+    },
+    {
+      "path": "tailwind.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1776254348500,
       "type": "file"
     },
     {
@@ -316,21 +334,9 @@
       "type": "directory"
     },
     {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776254266349,
-      "type": "file"
-    },
-    {
       "path": "src/pages/[lang]/index.astro",
       "accessCount": 1,
       "lastAccessed": 1776254266394,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Scripts.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776254266412,
       "type": "file"
     }
   ],

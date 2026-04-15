@@ -1,1 +1,5 @@
 {"t":0,"agent":"system","event":"skill_invoked","skill_name":"ultrawork"}
+{"t":0,"agent":"a00a5a4","agent_type":"general-purpose","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ab52add","agent_type":"general-purpose","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a9e3930","agent_type":"general-purpose","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ab2e632","agent_type":"general-purpose","event":"agent_start","parent_mode":"none"}
