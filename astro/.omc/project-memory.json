@@ -314,6 +314,24 @@
       "accessCount": 1,
       "lastAccessed": 1775920992665,
       "type": "directory"
+    },
+    {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776254266349,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/[lang]/index.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776254266394,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Scripts.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776254266412,
+      "type": "file"
     }
   ],
   "userDirectives": []
