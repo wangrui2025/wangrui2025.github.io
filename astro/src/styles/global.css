@@ -416,7 +416,7 @@ details[open] .toggle-text-expanded {
   border-left: 2px solid rgb(240 238 230);
 }
 
-.dark .timeline-container {
+html.dark .timeline-container {
   border-color: rgb(48 48 46);
 }
 
