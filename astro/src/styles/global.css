@@ -250,7 +250,7 @@ code {
   margin-bottom: 0.75rem;
 }
 
-.dark .info-card {
+html.dark .info-card {
   background: rgb(48 48 46 / 0.4);
   border-color: rgb(48 48 46 / 0.4);
 }
@@ -262,7 +262,7 @@ code {
   color: var(--color-heading-primary, #1f2937);
 }
 
-.dark .info-card-title {
+html.dark .info-card-title {
   color: var(--color-heading-dark, #f9fafb);
 }
 
@@ -287,7 +287,7 @@ code {
   color: rgb(135 134 127);
 }
 
-.dark .about-list li::before {
+html.dark .about-list li::before {
   color: rgb(135 134 127);
 }
 

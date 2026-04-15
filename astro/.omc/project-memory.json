@@ -173,14 +173,14 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 13,
-      "lastAccessed": 1776254349515,
+      "accessCount": 14,
+      "lastAccessed": 1776254392244,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 10,
-      "lastAccessed": 1776254349474,
+      "accessCount": 12,
+      "lastAccessed": 1776254382786,
       "type": "file"
     },
     {
@@ -220,6 +220,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776254383800,
+      "type": "file"
+    },
+    {
       "path": "src/plugins/inline-critical-css.mjs",
       "accessCount": 2,
       "lastAccessed": 1775920143296,
@@ -250,16 +256,16 @@
       "type": "file"
     },
     {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776254342843,
-      "type": "file"
-    },
-    {
       "path": "tailwind.config.mjs",
       "accessCount": 2,
       "lastAccessed": 1776254348500,
       "type": "file"
+    },
+    {
+      "path": "src/components",
+      "accessCount": 2,
+      "lastAccessed": 1776254358928,
+      "type": "directory"
     },
     {
       "path": "src/components/CvEducationItem.astro",
@@ -298,12 +304,6 @@
       "type": "file"
     },
     {
-      "path": "src/components",
-      "accessCount": 1,
-      "lastAccessed": 1775920403499,
-      "type": "directory"
-    },
-    {
       "path": "src/components/AuthorProfile.astro",
       "accessCount": 1,
       "lastAccessed": 1775920409021,
@@ -337,6 +337,18 @@
       "path": "src/pages/[lang]/index.astro",
       "accessCount": 1,
       "lastAccessed": 1776254266394,
+      "type": "file"
+    },
+    {
+      "path": "src/pages",
+      "accessCount": 1,
+      "lastAccessed": 1776254358875,
+      "type": "directory"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776254375899,
       "type": "file"
     }
   ],

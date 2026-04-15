@@ -183,7 +183,9 @@
       "agent_type": "general-purpose",
       "started_at": "2026-04-15T11:58:48.702Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-15T11:59:31.807Z",
+      "duration_ms": 43105
     },
     {
       "agent_id": "a9e39303da09c4286",
@@ -208,7 +210,7 @@
     }
   ],
   "total_spawned": 17,
-  "total_completed": 19,
+  "total_completed": 20,
   "total_failed": 0,
-  "last_updated": "2026-04-15T11:58:48.920Z"
+  "last_updated": "2026-04-15T11:59:31.910Z"
 }

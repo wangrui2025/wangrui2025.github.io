@@ -1,6 +1,6 @@
 ---
 import { navigation } from '../data/navigation';
-import { Icon } from 'astro-icon/components';
+import ThemeToggle from './ThemeToggle.astro';
 
 export interface Props {
   lang?: string;
@@ -39,12 +39,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         <ul class="hidden md:hidden"></ul>
       </nav>
 
-      <button id="theme-toggle" class="p-2 rounded-lg text-text-primary dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark mode'} title={lang === 'zh' ? '切换深色/浅色模式' : 'Toggle dark/light mode'}>
-        <!-- Sun icon: visible in light mode, hidden in dark mode -->
-        <Icon id="theme-toggle-sun" name="lucide:sun" class="w-5 h-5 icon-sun" />
-        <!-- Moon icon: hidden in light mode, visible in dark mode -->
-        <Icon id="theme-toggle-moon" name="lucide:moon" class="w-5 h-5 icon-moon" />
-      </button>
+      <ThemeToggle />
     </div>
   </div>
 </div>
