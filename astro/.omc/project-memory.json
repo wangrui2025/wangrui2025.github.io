@@ -172,22 +172,28 @@
   },
   "hotPaths": [
     {
-      "path": "src/styles/global.css",
-      "accessCount": 21,
-      "lastAccessed": 1776254622843,
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 23,
+      "lastAccessed": 1776254821599,
       "type": "file"
     },
     {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 20,
-      "lastAccessed": 1776254680160,
+      "path": "src/styles/global.css",
+      "accessCount": 22,
+      "lastAccessed": 1776254749630,
       "type": "file"
     },
     {
       "path": "src",
-      "accessCount": 11,
-      "lastAccessed": 1776254469748,
+      "accessCount": 12,
+      "lastAccessed": 1776254813903,
       "type": "directory"
+    },
+    {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 7,
+      "lastAccessed": 1776254834968,
+      "type": "file"
     },
     {
       "path": "src/layouts/CVLayout.astro",
@@ -208,12 +214,6 @@
       "type": "directory"
     },
     {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776254413570,
-      "type": "file"
-    },
-    {
       "path": "src/data/cv.ts",
       "accessCount": 3,
       "lastAccessed": 1775921844129,
@@ -223,6 +223,18 @@
       "path": "src/components/Scripts.astro",
       "accessCount": 3,
       "lastAccessed": 1776254349543,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776254722504,
+      "type": "file"
+    },
+    {
+      "path": "tailwind.config.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1776254722613,
       "type": "file"
     },
     {
@@ -256,22 +268,10 @@
       "type": "file"
     },
     {
-      "path": "tailwind.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1776254348500,
-      "type": "file"
-    },
-    {
       "path": "src/components",
       "accessCount": 2,
       "lastAccessed": 1776254358928,
       "type": "directory"
-    },
-    {
-      "path": "src/components/ThemeToggle.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776254413631,
-      "type": "file"
     },
     {
       "path": "src/components/CvEducationItem.astro",
