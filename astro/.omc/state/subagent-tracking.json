@@ -242,11 +242,13 @@
       "agent_type": "astro-docs-auditor",
       "started_at": "2026-04-16T01:49:53.547Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-16T01:50:39.864Z",
+      "duration_ms": 46317
     }
   ],
   "total_spawned": 19,
-  "total_completed": 24,
+  "total_completed": 25,
   "total_failed": 0,
-  "last_updated": "2026-04-16T01:49:53.649Z"
+  "last_updated": "2026-04-16T01:50:39.966Z"
 }
