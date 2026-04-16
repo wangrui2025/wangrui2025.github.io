@@ -273,11 +273,13 @@
       "agent_type": "code-auditor",
       "started_at": "2026-04-16T01:54:47.637Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-16T01:55:35.842Z",
+      "duration_ms": 48205
     }
   ],
   "total_spawned": 22,
-  "total_completed": 29,
+  "total_completed": 30,
   "total_failed": 0,
-  "last_updated": "2026-04-16T01:54:47.741Z"
+  "last_updated": "2026-04-16T01:55:35.946Z"
 }

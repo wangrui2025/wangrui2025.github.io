@@ -191,6 +191,18 @@
       "type": "file"
     },
     {
+      "path": "src/components/AuthorProfile.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304536154,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Education.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304544230,
+      "type": "file"
+    },
+    {
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
@@ -200,18 +212,6 @@
       "path": "src/components/PaperCard.astro",
       "accessCount": 1,
       "lastAccessed": 1776304491555,
-      "type": "file"
-    },
-    {
-      "path": "src/components/AuthorProfile.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304491634,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Education.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304491655,
       "type": "file"
     },
     {

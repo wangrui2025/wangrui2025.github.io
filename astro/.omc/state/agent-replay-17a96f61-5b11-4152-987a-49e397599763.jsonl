@@ -21,3 +21,4 @@
 {"t":0,"agent":"a81bf8c","agent_type":"unknown","event":"agent_stop","success":true}
 {"t":0,"agent":"a96bbab","agent_type":"code-auditor","event":"agent_stop","success":true,"duration_ms":185812}
 {"t":0,"agent":"aabb8f8","agent_type":"code-auditor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aabb8f8","agent_type":"code-auditor","event":"agent_stop","success":true,"duration_ms":48205}
