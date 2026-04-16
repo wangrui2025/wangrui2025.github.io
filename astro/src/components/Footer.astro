@@ -1,0 +1,17 @@
+---
+import { getEntry } from 'astro:content';
+
+export interface Props {
+  lang: 'en' | 'zh';
+  lastUpdated: string;
+}
+
+const { lang, lastUpdated } = Astro.props;
+const homepage = await getEntry('homepage', lang);
+if (!homepage) throw new Error(`homepage entry "${lang}" not found`);
+const h = homepage.data;
+---
+
+<footer class="footer-builtwith text-center py-6 text-xs text-text-primary/60 dark:text-text-dark/60 border-t border-border-primary dark:border-border-dark mt-8">
+  {h.footer_built_with} <a href="https://astro.build" target="_blank" rel="noopener" class="text-link-primary dark:text-link-dark hover:underline">Astro</a>{h.footer_by ? ' ' + h.footer_by : ''} · {h.footer_last_updated}: {lastUpdated}
+</footer>
