@@ -1,5 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import iccvLogo from '../assets/paper/iccv_logo.png';
+import cvprLogo from '../assets/paper/cvpr_logo.svg';
 
 interface Props {
   paper: CollectionEntry<'papers'>;
@@ -54,17 +57,21 @@ const showCvprLogo = paper.data.venue_full?.includes('CVPR 2026');
     </div>
     <div class="flex items-center self-start pt-0.5 gap-1">
       {showIccvLogo && (
-        <img
-          src="/assets/paper/iccv_logo.png"
+        <Image
+          src={iccvLogo}
           alt="ICCV 2025"
           class="h-6 w-auto object-contain"
+          width={48}
+          height={24}
         />
       )}
       {showCvprLogo && (
-        <img
-          src="/assets/paper/cvpr_logo.svg"
+        <Image
+          src={cvprLogo}
           alt="CVPR 2026"
           class="h-6 w-auto object-contain"
+          width={48}
+          height={24}
         />
       )}
     </div>
