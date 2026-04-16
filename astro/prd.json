@@ -1,41 +1,59 @@
 {
-  "title": "Fix 3 verified issues in Astro academic homepage",
+  "title": "Sprites Gallery page for Pokemon static sprite comparison",
   "version": "1.0.0",
   "stories": [
     {
       "id": "US-001",
-      "title": "Extract hardcoded footer i18n into Footer.astro component",
+      "title": "Create sprite-sources.ts data module",
       "priority": "high",
-      "passes": true,
+      "passes": false,
       "acceptanceCriteria": [
-        "Footer strings (Built with/本网页由, Last updated/最后更新时间) are moved from BaseLayout.astro into src/content/homepage/en.json and zh.json",
-        "A new src/components/Footer.astro component exists and accepts lang + lastUpdated props",
-        "BaseLayout.astro imports and uses Footer.astro instead of the inline hardcoded footer",
-        "Footer renders correctly in both English and Chinese with dark mode support",
-        "npm run build passes with 0 errors"
+        "src/data/sprite-sources.ts exists with SpriteSource interface and SPRITE_SOURCES array",
+        "All 9 sources are configured: default, shiny, gen1-rb, gen1-yellow, gen2-gold, gen2-silver, home, dream-world, official-artwork",
+        "maxId boundaries are set correctly for gen1 (151), gen2 (251), dream-world (649)",
+        "isValidForSource(id, source) helper correctly validates bounds",
+        "No GIF sources are included; only PNG and SVG"
       ]
     },
     {
       "id": "US-002",
-      "title": "Enable prefetch in astro.config.mjs",
+      "title": "Create sprites-gallery.astro page",
       "priority": "high",
-      "passes": true,
+      "passes": false,
       "acceptanceCriteria": [
-        "astro.config.mjs contains prefetch: true (or equivalent prefetch configuration)",
-        "npm run build passes with 0 errors",
-        "No runtime console errors related to prefetch"
+        "src/pages/sprites-gallery.astro exists and uses BaseLayout.astro",
+        "Control bar has ID input (1-1025), random button, generation filter dropdown",
+        "Responsive grid displays sprites (mobile 2 cols -> desktop 6 cols)",
+        "Each card shows sprite image (original size, pixelated), source name, format/size/style tags, copy-URL button",
+        "Invalid IDs or out-of-generation-range IDs show a placeholder (gray box + question mark)",
+        "Keyboard shortcuts work: arrow keys change ID, R randomizes, F sets favicon",
+        "Bottom code snippet shows the URL template for the currently selected source",
+        "npm run build passes with 0 errors"
       ]
     },
     {
       "id": "US-003",
-      "title": "Create bilingual 404.astro page",
+      "title": "Wire favicon preference from Gallery into BaseLayout",
       "priority": "high",
-      "passes": true,
+      "passes": false,
       "acceptanceCriteria": [
-        "src/pages/404.astro exists and uses BaseLayout.astro",
-        "404 page displays bilingual-appropriate messaging based on URL (/zh/ vs /)",
-        "Design matches the site's color scheme, typography, and dark mode",
-        "npm run build passes with 0 errors and the 404 page is present in dist/"
+        "BaseLayout.astro reads preferred-sprite-source and preferred-pokemon-id from localStorage",
+        "If a preference exists, it overrides the random favicon logic",
+        "Gallery 'Set as favicon' button stores the preference and updates the current page favicon immediately",
+        "npm run build passes with 0 errors"
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "Styling matches site theme and dark mode",
+      "priority": "medium",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Gallery uses site color tokens and supports dark/light mode",
+        "Retro sprites (gen1/gen2) use CSS scale(1.5) with transform-origin center",
+        "All images use image-rendering: pixelated / crisp-edges",
+        "Card hover shows subtle shadow and reveals technical details",
+        "No visual regressions in existing pages"
       ]
     }
   ]
