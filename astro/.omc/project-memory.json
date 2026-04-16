@@ -185,16 +185,16 @@
       "type": "directory"
     },
     {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776304672228,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
       "type": "directory"
-    },
-    {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304528872,
-      "type": "file"
     },
     {
       "path": "src/components/AuthorProfile.astro",
