@@ -212,7 +212,16 @@ const personSchema = getPersonSchema({
     <meta name="description" content={description} />
 
     <!-- Favicon & PWA -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
+    <script is:inline>
+      (function() {
+        var id = Math.floor(Math.random() * 151) + 1;
+        var link = document.getElementById('pokemon-favicon');
+        if (link) {
+          link.href = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id + '.png';
+        }
+      })();
+    </script>
     <link rel="apple-touch-icon" href="/images/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
 
