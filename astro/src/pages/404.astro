@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pathname = Astro.url.pathname;
+const lang: 'en' | 'zh' = pathname.startsWith('/zh/') ? 'zh' : 'en';
+
+const title = lang === 'zh' ? '页面未找到 - 404' : 'Page Not Found - 404';
+const description = lang === 'zh' ? '抱歉，您访问的页面不存在。' : 'Sorry, the page you are looking for does not exist.';
+const heading = lang === 'zh' ? '404' : '404';
+const subheading = lang === 'zh' ? '页面未找到' : 'Page Not Found';
+const message = lang === 'zh' ? '抱歉，您访问的页面不存在或已被移动。' : 'Sorry, the page you are looking for does not exist or has been moved.';
+const homeLabel = lang === 'zh' ? '返回首页' : 'Back to Home';
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherLabel = lang === 'zh' ? 'English Version' : '中文页面';
+const otherHref = lang === 'zh' ? '/' : '/zh/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <div class="flex flex-col items-center justify-center min-h-[50vh] text-center px-4">
+    <h1 class="font-serif font-medium text-[80px] leading-none text-paper-accent dark:text-paper-accent-dark mb-4">
+      {heading}
+    </h1>
+    <h2 class="font-serif font-medium text-[28px] leading-tight text-text-primary dark:text-text-dark mb-4">
+      {subheading}
+    </h2>
+    <p class="text-base text-text-secondary dark:text-text-secondary-dark mb-8 max-w-md">
+      {message}
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a
+        href={lang === 'zh' ? '/zh/' : '/'}
+        class="inline-flex items-center px-5 py-2.5 rounded-lg bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark font-medium hover:opacity-90 transition-opacity"
+      >
+        {homeLabel}
+      </a>
+      <a
+        href={otherHref}
+        class="inline-flex items-center px-5 py-2.5 rounded-lg border border-border-primary dark:border-border-dark text-text-primary dark:text-text-dark hover:bg-bg-primary/80 dark:hover:bg-bg-dark/80 transition-colors"
+      >
+        {otherLabel}
+      </a>
+    </div>
+  </div>
+</BaseLayout>
