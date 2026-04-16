@@ -43,6 +43,12 @@ const personSchema = getPersonSchema({
   ],
   description: "M.S. Candidate at Shenzhen University"
 });
+
+// Serialize sprite source URLs for the favicon inline script
+const sourceMap = SPRITE_SOURCES.reduce((acc, s) => {
+  acc[s.id] = s.url(1);
+  return acc;
+}, {} as Record<string, string>);
 ---
 
 <!doctype html>
