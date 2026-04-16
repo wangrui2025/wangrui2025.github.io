@@ -213,10 +213,31 @@
       "status": "completed",
       "completed_at": "2026-04-15T12:04:47.950Z",
       "duration_ms": 359132
+    },
+    {
+      "agent_id": "aa835513fd5120023",
+      "agent_type": "code-auditor",
+      "started_at": "2026-04-16T01:44:49.943Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "ab715e6abe2dbe341",
+      "agent_type": "tailwind-docs-auditor",
+      "started_at": "2026-04-16T01:44:49.972Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "a45c177df0b7952ea",
+      "agent_type": "astro-docs-auditor",
+      "started_at": "2026-04-16T01:44:50.000Z",
+      "parent_mode": "none",
+      "status": "running"
     }
   ],
-  "total_spawned": 17,
+  "total_spawned": 18,
   "total_completed": 23,
   "total_failed": 0,
-  "last_updated": "2026-04-15T12:04:48.053Z"
+  "last_updated": "2026-04-16T01:44:50.105Z"
 }
