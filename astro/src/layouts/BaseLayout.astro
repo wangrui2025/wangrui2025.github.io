@@ -221,7 +221,7 @@ const sourceMap = SPRITE_SOURCES.reduce((acc, s) => {
 
     <!-- Favicon & PWA -->
     <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
-    <script is:inline>
+    <script is:inline define:vars={{ sourceMap }}>
       (function() {
         var link = document.getElementById('pokemon-favicon');
         if (!link) return;
@@ -230,39 +230,8 @@ const sourceMap = SPRITE_SOURCES.reduce((acc, s) => {
         var preferredId = localStorage.getItem('preferred-pokemon-id');
 
         if (preferredSource && preferredId) {
-          var baseUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-          var url = baseUrl;
-          switch (preferredSource) {
-            case 'shiny':
-              url = baseUrl + 'shiny/' + preferredId + '.png';
-              break;
-            case 'gen1-rb':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/' + preferredId + '.png';
-              break;
-            case 'gen1-yellow':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/' + preferredId + '.png';
-              break;
-            case 'gen2-gold':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/' + preferredId + '.png';
-              break;
-            case 'gen2-silver':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/silver/' + preferredId + '.png';
-              break;
-            case 'home':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/' + preferredId + '.png';
-              break;
-            case 'dream-world':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + preferredId + '.svg';
-              break;
-            case 'official-artwork':
-              url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + preferredId + '.png';
-              break;
-            case 'default':
-            default:
-              url = baseUrl + preferredId + '.png';
-              break;
-          }
-          link.href = url;
+          var template = sourceMap[preferredSource] || sourceMap['default'];
+          link.href = template.replace(/\/(\d+)\.(png|svg)$/, '/' + preferredId + '.$2');
         } else {
           var id = Math.floor(Math.random() * 151) + 1;
           link.href = 'https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/' + id + '.png';
