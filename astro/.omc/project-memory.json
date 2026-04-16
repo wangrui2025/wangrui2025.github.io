@@ -173,16 +173,16 @@
   },
   "hotPaths": [
     {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776304583329,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
       "type": "directory"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304521067,
-      "type": "file"
     },
     {
       "path": "src/components/Masthead.astro",
