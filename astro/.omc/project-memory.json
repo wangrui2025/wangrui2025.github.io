@@ -174,20 +174,26 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 12,
-      "lastAccessed": 1776307470761,
+      "accessCount": 14,
+      "lastAccessed": 1776307742194,
       "type": "file"
     },
     {
       "path": "src/pages/sprites-gallery.astro",
-      "accessCount": 8,
-      "lastAccessed": 1776307583563,
+      "accessCount": 11,
+      "lastAccessed": 1776307764871,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
       "accessCount": 6,
       "lastAccessed": 1776307293976,
+      "type": "file"
+    },
+    {
+      "path": "src/data/sprite-sources.ts",
+      "accessCount": 6,
+      "lastAccessed": 1776307742234,
       "type": "file"
     },
     {
@@ -212,12 +218,6 @@
       "path": "progress.txt",
       "accessCount": 4,
       "lastAccessed": 1776307237612,
-      "type": "file"
-    },
-    {
-      "path": "src/data/sprite-sources.ts",
-      "accessCount": 4,
-      "lastAccessed": 1776307389676,
       "type": "file"
     },
     {
