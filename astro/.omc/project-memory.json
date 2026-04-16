@@ -215,6 +215,12 @@
       "type": "file"
     },
     {
+      "path": "astro.config.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1776305980164,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
@@ -284,12 +290,6 @@
       "path": "src/components/Footer.astro",
       "accessCount": 2,
       "lastAccessed": 1776304945994,
-      "type": "file"
-    },
-    {
-      "path": "astro.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1776305935870,
       "type": "file"
     },
     {
