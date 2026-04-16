@@ -179,8 +179,8 @@
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 24,
-      "lastAccessed": 1776303990379,
+      "accessCount": 25,
+      "lastAccessed": 1776304209545,
       "type": "file"
     },
     {
@@ -274,6 +274,12 @@
       "type": "file"
     },
     {
+      "path": "astro.config.mjs",
+      "accessCount": 4,
+      "lastAccessed": 1776304209487,
+      "type": "file"
+    },
+    {
       "path": "src/components/Scripts.astro",
       "accessCount": 3,
       "lastAccessed": 1776254349543,
@@ -283,12 +289,6 @@
       "path": "package.json",
       "accessCount": 3,
       "lastAccessed": 1776303937111,
-      "type": "file"
-    },
-    {
-      "path": "astro.config.mjs",
-      "accessCount": 3,
-      "lastAccessed": 1776303937154,
       "type": "file"
     },
     {
