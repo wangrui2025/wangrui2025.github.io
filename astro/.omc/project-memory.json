@@ -179,6 +179,12 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 3,
+      "lastAccessed": 1776304626835,
+      "type": "directory"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
@@ -249,12 +255,6 @@
       "accessCount": 1,
       "lastAccessed": 1776304612767,
       "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1776304612931,
-      "type": "directory"
     }
   ],
   "userDirectives": []
