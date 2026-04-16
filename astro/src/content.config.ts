@@ -164,6 +164,10 @@ const homepage = defineCollection({
       description: z.string().optional(),
       tags: z.array(z.string()).optional(),
     })),
+    // Footer
+    footer_built_with: z.string(),
+    footer_by: z.string(),
+    footer_last_updated: z.string(),
   }),
 });
 

@@ -191,6 +191,12 @@
       "type": "file"
     },
     {
+      "path": "src/content.config.ts",
+      "accessCount": 3,
+      "lastAccessed": 1776304773395,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
@@ -242,12 +248,6 @@
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
-      "type": "file"
-    },
-    {
-      "path": "src/content.config.ts",
-      "accessCount": 1,
-      "lastAccessed": 1776304612705,
       "type": "file"
     },
     {

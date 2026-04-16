@@ -158,6 +158,15 @@
         ]
       }
     },
+    "footer_built_with": {
+      "type": "string"
+    },
+    "footer_by": {
+      "type": "string"
+    },
+    "footer_last_updated": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }
@@ -184,6 +193,9 @@
     "timeline_heading",
     "timeline_collapsed_text",
     "timeline_expanded_text",
-    "timeline_items"
+    "timeline_items",
+    "footer_built_with",
+    "footer_by",
+    "footer_last_updated"
   ]
 }
