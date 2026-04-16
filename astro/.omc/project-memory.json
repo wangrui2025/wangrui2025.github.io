@@ -209,6 +209,12 @@
       "type": "file"
     },
     {
+      "path": "progress.txt",
+      "accessCount": 4,
+      "lastAccessed": 1776307237612,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 3,
       "lastAccessed": 1776304626835,
@@ -230,12 +236,6 @@
       "path": "astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1776305980164,
-      "type": "file"
-    },
-    {
-      "path": "progress.txt",
-      "accessCount": 3,
-      "lastAccessed": 1776306518658,
       "type": "file"
     },
     {

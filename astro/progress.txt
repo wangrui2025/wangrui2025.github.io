@@ -8,3 +8,44 @@
 - BaseLayout has inline random Pokemon favicon script at line 216-225
 - Site uses Tailwind v4 with custom dark mode via .dark class
 - Color tokens are defined in global.css @theme and inline critical CSS
+- The inline-critical-css post-build script handles sprites-gallery correctly (69KB CSS inlined)
+
+## Implementation Log
+
+### US-001: sprite-sources.ts
+- Created src/data/sprite-sources.ts with SpriteSource interface
+- Configured 9 sources: default, shiny, gen1-rb, gen1-yellow, gen2-gold, gen2-silver, home, dream-world, official-artwork
+- Set maxId boundaries: gen1=151, gen2=251, dream-world=649
+- Added isValidForSource(id, source) helper
+
+### US-002: sprites-gallery.astro
+- Created src/pages/sprites-gallery.astro using BaseLayout
+- Control bar: ID input (1-1025), Random button, Generation filter dropdown
+- Responsive grid: 2 cols (mobile) → 3 (sm) → 4 (lg) → 6 (xl)
+- Cards show pixelated sprite, source name, format/size/style tags, Copy URL / Set Favicon buttons
+- Placeholder (gray box + ?) shown for invalid/out-of-range IDs or load failures
+- Keyboard shortcuts: ArrowLeft/ArrowRight change ID, R randomizes, F sets favicon for selected source
+- Bottom code snippet shows URL template for the visible source
+
+### US-003: Favicon preference wiring
+- Updated BaseLayout.astro favicon script to read localStorage preferred-sprite-source and preferred-pokemon-id
+- If preference exists, overrides random logic with the correct PokeAPI URL for that source
+- Gallery Set Favicon button updates current page favicon and writes preference to localStorage
+
+### US-004: Styling
+- Gallery uses site paper-bg, paper-border, tag-tech-bg color tokens
+- Dark mode supported via html.dark selectors
+- Retro sprites use .retro class with transform: scale(1.5) and transform-origin: center
+- All sprite images use image-rendering: pixelated and crisp-edges
+- Card hover reveals action buttons and adds subtle shadow
+
+## Verification
+- npx astro check: 0 errors, 0 warnings, 1 unrelated hint in diagnose-gray-text.mjs
+- npm run build: passed, 6 pages built including /sprites-gallery/index.html
+- Playwright verification:
+  - 9 cards rendered, 9 images loaded successfully
+  - Random button changes ID correctly
+  - Gen I filter shows exactly 2 cards
+  - ArrowRight increments ID
+  - Homepage favicon loads correctly (random fallback when no localStorage preference)
+- No visual regressions in existing pages
