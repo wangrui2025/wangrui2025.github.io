@@ -185,15 +185,15 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304475176,
+      "path": "src/components/Masthead.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304528872,
       "type": "file"
     },
     {
-      "path": "src/components/Masthead.astro",
+      "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
-      "lastAccessed": 1776304491484,
+      "lastAccessed": 1776304475176,
       "type": "file"
     },
     {
