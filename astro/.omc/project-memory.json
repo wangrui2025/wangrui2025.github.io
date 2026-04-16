@@ -179,6 +179,12 @@
       "type": "file"
     },
     {
+      "path": "src/pages/sprites-gallery.astro",
+      "accessCount": 8,
+      "lastAccessed": 1776307583563,
+      "type": "file"
+    },
+    {
       "path": "src/styles/global.css",
       "accessCount": 6,
       "lastAccessed": 1776307293976,
@@ -200,12 +206,6 @@
       "path": "prd.json",
       "accessCount": 5,
       "lastAccessed": 1776307229827,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/sprites-gallery.astro",
-      "accessCount": 5,
-      "lastAccessed": 1776307284770,
       "type": "file"
     },
     {

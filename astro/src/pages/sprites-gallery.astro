@@ -98,7 +98,7 @@ const generations = Array.from(
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    import { SPRITE_SOURCES, isValidForSource } from '../data/sprite-sources';
+    import { SPRITE_SOURCES, isValidForSource, getSpriteUrl } from '../data/sprite-sources';
 
     const idInput = document.getElementById('poke-id') as HTMLInputElement;
     const btnRandom = document.getElementById('btn-random') as HTMLButtonElement;
@@ -121,6 +121,14 @@ const generations = Array.from(
       const val = parseInt(idInput.value, 10);
       if (Number.isNaN(val)) return 1;
       return Math.max(1, Math.min(1025, val));
+    }
+
+    function getActiveSourceId(): string | null {
+      const visibleCards = Array.from(grid.querySelectorAll('.sprite-card:not([hidden])'));
+      const activeCard = visibleCards.find((card) =>
+        selectedSourceId ? card.getAttribute('data-source-id') === selectedSourceId : true
+      ) || visibleCards[0];
+      return activeCard ? activeCard.getAttribute('data-source-id') : null;
     }
 
     function updateImages() {
@@ -150,18 +158,10 @@ const generations = Array.from(
         }
       });
 
-      // Update template for selected source or first visible source
-      const visibleCards = Array.from(grid.querySelectorAll('.sprite-card:not([hidden])'));
-      const activeCard = visibleCards.find((card) =>
-        selectedSourceId ? card.getAttribute('data-source-id') === selectedSourceId : true
-      ) || visibleCards[0];
-
-      if (activeCard) {
-        const sid = activeCard.getAttribute('data-source-id');
-        const source = SPRITE_SOURCES.find((s) => s.id === sid);
-        if (source) {
-          urlTemplate.textContent = source.url(1).replace(/1\.(png|svg)$/, '{id}.$1');
-        }
+      const sid = getActiveSourceId();
+      const source = sid ? SPRITE_SOURCES.find((s) => s.id === sid) : undefined;
+      if (source) {
+        urlTemplate.textContent = source.url(1).replace(/\/(\d+)\.(png|svg)$/, '/{id}.$2');
       }
     }
 
@@ -188,7 +188,7 @@ const generations = Array.from(
     function setAsFavicon(sourceId: string, pokemonId: number) {
       const source = SPRITE_SOURCES.find((s) => s.id === sourceId);
       if (!source) return;
-      const url = source.url(pokemonId);
+      const url = getSpriteUrl(sourceId, pokemonId);
 
       const link = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null;
       if (link) link.href = url;
@@ -256,14 +256,18 @@ const generations = Array.from(
           randomize();
           break;
         case 'f':
-        case 'F':
+        case 'F': {
           e.preventDefault();
-          if (selectedSourceId) {
-            setAsFavicon(selectedSourceId, currentId);
+          const sid = getActiveSourceId();
+          if (sid) {
+            selectedSourceId = sid;
+            setAsFavicon(sid, currentId);
+            updateImages();
           } else {
-            showToast('Select a source first (click Set Favicon)');
+            showToast('No visible source to set as favicon');
           }
           break;
+        }
       }
     });
 
