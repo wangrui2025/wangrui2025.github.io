@@ -227,6 +227,12 @@
       "type": "file"
     },
     {
+      "path": "progress.txt",
+      "accessCount": 3,
+      "lastAccessed": 1776306518658,
+      "type": "file"
+    },
+    {
       "path": "src",
       "accessCount": 2,
       "lastAccessed": 1776304465724,
@@ -266,12 +272,6 @@
       "path": "src/components/CvPaperItem.astro",
       "accessCount": 2,
       "lastAccessed": 1776304571700,
-      "type": "file"
-    },
-    {
-      "path": "progress.txt",
-      "accessCount": 2,
-      "lastAccessed": 1776304879555,
       "type": "file"
     },
     {

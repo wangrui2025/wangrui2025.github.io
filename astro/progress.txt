@@ -1,35 +1,10 @@
 # Ralph Progress
 
 ## Session Start
-- Task: Fix 3 verified issues (footer i18n hardcoding, missing prefetch, missing 404)
+- Task: Create Sprites Gallery page for Pokemon static sprite comparison
 - Project: /Users/myk/Repo/wangrui2025.github.io/astro
 
 ## Learnings
-- i18n uses createTranslator(lang) helper and JSON content collections in src/content/homepage/
-- Footer is currently hardcoded inline at BaseLayout.astro:292-294
-- BaseLayout uses lang prop for all i18n branching
-- Dark mode uses .dark class with Tailwind v4 custom variants
-- Astro content collections require `astro sync` after adding new fields to JSON files to regenerate inferred types
-
-## Implementation Log
-
-### US-001: Footer i18n extraction
-- Added `footer_built_with`, `footer_by`, `footer_last_updated` to `src/content/homepage/en.json`
-- Added corresponding Chinese keys to `src/content/homepage/zh.json`
-- Created `src/components/Footer.astro` that imports `getEntry('homepage', lang)` and renders localized footer
-- Updated `BaseLayout.astro` to import `Footer` and replace inline footer with `<Footer lang={lang} lastUpdated={lastUpdated} />`
-- Fixed `BaseLayout.astro` Props interface: `lang?: 'en' | 'zh'` (was `string`) to match Footer's expected type
-
-### US-002: Enable prefetch
-- Added `prefetch: true` to `astro.config.mjs` after the integrations array
-
-### US-003: Bilingual 404 page
-- Created `src/pages/404.astro` with `Astro.url.pathname` detection (`/zh/` → Chinese, otherwise English)
-- Uses `BaseLayout.astro`, site color tokens (`text-paper-accent`, `bg-paper-accent`, dark variants), serif typography
-- Removed unused `otherLang` variable to satisfy `astro check`
-
-## Verification
-- `npx astro sync` ran successfully to regenerate content collection types
-- `npm run build` passed with 0 errors and 0 warnings
-- Build output confirms `/404.html` generated successfully
-- CSS inlining script ran successfully on all HTML files including 404.html
+- BaseLayout has inline random Pokemon favicon script at line 216-225
+- Site uses Tailwind v4 with custom dark mode via .dark class
+- Color tokens are defined in global.css @theme and inline critical CSS
