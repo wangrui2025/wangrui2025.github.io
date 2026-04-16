@@ -1,0 +1,42 @@
+{
+  "title": "Fix 3 verified issues in Astro academic homepage",
+  "version": "1.0.0",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Extract hardcoded footer i18n into Footer.astro component",
+      "priority": "high",
+      "passes": false,
+      "acceptanceCriteria": [
+        "Footer strings (Built with/本网页由, Last updated/最后更新时间) are moved from BaseLayout.astro into src/content/homepage/en.json and zh.json",
+        "A new src/components/Footer.astro component exists and accepts lang + lastUpdated props",
+        "BaseLayout.astro imports and uses Footer.astro instead of the inline hardcoded footer",
+        "Footer renders correctly in both English and Chinese with dark mode support",
+        "npm run build passes with 0 errors"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Enable prefetch in astro.config.mjs",
+      "priority": "high",
+      "passes": false,
+      "acceptanceCriteria": [
+        "astro.config.mjs contains prefetch: true (or equivalent prefetch configuration)",
+        "npm run build passes with 0 errors",
+        "No runtime console errors related to prefetch"
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Create bilingual 404.astro page",
+      "priority": "high",
+      "passes": false,
+      "acceptanceCriteria": [
+        "src/pages/404.astro exists and uses BaseLayout.astro",
+        "404 page displays bilingual-appropriate messaging based on URL (/zh/ vs /)",
+        "Design matches the site's color scheme, typography, and dark mode",
+        "npm run build passes with 0 errors and the 404 page is present in dist/"
+      ]
+    }
+  ]
+}
