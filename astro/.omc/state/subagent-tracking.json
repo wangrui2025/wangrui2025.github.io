@@ -233,11 +233,20 @@
       "agent_type": "astro-docs-auditor",
       "started_at": "2026-04-16T01:44:50.000Z",
       "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-04-16T01:49:53.352Z",
+      "duration_ms": 303352
+    },
+    {
+      "agent_id": "aafd94529df5774a3",
+      "agent_type": "astro-docs-auditor",
+      "started_at": "2026-04-16T01:49:53.547Z",
+      "parent_mode": "none",
       "status": "running"
     }
   ],
-  "total_spawned": 18,
-  "total_completed": 23,
+  "total_spawned": 19,
+  "total_completed": 24,
   "total_failed": 0,
-  "last_updated": "2026-04-16T01:44:50.105Z"
+  "last_updated": "2026-04-16T01:49:53.649Z"
 }
