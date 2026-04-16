@@ -124,10 +124,11 @@ const generations = Array.from(
 
     function getActiveSourceId(): string | null {
       const visibleCards = Array.from(grid.querySelectorAll('.sprite-card:not([hidden])'));
-      const activeCard = visibleCards.find((card) =>
-        selectedSourceId ? card.getAttribute('data-source-id') === selectedSourceId : true
-      ) || visibleCards[0];
-      return activeCard ? activeCard.getAttribute('data-source-id') : null;
+      if (selectedSourceId) {
+        const match = visibleCards.find((card) => card.getAttribute('data-source-id') === selectedSourceId);
+        if (match) return match.getAttribute('data-source-id');
+      }
+      return visibleCards[0]?.getAttribute('data-source-id') || null;
     }
 
     function updateImages() {
