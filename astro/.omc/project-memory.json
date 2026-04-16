@@ -214,6 +214,12 @@
       "type": "directory"
     },
     {
+      "path": "tailwind.config.mjs",
+      "accessCount": 6,
+      "lastAccessed": 1776304202739,
+      "type": "file"
+    },
+    {
       "path": "src/components/ThemeToggle.astro",
       "accessCount": 5,
       "lastAccessed": 1776303990520,
@@ -226,15 +232,15 @@
       "type": "file"
     },
     {
-      "path": "tailwind.config.mjs",
-      "accessCount": 5,
-      "lastAccessed": 1776304034042,
-      "type": "file"
-    },
-    {
       "path": "src/pages/[lang]/cv.astro",
       "accessCount": 5,
       "lastAccessed": 1776304099294,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/cv.css",
+      "accessCount": 5,
+      "lastAccessed": 1776304202756,
       "type": "file"
     },
     {
@@ -247,12 +253,6 @@
       "path": "src/components/AuthorProfile.astro",
       "accessCount": 4,
       "lastAccessed": 1776304021883,
-      "type": "file"
-    },
-    {
-      "path": "src/styles/cv.css",
-      "accessCount": 4,
-      "lastAccessed": 1776304063222,
       "type": "file"
     },
     {
