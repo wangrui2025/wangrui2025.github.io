@@ -293,6 +293,12 @@
       "type": "file"
     },
     {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1776305980553,
+      "type": "file"
+    },
+    {
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
@@ -320,12 +326,6 @@
       "path": "src/utils/lastUpdated.ts",
       "accessCount": 1,
       "lastAccessed": 1776304964666,
-      "type": "file"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 1,
-      "lastAccessed": 1776305935895,
       "type": "file"
     },
     {
