@@ -86,6 +86,19 @@
       ]
     }
   },
-  "hotPaths": [],
+  "hotPaths": [
+    {
+      "path": "astro/src/layouts/BaseLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776305830716,
+      "type": "directory"
+    },
+    {
+      "path": "astro/public/sw.js",
+      "accessCount": 2,
+      "lastAccessed": 1776305820654,
+      "type": "file"
+    }
+  ],
   "userDirectives": []
 }
