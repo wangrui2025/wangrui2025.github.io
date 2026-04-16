@@ -255,6 +255,18 @@
       "accessCount": 1,
       "lastAccessed": 1776304612767,
       "type": "file"
+    },
+    {
+      "path": "src/content/homepage/en.json",
+      "accessCount": 1,
+      "lastAccessed": 1776304655416,
+      "type": "file"
+    },
+    {
+      "path": "src/content/homepage/zh.json",
+      "accessCount": 1,
+      "lastAccessed": 1776304655435,
+      "type": "file"
     }
   ],
   "userDirectives": []
