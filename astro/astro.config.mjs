@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://wangrui2025.github.io',
   integrations: [sitemap(), astroIcon()],
+  prefetch: true,
   experimental: {
     rustCompiler: true,
   },
