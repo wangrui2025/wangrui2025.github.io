@@ -17,9 +17,6 @@ importers:
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource/noto-serif-sc':
-        specifier: ^5.2.8
-        version: 5.2.8
       '@fontsource/source-serif-4':
         specifier: ^5.2.9
         version: 5.2.9
@@ -392,9 +389,6 @@ packages:
 
   '@fontsource/inter@5.2.8':
     resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
-
-  '@fontsource/noto-serif-sc@5.2.8':
-    resolution: {integrity: sha512-C7fAr+d1GjOAw1qIbntsnqbA3l5dkdzcmNNgeCXLC8QZ7VNubL7MTrX8UcYKHceX4mI//z8gGtXbOeeQrB6P7g==}
 
   '@fontsource/source-serif-4@5.2.9':
     resolution: {integrity: sha512-er/Pym9emsEVJNf947umJ4kXarXfsiN6CN7kTYinefKRaHLwiquiiHOZvKvxWgkV8JMCf3pV3g0NcsPFpVCH9w==}
@@ -2604,8 +2598,6 @@ snapshots:
     optional: true
 
   '@fontsource/inter@5.2.8': {}
-
-  '@fontsource/noto-serif-sc@5.2.8': {}
 
   '@fontsource/source-serif-4@5.2.9': {}
 
