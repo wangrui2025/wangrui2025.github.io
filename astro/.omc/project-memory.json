@@ -287,6 +287,12 @@
       "type": "file"
     },
     {
+      "path": "astro.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1776305935870,
+      "type": "file"
+    },
+    {
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
@@ -296,12 +302,6 @@
       "path": "tailwind.config.mjs",
       "accessCount": 1,
       "lastAccessed": 1776304884347,
-      "type": "file"
-    },
-    {
-      "path": "astro.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1776304945881,
       "type": "file"
     },
     {
@@ -320,6 +320,30 @@
       "path": "src/utils/lastUpdated.ts",
       "accessCount": 1,
       "lastAccessed": 1776304964666,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1776305935895,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/cv/arch/CVPR2026-OSA.md",
+      "accessCount": 1,
+      "lastAccessed": 1776305948209,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/cv/arch/README.md",
+      "accessCount": 1,
+      "lastAccessed": 1776305948232,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/cv/arch/CVPR2026-GDKVM.md",
+      "accessCount": 1,
+      "lastAccessed": 1776305948296,
       "type": "file"
     }
   ],
