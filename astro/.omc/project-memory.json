@@ -185,6 +185,12 @@
       "type": "file"
     },
     {
+      "path": "src/pages/404.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776305055716,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 3,
       "lastAccessed": 1776304626835,
@@ -200,12 +206,6 @@
       "path": "src/layouts/HomepageLayout.astro",
       "accessCount": 3,
       "lastAccessed": 1776304972009,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/404.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776305027778,
       "type": "file"
     },
     {
