@@ -345,6 +345,12 @@
       "accessCount": 1,
       "lastAccessed": 1776305948296,
       "type": "file"
+    },
+    {
+      "path": "public/robots.txt",
+      "accessCount": 1,
+      "lastAccessed": 1776305991271,
+      "type": "file"
     }
   ],
   "userDirectives": []
