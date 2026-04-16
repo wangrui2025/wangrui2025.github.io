@@ -227,15 +227,15 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304475176,
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304577396,
       "type": "file"
     },
     {
-      "path": "src/layouts/HomepageLayout.astro",
+      "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
-      "lastAccessed": 1776304501445,
+      "lastAccessed": 1776304475176,
       "type": "file"
     }
   ],
