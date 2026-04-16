@@ -185,8 +185,8 @@
     },
     {
       "path": "src",
-      "accessCount": 19,
-      "lastAccessed": 1776304081866,
+      "accessCount": 22,
+      "lastAccessed": 1776304271676,
       "type": "directory"
     },
     {
@@ -220,6 +220,12 @@
       "type": "file"
     },
     {
+      "path": "src/pages/[lang]/cv.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776304244840,
+      "type": "file"
+    },
+    {
       "path": "src/components/ThemeToggle.astro",
       "accessCount": 5,
       "lastAccessed": 1776303990520,
@@ -229,12 +235,6 @@
       "path": "src/data/cv.ts",
       "accessCount": 5,
       "lastAccessed": 1776304002686,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/[lang]/cv.astro",
-      "accessCount": 5,
-      "lastAccessed": 1776304099294,
       "type": "file"
     },
     {
