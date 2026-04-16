@@ -197,6 +197,12 @@
       "type": "file"
     },
     {
+      "path": "prd.json",
+      "accessCount": 5,
+      "lastAccessed": 1776307229827,
+      "type": "file"
+    },
+    {
       "path": "src/pages/sprites-gallery.astro",
       "accessCount": 4,
       "lastAccessed": 1776306793190,
@@ -224,12 +230,6 @@
       "path": "astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1776305980164,
-      "type": "file"
-    },
-    {
-      "path": "prd.json",
-      "accessCount": 3,
-      "lastAccessed": 1776306510224,
       "type": "file"
     },
     {

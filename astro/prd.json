@@ -6,7 +6,7 @@
       "id": "US-001",
       "title": "Create sprite-sources.ts data module",
       "priority": "high",
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "src/data/sprite-sources.ts exists with SpriteSource interface and SPRITE_SOURCES array",
         "All 9 sources are configured: default, shiny, gen1-rb, gen1-yellow, gen2-gold, gen2-silver, home, dream-world, official-artwork",
@@ -19,7 +19,7 @@
       "id": "US-002",
       "title": "Create sprites-gallery.astro page",
       "priority": "high",
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "src/pages/sprites-gallery.astro exists and uses BaseLayout.astro",
         "Control bar has ID input (1-1025), random button, generation filter dropdown",
@@ -35,7 +35,7 @@
       "id": "US-003",
       "title": "Wire favicon preference from Gallery into BaseLayout",
       "priority": "high",
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "BaseLayout.astro reads preferred-sprite-source and preferred-pokemon-id from localStorage",
         "If a preference exists, it overrides the random favicon logic",
@@ -47,7 +47,7 @@
       "id": "US-004",
       "title": "Styling matches site theme and dark mode",
       "priority": "medium",
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Gallery uses site color tokens and supports dark/light mode",
         "Retro sprites (gen1/gen2) use CSS scale(1.5) with transform-origin center",
