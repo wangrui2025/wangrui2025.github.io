@@ -29,11 +29,11 @@
     },
     "arxiv": {
       "type": "string",
-      "format": "uri"
+      "pattern": "^https?:\\/\\/.+"
     },
     "project": {
       "type": "string",
-      "format": "uri"
+      "pattern": "^https?:\\/\\/.+"
     },
     "equal_contribution": {
       "type": "boolean"
