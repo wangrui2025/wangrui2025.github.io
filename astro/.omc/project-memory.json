@@ -179,6 +179,12 @@
       "type": "directory"
     },
     {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304521067,
+      "type": "file"
+    },
+    {
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
@@ -194,12 +200,6 @@
       "path": "src/components/PaperCard.astro",
       "accessCount": 1,
       "lastAccessed": 1776304491555,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304491599,
       "type": "file"
     },
     {
