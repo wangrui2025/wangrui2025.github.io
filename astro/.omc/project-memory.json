@@ -357,6 +357,12 @@
       "accessCount": 1,
       "lastAccessed": 1776306564045,
       "type": "file"
+    },
+    {
+      "path": "src/pages/sprites-gallery.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776306698777,
+      "type": "file"
     }
   ],
   "userDirectives": []

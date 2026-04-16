@@ -1,0 +1,621 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SPRITE_SOURCES, isValidForSource } from '../data/sprite-sources';
+
+const generations = Array.from(
+  new Set(SPRITE_SOURCES.map((s) => s.generation).filter(Boolean))
+);
+---
+
+<BaseLayout
+  title="Sprites Gallery - Rui Wang"
+  description="Pokemon sprite source comparison gallery"
+  lang="en"
+>
+  <div class="sprites-gallery">
+    <h1 class="gallery-title">Pokemon Sprites Gallery</h1>
+    <p class="gallery-subtitle">
+      Compare sprite sources from PokeAPI. All images are static remote links.
+    </p>
+
+    <!-- Control Bar -->
+    <div class="control-bar">
+      <div class="control-group">
+        <label for="poke-id">ID</label>
+        <input
+          id="poke-id"
+          type="number"
+          min="1"
+          max="1025"
+          value="1"
+          class="id-input"
+        />
+      </div>
+
+      <button id="btn-random" class="control-btn" title="Random (R)">
+        Random
+      </button>
+
+      <div class="control-group">
+        <label for="gen-filter">Generation</label>
+        <select id="gen-filter" class="gen-select">
+          <option value="">All</option>
+          {generations.map((gen) => (
+            <option value={gen}>{gen}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="sprite-grid" class="sprite-grid">
+      {
+        SPRITE_SOURCES.map((source) => (
+          <div
+            class="sprite-card"
+            data-generation={source.generation || ''}
+            data-source-id={source.id}
+          >
+            <div class="sprite-image-wrap">
+              <img
+                class={`sprite-img ${source.size === '56×56' ? 'retro' : ''}`}
+                data-url={source.url(1)}
+                data-source={source.id}
+                alt={source.name}
+                loading="lazy"
+              />
+            </div>
+            <div class="sprite-meta">
+              <h3 class="sprite-name">{source.name}</h3>
+              <div class="sprite-tags">
+                <span class="tag tag-format">{source.format}</span>
+                <span class="tag tag-size">{source.size}</span>
+                <span class="tag tag-style">{source.style}</span>
+              </div>
+              <div class="sprite-actions">
+                <button class="action-btn copy-url" data-source={source.id}>
+                  Copy URL
+                </button>
+                <button class="action-btn set-favicon" data-source={source.id}>
+                  Set Favicon
+                </button>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Code Snippet -->
+    <div class="code-section">
+      <h2 class="code-title">URL Template</h2>
+      <pre class="code-block"><code id="url-template">Select a source to view its URL template</code></pre>
+      <button id="copy-template" class="control-btn">Copy Template</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    import { SPRITE_SOURCES, isValidForSource } from '../data/sprite-sources';
+
+    const idInput = document.getElementById('poke-id') as HTMLInputElement;
+    const btnRandom = document.getElementById('btn-random') as HTMLButtonElement;
+    const genFilter = document.getElementById('gen-filter') as HTMLSelectElement;
+    const grid = document.getElementById('sprite-grid') as HTMLDivElement;
+    const urlTemplate = document.getElementById('url-template') as HTMLElement;
+    const copyTemplateBtn = document.getElementById('copy-template') as HTMLButtonElement;
+    const toast = document.getElementById('toast') as HTMLDivElement;
+
+    let currentId = 1;
+    let selectedSourceId: string | null = null;
+
+    function showToast(message: string) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function getValidId(): number {
+      const val = parseInt(idInput.value, 10);
+      if (Number.isNaN(val)) return 1;
+      return Math.max(1, Math.min(1025, val));
+    }
+
+    function updateImages() {
+      const id = getValidId();
+      currentId = id;
+      idInput.value = String(id);
+
+      const images = grid.querySelectorAll('.sprite-img');
+      images.forEach((img) => {
+        const el = img as HTMLImageElement;
+        const sourceId = el.dataset.source;
+        if (!sourceId) return;
+        const source = SPRITE_SOURCES.find((s) => s.id === sourceId);
+        if (!source) return;
+
+        if (!isValidForSource(id, source)) {
+          el.src = '';
+          el.classList.add('error');
+          el.parentElement?.classList.add('show-placeholder');
+        } else {
+          el.classList.remove('error');
+          el.parentElement?.classList.remove('show-placeholder');
+          const newUrl = source.url(id);
+          if (el.src !== newUrl) {
+            el.src = newUrl;
+          }
+        }
+      });
+
+      // Update template for selected source or first visible source
+      const visibleCards = Array.from(grid.querySelectorAll('.sprite-card:not([hidden])'));
+      const activeCard = visibleCards.find((card) =>
+        selectedSourceId ? card.getAttribute('data-source-id') === selectedSourceId : true
+      ) || visibleCards[0];
+
+      if (activeCard) {
+        const sid = activeCard.getAttribute('data-source-id');
+        const source = SPRITE_SOURCES.find((s) => s.id === sid);
+        if (source) {
+          urlTemplate.textContent = source.url(1).replace(/1\.(png|svg)$/, '{id}.$1');
+        }
+      }
+    }
+
+    function applyGenFilter() {
+      const gen = genFilter.value;
+      const cards = grid.querySelectorAll('.sprite-card');
+      cards.forEach((card) => {
+        const cardGen = card.getAttribute('data-generation') || '';
+        if (!gen || cardGen === gen) {
+          (card as HTMLElement).hidden = false;
+        } else {
+          (card as HTMLElement).hidden = true;
+        }
+      });
+      updateImages();
+    }
+
+    function randomize() {
+      const id = Math.floor(Math.random() * 1025) + 1;
+      idInput.value = String(id);
+      updateImages();
+    }
+
+    function setAsFavicon(sourceId: string, pokemonId: number) {
+      const source = SPRITE_SOURCES.find((s) => s.id === sourceId);
+      if (!source) return;
+      const url = source.url(pokemonId);
+
+      const link = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null;
+      if (link) link.href = url;
+
+      localStorage.setItem('preferred-sprite-source', sourceId);
+      localStorage.setItem('preferred-pokemon-id', String(pokemonId));
+      showToast(`Set to ${source.name} - #${pokemonId}`);
+    }
+
+    idInput.addEventListener('change', updateImages);
+    idInput.addEventListener('input', updateImages);
+    btnRandom.addEventListener('click', randomize);
+    genFilter.addEventListener('change', applyGenFilter);
+
+    grid.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains('copy-url')) {
+        const sid = target.dataset.source;
+        const source = SPRITE_SOURCES.find((s) => s.id === sid);
+        if (source) {
+          navigator.clipboard.writeText(source.url(currentId));
+          showToast('URL copied');
+        }
+      }
+      if (target.classList.contains('set-favicon')) {
+        const sid = target.dataset.source;
+        if (sid) {
+          selectedSourceId = sid;
+          setAsFavicon(sid, currentId);
+          updateImages();
+        }
+      }
+    });
+
+    copyTemplateBtn.addEventListener('click', () => {
+      const text = urlTemplate.textContent || '';
+      if (text) {
+        navigator.clipboard.writeText(text);
+        showToast('Template copied');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          // allow native input cursor movement
+          return;
+        }
+      }
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          idInput.value = String(Math.max(1, currentId - 1));
+          updateImages();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          idInput.value = String(Math.min(1025, currentId + 1));
+          updateImages();
+          break;
+        case 'r':
+        case 'R':
+          e.preventDefault();
+          randomize();
+          break;
+        case 'f':
+        case 'F':
+          e.preventDefault();
+          if (selectedSourceId) {
+            setAsFavicon(selectedSourceId, currentId);
+          } else {
+            showToast('Select a source first (click Set Favicon)');
+          }
+          break;
+      }
+    });
+
+    // Image error handling
+    grid.addEventListener('error', (e) => {
+      const target = e.target as HTMLImageElement;
+      if (target.classList.contains('sprite-img')) {
+        target.classList.add('error');
+        target.parentElement?.classList.add('show-placeholder');
+      }
+    }, true);
+
+    // Initial load
+    updateImages();
+  </script>
+
+  <style>
+    .sprites-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .gallery-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--color-heading-primary);
+    }
+
+    html.dark .gallery-title {
+      color: var(--color-heading-dark);
+    }
+
+    .gallery-subtitle {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Control Bar */
+    .control-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: var(--color-paper-bg);
+      border: 1px solid var(--color-paper-border);
+      border-radius: 0.5rem;
+    }
+
+    html.dark .control-bar {
+      background: var(--color-paper-bg-dark);
+      border-color: var(--color-paper-border-dark);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .control-group label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .id-input {
+      width: 5rem;
+      padding: 0.4rem 0.5rem;
+      border: 1px solid var(--color-border-primary);
+      border-radius: 0.375rem;
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-size: 0.95rem;
+    }
+
+    html.dark .id-input {
+      border-color: var(--color-border-dark);
+      background: var(--color-bg-dark);
+      color: var(--color-text-dark);
+    }
+
+    .gen-select {
+      padding: 0.4rem 0.5rem;
+      border: 1px solid var(--color-border-primary);
+      border-radius: 0.375rem;
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-size: 0.95rem;
+    }
+
+    html.dark .gen-select {
+      border-color: var(--color-border-dark);
+      background: var(--color-bg-dark);
+      color: var(--color-text-dark);
+    }
+
+    .control-btn {
+      padding: 0.45rem 0.9rem;
+      border: none;
+      border-radius: 0.375rem;
+      background: var(--color-link-primary);
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .control-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Grid */
+    .sprite-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .sprite-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sprite-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .sprite-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    /* Card */
+    .sprite-card {
+      background: var(--color-paper-bg);
+      border: 1px solid var(--color-paper-border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+      transition: box-shadow 0.2s ease;
+    }
+
+    html.dark .sprite-card {
+      background: var(--color-paper-bg-dark);
+      border-color: var(--color-paper-border-dark);
+    }
+
+    .sprite-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    html.dark .sprite-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .sprite-image-wrap {
+      position: relative;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .sprite-image-wrap::after {
+      content: "?";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-text-secondary);
+      background: var(--color-tag-tech-bg);
+      border-radius: 0.375rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    html.dark .sprite-image-wrap::after {
+      background: #2d2d44;
+      color: #6b6b8a;
+    }
+
+    .sprite-image-wrap.show-placeholder::after {
+      opacity: 1;
+    }
+
+    .sprite-img {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      width: auto;
+      height: 96px;
+      object-fit: contain;
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+
+    .sprite-img.retro {
+      height: 56px;
+      transform: scale(1.5);
+      transform-origin: center;
+    }
+
+    .sprite-img.error {
+      opacity: 0;
+    }
+
+    .sprite-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .sprite-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0;
+      color: var(--color-heading-primary);
+    }
+
+    html.dark .sprite-name {
+      color: var(--color-heading-dark);
+    }
+
+    .sprite-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 9999px;
+      background: var(--color-tag-tech-bg);
+      color: var(--color-tag-tech-text);
+    }
+
+    html.dark .tag {
+      background: var(--color-tag-tech-bg-dark);
+      color: var(--color-tag-tech-text-dark);
+    }
+
+    .sprite-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .sprite-card:hover .sprite-actions {
+      opacity: 1;
+    }
+
+    .action-btn {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--color-border-primary);
+      border-radius: 0.25rem;
+      background: transparent;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    html.dark .action-btn {
+      border-color: var(--color-border-dark);
+      color: var(--color-text-dark);
+    }
+
+    .action-btn:hover {
+      background: var(--color-tag-field-bg);
+    }
+
+    html.dark .action-btn:hover {
+      background: var(--color-tag-field-bg-dark);
+    }
+
+    /* Code Section */
+    .code-section {
+      padding: 1rem;
+      background: var(--color-paper-bg);
+      border: 1px solid var(--color-paper-border);
+      border-radius: 0.5rem;
+    }
+
+    html.dark .code-section {
+      background: var(--color-paper-bg-dark);
+      border-color: var(--color-paper-border-dark);
+    }
+
+    .code-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-heading-primary);
+    }
+
+    html.dark .code-title {
+      color: var(--color-heading-dark);
+    }
+
+    .code-block {
+      padding: 0.75rem 1rem;
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin: 0 0 0.75rem 0;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(1rem);
+      padding: 0.6rem 1.2rem;
+      background: var(--color-heading-primary);
+      color: var(--color-bg-primary);
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 100;
+    }
+
+    html.dark .toast {
+      background: var(--color-heading-dark);
+      color: var(--color-bg-dark);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</BaseLayout>
