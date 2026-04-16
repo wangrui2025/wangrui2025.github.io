@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SPRITE_SOURCES, isValidForSource } from '../data/sprite-sources';
+import { SPRITE_SOURCES } from '../data/sprite-sources';
 
 const generations = Array.from(
   new Set(SPRITE_SOURCES.map((s) => s.generation).filter(Boolean))
