@@ -285,6 +285,18 @@
       "accessCount": 1,
       "lastAccessed": 1776304803346,
       "type": "file"
+    },
+    {
+      "path": "tailwind.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1776304884347,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 1,
+      "lastAccessed": 1776304884403,
+      "type": "file"
     }
   ],
   "userDirectives": []
