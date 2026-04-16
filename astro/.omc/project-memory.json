@@ -215,6 +215,18 @@
       "type": "file"
     },
     {
+      "path": "src/content/homepage/en.json",
+      "accessCount": 5,
+      "lastAccessed": 1776308559794,
+      "type": "file"
+    },
+    {
+      "path": "src/content/homepage/zh.json",
+      "accessCount": 5,
+      "lastAccessed": 1776308559847,
+      "type": "file"
+    },
+    {
       "path": "progress.txt",
       "accessCount": 4,
       "lastAccessed": 1776307237612,
@@ -224,18 +236,6 @@
       "path": "src/layouts/HomepageLayout.astro",
       "accessCount": 4,
       "lastAccessed": 1776308432601,
-      "type": "file"
-    },
-    {
-      "path": "src/content/homepage/zh.json",
-      "accessCount": 4,
-      "lastAccessed": 1776308465758,
-      "type": "file"
-    },
-    {
-      "path": "src/content/homepage/en.json",
-      "accessCount": 4,
-      "lastAccessed": 1776308473572,
       "type": "file"
     },
     {
