@@ -173,8 +173,8 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 31,
-      "lastAccessed": 1776304208170,
+      "accessCount": 32,
+      "lastAccessed": 1776304368803,
       "type": "file"
     },
     {
@@ -191,8 +191,8 @@
     },
     {
       "path": "src/layouts/CVLayout.astro",
-      "accessCount": 12,
-      "lastAccessed": 1776304222258,
+      "accessCount": 14,
+      "lastAccessed": 1776304379173,
       "type": "file"
     },
     {
@@ -226,6 +226,12 @@
       "type": "file"
     },
     {
+      "path": "src/content.config.ts",
+      "accessCount": 6,
+      "lastAccessed": 1776304368866,
+      "type": "file"
+    },
+    {
       "path": "src/components/ThemeToggle.astro",
       "accessCount": 5,
       "lastAccessed": 1776303990520,
@@ -241,12 +247,6 @@
       "path": "src/styles/cv.css",
       "accessCount": 5,
       "lastAccessed": 1776304202756,
-      "type": "file"
-    },
-    {
-      "path": "src/content.config.ts",
-      "accessCount": 5,
-      "lastAccessed": 1776304229205,
       "type": "file"
     },
     {

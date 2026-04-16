@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-16T01:50:39.864Z",
+  "updatedAt": "2026-04-16T01:53:23.421Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -607,15 +607,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-15T11:58:48.702Z",
-      "updatedAt": "2026-04-16T01:50:39.864Z",
+      "updatedAt": "2026-04-16T01:53:23.421Z",
       "status": "running",
-      "workerCount": 8,
+      "workerCount": 10,
       "taskCounts": {
-        "total": 8,
+        "total": 10,
         "pending": 0,
         "blocked": 0,
-        "inProgress": 2,
-        "completed": 6,
+        "inProgress": 1,
+        "completed": 9,
         "failed": 0
       },
       "agents": [
@@ -663,21 +663,21 @@
           "name": "code-auditor:aa83551",
           "role": "code-auditor",
           "ownership": "aa835513fd5120023",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-04-16T01:44:49.943Z"
+          "updatedAt": "2026-04-16T01:51:41.421Z"
         },
         {
           "name": "tailwind-docs-auditor:ab715e6",
           "role": "tailwind-docs-auditor",
           "ownership": "ab715e6abe2dbe341",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-04-16T01:44:49.972Z"
+          "updatedAt": "2026-04-16T01:51:55.569Z"
         },
         {
           "name": "astro-docs-auditor:a45c177",
@@ -698,40 +698,60 @@
           "latestUpdate": "completed",
           "completedSummary": null,
           "updatedAt": "2026-04-16T01:50:39.864Z"
+        },
+        {
+          "name": "code-auditor:a96bbab",
+          "role": "code-auditor",
+          "ownership": "a96bbab006932ade6",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-16T01:51:41.617Z"
+        },
+        {
+          "name": "tailwind-docs-auditor:a9556d7",
+          "role": "tailwind-docs-auditor",
+          "ownership": "a9556d7c36c42824d",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-04-16T01:53:23.421Z"
         }
       ],
       "timeline": [
         {
-          "id": "session-start:a45c177df0b7952ea:2026-04-16T01:44:50.000Z",
-          "at": "2026-04-16T01:44:50.000Z",
+          "id": "session-start:a96bbab006932ade6:2026-04-16T01:51:41.617Z",
+          "at": "2026-04-16T01:51:41.617Z",
           "kind": "update",
-          "agent": "astro-docs-auditor:a45c177",
-          "detail": "started astro-docs-auditor:a45c177",
-          "sourceKey": "session-start:a45c177df0b7952ea"
+          "agent": "code-auditor:a96bbab",
+          "detail": "started code-auditor:a96bbab",
+          "sourceKey": "session-start:a96bbab006932ade6"
         },
         {
-          "id": "session-stop:a45c177df0b7952ea:2026-04-16T01:49:53.352Z",
-          "at": "2026-04-16T01:49:53.352Z",
+          "id": "session-stop:ab715e6abe2dbe341:2026-04-16T01:51:55.569Z",
+          "at": "2026-04-16T01:51:55.569Z",
           "kind": "completion",
-          "agent": "astro-docs-auditor:a45c177",
+          "agent": "tailwind-docs-auditor:ab715e6",
           "detail": "completed",
-          "sourceKey": "session-stop:a45c177df0b7952ea"
+          "sourceKey": "session-stop:ab715e6abe2dbe341"
         },
         {
-          "id": "session-start:aafd94529df5774a3:2026-04-16T01:49:53.547Z",
-          "at": "2026-04-16T01:49:53.547Z",
+          "id": "session-start:a9556d7c36c42824d:2026-04-16T01:51:55.757Z",
+          "at": "2026-04-16T01:51:55.757Z",
           "kind": "update",
-          "agent": "astro-docs-auditor:aafd945",
-          "detail": "started astro-docs-auditor:aafd945",
-          "sourceKey": "session-start:aafd94529df5774a3"
+          "agent": "tailwind-docs-auditor:a9556d7",
+          "detail": "started tailwind-docs-auditor:a9556d7",
+          "sourceKey": "session-start:a9556d7c36c42824d"
         },
         {
-          "id": "session-stop:aafd94529df5774a3:2026-04-16T01:50:39.864Z",
-          "at": "2026-04-16T01:50:39.864Z",
+          "id": "session-stop:a9556d7c36c42824d:2026-04-16T01:53:23.421Z",
+          "at": "2026-04-16T01:53:23.421Z",
           "kind": "completion",
-          "agent": "astro-docs-auditor:aafd945",
+          "agent": "tailwind-docs-auditor:a9556d7",
           "detail": "completed",
-          "sourceKey": "session-stop:aafd94529df5774a3"
+          "sourceKey": "session-stop:a9556d7c36c42824d"
         }
       ]
     }

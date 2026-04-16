@@ -219,14 +219,18 @@
       "agent_type": "code-auditor",
       "started_at": "2026-04-16T01:44:49.943Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-16T01:51:41.421Z",
+      "duration_ms": 411478
     },
     {
       "agent_id": "ab715e6abe2dbe341",
       "agent_type": "tailwind-docs-auditor",
       "started_at": "2026-04-16T01:44:49.972Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-16T01:51:55.569Z",
+      "duration_ms": 425597
     },
     {
       "agent_id": "a45c177df0b7952ea",
@@ -245,10 +249,26 @@
       "status": "completed",
       "completed_at": "2026-04-16T01:50:39.864Z",
       "duration_ms": 46317
+    },
+    {
+      "agent_id": "a96bbab006932ade6",
+      "agent_type": "code-auditor",
+      "started_at": "2026-04-16T01:51:41.617Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "a9556d7c36c42824d",
+      "agent_type": "tailwind-docs-auditor",
+      "started_at": "2026-04-16T01:51:55.757Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-04-16T01:53:23.421Z",
+      "duration_ms": 87664
     }
   ],
-  "total_spawned": 19,
-  "total_completed": 25,
+  "total_spawned": 21,
+  "total_completed": 28,
   "total_failed": 0,
-  "last_updated": "2026-04-16T01:50:39.966Z"
+  "last_updated": "2026-04-16T01:53:23.527Z"
 }
