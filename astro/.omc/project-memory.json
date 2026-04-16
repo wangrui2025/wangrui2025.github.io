@@ -185,6 +185,18 @@
       "type": "file"
     },
     {
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 11,
+      "lastAccessed": 1776312298291,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Masthead.astro",
+      "accessCount": 8,
+      "lastAccessed": 1776312271364,
+      "type": "file"
+    },
+    {
       "path": "src/styles/global.css",
       "accessCount": 6,
       "lastAccessed": 1776307293976,
@@ -233,9 +245,15 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/HomepageLayout.astro",
+      "path": "src/components/Education.astro",
       "accessCount": 4,
-      "lastAccessed": 1776308432601,
+      "lastAccessed": 1776312267546,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvEducationItem.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776312292569,
       "type": "file"
     },
     {
@@ -243,12 +261,6 @@
       "accessCount": 3,
       "lastAccessed": 1776304626835,
       "type": "directory"
-    },
-    {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776304672228,
-      "type": "file"
     },
     {
       "path": "astro.config.mjs",
@@ -269,21 +281,9 @@
       "type": "file"
     },
     {
-      "path": "src/components/Education.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304544230,
-      "type": "file"
-    },
-    {
       "path": "src/components/PaperCard.astro",
       "accessCount": 2,
       "lastAccessed": 1776304551729,
-      "type": "file"
-    },
-    {
-      "path": "src/components/CvEducationItem.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304559790,
       "type": "file"
     },
     {
@@ -318,8 +318,8 @@
     },
     {
       "path": "src/layouts/CVLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304475176,
+      "accessCount": 2,
+      "lastAccessed": 1776312299276,
       "type": "file"
     },
     {
@@ -381,6 +381,12 @@
       "accessCount": 1,
       "lastAccessed": 1776308432550,
       "type": "file"
+    },
+    {
+      "path": "src/content/homepage",
+      "accessCount": 1,
+      "lastAccessed": 1776309019809,
+      "type": "directory"
     }
   ],
   "userDirectives": []
