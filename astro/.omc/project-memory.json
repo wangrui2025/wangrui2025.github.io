@@ -221,6 +221,18 @@
       "type": "file"
     },
     {
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776308432601,
+      "type": "file"
+    },
+    {
+      "path": "src/content/homepage/zh.json",
+      "accessCount": 4,
+      "lastAccessed": 1776308465758,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 3,
       "lastAccessed": 1776304626835,
@@ -233,12 +245,6 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/HomepageLayout.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776304972009,
-      "type": "file"
-    },
-    {
       "path": "astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1776305980164,
@@ -246,9 +252,15 @@
     },
     {
       "path": "src",
-      "accessCount": 2,
-      "lastAccessed": 1776304465724,
+      "accessCount": 3,
+      "lastAccessed": 1776308405201,
       "type": "directory"
+    },
+    {
+      "path": "src/content/homepage/en.json",
+      "accessCount": 3,
+      "lastAccessed": 1776308444567,
+      "type": "file"
     },
     {
       "path": "src/components/AuthorProfile.astro",
@@ -287,18 +299,6 @@
       "type": "file"
     },
     {
-      "path": "src/content/homepage/zh.json",
-      "accessCount": 2,
-      "lastAccessed": 1776304945775,
-      "type": "file"
-    },
-    {
-      "path": "src/content/homepage/en.json",
-      "accessCount": 2,
-      "lastAccessed": 1776304945934,
-      "type": "file"
-    },
-    {
       "path": "src/components/Footer.astro",
       "accessCount": 2,
       "lastAccessed": 1776304945994,
@@ -308,6 +308,12 @@
       "path": "package.json",
       "accessCount": 2,
       "lastAccessed": 1776305980553,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776308423640,
       "type": "file"
     },
     {
@@ -326,12 +332,6 @@
       "path": "src/pages/[lang]/index.astro",
       "accessCount": 1,
       "lastAccessed": 1776304964557,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/index.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304964610,
       "type": "file"
     },
     {
@@ -362,6 +362,24 @@
       "path": "public/robots.txt",
       "accessCount": 1,
       "lastAccessed": 1776305991271,
+      "type": "file"
+    },
+    {
+      "path": "src/data/cv.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776308413023,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/cv.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776308423691,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/[lang]/cv.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776308432550,
       "type": "file"
     }
   ],
