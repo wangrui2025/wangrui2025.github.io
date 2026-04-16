@@ -46,7 +46,7 @@ const displayExamScores = examScores?.[lang];
     <div class="text-text-primary dark:text-text-dark">
       {displayDetail.split('·').map((part: string, i: number) => (
         <>
-          {i > 0 && <span class="text-[#c96442] font-semibold">·</span>}
+          {i > 0 && <span class="text-link-primary font-semibold">·</span>}
           <span class={i === 0 ? 'font-semibold' : ''}>{part.trim()}</span>
         </>
       ))}

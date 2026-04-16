@@ -12,6 +12,18 @@ export default defineConfig({
     rustCompiler: true,
   },
   output: 'static',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
   markdown: {
     shikiConfig: {
       themes: {

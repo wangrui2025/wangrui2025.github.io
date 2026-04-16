@@ -8,9 +8,9 @@ import CvEducationItem from '../../components/CvEducationItem.astro';
 import { Icon } from 'astro-icon/components';
 import '../../styles/cv.css';
 
-// Only generate Chinese route - English is at /cv.astro
 export function getStaticPaths() {
   return [
+    { params: { lang: 'en' } },
     { params: { lang: 'zh' } },
   ];
 }
@@ -19,7 +19,6 @@ const lang = Astro.params.lang as 'en' | 'zh';
 const cv = cvData[lang];
 const isZh = lang === 'zh';
 
-// Translations
 const t = {
   en: {
     title: 'CV - Rui Wang',
@@ -49,10 +48,10 @@ const labels = t[lang];
 
 // Fetch from content collections
 const papersCollection = await getCollection('papers', (p) => p.data.show_on_cv);
-const honors = await getEntry('honors', 'honors');
-const education = await getEntry('education', 'education');
-if (!honors) throw new Error('Honors entry not found');
-if (!education) throw new Error('Education entry not found');
+const honorsEntry = await getEntry('honors', 'honors');
+const educationEntry = await getEntry('education', 'education');
+if (!honorsEntry) throw new Error('Honors entry not found');
+if (!educationEntry) throw new Error('Education entry not found');
 
 // Sort papers by date (newest first) - use spread to avoid mutation
 const sortedPapers = [...papersCollection].sort((a, b) => b.data.date.localeCompare(a.data.date));
@@ -61,10 +60,10 @@ const sortedPapers = [...papersCollection].sort((a, b) => b.data.date.localeComp
 const firstProject = cv.projects.length > 0 ? cv.projects[0] : null;
 
 // Flatten honors with type标签
-const graduateHonors = honors.data.graduate
+const graduateHonors = honorsEntry.data.graduate
   .filter((h) => h.show_on_cv)
   .map((h) => ({ ...h, type: 'graduate' as const }));
-const undergraduateHonors = honors.data.undergraduate
+const undergraduateHonors = honorsEntry.data.undergraduate
   .filter((h) => h.show_on_cv)
   .map((h) => ({ ...h, type: 'undergraduate' as const }));
 ---
@@ -95,39 +94,39 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Education -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:school" class="w-4 h-4 text-[#c96442]" />{labels.education}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:school" class="w-4 h-4 text-link-primary" />{labels.education}</h2>
       <CvEducationItem
-        university={education.data.master.university}
-        universityUrl={education.data.master.universityUrl}
-        major={education.data.master.major}
-        degree={education.data.master.degree}
-        period={education.data.master.period}
-        detail={education.data.master.detail}
+        university={educationEntry.data.master.university}
+        universityUrl={educationEntry.data.master.universityUrl}
+        major={educationEntry.data.master.major}
+        degree={educationEntry.data.master.degree}
+        period={educationEntry.data.master.period}
+        detail={educationEntry.data.master.detail}
         lang={lang}
       />
       <CvEducationItem
-        university={education.data.bachelor.university}
-        universityUrl={education.data.bachelor.universityUrl}
-        major={education.data.bachelor.major}
-        degree={education.data.bachelor.degree}
-        period={education.data.bachelor.period}
-        detail={education.data.bachelor.detail}
-        examScores={education.data.bachelor.examScores}
+        university={educationEntry.data.bachelor.university}
+        universityUrl={educationEntry.data.bachelor.universityUrl}
+        major={educationEntry.data.bachelor.major}
+        degree={educationEntry.data.bachelor.degree}
+        period={educationEntry.data.bachelor.period}
+        detail={educationEntry.data.bachelor.detail}
+        examScores={educationEntry.data.bachelor.examScores}
         lang={lang}
       />
     </section>
 
     <!-- Publications -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:file-dots" class="w-4 h-4 text-[#c96442]" />{labels.publications}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:file-dots" class="w-4 h-4 text-link-primary" />{labels.publications}</h2>
       {sortedPapers.map((paper) => (
-        <CvPaperItem paper={paper} lang="zh" titleLang="en" />
+        <CvPaperItem paper={paper} lang={lang} titleLang={isZh ? 'en' : undefined} />
       ))}
     </section>
 
     <!-- Research Directions -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:target" class="w-4 h-4 text-[#c96442]" />{labels.researchDirections}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:target" class="w-4 h-4 text-link-primary" />{labels.researchDirections}</h2>
       <div class="cv-grid-2">
         {cv.researchDirections.map((dir) => (
           <div class="cv-bullet-item">
@@ -140,7 +139,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Honors -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:trophy" class="w-4 h-4 text-[#c96442]" />{labels.honors}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:trophy" class="w-4 h-4 text-link-primary" />{labels.honors}</h2>
       <div class="cv-grid">
         {graduateHonors.map((honor) => (
           <CvHonorItem
@@ -169,7 +168,7 @@ const undergraduateHonors = honors.data.undergraduate
     <!-- Projects -->
     {firstProject && (
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:package" class="w-4 h-4 text-[#c96442]" />{labels.projects}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:package" class="w-4 h-4 text-link-primary" />{labels.projects}</h2>
       <div class="cv-entry">
         <div class="cv-entry-row">
           <span class="cv-entry-title">
@@ -187,7 +186,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Skills -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:code" class="w-4 h-4 text-[#c96442]" />{labels.skills}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:code" class="w-4 h-4 text-link-primary" />{labels.skills}</h2>
       <div class="cv-grid-2">
         {cv.skills.map((skill) => (
           <div><span class="skill-label">{skill.category}{isZh ? '：' : ':'}</span> {skill.items}</div>
@@ -197,7 +196,7 @@ const undergraduateHonors = honors.data.undergraduate
 
     <!-- Hobbies -->
     <section class="cv-section">
-      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:heart" class="w-4 h-4 text-[#c96442]" />{labels.hobbies}</h2>
+      <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:heart" class="w-4 h-4 text-link-primary" />{labels.hobbies}</h2>
       <div class="cv-hobbies">
         {cv.hobbies.map((hobby, i) => (
           <>

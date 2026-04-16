@@ -38,7 +38,6 @@ const imageSrc = imageMap[paper.data.image.split('/').pop() as keyof typeof imag
         alt={lang === 'zh' ? paper.data.alt_zh : paper.data.alt_en}
         width={600}
         height={300}
-        format="webp"
         loading="lazy"
         class="w-full max-w-[350px] h-auto rounded-lg border border-paper-border dark:border-paper-border-dark shadow-md"
         densities={[1, 2]}

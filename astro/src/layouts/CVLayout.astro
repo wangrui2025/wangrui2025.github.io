@@ -5,7 +5,7 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description?: string;
-  lang?: string;
+  lang?: 'en' | 'zh';
   /** Fixed viewport width in pixels for CV pages (A4 ≈ 794px). Enables native PDF-like scaling on mobile. */
   viewport?: string;
 }
@@ -17,7 +17,9 @@ const {
   viewport = 'width=794',
 } = Astro.props;
 
-const siteBase = 'https://wangrui2025.github.io';
+import { SITE_URL } from '../utils/constants';
+
+const siteBase = Astro.site ?? SITE_URL;
 const canonicalURL = new URL(lang === 'zh' ? '/zh/cv/' : '/cv/', siteBase);
 const lastUpdated = getLastUpdated();
 ---
