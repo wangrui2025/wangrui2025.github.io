@@ -115,3 +115,9 @@ export function isValidForSource(id: number, source: SpriteSource): boolean {
   if (source.maxId && id > source.maxId) return false;
   return true;
 }
+
+export function getSpriteUrl(sourceId: string, id: number): string {
+  const source = SPRITE_SOURCES.find((s) => s.id === sourceId);
+  if (!source) return SPRITE_SOURCES[0].url(id);
+  return source.url(id);
+}

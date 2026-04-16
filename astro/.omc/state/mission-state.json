@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-16T02:06:53.571Z",
+  "updatedAt": "2026-04-16T02:42:18.264Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -844,6 +844,62 @@
           "agent": "architect:ac039bd",
           "detail": "completed",
           "sourceKey": "session-stop:ac6e5056304fb2b1e"
+        }
+      ]
+    },
+    {
+      "id": "session:ac80bf80-5742-45a8-810f-b42f247b5fd3:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-04-16T02:41:07.694Z",
+      "updatedAt": "2026-04-16T02:42:18.264Z",
+      "status": "done",
+      "workerCount": 1,
+      "taskCounts": {
+        "total": 1,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 0,
+        "completed": 1,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "architect:a0c8e55",
+          "role": "architect",
+          "ownership": "a0c8e558893a31028",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-04-16T02:42:18.264Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a0c8e558893a31028:2026-04-16T02:41:07.694Z",
+          "at": "2026-04-16T02:41:07.694Z",
+          "kind": "update",
+          "agent": "architect:a0c8e55",
+          "detail": "started architect:a0c8e55",
+          "sourceKey": "session-start:a0c8e558893a31028"
+        },
+        {
+          "id": "session-stop:a2497b31968ac9bda:2026-04-16T02:41:55.479Z",
+          "at": "2026-04-16T02:41:55.479Z",
+          "kind": "completion",
+          "agent": "architect:a0c8e55",
+          "detail": "completed",
+          "sourceKey": "session-stop:a2497b31968ac9bda"
+        },
+        {
+          "id": "session-stop:a0c8e558893a31028:2026-04-16T02:42:18.264Z",
+          "at": "2026-04-16T02:42:18.264Z",
+          "kind": "completion",
+          "agent": "architect:a0c8e55",
+          "detail": "completed",
+          "sourceKey": "session-stop:a0c8e558893a31028"
         }
       ]
     }

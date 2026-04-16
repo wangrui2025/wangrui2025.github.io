@@ -173,6 +173,18 @@
   },
   "hotPaths": [
     {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776307284787,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 6,
+      "lastAccessed": 1776307293976,
+      "type": "file"
+    },
+    {
       "path": "src/content.config.ts",
       "accessCount": 5,
       "lastAccessed": 1776304987565,
@@ -185,18 +197,6 @@
       "type": "file"
     },
     {
-      "path": "src/styles/global.css",
-      "accessCount": 5,
-      "lastAccessed": 1776305111921,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 5,
-      "lastAccessed": 1776306735818,
-      "type": "file"
-    },
-    {
       "path": "prd.json",
       "accessCount": 5,
       "lastAccessed": 1776307229827,
@@ -204,14 +204,20 @@
     },
     {
       "path": "src/pages/sprites-gallery.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776306793190,
+      "accessCount": 5,
+      "lastAccessed": 1776307284770,
       "type": "file"
     },
     {
       "path": "progress.txt",
       "accessCount": 4,
       "lastAccessed": 1776307237612,
+      "type": "file"
+    },
+    {
+      "path": "src/data/sprite-sources.ts",
+      "accessCount": 4,
+      "lastAccessed": 1776307389676,
       "type": "file"
     },
     {
@@ -356,12 +362,6 @@
       "path": "public/robots.txt",
       "accessCount": 1,
       "lastAccessed": 1776305991271,
-      "type": "file"
-    },
-    {
-      "path": "src/data/sprite-sources.ts",
-      "accessCount": 1,
-      "lastAccessed": 1776306564045,
       "type": "file"
     }
   ],

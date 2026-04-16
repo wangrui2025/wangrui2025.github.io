@@ -294,10 +294,19 @@
       "status": "completed",
       "completed_at": "2026-04-16T02:05:23.103Z",
       "duration_ms": 23999
+    },
+    {
+      "agent_id": "a0c8e558893a31028",
+      "agent_type": "oh-my-claudecode:architect",
+      "started_at": "2026-04-16T02:41:07.694Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-04-16T02:42:18.264Z",
+      "duration_ms": 70570
     }
   ],
-  "total_spawned": 24,
-  "total_completed": 32,
+  "total_spawned": 25,
+  "total_completed": 33,
   "total_failed": 0,
-  "last_updated": "2026-04-16T02:06:53.674Z"
+  "last_updated": "2026-04-16T02:42:18.367Z"
 }
