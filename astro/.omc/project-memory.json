@@ -267,6 +267,12 @@
       "accessCount": 1,
       "lastAccessed": 1776304655435,
       "type": "file"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304803346,
+      "type": "file"
     }
   ],
   "userDirectives": []
