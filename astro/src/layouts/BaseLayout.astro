@@ -45,10 +45,7 @@ const personSchema = getPersonSchema({
 });
 
 // Serialize sprite source URLs for the favicon inline script
-const sourceMap = SPRITE_SOURCES.reduce((acc, s) => {
-  acc[s.id] = s.url(1);
-  return acc;
-}, {} as Record<string, string>);
+const sourceMap = Object.fromEntries(SPRITE_SOURCES.map((s) => [s.id, s.url(1)]));
 ---
 
 <!doctype html>
