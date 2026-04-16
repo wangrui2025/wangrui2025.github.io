@@ -1,0 +1,11 @@
+# Ralph Progress
+
+## Session Start
+- Task: Fix 3 verified issues (footer i18n hardcoding, missing prefetch, missing 404)
+- Project: /Users/myk/Repo/wangrui2025.github.io/astro
+
+## Learnings
+- i18n uses createTranslator(lang) helper and JSON content collections in src/content/homepage/
+- Footer is currently hardcoded inline at BaseLayout.astro:292-294
+- BaseLayout uses lang prop for all i18n branching
+- Dark mode uses .dark class with Tailwind v4 custom variants

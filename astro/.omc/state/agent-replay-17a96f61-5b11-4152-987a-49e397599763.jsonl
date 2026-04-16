@@ -18,3 +18,4 @@
 {"t":0,"agent":"ab715e6","agent_type":"tailwind-docs-auditor","event":"agent_stop","success":true,"duration_ms":425597}
 {"t":0,"agent":"a9556d7","agent_type":"tailwind-docs-auditor","event":"agent_start","parent_mode":"none"}
 {"t":0,"agent":"a9556d7","agent_type":"tailwind-docs-auditor","event":"agent_stop","success":true,"duration_ms":87664}
+{"t":0,"agent":"a81bf8c","agent_type":"unknown","event":"agent_stop","success":true}
