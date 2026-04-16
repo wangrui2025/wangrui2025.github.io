@@ -95,8 +95,8 @@
     },
     {
       "path": "astro/public/sw.js",
-      "accessCount": 2,
-      "lastAccessed": 1776305820654,
+      "accessCount": 3,
+      "lastAccessed": 1776305838590,
       "type": "file"
     }
   ],

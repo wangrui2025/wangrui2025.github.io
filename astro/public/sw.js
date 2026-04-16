@@ -1,8 +1,7 @@
-const CACHE_NAME = 'app-shell-v1';
+const CACHE_NAME = 'app-shell-v2';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/favicon.svg',
   '/robots.txt',
   '/gs_data.json'
 ];
