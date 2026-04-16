@@ -209,21 +209,21 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304475176,
-      "type": "file"
-    },
-    {
       "path": "src/components/CvEducationItem.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304501142,
+      "accessCount": 2,
+      "lastAccessed": 1776304559790,
       "type": "file"
     },
     {
       "path": "src/components/CvHonorItem.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776304564916,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
-      "lastAccessed": 1776304501255,
+      "lastAccessed": 1776304475176,
       "type": "file"
     },
     {
