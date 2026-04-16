@@ -213,6 +213,30 @@
       "accessCount": 1,
       "lastAccessed": 1776304491655,
       "type": "file"
+    },
+    {
+      "path": "src/components/CvEducationItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304501142,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvHonorItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304501255,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvPaperItem.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304501335,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304501445,
+      "type": "file"
     }
   ],
   "userDirectives": []

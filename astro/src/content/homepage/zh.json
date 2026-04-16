@@ -45,6 +45,9 @@
   "timeline_heading": "时间线",
   "timeline_collapsed_text": "查看完整时间线",
   "timeline_expanded_text": "收起时间线",
+  "footer_built_with": "本网页由",
+  "footer_by": "构建",
+  "footer_last_updated": "最后更新时间",
   "timeline_items": [
     {
       "period": "Present",
