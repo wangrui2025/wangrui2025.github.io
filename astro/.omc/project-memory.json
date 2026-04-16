@@ -351,6 +351,12 @@
       "accessCount": 1,
       "lastAccessed": 1776305991271,
       "type": "file"
+    },
+    {
+      "path": "src/data/sprite-sources.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776306564045,
+      "type": "file"
     }
   ],
   "userDirectives": []
