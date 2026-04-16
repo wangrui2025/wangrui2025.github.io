@@ -299,8 +299,6 @@ const personSchema = getPersonSchema({
       </article>
     </div>
 
-    <footer class="footer-builtwith text-center py-6 text-xs text-text-primary/60 dark:text-text-dark/60 border-t border-border-primary dark:border-border-dark mt-8">
-      {lang === 'zh' ? '本网页由' : 'Built with'} <a href="https://astro.build" target="_blank" rel="noopener" class="text-link-primary dark:text-link-dark hover:underline">Astro</a> {lang === 'zh' ? '构建' : ''} · {lang === 'zh' ? '最后更新时间' : 'Last updated'}: {lastUpdated}
-    </footer>
+    <Footer lang={lang} lastUpdated={lastUpdated} />
   </body>
 </html>

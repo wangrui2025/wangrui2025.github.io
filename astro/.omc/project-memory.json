@@ -237,6 +237,24 @@
       "accessCount": 1,
       "lastAccessed": 1776304475176,
       "type": "file"
+    },
+    {
+      "path": "src/content.config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776304612705,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Footer.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776304612767,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1776304612931,
+      "type": "directory"
     }
   ],
   "userDirectives": []
