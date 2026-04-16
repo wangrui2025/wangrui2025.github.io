@@ -245,6 +245,18 @@
       "type": "file"
     },
     {
+      "path": "prd.json",
+      "accessCount": 2,
+      "lastAccessed": 1776304870090,
+      "type": "file"
+    },
+    {
+      "path": "progress.txt",
+      "accessCount": 2,
+      "lastAccessed": 1776304879555,
+      "type": "file"
+    },
+    {
       "path": "src/layouts/CVLayout.astro",
       "accessCount": 1,
       "lastAccessed": 1776304475176,
