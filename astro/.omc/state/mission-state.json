@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-16T02:02:06.104Z",
+  "updatedAt": "2026-04-16T02:03:38.498Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -771,15 +771,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-16T02:02:06.104Z",
-      "updatedAt": "2026-04-16T02:02:06.104Z",
-      "status": "running",
+      "updatedAt": "2026-04-16T02:03:38.498Z",
+      "status": "done",
       "workerCount": 1,
       "taskCounts": {
         "total": 1,
         "pending": 0,
         "blocked": 0,
-        "inProgress": 1,
-        "completed": 0,
+        "inProgress": 0,
+        "completed": 1,
         "failed": 0
       },
       "agents": [
@@ -787,11 +787,11 @@
           "name": "architect:ac039bd",
           "role": "architect",
           "ownership": "ac039bdc803193f17",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-04-16T02:02:06.104Z"
+          "updatedAt": "2026-04-16T02:03:38.498Z"
         }
       ],
       "timeline": [
@@ -802,6 +802,14 @@
           "agent": "architect:ac039bd",
           "detail": "started architect:ac039bd",
           "sourceKey": "session-start:ac039bdc803193f17"
+        },
+        {
+          "id": "session-stop:ac039bdc803193f17:2026-04-16T02:03:38.498Z",
+          "at": "2026-04-16T02:03:38.498Z",
+          "kind": "completion",
+          "agent": "architect:ac039bd",
+          "detail": "completed",
+          "sourceKey": "session-stop:ac039bdc803193f17"
         }
       ]
     }
