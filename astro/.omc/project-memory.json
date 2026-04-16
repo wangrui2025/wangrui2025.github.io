@@ -179,21 +179,21 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776304945802,
-      "type": "file"
-    },
-    {
       "path": "src/pages/404.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776305055716,
+      "accessCount": 5,
+      "lastAccessed": 1776305111866,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
+      "accessCount": 5,
+      "lastAccessed": 1776305111921,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
       "accessCount": 4,
-      "lastAccessed": 1776305062508,
+      "lastAccessed": 1776304945802,
       "type": "file"
     },
     {
