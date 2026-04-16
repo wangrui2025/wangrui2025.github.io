@@ -63,8 +63,12 @@ const lastUpdated = getLastUpdated();
     <!-- Theme initialization — runs BEFORE any paint to prevent FOUC -->
     <script is:inline>
       (function(){
-        const t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-        document.documentElement.classList.toggle('dark',t==='dark');
+        function applyTheme() {
+          const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.classList.toggle('dark', t === 'dark');
+        }
+        applyTheme();
+        document.addEventListener('astro:after-swap', applyTheme);
       })();
     </script>
 
@@ -96,12 +100,6 @@ const lastUpdated = getLastUpdated();
     <meta name="twitter:image" content={new URL('/images/avatar.png', siteBase)} />
 
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <script is:inline>
-      (function(){
-        const t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-        document.documentElement.classList.toggle('dark',t==='dark');
-      })();
-    </script>
   </head>
   <body>
     <button id="export-pdf" class="fixed top-5 right-5 z-[1000] flex items-center gap-1.5 px-3.5 py-2 bg-gray-800 dark:bg-gray-700 text-white border-none rounded-md text-[13px] cursor-pointer transition-all duration-200 hover:bg-gray-600 shadow-md" title={lang === 'zh' ? '导出 PDF' : 'Export PDF'}>
