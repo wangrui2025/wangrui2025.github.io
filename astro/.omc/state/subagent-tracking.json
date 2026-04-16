@@ -255,7 +255,9 @@
       "agent_type": "code-auditor",
       "started_at": "2026-04-16T01:51:41.617Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-16T01:54:47.429Z",
+      "duration_ms": 185812
     },
     {
       "agent_id": "a9556d7c36c42824d",
@@ -265,10 +267,17 @@
       "status": "completed",
       "completed_at": "2026-04-16T01:53:23.421Z",
       "duration_ms": 87664
+    },
+    {
+      "agent_id": "aabb8f8b6d838df16",
+      "agent_type": "code-auditor",
+      "started_at": "2026-04-16T01:54:47.637Z",
+      "parent_mode": "none",
+      "status": "running"
     }
   ],
-  "total_spawned": 21,
-  "total_completed": 28,
+  "total_spawned": 22,
+  "total_completed": 29,
   "total_failed": 0,
-  "last_updated": "2026-04-16T01:54:03.300Z"
+  "last_updated": "2026-04-16T01:54:47.741Z"
 }

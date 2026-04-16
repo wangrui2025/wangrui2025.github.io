@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-16T01:54:03.198Z",
+  "updatedAt": "2026-04-16T01:54:47.637Z",
   "missions": [
     {
       "id": "session:c38c6097-d4a7-4cdc-9fd6-98e3812fb7ff:none",
@@ -607,15 +607,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-04-15T11:58:48.702Z",
-      "updatedAt": "2026-04-16T01:54:03.198Z",
+      "updatedAt": "2026-04-16T01:54:47.637Z",
       "status": "running",
-      "workerCount": 10,
+      "workerCount": 11,
       "taskCounts": {
-        "total": 10,
+        "total": 11,
         "pending": 0,
         "blocked": 0,
         "inProgress": 1,
-        "completed": 9,
+        "completed": 10,
         "failed": 0
       },
       "agents": [
@@ -703,11 +703,11 @@
           "name": "code-auditor:a96bbab",
           "role": "code-auditor",
           "ownership": "a96bbab006932ade6",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-04-16T01:51:41.617Z"
+          "updatedAt": "2026-04-16T01:54:47.429Z"
         },
         {
           "name": "tailwind-docs-auditor:a9556d7",
@@ -718,41 +718,19 @@
           "latestUpdate": "completed",
           "completedSummary": null,
           "updatedAt": "2026-04-16T01:53:23.421Z"
+        },
+        {
+          "name": "code-auditor:aabb8f8",
+          "role": "code-auditor",
+          "ownership": "aabb8f8b6d838df16",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-04-16T01:54:47.637Z"
         }
       ],
       "timeline": [
-        {
-          "id": "session-start:a96bbab006932ade6:2026-04-16T01:51:41.617Z",
-          "at": "2026-04-16T01:51:41.617Z",
-          "kind": "update",
-          "agent": "code-auditor:a96bbab",
-          "detail": "started code-auditor:a96bbab",
-          "sourceKey": "session-start:a96bbab006932ade6"
-        },
-        {
-          "id": "session-stop:ab715e6abe2dbe341:2026-04-16T01:51:55.569Z",
-          "at": "2026-04-16T01:51:55.569Z",
-          "kind": "completion",
-          "agent": "tailwind-docs-auditor:ab715e6",
-          "detail": "completed",
-          "sourceKey": "session-stop:ab715e6abe2dbe341"
-        },
-        {
-          "id": "session-start:a9556d7c36c42824d:2026-04-16T01:51:55.757Z",
-          "at": "2026-04-16T01:51:55.757Z",
-          "kind": "update",
-          "agent": "tailwind-docs-auditor:a9556d7",
-          "detail": "started tailwind-docs-auditor:a9556d7",
-          "sourceKey": "session-start:a9556d7c36c42824d"
-        },
-        {
-          "id": "session-stop:a9556d7c36c42824d:2026-04-16T01:53:23.421Z",
-          "at": "2026-04-16T01:53:23.421Z",
-          "kind": "completion",
-          "agent": "tailwind-docs-auditor:a9556d7",
-          "detail": "completed",
-          "sourceKey": "session-stop:a9556d7c36c42824d"
-        },
         {
           "id": "session-stop:a81bf8cff555b12b9:2026-04-16T01:54:03.198Z",
           "at": "2026-04-16T01:54:03.198Z",
@@ -760,6 +738,22 @@
           "agent": "general-purpose:a00a5a4",
           "detail": "completed",
           "sourceKey": "session-stop:a81bf8cff555b12b9"
+        },
+        {
+          "id": "session-stop:a96bbab006932ade6:2026-04-16T01:54:47.429Z",
+          "at": "2026-04-16T01:54:47.429Z",
+          "kind": "completion",
+          "agent": "code-auditor:a96bbab",
+          "detail": "completed",
+          "sourceKey": "session-stop:a96bbab006932ade6"
+        },
+        {
+          "id": "session-start:aabb8f8b6d838df16:2026-04-16T01:54:47.637Z",
+          "at": "2026-04-16T01:54:47.637Z",
+          "kind": "update",
+          "agent": "code-auditor:aabb8f8",
+          "detail": "started code-auditor:aabb8f8",
+          "sourceKey": "session-start:aabb8f8b6d838df16"
         }
       ]
     }

@@ -45,6 +45,9 @@
   "timeline_heading": "Timeline",
   "timeline_collapsed_text": "View Full Timeline",
   "timeline_expanded_text": "Collapse Timeline",
+  "footer_built_with": "Built with",
+  "footer_by": "",
+  "footer_last_updated": "Last updated",
   "timeline_items": [
     {
       "period": "Present",
