@@ -11,7 +11,7 @@ const imageMap = {
   'fig_gdkvm_page-0001.jpg': gdkvmImage,
 } as const;
 
-export interface Props {
+interface Props {
   paperKey?: 'osa' | 'gdkvm';
   paper?: CollectionEntry<'papers'>;
   lang?: 'en' | 'zh';
