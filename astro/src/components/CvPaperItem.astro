@@ -37,7 +37,7 @@ const showCvprLogo = paper.data.venue_full?.includes('CVPR 2026');
       </div>
       <div class="text-[9pt] leading-tight">
         {localizedAuthors.map((author, i) => (
-          <span class={author.is_self ? 'text-[#1a1a1a] dark:text-text-primary font-semibold' : 'text-text-secondary dark:text-text-secondary-dark'}>
+          <span class={author.is_self ? 'text-text-primary dark:text-text-dark font-semibold' : 'text-text-secondary dark:text-text-secondary-dark'}>
             {author.name}{author.is_corresponding ? corrSuffix : ''}{i < localizedAuthors.length - 1 ? sep : ''}
           </span>
         ))}
