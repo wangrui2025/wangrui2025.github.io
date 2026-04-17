@@ -60,6 +60,11 @@
   /* Secondary text */
   --color-text-secondary: #5e5d59;
   --color-text-secondary-dark: #b0aea5;
+  /* Brand icon hover colors */
+  --color-brand-scholar: #4A90E2;
+  --color-brand-orcid: #A6B73F;
+  --color-brand-openreview: #2771B1;
+  --color-brand-linkedin: #0A66C2;
 }
 
 /* Global CSS - Minimal Reset & Base Styles */
