@@ -173,63 +173,81 @@
   },
   "hotPaths": [
     {
+      "path": "src",
+      "accessCount": 102,
+      "lastAccessed": 1776399233830,
+      "type": "directory"
+    },
+    {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 20,
-      "lastAccessed": 1776398505703,
+      "accessCount": 22,
+      "lastAccessed": 1776399091574,
       "type": "file"
     },
     {
       "path": "src/pages/sprites-gallery.astro",
-      "accessCount": 12,
-      "lastAccessed": 1776307796544,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/HomepageLayout.astro",
-      "accessCount": 11,
-      "lastAccessed": 1776312298291,
+      "accessCount": 13,
+      "lastAccessed": 1776398852912,
       "type": "file"
     },
     {
       "path": "",
-      "accessCount": 9,
-      "lastAccessed": 1776331441732,
+      "accessCount": 13,
+      "lastAccessed": 1776398938242,
       "type": "directory"
     },
     {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 8,
-      "lastAccessed": 1776312271364,
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 13,
+      "lastAccessed": 1776399091855,
       "type": "file"
     },
     {
-      "path": "src/components/CvPaperItem.astro",
-      "accessCount": 7,
-      "lastAccessed": 1776331483655,
+      "path": "src/components/Masthead.astro",
+      "accessCount": 11,
+      "lastAccessed": 1776399003540,
       "type": "file"
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 6,
-      "lastAccessed": 1776307293976,
+      "accessCount": 9,
+      "lastAccessed": 1776398962739,
       "type": "file"
     },
     {
-      "path": "src/data/sprite-sources.ts",
-      "accessCount": 6,
-      "lastAccessed": 1776307742234,
+      "path": "src/components/CvPaperItem.astro",
+      "accessCount": 8,
+      "lastAccessed": 1776398864981,
       "type": "file"
     },
     {
       "path": "src/pages/404.astro",
-      "accessCount": 6,
-      "lastAccessed": 1776331014832,
+      "accessCount": 7,
+      "lastAccessed": 1776398852810,
+      "type": "file"
+    },
+    {
+      "path": "src/data/sprite-sources.ts",
+      "accessCount": 7,
+      "lastAccessed": 1776398884830,
       "type": "file"
     },
     {
       "path": "src/content.config.ts",
-      "accessCount": 5,
-      "lastAccessed": 1776304987565,
+      "accessCount": 6,
+      "lastAccessed": 1776398884887,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Education.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776399091726,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/CVLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776399138334,
       "type": "file"
     },
     {
@@ -251,94 +269,106 @@
       "type": "file"
     },
     {
+      "path": "src/components/CvEducationItem.astro",
+      "accessCount": 5,
+      "lastAccessed": 1776398864961,
+      "type": "file"
+    },
+    {
+      "path": "src/components/PaperCard.astro",
+      "accessCount": 5,
+      "lastAccessed": 1776399091800,
+      "type": "file"
+    },
+    {
       "path": "progress.txt",
       "accessCount": 4,
       "lastAccessed": 1776307237612,
       "type": "file"
     },
     {
-      "path": "src/components/Education.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776312267546,
-      "type": "file"
-    },
-    {
-      "path": "src/components/CvEducationItem.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776312292569,
-      "type": "file"
-    },
-    {
       "path": "astro.config.mjs",
-      "accessCount": 3,
-      "lastAccessed": 1776305980164,
-      "type": "file"
-    },
-    {
-      "path": "src",
-      "accessCount": 3,
-      "lastAccessed": 1776308405201,
-      "type": "directory"
-    },
-    {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776331036179,
-      "type": "file"
-    },
-    {
-      "path": "src/components/PaperCard.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776331099306,
-      "type": "file"
-    },
-    {
-      "path": "src/components/AuthorProfile.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304536154,
-      "type": "file"
-    },
-    {
-      "path": "src/components/CvHonorItem.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304564916,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Footer.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304945994,
+      "accessCount": 4,
+      "lastAccessed": 1776398792254,
       "type": "file"
     },
     {
       "path": "package.json",
-      "accessCount": 2,
-      "lastAccessed": 1776305980553,
+      "accessCount": 4,
+      "lastAccessed": 1776398930311,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Footer.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776399091772,
       "type": "file"
     },
     {
       "path": "src/pages/index.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776308423640,
+      "accessCount": 3,
+      "lastAccessed": 1776398852962,
       "type": "file"
     },
     {
-      "path": "tailwind.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1776304884347,
+      "path": "src/components/AuthorProfile.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776398875284,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvHonorItem.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776398875344,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/[lang]/cv.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776399095725,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776398853020,
       "type": "file"
     },
     {
       "path": "src/pages/[lang]/index.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776304964557,
+      "accessCount": 2,
+      "lastAccessed": 1776398853073,
       "type": "file"
     },
     {
       "path": "src/utils/lastUpdated.ts",
-      "accessCount": 1,
-      "lastAccessed": 1776304964666,
+      "accessCount": 2,
+      "lastAccessed": 1776398874830,
       "type": "file"
+    },
+    {
+      "path": "src/data/cv.ts",
+      "accessCount": 2,
+      "lastAccessed": 1776398884712,
+      "type": "file"
+    },
+    {
+      "path": "tailwind.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1776398938040,
+      "type": "file"
+    },
+    {
+      "path": "src/data/index.ts",
+      "accessCount": 2,
+      "lastAccessed": 1776399059920,
+      "type": "file"
+    },
+    {
+      "path": "src/pages",
+      "accessCount": 2,
+      "lastAccessed": 1776399066586,
+      "type": "directory"
     },
     {
       "path": "src/pages/cv/arch/CVPR2026-OSA.md",
@@ -365,21 +395,9 @@
       "type": "file"
     },
     {
-      "path": "src/data/cv.ts",
-      "accessCount": 1,
-      "lastAccessed": 1776308413023,
-      "type": "file"
-    },
-    {
       "path": "src/pages/cv.astro",
       "accessCount": 1,
       "lastAccessed": 1776308423691,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/[lang]/cv.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776308432550,
       "type": "file"
     },
     {
@@ -389,9 +407,69 @@
       "type": "directory"
     },
     {
-      "path": "src/components/ThemeToggle.astro",
+      "path": "scripts",
       "accessCount": 1,
-      "lastAccessed": 1776331014789,
+      "lastAccessed": 1776398815769,
+      "type": "directory"
+    },
+    {
+      "path": "src/data/loaders.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776398864587,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/i18n.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776398864834,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ScholarBadge.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776398874877,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Sidebar.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776398875026,
+      "type": "file"
+    },
+    {
+      "path": "src/components/PaperBadge.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776398875120,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/structuredData.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776398875231,
+      "type": "file"
+    },
+    {
+      "path": "src/data/navigation.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776398884352,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/cv.css",
+      "accessCount": 1,
+      "lastAccessed": 1776398884622,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/constants.ts",
+      "accessCount": 1,
+      "lastAccessed": 1776398884655,
+      "type": "file"
+    },
+    {
+      "path": "scripts/inline-critical-css.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1776398897454,
       "type": "file"
     }
   ],
