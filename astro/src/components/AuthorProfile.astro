@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import avatarImage from '../assets/avatar.png';
 
 interface Props {
   lang?: 'en' | 'zh';
@@ -16,7 +15,7 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
 <div class="text-center p-4">
   <div class="mb-4">
     <Image
-      src={avatarImage}
+      src="/images/avatar.png"
       alt={displayName}
       width={256}
       height={256}
@@ -24,6 +23,7 @@ const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
       loading="eager"
       densities={[1, 2, 3]}
       sizes="128px"
+      decoding="async"
     />
   </div>
   <h2 class="font-serif font-medium text-[52px] leading-[1.1] text-heading-primary dark:text-heading-dark mb-1">{displayName}</h2>
