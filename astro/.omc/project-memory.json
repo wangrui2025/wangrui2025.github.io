@@ -174,8 +174,8 @@
   "hotPaths": [
     {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 15,
-      "lastAccessed": 1776307780430,
+      "accessCount": 16,
+      "lastAccessed": 1776331036223,
       "type": "file"
     },
     {
@@ -191,9 +191,21 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 9,
+      "lastAccessed": 1776331441732,
+      "type": "directory"
+    },
+    {
       "path": "src/components/Masthead.astro",
       "accessCount": 8,
       "lastAccessed": 1776312271364,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CvPaperItem.astro",
+      "accessCount": 7,
+      "lastAccessed": 1776331483655,
       "type": "file"
     },
     {
@@ -209,15 +221,15 @@
       "type": "file"
     },
     {
-      "path": "src/content.config.ts",
-      "accessCount": 5,
-      "lastAccessed": 1776304987565,
+      "path": "src/pages/404.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776331014832,
       "type": "file"
     },
     {
-      "path": "src/pages/404.astro",
+      "path": "src/content.config.ts",
       "accessCount": 5,
-      "lastAccessed": 1776305111866,
+      "lastAccessed": 1776304987565,
       "type": "file"
     },
     {
@@ -257,12 +269,6 @@
       "type": "file"
     },
     {
-      "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1776304626835,
-      "type": "directory"
-    },
-    {
       "path": "astro.config.mjs",
       "accessCount": 3,
       "lastAccessed": 1776305980164,
@@ -275,27 +281,27 @@
       "type": "directory"
     },
     {
+      "path": "src/layouts/CVLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776331036179,
+      "type": "file"
+    },
+    {
+      "path": "src/components/PaperCard.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776331099306,
+      "type": "file"
+    },
+    {
       "path": "src/components/AuthorProfile.astro",
       "accessCount": 2,
       "lastAccessed": 1776304536154,
       "type": "file"
     },
     {
-      "path": "src/components/PaperCard.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304551729,
-      "type": "file"
-    },
-    {
       "path": "src/components/CvHonorItem.astro",
       "accessCount": 2,
       "lastAccessed": 1776304564916,
-      "type": "file"
-    },
-    {
-      "path": "src/components/CvPaperItem.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776304571700,
       "type": "file"
     },
     {
@@ -314,12 +320,6 @@
       "path": "src/pages/index.astro",
       "accessCount": 2,
       "lastAccessed": 1776308423640,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/CVLayout.astro",
-      "accessCount": 2,
-      "lastAccessed": 1776312299276,
       "type": "file"
     },
     {
@@ -387,6 +387,12 @@
       "accessCount": 1,
       "lastAccessed": 1776309019809,
       "type": "directory"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776331014789,
+      "type": "file"
     }
   ],
   "userDirectives": []
