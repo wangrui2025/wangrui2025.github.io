@@ -39,6 +39,7 @@ const imageSrc = imageMap[paper.data.image.split('/').pop() as keyof typeof imag
         width={600}
         height={300}
         loading="lazy"
+        decoding="async"
         class="w-full max-w-[350px] h-auto rounded-lg border border-paper-border dark:border-paper-border-dark shadow-md"
         densities={[1, 2]}
         sizes="(max-width: 768px) 100vw, 400px"
