@@ -124,7 +124,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "education";
-  data: InferEntrySchema<"education">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -132,7 +132,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "homepage";
-  data: InferEntrySchema<"homepage">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -140,7 +140,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "honors";
-  data: InferEntrySchema<"honors">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -148,7 +148,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "papers";
-  data: InferEntrySchema<"papers">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -156,7 +156,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "scholar";
-  data: InferEntrySchema<"scholar">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -189,6 +189,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("../src/content.config.js");
+	export type ContentConfig = never;
 	export type LiveContentConfig = never;
 }
