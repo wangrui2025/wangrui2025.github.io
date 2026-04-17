@@ -89,14 +89,26 @@
   "hotPaths": [
     {
       "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 6,
-      "lastAccessed": 1776397678635,
+      "accessCount": 9,
+      "lastAccessed": 1776398369511,
       "type": "directory"
     },
     {
       "path": "astro/public/sw.js",
       "accessCount": 3,
       "lastAccessed": 1776305838590,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1776398065294,
+      "type": "directory"
+    },
+    {
+      "path": "scripts/smart-autopush.sh",
+      "accessCount": 1,
+      "lastAccessed": 1776398542622,
       "type": "file"
     }
   ],

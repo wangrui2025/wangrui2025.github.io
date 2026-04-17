@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git add CLAUDE.md && git commit -m \\\"docs: add FOUC prevention note to CLAUDE.md\\n\\nFOUC fix: Tailwind v4 + Vite outputs utility CSS to external files.\\nPost-build script (scripts/inline-c...",
-  "error": "Exit code 1\nOn branch main\nYour branch is ahead of 'origin/main' by 2 commits.\n  (use \"git push\" to publish your local commits)\n\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   .omc/state/hud-state.json\n\tmodified:   .omc/state/hud-stdin-cache.json\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")",
-  "timestamp": "2026-04-11T15:30:00.538Z",
+  "tool_input_preview": "{\"command\":\"./scripts/smart-autopush.sh \\\"feat(favicon): restore random sprite from CDN with lotad fallback\\\"\",\"timeout\":60000,\"description\":\"Auto-push favicon changes with semantic message\"}",
+  "error": "Exit code 1\n❌ 目录不存在: feat(favicon): restore random sprite from CDN with lotad fallback",
+  "timestamp": "2026-04-17T04:02:18.798Z",
   "retry_count": 2
 }

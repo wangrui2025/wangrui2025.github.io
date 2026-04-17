@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import { SITE_URL } from '../utils/constants';
 import { getLastUpdated } from '../utils/lastUpdated';
 import { getPersonSchema } from '../utils/structuredData';
-import { SPRITE_SOURCES } from '../data/sprite-sources';
 import '../styles/global.css';
 
 interface Props {
@@ -44,8 +43,6 @@ const personSchema = getPersonSchema({
   description: "M.S. Candidate at Shenzhen University"
 });
 
-// Serialize sprite source URLs for the favicon inline script
-const sourceMap = Object.fromEntries(SPRITE_SOURCES.map((s) => [s.id, s.url(1)]));
 ---
 
 <!doctype html>
@@ -218,11 +215,20 @@ const sourceMap = Object.fromEntries(SPRITE_SOURCES.map((s) => [s.id, s.url(1)])
 
     <!-- Favicon & PWA -->
     <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
-    <script is:inline define:vars={{ sourceMap }}>
+    <script is:inline>
       (function() {
         var link = document.getElementById('pokemon-favicon');
         if (!link) return;
-        link.href = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/lotad.png';
+        var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
+        fetch(CDN_BASE + '/index.json')
+          .then(function(res) { return res.json(); })
+          .then(function(icons) {
+            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            link.href = CDN_BASE + '/' + randomIcon;
+          })
+          .catch(function() {
+            link.href = CDN_BASE + '/lotad.png';
+          });
       })();
     </script>
     <link rel="apple-touch-icon" href="/images/favicon.ico" />
