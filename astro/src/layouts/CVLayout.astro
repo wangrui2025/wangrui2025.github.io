@@ -101,7 +101,24 @@ const lastUpdated = getLastUpdated();
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL('/images/avatar.png', siteBase)} />
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Favicon: random Pokémon -->
+    <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
+    <script is:inline>
+      (function() {
+        var link = document.getElementById('pokemon-favicon');
+        if (!link) return;
+        var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
+        fetch(CDN_BASE + '/index.json')
+          .then(function(res) { return res.json(); })
+          .then(function(icons) {
+            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            link.href = CDN_BASE + '/' + randomIcon;
+          })
+          .catch(function() {
+            link.href = CDN_BASE + '/lotad.png';
+          });
+      })();
+    </script>
   </head>
   <body>
     <button id="export-pdf" class="fixed top-5 right-5 z-[1000] flex items-center gap-1.5 px-3.5 py-2 bg-gray-800 dark:bg-gray-700 text-white border-none rounded-md text-[13px] cursor-pointer transition-all duration-200 hover:bg-gray-600 shadow-md" title={lang === 'zh' ? '导出 PDF' : 'Export PDF'}>
