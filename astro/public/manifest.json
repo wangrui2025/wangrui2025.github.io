@@ -10,9 +10,9 @@
   "dark_theme_color": "#818cf8",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/pikachu.png",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ]
 }
