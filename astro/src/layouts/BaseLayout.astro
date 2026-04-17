@@ -230,8 +230,16 @@ const sourceMap = Object.fromEntries(SPRITE_SOURCES.map((s) => [s.id, s.url(1)])
           var template = sourceMap[preferredSource] || sourceMap['default'];
           link.href = template.replace(/\/(\d+)\.(png|svg)$/, '/' + preferredId + '.$2');
         } else {
-          var id = Math.floor(Math.random() * 151) + 1;
-          link.href = 'https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/' + id + '.png';
+          var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
+          fetch(CDN_BASE + '/index.json')
+            .then(function(res) { return res.json(); })
+            .then(function(icons) {
+              var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+              link.href = CDN_BASE + '/' + randomIcon;
+            })
+            .catch(function() {
+              link.href = 'https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/25.png';
+            });
         }
       })();
     </script>
