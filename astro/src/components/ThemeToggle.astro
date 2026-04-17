@@ -18,8 +18,8 @@ import { Icon } from 'astro-icon/components';
   (function () {
     function initThemeToggle() {
       const btn = document.getElementById('theme-toggle');
-      if (!btn || btn.__themeBound) return;
-      btn.__themeBound = true;
+      if (!btn || btn.getAttribute('data-bound') === 'true') return;
+      btn.setAttribute('data-bound', 'true');
       btn.addEventListener('click', () => {
         const html = document.documentElement;
         const isDark = html.classList.toggle('dark');

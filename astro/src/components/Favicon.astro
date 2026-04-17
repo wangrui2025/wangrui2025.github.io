@@ -1,0 +1,17 @@
+<link id="pokemon-favicon" rel="icon" type="image/png" href="" />
+<script is:inline>
+  (function() {
+    var link = document.getElementById('pokemon-favicon');
+    if (!link) return;
+    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
+    fetch(CDN_BASE + '/index.json')
+      .then(function(res) { return res.json(); })
+      .then(function(icons) {
+        var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        link.href = CDN_BASE + '/' + randomIcon;
+      })
+      .catch(function() {
+        link.href = CDN_BASE + '/lotad.png';
+      });
+  })();
+</script>

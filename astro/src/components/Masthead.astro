@@ -1,6 +1,7 @@
 ---
 import { navigation } from '../data/navigation';
 import ThemeToggle from './ThemeToggle.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 interface Props {
   lang?: 'en' | 'zh';
@@ -9,7 +10,7 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 const langKey = lang === 'zh' ? 'zh' : 'en';
 const navItems = navigation.main[langKey];
-const switchUrl = lang === 'zh' ? '/' : '/zh/';
+const switchUrl = getRelativeLocaleUrl(lang === 'zh' ? 'en' : 'zh', '/');
 const switchLabel = lang === 'zh' ? 'English' : '中文';
 ---
 
@@ -22,7 +23,7 @@ const switchLabel = lang === 'zh' ? 'English' : '中文';
         </button>
         <ul class="flex list-none m-0 p-0 gap-6 max-md:flex-wrap max-md:gap-4">
           <li class="m-0 masthead__menu-item--lg masthead__menu-home-item">
-            <a href={lang === 'zh' ? '/zh/#about-me' : '/#about-me'} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
+            <a href={getRelativeLocaleUrl(lang, '#about-me')} class="text-text-primary dark:text-text-dark hover:text-link-primary dark:hover:text-link-dark hover:bg-black/5 dark:hover:bg-white/10">
                 {lang === 'zh' ? '首页' : 'Homepage'}
             </a>
           </li>

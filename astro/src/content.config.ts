@@ -2,6 +2,12 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'zod';
 
+const authorSchema = z.array(z.object({
+  name: z.string(),
+  is_corresponding: z.boolean().default(false),
+  is_self: z.boolean().default(false),
+}));
+
 const papers = defineCollection({
   loader: glob({ base: './src/content/papers', pattern: '**/*.json' }),
   schema: z.object({
@@ -19,21 +25,13 @@ const papers = defineCollection({
     show_on_homepage: z.boolean().default(true),
     zh: z.object({
       title: z.string(),
-      authors: z.array(z.object({
-        name: z.string(),
-        is_corresponding: z.boolean().default(false),
-        is_self: z.boolean().default(false),
-      })),
+      authors: authorSchema,
       fields: z.array(z.string()),
       technologies: z.array(z.string()),
     }),
     en: z.object({
       title: z.string(),
-      authors: z.array(z.object({
-        name: z.string(),
-        is_corresponding: z.boolean().default(false),
-        is_self: z.boolean().default(false),
-      })),
+      authors: authorSchema,
       fields: z.array(z.string()),
       technologies: z.array(z.string()),
     }),

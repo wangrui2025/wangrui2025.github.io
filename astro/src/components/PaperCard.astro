@@ -51,10 +51,10 @@ const imageSrc = imageMap[paper.data.image.split('/').pop() as keyof typeof imag
     </h3>
     <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-3">
       {localized.authors.map((author, i) => (
-        <>
+        <Fragment>
           <span class={author.is_self ? 'font-semibold' : ''}>{author.name}{author.is_corresponding ? '*' : ''}</span>
           {i < localized.authors.length - 1 && <span class="text-text-secondary dark:text-text-secondary-dark">{lang === 'zh' ? '，' : ', '}</span>}
-        </>
+        </Fragment>
       ))}
     </p>
     <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-2 tabular-nums">

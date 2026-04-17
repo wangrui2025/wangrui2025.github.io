@@ -1,6 +1,8 @@
 ---
 import { getLastUpdated } from '../utils/lastUpdated';
 import '../styles/global.css';
+import Favicon from '../components/Favicon.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export interface Props {
   title: string;
@@ -20,7 +22,7 @@ const {
 import { SITE_URL } from '../utils/constants';
 
 const siteBase = Astro.site ?? SITE_URL;
-const canonicalURL = new URL(lang === 'zh' ? '/zh/cv/' : '/cv/', siteBase);
+const canonicalURL = new URL(getRelativeLocaleUrl(lang, 'cv'), siteBase);
 const lastUpdated = getLastUpdated();
 ---
 
@@ -102,23 +104,7 @@ const lastUpdated = getLastUpdated();
     <meta name="twitter:image" content={new URL('/images/avatar.png', siteBase)} />
 
     <!-- Favicon: random Pokémon -->
-    <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
-    <script is:inline>
-      (function() {
-        var link = document.getElementById('pokemon-favicon');
-        if (!link) return;
-        var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
-        fetch(CDN_BASE + '/index.json')
-          .then(function(res) { return res.json(); })
-          .then(function(icons) {
-            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
-            link.href = CDN_BASE + '/' + randomIcon;
-          })
-          .catch(function() {
-            link.href = CDN_BASE + '/lotad.png';
-          });
-      })();
-    </script>
+    <Favicon />
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/pikachu.png" />
     <link rel="manifest" href="/manifest.json" />
   </head>

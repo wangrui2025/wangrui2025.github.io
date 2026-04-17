@@ -6,6 +6,7 @@ import { SITE_URL } from '../utils/constants';
 import { getLastUpdated } from '../utils/lastUpdated';
 import { getPersonSchema } from '../utils/structuredData';
 import '../styles/global.css';
+import Favicon from '../components/Favicon.astro';
 
 interface Props {
   title: string;
@@ -214,23 +215,7 @@ const personSchema = getPersonSchema({
     <meta name="description" content={description} />
 
     <!-- Favicon & PWA -->
-    <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
-    <script is:inline>
-      (function() {
-        var link = document.getElementById('pokemon-favicon');
-        if (!link) return;
-        var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
-        fetch(CDN_BASE + '/index.json')
-          .then(function(res) { return res.json(); })
-          .then(function(icons) {
-            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
-            link.href = CDN_BASE + '/' + randomIcon;
-          })
-          .catch(function() {
-            link.href = CDN_BASE + '/lotad.png';
-          });
-      })();
-    </script>
+    <Favicon />
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/pikachu.png" />
     <link rel="manifest" href="/manifest.json" />
 

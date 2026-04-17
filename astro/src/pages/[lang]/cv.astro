@@ -199,10 +199,10 @@ const undergraduateHonors = honorsEntry.data.undergraduate
       <h2 class="cv-section-title flex items-center gap-1"><Icon name="tabler:heart" class="w-4 h-4 text-link-primary" />{labels.hobbies}</h2>
       <div class="cv-hobbies">
         {cv.hobbies.map((hobby, i) => (
-          <>
+          <Fragment>
             <span>{hobby}</span>
             {i < cv.hobbies.length - 1 && <span class="sep-dot">·</span>}
-          </>
+          </Fragment>
         ))}
       </div>
     </section>

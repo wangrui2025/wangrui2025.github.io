@@ -45,10 +45,10 @@ const displayExamScores = examScores?.[lang];
   {displayDetail && (
     <div class="text-text-primary dark:text-text-dark">
       {displayDetail.split('·').map((part: string, i: number) => (
-        <>
+        <Fragment>
           {i > 0 && <span class="text-link-primary font-semibold">·</span>}
           <span class={i === 0 ? 'font-semibold' : ''}>{part.trim()}</span>
-        </>
+        </Fragment>
       ))}
     </div>
   )}

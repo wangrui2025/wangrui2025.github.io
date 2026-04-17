@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSA Presentation Deck</title>
+    <link id="pokemon-favicon" rel="icon" type="image/png" href="" />
+    <script>
+      (function() {
+        var link = document.getElementById('pokemon-favicon');
+        if (!link) return;
+        var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
+        fetch(CDN_BASE + '/index.json')
+          .then(function(res) { return res.json(); })
+          .then(function(icons) {
+            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            link.href = CDN_BASE + '/' + randomIcon;
+          })
+          .catch(function() {
+            link.href = CDN_BASE + '/lotad.png';
+          });
+      })();
+    </script>
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/pikachu.png" />
+    <link rel="manifest" href="/manifest.json" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .vertical-text {
