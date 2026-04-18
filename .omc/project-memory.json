@@ -100,15 +100,15 @@
       "type": "file"
     },
     {
-      "path": "astro/public/sw.js",
-      "accessCount": 3,
-      "lastAccessed": 1776305838590,
+      "path": "astro/src/components/Favicon.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776513905541,
       "type": "file"
     },
     {
-      "path": "astro/src/components/Favicon.astro",
+      "path": "astro/public/sw.js",
       "accessCount": 3,
-      "lastAccessed": 1776506381495,
+      "lastAccessed": 1776305838590,
       "type": "file"
     },
     {
@@ -134,6 +134,12 @@
       "accessCount": 1,
       "lastAccessed": 1776406778673,
       "type": "file"
+    },
+    {
+      "path": "astro/src",
+      "accessCount": 1,
+      "lastAccessed": 1776513985730,
+      "type": "directory"
     }
   ],
   "userDirectives": []

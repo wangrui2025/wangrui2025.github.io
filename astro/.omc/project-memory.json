@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1776400903009,
+  "lastScanned": 1776514063015,
   "projectRoot": "/Users/myk/Repo/wangrui2025/wangrui2025.github.io/astro",
   "techStack": {
     "languages": [
@@ -73,7 +73,7 @@
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 12,
-      "lastAccessed": 1776400902997,
+      "lastAccessed": 1776514062665,
       "keyFiles": [
         "404.html",
         "cv-en.pdf",
@@ -86,7 +86,7 @@
       "path": "public",
       "purpose": "Public files",
       "fileCount": 8,
-      "lastAccessed": 1776400903000,
+      "lastAccessed": 1776514062669,
       "keyFiles": [
         "cv-en.pdf",
         "cv-zh.pdf",
@@ -99,7 +99,7 @@
       "path": "scripts",
       "purpose": "Build/utility scripts",
       "fileCount": 2,
-      "lastAccessed": 1776400903001,
+      "lastAccessed": 1776514062748,
       "keyFiles": [
         "generate-cv-pdf.mjs",
         "inline-critical-css.mjs"
@@ -109,7 +109,7 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 2,
-      "lastAccessed": 1776400903001,
+      "lastAccessed": 1776514062763,
       "keyFiles": [
         "content.config.ts",
         "env.d.ts"
@@ -119,37 +119,35 @@
       "path": "test-results",
       "purpose": null,
       "fileCount": 1,
-      "lastAccessed": 1776400903001,
+      "lastAccessed": 1776514062772,
       "keyFiles": []
     },
     "dist/assets": {
       "path": "dist/assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1776400903002,
+      "lastAccessed": 1776514062780,
       "keyFiles": []
     },
     "public/assets": {
       "path": "public/assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1776400903002,
+      "lastAccessed": 1776514062784,
       "keyFiles": []
     },
     "src/assets": {
       "path": "src/assets",
       "purpose": "Static assets",
-      "fileCount": 1,
-      "lastAccessed": 1776400903002,
-      "keyFiles": [
-        "avatar.png"
-      ]
+      "fileCount": 0,
+      "lastAccessed": 1776514062793,
+      "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
-      "fileCount": 12,
-      "lastAccessed": 1776400903002,
+      "fileCount": 13,
+      "lastAccessed": 1776514062800,
       "keyFiles": [
         "AuthorProfile.astro",
         "CvEducationItem.astro",
@@ -159,8 +157,8 @@
     "src/data": {
       "path": "src/data",
       "purpose": "Data files",
-      "fileCount": 5,
-      "lastAccessed": 1776400903003,
+      "fileCount": 4,
+      "lastAccessed": 1776514062806,
       "keyFiles": [
         "cv.ts",
         "index.ts",
@@ -171,7 +169,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 3,
-      "lastAccessed": 1776400903003,
+      "lastAccessed": 1776514062876,
       "keyFiles": [
         "404.astro",
         "index.astro",
