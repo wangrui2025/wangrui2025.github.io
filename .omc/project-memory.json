@@ -106,6 +106,12 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/Favicon.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776506381495,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 2,
       "lastAccessed": 1776406641402,
@@ -115,12 +121,6 @@
       "path": "scripts/smart-autopush.sh",
       "accessCount": 1,
       "lastAccessed": 1776398542622,
-      "type": "file"
-    },
-    {
-      "path": "astro/src/components/Favicon.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776406747956,
       "type": "file"
     },
     {
