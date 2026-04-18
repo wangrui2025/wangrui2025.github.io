@@ -94,6 +94,12 @@
       "type": "directory"
     },
     {
+      "path": "astro/public/slides.html",
+      "accessCount": 5,
+      "lastAccessed": 1776406806274,
+      "type": "file"
+    },
+    {
       "path": "astro/public/sw.js",
       "accessCount": 3,
       "lastAccessed": 1776305838590,
@@ -101,14 +107,32 @@
     },
     {
       "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1776398065294,
+      "accessCount": 2,
+      "lastAccessed": 1776406641402,
       "type": "directory"
     },
     {
       "path": "scripts/smart-autopush.sh",
       "accessCount": 1,
       "lastAccessed": 1776398542622,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/Favicon.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776406747956,
+      "type": "file"
+    },
+    {
+      "path": "astro/public",
+      "accessCount": 1,
+      "lastAccessed": 1776406760163,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776406778673,
       "type": "file"
     }
   ],

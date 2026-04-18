@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"./scripts/smart-autopush.sh \\\"feat(favicon): restore random sprite from CDN with lotad fallback\\\"\",\"timeout\":60000,\"description\":\"Auto-push favicon changes with semantic message\"}",
-  "error": "Exit code 1\n❌ 目录不存在: feat(favicon): restore random sprite from CDN with lotad fallback",
-  "timestamp": "2026-04-17T04:02:18.798Z",
-  "retry_count": 2
-}

@@ -70,6 +70,16 @@
 /* Global CSS - Minimal Reset & Base Styles */
 /* Design tokens now live in @theme block above */
 
+/* Keyboard focus indicator */
+:focus-visible {
+  outline: 2px solid var(--color-link-primary);
+  outline-offset: 2px;
+}
+
+html.dark :focus-visible {
+  outline-color: var(--color-link-dark);
+}
+
 /* ===== Base Styles ===== */
 html {
   scroll-behavior: smooth;

@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git add astro/public/manifest.json astro/src/layouts/BaseLayout.astro astro/src/layouts/CVLayout.astro astro/public/favicon.svg astro/public/images/favicon.ico astro/public/images/favicon-...",
-  "error": "Exit code 128\n警告：无法打开目录 'astro/astro/': No such file or directory\n致命错误：路径规格 'astro/public/manifest.json' 未匹配任何文件",
-  "timestamp": "2026-04-17T04:12:55.303Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"git checkout -- src/components/AuthorProfile.astro src/assets/avatar.png\",\"description\":\"Restore AuthorProfile and avatar image to HEAD state\"}",
+  "error": "Exit code 1\n错误：路径规格 'src/assets/avatar.png' 未匹配任何 Git 已知文件",
+  "timestamp": "2026-04-17T06:51:47.659Z",
+  "retry_count": 4
 }

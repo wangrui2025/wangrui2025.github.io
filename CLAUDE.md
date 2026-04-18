@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 请参考
+
+请先阅读 `~/.claude/CLAUDE.md` 获得通用知识。
+
 ## Project Overview
 
 This is an Astro-based academic personal homepage. The site is deployed directly to GitHub Pages.
