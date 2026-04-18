@@ -4,7 +4,6 @@
     var link = document.getElementById('pokemon-favicon');
     if (!link) return;
     var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json';
-    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public';
 
     fetch(MANIFEST_URL)
       .then(function(res) { return res.json(); })
@@ -13,16 +12,12 @@
         if (sets.length === 0) throw new Error('No icon sets');
         var set = sets[Math.floor(Math.random() * sets.length)];
         var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
-        link.href = CDN_BASE + icon.url;
+        // cdnBase already includes commit SHA — fully immutable, no CDN cache issues
+        link.href = icon.url;
       })
       .catch(function() {
-        // Fallback to legacy single-icon approach
-        fetch(CDN_BASE + '/favicons/index.json')
-          .then(function(res) { return res.json(); })
-          .then(function(icons) {
-            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
-            link.href = CDN_BASE + '/favicons/' + randomIcon;
-          });
+        // Ultimate fallback — use a hardcoded reliable icon
+        link.href = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/pikachu.png';
       });
   })();
 </script>
