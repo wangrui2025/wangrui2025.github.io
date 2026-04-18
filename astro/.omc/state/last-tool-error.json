@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025/wangrui2025.github.io && git push 2>&1\",\"description\":\"Retry push for parent site\"}",
-  "error": "Exit code 128\nConnection closed by 198.18.20.230 port 22\r\n致命错误：无法读取远程仓库。\n\n请确认您有正确的访问权限并且仓库存在。",
-  "timestamp": "2026-04-18T08:55:29.967Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"curl -sI 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/beldum.png' | grep -E 'content-length|content-type'\"}",
+  "error": "Exit code 2\nrg: error parsing flag -E: grep config error: unknown encoding: content-length|content-type",
+  "timestamp": "2026-04-18T12:08:44.742Z",
+  "retry_count": 6
 }
