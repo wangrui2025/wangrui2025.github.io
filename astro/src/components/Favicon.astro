@@ -3,15 +3,26 @@
   (function() {
     var link = document.getElementById('pokemon-favicon');
     if (!link) return;
-    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons';
-    fetch(CDN_BASE + '/index.json')
+    var MANIFEST_URL = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/icon-manifest.json';
+    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public';
+
+    fetch(MANIFEST_URL)
       .then(function(res) { return res.json(); })
-      .then(function(icons) {
-        var randomIcon = icons[Math.floor(Math.random() * icons.length)];
-        link.href = CDN_BASE + '/' + randomIcon;
+      .then(function(manifest) {
+        var sets = Object.values(manifest.iconSets);
+        if (sets.length === 0) throw new Error('No icon sets');
+        var set = sets[Math.floor(Math.random() * sets.length)];
+        var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
+        link.href = CDN_BASE + icon.url;
       })
       .catch(function() {
-        link.href = CDN_BASE + '/lotad.png';
+        // Fallback to legacy single-icon approach
+        fetch(CDN_BASE + '/favicons/index.json')
+          .then(function(res) { return res.json(); })
+          .then(function(icons) {
+            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            link.href = CDN_BASE + '/favicons/' + randomIcon;
+          });
       });
   })();
 </script>
