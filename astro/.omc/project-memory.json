@@ -198,8 +198,14 @@
     },
     {
       "path": "src/styles/global.css",
+      "accessCount": 16,
+      "lastAccessed": 1776599975881,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/design.astro",
       "accessCount": 13,
-      "lastAccessed": 1776594499104,
+      "lastAccessed": 1776599997679,
       "type": "file"
     },
     {
@@ -218,12 +224,6 @@
       "path": "src/layouts/BaseLayout.astro",
       "accessCount": 11,
       "lastAccessed": 1776514915794,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/design.astro",
-      "accessCount": 10,
-      "lastAccessed": 1776595411375,
       "type": "file"
     },
     {
