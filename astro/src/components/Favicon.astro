@@ -42,7 +42,7 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
         if (allowedSets.length === 0) throw new Error('No allowed icon sets');
         var set = allowedSets[Math.floor(Math.random() * allowedSets.length)];
         var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
-        link.href = icon.url;
+        link.href = icon.url + '?t=' + Date.now();
       })
       .catch(function() {
         // Keep default Lotad on error

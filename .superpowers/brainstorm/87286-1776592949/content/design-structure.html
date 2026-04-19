@@ -1,0 +1,38 @@
+<h2>内容结构怎么组织？</h2>
+<p class="subtitle">技术 + 设计双轨的内容组织方式</p>
+
+<div class="section">
+<p>双轨意味着要同时覆盖两个维度：</p>
+<ul style="margin-left: 20px; margin-top: 8px;">
+  <li><strong>设计决策</strong>：字体选择、颜色系统、间距逻辑、视觉层次</li>
+  <li><strong>技术决策</strong>：为什么选 Astro / Tailwind v4、FOUC 处理、CDN 策略</li>
+</ul>
+</div>
+
+<h3>两种组织方式</h3>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>按决策类型分（当前方式）</h3>
+      <p>Philosophy / Tokens / Pages / Components / Timeline / Notes</p>
+      <p style="margin-top: 8px; color: #666;">技术决策散落在各个 section 里，不容易看出因果关系。</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>按"决策-结果"分组（新方式）</h3>
+      <p>每个大决策单独一个区块：</p>
+      <ul style="margin-top: 8px; margin-left: 16px;">
+        <li>🎯 <strong>字体系统</strong>：为什么选 Source Serif + Inter？（设计 Why）<br/>怎么实现的？（技术 How）</li>
+        <li>🎯 <strong>颜色系统</strong>：为什么用 #c96442 做 accent？<br/>Tailwind v4 怎么配置的？</li>
+        <li>🎨 <strong>暗色模式</strong>：为什么自建而不套用系统？<br/>FOUC 怎么处理的？</li>
+        <li>⚡ <strong>性能策略</strong>：为什么 CDN 固定 SHA？<br/>Critical CSS 内联怎么做？</li>
+      </ul>
+      <p style="margin-top: 8px; color: #666;">每个决策讲清楚 Why + How，适合深入阅读。</p>
+    </div>
+  </div>
+</div>

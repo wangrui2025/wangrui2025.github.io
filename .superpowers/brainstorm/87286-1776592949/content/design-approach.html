@@ -1,0 +1,40 @@
+<h2>Design 页面应该展示什么？</h2>
+<p class="subtitle">面向访问者解释设计决策背后的思考</p>
+
+<div class="section">
+<p>核心问题：访问者（面试官、同行、HR）看到你的网站时，应该能理解<strong>为什么</strong>你这么设计。</p>
+</div>
+
+<h3>当前 Design 页面的问题</h3>
+<p>现在只展示"是什么"（commit SHA、颜色值、组件），不展示"为什么"。访问者看到一堆颜色代码，但不知道为什么选这个颜色。</p>
+
+<h3>三种方向</h3>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>设计原理（Design Rationale）</h3>
+      <p>每个设计决策都附带 <strong>Why</strong> 说明——为什么选这个字体？为什么这个间距？为什么这个颜色？像设计文档一样，解释思考过程。</p>
+      <p class="label" style="margin-top: 8px;">类似：Stripe / Vercel 的设计系统文档</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>视觉故事（Visual Story）</h3>
+      <p>用<strong>前后对比</strong>或<strong>问题-解决方案</strong>的形式展示。比如"最初用灰色标题，但测试发现对比度不够 → 改成 #141413"。</p>
+      <p class="label" style="margin-top: 8px;">类似：案例分析 / 设计复盘</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>技术+设计双轨（Dual Track）</h3>
+      <p>一半讲设计决策（字体/颜色/布局），一半讲技术决策（Astro v6 / Tailwind v4 / FOUC 处理）。解释<strong>为什么选这个技术栈</strong>，而不只是展示代码。</p>
+      <p class="label" style="margin-top: 8px;">最全面，但内容量最大</p>
+    </div>
+  </div>
+</div>

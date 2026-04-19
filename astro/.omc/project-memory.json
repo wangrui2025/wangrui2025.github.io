@@ -209,6 +209,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/Favicon.astro",
+      "accessCount": 9,
+      "lastAccessed": 1776593864162,
+      "type": "file"
+    },
+    {
       "path": "src/content.config.ts",
       "accessCount": 7,
       "lastAccessed": 1776409120972,
@@ -224,12 +230,6 @@
       "path": "src/styles/global.css",
       "accessCount": 7,
       "lastAccessed": 1776409723520,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Favicon.astro",
-      "accessCount": 7,
-      "lastAccessed": 1776593853682,
       "type": "file"
     },
     {
