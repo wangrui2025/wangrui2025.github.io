@@ -452,6 +452,74 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       </div>
     </section>
 
+    <!-- ==================== ICONS (NEW) ==================== -->
+    <section id="icons" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Icons</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        图标选择
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么不用 emoji？</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            学术场合需要专业感。emoji 在简历、论文里显得不够严谨。但 flat SVG icon 不一样 — 它干净、现代、而且可以精确控制颜色和大小。
+          </p>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我参考了 Stripe 和 Linear 的设计系统，它们也是用自定义 SVG icon。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">图标库选择</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            我用 <strong>Lucide</strong> 作为主要图标库。它是 Feather Icons 的延续，风格一致、选择丰富、而且是 MIT 许可。
+          </p>
+          <div class="flex items-center gap-6 text-[var(--color-text-secondary)]">
+            <span class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">Lucide</span>
+            <span class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">Tabler</span>
+            <span class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">Academicons</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CV (NEW) ==================== -->
+    <section id="cv" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">CV</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        简历设计
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么用 JSON 而不是数据库？</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            我的简历数据全部存在 JSON 文件里，通过 Astro Content Collections 读取。这样做的好处是：
+          </p>
+          <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-2 ml-4">
+            <li>• Git 追踪历史，版本控制无压力</li>
+            <li>• 不需要数据库，零运维</li>
+            <li>• 静态生成，访问速度极快</li>
+            <li>• Zod schema 验证，数据结构有保障</li>
+          </ul>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">模板选择</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我参考了 여러 学术个人网站模板，最后选择了简洁的分栏布局。左侧是基本信息（教育、联系），右侧是详细信息（论文、项目）。这样面试官可以快速扫过重点。
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== TIMELINE ==================== -->
     <section id="timeline" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
       <div class="flex items-baseline gap-6 mb-12">
