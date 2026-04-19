@@ -113,11 +113,21 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
       <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
-        设计原则
+        创作理念
       </h2>
 
+      <!-- Intro -->
+      <div class="max-w-3xl mb-16">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed font-serif">
+            我做这个网站的时候在想：<strong class="text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">首页</strong>是给所有人看的，要干净、要快、要让人舒服。
+            但如果有面试官、同行、或者对设计感兴趣的人想知道<strong class="text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">为什么</strong>这样设计，这里就是答案。
+          </p>
+        </div>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
+        <!-- Card 1: SVG Icons -->
         <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
           <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative">
@@ -126,9 +136,12 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">学术性与个人风格的平衡</h3>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我为什么不用 emoji？</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              学术主页需要专业、克制，但又要有个性。emoji 图标在学术场合不够严谨，改用 SVG icon。
+              学术场合需要专业感。emoji 在简历、论文里显得不够严谨。但 flat SVG icon 不一样 — 它干净、现代、而且可以精确控制颜色和大小。
+            </p>
+            <p class="text-xs text-[var(--color-text-secondary)] italic mb-4">
+              我参考了 Stripe 和 Linear 的设计系统，它们也是用自定义 SVG icon。
             </p>
             <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
               <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">6b65e397</code>
@@ -137,7 +150,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2: No FOUC -->
         <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
           <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative">
@@ -146,9 +159,12 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">性能优先，无 FOUC</h3>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我遇到过 FOUC 问题</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              Tailwind v4 + Vite 将 utility CSS 输出到外部文件。Critical CSS 内联到 HTML head，防止样式闪烁。
+              Tailwind v4 把 CSS 拆到外部文件，字体加载时会出现闪烁。解决方案是把关键 CSS 内联到 HTML head，这样页面打开的第一瞬间就是正确的样式。
+            </p>
+            <p class="text-xs text-[var(--color-text-secondary)] italic mb-4">
+              这不是显而易见的解决方案 — 我花了很长时间才理解问题的根因。
             </p>
             <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
               <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">bd934e8ccf2f</code>
@@ -157,7 +173,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3: Live Data -->
         <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
           <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative">
@@ -166,9 +182,12 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">内容即接口</h3>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我不想手动更新引用数</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
-              学术统计不是静态数字，通过 API 实时拉取。引用数、h-index 自动更新，不手动维护。
+              学术主页最麻烦的就是每年更新引用数。我用 API 实时拉取 Google Scholar / OpenAlex 数据，永远不需要手动改。
+            </p>
+            <p class="text-xs text-[var(--color-text-secondary)] italic mb-4">
+              这是懒人解决方案，但懒人解决方案往往也是最好的方案。
             </p>
             <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
               <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">80a710ed1ccc</code>
@@ -179,8 +198,262 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       </div>
     </section>
 
-    <!-- ==================== TOKENS ==================== -->
-    <section id="tokens" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+    <!-- ==================== TYPOGRAPHY (NEW) ==================== -->
+    <section id="typography" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Typography</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        字体系统
+      </h2>
+
+      <div class="space-y-12">
+        <!-- Source Serif -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-serif text-2xl text-[var(--color-paper-accent)]">Aa</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">Source Serif — 标题字体</h3>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                我选择 Source Serif 做标题，是因为它有<strong>学术感但不死板</strong>。相比 Times New Roman，Source Serif 的曲线更柔和，适合展示论文标题。
+              </p>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                它和 Inter 形成良好对比 — 一个有人文的温度，一个干净现代。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inter -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-sans text-2xl text-[var(--color-paper-accent)]">Aa</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">Inter — 正文字体</h3>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                Inter 是目前最流行的工作台字体。它在屏幕上的可读性极佳，而且有大量的 weight 可选（从 Thin 到 Black）。
+              </p>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                我用 Inter 做正文，配合 Source Serif 做标题，形成「古典 + 现代」的对比。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COLOR (NEW) ==================== -->
+    <section id="color" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Color</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        颜色系统
+      </h2>
+
+      <div class="space-y-12">
+        <!-- Accent Color -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-[#c96442] flex items-center justify-center flex-shrink-0">
+              <span class="text-white font-mono text-sm">#c96442</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#c96442 — 我为什么选这个橙褐色？</h3>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                它足够醒目来标记重点，但<strong>不像红色那么侵略性</strong>。我在学术场合试过，面试官会注意到但不会觉得刺眼。
+              </p>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                如果你仔细看，Google Scholar 的链接也是类似的暖色调。我没有刻意模仿，但最后的结果是收敛的。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Background -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-[#f5f4ed] border border-[var(--color-border-primary)] flex items-center justify-center flex-shrink-0">
+              <span class="text-[var(--color-text-secondary)] font-mono text-xs">#f5f4ed</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#f5f4ed — 米白背景</h3>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                不同于纯白，这个颜色更温和。配合 Source Serif 字体有书卷气，而且对眼睛更友好。
+              </p>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                暗黑模式下我直接用接近黑的黑 (#141413)，而不是纯黑，这样对比度更舒适。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SPACING (NEW) ==================== -->
+    <section id="spacing" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Spacing</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        间距与层次
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">标题用大字号</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            在信息流里，标题首先被扫过。大字号让读者一眼就能找到他们感兴趣的部分。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">段落之间留足够空间</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            让读者有呼吸感，而不是被文字墙压住。这不是什么高深的设计理论，就是最基本的人体工程学。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">小标题负责引导视线</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            好的小标题是迷你摘要，读者扫一眼就知道这部分在讲什么，要不要仔细读。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DARK MODE (NEW) ==================== -->
+    <section id="dark-mode" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Dark Mode</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        暗黑模式
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么自建而不是套系统？</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我想完全控制颜色映射。系统暗黑模式是「一键反色」，但我需要精细控制每个颜色的明暗关系，让暗黑模式的观感同样精致。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">FOUC 处理</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            暗黑模式的 FOUC 最烦人 — 页面打开时是亮色，闪烁一下变成暗黑。解决方案是：在 HTML head 里用内联脚本先设置 dark class，再加载 CSS。这样页面从第一帧就是正确的颜色。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECH STACK (NEW) ==================== -->
+    <section id="tech-stack" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Tech Stack</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        技术选型
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Astro — 为什么选它？</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            静态站点，零 JavaScript 输出（除了必要的交互），GitHub Pages 原生支持。Astro 的 islands 架构让我可以在需要时使用 React/Vue，而不需要全量引入。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Tailwind v4 — 升级背后的故事</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            v4 完全抛弃了 config 文件，theme 配置全部迁移到 CSS @theme 块。一开始我觉得这很反直觉，但后来发现这样更符合 CSS 原生的工作方式。
+          </p>
+          <p class="text-xs text-[var(--color-text-secondary)] italic mt-3">
+            迁移过程中踩了不少坑，比如 darkMode 的实现方式完全不同了。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PERFORMANCE (NEW) ==================== -->
+    <section id="performance" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Performance</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        性能策略
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CDN 固定 SHA</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我用 jsDelivr 加载外部资源，但它用 @main 标签有缓存问题。解决方案是固定到特定 commit SHA，这样每次部署都是确定的，不会出现「本地正常但线上异常」的情况。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Critical CSS 内联</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            Tailwind v4 把 CSS 拆到外部文件会造成 FOUC。我的解决方案是用 post-build 脚本把关键 CSS 内联到 HTML head，这样首屏渲染从第一帧就是正确的。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAVICON (NEW) ==================== -->
+    <section id="favicon" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Favicon</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        Favicon 设计
+      </h2>
+
+      <div class="space-y-8">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">灵感来源</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我做了 sprites-gallery 宝可梦图鉴项目后，想在个人网站也加点个人特色。favicon 是访客每次刷新都可能看到的东西，比 logo 更频繁。
+          </p>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么是 Smeargle？</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            800+ 精灵里我选 Smeargle，因为它是一只「画家精灵」— 会用刷子画画。这完美契合「创作手记」的主题。
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png" alt="Smeargle favicon" class="w-16 h-16 rounded-lg" />
+            <p class="text-xs text-[var(--color-text-secondary)]">Lotad 是默认随机 favicon，Smeargle 是 Design 页面的固定 favicon</p>
+          </div>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">技术实现</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            我用 <code class="text-xs bg-[var(--color-paper-accent)]/10 px-1 py-0.5 rounded">fixedFavicon</code> prop 控制。在 BaseLayout 里传 <code class="text-xs bg-[var(--color-paper-accent)]/10 px-1 py-0.5 rounded">fixedFavicon=true</code> 给 Design 页面，所有 icon link 都指向 Smeargle PNG。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TIMELINE ==================== -->
+    <section id="timeline" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
       <div class="flex items-baseline gap-6 mb-12">
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Design Tokens</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
