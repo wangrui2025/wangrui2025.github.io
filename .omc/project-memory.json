@@ -89,14 +89,14 @@
   "hotPaths": [
     {
       "path": "astro/src/pages/design.astro",
-      "accessCount": 40,
-      "lastAccessed": 1776595680360,
+      "accessCount": 48,
+      "lastAccessed": 1776595919441,
       "type": "file"
     },
     {
       "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 10,
-      "lastAccessed": 1776595578534,
+      "accessCount": 14,
+      "lastAccessed": 1776595815105,
       "type": "directory"
     },
     {
@@ -106,22 +106,40 @@
       "type": "file"
     },
     {
+      "path": "astro/src/layouts/HomepageLayout.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776595870086,
+      "type": "file"
+    },
+    {
       "path": "astro/public/slides.html",
       "accessCount": 5,
       "lastAccessed": 1776406806274,
       "type": "file"
     },
     {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 5,
+      "lastAccessed": 1776595835943,
+      "type": "file"
+    },
+    {
       "path": "astro/public/sw.js",
-      "accessCount": 3,
-      "lastAccessed": 1776305838590,
+      "accessCount": 5,
+      "lastAccessed": 1776595849026,
       "type": "file"
     },
     {
       "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1776593807144,
+      "accessCount": 4,
+      "lastAccessed": 1776595716763,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/utils/structuredData.ts",
+      "accessCount": 3,
+      "lastAccessed": 1776595875521,
+      "type": "file"
     },
     {
       "path": "scripts/smart-autopush.sh",
@@ -134,12 +152,6 @@
       "accessCount": 1,
       "lastAccessed": 1776406760163,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/layouts/HomepageLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776406778673,
-      "type": "file"
     },
     {
       "path": "astro/src",
@@ -166,9 +178,27 @@
       "type": "file"
     },
     {
-      "path": "astro/astro.config.mjs",
+      "path": "astro",
       "accessCount": 1,
-      "lastAccessed": 1776595578648,
+      "lastAccessed": 1776595722772,
+      "type": "directory"
+    },
+    {
+      "path": "astro/src/content/papers/gdkvm.json",
+      "accessCount": 1,
+      "lastAccessed": 1776595735259,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/content/papers/osa.json",
+      "accessCount": 1,
+      "lastAccessed": 1776595735284,
+      "type": "file"
+    },
+    {
+      "path": "astro/src/components/PaperCard.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776595735338,
       "type": "file"
     }
   ],

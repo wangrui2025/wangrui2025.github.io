@@ -26,41 +26,43 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: cache-first for static assets, stale-while-revalidate for navigation
+// Fetch: network-first for HTML pages (fresh content), cache-first for immutable static assets
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Stale-while-revalidate for navigation requests
+  // Network-first for navigation/HTML requests (always get fresh content)
   if (request.mode === 'navigate') {
     event.respondWith(
-      caches.open(CACHE_NAME).then((cache) =>
-        cache.match(request).then((cached) => {
-          const fetched = fetch(request)
-            .then((response) => {
-              if (response.ok) cache.put(request, response.clone());
-              return response;
-            })
-            .catch(() => cached);
-          return cached || fetched;
-        })
-      )
+      fetch(request).catch(() => caches.match(request) ?? caches.match('/'))
     );
     return;
   }
 
-  // Cache-first for static assets (same-origin only)
+  // Cache-first for static assets with immutable hint (same-origin only)
+  // Static assets: JS, CSS, images, fonts — cached aggressively since they have content-hash names
   if (url.origin === location.origin) {
+    const isStaticAsset =
+      /\.(js|css|woff2?|ttf|eot|ico|png|jpg|jpeg|webp|svg|avif|json|xml|woff)(\?.*)?$/.test(url.pathname);
+
+    if (isStaticAsset) {
+      event.respondWith(
+        caches.match(request).then((cached) => {
+          if (cached) return cached;
+          return fetch(request).then((response) => {
+            if (response.ok) {
+              caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+            }
+            return response;
+          });
+        })
+      );
+      return;
+    }
+
+    // For other same-origin requests (e.g., data JSON), network-first
     event.respondWith(
-      caches.match(request).then((cached) => {
-        if (cached) return cached;
-        return fetch(request).then((response) => {
-          if (response.ok) {
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
-          }
-          return response;
-        });
-      })
+      fetch(request).catch(() => caches.match(request))
     );
   }
 });

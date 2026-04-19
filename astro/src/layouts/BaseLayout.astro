@@ -43,7 +43,8 @@ const personSchema = getPersonSchema({
     "https://github.com/wangrui2025",
     "https://orcid.org/0009-0001-0278-1985"
   ],
-  description: "M.S. Candidate at Shenzhen University"
+  description: "M.S. Candidate at Shenzhen University",
+  jobTitle: "M.S. Candidate"
 });
 
 ---
@@ -154,6 +155,8 @@ const personSchema = getPersonSchema({
 
     <!-- Schema.org Person Structured Data -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+
+    <slot name="head-extras" />
   </head>
 
   <body id="person" class="bg-bg-primary text-text-primary dark:bg-bg-dark dark:text-text-dark">

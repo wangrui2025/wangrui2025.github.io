@@ -203,6 +203,12 @@
       "type": "file"
     },
     {
+      "path": "src/layouts/HomepageLayout.astro",
+      "accessCount": 12,
+      "lastAccessed": 1776595893087,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 11,
       "lastAccessed": 1776409129627,
@@ -221,6 +227,12 @@
       "type": "file"
     },
     {
+      "path": "src/pages/slides.astro",
+      "accessCount": 10,
+      "lastAccessed": 1776595761305,
+      "type": "file"
+    },
+    {
       "path": "src/components/Favicon.astro",
       "accessCount": 9,
       "lastAccessed": 1776593864162,
@@ -230,12 +242,6 @@
       "path": "src/components/PaperCard.astro",
       "accessCount": 9,
       "lastAccessed": 1776594505341,
-      "type": "file"
-    },
-    {
-      "path": "src/layouts/HomepageLayout.astro",
-      "accessCount": 9,
-      "lastAccessed": 1776594550356,
       "type": "file"
     },
     {
@@ -287,12 +293,6 @@
       "type": "file"
     },
     {
-      "path": "src/pages/slides.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776595690298,
-      "type": "file"
-    },
-    {
       "path": "src/components",
       "accessCount": 3,
       "lastAccessed": 1776409145319,
@@ -332,6 +332,12 @@
       "path": "package.json",
       "accessCount": 2,
       "lastAccessed": 1776594422183,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/[lang]/slides.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776595818477,
       "type": "file"
     },
     {

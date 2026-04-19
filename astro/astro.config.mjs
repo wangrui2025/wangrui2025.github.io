@@ -7,9 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://wangrui2025.github.io',
   integrations: [sitemap(), astroIcon()],
-  prefetch: true,
+  prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
   experimental: {
-    rustCompiler: true,
+    rustCompiler: false, // Disabled: causes TS errors with $$...$$ math blocks
   },
   output: 'static',
   i18n: {

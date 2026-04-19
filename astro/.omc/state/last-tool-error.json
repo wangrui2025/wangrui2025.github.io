@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"ls dist/cv/ dist/slides/ 2>/dev/null\"}",
-  "error": "Exit code 1",
-  "timestamp": "2026-04-19T10:44:22.179Z",
-  "retry_count": 4
+  "tool_input_preview": "{\"command\":\"npm run build 2>&1 | grep -E \\\"(Complete|failed|pages built)\\\"\"}",
+  "error": "Exit code 2\nrg: error parsing flag -E: grep config error: unknown encoding: (Complete|failed|pages built)",
+  "timestamp": "2026-04-19T10:49:06.149Z",
+  "retry_count": 2
 }

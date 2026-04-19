@@ -9,6 +9,7 @@ import CvHonorItem from '../components/CvHonorItem.astro';
 import { Icon } from 'astro-icon/components';
 import { getEntry, getCollection } from 'astro:content';
 import { TAG_URLS } from '../utils/constants';
+import { getPublicationsSchema } from '../utils/structuredData';
 
 interface Props {
   lang: 'en' | 'zh';
@@ -36,6 +37,22 @@ const undergraduateHonors = [...honorsData.data.undergraduate].sort((a, b) => a.
 const allPapers = await getCollection('papers');
 const sortedPapers = [...allPapers].sort(
   (a, b) => b.data.date.localeCompare(a.data.date)
+);
+
+// Build publications schema for SEO
+const siteUrl = Astro.site ?? 'https://wangrui2025.github.io';
+const publicationsSchema = getPublicationsSchema(
+  sortedPapers.map((p) => ({
+    id: p.id,
+    date: p.data.date,
+    venue: p.data.venue,
+    venue_full: p.data.venue_full,
+    title: p.data[lang].title,
+    authors: p.data[lang].authors,
+    arxiv: p.data.arxiv,
+    project: p.data.project,
+  })),
+  siteUrl.toString()
 );
 
 const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
@@ -200,4 +217,11 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
 
   <!-- Google Scholar Badge -->
   <ScholarBadge citations={citedBy} />
+
+  <!-- Publications Schema.org Structured Data -->
+  <Fragment slot="head-extras">
+    {publicationsSchema.map((schema) => (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+    ))}
+  </Fragment>
 </BaseLayout>
