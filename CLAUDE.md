@@ -10,6 +10,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is an Astro-based academic personal homepage. The site is deployed directly to GitHub Pages.
 
+## ⚠️ 两个项目区分（必须先确认）
+
+| 项目 | URL | 功能 |
+|------|-----|------|
+| **主站（当前项目）** | wangrui2025.github.io/ | 王锐个人主页，有 CV/Publications 等 |
+| **sprites-gallery** | wangrui2025.github.io/sprites-gallery/ | 宝可梦图鉴，grid 展示所有 sprite 来源 |
+
+**Favicon 行为（两个项目相同）：**
+
+| 属性 | 值 |
+|------|-----|
+| 默认 favicon | Lotad (静态 HTML link) |
+| 刷新行为 | 随机 regular + shiny (2665个) |
+| 实现方式 | fetch manifest.json → 随机选择 |
+| 无 localStorage | 每次都是真随机 |
+
+**主站关键文件：**
+- `src/components/Favicon.astro` — 动态随机 favicon 逻辑
+- `public/favicons/` — 静态 Lotad 图标（astro-icon 覆盖后被 post-build 脚本恢复）
+- `scripts/inline-critical-css.mjs` — post-build 恢复 Lotad 图标
+
 ## Common Commands
 
 ```bash
