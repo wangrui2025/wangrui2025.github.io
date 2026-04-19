@@ -23,14 +23,30 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
     var link = document.getElementById('pokemon-favicon');
     if (!link) return;
 
-    // Default: Lotad (set in HTML link href)
-    var DEFAULT_FAVICON = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/lotad.png';
-    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json?t=' + Date.now();
-
     // If page has data-fixed-favicon, skip randomization and use fixed Smeargle
     if (document.documentElement.hasAttribute('data-fixed-favicon')) {
       link.href = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png';
       return;
+    }
+
+    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json?t=' + Date.now();
+
+    // Use fetch + blob URL to bypass CDN caching
+    function setFaviconFromUrl(url) {
+      fetch(url + '?_=' + Date.now(), { cache: 'no-store' })
+        .then(function(res) { return res.blob(); })
+        .then(function(blob) {
+          var blobUrl = URL.createObjectURL(blob);
+          // Revoke old blob URL if exists
+          var oldHref = link.getAttribute('data-blob-url');
+          if (oldHref) URL.revokeObjectURL(oldHref);
+          link.setAttribute('data-blob-url', blobUrl);
+          link.href = blobUrl;
+        })
+        .catch(function() {
+          // Fallback: direct URL with timestamp
+          link.href = url + '?_=' + Date.now();
+        });
     }
 
     // Always random from regular + shiny on every page load
@@ -42,7 +58,7 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
         if (allowedSets.length === 0) throw new Error('No allowed icon sets');
         var set = allowedSets[Math.floor(Math.random() * allowedSets.length)];
         var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
-        link.href = icon.url + '?t=' + Date.now();
+        setFaviconFromUrl(icon.url);
       })
       .catch(function() {
         // Keep default Lotad on error

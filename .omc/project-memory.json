@@ -94,15 +94,15 @@
       "type": "directory"
     },
     {
-      "path": "astro/public/slides.html",
-      "accessCount": 5,
-      "lastAccessed": 1776406806274,
+      "path": "astro/src/components/Favicon.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776594043289,
       "type": "file"
     },
     {
-      "path": "astro/src/components/Favicon.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776513905541,
+      "path": "astro/public/slides.html",
+      "accessCount": 5,
+      "lastAccessed": 1776406806274,
       "type": "file"
     },
     {
@@ -116,6 +116,12 @@
       "accessCount": 3,
       "lastAccessed": 1776593807144,
       "type": "directory"
+    },
+    {
+      "path": "astro/src/pages/design.astro",
+      "accessCount": 2,
+      "lastAccessed": 1776593927080,
+      "type": "file"
     },
     {
       "path": "scripts/smart-autopush.sh",
@@ -145,6 +151,12 @@
       "path": "docs/superpowers/specs/2026-04-19-design-page-design.md",
       "accessCount": 1,
       "lastAccessed": 1776593836883,
+      "type": "file"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-04-19-design-page-redesign.md",
+      "accessCount": 1,
+      "lastAccessed": 1776594008344,
       "type": "file"
     }
   ],
