@@ -94,16 +94,16 @@
       "type": "file"
     },
     {
+      "path": "astro/src/components/Favicon.astro",
+      "accessCount": 15,
+      "lastAccessed": 1776596598683,
+      "type": "file"
+    },
+    {
       "path": "astro/src/layouts/BaseLayout.astro",
       "accessCount": 14,
       "lastAccessed": 1776595815105,
       "type": "directory"
-    },
-    {
-      "path": "astro/src/components/Favicon.astro",
-      "accessCount": 14,
-      "lastAccessed": 1776596466333,
-      "type": "file"
     },
     {
       "path": "astro/src/layouts/HomepageLayout.astro",
