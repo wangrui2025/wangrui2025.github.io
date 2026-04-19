@@ -1,0 +1,740 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Favicon from '../components/Favicon.astro';
+
+const title = 'Design System — Rui Wang';
+const description = 'wangrui2025.github.io 的设计决策与实现备忘';
+---
+
+<BaseLayout title={title} description={description} lang="en">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 py-32">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 bg-[var(--color-paper-accent)] blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-5 bg-[var(--color-scholar-icon)] blur-3xl"></div>
+    </div>
+    <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-6">Design System</p>
+    <h1 class="text-5xl md:text-6xl font-bold font-serif text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-6 leading-tight">
+      设计规范
+    </h1>
+    <p class="text-lg text-[var(--color-text-secondary)] dark:text-[var(--color-text-secondary-dark)] max-w-xl mb-16">
+      wangrui2025.github.io 的设计决策与实现备忘
+    </p>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-text-secondary)]">
+      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-[var(--color-text-secondary)] to-transparent animate-bounce"></div>
+    </div>
+  </section>
+
+  <!-- ==================== TOC ==================== -->
+  <nav class="sticky top-0 z-50 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-bg-primary)]/80 dark:bg-[var(--color-bg-dark)]/80 backdrop-blur">
+    <div class="max-w-4xl mx-auto px-6">
+      <ul class="flex gap-6 overflow-x-auto py-4 text-sm">
+        <li><a href="#philosophy" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Philosophy</a></li>
+        <li><a href="#tokens" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Tokens</a></li>
+        <li><a href="#pages" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Pages</a></li>
+        <li><a href="#components" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Components</a></li>
+        <li><a href="#timeline" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Timeline</a></li>
+        <li><a href="#notes" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Notes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- ==================== PHILOSOPHY ==================== -->
+    <section id="philosophy" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Philosophy</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">设计原则</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+          <div class="text-4xl mb-4">🎓</div>
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">学术性与个人风格的平衡</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            学术主页需要专业、克制，但又要有个性。emoji 图标在学术场合不够严谨，改用 SVG icon。
+          </p>
+          <code class="text-xs text-[var(--color-link-primary)] break-all">6b65e397</code>
+          <p class="text-xs text-[var(--color-text-secondary)] mt-1">replace emojis with flat SVG icons</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">性能优先，无 FOUC</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            Tailwind v4 + Vite 将 utility CSS 输出到外部文件。Critical CSS 内联到 HTML head，防止样式闪烁。
+          </p>
+          <code class="text-xs text-[var(--color-link-primary)] break-all">bd934e8ccf2f</code>
+          <p class="text-xs text-[var(--color-text-secondary)] mt-1">move theme script before CSS to prevent FOUC</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">内容即接口</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            学术统计不是静态数字，通过 API 实时拉取。引用数、h-index 自动更新，不手动维护。
+          </p>
+          <code class="text-xs text-[var(--color-link-primary)] break-all">80a710ed1ccc</code>
+          <p class="text-xs text-[var(--color-text-secondary)] mt-1">migrate from Google Scholar to OpenAlex API</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TOKENS ==================== -->
+    <section id="tokens" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Design Tokens</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">设计令牌</h2>
+
+      <!-- Colors -->
+      <div class="mb-16">
+        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">颜色</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Light theme -->
+          <div>
+            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Light</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#f5f4ed]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">bg-primary</p>
+                  <p class="text-[var(--color-text-secondary)]">#f5f4ed</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#141413]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">heading</p>
+                  <p class="text-[var(--color-text-secondary)]">#141413</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#c96442]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">link</p>
+                  <p class="text-[var(--color-text-secondary)]">#c96442</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#f0eee6]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">border</p>
+                  <p class="text-[var(--color-text-secondary)]">#f0eee6</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#5e5d59]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">text-secondary</p>
+                  <p class="text-[var(--color-text-secondary)]">#5e5d59</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Dark theme -->
+          <div>
+            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Dark</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#141413]"></div>
+                <div class="text-xs">
+                  <p class="font-mono text-[var(--color-text-dark)]">bg-dark</p>
+                  <p class="text-[var(--color-text-secondary-dark)]">#141413</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#e8e8e8]"></div>
+                <div class="text-xs">
+                  <p class="font-mono text-[var(--color-text-dark)]">heading-dark</p>
+                  <p class="text-[var(--color-text-secondary-dark)]">#e8e8e8</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#d97757]"></div>
+                <div class="text-xs">
+                  <p class="font-mono text-[var(--color-text-dark)]">link-dark</p>
+                  <p class="text-[var(--color-text-secondary-dark)]">#d97757</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#30302e]"></div>
+                <div class="text-xs">
+                  <p class="font-mono text-[var(--color-text-dark)]">border-dark</p>
+                  <p class="text-[var(--color-text-secondary-dark)]">#30302e</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#b0aea5]"></div>
+                <div class="text-xs">
+                  <p class="font-mono text-[var(--color-text-dark)]">text-sec-dark</p>
+                  <p class="text-[var(--color-text-secondary-dark)]">#b0aea5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Brand colors -->
+          <div>
+            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Brand</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#c96442]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">paper-accent</p>
+                  <p class="text-[var(--color-text-secondary)]">#c96442</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#4A90E2]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">scholar</p>
+                  <p class="text-[var(--color-text-secondary)]">#4A90E2</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#A6B73F]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">orcid</p>
+                  <p class="text-[var(--color-text-secondary)]">#A6B73F</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#2771B1]"></div>
+                <div class="text-xs">
+                  <p class="font-mono">openreview</p>
+                  <p class="text-[var(--color-text-secondary)]">#2771B1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tag colors -->
+          <div>
+            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Tags</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#e8dcc8] text-[#5e4a3a] flex items-center justify-center text-xs font-bold">研</div>
+                <div class="text-xs">
+                  <p class="font-mono">field-bg</p>
+                  <p class="text-[var(--color-text-secondary)]">研究领域</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#e8e6dc] text-[#4d4c48] flex items-center justify-center text-xs font-bold">技</div>
+                <div class="text-xs">
+                  <p class="font-mono">tech-bg</p>
+                  <p class="text-[var(--color-text-secondary)]">技术栈</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="mb-16">
+        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">字体</h3>
+        <div class="space-y-6">
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Serif — 标题 & 学术内容</p>
+            <p class="font-serif text-2xl text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-2">Source Serif 4 / 思源宋体</p>
+            <p class="font-serif text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] italic">Deep Learning for Computer Vision</p>
+            <p class="font-serif text-sm text-[var(--color-text-secondary)] mt-2">The quick brown fox jumps over the lazy dog. 学术主页需要专业、克制，但又要有个性。</p>
+          </div>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Sans — 正文 & UI</p>
+            <p class="font-sans text-2xl font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Inter / Inter Variable</p>
+            <p class="font-sans text-sm text-[var(--color-text-secondary)]">The quick brown fox jumps over the lazy dog. 学术主页需要专业、克制，但又要有个性。计算机视觉、深度学习、人工智能。</p>
+          </div>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Mono — 代码 & SHA</p>
+            <p class="font-mono text-sm text-[var(--color-link-primary)]">bd934e8ccf2f · 80a710ed1ccc · 3abb297646e7</p>
+            <p class="font-mono text-xs text-[var(--color-text-secondary)] mt-1">Global — &lt;Fira Code&gt;, Consolas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spacing -->
+      <div>
+        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">间距</h3>
+        <div class="space-y-3">
+          {[2, 4, 6, 8, 12, 16, 24, 32, 48].map(v => (
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-mono text-[var(--color-text-secondary)] w-12">{v}</span>
+              <div class="h-2 rounded bg-[var(--color-link-primary)]" style={`width: ${v * 4}px`}></div>
+              <span class="text-xs text-[var(--color-text-secondary)]">{v * 4}px</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGES ==================== -->
+    <section id="pages" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Page System</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">页面结构</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Home -->
+        <div>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+            <!-- Fake homepage wireframe -->
+            <div class="space-y-2">
+              <div class="h-3 w-24 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
+              <div class="h-8 w-48 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
+              <div class="h-2 w-32 rounded bg-[var(--color-text-secondary)] opacity-20"></div>
+              <div class="mt-4 space-y-1">
+                <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+                <div class="h-1.5 w-4/5 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+                <div class="h-1.5 w-3/5 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+              </div>
+              <div class="mt-3 flex gap-2">
+                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)] opacity-30"></div>
+                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)] opacity-20"></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">首页 <code class="text-xs text-[var(--color-link-primary)]">/</code></h3>
+          <p class="text-sm text-[var(--color-text-secondary)]">研究方向、论文列表、荣誉奖励、About。ScholarBadge 显示引用数 / h-index。</p>
+        </div>
+
+        <!-- CV -->
+        <div>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+            <div class="space-y-2">
+              <div class="h-3 w-20 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
+              <div class="h-6 w-40 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
+              <div class="mt-2 space-y-1">
+                <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+                <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+                <div class="h-1.5 w-4/5 rounded bg-[var(--color-paper-accent)] opacity-30"></div>
+                <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+                <div class="h-1.5 w-3/4 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+              </div>
+              <div class="mt-3 h-4 w-24 rounded bg-[var(--color-paper-accent)] opacity-20"></div>
+            </div>
+          </div>
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">简历 <code class="text-xs text-[var(--color-link-primary)]">/cv</code></h3>
+          <p class="text-sm text-[var(--color-text-secondary)]">纯 HTML 渲染，支持 PDF 导出（html2pdf.js）。固定 A4 视口，移动端可缩放。</p>
+        </div>
+
+        <!-- Slides -->
+        <div>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+            <div class="space-y-2">
+              <div class="h-6 w-full rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-10"></div>
+              <div class="h-px w-full bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
+              <div class="mt-3 space-y-1">
+                <div class="h-1.5 w-1/2 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
+                <div class="h-1 w-3/4 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
+                <div class="h-1 w-2/3 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
+              </div>
+              <div class="mt-4 grid grid-cols-3 gap-1">
+                {[1,2,3].map(() => (
+                  <div class="h-8 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">论文海报 <code class="text-xs text-[var(--color-link-primary)]">/slides</code></h3>
+          <p class="text-sm text-[var(--color-text-secondary)]">GDKVM (ICCV 2025)、OSA (arXiv 2026)。IEEE/CVPR 学术风格，Times New Roman。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPONENTS ==================== -->
+    <section id="components" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Components</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">组件规范</h2>
+
+      <!-- Favicon -->
+      <div class="mb-16">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] flex items-center justify-center">
+            <Favicon />
+          </div>
+          <div>
+            <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">Favicon 系统</h3>
+            <p class="text-sm text-[var(--color-text-secondary)]">皮卡丘图标 + sprites-gallery CDN + localStorage 持久化</p>
+          </div>
+        </div>
+
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-4">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">CDN 策略</p>
+            <code class="block text-sm font-mono text-[var(--color-link-primary)] break-all bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded">
+              https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/...
+            </code>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">默认图标</p>
+            <p class="text-sm text-[var(--color-text-secondary)]">Lotad（莲叶童子）。首次访问固定显示，刷新后从 regular/shiny 随机。</p>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">iOS 要求</p>
+            <p class="text-sm text-[var(--color-text-secondary)]">apple-touch-icon 必须不透明。iOS 用黑色填充透明像素。</p>
+          </div>
+          <div class="pt-2 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <p class="text-xs text-[var(--color-text-secondary)]">
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/5df243295fe1" target="_blank" class="text-[var(--color-link-primary)] hover:underline">5df2432</a>
+              — remove alpha channel for iOS ·
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/c3fd9f1db794" target="_blank" class="text-[var(--color-link-primary)] hover:underline">c3fd9f1</a>
+              — opaque icons with solid background
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV Paper Item -->
+      <div class="mb-16">
+        <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">CvPaperItem</h3>
+        <p class="text-sm text-[var(--color-text-secondary)] mb-6">
+          论文条目组件，展示 venue、标题、作者、链接。CVPR Logo 高度对齐是最频繁的修改点。
+        </p>
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-3">
+          <div class="flex items-center gap-3 text-sm">
+            <span class="px-2 py-0.5 rounded bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] text-[var(--color-tag-field-text)] dark:text-[var(--color-tag-field-text-dark)] text-xs font-semibold">CVPR 2026</span>
+            <span class="font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">GDKVM</span>
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)]">Rui Wang, Xxx Xxx, Xxx Xxx · Highlight</div>
+          <div class="flex gap-3 text-xs">
+            <a href="#" class="text-[var(--color-link-primary)] hover:underline">arXiv</a>
+            <a href="#" class="text-[var(--color-link-primary)] hover:underline">Project</a>
+            <span class="text-[var(--color-text-secondary)]">· ICCV 2025 oral → CVPR 2026 Highlight</span>
+          </div>
+        </div>
+        <p class="text-xs text-[var(--color-text-secondary)] mt-3">
+          <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/94775e4114b1" target="_blank" class="text-[var(--color-link-primary)] hover:underline">94775e4</a>
+          — logo full-height alignment with self-stretch py-0.5 max-h-4.5rem
+        </p>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div>
+        <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">ThemeToggle / 暗黑模式</h3>
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-4">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">Tailwind v4 dark variant</p>
+            <pre class="text-sm font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded overflow-x-auto"><code>@custom-variant dark (&:where(.dark, .dark *))</code></pre>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">JS initialization</p>
+            <pre class="text-xs font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded overflow-x-auto"><code>document.documentElement.classList.toggle('dark', theme === 'dark')</code></pre>
+          </div>
+          <div class="pt-2 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <p class="text-xs text-[var(--color-text-secondary)]">
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/b0b8e746d20d" target="_blank" class="text-[var(--color-link-primary)] hover:underline">b0b8e74</a>
+              — enable class-based dark variant in Tailwind v4
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TIMELINE ==================== -->
+    <section id="timeline" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Timeline</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">演进时间线 · 20天 / 868 commits</h2>
+
+      <div class="relative pl-8">
+        <!-- Vertical line -->
+        <div class="absolute left-3 top-0 bottom-0 w-px bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)]"></div>
+
+        <!-- W13 -->
+        <div class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
+            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W13 · 3/31</span>
+            <span class="text-xs text-[var(--color-text-secondary)]">Init & 迁移</span>
+          </div>
+          <div class="space-y-2 ml-2">
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">3abb297</code>
+              <span class="text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">d940b681</code>
+              <span class="text-[var(--color-text-secondary)]">Refactor About Me — 卡片布局</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">ee66bd63</code>
+              <span class="text-[var(--color-text-secondary)]">Add footer — "Built with Astro"</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">4fc84fa1</code>
+              <span class="text-[var(--color-text-secondary)]">DESIGN.md — 设计系统文档</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- W14 -->
+        <div class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-scholar-icon)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
+            <span class="text-xs uppercase tracking-widest text-[var(--color-scholar-icon)] font-semibold">2026-W14 · 4/6</span>
+            <span class="text-xs text-[var(--color-text-secondary)]">Scholar API 迁移</span>
+          </div>
+          <div class="space-y-2 ml-2">
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">80a710ed</code>
+              <span class="text-[var(--color-text-secondary)]">migrate from Google Scholar to OpenAlex API</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">74e56cce</code>
+              <span class="text-[var(--color-text-secondary)]">use Semantic Scholar API by arxiv ID</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">b0b8e746</code>
+              <span class="text-[var(--color-text-secondary)]">enable class-based dark variant in Tailwind v4</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">e314cf81</code>
+              <span class="text-[var(--color-text-secondary)]">upgrade to Astro v6.1.5 + pnpm + Rust compiler</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- W15 -->
+        <div class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
+            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W15 · 4/13</span>
+            <span class="text-xs text-[var(--color-text-secondary)]">现代化收敛</span>
+          </div>
+          <div class="space-y-2 ml-2">
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">f030b818</code>
+              <span class="text-[var(--color-text-secondary)]">modernize to Astro 6.x best practices</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">c33547fa</code>
+              <span class="text-[var(--color-text-secondary)]">extract sprites-gallery to standalone site</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">62a67978</code>
+              <span class="text-[var(--color-text-secondary)]">restore avatar.png from backup branch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- W16 -->
+        <div class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
+            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W16 · 4/17</span>
+            <span class="text-xs text-[var(--color-text-secondary)]">Favicon 定稿</span>
+          </div>
+          <div class="space-y-2 ml-2">
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">229db850</code>
+              <span class="text-[var(--color-text-secondary)]">add random Pokémon favicon to CV layout</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">184f55e9</code>
+              <span class="text-[var(--color-text-secondary)]">sync all PWA icons to Pokémon theme</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">8b5ae604</code>
+              <span class="text-[var(--color-text-secondary)]">unify all favicon via Favicon component</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- W17 -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-scholar-icon)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
+            <span class="text-xs uppercase tracking-widest text-[var(--color-scholar-icon)] font-semibold">2026-W17 · 4/19</span>
+            <span class="text-xs text-[var(--color-text-secondary)]">最新 · Favicon 最终修复</span>
+          </div>
+          <div class="space-y-2 ml-2">
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">5df24329</code>
+              <span class="text-[var(--color-text-secondary)]">remove alpha channel from apple-touch-icon for iOS</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">f998c162</code>
+              <span class="text-[var(--color-text-secondary)]">replace 175-line is:inline style with minimal FOUC guard</span>
+            </div>
+            <div class="text-sm">
+              <code class="text-xs text-[var(--color-link-primary)] mr-2">3f4dc0e7</code>
+              <span class="text-[var(--color-text-secondary)]">update sprites-gallery git SHA to 7cdfc19</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NOTES ==================== -->
+    <section id="notes" class="py-32">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Tech Notes</p>
+      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">技术备忘</h2>
+
+      <div class="space-y-6">
+        <!-- Tailwind v4 -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">
+            Tailwind v4 迁移
+            <span class="ml-2 text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] px-2 py-0.5 rounded">Critical</span>
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <th class="py-2 pr-4 text-[var(--color-text-secondary)] font-medium">变更项</th>
+                  <th class="py-2 pr-4 text-[var(--color-text-secondary)] font-medium">v3 写法</th>
+                  <th class="py-2 text-[var(--color-text-secondary)] font-medium">v4 写法</th>
+                </tr>
+              </thead>
+              <tbody class="text-[var(--color-text-secondary)]">
+                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <td class="py-2 pr-4 font-mono text-xs">Config</td>
+                  <td class="py-2 pr-4 font-mono text-xs">tailwind.config.mjs</td>
+                  <td class="py-2 font-mono text-xs">global.css @theme {}</td>
+                </tr>
+                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <td class="py-2 pr-4 font-mono text-xs">dark mode</td>
+                  <td class="py-2 pr-4 font-mono text-xs">darkMode: 'class'</td>
+                  <td class="py-2 font-mono text-xs">@custom-variant dark</td>
+                </tr>
+                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <td class="py-2 pr-4 font-mono text-xs">text color var</td>
+                  <td class="py-2 pr-4 font-mono text-xs">text-[--var]</td>
+                  <td class="py-2 font-mono text-xs">text-text-primary (auto)</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-4 font-mono text-xs">CSS两层结构</td>
+                  <td class="py-2 pr-4 text-xs" colspan="2">Layer1: CSS变量 → Layer2: utility class（需post-build内联）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-[var(--color-text-secondary)] mt-3">
+            <code class="text-[var(--color-link-primary)]">b0b8e746d20d</code>
+            — enable class-based dark variant
+            ·
+            <code class="text-[var(--color-link-primary)]">a18d08726c53</code>
+            — use text-hero/text-section bare utilities instead of text-[--var]
+          </p>
+        </div>
+
+        <!-- Astro v6 -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">
+            Astro v6 升级
+            <span class="ml-2 text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-tech-bg)] dark:bg-[var(--color-tag-tech-bg-dark)] px-2 py-0.5 rounded">v5 → v6</span>
+          </h3>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Content Collections</p>
+                <p class="text-[var(--color-text-secondary)] text-xs">deprecated <code class="font-mono">type: 'data'</code> → Astro 5 loaders API with <code class="font-mono">glob()</code></p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Package manager</p>
+                <p class="text-[var(--color-text-secondary)] text-xs">npm → pnpm + Rust compiler (<code class="font-mono">experimental.rustCompiler: true</code>)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Component imports</p>
+                <p class="text-[var(--color-text-secondary)] text-xs">astro:assets 替代直接 public/ 引用</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-[var(--color-text-secondary)] mt-3">
+            <code class="text-[var(--color-link-primary)]">e314cf81367a</code>
+            — perf(astro): upgrade to v6.1.5 + pnpm + Rust compiler
+          </p>
+        </div>
+
+        <!-- CI/CD -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">CI/CD 策略</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">CDN SHA 固定</p>
+              <p class="text-xs text-[var(--color-text-secondary)] mb-2">部署时将 sprites-gallery CDN URL 的 <code class="font-mono">@main</code> 替换为固定 git SHA，确保不可变缓存。</p>
+              <code class="block text-xs font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded text-[var(--color-link-primary)]">
+                @main → 7cdfc19
+              </code>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Scholar Workflow 状态</p>
+              <p class="text-xs text-[var(--color-text-secondary)]">当前 citations 硬编码为 3，API 迁移未完成（Semantic Scholar 按需查询）。</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Workflow 统计</p>
+              <div class="grid grid-cols-3 gap-4 mt-2">
+                <div class="text-center">
+                  <p class="text-2xl font-bold text-[var(--color-paper-accent)]">518</p>
+                  <p class="text-xs text-[var(--color-text-secondary)]">success (61.6%)</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-2xl font-bold text-[var(--color-text-secondary)]">248</p>
+                  <p class="text-xs text-[var(--color-text-secondary)]">cancelled (29.5%)</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-2xl font-bold text-red-500">75</p>
+                  <p class="text-xs text-[var(--color-text-secondary)]">failure (8.9%)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scholar API evolution -->
+        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
+          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">学术数据 API 演变</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 text-sm">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-xs font-bold">1</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">Google Scholar 爬虫</p>
+                <p class="text-[var(--color-text-secondary)] text-xs">已废弃 — 页面结构频繁变化，维护成本高</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/20 text-yellow-600 flex items-center justify-center text-xs font-bold">2</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">
+                  OpenAlex API — <code class="text-xs text-[var(--color-link-primary)]">80a710ed</code>
+                </p>
+                <p class="text-[var(--color-text-secondary)] text-xs">已废弃 — 排序不按引用数</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--color-scholar-icon)]/20 text-[var(--color-scholar-icon)] flex items-center justify-center text-xs font-bold">3</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">
+                  Semantic Scholar by arXiv ID — <code class="text-xs text-[var(--color-link-primary)]">74e56cce</code>
+                </p>
+                <p class="text-[var(--color-text-secondary)] text-xs">当前方案 — 直接按论文 ID 查，最准确</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 text-sm">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--color-text-secondary)]/20 text-[var(--color-text-secondary)] flex items-center justify-center text-xs font-bold">?</span>
+              <div>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">自动更新未接通</p>
+                <p class="text-[var(--color-text-secondary)] text-xs">待解决 — 为什么 cron job 没有替代手动 hardcode</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer spacer -->
+  <div class="h-32"></div>
+
+</BaseLayout>
