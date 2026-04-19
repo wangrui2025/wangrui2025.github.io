@@ -180,8 +180,8 @@
   "hotPaths": [
     {
       "path": "src",
-      "accessCount": 41,
-      "lastAccessed": 1776409846762,
+      "accessCount": 42,
+      "lastAccessed": 1776595568706,
       "type": "directory"
     },
     {
@@ -212,6 +212,12 @@
       "path": "src/layouts/BaseLayout.astro",
       "accessCount": 11,
       "lastAccessed": 1776514915794,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/design.astro",
+      "accessCount": 10,
+      "lastAccessed": 1776595411375,
       "type": "file"
     },
     {
@@ -246,8 +252,8 @@
     },
     {
       "path": "public/slides.html",
-      "accessCount": 5,
-      "lastAccessed": 1776408501469,
+      "accessCount": 6,
+      "lastAccessed": 1776595602155,
       "type": "file"
     },
     {
@@ -278,6 +284,12 @@
       "path": "src/components/CvPaperItem.astro",
       "accessCount": 4,
       "lastAccessed": 1776409825252,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/slides.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776595690298,
       "type": "file"
     },
     {
@@ -410,6 +422,12 @@
       "path": "src/components/PaperBadge.astro",
       "accessCount": 1,
       "lastAccessed": 1776409166834,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/sprites-gallery.astro",
+      "accessCount": 1,
+      "lastAccessed": 1776595550809,
       "type": "file"
     }
   ],

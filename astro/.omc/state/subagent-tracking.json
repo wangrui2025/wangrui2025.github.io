@@ -444,11 +444,13 @@
       "agent_type": "oh-my-claudecode:designer",
       "started_at": "2026-04-19T10:26:53.772Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-04-19T10:29:58.405Z",
+      "duration_ms": 184633
     }
   ],
   "total_spawned": 34,
-  "total_completed": 49,
+  "total_completed": 50,
   "total_failed": 0,
-  "last_updated": "2026-04-19T10:26:53.875Z"
+  "last_updated": "2026-04-19T10:29:58.507Z"
 }

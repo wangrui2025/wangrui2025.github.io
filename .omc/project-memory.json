@@ -89,20 +89,20 @@
   "hotPaths": [
     {
       "path": "astro/src/pages/design.astro",
-      "accessCount": 10,
-      "lastAccessed": 1776594451961,
+      "accessCount": 40,
+      "lastAccessed": 1776595680360,
       "type": "file"
     },
     {
       "path": "astro/src/layouts/BaseLayout.astro",
-      "accessCount": 9,
-      "lastAccessed": 1776398369511,
+      "accessCount": 10,
+      "lastAccessed": 1776595578534,
       "type": "directory"
     },
     {
       "path": "astro/src/components/Favicon.astro",
-      "accessCount": 6,
-      "lastAccessed": 1776594043289,
+      "accessCount": 8,
+      "lastAccessed": 1776595677456,
       "type": "file"
     },
     {
@@ -163,6 +163,12 @@
       "path": "CLAUDE.md",
       "accessCount": 1,
       "lastAccessed": 1776594363472,
+      "type": "file"
+    },
+    {
+      "path": "astro/astro.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1776595578648,
       "type": "file"
     }
   ],

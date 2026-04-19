@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/myk/Repo/wangrui2025/wangrui2025.github.io && ./scripts/smart-autopush.sh \\\"style(ui): warm editorial uplift for academic homepage\\\"\",\"description\":\"Push changes to remote\"}",
-  "error": "Exit code 1\n❌ 目录不存在: style(ui): warm editorial uplift for academic homepage",
-  "timestamp": "2026-04-19T10:29:43.113Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"ls dist/cv/ dist/slides/ 2>/dev/null\"}",
+  "error": "Exit code 1",
+  "timestamp": "2026-04-19T10:44:22.179Z",
+  "retry_count": 4
 }

@@ -31,21 +31,27 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
 
     var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json?t=' + Date.now();
 
-    // Use fetch + blob URL to bypass CDN caching
+    // Convert blob to data URL for truly uncached favicon
+    function blobToDataUrl(blob) {
+      return new Promise(function(resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function() { resolve(reader.result); };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+
     function setFaviconFromUrl(url) {
-      fetch(url + '?_=' + Date.now(), { cache: 'no-store' })
+      // Use cache-busting query param + no-store to force fresh fetch
+      fetch(url + '?v=' + Date.now(), { cache: 'no-store', mode: 'cors' })
         .then(function(res) { return res.blob(); })
-        .then(function(blob) {
-          var blobUrl = URL.createObjectURL(blob);
-          // Revoke old blob URL if exists
-          var oldHref = link.getAttribute('data-blob-url');
-          if (oldHref) URL.revokeObjectURL(oldHref);
-          link.setAttribute('data-blob-url', blobUrl);
-          link.href = blobUrl;
+        .then(blobToDataUrl)
+        .then(function(dataUrl) {
+          link.href = dataUrl;
         })
         .catch(function() {
-          // Fallback: direct URL with timestamp
-          link.href = url + '?_=' + Date.now();
+          // Fallback: direct URL
+          link.href = url + '?v=' + Date.now();
         });
     }
 
