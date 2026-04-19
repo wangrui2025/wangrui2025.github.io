@@ -535,6 +535,222 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       </div>
     </section>
 
+    <!-- ==================== COMPONENTS ==================== -->
+    <section id="components" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Components</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        组件系统
+      </h2>
+
+      <div class="space-y-8">
+        <!-- Favicon Component -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Favicon — 动态随机图标</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            默认页面随机显示 2665 个宝可梦图标（1332 regular + 1333 shiny），通过 fetch manifest.json 实现真随机。
+            <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">fixedFavicon</code> prop 可固定为 Smeargle（Design 页面专用）。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">27a927b</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">redesign /design page with gradient mesh hero</span>
+          </div>
+        </div>
+
+        <!-- ThemeToggle -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">ThemeToggle — 暗黑模式切换</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            Tailwind v4 暗黑模式使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">@custom-variant dark (&:where(.dark, .dark *))</code> 启用 class 模式。
+            主题状态存储在 localStorage，切换时添加/移除 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">.dark</code> class。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">b0b8e746</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">enable class-based dark variant in Tailwind v4</span>
+          </div>
+        </div>
+
+        <!-- PaperCard -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">PaperCard — 论文卡片</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            展示论文标题、作者、venue、标签（领域/技术）、链接（Project/arXiv）。
+            图片使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">astro:assets</code> 优化，hover 时轻微上浮 + 阴影加深。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">f030b818</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">modernize to Astro 6.x best practices</span>
+          </div>
+        </div>
+
+        <!-- AuthorProfile -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">AuthorProfile — 侧边栏作者信息</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            头像、姓名、身份（硕二）、求职状态（申博/实习）、联系方式（双邮箱）、社交链接（GitHub/Google Scholar/ORCID/OpenReview/LinkedIn）。
+            布局在 Sidebar 内使用 sticky 定位，滚动时保持可见。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Sidebar — 粘性侧边栏</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            纯容器组件，使用 slot 接收内容，sticky 定位在视口左侧。
+            内部包含 AuthorProfile 和 ThemeToggle，配合主内容区形成双栏布局。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+          </div>
+        </div>
+
+        <!-- Masthead -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Masthead — 顶部导航</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            顶部固定导航栏，包含首页链接、主导航项（中英文）、语言切换、ThemeToggle。
+            使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">getRelativeLocaleUrl</code> 实现 i18n 路由。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGES ==================== -->
+    <section id="pages" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Pages</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        页面结构
+      </h2>
+
+      <div class="space-y-8">
+        <!-- Homepage -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">首页 / — 最重要的一页</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            访问者第一时间看到的页面。左侧 Sidebar（作者信息），右侧内容区按以下顺序组织：
+          </p>
+          <ol class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-2 ml-4 list-decimal list-inside">
+            <li><strong>关于我</strong> — 姓名、身份、背景、目标方向（最高权重）</li>
+            <li><strong>最新状态</strong> — News 列表，快速了解近况</li>
+            <li><strong>论文</strong> — Publications，按时间倒序</li>
+            <li><strong>教育背景</strong> — Education</li>
+            <li><strong>荣誉奖项</strong> — Honors</li>
+            <li><strong>项目</strong> — Project 简介</li>
+            <li><strong>技能</strong> — Skills 列表</li>
+          </ol>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
+            设计原则：<strong>身份 &gt; 成果 &gt; 背景 &gt; 技能</strong>。面试官最关心你是谁、做了什么成果。
+          </p>
+        </div>
+
+        <!-- CV Page -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CV 页 /cv, /zh/cv</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            学术简历页面，A4 纸张布局（210mm × 297mm），用于打印或 PDF 导出。
+            左侧 Sidebar 包含 AuthorProfile，右侧内容区展示完整的学术履历。
+          </p>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            结构：个人信息 → 教育背景 → 论文列表 → 荣誉奖项 → 项目经历 → 技能。
+          </p>
+        </div>
+
+        <!-- Slides Page -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">海报页 /slides</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            学术海报展示页面。目前使用静态 HTML（KaTeX 数学表达式导致无法迁移到 Astro）。
+            通过 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">/zh/slides</code> 和 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">/en/slides</code> 重定向到根路径。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">6b09867</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">add /zh/slides and /en/slides redirect pages</span>
+          </div>
+        </div>
+
+        <!-- Design Page -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">设计页 /design</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            这个页面本身。Gradient mesh hero + scroll-spy TOC + 9 sections。
+            固定 Smeargle favicon，Purpose 是给想知道"为什么这样设计"的人看。
+          </p>
+          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">27a927b</code>
+            <span class="text-xs text-[var(--color-text-secondary)]">redesign /design page with gradient mesh hero</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LAYOUT ==================== -->
+    <section id="layout" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Layout</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        布局哲学
+      </h2>
+
+      <div class="space-y-8">
+        <!-- Content Priority -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">内容优先级</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            首页遵循 <strong>身份 → 成果 → 背景 → 技能</strong> 的权重顺序：
+          </p>
+          <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-2 ml-4">
+            <li>• <strong>身份</strong>（姓名、头像、求职状态）— 面试官第一眼确认你是谁</li>
+            <li>• <strong>成果</strong>（Publications）— 学术能力的核心证明</li>
+            <li>• <strong>背景</strong>（Education）— 学校和时间的快速确认</li>
+            <li>• <strong>技能</strong>（Skills）— 补充信息，不需要详细展开</li>
+          </ul>
+        </div>
+
+        <!-- Two-Column Layout -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">双栏布局</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            左侧 Sidebar 固定宽度（280px），右侧内容区自适应。
+            Sidebar 内 AuthorProfile 使用 sticky 定位，滚动时保持可见。
+            这样做的好处：面试官在阅读论文详情时，始终能看到作者身份。
+          </p>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            移动端：Sidebar 折叠为顶部导航，内容区全宽。
+          </p>
+        </div>
+
+        <!-- Visual Hierarchy -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">视觉层次</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            通过字体大小、颜色、间距区分信息层级：
+          </p>
+          <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-2 ml-4">
+            <li>• 页面标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-serif text-[56px]</code>，最醒目</li>
+            <li>• Section 标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-serif text-[28px]</code></li>
+            <li>• 正文 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">text-base</code>，行高 1.75</li>
+            <li>• 次要信息 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">text-sm text-text-secondary</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== TIMELINE ==================== -->
     <section id="timeline" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
       <div class="flex items-baseline gap-6 mb-12">
