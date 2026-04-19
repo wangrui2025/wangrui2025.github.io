@@ -4,6 +4,10 @@
 /* Enable class-based dark mode (Tailwind v4 defaults to prefers-color-scheme) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Critical FOUC prevention — must be before any paint */
+html { background-color: #f5f4ed; }
+html.dark { background-color: #141413; }
+
 /* Self-hosted fonts via @fontsource */
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/400-italic.css";

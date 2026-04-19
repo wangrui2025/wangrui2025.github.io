@@ -49,128 +49,10 @@ const personSchema = getPersonSchema({
 <!doctype html>
 <html lang={lang}>
   <head>
-    <!-- Critical CSS: inline theme variables + base styles to prevent FOUC -->
-    <!-- Loaded synchronously before render; full stylesheet loaded async by Vite -->
+    <!-- Critical FOUC prevention — bare minimum, rest is in global.css (inlined by Vite) -->
     <style is:inline>
-      /* === Critical FOUC Prevention === */
-      /* Light mode background — MUST be before any paint */
-      html {
-        background-color: #f5f4ed;
-      }
-
-      :root {
-        --color-bg-primary: #f5f4ed;
-        --color-bg-dark: #141413;
-        --color-text-primary: #3d3d3d;
-        --color-text-dark: #c9c9c9;
-        --color-heading-primary: #141413;
-        --color-heading-dark: #e8e8e8;
-        --color-link-primary: #c96442;
-        --color-link-dark: #d97757;
-        --color-border-primary: #f0eee6;
-        --color-border-dark: #30302e;
-        --color-paper-bg: #faf9f5;
-        --color-paper-bg-dark: #30302e;
-        --color-paper-border: #f0eee6;
-        --color-paper-border-dark: #30302e;
-        --color-paper-accent: #c96442;
-        --color-paper-accent-dark: #d97757;
-        --color-tag-field-bg: #e8dcc8;
-        --color-tag-field-bg-dark: #3d3529;
-        --color-tag-field-text: #5e4a3a;
-        --color-tag-field-text-dark: #c9b89a;
-        --color-tag-tech-bg: #e8e6dc;
-        --color-tag-tech-bg-dark: #3a3a36;
-        --color-tag-tech-text: #4d4c48;
-        --color-tag-tech-text-dark: #b0aea5;
-        --color-scholar-badge-bg: #f6f6f6;
-        --color-scholar-badge-bg-dark: #2d2d2d;
-        --color-scholar-badge-count-bg: #ffffff;
-        --color-scholar-badge-count-bg-dark: #121212;
-        --color-scholar-icon: #4A90E2;
-        --color-scholar-badge-text: #3d3d3d;
-        --color-scholar-badge-text-dark: #c9c9c9;
-        --color-scholar-badge-count: #4A90E2;
-        --color-text-secondary: #5e5d59;
-        --color-text-secondary-dark: #87867f;
-
-        background-color: var(--color-bg-primary);
-        color: var(--color-text-primary);
-      }
-
-      html.dark {
-        background-color: #141413;
-        --color-bg-primary: #141413;
-        --color-text-primary: #c9c9c9;
-        --color-heading-primary: #e8e8e8;
-        --color-link-primary: #d97757;
-        --color-border-primary: #30302e;
-        --color-paper-bg: #30302e;
-        --color-paper-border: #30302e;
-        --color-paper-accent: #d97757;
-        --color-tag-field-bg: #3d3529;
-        --color-tag-field-text: #c9b89a;
-        --color-tag-tech-bg: #3a3a36;
-        --color-tag-tech-text: #b0aea5;
-        --color-scholar-badge-bg: #2d2d2d;
-        --color-scholar-badge-count-bg: #121212;
-        --color-scholar-badge-text: #c9c9c9;
-        --color-text-secondary: #87867f;
-
-        background-color: var(--color-bg-primary);
-        color: var(--color-text-primary);
-      }
-
-      /* Font family to reduce font flash */
-      body {
-        font-family: 'Inter', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
-        line-height: 1.60;
-        margin: 0;
-      }
-
-      /* Minimal layout to prevent shift */
-      #main {
-        display: flex;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        gap: 2rem;
-      }
-
-      /* Skip link */
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        padding: 8px;
-        z-index: 100;
-        transition: top 0.3s;
-      }
-      .skip-link:focus { top: 0; }
-
-      /* Theme toggle button */
-      .theme-toggle {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Icon visibility */
-      .icon-sun { display: block; }
-      .icon-moon { display: none; }
-      html.dark .icon-sun { display: none; }
-      html.dark .icon-moon { display: block; }
-
-      /* View transitions — instant page switch */
-      ::view-transition-old(root),
-      ::view-transition-new(root) {
-        animation: none;
-        mix-blend-mode: normal;
-      }
+      html { background-color: #f5f4ed; }
+      html.dark { background-color: #141413; }
     </style>
 
     <!-- Theme initialization — runs BEFORE any paint to prevent FOUC -->
@@ -259,13 +141,15 @@ const personSchema = getPersonSchema({
     </script>
 
     <!-- Client Router for seamless language switching (Astro 5) -->
-    <ClientRouter fallback="none" />
+    <ClientRouter />
 
     <!-- PWA Service Worker Registration -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
+          navigator.serviceWorker.register('/sw.js').catch(() => {
+          // Service worker registration failed — site still works without SW
+        });
         });
       }
     </script>
