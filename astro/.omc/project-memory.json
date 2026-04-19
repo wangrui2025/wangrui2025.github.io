@@ -227,15 +227,15 @@
       "type": "file"
     },
     {
-      "path": "src/components/Masthead.astro",
-      "accessCount": 6,
-      "lastAccessed": 1776409166850,
+      "path": "src/components/Favicon.astro",
+      "accessCount": 7,
+      "lastAccessed": 1776593853682,
       "type": "file"
     },
     {
-      "path": "src/components/Favicon.astro",
+      "path": "src/components/Masthead.astro",
       "accessCount": 6,
-      "lastAccessed": 1776515080233,
+      "lastAccessed": 1776409166850,
       "type": "file"
     },
     {

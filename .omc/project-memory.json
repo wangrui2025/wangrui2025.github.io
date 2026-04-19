@@ -113,8 +113,8 @@
     },
     {
       "path": "",
-      "accessCount": 2,
-      "lastAccessed": 1776406641402,
+      "accessCount": 3,
+      "lastAccessed": 1776593807144,
       "type": "directory"
     },
     {
@@ -140,6 +140,12 @@
       "accessCount": 1,
       "lastAccessed": 1776513985730,
       "type": "directory"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-04-19-design-page-design.md",
+      "accessCount": 1,
+      "lastAccessed": 1776593836883,
+      "type": "file"
     }
   ],
   "userDirectives": []
