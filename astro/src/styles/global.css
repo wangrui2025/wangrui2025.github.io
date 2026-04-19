@@ -8,6 +8,22 @@
 html { background-color: #f5f4ed; }
 html.dark { background-color: #141413; }
 
+/* ===== Background Texture — Warm Editorial ===== */
+/* Subtle SVG noise pattern for depth without coldness */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+html.dark body::before {
+  opacity: 0.15;
+}
+
 /* Self-hosted fonts via @fontsource */
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/400-italic.css";
@@ -262,16 +278,40 @@ code {
 
 /* ===== Info Card ===== */
 .info-card {
-  background: rgb(250 249 245 / 0.6);
-  border: 1px solid rgb(240 238 230 / 0.8);
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
-  margin-bottom: 0.75rem;
+  background: rgb(250 249 245 / 0.7);
+  border: 1px solid rgb(240 238 230 / 0.6);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
 }
 
 html.dark .info-card {
-  background: rgb(48 48 46 / 0.4);
-  border-color: rgb(48 48 46 / 0.4);
+  background: rgb(48 48 46 / 0.5);
+  border-color: rgb(48 48 46 / 0.5);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+html.dark .info-card:hover {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .info-card-title {
@@ -365,7 +405,30 @@ html.dark .honors-list .period {
 /* ===== Section Heading ===== */
 .section-heading {
   font-family: 'Source Serif 4', Georgia, serif;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(240 238 230 / 0.6);
+  position: relative;
+}
+
+/* Subtle decorative accent line */
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--color-paper-accent),
+    var(--color-paper-accent-dark)
+  );
+  border-radius: 1px;
+}
+
+html.dark .section-heading {
+  border-bottom-color: rgb(48 48 46 / 0.6);
 }
 
 /* ===== Project List ===== */
@@ -431,17 +494,41 @@ details[open] .toggle-text-expanded {
 
 .timeline-container {
   margin-top: 1rem;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   border-left: 2px solid rgb(240 238 230);
+  position: relative;
+}
+
+/* Elegant gradient line for timeline */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgb(201 100 66 / 0.3),
+    rgb(240 238 230 / 0.5)
+  );
 }
 
 html.dark .timeline-container {
   border-color: rgb(48 48 46);
 }
 
+html.dark .timeline-container::before {
+  background: linear-gradient(
+    to bottom,
+    rgb(217 119 87 / 0.3),
+    rgb(48 48 46 / 0.5)
+  );
+}
+
 .timeline-item {
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 .timeline-item:last-child {
@@ -450,12 +537,18 @@ html.dark .timeline-container {
 
 .timeline-node {
   position: absolute;
-  left: -1.25rem;
-  top: 0.25rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  background: rgb(135 134 127);
+  left: -1.5rem;
+  top: 0.35rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--color-paper-accent);
   border-radius: 50%;
+  box-shadow: 0 0 0 3px rgb(250 249 245), 0 0 0 4px rgb(201 100 66 / 0.3);
+}
+
+html.dark .timeline-node {
+  background: var(--color-paper-accent-dark);
+  box-shadow: 0 0 0 3px rgb(48 48 46), 0 0 0 4px rgb(217 119 87 / 0.3);
 }
 
 .timeline-period {
@@ -463,6 +556,7 @@ html.dark .timeline-container {
   color: rgb(94 93 89);
   font-weight: 500;
   margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
 }
 
 html.dark .timeline-period {
@@ -472,12 +566,14 @@ html.dark .timeline-period {
 .timeline-title {
   font-weight: 600;
   margin-bottom: 0.25rem;
+  font-size: 1.05rem;
 }
 
 .timeline-description {
   font-size: 0.9rem;
   color: rgb(94 93 89);
-  margin-top: 0.25rem;
+  margin-top: 0.375rem;
+  line-height: 1.65;
 }
 
 html.dark .timeline-description {
@@ -488,34 +584,39 @@ html.dark .timeline-description {
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
-  margin-top: 0.375rem;
+  margin-top: 0.5rem;
 }
 
 .timeline-tag {
   font-size: 0.75rem;
-  padding: 0.125rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   background: rgb(232 230 220);
   border-radius: 9999px;
   color: rgb(77 76 72);
+  border: 1px solid rgb(232 230 220);
+  transition: all 0.2s ease;
 }
 
 html.dark .timeline-tag {
   background: rgb(58 58 54);
   color: rgb(176 174 165);
+  border-color: rgb(58 58 54);
 }
 
 .timeline-tag[href] {
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .timeline-tag[href]:hover {
   background: rgb(201 197 187);
+  border-color: rgb(201 197 187);
   text-decoration: none;
 }
 
 html.dark .timeline-tag[href]:hover {
   background: rgb(77 76 72);
+  border-color: rgb(77 76 72);
 }
 
 /* ===== Works Page — Reveal.js PPT ===== */

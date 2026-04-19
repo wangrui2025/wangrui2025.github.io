@@ -51,9 +51,9 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </Sidebar>
 
   <!-- About Me Section -->
-  <section id="about-me" class="mb-8">
-    <h1 class="font-serif font-medium text-[52px] leading-[1.1] mb-4">{aboutMeLabel}</h1>
-    <p class="mb-4 text-base leading-relaxed text-text-primary dark:text-text-dark" set:html={h.background.intro} />
+  <section id="about-me" class="mb-12">
+    <h1 class="font-serif font-medium text-[56px] leading-[1.05] mb-6 tracking-tight">{aboutMeLabel}</h1>
+    <p class="mb-6 text-base leading-relaxed text-text-primary dark:text-text-dark" set:html={h.background.intro} />
 
     <!-- Background -->
     <div class="info-card mb-4">
@@ -80,7 +80,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- News Section -->
-  <section id="status" class="mb-8">
+  <section id="status" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] flex items-center gap-2">
       <Icon name="tabler:circle-check" class="w-5 h-5 text-link-primary" />
       {h.news_heading}
@@ -136,7 +136,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- Publications Section -->
-  <section id="publications" class="mb-8">
+  <section id="publications" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] flex items-center gap-2">
       <Icon name="tabler:file-dots" class="w-5 h-5 text-link-primary" />
       {h.section_publications}
@@ -147,7 +147,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- Education Section -->
-  <section id="educations" class="mb-8">
+  <section id="educations" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] flex items-center gap-2">
       <Icon name="tabler:school" class="w-5 h-5 text-link-primary" />
       {h.section_education}
@@ -156,7 +156,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- Honors Section -->
-  <section id="honors" class="mb-8">
+  <section id="honors" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] mb-4 flex items-center gap-2">
       <Icon name="tabler:trophy" class="w-5 h-5 text-link-primary" />
       {h.section_honors}
@@ -172,7 +172,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- Project Section -->
-  <section id="project" class="mb-8">
+  <section id="project" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] mb-4 flex items-center gap-2">
       <Icon name="tabler:package" class="w-5 h-5 text-link-primary" />
       {h.section_project}
@@ -186,7 +186,7 @@ const aboutMeLabel = lang === 'zh' ? '关于我' : 'About Me';
   </section>
 
   <!-- Skills & Interests Section -->
-  <section id="skills" class="mb-8">
+  <section id="skills" class="mb-12">
     <h2 class="section-heading font-serif font-medium text-[28px] leading-[1.2] flex items-center gap-2">
       <Icon name="tabler:code" class="w-5 h-5 text-link-primary" />
       {h.section_skills}

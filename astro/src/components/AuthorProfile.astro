@@ -12,34 +12,36 @@ const title = lang === 'en' ? 'M.S. Candidate' : '硕士研究生';
 const affiliation = lang === 'en' ? 'Shenzhen University' : '深圳大学';
 ---
 
-<div class="text-center p-4">
-  <div class="mb-4">
+<div class="text-center p-5">
+  <div class="mb-5 relative inline-block">
+    <!-- Decorative ring behind avatar -->
+    <div class="absolute inset-0 -m-2 rounded-full bg-gradient-to-br from-paper-accent/20 to-transparent dark:from-paper-accent-dark/20"></div>
     <Image
       src="/images/avatar.png"
       alt={displayName}
       width={256}
       height={256}
-      class="rounded-full w-32 h-32 mx-auto"
+      class="rounded-full w-32 h-32 mx-auto relative ring-2 ring-border-primary/30 dark:ring-border-dark/30 shadow-lg"
       loading="eager"
       densities={[1, 2, 3]}
       sizes="128px"
       decoding="async"
     />
   </div>
-  <h2 class="font-serif font-medium text-[52px] leading-[1.1] text-heading-primary dark:text-heading-dark mb-1">{displayName}</h2>
-   <p class="text-sm text-text-primary/70 dark:text-text-dark/70 mb-1">he/him</p>
-  <p class="text-sm text-text-primary dark:text-text-dark mb-1">{title}</p>
-  <p class="text-sm text-text-primary dark:text-text-dark mb-4">{affiliation}</p>
+  <h2 class="font-serif font-semibold text-[48px] leading-[1.1] text-heading-primary dark:text-heading-dark mb-2 tracking-tight">{displayName}</h2>
+   <p class="text-sm text-text-primary/60 dark:text-text-dark/60 mb-2 tracking-wide">he/him</p>
+  <p class="text-sm text-text-primary dark:text-text-dark mb-1 font-medium">{title}</p>
+  <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-5">{affiliation}</p>
 
   <!-- Status -->
-  <div class="mb-4 text-center flex flex-col gap-2">
-    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark">
+  <div class="mb-5 text-center flex flex-col gap-2">
+    <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium bg-paper-accent dark:bg-paper-accent-dark text-paper-bg dark:text-paper-bg-dark shadow-sm">
       {lang === 'en' ? 'Seeking Internship / Applying for PhD (Fall 2027)' : '寻找实习 / 申博中 (2027 Fall)'}
     </span>
   </div>
 
   <!-- Social & Academic Links -->
-  <div class="flex flex-wrap justify-center gap-2 p-3 rounded-xl bg-paper-bg dark:bg-paper-bg-dark border border-border-primary dark:border-border-dark mb-4">
+  <div class="flex flex-wrap justify-center gap-2 p-4 rounded-2xl bg-paper-bg/50 dark:bg-paper-bg-dark/50 border border-border-primary/40 dark:border-border-dark/40 mb-2">
     <!-- Primary Links: Email & GitHub -->
     <a href="mailto:wr_szu@163.com" title={lang === 'zh' ? '邮箱（个人）' : 'Email (Personal)'} class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-primary dark:border-border-dark bg-paper-bg dark:bg-paper-bg-dark text-text-primary dark:text-text-dark text-xs transition-all duration-200 hover:border-link-primary dark:hover:border-link-dark hover:text-link-primary dark:hover:text-link-dark whitespace-nowrap no-underline">
       <Icon name="lucide:mail" class="w-4 h-4" />
