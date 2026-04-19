@@ -1,73 +1,28 @@
----
-interface Props {
-  fixedFavicon?: boolean;
-}
-const { fixedFavicon = false } = Astro.props;
-const smeargleUrl = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png';
-const defaultUrl = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/lotad.png';
-const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
----
-<link id="pokemon-favicon" rel="icon" type="image/png" href={initialHref} />
-{fixedFavicon && <>
-  <link rel="icon" type="image/png" sizes="32x32" href={smeargleUrl} />
-  <link rel="icon" type="image/png" sizes="192x192" href={smeargleUrl} />
-  <link rel="apple-touch-icon" sizes="180x180" href={smeargleUrl} />
-</>}
-{!fixedFavicon && <>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-</>}
+<link id="pokemon-favicon" rel="icon" type="image/png" href="" />
 <script is:inline>
   (function() {
     var link = document.getElementById('pokemon-favicon');
     if (!link) return;
+    var MANIFEST_URL = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/icon-manifest.json';
+    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public';
 
-    // If page has data-fixed-favicon, skip randomization and use fixed Smeargle
-    if (document.documentElement.hasAttribute('data-fixed-favicon')) {
-      link.href = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png';
-      return;
-    }
-
-    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json?t=' + Date.now();
-
-    // Convert blob to data URL for truly uncached favicon
-    function blobToDataUrl(blob) {
-      return new Promise(function(resolve, reject) {
-        var reader = new FileReader();
-        reader.onload = function() { resolve(reader.result); };
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
-      });
-    }
-
-    function setFaviconFromUrl(url) {
-      // Use cache-busting query param + no-store to force fresh fetch
-      fetch(url + '?v=' + Date.now(), { cache: 'no-store', mode: 'cors' })
-        .then(function(res) { return res.blob(); })
-        .then(blobToDataUrl)
-        .then(function(dataUrl) {
-          link.href = dataUrl;
-        })
-        .catch(function() {
-          // Fallback: direct URL
-          link.href = url + '?v=' + Date.now();
-        });
-    }
-
-    // Always random from regular + shiny on every page load
     fetch(MANIFEST_URL)
       .then(function(res) { return res.json(); })
       .then(function(manifest) {
-        var allowedIds = ['pokemon-gen8-regular', 'pokemon-gen8-shiny'];
-        var allowedSets = allowedIds.map(function(id) { return manifest.iconSets[id]; }).filter(Boolean);
-        if (allowedSets.length === 0) throw new Error('No allowed icon sets');
-        var set = allowedSets[Math.floor(Math.random() * allowedSets.length)];
+        var sets = Object.values(manifest.iconSets);
+        if (sets.length === 0) throw new Error('No icon sets');
+        var set = sets[Math.floor(Math.random() * sets.length)];
         var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
-        setFaviconFromUrl(icon.url);
+        link.href = CDN_BASE + icon.url;
       })
       .catch(function() {
-        // Keep default Lotad on error
+        // Fallback to legacy single-icon approach
+        fetch(CDN_BASE + '/favicons/index.json')
+          .then(function(res) { return res.json(); })
+          .then(function(icons) {
+            var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            link.href = CDN_BASE + '/favicons/' + randomIcon;
+          });
       });
   })();
 </script>
