@@ -1,0 +1,24 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+const lang = Astro.params.lang as 'en' | 'zh';
+---
+<!doctype html>
+<html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content={`0; url=/slides`} />
+  <title>{lang === 'zh' ? '论文海报' : 'Paper Slides'}</title>
+</head>
+<body>
+  {lang === 'zh' ? (
+    <p>正在跳转到 <a href="/slides">论文海报页面</a>...</p>
+  ) : (
+    <p>Redirecting to <a href="/slides">paper slides</a> (English version coming soon)...</p>
+  )}
+</body>
+</html>
