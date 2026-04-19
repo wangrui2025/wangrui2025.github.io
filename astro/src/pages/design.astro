@@ -210,6 +210,25 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
             </div>
           </div>
         </div>
+
+        <!-- Card 4: Responsive Design -->
+        <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-paper-accent)]/20 transition-all duration-300">
+              <svg class="w-7 h-7 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">桌面端要平铺，移动端要适配</h3>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              桌面端用户期望看到更宽的展示，不要限制在窄宽度里。移动端则需要适配小屏幕。我用 Tailwind 的响应式前缀（md:/lg:）来区分两者的布局策略。
+            </p>
+            <p class="text-xs text-[var(--color-text-secondary)] italic mb-4">
+              桌面端全宽平铺，移动端保持 max-w-5xl 居中，这是最常见的响应式策略。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
