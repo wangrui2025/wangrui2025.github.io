@@ -69,9 +69,9 @@ jobs:
       - name: Replace Astro favicon with pikachu
         run: |
           # Download pre-generated pikachu icons from sprites-gallery
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/620cba5/public/favicons/apple-touch-icon.png" -o astro/dist/apple-touch-icon.png
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/620cba5/public/favicons/icon-32x32.png" -o astro/dist/favicon-32x32.png
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/620cba5/public/favicons/icon-192x192.png" -o astro/dist/favicon-192x192.png
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/apple-touch-icon.png" -o astro/dist/apple-touch-icon.png
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-32x32.png" -o astro/dist/favicon-32x32.png
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-192x192.png" -o astro/dist/favicon-192x192.png
           echo "Favicons replaced from sprites-gallery"
 
       - name: Upload artifact
