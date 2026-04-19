@@ -40,7 +40,7 @@ export function getPublicationsSchema(papers: Array<{
   project?: string;
 }>, siteUrl: string) {
   // ItemList schema for all publications listed on homepage
-  const itemListElement = papers.map((_paper, index) => ({
+  const itemListElement = papers.map((_, index) => ({
     "@type": "ListItem",
     "position": index + 1,
     "url": `${siteUrl.replace(/\/$/, '')}/#publications`
