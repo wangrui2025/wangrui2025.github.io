@@ -9,223 +9,311 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 <BaseLayout title={title} description={description} lang="en" fixedFavicon>
 
   <!-- ==================== HERO ==================== -->
-  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 py-32">
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-5 bg-[var(--color-paper-accent)] blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-5 bg-[var(--color-scholar-icon)] blur-3xl"></div>
+  <section class="relative min-h-[85vh] flex flex-col items-center justify-center text-center overflow-hidden">
+    <!-- Animated gradient mesh background -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute inset-0 bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)]"></div>
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-30 bg-[#c96442] blur-[120px] animate-pulse" style="animation-duration: 8s;"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-20 bg-[#4A90E2] blur-[100px] animate-pulse" style="animation-duration: 12s; animation-delay: -4s;"></div>
+      <div class="absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full opacity-15 bg-[#c96442] blur-[80px] animate-pulse" style="animation-duration: 10s; animation-delay: -2s;"></div>
+      <!-- Diagonal accent line -->
+      <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[var(--color-paper-accent)] to-transparent opacity-20"></div>
     </div>
-    <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-6">Design System</p>
-    <h1 class="text-5xl md:text-6xl font-bold font-serif text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-6 leading-tight">
-      设计规范
-    </h1>
-    <p class="text-lg text-[var(--color-text-secondary)] dark:text-[var(--color-text-secondary-dark)] max-w-xl mb-16">
-      wangrui2025.github.io 的设计决策与实现备忘
-    </p>
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-text-secondary)]">
-      <span class="text-xs uppercase tracking-widest">Scroll</span>
-      <div class="w-px h-8 bg-gradient-to-b from-[var(--color-text-secondary)] to-transparent animate-bounce"></div>
+
+    <!-- Overlapping badge -->
+    <div class="absolute top-8 right-8 md:top-16 md:right-16 rotate-12">
+      <span class="inline-block px-4 py-2 text-xs font-mono uppercase tracking-widest bg-[var(--color-paper-accent)] text-white rounded-full shadow-lg">
+        v1.0 · 868 commits
+      </span>
+    </div>
+
+    <div class="relative z-10 px-6 py-32">
+      <p class="text-xs uppercase tracking-[0.3em] text-[var(--color-paper-accent)] mb-8 font-medium">
+        Design System
+      </p>
+      <h1 class="text-6xl md:text-8xl font-bold font-serif text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-8 leading-[0.9] tracking-tight">
+        设计规范
+      </h1>
+      <p class="text-xl md:text-2xl text-[var(--color-text-secondary)] dark:text-[var(--color-text-secondary-dark)] max-w-2xl mx-auto leading-relaxed">
+        wangrui2025.github.io 的设计决策与实现备忘
+      </p>
+    </div>
+
+    <!-- Scroll indicator with animated line -->
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Scroll to explore</span>
+      <div class="w-px h-16 bg-gradient-to-b from-[var(--color-paper-accent)] to-transparent relative overflow-hidden rounded-full">
+        <div class="absolute top-0 left-0 w-full h-4 bg-white/50 animate-bounce" style="animation-duration: 2s;"></div>
+      </div>
     </div>
   </section>
 
   <!-- ==================== TOC ==================== -->
-  <nav class="sticky top-0 z-50 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-bg-primary)]/80 dark:bg-[var(--color-bg-dark)]/80 backdrop-blur">
-    <div class="max-w-4xl mx-auto px-6">
-      <ul class="flex gap-6 overflow-x-auto py-4 text-sm">
-        <li><a href="#philosophy" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Philosophy</a></li>
-        <li><a href="#tokens" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Tokens</a></li>
-        <li><a href="#pages" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Pages</a></li>
-        <li><a href="#components" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Components</a></li>
-        <li><a href="#timeline" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Timeline</a></li>
-        <li><a href="#notes" class="text-[var(--color-text-secondary)] hover:text-[var(--color-link-primary)] transition-colors whitespace-nowrap">Notes</a></li>
+  <nav id="toc" class="sticky top-0 z-50 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-bg-primary)]/90 dark:bg-[var(--color-bg-dark)]/90 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6">
+      <ul class="flex gap-1 overflow-x-auto py-4 text-sm">
+        <li>
+          <a href="#philosophy" data-section="philosophy" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Philosophy
+          </a>
+        </li>
+        <li>
+          <a href="#tokens" data-section="tokens" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Tokens
+          </a>
+        </li>
+        <li>
+          <a href="#pages" data-section="pages" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Pages
+          </a>
+        </li>
+        <li>
+          <a href="#components" data-section="components" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Components
+          </a>
+        </li>
+        <li>
+          <a href="#timeline" data-section="timeline" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Timeline
+          </a>
+        </li>
+        <li>
+          <a href="#notes" data-section="notes" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Notes
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <div class="max-w-4xl mx-auto px-6">
+  <div class="max-w-5xl mx-auto px-6">
 
     <!-- ==================== PHILOSOPHY ==================== -->
     <section id="philosophy" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Philosophy</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">设计原则</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Philosophy</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        设计原则
+      </h2>
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
-          <div class="text-4xl mb-4">🎓</div>
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">学术性与个人风格的平衡</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            学术主页需要专业、克制，但又要有个性。emoji 图标在学术场合不够严谨，改用 SVG icon。
-          </p>
-          <code class="text-xs text-[var(--color-link-primary)] break-all">6b65e397</code>
-          <p class="text-xs text-[var(--color-text-secondary)] mt-1">replace emojis with flat SVG icons</p>
+        <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-paper-accent)]/20 transition-all duration-300">
+              <svg class="w-7 h-7 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">学术性与个人风格的平衡</h3>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              学术主页需要专业、克制，但又要有个性。emoji 图标在学术场合不够严谨，改用 SVG icon。
+            </p>
+            <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">6b65e397</code>
+              <span class="text-xs text-[var(--color-text-secondary)]">replace emojis with flat SVG</span>
+            </div>
+          </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">性能优先，无 FOUC</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            Tailwind v4 + Vite 将 utility CSS 输出到外部文件。Critical CSS 内联到 HTML head，防止样式闪烁。
-          </p>
-          <code class="text-xs text-[var(--color-link-primary)] break-all">bd934e8ccf2f</code>
-          <p class="text-xs text-[var(--color-text-secondary)] mt-1">move theme script before CSS to prevent FOUC</p>
+        <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-paper-accent)]/20 transition-all duration-300">
+              <svg class="w-7 h-7 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">性能优先，无 FOUC</h3>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              Tailwind v4 + Vite 将 utility CSS 输出到外部文件。Critical CSS 内联到 HTML head，防止样式闪烁。
+            </p>
+            <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">bd934e8ccf2f</code>
+              <span class="text-xs text-[var(--color-text-secondary)]">move theme script before CSS</span>
+            </div>
+          </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
-          <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">内容即接口</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            学术统计不是静态数字，通过 API 实时拉取。引用数、h-index 自动更新，不手动维护。
-          </p>
-          <code class="text-xs text-[var(--color-link-primary)] break-all">80a710ed1ccc</code>
-          <p class="text-xs text-[var(--color-text-secondary)] mt-1">migrate from Google Scholar to OpenAlex API</p>
+        <div class="group relative border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-[var(--color-paper-accent)]/30">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--color-paper-accent)]/10 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-xl bg-[var(--color-paper-accent)]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-paper-accent)]/20 transition-all duration-300">
+              <svg class="w-7 h-7 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">内容即接口</h3>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
+              学术统计不是静态数字，通过 API 实时拉取。引用数、h-index 自动更新，不手动维护。
+            </p>
+            <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">80a710ed1ccc</code>
+              <span class="text-xs text-[var(--color-text-secondary)]">migrate to OpenAlex API</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== TOKENS ==================== -->
     <section id="tokens" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Design Tokens</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">设计令牌</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Design Tokens</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        设计令牌
+      </h2>
 
       <!-- Colors -->
-      <div class="mb-16">
-        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">颜色</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="mb-20">
+        <h3 class="text-lg font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-[var(--color-paper-accent)]/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+          </span>
+          颜色
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <!-- Light theme -->
-          <div>
-            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Light</p>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#f5f4ed]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">bg-primary</p>
-                  <p class="text-[var(--color-text-secondary)]">#f5f4ed</p>
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] font-semibold">Light</p>
+            <div class="flex flex-col gap-3">
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#f5f4ed] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">bg-primary</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#f5f4ed</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#141413]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">heading</p>
-                  <p class="text-[var(--color-text-secondary)]">#141413</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#141413] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">heading</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#141413</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#c96442]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">link</p>
-                  <p class="text-[var(--color-text-secondary)]">#c96442</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#c96442] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">link</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#c96442</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#f0eee6]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">border</p>
-                  <p class="text-[var(--color-text-secondary)]">#f0eee6</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#f0eee6] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">border</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#f0eee6</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#5e5d59]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">text-secondary</p>
-                  <p class="text-[var(--color-text-secondary)]">#5e5d59</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#5e5d59] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">text-secondary</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#5e5d59</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Dark theme -->
-          <div>
-            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Dark</p>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#141413]"></div>
-                <div class="text-xs">
-                  <p class="font-mono text-[var(--color-text-dark)]">bg-dark</p>
-                  <p class="text-[var(--color-text-secondary-dark)]">#141413</p>
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] font-semibold">Dark</p>
+            <div class="flex flex-col gap-3">
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-dark)] bg-[#141413] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-dark)]">bg-dark</p>
+                  <p class="text-xs text-[var(--color-text-secondary-dark)] font-mono">#141413</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#e8e8e8]"></div>
-                <div class="text-xs">
-                  <p class="font-mono text-[var(--color-text-dark)]">heading-dark</p>
-                  <p class="text-[var(--color-text-secondary-dark)]">#e8e8e8</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-dark)] bg-[#e8e8e8] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-dark)]">heading-dark</p>
+                  <p class="text-xs text-[var(--color-text-secondary-dark)] font-mono">#e8e8e8</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#d97757]"></div>
-                <div class="text-xs">
-                  <p class="font-mono text-[var(--color-text-dark)]">link-dark</p>
-                  <p class="text-[var(--color-text-secondary-dark)]">#d97757</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-dark)] bg-[#d97757] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-dark)]">link-dark</p>
+                  <p class="text-xs text-[var(--color-text-secondary-dark)] font-mono">#d97757</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#30302e]"></div>
-                <div class="text-xs">
-                  <p class="font-mono text-[var(--color-text-dark)]">border-dark</p>
-                  <p class="text-[var(--color-text-secondary-dark)]">#30302e</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-dark)] bg-[#30302e] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-dark)]">border-dark</p>
+                  <p class="text-xs text-[var(--color-text-secondary-dark)] font-mono">#30302e</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-dark)] bg-[#b0aea5]"></div>
-                <div class="text-xs">
-                  <p class="font-mono text-[var(--color-text-dark)]">text-sec-dark</p>
-                  <p class="text-[var(--color-text-secondary-dark)]">#b0aea5</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-dark)] bg-[#b0aea5] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-dark)]">text-sec-dark</p>
+                  <p class="text-xs text-[var(--color-text-secondary-dark)] font-mono">#b0aea5</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Brand colors -->
-          <div>
-            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Brand</p>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#c96442]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">paper-accent</p>
-                  <p class="text-[var(--color-text-secondary)]">#c96442</p>
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] font-semibold">Brand</p>
+            <div class="flex flex-col gap-3">
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#c96442] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">paper-accent</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#c96442</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#4A90E2]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">scholar</p>
-                  <p class="text-[var(--color-text-secondary)]">#4A90E2</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#4A90E2] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">scholar</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#4A90E2</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#A6B73F]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">orcid</p>
-                  <p class="text-[var(--color-text-secondary)]">#A6B73F</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#A6B73F] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">orcid</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#A6B73F</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#2771B1]"></div>
-                <div class="text-xs">
-                  <p class="font-mono">openreview</p>
-                  <p class="text-[var(--color-text-secondary)]">#2771B1</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#2771B1] shadow-sm group-hover:scale-105 transition-transform"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">openreview</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] font-mono">#2771B1</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- Tag colors -->
-          <div>
-            <p class="text-xs text-[var(--color-text-secondary)] mb-2 uppercase tracking-widest">Tags</p>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#e8dcc8] text-[#5e4a3a] flex items-center justify-center text-xs font-bold">研</div>
-                <div class="text-xs">
-                  <p class="font-mono">field-bg</p>
-                  <p class="text-[var(--color-text-secondary)]">研究领域</p>
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] font-semibold">Tags</p>
+            <div class="flex flex-col gap-3">
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#e8dcc8] shadow-sm group-hover:scale-105 transition-transform flex items-center justify-center text-sm font-bold text-[#5e4a3a]">研</div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">field-bg</p>
+                  <p class="text-xs text-[var(--color-text-secondary)]">研究领域</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded border border-[var(--color-border-primary)] bg-[#e8e6dc] text-[#4d4c48] flex items-center justify-center text-xs font-bold">技</div>
-                <div class="text-xs">
-                  <p class="font-mono">tech-bg</p>
-                  <p class="text-[var(--color-text-secondary)]">技术栈</p>
+              <div class="group flex items-center gap-4 p-3 rounded-xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] hover:border-[var(--color-paper-accent)]/50 transition-colors cursor-pointer">
+                <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] bg-[#e8e6dc] shadow-sm group-hover:scale-105 transition-transform flex items-center justify-center text-sm font-bold text-[#4d4c48]">技</div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-mono text-sm text-[var(--color-text-primary)]">tech-bg</p>
+                  <p class="text-xs text-[var(--color-text-secondary)]">技术栈</p>
                 </div>
               </div>
             </div>
@@ -234,37 +322,53 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       </div>
 
       <!-- Typography -->
-      <div class="mb-16">
-        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">字体</h3>
-        <div class="space-y-6">
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Serif — 标题 & 学术内容</p>
-            <p class="font-serif text-2xl text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-2">Source Serif 4 / 思源宋体</p>
-            <p class="font-serif text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] italic">Deep Learning for Computer Vision</p>
-            <p class="font-serif text-sm text-[var(--color-text-secondary)] mt-2">The quick brown fox jumps over the lazy dog. 学术主页需要专业、克制，但又要有个性。</p>
+      <div class="mb-20">
+        <h3 class="text-lg font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-[var(--color-paper-accent)]/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+            </svg>
+          </span>
+          字体
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:border-[var(--color-paper-accent)]/30 transition-colors">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] mb-4 font-semibold">Serif — 标题 & 学术</p>
+            <p class="font-serif text-3xl text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">Source Serif 4</p>
+            <p class="font-serif text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] italic mb-3">Deep Learning for CV</p>
+            <p class="font-serif text-sm text-[var(--color-text-secondary)]">The quick brown fox jumps. 学术主页需要专业、克制。</p>
           </div>
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Sans — 正文 & UI</p>
-            <p class="font-sans text-2xl font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Inter / Inter Variable</p>
-            <p class="font-sans text-sm text-[var(--color-text-secondary)]">The quick brown fox jumps over the lazy dog. 学术主页需要专业、克制，但又要有个性。计算机视觉、深度学习、人工智能。</p>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:border-[var(--color-paper-accent)]/30 transition-colors">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] mb-4 font-semibold">Sans — 正文 & UI</p>
+            <p class="font-sans text-3xl font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-3">Inter Variable</p>
+            <p class="font-sans text-sm text-[var(--color-text-secondary)] mb-3">The quick brown fox jumps. 计算机视觉、深度学习。</p>
+            <p class="font-sans text-xs text-[var(--color-text-secondary)]">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>abcdefghijklmnopqrstuvwxyz<br/>0123456789</p>
           </div>
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Mono — 代码 & SHA</p>
-            <p class="font-mono text-sm text-[var(--color-link-primary)]">bd934e8ccf2f · 80a710ed1ccc · 3abb297646e7</p>
-            <p class="font-mono text-xs text-[var(--color-text-secondary)] mt-1">Global — &lt;Fira Code&gt;, Consolas</p>
+          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] hover:border-[var(--color-paper-accent)]/30 transition-colors">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] mb-4 font-semibold">Mono — 代码 & SHA</p>
+            <p class="font-mono text-sm text-[var(--color-paper-accent)] mb-3">bd934e8ccf2f</p>
+            <p class="font-mono text-xs text-[var(--color-text-secondary)] mb-3">80a710ed1ccc · 3abb297646e7</p>
+            <p class="font-mono text-xs text-[var(--color-text-secondary)]">Fira Code · Consolas</p>
           </div>
         </div>
       </div>
 
       <!-- Spacing -->
       <div>
-        <h3 class="text-sm font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-6">间距</h3>
-        <div class="space-y-3">
-          {[2, 4, 6, 8, 12, 16, 24, 32, 48].map(v => (
-            <div class="flex items-center gap-4">
-              <span class="text-xs font-mono text-[var(--color-text-secondary)] w-12">{v}</span>
-              <div class="h-2 rounded bg-[var(--color-link-primary)]" style={`width: ${v * 4}px`}></div>
-              <span class="text-xs text-[var(--color-text-secondary)]">{v * 4}px</span>
+        <h3 class="text-lg font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-8 flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-[var(--color-paper-accent)]/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-[var(--color-paper-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1h-6a1 1 0 01-1-1v-6z"></path>
+            </svg>
+          </span>
+          间距
+        </h3>
+        <div class="space-y-4">
+          {[2, 4, 6, 8, 12, 16, 24, 32, 48].map((v, i) => (
+            <div class="flex items-center gap-6 group cursor-pointer" style={`animation-delay: ${i * 50}ms`}>
+              <span class="text-xs font-mono text-[var(--color-text-secondary)] w-16 text-right">{v}</span>
+              <div class="h-3 rounded-full bg-gradient-to-r from-[var(--color-paper-accent)] to-[var(--color-paper-accent)]/50 group-hover:shadow-lg group-hover:shadow-[var(--color-paper-accent)]/20 transition-all" style={`width: ${v * 4}px`}></div>
+              <span class="text-xs text-[var(--color-text-secondary)] w-12">{v * 4}px</span>
             </div>
           ))}
         </div>
@@ -273,115 +377,136 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
     <!-- ==================== PAGES ==================== -->
     <section id="pages" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Page System</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">页面结构</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Page System</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        页面结构
+      </h2>
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Home -->
-        <div>
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
+        <div class="group">
+          <div class="relative overflow-hidden border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-6 mb-6 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] group-hover:border-[var(--color-paper-accent)]/30 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[var(--color-paper-accent)]/5 to-transparent rounded-bl-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <!-- Fake homepage wireframe -->
-            <div class="space-y-2">
-              <div class="h-3 w-24 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
-              <div class="h-8 w-48 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
-              <div class="h-2 w-32 rounded bg-[var(--color-text-secondary)] opacity-20"></div>
-              <div class="mt-4 space-y-1">
+            <div class="space-y-3">
+              <div class="h-2.5 w-20 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
+              <div class="h-7 w-40 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
+              <div class="h-2 w-28 rounded bg-[var(--color-text-secondary)] opacity-20"></div>
+              <div class="mt-4 space-y-2">
                 <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
                 <div class="h-1.5 w-4/5 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
                 <div class="h-1.5 w-3/5 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
               </div>
-              <div class="mt-3 flex gap-2">
-                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)] opacity-30"></div>
-                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)] opacity-20"></div>
+              <div class="mt-4 flex gap-2">
+                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)]/40"></div>
+                <div class="h-6 w-20 rounded bg-[var(--color-paper-accent)]/20"></div>
               </div>
             </div>
           </div>
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">首页 <code class="text-xs text-[var(--color-link-primary)]">/</code></h3>
-          <p class="text-sm text-[var(--color-text-secondary)]">研究方向、论文列表、荣誉奖励、About。ScholarBadge 显示引用数 / h-index。</p>
+          <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">
+            首页 <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">/</code>
+          </h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">研究方向、论文列表、荣誉奖励、About。ScholarBadge 显示引用数 / h-index。</p>
         </div>
 
         <!-- CV -->
-        <div>
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
-            <div class="space-y-2">
-              <div class="h-3 w-20 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
-              <div class="h-6 w-40 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
-              <div class="mt-2 space-y-1">
+        <div class="group">
+          <div class="relative overflow-hidden border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-6 mb-6 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] group-hover:border-[var(--color-paper-accent)]/30 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[var(--color-paper-accent)]/5 to-transparent rounded-bl-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="space-y-3">
+              <div class="h-2.5 w-16 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
+              <div class="h-5 w-36 rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-20"></div>
+              <div class="mt-3 space-y-2">
                 <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
                 <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
-                <div class="h-1.5 w-4/5 rounded bg-[var(--color-paper-accent)] opacity-30"></div>
+                <div class="h-1.5 w-4/5 rounded bg-[var(--color-paper-accent)]/40"></div>
                 <div class="h-1.5 w-full rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
                 <div class="h-1.5 w-3/4 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
               </div>
-              <div class="mt-3 h-4 w-24 rounded bg-[var(--color-paper-accent)] opacity-20"></div>
+              <div class="mt-4 h-3 w-20 rounded bg-[var(--color-paper-accent)]/20"></div>
             </div>
           </div>
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">简历 <code class="text-xs text-[var(--color-link-primary)]">/cv</code></h3>
-          <p class="text-sm text-[var(--color-text-secondary)]">纯 HTML 渲染，支持 PDF 导出（html2pdf.js）。固定 A4 视口，移动端可缩放。</p>
+          <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">
+            简历 <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">/cv</code>
+          </h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">纯 HTML 渲染，支持 PDF 导出（html2pdf.js）。固定 A4 视口，移动端可缩放。</p>
         </div>
 
         <!-- Slides -->
-        <div>
-          <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-4 mb-4 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)]">
-            <div class="space-y-2">
-              <div class="h-6 w-full rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-10"></div>
+        <div class="group">
+          <div class="relative overflow-hidden border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-6 mb-6 bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] group-hover:border-[var(--color-paper-accent)]/30 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[var(--color-paper-accent)]/5 to-transparent rounded-bl-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="space-y-3">
+              <div class="h-5 w-full rounded bg-[var(--color-heading-primary)] dark:bg-[var(--color-heading-dark)] opacity-10"></div>
               <div class="h-px w-full bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-50"></div>
-              <div class="mt-3 space-y-1">
+              <div class="mt-4 space-y-1.5">
                 <div class="h-1.5 w-1/2 rounded bg-[var(--color-text-secondary)] opacity-30"></div>
                 <div class="h-1 w-3/4 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
                 <div class="h-1 w-2/3 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
               </div>
-              <div class="mt-4 grid grid-cols-3 gap-1">
+              <div class="mt-4 grid grid-cols-3 gap-1.5">
                 {[1,2,3].map(() => (
-                  <div class="h-8 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
+                  <div class="h-10 rounded bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)] opacity-30"></div>
                 ))}
               </div>
             </div>
           </div>
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">论文海报 <code class="text-xs text-[var(--color-link-primary)]">/slides</code></h3>
-          <p class="text-sm text-[var(--color-text-secondary)]">GDKVM (ICCV 2025)、OSA (arXiv 2026)。IEEE/CVPR 学术风格，Times New Roman。</p>
+          <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">
+            论文海报 <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">/slides</code>
+          </h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">GDKVM (ICCV 2025)、OSA (arXiv 2026)。IEEE/CVPR 学术风格，Times New Roman。</p>
         </div>
       </div>
     </section>
 
     <!-- ==================== COMPONENTS ==================== -->
     <section id="components" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Components</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">组件规范</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Components</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        组件规范
+      </h2>
 
       <!-- Favicon -->
       <div class="mb-16">
-        <div class="flex items-start gap-4 mb-6">
-          <div class="w-12 h-12 rounded-lg border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] flex items-center justify-center">
+        <div class="flex items-start gap-6 mb-8">
+          <div class="w-16 h-16 rounded-2xl border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] flex items-center justify-center group hover:border-[var(--color-paper-accent)]/30 transition-colors">
             <Favicon />
           </div>
           <div>
-            <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-1">Favicon 系统</h3>
+            <h3 class="font-serif font-semibold text-xl text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Favicon 系统</h3>
             <p class="text-sm text-[var(--color-text-secondary)]">皮卡丘图标 + sprites-gallery CDN + localStorage 持久化</p>
           </div>
         </div>
 
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-4">
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 space-y-6">
           <div>
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">CDN 策略</p>
-            <code class="block text-sm font-mono text-[var(--color-link-primary)] break-all bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] mb-3 font-semibold">CDN 策略</p>
+            <code class="block text-sm font-mono text-[var(--color-paper-accent)] break-all bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-4 rounded-xl">
               https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/...
             </code>
           </div>
-          <div>
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">默认图标</p>
-            <p class="text-sm text-[var(--color-text-secondary)]">Lotad（莲叶童子）。首次访问固定显示，刷新后从 regular/shiny 随机。</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 font-semibold">默认图标</p>
+              <p class="text-sm text-[var(--color-text-secondary)]">Lotad（莲叶童子）。首次访问固定显示，刷新后从 regular/shiny 随机。</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 font-semibold">iOS 要求</p>
+              <p class="text-sm text-[var(--color-text-secondary)]">apple-touch-icon 必须不透明。iOS 用黑色填充透明像素。</p>
+            </div>
           </div>
-          <div>
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">iOS 要求</p>
-            <p class="text-sm text-[var(--color-text-secondary)]">apple-touch-icon 必须不透明。iOS 用黑色填充透明像素。</p>
-          </div>
-          <div class="pt-2 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+          <div class="pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
             <p class="text-xs text-[var(--color-text-secondary)]">
-              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/5df243295fe1" target="_blank" class="text-[var(--color-link-primary)] hover:underline">5df2432</a>
-              — remove alpha channel for iOS ·
-              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/c3fd9f1db794" target="_blank" class="text-[var(--color-link-primary)] hover:underline">c3fd9f1</a>
-              — opaque icons with solid background
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/5df243295fe1" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">5df2432</a>
+              <span class="mx-2">— remove alpha channel for iOS · </span>
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/c3fd9f1db794" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">c3fd9f1</a>
+              <span> — opaque icons with solid background</span>
             </p>
           </div>
         </div>
@@ -389,43 +514,43 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
       <!-- CV Paper Item -->
       <div class="mb-16">
-        <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">CvPaperItem</h3>
-        <p class="text-sm text-[var(--color-text-secondary)] mb-6">
+        <h3 class="font-serif font-semibold text-xl text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">CvPaperItem</h3>
+        <p class="text-sm text-[var(--color-text-secondary)] mb-8">
           论文条目组件，展示 venue、标题、作者、链接。CVPR Logo 高度对齐是最频繁的修改点。
         </p>
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-3">
-          <div class="flex items-center gap-3 text-sm">
-            <span class="px-2 py-0.5 rounded bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] text-[var(--color-tag-field-text)] dark:text-[var(--color-tag-field-text-dark)] text-xs font-semibold">CVPR 2026</span>
-            <span class="font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">GDKVM</span>
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 space-y-4">
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 rounded-full bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] text-[var(--color-tag-field-text)] dark:text-[var(--color-tag-field-text-dark)] text-xs font-bold">CVPR 2026</span>
+            <span class="font-serif text-xl font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">GDKVM</span>
           </div>
-          <div class="text-sm text-[var(--color-text-secondary)]">Rui Wang, Xxx Xxx, Xxx Xxx · Highlight</div>
-          <div class="flex gap-3 text-xs">
-            <a href="#" class="text-[var(--color-link-primary)] hover:underline">arXiv</a>
-            <a href="#" class="text-[var(--color-link-primary)] hover:underline">Project</a>
+          <div class="text-base text-[var(--color-text-secondary)]">Rui Wang, Xxx Xxx, Xxx Xxx · Highlight</div>
+          <div class="flex gap-4 text-sm">
+            <a href="#" class="text-[var(--color-paper-accent)] hover:underline font-medium">arXiv</a>
+            <a href="#" class="text-[var(--color-paper-accent)] hover:underline font-medium">Project</a>
             <span class="text-[var(--color-text-secondary)]">· ICCV 2025 oral → CVPR 2026 Highlight</span>
           </div>
         </div>
-        <p class="text-xs text-[var(--color-text-secondary)] mt-3">
-          <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/94775e4114b1" target="_blank" class="text-[var(--color-link-primary)] hover:underline">94775e4</a>
+        <p class="text-xs text-[var(--color-text-secondary)] mt-4">
+          <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/94775e4114b1" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">94775e4</a>
           — logo full-height alignment with self-stretch py-0.5 max-h-4.5rem
         </p>
       </div>
 
       <!-- Theme Toggle -->
       <div>
-        <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">ThemeToggle / 暗黑模式</h3>
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-md p-6 space-y-4">
+        <h3 class="font-serif font-semibold text-xl text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">ThemeToggle / 暗黑模式</h3>
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 space-y-6">
           <div>
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">Tailwind v4 dark variant</p>
-            <pre class="text-sm font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded overflow-x-auto"><code>@custom-variant dark (&:where(.dark, .dark *))</code></pre>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] mb-3 font-semibold">Tailwind v4 dark variant</p>
+            <pre class="text-sm font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-4 rounded-xl overflow-x-auto"><code>@custom-variant dark (&:where(.dark, .dark *))</code></pre>
           </div>
           <div>
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">JS initialization</p>
-            <pre class="text-xs font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded overflow-x-auto"><code>document.documentElement.classList.toggle('dark', theme === 'dark')</code></pre>
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-3 font-semibold">JS initialization</p>
+            <pre class="text-xs font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-4 rounded-xl overflow-x-auto"><code>document.documentElement.classList.toggle('dark', theme === 'dark')</code></pre>
           </div>
-          <div class="pt-2 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+          <div class="pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
             <p class="text-xs text-[var(--color-text-secondary)]">
-              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/b0b8e746d20d" target="_blank" class="text-[var(--color-link-primary)] hover:underline">b0b8e74</a>
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/b0b8e746d20d" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">b0b8e74</a>
               — enable class-based dark variant in Tailwind v4
             </p>
           </div>
@@ -435,131 +560,133 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
     <!-- ==================== TIMELINE ==================== -->
     <section id="timeline" class="py-32 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Timeline</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">演进时间线 · 20天 / 868 commits</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Timeline</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4 leading-tight">
+        演进时间线
+      </h2>
+      <p class="text-lg text-[var(--color-text-secondary)] mb-16">20天 / 868 commits</p>
 
-      <div class="relative pl-8">
-        <!-- Vertical line -->
-        <div class="absolute left-3 top-0 bottom-0 w-px bg-[var(--color-border-primary)] dark:bg-[var(--color-border-dark)]"></div>
+      <div class="relative pl-10">
+        <!-- Animated vertical line -->
+        <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--color-paper-accent)] via-[var(--color-paper-accent)]/50 to-[var(--color-border-primary)] dark:to-[var(--color-border-dark)] timeline-line"></div>
 
         <!-- W13 -->
-        <div class="mb-12">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
-            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W13 · 3/31</span>
-            <span class="text-xs text-[var(--color-text-secondary)]">Init & 迁移</span>
+        <div class="mb-16 relative group">
+          <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-paper-accent)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-paper-accent)]/80 transition-all duration-300"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-sm uppercase tracking-widest text-[var(--color-paper-accent)] font-bold">W13 · 3/31</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">Init & 迁移</span>
           </div>
-          <div class="space-y-2 ml-2">
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">3abb297</code>
+          <div class="space-y-3 ml-2">
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">3abb297</code>
               <span class="text-[var(--color-text-secondary)]">Init — 项目初始化</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">d940b681</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">d940b681</code>
               <span class="text-[var(--color-text-secondary)]">Refactor About Me — 卡片布局</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">ee66bd63</code>
-              <span class="text-[var(--color-text-secondary)]">Add footer — "Built with Astro"</span>
-            </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">4fc84fa1</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">4fc84fa1</code>
               <span class="text-[var(--color-text-secondary)]">DESIGN.md — 设计系统文档</span>
             </div>
           </div>
         </div>
 
         <!-- W14 -->
-        <div class="mb-12">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded-full bg-[var(--color-scholar-icon)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
-            <span class="text-xs uppercase tracking-widest text-[var(--color-scholar-icon)] font-semibold">2026-W14 · 4/6</span>
-            <span class="text-xs text-[var(--color-text-secondary)]">Scholar API 迁移</span>
+        <div class="mb-16 relative group">
+          <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-scholar-icon)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-scholar-icon)]/80 transition-all duration-300"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-sm uppercase tracking-widest text-[var(--color-scholar-icon)] font-bold">W14 · 4/6</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">Scholar API 迁移</span>
           </div>
-          <div class="space-y-2 ml-2">
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">80a710ed</code>
+          <div class="space-y-3 ml-2">
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">80a710ed</code>
               <span class="text-[var(--color-text-secondary)]">migrate from Google Scholar to OpenAlex API</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">74e56cce</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">74e56cce</code>
               <span class="text-[var(--color-text-secondary)]">use Semantic Scholar API by arxiv ID</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">b0b8e746</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">b0b8e746</code>
               <span class="text-[var(--color-text-secondary)]">enable class-based dark variant in Tailwind v4</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">e314cf81</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">e314cf81</code>
               <span class="text-[var(--color-text-secondary)]">upgrade to Astro v6.1.5 + pnpm + Rust compiler</span>
             </div>
           </div>
         </div>
 
         <!-- W15 -->
-        <div class="mb-12">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
-            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W15 · 4/13</span>
-            <span class="text-xs text-[var(--color-text-secondary)]">现代化收敛</span>
+        <div class="mb-16 relative group">
+          <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-paper-accent)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-paper-accent)]/80 transition-all duration-300"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-sm uppercase tracking-widest text-[var(--color-paper-accent)] font-bold">W15 · 4/13</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">现代化收敛</span>
           </div>
-          <div class="space-y-2 ml-2">
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">f030b818</code>
+          <div class="space-y-3 ml-2">
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">f030b818</code>
               <span class="text-[var(--color-text-secondary)]">modernize to Astro 6.x best practices</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">c33547fa</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">c33547fa</code>
               <span class="text-[var(--color-text-secondary)]">extract sprites-gallery to standalone site</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">62a67978</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">62a67978</code>
               <span class="text-[var(--color-text-secondary)]">restore avatar.png from backup branch</span>
             </div>
           </div>
         </div>
 
         <!-- W16 -->
-        <div class="mb-12">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
-            <span class="text-xs uppercase tracking-widest text-[var(--color-paper-accent)] font-semibold">2026-W16 · 4/17</span>
-            <span class="text-xs text-[var(--color-text-secondary)]">Favicon 定稿</span>
+        <div class="mb-16 relative group">
+          <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-paper-accent)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-paper-accent)]/80 transition-all duration-300"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-sm uppercase tracking-widest text-[var(--color-paper-accent)] font-bold">W16 · 4/17</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">Favicon 定稿</span>
           </div>
-          <div class="space-y-2 ml-2">
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">229db850</code>
+          <div class="space-y-3 ml-2">
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">229db850</code>
               <span class="text-[var(--color-text-secondary)]">add random Pokémon favicon to CV layout</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">184f55e9</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">184f55e9</code>
               <span class="text-[var(--color-text-secondary)]">sync all PWA icons to Pokémon theme</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">8b5ae604</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">8b5ae604</code>
               <span class="text-[var(--color-text-secondary)]">unify all favicon via Favicon component</span>
             </div>
           </div>
         </div>
 
         <!-- W17 -->
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded-full bg-[var(--color-scholar-icon)] border-2 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] relative z-10"></div>
-            <span class="text-xs uppercase tracking-widest text-[var(--color-scholar-icon)] font-semibold">2026-W17 · 4/19</span>
-            <span class="text-xs text-[var(--color-text-secondary)]">最新 · Favicon 最终修复</span>
+        <div class="relative group">
+          <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-scholar-icon)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-scholar-icon)]/80 transition-all duration-300"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-sm uppercase tracking-widest text-[var(--color-scholar-icon)] font-bold">W17 · 4/19</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">最新 · Favicon 最终修复</span>
           </div>
-          <div class="space-y-2 ml-2">
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">5df24329</code>
+          <div class="space-y-3 ml-2">
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">5df24329</code>
               <span class="text-[var(--color-text-secondary)]">remove alpha channel from apple-touch-icon for iOS</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">f998c162</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">f998c162</code>
               <span class="text-[var(--color-text-secondary)]">replace 175-line is:inline style with minimal FOUC guard</span>
             </div>
-            <div class="text-sm">
-              <code class="text-xs text-[var(--color-link-primary)] mr-2">3f4dc0e7</code>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">3f4dc0e7</code>
               <span class="text-[var(--color-text-secondary)]">update sprites-gallery git SHA to 7cdfc19</span>
             </div>
           </div>
@@ -569,100 +696,146 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
     <!-- ==================== NOTES ==================== -->
     <section id="notes" class="py-32">
-      <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-4">Tech Notes</p>
-      <h2 class="text-3xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16">技术备忘</h2>
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Tech Notes</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        技术备忘
+      </h2>
 
       <div class="space-y-6">
         <!-- Tailwind v4 -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">
-            Tailwind v4 迁移
-            <span class="ml-2 text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] px-2 py-0.5 rounded">Critical</span>
-          </h3>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm">
-              <thead>
-                <tr class="text-left border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-                  <th class="py-2 pr-4 text-[var(--color-text-secondary)] font-medium">变更项</th>
-                  <th class="py-2 pr-4 text-[var(--color-text-secondary)] font-medium">v3 写法</th>
-                  <th class="py-2 text-[var(--color-text-secondary)] font-medium">v4 写法</th>
-                </tr>
-              </thead>
-              <tbody class="text-[var(--color-text-secondary)]">
-                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-                  <td class="py-2 pr-4 font-mono text-xs">Config</td>
-                  <td class="py-2 pr-4 font-mono text-xs">tailwind.config.mjs</td>
-                  <td class="py-2 font-mono text-xs">global.css @theme {}</td>
-                </tr>
-                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-                  <td class="py-2 pr-4 font-mono text-xs">dark mode</td>
-                  <td class="py-2 pr-4 font-mono text-xs">darkMode: 'class'</td>
-                  <td class="py-2 font-mono text-xs">@custom-variant dark</td>
-                </tr>
-                <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-                  <td class="py-2 pr-4 font-mono text-xs">text color var</td>
-                  <td class="py-2 pr-4 font-mono text-xs">text-[--var]</td>
-                  <td class="py-2 font-mono text-xs">text-text-primary (auto)</td>
-                </tr>
-                <tr>
-                  <td class="py-2 pr-4 font-mono text-xs">CSS两层结构</td>
-                  <td class="py-2 pr-4 text-xs" colspan="2">Layer1: CSS变量 → Layer2: utility class（需post-build内联）</td>
-                </tr>
-              </tbody>
-            </table>
+        <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
+          <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+            <div class="flex items-center gap-4">
+              <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+                Tailwind v4 迁移
+              </h3>
+              <span class="text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] px-3 py-1 rounded-full">Critical</span>
+            </div>
+            <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-left border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                    <th class="py-3 pr-4 text-[var(--color-text-secondary)] font-semibold">变更项</th>
+                    <th class="py-3 pr-4 text-[var(--color-text-secondary)] font-semibold">v3 写法</th>
+                    <th class="py-3 text-[var(--color-text-secondary)] font-semibold">v4 写法</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[var(--color-text-secondary)]">
+                  <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                    <td class="py-3 pr-4 font-mono text-xs text-[var(--color-paper-accent)]">Config</td>
+                    <td class="py-3 pr-4 font-mono text-xs">tailwind.config.mjs</td>
+                    <td class="py-3 font-mono text-xs">global.css @theme {}</td>
+                  </tr>
+                  <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                    <td class="py-3 pr-4 font-mono text-xs text-[var(--color-paper-accent)]">dark mode</td>
+                    <td class="py-3 pr-4 font-mono text-xs">darkMode: 'class'</td>
+                    <td class="py-3 font-mono text-xs">@custom-variant dark</td>
+                  </tr>
+                  <tr class="border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                    <td class="py-3 pr-4 font-mono text-xs text-[var(--color-paper-accent)]">text color var</td>
+                    <td class="py-3 pr-4 font-mono text-xs">text-[--var]</td>
+                    <td class="py-3 font-mono text-xs">text-text-primary (auto)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-4 font-mono text-xs text-[var(--color-paper-accent)]">CSS两层结构</td>
+                    <td class="py-3 pr-4 text-xs" colspan="2">Layer1: CSS变量 → Layer2: utility class（需post-build内联）</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-[var(--color-text-secondary)] mt-4">
+              <code class="text-[var(--color-paper-accent)] font-mono">b0b8e746d20d</code>
+              — enable class-based dark variant
+              ·
+              <code class="text-[var(--color-paper-accent)] font-mono">a18d08726c53</code>
+              — use text-hero/text-section bare utilities instead of text-[--var]
+            </p>
           </div>
-          <p class="text-xs text-[var(--color-text-secondary)] mt-3">
-            <code class="text-[var(--color-link-primary)]">b0b8e746d20d</code>
-            — enable class-based dark variant
-            ·
-            <code class="text-[var(--color-link-primary)]">a18d08726c53</code>
-            — use text-hero/text-section bare utilities instead of text-[--var]
-          </p>
-        </div>
+        </details>
 
         <!-- Astro v6 -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">
-            Astro v6 升级
-            <span class="ml-2 text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-tech-bg)] dark:bg-[var(--color-tag-tech-bg-dark)] px-2 py-0.5 rounded">v5 → v6</span>
-          </h3>
-          <div class="space-y-2">
-            <div class="flex items-start gap-3 text-sm">
-              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+        <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
+          <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+            <div class="flex items-center gap-4">
+              <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+                Astro v6 升级
+              </h3>
+              <span class="text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-tech-bg)] dark:bg-[var(--color-tag-tech-bg-dark)] px-3 py-1 rounded-full">v5 → v6</span>
+            </div>
+            <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 space-y-4">
+            <div class="flex items-start gap-4 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
               <div>
-                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Content Collections</p>
-                <p class="text-[var(--color-text-secondary)] text-xs">deprecated <code class="font-mono">type: 'data'</code> → Astro 5 loaders API with <code class="font-mono">glob()</code></p>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">Content Collections</p>
+                <p class="text-[var(--color-text-secondary)] text-xs mt-1">deprecated <code class="font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1 py-0.5 rounded">type: 'data'</code> → Astro 5 loaders API with <code class="font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1 py-0.5 rounded">glob()</code></p>
               </div>
             </div>
-            <div class="flex items-start gap-3 text-sm">
-              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+            <div class="flex items-start gap-4 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
               <div>
-                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Package manager</p>
-                <p class="text-[var(--color-text-secondary)] text-xs">npm → pnpm + Rust compiler (<code class="font-mono">experimental.rustCompiler: true</code>)</p>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">Package manager</p>
+                <p class="text-[var(--color-text-secondary)] text-xs mt-1">npm → pnpm + Rust compiler (<code class="font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1 py-0.5 rounded">experimental.rustCompiler: true</code>)</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 text-sm">
-              <span class="text-[var(--color-paper-accent)] mt-0.5">→</span>
+            <div class="flex items-start gap-4 text-sm">
+              <span class="text-[var(--color-paper-accent)] mt-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </span>
               <div>
-                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">Component imports</p>
-                <p class="text-[var(--color-text-secondary)] text-xs">astro:assets 替代直接 public/ 引用</p>
+                <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">Component imports</p>
+                <p class="text-[var(--color-text-secondary)] text-xs mt-1">astro:assets 替代直接 public/ 引用</p>
               </div>
             </div>
+            <p class="text-xs text-[var(--color-text-secondary)] pt-2 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+              <code class="text-[var(--color-paper-accent)] font-mono">e314cf81367a</code>
+              — perf(astro): upgrade to v6.1.5 + pnpm + Rust compiler
+            </p>
           </div>
-          <p class="text-xs text-[var(--color-text-secondary)] mt-3">
-            <code class="text-[var(--color-link-primary)]">e314cf81367a</code>
-            — perf(astro): upgrade to v6.1.5 + pnpm + Rust compiler
-          </p>
-        </div>
+        </details>
 
         <!-- CI/CD -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">CI/CD 策略</h3>
-          <div class="space-y-4">
+        <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
+          <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+            <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+              CI/CD 策略
+            </h3>
+            <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 space-y-6">
             <div>
               <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">CDN SHA 固定</p>
-              <p class="text-xs text-[var(--color-text-secondary)] mb-2">部署时将 sprites-gallery CDN URL 的 <code class="font-mono">@main</code> 替换为固定 git SHA，确保不可变缓存。</p>
-              <code class="block text-xs font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-3 rounded text-[var(--color-link-primary)]">
+              <p class="text-xs text-[var(--color-text-secondary)] mb-3">部署时将 sprites-gallery CDN URL 的 <code class="font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1 py-0.5 rounded">@main</code> 替换为固定 git SHA，确保不可变缓存。</p>
+              <code class="block text-sm font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] p-4 rounded-xl text-[var(--color-paper-accent)]">
                 @main → 7cdfc19
               </code>
             </div>
@@ -671,63 +844,72 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
               <p class="text-xs text-[var(--color-text-secondary)]">当前 citations 硬编码为 3，API 迁移未完成（Semantic Scholar 按需查询）。</p>
             </div>
             <div>
-              <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Workflow 统计</p>
-              <div class="grid grid-cols-3 gap-4 mt-2">
-                <div class="text-center">
-                  <p class="text-2xl font-bold text-[var(--color-paper-accent)]">518</p>
-                  <p class="text-xs text-[var(--color-text-secondary)]">success (61.6%)</p>
+              <p class="text-sm font-medium text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">Workflow 统计</p>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="text-center p-4 rounded-xl bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <p class="text-3xl font-bold text-[var(--color-paper-accent)]">518</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] mt-1">success (61.6%)</p>
                 </div>
-                <div class="text-center">
-                  <p class="text-2xl font-bold text-[var(--color-text-secondary)]">248</p>
-                  <p class="text-xs text-[var(--color-text-secondary)]">cancelled (29.5%)</p>
+                <div class="text-center p-4 rounded-xl bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <p class="text-3xl font-bold text-[var(--color-text-secondary)]">248</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] mt-1">cancelled (29.5%)</p>
                 </div>
-                <div class="text-center">
-                  <p class="text-2xl font-bold text-red-500">75</p>
-                  <p class="text-xs text-[var(--color-text-secondary)]">failure (8.9%)</p>
+                <div class="text-center p-4 rounded-xl bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
+                  <p class="text-3xl font-bold text-red-500">75</p>
+                  <p class="text-xs text-[var(--color-text-secondary)] mt-1">failure (8.9%)</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </details>
 
         <!-- Scholar API evolution -->
-        <div class="border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-lg p-6">
-          <h3 class="font-semibold text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-4">学术数据 API 演变</h3>
-          <div class="space-y-3">
-            <div class="flex items-start gap-3 text-sm">
-              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-xs font-bold">1</span>
+        <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
+          <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+            <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+              学术数据 API 演变
+            </h3>
+            <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 space-y-4">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-sm font-bold">1</span>
               <div>
                 <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">Google Scholar 爬虫</p>
-                <p class="text-[var(--color-text-secondary)] text-xs">已废弃 — 页面结构频繁变化，维护成本高</p>
+                <p class="text-xs text-[var(--color-text-secondary)] mt-1">已废弃 — 页面结构频繁变化，维护成本高</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 text-sm">
-              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/20 text-yellow-600 flex items-center justify-center text-xs font-bold">2</span>
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-600 flex items-center justify-center text-sm font-bold">2</span>
               <div>
                 <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">
-                  OpenAlex API — <code class="text-xs text-[var(--color-link-primary)]">80a710ed</code>
+                  OpenAlex API — <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1.5 py-0.5 rounded">80a710ed</code>
                 </p>
-                <p class="text-[var(--color-text-secondary)] text-xs">已废弃 — 排序不按引用数</p>
+                <p class="text-xs text-[var(--color-text-secondary)] mt-1">已废弃 — 排序不按引用数</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 text-sm">
-              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--color-scholar-icon)]/20 text-[var(--color-scholar-icon)] flex items-center justify-center text-xs font-bold">3</span>
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-scholar-icon)]/20 text-[var(--color-scholar-icon)] flex items-center justify-center text-sm font-bold">3</span>
               <div>
                 <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">
-                  Semantic Scholar by arXiv ID — <code class="text-xs text-[var(--color-link-primary)]">74e56cce</code>
+                  Semantic Scholar by arXiv ID — <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] px-1.5 py-0.5 rounded">74e56cce</code>
                 </p>
-                <p class="text-[var(--color-text-secondary)] text-xs">当前方案 — 直接按论文 ID 查，最准确</p>
+                <p class="text-xs text-[var(--color-text-secondary)] mt-1">当前方案 — 直接按论文 ID 查，最准确</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 text-sm">
-              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--color-text-secondary)]/20 text-[var(--color-text-secondary)] flex items-center justify-center text-xs font-bold">?</span>
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-text-secondary)]/20 text-[var(--color-text-secondary)] flex items-center justify-center text-sm font-bold">?</span>
               <div>
                 <p class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] font-medium">自动更新未接通</p>
-                <p class="text-[var(--color-text-secondary)] text-xs">待解决 — 为什么 cron job 没有替代手动 hardcode</p>
+                <p class="text-xs text-[var(--color-text-secondary)] mt-1">待解决 — 为什么 cron job 没有替代手动 hardcode</p>
               </div>
             </div>
           </div>
-        </div>
+        </details>
 
       </div>
     </section>
@@ -738,3 +920,73 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
   <div class="h-32"></div>
 
 </BaseLayout>
+
+<!-- Scroll-spy and TOC active state script -->
+<script>
+  // TOC scroll-spy
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('text-[var(--color-paper-accent)]', 'bg-[var(--color-paper-accent)]/10');
+          if (link.getAttribute('data-section') === id) {
+            link.classList.add('text-[var(--color-paper-accent)]', 'bg-[var(--color-paper-accent)]/10');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  // Smooth scroll for TOC links
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.getAttribute('data-section');
+      if (id) {
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Timeline line animation */
+  .timeline-line {
+    animation: timelineGrow 2s ease-out forwards;
+  }
+
+  @keyframes timelineGrow {
+    from {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    to {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-line,
+    [class*="animate-"] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
