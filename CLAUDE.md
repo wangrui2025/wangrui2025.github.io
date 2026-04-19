@@ -116,6 +116,40 @@ GitHub Pages builds automatically on push - no manual deployment step needed.
 
 **按重要程度降序排列（国家奖学金 > 校级特等奖 > 校级一等奖 > ... > 本科）**，不按时间。荣誉奖项来自 `honors.ts`，与 timeline 独立。
 
+## Design 页面同步协议
+
+**`/design/` 页面是这个项目的唯一设计文档。每次设计变更时，必须同步更新该页面。**
+
+### 触发场景
+
+| 设计变更类型 | 同步到 Design 页面的哪个 section |
+|-------------|-------------------------------|
+| 新增 / 修改组件 | **Components** section |
+| 新增 / 修改页面 | **Pages** section |
+| 修改配色 / 字体 / 间距 / CSS 变量 | **Tokens** section |
+| 修改主题、暗黑模式、FOUC 处理 | **Components** (ThemeToggle) 或 **Philosophy** |
+| Commit 后 | 在 **Timeline** 追加 commit SHA + 简短描述 |
+
+### 操作流程
+
+1. 完成设计变更，Commit 并 Push
+2. 打开 `astro/src/pages/design.astro`
+3. 更新对应的 section（Favicon/Tokens/Components/Pages）
+4. 在 Timeline 最顶部（W17 位置）插入新的 commit 条目
+5. Commit：`docs(design): sync [变更描述]`
+6. Push
+
+### 示例
+
+新增了一个 `ProjectCard` 组件：
+```
+1. 完成组件代码，git commit -m "feat(components): add ProjectCard for project showcase"
+2. git push
+3. 在 design.astro 的 Components section 添加 ProjectCard 说明
+4. 在 Timeline 顶部添加：code>abc1234</code> — add ProjectCard component
+5. git add + commit + push
+```
+
 ## Git Workflow — 自动推送
 
 **⚠️ 每次修改代码后，必须自动推送，无需等待确认。**
