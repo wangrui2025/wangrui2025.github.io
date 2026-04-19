@@ -25,7 +25,7 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
 
     // Default: Lotad (set in HTML link href)
     var DEFAULT_FAVICON = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/lotad.png';
-    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json';
+    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json?t=' + Date.now();
 
     // If page has data-fixed-favicon, skip randomization and use fixed Smeargle
     if (document.documentElement.hasAttribute('data-fixed-favicon')) {
