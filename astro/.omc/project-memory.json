@@ -341,6 +341,12 @@
       "type": "file"
     },
     {
+      "path": "src/utils/structuredData.ts",
+      "accessCount": 2,
+      "lastAccessed": 1776596345213,
+      "type": "file"
+    },
+    {
       "path": "scripts/generate-cv-pdf.mjs",
       "accessCount": 1,
       "lastAccessed": 1776400930556,
@@ -386,12 +392,6 @@
       "path": "src/content/papers/gdkvm.json",
       "accessCount": 1,
       "lastAccessed": 1776409140452,
-      "type": "file"
-    },
-    {
-      "path": "src/utils/structuredData.ts",
-      "accessCount": 1,
-      "lastAccessed": 1776409145273,
       "type": "file"
     },
     {

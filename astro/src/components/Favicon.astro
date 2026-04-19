@@ -31,8 +31,7 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
       return;
     }
 
-    var MANIFEST_URL = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/icon-manifest.json';
-    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public';
+    var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json';
 
     fetch(MANIFEST_URL)
       .then(function(res) { return res.json(); })
@@ -42,8 +41,8 @@ const initialHref = fixedFavicon ? smeargleUrl : defaultUrl;
         if (allowedSets.length === 0) throw new Error('No allowed icon sets');
         var set = allowedSets[Math.floor(Math.random() * allowedSets.length)];
         var icon = set.icons[Math.floor(Math.random() * set.icons.length)];
-        // icon.url already has embedded git SHA via @main tag — fully immutable
-        link.href = CDN_BASE + icon.url;
+        // icon.url is a full CDN URL with embedded git SHA — use directly
+        link.href = icon.url;
       })
       .catch(function() {
         // Keep default Lotad on error
