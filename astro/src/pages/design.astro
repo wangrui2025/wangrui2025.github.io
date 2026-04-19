@@ -23,7 +23,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
     <!-- Overlapping badge -->
     <div class="absolute top-8 right-8 md:top-16 md:right-16 rotate-12">
       <span class="inline-block px-4 py-2 text-xs font-mono uppercase tracking-widest bg-[var(--color-paper-accent)] text-white rounded-full shadow-lg">
-        v1.0 · 868 commits
+        v1.0 · 854 commits
       </span>
     </div>
 
@@ -80,6 +80,11 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <li>
           <a href="#notes" data-section="notes" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             Notes
+          </a>
+        </li>
+        <li>
+          <a href="#maintenance" data-section="maintenance" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+            Maintenance
           </a>
         </li>
       </ul>
@@ -475,12 +480,12 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       <!-- Favicon -->
       <div class="mb-16">
         <div class="flex items-start gap-6 mb-8">
-          <div class="w-16 h-16 rounded-2xl border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] flex items-center justify-center group hover:border-[var(--color-paper-accent)]/30 transition-colors">
-            <Favicon />
+          <div class="w-16 h-16 rounded-2xl border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] flex items-center justify-center group hover:border-[var(--color-paper-accent)]/30 transition-colors overflow-hidden">
+            <img src="https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png" alt="Smeargle favicon" class="w-10 h-10" />
           </div>
           <div>
             <h3 class="font-serif font-semibold text-xl text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)] mb-2">Favicon 系统</h3>
-            <p class="text-sm text-[var(--color-text-secondary)]">皮卡丘图标 + sprites-gallery CDN + localStorage 持久化</p>
+            <p class="text-sm text-[var(--color-text-secondary)]">Smeargle 固定图标 + sprites-gallery CDN + localStorage 持久化（随机）</p>
           </div>
         </div>
 
@@ -497,16 +502,16 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
               <p class="text-sm text-[var(--color-text-secondary)]">Lotad（莲叶童子）。首次访问固定显示，刷新后从 regular/shiny 随机。</p>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 font-semibold">iOS 要求</p>
-              <p class="text-sm text-[var(--color-text-secondary)]">apple-touch-icon 必须不透明。iOS 用黑色填充透明像素。</p>
+              <p class="text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 font-semibold">固定 Favicon</p>
+              <p class="text-sm text-[var(--color-text-secondary)]">通过 <code class="font-mono text-xs">fixedFavicon</code> prop 控制。Design 页面使用 Smeargle，其他页面随机。</p>
             </div>
           </div>
           <div class="pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
             <p class="text-xs text-[var(--color-text-secondary)]">
               <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/5df243295fe1" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">5df2432</a>
               <span class="mx-2">— remove alpha channel for iOS · </span>
-              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/c3fd9f1db794" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">c3fd9f1</a>
-              <span> — opaque icons with solid background</span>
+              <a href="https://github.com/wangrui2025/wangrui2025.github.io/commit/647f92b" target="_blank" class="text-[var(--color-paper-accent)] hover:underline font-mono">647f92b</a>
+              <span> — Smeargle fixed favicon for /design/</span>
             </p>
           </div>
         </div>
@@ -567,7 +572,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4 leading-tight">
         演进时间线
       </h2>
-      <p class="text-lg text-[var(--color-text-secondary)] mb-16">20天 / 868 commits</p>
+      <p class="text-lg text-[var(--color-text-secondary)] mb-16">21天 / 854 commits</p>
 
       <div class="relative pl-10">
         <!-- Animated vertical line -->
@@ -674,20 +679,20 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
           <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-[var(--color-scholar-icon)] border-4 border-[var(--color-bg-primary)] dark:border-[var(--color-bg-dark)] group-hover:scale-125 group-hover:bg-[var(--color-scholar-icon)]/80 transition-all duration-300"></div>
           <div class="flex items-center gap-4 mb-4">
             <span class="text-sm uppercase tracking-widest text-[var(--color-scholar-icon)] font-bold">W17 · 4/19</span>
-            <span class="text-sm text-[var(--color-text-secondary)]">最新 · Favicon 最终修复</span>
+            <span class="text-sm text-[var(--color-text-secondary)]">最新 · Design 页面 & Smeargle Favicon</span>
           </div>
           <div class="space-y-3 ml-2">
             <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">647f92b</code>
+              <span class="text-[var(--color-text-secondary)]">Smeargle fixed favicon for /design/ page</span>
+            </div>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
+              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">8d30612</code>
+              <span class="text-[var(--color-text-secondary)]">add fixedFavicon prop to BaseLayout + Favicon component</span>
+            </div>
+            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
               <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">5df24329</code>
               <span class="text-[var(--color-text-secondary)]">remove alpha channel from apple-touch-icon for iOS</span>
-            </div>
-            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
-              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">f998c162</code>
-              <span class="text-[var(--color-text-secondary)]">replace 175-line is:inline style with minimal FOUC guard</span>
-            </div>
-            <div class="text-sm group-hover:translate-x-1 transition-transform duration-200">
-              <code class="text-xs text-[var(--color-paper-accent)] font-mono mr-3 bg-[var(--color-paper-accent)]/10 px-2 py-0.5 rounded">3f4dc0e7</code>
-              <span class="text-[var(--color-text-secondary)]">update sprites-gallery git SHA to 7cdfc19</span>
             </div>
           </div>
         </div>
@@ -911,6 +916,41 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
           </div>
         </details>
 
+      </div>
+    </section>
+
+    <!-- ==================== MAINTENANCE ==================== -->
+    <section id="maintenance" class="py-32">
+      <div class="flex items-baseline gap-6 mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Maintenance</p>
+        <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+        维护协议
+      </h2>
+
+      <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8 space-y-4">
+        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+          Design 页面是这个项目的<strong class="text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">唯一设计文档</strong>。每次设计变更时，必须同步更新此页面。
+        </p>
+        <div class="grid md:grid-cols-2 gap-4 pt-4">
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)]/20 text-[var(--color-paper-accent)] flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+            <p class="text-sm text-[var(--color-text-secondary)]">新增组件 / 修改样式 → 更新 <strong>Components</strong> section</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)]/20 text-[var(--color-paper-accent)] flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+            <p class="text-sm text-[var(--color-text-secondary)]">新增页面 / 修改路由 → 更新 <strong>Pages</strong> section</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)]/20 text-[var(--color-paper-accent)] flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+            <p class="text-sm text-[var(--color-text-secondary)]">修改配色 / 字体 / 间距 → 更新 <strong>Tokens</strong> section</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[var(--color-paper-accent)]/20 text-[var(--color-paper-accent)] flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+            <p class="text-sm text-[var(--color-text-secondary)]">Commit 后在 <strong>Timeline</strong> 追加对应 commit SHA 和描述</p>
+          </div>
+        </div>
       </div>
     </section>
 
