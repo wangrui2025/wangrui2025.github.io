@@ -11,6 +11,34 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const DIST_DIR = path.join(process.cwd(), 'dist');
+
+/**
+ * Post-build favicon restoration:
+ * astro-icon generates its own favicons during build, overwriting custom icons.
+ * Copy our Lotad icons from public/favicons/ to dist/ AFTER the build.
+ */
+function restoreFavicons() {
+  const FAVICON_MAP = {
+    'public/favicons/apple-touch-icon.png': 'apple-touch-icon.png',
+    'public/favicons/icon-192x192.png': 'favicon-192x192.png',
+    'public/favicons/icon-32x32.png': 'favicon-32x32.png',
+  };
+
+  for (const [src, dst] of Object.entries(FAVICON_MAP)) {
+    const srcPath = path.join(DIST_DIR, '..', src);
+    const dstPath = path.join(DIST_DIR, dst);
+    try {
+      if (fs.existsSync(srcPath)) {
+        fs.copyFileSync(srcPath, dstPath);
+        console.log(`[favicon-restore] Copied ${src} → ${dst}`);
+      }
+    } catch (e) {
+      console.warn(`[favicon-restore] Failed: ${e.message}`);
+    }
+  }
+}
+
 /** Recursively find all HTML files in a directory */
 function findHtmlFiles(dir) {
   const results = [];
@@ -22,7 +50,12 @@ function findHtmlFiles(dir) {
   return results;
 }
 
-const DIST_DIR = path.join(process.cwd(), 'dist');
+// === Run post-build steps ===
+
+// Step 1: Restore Lotad favicons (must run AFTER astro build, BEFORE inline-css)
+restoreFavicons();
+
+// Step 2: Inline CSS
 const htmlFiles = findHtmlFiles(DIST_DIR);
 console.log(`[inline-critical-css] Found ${htmlFiles.length} HTML files`);
 

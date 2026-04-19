@@ -8,6 +8,12 @@
     var DEFAULT_FAVICON = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/lotad.png';
     var MANIFEST_URL = 'https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/icon-manifest.json';
 
+    // If page has data-fixed-favicon, skip randomization and use fixed Smeargle
+    if (document.documentElement.hasAttribute('data-fixed-favicon')) {
+      link.href = 'https://cdn.jsdelivr.net/gh/wangrui2025/sprites-gallery@main/public/favicons/msikma_pokesprite/pokemon-gen8/regular/smeargle.png';
+      return;
+    }
+
     // Check if user has visited before
     var hasVisited = localStorage.getItem('favicon-initialized');
 

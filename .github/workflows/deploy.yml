@@ -61,18 +61,18 @@ jobs:
           cd astro
           pnpm install --frozen-lockfile
 
+      - name: Download Lotad favicons from sprites-gallery
+        run: |
+          # Download BEFORE build: post-build script copies from public/favicons/ to dist/
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/apple-touch-icon.png" -o astro/public/favicons/apple-touch-icon.png
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-32x32.png" -o astro/public/favicons/icon-32x32.png
+          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-192x192.png" -o astro/public/favicons/icon-192x192.png
+          echo "Lotad favicons downloaded"
+
       - name: Build Astro
         run: |
           cd astro
           pnpm run build
-
-      - name: Replace Astro favicon with pikachu
-        run: |
-          # Download pre-generated pikachu icons from sprites-gallery
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/apple-touch-icon.png" -o astro/dist/lotad-touch-icon.png
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-32x32.png" -o astro/dist/favicon-32x32.png
-          curl -sL "https://raw.githubusercontent.com/wangrui2025/sprites-gallery/main/public/favicons/icon-192x192.png" -o astro/dist/lotad-favicon-192x192.png
-          echo "Favicons replaced from sprites-gallery"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

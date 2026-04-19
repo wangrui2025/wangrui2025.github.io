@@ -14,6 +14,7 @@ interface Props {
   lang?: 'en' | 'zh';
   ogTitle?: string;
   ogDescription?: string;
+  fixedFavicon?: boolean;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   lang = 'en',
   ogTitle,
   ogDescription,
+  fixedFavicon = false,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? SITE_URL;
@@ -47,7 +49,7 @@ const personSchema = getPersonSchema({
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-fixed-favicon={fixedFavicon ? '' : undefined}>
   <head>
     <!-- Critical FOUC prevention — bare minimum, rest is in global.css (inlined by Vite) -->
     <style is:inline>
@@ -99,8 +101,8 @@ const personSchema = getPersonSchema({
     <!-- Favicon & PWA -->
     <Favicon />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/lotad-favicon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/lotad-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
 
