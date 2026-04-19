@@ -20,11 +20,11 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
       <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-[var(--color-paper-accent)] to-transparent opacity-20"></div>
     </div>
 
-    <div class="relative z-10 px-6 py-32">
-      <p class="text-xs uppercase tracking-[0.3em] text-[var(--color-paper-accent)] mb-8 font-medium">
+    <div class="relative z-10 px-6 py-20 md:py-32">
+      <p class="text-xs uppercase tracking-[0.3em] text-[var(--color-paper-accent)] mb-6 md:mb-8 font-medium">
         Design System
       </p>
-      <h1 class="text-6xl md:text-8xl font-bold font-serif text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-8 leading-[0.9] tracking-tight">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-sans text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-6 md:mb-8 leading-[0.9] tracking-tight">
         创作手记
       </h1>
       <p class="text-xl md:text-2xl text-[var(--color-text-secondary)] dark:text-[var(--color-text-secondary-dark)] leading-relaxed mb-12">
@@ -54,64 +54,64 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
   <!-- ==================== TOC ==================== -->
   <nav id="toc" class="sticky top-0 z-50 border-b border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] bg-[var(--color-bg-primary)]/90 dark:bg-[var(--color-bg-dark)]/90 backdrop-blur-md">
     <div class="max-w-5xl mx-auto px-6">
-      <ul class="flex gap-1 overflow-x-auto py-4 text-sm">
+      <ul class="flex gap-1 overflow-x-auto py-4 text-sm max-sm:gap-0.5 max-sm:py-3 max-sm:flex-wrap">
         <li>
-          <a href="#philosophy" data-section="philosophy" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#philosophy" data-section="philosophy" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             理念
           </a>
         </li>
         <li>
-          <a href="#typography" data-section="typography" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#typography" data-section="typography" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             字体
           </a>
         </li>
         <li>
-          <a href="#color" data-section="color" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#color" data-section="color" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             颜色
           </a>
         </li>
         <li>
-          <a href="#spacing" data-section="spacing" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#spacing" data-section="spacing" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             间距
           </a>
         </li>
         <li>
-          <a href="#dark-mode" data-section="dark-mode" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#dark-mode" data-section="dark-mode" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             暗黑
           </a>
         </li>
         <li>
-          <a href="#tech-stack" data-section="tech-stack" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#tech-stack" data-section="tech-stack" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             技术
           </a>
         </li>
         <li>
-          <a href="#performance" data-section="performance" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#performance" data-section="performance" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             性能
           </a>
         </li>
         <li>
-          <a href="#favicon" data-section="favicon" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#favicon" data-section="favicon" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             图标
           </a>
         </li>
         <li>
-          <a href="#components" data-section="components" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#components" data-section="components" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             组件
           </a>
         </li>
         <li>
-          <a href="#pages" data-section="pages" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#pages" data-section="pages" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             页面
           </a>
         </li>
         <li>
-          <a href="#layout" data-section="layout" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#layout" data-section="layout" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             布局
           </a>
         </li>
         <li>
-          <a href="#timeline" data-section="timeline" class="toc-link px-4 py-2 rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
+          <a href="#timeline" data-section="timeline" class="toc-link px-3 py-1.5 max-sm:px-2 max-sm:py-1 max-sm:text-xs rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-paper-accent)] hover:bg-[var(--color-paper-accent)]/5 transition-all duration-300 whitespace-nowrap font-medium">
             演进
           </a>
         </li>
@@ -127,14 +127,14 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Philosophy</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         创作理念
       </h2>
 
       <!-- Intro -->
       <div class="max-w-3xl mb-16">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed font-serif">
+          <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed font-sans">
             我做这个网站的时候在想：<strong class="text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">首页</strong>是给所有人看的，要干净、要快、要让人舒服。
             但如果有面试官、同行、或者对设计感兴趣的人想知道<strong class="text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)]">为什么</strong>这样设计，这里就是答案。
           </p>
@@ -151,7 +151,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我为什么不用 emoji？</h3>
+            <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我为什么不用 emoji？</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
               学术场合需要专业感。emoji 在简历、论文里显得不够严谨。但 flat SVG icon 不一样 — 它干净、现代、而且可以精确控制颜色和大小。
             </p>
@@ -174,7 +174,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我遇到过 FOUC 问题</h3>
+            <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我遇到过 FOUC 问题</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
               Tailwind v4 把 CSS 拆到外部文件，字体加载时会出现闪烁。解决方案是把关键 CSS 内联到 HTML head，这样页面打开的第一瞬间就是正确的样式。
             </p>
@@ -197,7 +197,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我不想手动更新引用数</h3>
+            <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">我不想手动更新引用数</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
               学术主页最麻烦的就是每年更新引用数。我用 API 实时拉取 Google Scholar / OpenAlex 数据，永远不需要手动改。
             </p>
@@ -220,7 +220,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">桌面端要平铺，移动端要适配</h3>
+            <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">桌面端要平铺，移动端要适配</h3>
             <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
               桌面端用户期望看到更宽的展示，不要限制在窄宽度里。移动端则需要适配小屏幕。我用 Tailwind 的响应式前缀（md:/lg:）来区分两者的布局策略。
             </p>
@@ -238,7 +238,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Typography</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         字体系统
       </h2>
 
@@ -287,7 +287,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Color</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         颜色系统
       </h2>
 
@@ -299,7 +299,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
               <span class="text-white font-mono text-sm">#c96442</span>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#c96442 — 我为什么选这个橙褐色？</h3>
+              <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#c96442 — 我为什么选这个橙褐色？</h3>
               <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
                 它足够醒目来标记重点，但<strong>不像红色那么侵略性</strong>。我在学术场合试过，面试官会注意到但不会觉得刺眼。
               </p>
@@ -317,7 +317,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
               <span class="text-[var(--color-text-secondary)] font-mono text-xs">#f5f4ed</span>
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#f5f4ed — 米白背景</h3>
+              <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-3">#f5f4ed — 米白背景</h3>
               <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
                 不同于纯白，这个颜色更温和。配合 Source Serif 字体有书卷气，而且对眼睛更友好。
               </p>
@@ -336,27 +336,27 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Spacing</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         间距与层次
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">标题用大字号</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">标题用大字号</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             在信息流里，标题首先被扫过。大字号让读者一眼就能找到他们感兴趣的部分。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">段落之间留足够空间</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">段落之间留足够空间</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             让读者有呼吸感，而不是被文字墙压住。这不是什么高深的设计理论，就是最基本的人体工程学。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">小标题负责引导视线</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">小标题负责引导视线</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             好的小标题是迷你摘要，读者扫一眼就知道这部分在讲什么，要不要仔细读。
           </p>
@@ -370,20 +370,20 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Dark Mode</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         暗黑模式
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么自建而不是套系统？</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么自建而不是套系统？</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             我想完全控制颜色映射。系统暗黑模式是「一键反色」，但我需要精细控制每个颜色的明暗关系，让暗黑模式的观感同样精致。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">FOUC 处理</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">FOUC 处理</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             暗黑模式的 FOUC 最烦人 — 页面打开时是亮色，闪烁一下变成暗黑。解决方案是：在 HTML head 里用内联脚本先设置 dark class，再加载 CSS。这样页面从第一帧就是正确的颜色。
           </p>
@@ -397,20 +397,20 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Tech Stack</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         技术选型
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Astro — 为什么选它？</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Astro — 为什么选它？</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             静态站点，零 JavaScript 输出（除了必要的交互），GitHub Pages 原生支持。Astro 的 islands 架构让我可以在需要时使用 React/Vue，而不需要全量引入。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Tailwind v4 — 升级背后的故事</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Tailwind v4 — 升级背后的故事</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             v4 完全抛弃了 config 文件，theme 配置全部迁移到 CSS @theme 块。一开始我觉得这很反直觉，但后来发现这样更符合 CSS 原生的工作方式。
           </p>
@@ -427,20 +427,20 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Performance</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         性能策略
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CDN 固定 SHA</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CDN 固定 SHA</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             我用 jsDelivr 加载外部资源，但它用 @main 标签有缓存问题。解决方案是固定到特定 commit SHA，这样每次部署都是确定的，不会出现「本地正常但线上异常」的情况。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Critical CSS 内联</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Critical CSS 内联</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             Tailwind v4 把 CSS 拆到外部文件会造成 FOUC。我的解决方案是用 post-build 脚本把关键 CSS 内联到 HTML head，这样首屏渲染从第一帧就是正确的。
           </p>
@@ -454,20 +454,20 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Favicon</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         Favicon 设计
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">灵感来源</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">灵感来源</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             我做了 sprites-gallery 宝可梦图鉴项目后，想在个人网站也加点个人特色。favicon 是访客每次刷新都可能看到的东西，比 logo 更频繁。
           </p>
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么是 Smeargle？</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么是 Smeargle？</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             800+ 精灵里我选 Smeargle，因为它是一只「画家精灵」— 会用刷子画画。这完美契合「创作手记」的主题。
           </p>
@@ -478,7 +478,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">技术实现</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">技术实现</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             我用 <code class="text-xs bg-[var(--color-paper-accent)]/10 px-1 py-0.5 rounded">fixedFavicon</code> prop 控制。在 BaseLayout 里传 <code class="text-xs bg-[var(--color-paper-accent)]/10 px-1 py-0.5 rounded">fixedFavicon=true</code> 给 Design 页面，所有 icon link 都指向 Smeargle PNG。
           </p>
@@ -492,13 +492,13 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Icons</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         图标选择
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么不用 emoji？</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么不用 emoji？</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             学术场合需要专业感。emoji 在简历、论文里显得不够严谨。但 flat SVG icon 不一样 — 它干净、现代、而且可以精确控制颜色和大小。
           </p>
@@ -508,7 +508,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">图标库选择</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">图标库选择</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             我用 <strong>Lucide</strong> 作为主要图标库。它是 Feather Icons 的延续，风格一致、选择丰富、而且是 MIT 许可。
           </p>
@@ -527,13 +527,13 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">CV</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         简历设计
       </h2>
 
       <div class="space-y-8">
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么用 JSON 而不是数据库？</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">为什么用 JSON 而不是数据库？</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             我的简历数据全部存在 JSON 文件里，通过 Astro Content Collections 读取。这样做的好处是：
           </p>
@@ -546,7 +546,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         </div>
 
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-lg font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">模板选择</h3>
+          <h3 class="text-lg font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">模板选择</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
             我参考了 여러 学术个人网站模板，最后选择了简洁的分栏布局。左侧是基本信息（教育、联系），右侧是详细信息（论文、项目）。这样面试官可以快速扫过重点。
           </p>
@@ -560,86 +560,326 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Components</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         组件系统
       </h2>
 
-      <div class="space-y-8">
-        <!-- Favicon Component -->
+      <div class="space-y-12">
+        <!-- 1. Sidebar -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Favicon — 动态随机图标</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">1. Sidebar — 粘性侧边栏容器</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            默认页面随机显示 2665 个宝可梦图标（1332 regular + 1333 shiny），通过 fetch manifest.json 实现真随机。
-            <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">fixedFavicon</code> prop 可固定为 Smeargle（Design 页面专用）。
+            纯容器组件，使用 Astro slot 接收内容。定位在视口左侧，滚动时保持可见。
           </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">27a927b</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">redesign /design page with gradient mesh hero</span>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)] mb-4">
+            <p class="text-[var(--color-paper-accent)]">// 关键样式</p>
+            <p>sticky top-4</p>
+            <p>backdrop-blur-sm</p>
+            <p>rounded-2xl</p>
+            <p>bg-paper-bg/80</p>
+            <p>border border-border-primary/60</p>
           </div>
-        </div>
-
-        <!-- ThemeToggle -->
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">ThemeToggle — 暗黑模式切换</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            Tailwind v4 暗黑模式使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">@custom-variant dark (&:where(.dark, .dark *))</code> 启用 class 模式。
-            主题状态存储在 localStorage，切换时添加/移除 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">.dark</code> class。
-          </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">b0b8e746</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">enable class-based dark variant in Tailwind v4</span>
-          </div>
-        </div>
-
-        <!-- PaperCard -->
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">PaperCard — 论文卡片</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            展示论文标题、作者、venue、标签（领域/技术）、链接（Project/arXiv）。
-            图片使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">astro:assets</code> 优化，hover 时轻微上浮 + 阴影加深。
-          </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">f030b818</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">modernize to Astro 6.x best practices</span>
-          </div>
-        </div>
-
-        <!-- AuthorProfile -->
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">AuthorProfile — 侧边栏作者信息</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            头像、姓名、身份（硕二）、求职状态（申博/实习）、联系方式（双邮箱）、社交链接（GitHub/Google Scholar/ORCID/OpenReview/LinkedIn）。
-            布局在 Sidebar 内使用 sticky 定位，滚动时保持可见。
-          </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Sidebar — 粘性侧边栏</h3>
-          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            纯容器组件，使用 slot 接收内容，sticky 定位在视口左侧。
+          <p class="text-xs text-[var(--color-text-secondary)]">
             内部包含 AuthorProfile 和 ThemeToggle，配合主内容区形成双栏布局。
           </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+        </div>
+
+        <!-- 2. AuthorProfile -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">2. AuthorProfile — 作者信息卡片</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            包含头像、姓名、身份（硕二）、求职状态、联系方式和社交链接。
+          </p>
+          <div class="space-y-4">
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// 头像</p>
+              <p>256x256 rounded-full</p>
+              <p>外层环形装饰渐变:</p>
+              <p>  from-paper-accent/20 to-transparent</p>
+              <p>ring-2 ring-border-primary/30</p>
+              <p>shadow-lg</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// 姓名</p>
+              <p>font-sans text-[48px] leading-[1.1]</p>
+              <p>tracking-tight</p>
+              <p class="text-[10px] opacity-60">// Plus Jakarta Sans 做标题后改为 font-sans</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// 状态徽章</p>
+              <p>inline-flex items-center gap-1.5</p>
+              <p>px-4 py-1.5 rounded-full</p>
+              <p>text-xs font-medium</p>
+              <p>bg-paper-accent text-paper-bg shadow-sm</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// 社交链接</p>
+              <p>flex flex-wrap justify-center gap-2</p>
+              <p>// email: max-w-truncate</p>
+              <p>// icon-only: w-9 h-9 方形</p>
+              <p class="text-[10px] opacity-60">// hover: border-link-primary + 品牌色</p>
+            </div>
           </div>
         </div>
 
-        <!-- Masthead -->
+        <!-- 3. Masthead -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">Masthead — 顶部导航</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">3. Masthead — 顶部固定导航</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-            顶部固定导航栏，包含首页链接、主导航项（中英文）、语言切换、ThemeToggle。
-            使用 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">getRelativeLocaleUrl</code> 实现 i18n 路由。
+            页面顶部固定导航栏，滚动时始终可见。
           </p>
-          <div class="flex items-center gap-2 pt-4 border-t border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)]">
-            <code class="text-xs text-[var(--color-paper-accent)] font-mono bg-[var(--color-paper-accent)]/10 px-2 py-1 rounded">3abb297</code>
-            <span class="text-xs text-[var(--color-text-secondary)]">Init — 项目初始化</span>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)] mb-4">
+            <p class="text-[var(--color-paper-accent)]">// 定位</p>
+            <p>sticky top-0 z-50</p>
+            <p>bg-bg-primary</p>
+            <p>border-b border-border-primary</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 布局</p>
+            <p>max-w-[1200px] mx-auto px-4 py-2</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 移动端</p>
+            <p>max-md:flex-col max-md:items-start</p>
+            <p>max-md:gap-2</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 导航</p>
+            <p>flex list-none gap-6</p>
+            <p>max-md:flex-wrap max-md:gap-4</p>
+          </div>
+          <p class="text-xs text-[var(--color-text-secondary)]">
+            ThemeToggle 固定在右下角，使用 <code class="bg-[var(--color-paper-accent)]/10 px-1 rounded">getRelativeLocaleUrl</code> 实现 i18n 路由。
+          </p>
+        </div>
+
+        <!-- 4. PaperCard -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">4. PaperCard — 论文展示卡片</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            展示论文标题、作者、venue、标签（领域/技术）、链接（Project/arXiv）。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)] mb-4">
+            <p class="text-[var(--color-paper-accent)]">// 基础样式</p>
+            <p>border border-paper-border rounded-2xl</p>
+            <p>p-6 mb-8 bg-paper-bg</p>
+            <p>border-l-4 border-l-paper-accent</p>
+            <p>shadow-sm</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// hover 效果</p>
+            <p>hover:shadow-lg hover:-translate-y-1</p>
+            <p>hover:border-paper-accent/40</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 标题</p>
+            <p>font-semibold text-[21px] leading-tight</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// venue 标签</p>
+            <p>inline-block text-[0.7rem] px-2 py-0.5</p>
+            <p>rounded bg-paper-accent text-paper-bg</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 标签样式</p>
+            <p>tech: bg-tag-tech-bg text-tag-tech-text</p>
+            <p>field: bg-tag-field-bg text-tag-field-text</p>
+          </div>
+          <p class="text-xs text-[var(--color-text-secondary)]">
+            左侧 4px 橙色左边框是区分于其他卡片的关键标识。
+          </p>
+        </div>
+
+        <!-- 5. Education -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">5. Education — 教育经历列表</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            参考 CvEducationItem 组件，用于展示教育背景信息（学校、学位、时间）。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// 列表样式</p>
+            <p>// 继承通用列表样式</p>
+            <p>// 包含: 学校名、学位、时间、描述</p>
+          </div>
+        </div>
+
+        <!-- 6. ScholarBadge -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">6. ScholarBadge — 学术统计卡片</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            展示引用数、H-index 等学术指标。数据通过 OpenAlex / Semantic Scholar API 实时获取。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// 卡片样式</p>
+            <p>// citation 数字突出显示</p>
+            <p>// 继承 Info Card 样式</p>
+          </div>
+        </div>
+
+        <!-- 7. CvHonorItem -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">7. CvHonorItem — 荣誉奖项条目</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            展示荣誉名称和获奖时间，采用左右对齐布局。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// 布局</p>
+            <p>flex justify-between items-baseline</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 时间</p>
+            <p>text-xs text-text-secondary</p>
+            <p>whitespace-nowrap mr-1</p>
+          </div>
+        </div>
+
+        <!-- 8. ThemeToggle -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">8. ThemeToggle — 主题切换按钮</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            图标切换（sun/moon），点击切换暗黑/亮色模式。状态存储在 localStorage。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// Tailwind v4 暗黑模式</p>
+            <p>@custom-variant dark (&:where(.dark, .dark *))</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 按钮样式</p>
+            <p>bg-none border-none cursor-pointer</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 图标</p>
+            <p>// sun (light) / moon (dark) 切换</p>
+          </div>
+        </div>
+
+        <!-- 9. Favicon -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">9. Favicon — 随机宝可梦图标</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            默认页面随机显示 2665 个宝可梦图标（1332 regular + 1333 shiny），通过 fetch manifest.json 实现真随机。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)] mb-4">
+            <p class="text-[var(--color-paper-accent)]">// 组件用法</p>
+            <p>&lt;Favicon fixedFavicon={false} /&gt;</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 固定 favicon (Design 页面)</p>
+            <p>&lt;Favicon fixedFavicon={true} /&gt;</p>
+            <p class="text-[10px] opacity-60 mt-1">// 固定为 Smeargle (画家精灵)</p>
+          </div>
+          <p class="text-xs text-[var(--color-text-secondary)]">
+            iOS Safari 处理：移除 alpha channel 避免图标变灰（commit 5df24329）。
+          </p>
+        </div>
+
+        <!-- 10. 通用列表样式 -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">10. 通用列表样式</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            首页多种列表使用统一的 CSS 伪元素样式。
+          </p>
+          <div class="space-y-4">
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// about-list</p>
+              <p>list-none pl-0</p>
+              <p>::before {</p>
+              <p>  content: "•";</p>
+              <p>  position: absolute;</p>
+              <p>  left: 0;</p>
+              <p>  color: rgb(135 134 127);</p>
+              <p>}</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// news-list</p>
+              <p>::before {</p>
+              <p>  content: "&gt;";</p>
+              <p>  left: 0;</p>
+              <p>  font-weight: 600;</p>
+              <p>}</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// honors-list</p>
+              <p>flex justify-between items-baseline</p>
+              <p>// period 右侧 text-xs text-text-secondary</p>
+            </div>
+            <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+              <p class="text-[var(--color-paper-accent)]">// skills-list / project-list</p>
+              <p>list-none pl-0</p>
+              <p>// 使用 ::before 装饰</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Timeline -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">11. Timeline — 时间线组件</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            首页隐藏但有完整样式定义。展开/折叠使用 details/summary toggle 模式。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// timeline-container</p>
+            <p>// 左侧渐变竖线:</p>
+            <p>linear-gradient(to bottom,</p>
+            <p>  rgb(201 100 66 / 0.3),</p>
+            <p>  rgb(240 238 230 / 0.5))</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// timeline-node</p>
+            <p>// 8x8 圆点</p>
+            <p>box-shadow:</p>
+            <p>  0 0 0 3px rgb(250 249 245),</p>
+            <p>  0 0 0 4px rgb(201 100 66 / 0.3)</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// timeline-tag</p>
+            <p>text-xs px-2 py-1 rounded-full</p>
+            <p>bg-tag-tech-bg</p>
+          </div>
+        </div>
+
+        <!-- 12. Section Heading -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">12. Section Heading — 章节标题</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            页面各 section 的标题样式，带有装饰性下划线。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// 装饰线 (::after)</p>
+            <p>3rem 宽 2px 高</p>
+            <p>linear-gradient(to right,</p>
+            <p>  var(--color-paper-accent),</p>
+            <p>  var(--color-paper-accent-dark))</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// icon 前缀</p>
+            <p>// tabler 图标</p>
+          </div>
+        </div>
+
+        <!-- 13. Info Card -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">13. Info Card — 信息卡片</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            通用的信息展示卡片，用于 Education、Honors 等 section。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// 基础样式</p>
+            <p>bg-paper-bg rounded-2xl p-6 mb-4</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// 阴影</p>
+            <p>box-shadow:</p>
+            <p>  0 1px 3px rgba(0,0,0,0.04),</p>
+            <p>  0 4px 12px rgba(0,0,0,0.03),</p>
+            <p>  inset 0 1px 0 rgba(255,255,255,0.6)</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// hover</p>
+            <p>hover:shadow-2xl hover:-translate-y-1</p>
+          </div>
+        </div>
+
+        <!-- 14. 噪点纹理背景 -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">14. 噪点纹理背景</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            全局 SVG fractalNoise 噪点纹理，增加纸张质感。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// body::before</p>
+            <p>position: fixed</p>
+            <p>inset: 0</p>
+            <p>pointer-events: none</p>
+            <p>z-index: -1</p>
+            <p>opacity: 0.4  // 暗色: 0.15</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// SVG filter</p>
+            <p>// fractalNoise</p>
+          </div>
+        </div>
+
+        <!-- 15. 跳过链接 -->
+        <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">15. 跳过链接 (Skip Link)</h3>
+          <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+            无障碍访问功能，允许键盘用户快速跳转到主要内容。
+          </p>
+          <div class="bg-[var(--color-bg-primary)] dark:bg-[var(--color-bg-dark)] rounded-xl p-4 font-mono text-xs text-[var(--color-text-secondary)]">
+            <p class="text-[var(--color-paper-accent)]">// .skip-link</p>
+            <p>position: absolute;</p>
+            <p>top: -40px;</p>
+            <p>left: 0;</p>
+            <p>z-index: 100;</p>
+            <p class="text-[var(--color-paper-accent)] mt-2">// focus 状态</p>
+            <p>top: 0;</p>
           </div>
         </div>
       </div>
@@ -651,14 +891,14 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Pages</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         页面结构
       </h2>
 
       <div class="space-y-8">
         <!-- Homepage -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">首页 / — 最重要的一页</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">首页 / — 最重要的一页</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             访问者第一时间看到的页面。左侧 Sidebar（作者信息），右侧内容区按以下顺序组织：
           </p>
@@ -678,7 +918,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
         <!-- CV Page -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CV 页 /cv, /zh/cv</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">CV 页 /cv, /zh/cv</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             学术简历页面，A4 纸张布局（210mm × 297mm），用于打印或 PDF 导出。
             左侧 Sidebar 包含 AuthorProfile，右侧内容区展示完整的学术履历。
@@ -690,7 +930,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
         <!-- Slides Page -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">海报页 /slides</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">海报页 /slides</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             学术海报展示页面。目前使用静态 HTML（KaTeX 数学表达式导致无法迁移到 Astro）。
             通过 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">/zh/slides</code> 和 <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">/en/slides</code> 重定向到根路径。
@@ -703,7 +943,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
         <!-- Design Page -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">设计页 /design</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">设计页 /design</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             这个页面本身。Gradient mesh hero + scroll-spy TOC + 9 sections。
             固定 Smeargle favicon，Purpose 是给想知道"为什么这样设计"的人看。
@@ -722,14 +962,14 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Layout</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         布局哲学
       </h2>
 
       <div class="space-y-8">
         <!-- Content Priority -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">内容优先级</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">内容优先级</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             首页遵循 <strong>身份 → 成果 → 背景 → 技能</strong> 的权重顺序：
           </p>
@@ -743,7 +983,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
         <!-- Two-Column Layout -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">双栏布局</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">双栏布局</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             左侧 Sidebar 固定宽度（280px），右侧内容区自适应。
             Sidebar 内 AuthorProfile 使用 sticky 定位，滚动时保持可见。
@@ -756,13 +996,13 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
 
         <!-- Visual Hierarchy -->
         <div class="bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl p-8">
-          <h3 class="text-xl font-serif font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">视觉层次</h3>
+          <h3 class="text-xl font-sans font-semibold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4">视觉层次</h3>
           <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
             通过字体大小、颜色、间距区分信息层级：
           </p>
           <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-2 ml-4">
-            <li>• 页面标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-serif text-[56px]</code>，最醒目</li>
-            <li>• Section 标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-serif text-[28px]</code></li>
+            <li>• 页面标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-sans text-[56px]</code>，最醒目</li>
+            <li>• Section 标题 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">font-sans text-[28px]</code></li>
             <li>• 正文 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">text-base</code>，行高 1.75</li>
             <li>• 次要信息 — <code class="text-xs font-mono bg-[var(--color-paper-accent)]/10 px-1 rounded">text-sm text-text-secondary</code></li>
           </ul>
@@ -776,7 +1016,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Timeline</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4 leading-tight">
+      <h2 class="text-5xl md:text-6xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-4 leading-tight">
         演进时间线
       </h2>
       <p class="text-lg text-[var(--color-text-secondary)] mb-16">21天 / 854 commits</p>
@@ -920,7 +1160,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Tech Notes</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         技术备忘
       </h2>
 
@@ -929,7 +1169,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
           <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
             <div class="flex items-center gap-4">
-              <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+              <h3 class="font-sans font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
                 Tailwind v4 迁移
               </h3>
               <span class="text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-field-bg)] dark:bg-[var(--color-tag-field-bg-dark)] px-3 py-1 rounded-full">Critical</span>
@@ -987,7 +1227,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
           <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
             <div class="flex items-center gap-4">
-              <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+              <h3 class="font-sans font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
                 Astro v6 升级
               </h3>
               <span class="text-xs font-normal text-[var(--color-text-secondary)] bg-[var(--color-tag-tech-bg)] dark:bg-[var(--color-tag-tech-bg-dark)] px-3 py-1 rounded-full">v5 → v6</span>
@@ -1042,7 +1282,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <!-- CI/CD -->
         <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
           <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
-            <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+            <h3 class="font-sans font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
               CI/CD 策略
             </h3>
             <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
@@ -1086,7 +1326,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <!-- Scholar API evolution -->
         <details class="group border border-[var(--color-border-primary)] dark:border-[var(--color-border-dark)] rounded-2xl bg-[var(--color-paper-bg)] dark:bg-[var(--color-paper-bg-dark)] [&[open]]:border-[var(--color-paper-accent)]/30">
           <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
-            <h3 class="font-serif font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
+            <h3 class="font-sans font-semibold text-lg text-[var(--color-text-primary)] dark:text-[var(--color-text-dark)]">
               学术数据 API 演变
             </h3>
             <span class="text-[var(--color-text-secondary)] group-hover:text-[var(--color-paper-accent)] transition-colors">
@@ -1140,7 +1380,7 @@ const description = 'wangrui2025.github.io 的设计决策与实现备忘';
         <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-paper-accent)] font-semibold">Maintenance</p>
         <span class="flex-1 h-px bg-gradient-to-r from-[var(--color-paper-accent)]/50 to-transparent"></span>
       </div>
-      <h2 class="text-5xl md:text-6xl font-serif font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[var(--color-heading-primary)] dark:text-[var(--color-heading-dark)] mb-16 leading-tight">
         维护协议
       </h2>
 
