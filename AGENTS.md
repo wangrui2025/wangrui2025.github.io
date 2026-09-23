@@ -15,7 +15,7 @@ Before changing redirect behavior, public copy, route ownership, or the role of 
 
 - Keep this repository small and public-safe.
 - Do not copy the complete Astro homepage, private DEV tooling, internal documents, credentials, or unpublished/private assets here.
-- The full homepage source of truth lives in the private development repository `mykcs/mykcs.github.io`.
+- The full homepage source of truth lives in the private development repository `mykcs/personal-homepage`.
 - The current canonical/indexable homepage is `https://wangrui92.pages.dev`.
 - This gateway should redirect directly to the canonical serving host; do not route through `https://mykcs.github.io`.
 - Known homepage routes may preserve their matching path.
