@@ -1,6 +1,6 @@
 # 当前愿望的设计解释
 
-这份文件解释 `wangrui2025.github.io` 作为学术兼容入口应该怎样服务整套个人主页。它不是完整主页的产品说明；完整主页的当前 Wish 由 `mykcs/mykcs.github.io/docs/wish/` 负责。
+这份文件解释 `wangrui2025.github.io` 作为学术兼容入口应该怎样服务整套个人主页。它不是完整主页的产品说明；完整主页的当前 Wish 由 `mykcs/personal-homepage/docs/wish/` 负责。
 
 ## L0 — 中心愿望
 
@@ -57,7 +57,7 @@ wangrui2025.github.io
 ## L3 — Ownership 边界
 
 - `wangrui2025/wangrui2025.github.io`：公开、redirect-only。
-- `mykcs/mykcs.github.io`：完整主页源码与 DEV authority，可以保持 Private。
+- `mykcs/personal-homepage`：完整主页源码与 DEV authority，可以保持 Private。
 - `wangrui92.pages.dev`：当前唯一 canonical/indexable 正式主页。
 - `/osa/`、`/GDKVM/`、`/sprites-gallery/` 等项目站由各自仓库负责；不要把项目源码复制进本仓库，也不要声称本仓库拥有它们。
 
