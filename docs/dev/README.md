@@ -1,6 +1,6 @@
 # Academic gateway Dev
 
-This public folder explains how the redirect gateway is maintained. Shared lifecycle rules are in the [Dev folder protocol](https://github.com/mykcs/.codex/blob/main/engineering/DEV_PROTOCOL.md).
+This public folder explains how the redirect gateway is maintained. Shared lifecycle rules are in the [Dev folder protocol](https://github.com/mykcs/.agents/blob/main/docs/agents/DEV_PROTOCOL.md).
 
 - [LATEST.md](LATEST.md): current development direction and provider roles.
 - [DESIGN.md](DESIGN.md): why the small validation and hosting design fits this gateway.
