@@ -8,12 +8,12 @@ Before changing redirect behavior, public copy, route ownership, or the role of 
 
 - For route topology, identity/hosting boundaries, or product-direction changes, also read `docs/wish/DESIGN.md`.
 - Do not read `docs/wish/ARCHIVE.md` by default; use it only for historical intent.
-- Shared Wish lifecycle/update rules are owned by https://github.com/mykcs/.codex/blob/main/website-governance/WISH_PROTOCOL.md.
+- Shared Wish lifecycle/update rules are owned by https://github.com/mykcs/.agents/blob/main/docs/agents/WISH_PROTOCOL.md.
 - Current owner instructions, executable truth, privacy/security boundaries, and live hosting state outrank the Wish.
 
 ## Current development direction
 
-Before changing this repository's validation, hosting, or redirect publication path, read `docs/dev/LATEST.md` and `docs/dev/DESIGN.md`. `docs/dev/README.md` points to the current executable owners; read `docs/dev/ARCHIVE.md` only for earlier decisions. The shared Dev lifecycle is https://github.com/mykcs/.codex/blob/main/engineering/DEV_PROTOCOL.md. Keep this public Dev folder free of private homepage source and internal tooling.
+Before changing this repository's validation, hosting, or redirect publication path, read `docs/dev/LATEST.md` and `docs/dev/DESIGN.md`. `docs/dev/README.md` points to the current executable owners; read `docs/dev/ARCHIVE.md` only for earlier decisions. The shared Dev lifecycle is https://github.com/mykcs/.agents/blob/main/docs/agents/DEV_PROTOCOL.md. Keep this public Dev folder free of private homepage source and internal tooling.
 
 ## Repository boundary
 

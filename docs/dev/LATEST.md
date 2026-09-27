@@ -1,5 +1,7 @@
 # Current development direction
 
+**CI mode: CI_NONE.**
+
 Maintain a small, public compatibility gateway for historical academic-homepage links. The complete homepage is developed in the private `mykcs/personal-homepage` repository; this repository holds only its redirect shell, public explanation and governance. [Wish](../wish/LATEST.md) owns the desired visitor experience.
 
 GitHub owns source and pull requests. GitHub Pages publishes the tracked static HTML from `main` at the old academic address. The canonical site is served separately by Cloudflare Pages; this repository neither builds nor publishes that site. Vercel, CircleCI and a Cloudflare Worker have no role in this gateway. Project Pages under `/osa/`, `/GDKVM/` and `/sprites-gallery/` remain with their own repositories.
