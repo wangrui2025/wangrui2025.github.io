@@ -1,6 +1,6 @@
 # CI modernization plan — 2026-09-23
 
-Status: **plan accepted for implementation; implementation pending**
+Status: **implementation in progress in PR #3**
 
 Repository: `wangrui2025/wangrui2025.github.io`  
 Integration branch: `main`
@@ -14,13 +14,23 @@ Keep this public academic-account homepage intentionally tiny: validate only the
 - The repository is public and uses `main`.
 - It currently has no GitHub Actions workflow and no repository ruleset.
 - Its intended role is a stable academic-account entry point/redirect, not a second full website implementation.
+- GitHub Pages currently publishes `main:/`; the six tracked HTML routes are the public gateway surface.
+- `main` has no active repository ruleset or legacy branch-protection rule at implementation start.
+
+## Local CI owner
+
+- CI mode: `STANDARD_CI` (one deterministic Python standard-library validator and a GitHub Actions exact-head gate).
+- Local command: `python3 .github/scripts/validate_redirects.py`.
+- Provider authority after qualification: GitHub Actions check `Repository validation`; until the ruleset is active, this remains a candidate gate only.
+- Scope: tracked gateway HTML only. The workflow has read-only repository permissions, checks out the event SHA, and does not deploy.
+- Publication boundary: Pages remains the existing `main:/` publisher. The implementation must leave all six HTML route files unchanged; a normal main merge rebuilds the same gateway.
 
 ## Implementation checklist
 
 - [x] Open this plan-only PR before changing CI/provider behavior.
-- [ ] 1. Inspect the current redirect implementation and freeze the canonical destination and compatibility behavior.
-- [ ] 2. Add one tiny repository-owned redirect-integrity validation command; keep it independent from any hosting provider.
-- [ ] 3. Add a pinned GitHub Actions PR workflow named `Repository validation` that runs only the redirect-integrity checks.
+- [x] 1. Inspect the current redirect implementation and freeze the canonical destination and compatibility behavior.
+- [x] 2. Add one tiny repository-owned redirect-integrity validation command; keep it independent from any hosting provider.
+- [x] 3. Add a pinned GitHub Actions PR workflow named `Repository validation` that runs only the redirect-integrity checks.
 - [ ] 4. Create a `main` ruleset requiring PRs, app-bound `Repository validation`, deletion protection, and non-fast-forward protection.
 - [ ] 5. Verify a clean PR and a main update without reintroducing a full site build/deployment stack.
 - [ ] 6. Update this plan with exact check identity, ruleset evidence, and final verification.
@@ -31,6 +41,7 @@ Keep this public academic-account homepage intentionally tiny: validate only the
 - [ ] A PR cannot merge without repository-owned redirect validation.
 - [ ] No Astro/full-site CI, second content authority, or unnecessary hosting provider is introduced.
 - [ ] The academic/public identity role of this repository remains unchanged.
+- [ ] Every tracked HTML route is covered; redirects preserve query/hash and do not route through `mykcs.github.io`.
 
 ## Rollout discipline
 
