@@ -23,7 +23,7 @@ Keep this public academic-account homepage intentionally tiny: validate only the
 - Local command: `python3 .github/scripts/validate_redirects.py`.
 - Provider authority after qualification: GitHub Actions check `Repository validation`; until the ruleset is active, this remains a candidate gate only.
 - Scope: tracked gateway HTML only. The workflow has read-only repository permissions, checks out the event SHA, and does not deploy.
-- Publication boundary: Pages remains the existing `main:/` publisher. The implementation must leave all six HTML route files unchanged; a normal main merge rebuilds the same gateway.
+- Publication boundary: Pages remains the existing `main:/` publisher, and tracked `.nojekyll` means new repository files are part of its static output. This PR adds a workflow, validator, and plan document that will be retrievable from the Pages host after merge. Those files contain no secrets, but this extends public site content beyond the six gateway routes; the existing gateway publication scope does not itself authorize that extension. Keep merge pending until the user separately approves this public exposure, or revise the artifact layout under an approved approach. The six HTML route files remain unchanged.
 
 ## Implementation checklist
 
@@ -42,6 +42,7 @@ Keep this public academic-account homepage intentionally tiny: validate only the
 - [ ] No Astro/full-site CI, second content authority, or unnecessary hosting provider is introduced.
 - [ ] The academic/public identity role of this repository remains unchanged.
 - [ ] Every tracked HTML route is covered; redirects preserve query/hash and do not route through `mykcs.github.io`.
+- [ ] User approval covers publication of new CI implementation and plan files through Pages, or the implementation is adjusted so they are not published.
 
 ## Rollout discipline
 

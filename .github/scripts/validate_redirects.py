@@ -73,8 +73,17 @@ def main() -> None:
             fail(f"{relative_path}: fallback link must be {target!r}; got {parser.fallback_link!r}")
 
         source = (ROOT / relative_path).read_text(encoding="utf-8")
-        if "location.search" not in source or "location.hash" not in source:
-            fail(f"{relative_path}: JavaScript redirect must preserve query and fragment")
+        if source.count("target.search = location.search;") != 1:
+            fail(f"{relative_path}: JavaScript redirect must assign the incoming query to the target")
+        if source.count("target.hash = location.hash;") != 1:
+            fail(f"{relative_path}: JavaScript redirect must assign the incoming fragment to the target")
+        expected_script_url = f"new URL('{CANONICAL}{route}')"
+        if relative_path == "index.html":
+            expected_script_url = f"new URL('{CANONICAL}')"
+            if source.count("target.pathname = location.pathname;") != 1:
+                fail("index.html: JavaScript redirect must retain the root route path")
+        if source.count(expected_script_url) != 1:
+            fail(f"{relative_path}: JavaScript target must start at {expected_script_url!r}")
         if "mykcs.github.io" in source:
             fail(f"{relative_path}: legacy mykcs.github.io redirect target is forbidden")
 
