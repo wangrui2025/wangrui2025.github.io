@@ -2,6 +2,8 @@
 
 This repository is the public, redirect-only compatibility gateway for the historical academic homepage URL `https://wangrui2025.github.io`. It is **not** the complete personal-homepage source repository.
 
+Project knowledge map: [`docs/agents/README.md`](docs/agents/README.md).
+
 ## Product wish authority
 
 Before changing redirect behavior, public copy, route ownership, or the role of this repository, read `docs/wish/LATEST.md`.
