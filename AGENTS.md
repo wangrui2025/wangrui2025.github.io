@@ -1,5 +1,7 @@
 # Repository Agent instructions
 
+Shared operating policy: follow [the central AGENTS.md](https://github.com/mykcs/.agents/blob/main/AGENTS.md) and [Capability Routing](https://github.com/mykcs/.agents/blob/main/docs/dev/CAPABILITY_ROUTING.md) for authorization reuse, tool fallbacks and engineering completion. This repository retains its scoped scientific, resource, privacy and release requirements.
+
 This repository is the public, redirect-only compatibility gateway for the historical academic homepage URL `https://wangrui2025.github.io`. It is **not** the complete personal-homepage source repository.
 
 Project knowledge map: [`docs/agents/README.md`](docs/agents/README.md).
