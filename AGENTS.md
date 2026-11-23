@@ -24,7 +24,7 @@ Before changing this repository's validation, hosting, or redirect publication p
 - Keep this repository small and public-safe.
 - Do not copy the complete Astro homepage, private DEV tooling, internal documents, credentials, or unpublished/private assets here.
 - The full homepage source of truth lives in the private development repository `mykcs/personal-homepage`.
-- The current canonical/indexable homepage is `https://wangrui92.pages.dev`.
+- The current canonical/indexable homepage is `https://wangrui92.vercel.app`.
 - This gateway should redirect directly to the canonical serving host; do not route through `https://mykcs.github.io`.
 - Known homepage routes may preserve their matching path.
 - Project Pages sites such as `/osa/`, `/GDKVM/`, and `/sprites-gallery/` remain owned by their own repositories.

@@ -8,6 +8,6 @@ The repository-owned [`python3 .github/scripts/validate_redirects.py`](../../.gi
 
 ## Hosting choice and failure diagnosis
 
-GitHub Pages already serves this public, static compatibility address from the repository. It needs no site framework, scheduled job, application server or extra build provider. Cloudflare Pages owns the real homepage through its own source repository. A gateway change should not change that site's production settings, DNS or private code. The shared [CI standard](https://github.com/mykcs/.agents/blob/main/docs/agents/CI_STANDARD.md) governs this repository's validation semantics.
+GitHub Pages already serves this public, static compatibility address from the repository. It needs no site framework, scheduled job, application server or extra build provider. Vercel serves the real homepage through its own source repository. A gateway change should not change that site's production settings, DNS or private code. The shared [CI standard](https://github.com/mykcs/.agents/blob/main/docs/agents/CI_STANDARD.md) governs this repository's validation semantics.
 
 If an old link fails, first distinguish the redirect HTML/path from GitHub Pages publication and the canonical site's availability. Check the live Pages source/status and the target site's live response before editing redirects. A future CI failure should be classified by whether its runner started and which validation step failed. Only change provider authority after proving the replacement on a real candidate with a rollback path.
