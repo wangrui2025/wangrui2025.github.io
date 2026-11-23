@@ -33,7 +33,7 @@
 当前 canonical serving host：
 
 ```text
-https://wangrui92.pages.dev
+https://wangrui92.vercel.app
 ```
 
 当前关系：
@@ -41,7 +41,7 @@ https://wangrui92.pages.dev
 ```text
 https://wangrui2025.github.io
         │
-        └──── direct ────→ https://wangrui92.pages.dev
+        └──── direct ────→ https://wangrui92.vercel.app
 ```
 
 不要恢复旧的两级链路：
@@ -58,7 +58,7 @@ wangrui2025.github.io
 
 - `wangrui2025/wangrui2025.github.io`：公开、redirect-only。
 - `mykcs/personal-homepage`：完整主页源码与 DEV authority，可以保持 Private。
-- `wangrui92.pages.dev`：当前唯一 canonical/indexable 正式主页。
+- `wangrui92.vercel.app`：当前唯一 canonical/indexable 正式主页。
 - `/osa/`、`/GDKVM/`、`/sprites-gallery/` 等项目站由各自仓库负责；不要把项目源码复制进本仓库，也不要声称本仓库拥有它们。
 
 ## 拿不准时怎么判断

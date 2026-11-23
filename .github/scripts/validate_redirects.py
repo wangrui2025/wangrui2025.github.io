@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CANONICAL = "https://wangrui92.pages.dev"
+CANONICAL = "https://wangrui92.vercel.app"
 ROUTES = {
     "index.html": "/",
     "en/index.html": "/en/",
